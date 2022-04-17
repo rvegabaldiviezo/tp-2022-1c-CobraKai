@@ -4,10 +4,10 @@ RAMADEV=develop
 git status
 git add .
 git commit -m "$MENSAJE"
-git checkout RAMADEV  
-git pull origin RAMADEV
+git checkout $RAMADEV  
+git pull origin $RAMADEV
 git checkout $RAMA
-git rebase RAMADEV
-git checkout RAMADEV
+git rebase $RAMADEV
+git checkout $RAMADEV
 git merge $RAMA
-git push origin RAMADEV
+git push origin $RAMADEV
