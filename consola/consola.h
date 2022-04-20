@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void paquete(int conexion);
+t_paquete* agregar_paquete(int conexion);
 char* leer_hasta(char caracter_de_paro, FILE* file);
 
 #endif /* CONSOLA_H_ */
