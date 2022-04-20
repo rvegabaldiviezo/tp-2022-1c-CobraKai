@@ -124,5 +124,7 @@
 			<resource resourceType="PROJECT" workspacePath="/tp-2022-1c-CobraKai"/>
 		</configuration>
 	</storageModule>
-	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
+		<buildTargets/>
+	</storageModule>
 </cproject>
