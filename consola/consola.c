@@ -1,3 +1,4 @@
+
 /*
  * Para correr el módulo hay que compilarlo con el martillito (o con CTRL + B), luego
  * en una terminal ir a la CARPETA RAíZ del proyecto y desde ahi escribir:
@@ -33,26 +34,23 @@ int main(int argc, char** argv) {
 
 	int conexion = crear_conexion(ip, puerto);
 
-	t_paquete* paquete = armar_paquete(conexion);
-
+	t_paquete* paquete = armar_paquete();
+	enviar_paquete(paquete, conexion);
 
 	return EXIT_SUCCESS;
 }
 
-void armar_paquete(int conexion) {
+t_paquete* armar_paquete() {
 	char* instruccion;
 	t_paquete* paquete = crear_paquete();
 	FILE* pseudocodigo = fopen("./consola/pseudocodigo.txt", "r");
-
 	while(!feof(pseudocodigo)) {
-		// parsear_instrucciones()
+		// parsear_instrucciones() <-- Implementar
 		instruccion = leer_hasta('\n', pseudocodigo);
-		puts(instruccion);
+		puts(instruccion); // Solo para verificar, borrar despues
 		agregar_a_paquete(paquete, instruccion, string_length(instruccion));
 	}
-	enviar_paquete(paquete, conexion);
-
-	eliminar_paquete(paquete);
+	return paquete;
 }
 
 

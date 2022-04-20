@@ -10,8 +10,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "../utils/cliente/utils_cliente.h"
 
-t_paquete* agregar_paquete(int conexion);
+t_paquete* armar_paquete();
 char* leer_hasta(char caracter_de_paro, FILE* file);
 
 #endif /* CONSOLA_H_ */
