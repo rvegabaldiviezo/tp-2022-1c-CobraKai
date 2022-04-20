@@ -11,6 +11,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../utils/cliente/utils_cliente.h"
+#include "commons/string.h"
+
+#define CARACTER_SALTO_DE_LINEA '\n'
 
 t_paquete* armar_paquete();
 char* leer_hasta(char caracter_de_paro, FILE* file);
