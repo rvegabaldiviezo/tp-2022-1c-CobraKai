@@ -8,10 +8,9 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include utils/server/subdir.mk
--include utils/cliente/subdir.mk
--include file/subdir.mk
--include consola/subdir.mk
+-include src/file/subdir.mk
+-include src/cliente/subdir.mk
+-include src/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -26,19 +25,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: tp-2022-1c-CobraKai
+all: consola
 
 # Tool invocations
-tp-2022-1c-CobraKai: $(OBJS) $(USER_OBJS)
+consola: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc  -o "tp-2022-1c-CobraKai" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc  -o "consola" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) tp-2022-1c-CobraKai
+	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) consola
 	-@echo ' '
 
 .PHONY: all clean dependents

@@ -10,12 +10,19 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../utils/cliente/utils_cliente.h"
+#include "cliente/utils.h"
 #include "commons/string.h"
+#include "commons/config.h"
+#include "commons/log.h"
+
 
 #define CARACTER_SALTO_DE_LINEA '\n'
 
 t_paquete* armar_paquete();
 char* leer_hasta(char caracter_de_paro, FILE* file);
+void validarCantidadParametrosConsola(int argc, int nroParam,t_log* logger);
+void terminar_programa(int conexion,t_log* logger,t_config* config);
+t_log* iniciar_logger(void);
+void paquete(int conexion);
 
 #endif /* CONSOLA_H_ */

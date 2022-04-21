@@ -13,8 +13,7 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-consola \
-file \
-utils/cliente \
-utils/server \
+src/cliente \
+src \
+src/file \
 
