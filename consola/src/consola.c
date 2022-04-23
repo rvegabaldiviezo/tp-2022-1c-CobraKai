@@ -10,25 +10,27 @@
 int main(int argc, char** argv) {
 
 	t_log* logger = iniciar_logger();
-	validarCantidadParametrosConsola(argc,3,logger);
+	validarCantidadParametrosConsola(argc, logger);
 	char* ip;
 
-	t_config* config = config_create("./consola/src/consola.config");//argv[1]);
-	log_info(logger,"ENTRO");
-	char* key = "IP";
-		int response = config_has_property(config,key);
-		log_info(logger,"ENTRO");
-		if(response >0){
-			ip = config_get_string_value(config,key);
-			log_info(logger,ip);
+	t_config* config = config_create(argv[1]);
 
-		}else{ log_info(logger,"Error");}
+	char* key = "IP_KERNEL";
+	int response = config_has_property(config,key);
+	//log_info(logger,"ENTRO");
+	if(response >0){
+		ip = config_get_string_value(config,key);
+		log_info(logger, ip);
+	} else {
+		log_error(logger,"Error");
+	}
 	//char* ip = config_get_string_value(config, "IP");
 	log_info(logger,"SALIO");
-	char* puerto = config_get_string_value(config, "PUERTO");
+	char* puerto = config_get_string_value(config, "PUERTO_KERNEL");
 
 	int conexion = crear_conexion(ip, puerto);
-	paquete(conexion);
+	t_paquete* paquete = armar_paquete();
+	enviar_paquete(paquete, conexion);
 
 
 	terminar_programa(conexion,logger,config);
@@ -48,42 +50,18 @@ t_paquete* armar_paquete() {
 		instruccion = leer_hasta(CARACTER_SALTO_DE_LINEA, pseudocodigo);
 	}
 	fclose(pseudocodigo);
-	free(instruccion);
+	//free(instruccion);
 	return paquete;
 }
-void paquete(int conexion)
-{
 
-	char* instruccion;
-
-	t_paquete* paquete = crear_paquete();
-
-	FILE* pseudocodigo = fopen("pseudocodigo.txt", "rt");
-
-	instruccion = leer_hasta(CARACTER_SALTO_DE_LINEA, pseudocodigo);
-
-	while(!feof(pseudocodigo)) {
-		agregar_a_paquete(paquete, instruccion, string_length(instruccion));
-		puts(instruccion);
-		instruccion = leer_hasta(CARACTER_SALTO_DE_LINEA, pseudocodigo);
-	}
-	fclose(pseudocodigo);
-
-	enviar_paquete(paquete, conexion);
-
-	free(instruccion);
-
-	eliminar_paquete(paquete);
-}
-
-void validarCantidadParametrosConsola(int argc, int nroParam,t_log* logger){
-	int ERROR = -1;
-	if(argc != nroParam) {
+void validarCantidadParametrosConsola(int argc, t_log* logger){
+	if(argc != 3) {
 		puts("CANTIDAD DE PARAMETROS INCORRECTA");
-		log_info(logger,"CANTIDAD DE PARAMETROS INCORRECTA");
-		exit(ERROR);
+		log_error(logger, "CANTIDAD DE PARAMETROS INCORRECTA");
+		exit(EXIT_FAILURE);
 	}
 }
+
 t_log* iniciar_logger(void)
 {
 	t_log* nuevo_logger;
@@ -94,7 +72,7 @@ t_log* iniciar_logger(void)
 }
 
 //void terminar_programa(int conexion, t_log* logger, t_config* config)
-void terminar_programa(int conexion,t_log* logger,t_config* config)
+void terminar_programa(int conexion, t_log* logger, t_config* config)
 {
 	log_destroy(logger);
 	config_destroy(config);
