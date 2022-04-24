@@ -1,26 +1,12 @@
-[INFO] 01:15:47:391 Kernel/(22168:22168): Kernel listo para recibir al cliente
-[INFO] 01:16:34:590 Kernel/(22181:22181): Kernel listo para recibir al cliente
-[INFO] 01:18:12:462 Kernel/(22168:22168): Se conecto un cliente!
-[ERROR] 01:18:17:351 Kernel/(22168:22168): el cliente se desconecto. Terminando Kernel
-[INFO] 02:19:15:455 Kernel/(24996:24996): Kernel listo para recibir al cliente
-[INFO] 02:19:26:166 Kernel/(24996:24996): Se conecto un cliente!
-[ERROR] 02:19:28:033 Kernel/(24996:24996): el cliente se desconecto. Terminando Kernel
-[INFO] 02:21:24:755 Kernel/(25075:25075): Kernel listo para recibir al cliente
-[INFO] 02:21:30:808 Kernel/(25075:25075): Se conecto un cliente!
-[ERROR] 02:21:32:440 Kernel/(25075:25075): el cliente se desconecto. Terminando Kernel
-[INFO] 02:25:43:001 Kernel/(25175:25175): Kernel listo para recibir al cliente
-[INFO] 02:25:46:867 Kernel/(25175:25175): Se conecto un cliente!
-[ERROR] 02:25:52:048 Kernel/(25175:25175): el cliente se desconecto. Terminando Kernel
-[INFO] 02:28:05:313 Kernel/(25257:25257): Kernel listo para recibir al cliente
-[INFO] 02:28:12:367 Kernel/(25257:25257): Se conecto un cliente!
-[ERROR] 02:28:14:660 Kernel/(25257:25257): el cliente se desconecto. Terminando Kernel
-[INFO] 02:34:27:404 Kernel/(25414:25414): Kernel listo para recibir al cliente
-[INFO] 02:34:35:322 Kernel/(25414:25414): Se conecto un cliente!
-[ERROR] 02:37:17:643 Kernel/(25414:25414): el cliente se desconecto. Terminando Kernel
-[INFO] 02:38:13:981 Kernel/(25484:25484): Kernel listo para recibir al cliente
-[INFO] 02:41:53:822 Kernel/(25619:25619): Kernel listo para recibir al cliente
-[INFO] 02:47:03:345 Kernel/(25749:25749): Kernel listo para recibir al cliente
-[INFO] 02:50:27:898 Kernel/(25801:25801): Kernel listo para recibir al cliente
-[INFO] 03:58:30:854 Kernel/(28547:28547): Kernel listo para recibir al cliente
-[INFO] 11:56:58:295 Kernel/(11252:11252): Kernel listo para recibir al cliente
-[INFO] 12:01:30:422 Kernel/(12385:12385): Kernel listo para recibir al cliente
+[INFO] 02:07:35:078 KERNEL/(31253:31253): Kernel listo para recibir al cliente
+[INFO] 02:07:39:327 KERNEL/(31253:31253): Me llegaron los siguientes valores:
+
+[INFO] 02:08:53:647 KERNEL/(31560:31560): Kernel listo para recibir al cliente
+[INFO] 02:08:56:815 KERNEL/(31560:31560): Me llegaron los siguientes valores:
+
+[INFO] 02:14:00:383 KERNEL/(346:346): Kernel listo para recibir al cliente
+[INFO] 02:14:03:127 KERNEL/(346:346): Me llegaron los siguientes valores:
+
+[INFO] 02:14:03:127 KERNEL/(346:346): NO_OP 5
+[INFO] 02:14:03:128 KERNEL/(346:346): ERROR 1
+[ERROR] 02:14:03:128 KERNEL/(346:346): el cliente se desconecto. Terminando Kernel
