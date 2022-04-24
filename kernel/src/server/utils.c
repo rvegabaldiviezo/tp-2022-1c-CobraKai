@@ -40,7 +40,7 @@ int iniciar_servidor(void)
 
 	freeaddrinfo(servinfo);
 
-	log_trace(logger, "Listo para escuchar a mi cliente");
+	//log_trace(logger, "Listo para escuchar a mi cliente");
 
 	return socket_servidor;
 }
@@ -58,7 +58,7 @@ int esperar_cliente(int socket_servidor)
 	int socket_cliente = accept(socket_servidor, NULL, NULL);// EN ESPERA...
 
 
-	log_info(logger, "Se conecto un cliente!");
+	//log_info(logger, "Se conecto un cliente!");
 
 	return socket_cliente;
 }
@@ -90,7 +90,7 @@ void recibir_mensaje(int socket_cliente)
 {
 	int size;
 	char* buffer = recibir_buffer(&size, socket_cliente);
-	log_info(logger, "Me llego el mensaje: %s", buffer);
+	//log_info(logger, "Me llego el mensaje: %s", buffer);
 	free(buffer);
 }
 
