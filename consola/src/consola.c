@@ -17,11 +17,12 @@ int main(int argc, char** argv) {
 	}
 
 	t_config* config = config_create(argv[1]); // RUTA: "src/consola.config"
+	// en ningun momento se usa argv[2], supongo que debería usarse
 	char* ip = config_get_string_value(config, IP_KERNEL);
 	char* puerto = config_get_string_value(config, PUERTO_KERNEL);
 
-	int conexion = crear_conexion(ip, puerto);
 	t_paquete* paquete = armar_paquete();
+	int conexion = crear_conexion(ip, puerto);
 	enviar_paquete(paquete, conexion);
 
 	terminar_programa(conexion, logger, config);
@@ -30,16 +31,17 @@ int main(int argc, char** argv) {
 }
 
 t_paquete* armar_paquete() {
-	char* instruccion;
 	t_paquete* paquete = crear_paquete();
-	FILE* instrucciones = fopen("./src/pseudocodigo.txt", "rt");
-	instruccion = leer_hasta(CARACTER_SALTO_DE_LINEA, instrucciones);
-	while(!feof(instrucciones)) {
+	char* instruccion;
+	FILE* pseudocodigo = fopen("./src/pseudocodigo.txt", "rt");
+	instruccion = leer_hasta(CARACTER_SALTO_DE_LINEA, pseudocodigo);
+	while(!feof(pseudocodigo)) {
 		agregar_a_paquete(paquete, instruccion, string_length(instruccion) + 1);
-		instruccion = leer_hasta(CARACTER_SALTO_DE_LINEA, instrucciones);
+		instruccion = leer_hasta(CARACTER_SALTO_DE_LINEA, pseudocodigo);
 	}
-	fclose(instrucciones);
+	agregar_a_paquete(paquete, instruccion, string_length(instruccion) + 1);
 	free(instruccion);
+	fclose(pseudocodigo);
 	return paquete;
 }
 
