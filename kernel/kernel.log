@@ -10,3 +10,142 @@
 [INFO] 02:14:03:127 KERNEL/(346:346): NO_OP 5
 [INFO] 02:14:03:128 KERNEL/(346:346): ERROR 1
 [ERROR] 02:14:03:128 KERNEL/(346:346): el cliente se desconecto. Terminando Kernel
+[INFO] 23:36:30:252 KERNEL/(12212:12212): Kernel listo para recibir al cliente
+[INFO] 23:36:53:934 KERNEL/(12212:12212): Me llegaron los siguientes valores:
+
+[INFO] 23:36:53:934 KERNEL/(12212:12212): NO_OP 5
+[INFO] 23:36:53:934 KERNEL/(12212:12212): ERROR 1
+[INFO] 23:36:53:934 KERNEL/(12212:12212): 5
+[ERROR] 23:36:53:935 KERNEL/(12212:12212): el cliente se desconecto. Terminando Kernel
+[INFO] 00:26:39:498 KERNEL/(24306:24306): Kernel listo para recibir al cliente
+[INFO] 00:26:41:473 KERNEL/(24306:24306): Me llegaron los siguientes valores:
+
+[INFO] 00:26:41:474 KERNEL/(24306:24306): P>
+[ERROR] 00:26:41:474 KERNEL/(24306:24306): el cliente se desconecto. Terminando Kernel
+[INFO] 00:28:18:153 KERNEL/(24676:24676): Kernel listo para recibir al cliente
+[INFO] 00:28:22:586 KERNEL/(24676:24676): Me llegaron los siguientes valores:
+
+[INFO] 00:28:22:586 KERNEL/(24676:24676): P¶î
+[ERROR] 00:28:22:586 KERNEL/(24676:24676): el cliente se desconecto. Terminando Kernel
+[INFO] 00:28:27:048 KERNEL/(24716:24716): Kernel listo para recibir al cliente
+[INFO] 00:28:30:753 KERNEL/(24716:24716): Me llegaron los siguientes valores:
+
+[INFO] 00:28:30:754 KERNEL/(24716:24716): Pf0
+[ERROR] 00:28:30:754 KERNEL/(24716:24716): el cliente se desconecto. Terminando Kernel
+[INFO] 00:31:29:839 KERNEL/(25472:25472): Kernel listo para recibir al cliente
+[INFO] 00:33:19:371 KERNEL/(25974:25974): Kernel listo para recibir al cliente
+[INFO] 00:33:23:646 KERNEL/(25974:25974): Me llegaron los siguientes valores:
+
+[INFO] 00:33:23:646 KERNEL/(25974:25974): PVê
+[ERROR] 00:33:23:646 KERNEL/(25974:25974): el cliente se desconecto. Terminando Kernel
+[INFO] 00:33:39:903 KERNEL/(26055:26055): Kernel listo para recibir al cliente
+[INFO] 00:33:41:645 KERNEL/(26055:26055): Me llegaron los siguientes valores:
+
+[INFO] 00:33:41:645 KERNEL/(26055:26055): PV“
+[ERROR] 00:33:41:646 KERNEL/(26055:26055): el cliente se desconecto. Terminando Kernel
+[INFO] 00:33:43:616 KERNEL/(26079:26079): Kernel listo para recibir al cliente
+[INFO] 00:33:47:535 KERNEL/(26079:26079): Me llegaron los siguientes valores:
+
+[INFO] 00:33:47:535 KERNEL/(26079:26079): P¶a
+[ERROR] 00:33:47:535 KERNEL/(26079:26079): el cliente se desconecto. Terminando Kernel
+[INFO] 00:38:09:845 KERNEL/(27133:27133): Kernel listo para recibir al cliente
+[INFO] 00:38:13:621 KERNEL/(27133:27133): Me llegaron los siguientes valores:
+
+[INFO] 00:38:13:621 KERNEL/(27133:27133): P∂ç
+[ERROR] 00:38:13:621 KERNEL/(27133:27133): el cliente se desconecto. Terminando Kernel
+[INFO] 00:39:29:313 KERNEL/(27436:27436): Kernel listo para recibir al cliente
+[INFO] 00:39:35:010 KERNEL/(27436:27436): Me llegaron los siguientes valores:
+
+[INFO] 00:39:35:010 KERNEL/(27436:27436): PJ
+[ERROR] 00:39:35:010 KERNEL/(27436:27436): el cliente se desconecto. Terminando Kernel
+[INFO] 00:40:03:292 KERNEL/(27575:27575): Kernel listo para recibir al cliente
+[INFO] 00:45:08:852 KERNEL/(28866:28866): Kernel listo para recibir al cliente
+[INFO] 00:45:13:356 KERNEL/(28866:28866): Me llegaron los siguientes valores:
+
+[INFO] 00:45:13:356 KERNEL/(28866:28866): NO_O
+[INFO] 00:45:13:356 KERNEL/(28866:28866): ERROÿ7Ï∑
+[ERROR] 00:45:13:356 KERNEL/(28866:28866): el cliente se desconecto. Terminando Kernel
+[INFO] 00:45:19:381 KERNEL/(28912:28912): Kernel listo para recibir al cliente
+[INFO] 00:45:23:741 KERNEL/(28912:28912): Me llegaron los siguientes valores:
+
+[INFO] 00:45:23:741 KERNEL/(28912:28912): NO_O
+[INFO] 00:45:23:741 KERNEL/(28912:28912): ERROÿ∑ˆ∑
+[ERROR] 00:45:23:742 KERNEL/(28912:28912): el cliente se desconecto. Terminando Kernel
+[INFO] 00:45:59:062 KERNEL/(29094:29094): Kernel listo para recibir al cliente
+[INFO] 00:46:02:415 KERNEL/(29094:29094): Me llegaron los siguientes valores:
+
+[INFO] 00:46:02:415 KERNEL/(29094:29094): NO_OP 5
+[INFO] 00:46:02:415 KERNEL/(29094:29094): ERROR 1
+[ERROR] 00:46:02:415 KERNEL/(29094:29094): el cliente se desconecto. Terminando Kernel
+[INFO] 00:50:35:030 KERNEL/(30323:30323): Kernel listo para recibir al cliente
+[INFO] 00:50:40:471 KERNEL/(30323:30323): Me llegaron los siguientes valores:
+
+[INFO] 00:50:40:471 KERNEL/(30323:30323): NO_OP 5
+[INFO] 00:50:40:471 KERNEL/(30323:30323): ERROR 1
+[ERROR] 00:50:40:471 KERNEL/(30323:30323): el cliente se desconecto. Terminando Kernel
+[INFO] 00:51:40:575 KERNEL/(30632:30632): Kernel listo para recibir al cliente
+[INFO] 00:51:43:841 KERNEL/(30632:30632): Me llegaron los siguientes valores:
+
+[INFO] 00:51:43:841 KERNEL/(30632:30632): NO_OP 5
+[INFO] 00:51:43:841 KERNEL/(30632:30632): ERROR 1
+[INFO] 00:51:43:841 KERNEL/(30632:30632): tamanio de proceso: 1768710944
+[ERROR] 00:51:43:841 KERNEL/(30632:30632): el cliente se desconecto. Terminando Kernel
+[INFO] 00:52:28:080 KERNEL/(30849:30849): Kernel listo para recibir al cliente
+[INFO] 00:52:30:737 KERNEL/(30849:30849): Me llegaron los siguientes valores:
+
+[INFO] 00:52:30:737 KERNEL/(30849:30849): NO_OP 5
+[INFO] 00:52:30:737 KERNEL/(30849:30849): ERROR 1
+[INFO] 00:52:30:737 KERNEL/(30849:30849): tamanio de proceso: 4
+[ERROR] 00:52:30:737 KERNEL/(30849:30849): el cliente se desconecto. Terminando Kernel
+[INFO] 00:53:21:441 KERNEL/(31072:31072): Kernel listo para recibir al cliente
+[INFO] 00:55:20:475 KERNEL/(31072:31072): Me llegaron los siguientes valores:
+
+[INFO] 00:55:23:052 KERNEL/(31072:31072): NO_OP 5
+[INFO] 00:55:23:052 KERNEL/(31072:31072): ERROR 1
+[INFO] 00:55:24:947 KERNEL/(31072:31072): tamanio de proceso: 4
+[ERROR] 00:55:35:765 KERNEL/(31072:31072): el cliente se desconecto. Terminando Kernel
+[INFO] 00:56:07:934 KERNEL/(31806:31806): Kernel listo para recibir al cliente
+[INFO] 01:00:08:088 KERNEL/(32761:32761): Kernel listo para recibir al cliente
+[INFO] 01:00:15:784 KERNEL/(32761:32761): Me llegaron los siguientes valores:
+
+[INFO] 01:00:15:785 KERNEL/(32761:32761): NO_OP 5
+[INFO] 01:00:15:785 KERNEL/(32761:32761): ERROR 1
+[INFO] 01:00:15:785 KERNEL/(32761:32761): tamanio de proceso: 4
+[ERROR] 01:00:15:785 KERNEL/(32761:32761): el cliente se desconecto. Terminando Kernel
+[INFO] 01:00:20:328 KERNEL/(354:354): Kernel listo para recibir al cliente
+[INFO] 01:00:22:248 KERNEL/(354:354): Me llegaron los siguientes valores:
+
+[INFO] 01:00:22:248 KERNEL/(354:354): NO_OP 5
+[INFO] 01:00:22:248 KERNEL/(354:354): ERROR 1
+[INFO] 01:00:22:248 KERNEL/(354:354): tamanio de proceso: 4
+[ERROR] 01:00:22:248 KERNEL/(354:354): el cliente se desconecto. Terminando Kernel
+[INFO] 01:00:40:259 KERNEL/(484:484): Kernel listo para recibir al cliente
+[INFO] 01:00:42:888 KERNEL/(484:484): Me llegaron los siguientes valores:
+
+[INFO] 01:00:42:888 KERNEL/(484:484): NO_OP 5
+[INFO] 01:00:42:889 KERNEL/(484:484): ERROR 1
+[INFO] 01:00:42:889 KERNEL/(484:484): tamanio de proceso: 4
+[ERROR] 01:00:42:889 KERNEL/(484:484): el cliente se desconecto. Terminando Kernel
+[INFO] 01:01:28:081 KERNEL/(686:686): Kernel listo para recibir al cliente
+[INFO] 01:01:31:505 KERNEL/(686:686): Me llegaron los siguientes valores:
+
+[INFO] 01:01:31:505 KERNEL/(686:686): NO_OP 5
+[INFO] 01:01:31:505 KERNEL/(686:686): ERROR 1
+[INFO] 01:01:31:505 KERNEL/(686:686): tamanio de proceso: 4
+[ERROR] 01:01:31:505 KERNEL/(686:686): el cliente se desconecto. Terminando Kernel
+[INFO] 01:04:49:850 KERNEL/(1650:1650): Kernel listo para recibir al cliente
+[INFO] 01:04:52:483 KERNEL/(1650:1650): Me llegaron los siguientes valores:
+
+[INFO] 01:04:52:483 KERNEL/(1650:1650): NO_OP 5
+[INFO] 01:04:52:483 KERNEL/(1650:1650): ERROR 1
+[INFO] 01:04:52:483 KERNEL/(1650:1650): COPY 12 23
+[INFO] 01:04:52:483 KERNEL/(1650:1650): tamanio de proceso: 4
+[ERROR] 01:04:52:483 KERNEL/(1650:1650): el cliente se desconecto. Terminando Kernel
+[INFO] 01:06:39:955 KERNEL/(2207:2207): Kernel listo para recibir al cliente
+[INFO] 01:06:42:211 KERNEL/(2207:2207): Me llegaron los siguientes valores:
+
+[INFO] 01:06:42:212 KERNEL/(2207:2207): NO_OP 5
+[INFO] 01:06:42:212 KERNEL/(2207:2207): ERROR 1
+[INFO] 01:06:42:212 KERNEL/(2207:2207): COPY 12 23
+[INFO] 01:06:42:212 KERNEL/(2207:2207): tamanio de proceso: 4
+[ERROR] 01:06:42:212 KERNEL/(2207:2207): el cliente se desconecto. Terminando Kernel
