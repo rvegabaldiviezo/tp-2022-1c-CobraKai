@@ -22,9 +22,11 @@ int main(void) {
 		return EXIT_FAILURE;
 	}
 
+	//t_queue* cola_new = queue_create();
+
 	// TODO: reemplazar lista por colas (ver commons/collections/queue.h), ver bien como implementar los posibles estados
 
-	t_list* lista;
+	t_list* instrucciones;
 
 	while (1) {
 		int cod_op = recibir_operacion(cliente_fd);
@@ -33,9 +35,12 @@ int main(void) {
 			recibir_mensaje(cliente_fd);
 			break;
 		case PAQUETE:
-			lista = recibir_paquete(cliente_fd);
+			instrucciones = recibir_paquete(cliente_fd);
+			t_proceso* proceso = crear_proceso(instrucciones, sizeof(instrucciones)); /* sizeof(instrucciones) da siempre 4?? */
 			log_info(logger, "Me llegaron los siguientes valores:\n");
-			list_iterate(lista, (void*) iterator);
+			list_iterate(instrucciones, (void*) iterator);
+			log_info(logger, "tamanio de proceso: %s", string_itoa(proceso->pcb.tamanio_proceso));
+			free(proceso);
 			break;
 		case -1:
 			log_error(logger, "el cliente se desconecto. Terminando Kernel");
@@ -57,6 +62,24 @@ void iterator(char* value) {
 bool conexion_exitosa(int cliente) {
 	return cliente != -1;
 }
+
+t_proceso* crear_proceso(t_list* instrucciones, unsigned int tamanio) {
+	t_proceso* proceso = malloc(sizeof(*proceso));
+	t_pcb pcb = crear_pcb(tamanio);
+	proceso->pcb = pcb;
+	proceso->instrucciones = *instrucciones;
+	return proceso;
+}
+
+t_pcb crear_pcb(unsigned int tamanio) {
+	t_pcb pcb;
+	pcb.id = 0;
+	pcb.estimacion_rafaga = 0;
+	pcb.program_counter = 0;
+	pcb.tablas_paginas = 0;
+	pcb.tamanio_proceso = tamanio;
+	return pcb;
+} // crea un pcb muy basico, ni siquiera se si está bien, es solo para probar
 
 void terminar_programa(t_log* logger) {
 	log_destroy(logger);
