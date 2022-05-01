@@ -36,43 +36,21 @@ int iniciar_servidor(void)
 	// 2) Escuchamos las conexiones entrantes a ese socket, cuya unica responsabilidad
 	// es notificar cuando un nuevo cliente este intentando conectarse.
 	listen(socket_servidor,SOMAXCONN); // El servidor esta listo para recibir a los clientes (ESTA ESCUCHANDO).
-
-
 	freeaddrinfo(servinfo);
-
-	//log_trace(logger, "Listo para escuchar a mi cliente");
-
 	return socket_servidor;
 }
 
 /* Retona un nuevo socket (FILE DESCRIPTOR) que representa la
  * CONEXION BIDIRECCIONAL entre el SERVIDOR y CLIENTE*/
-int esperar_cliente(int socket_servidor)
-{
+int esperar_cliente(int socket_servidor) {
 	/* Aceptamos un nuevo cliente
 	 * accept(): Es una llamada al sistema que es BLOQUEANTE, entonces,
 	 * el proceso servidor se quedara BLOQUEADO en accept hasta que llegue
 	 * un cliente.
 	 * Si el servidor no esta en accept, cuando el cliente intente
 	 * conectarse (mediante connect()) fallara y devolvera un error*/
-	int socket_cliente = accept(socket_servidor, NULL, NULL);// EN ESPERA...
-
-
-	//log_info(logger, "Se conecto un cliente!");
-
+	int socket_cliente = accept(socket_servidor, NULL, NULL);
 	return socket_cliente;
-}
-
-int recibir_operacion(int socket_cliente)
-{
-	int cod_op;
-	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) > 0)
-		return cod_op;
-	else
-	{
-		close(socket_cliente);
-		return -1;
-	}
 }
 
 void* recibir_buffer(int* size, int socket_cliente)
@@ -86,35 +64,52 @@ void* recibir_buffer(int* size, int socket_cliente)
 	return buffer;
 }
 
-void recibir_mensaje(int socket_cliente)
-{
-	int size;
-	char* buffer = recibir_buffer(&size, socket_cliente);
-	//log_info(logger, "Me llego el mensaje: %s", buffer);
-	free(buffer);
+int recibir_tamanio_proceso(int socket_cliente) {
+	int tamanio;
+	if(recv(socket_cliente, &tamanio, sizeof(int), MSG_WAITALL) > 0) {
+		return tamanio;
+	} else {
+		close(socket_cliente);
+		return -1;
+	}
 }
 
-t_list* recibir_paquete(int socket_cliente)
-{
+t_list* recibir_instrucciones(int socket_cliente) {
 	int size;
 	int desplazamiento = 0;
 	void * buffer;
-	t_list* valores = list_create();
+	t_list* instrucciones = list_create();
 	int tamanio;
 
 	buffer = recibir_buffer(&size, socket_cliente);
-	while(desplazamiento < size)
-	{
+	while(desplazamiento < size) {
 		memcpy(&tamanio, buffer + desplazamiento, sizeof(int));
 		desplazamiento+=sizeof(int);
 		char* valor = malloc(tamanio);
 		memcpy(valor, buffer+desplazamiento, tamanio);
 		desplazamiento+=tamanio;
-		list_add(valores, valor);
+		list_add(instrucciones, valor);
 	}
 	free(buffer);
-	return valores;
+	return instrucciones;
 }
+
+t_proceso* recibir_proceso(int socket_cliente) {
+	t_proceso* proceso = malloc(sizeof(t_proceso));
+	proceso->tamanio = recibir_tamanio_proceso(socket_cliente);
+	proceso->instrucciones = recibir_instrucciones(socket_cliente);
+	return proceso;
+}
+
+void destruir_nodo(t_link_element* nodo) {
+	free(nodo);
+}
+
+void destruir_proceso(t_proceso* proceso) {
+	list_destroy_and_destroy_elements(proceso->instrucciones, (void*) destruir_nodo);
+	free(proceso);
+}
+
 
 /* Un socket es la representacion que el Sistema Operativo le da
  * a esa conexion.

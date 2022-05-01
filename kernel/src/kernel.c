@@ -18,39 +18,32 @@ int main(void) {
 	int cliente_fd = esperar_cliente(server_fd);
 
 	if (!conexion_exitosa(cliente_fd)) {
-		log_error(logger, "No se pudo establecer la conexion con el cliente, abortando proceso");
+		log_error(logger, "No se pudo establecer la conexion con el cliente");
+		log_destroy(logger);
 		return EXIT_FAILURE;
 	}
 
-	//t_queue* cola_new = queue_create();
+	t_proceso* proceso = recibir_proceso(cliente_fd);
 
-	// TODO: reemplazar lista por colas (ver commons/collections/queue.h), ver bien como implementar los posibles estados
-
-	t_list* instrucciones;
-
-	while (1) {
-		int cod_op = recibir_operacion(cliente_fd);
-		switch (cod_op) {
-		case MENSAJE:
-			recibir_mensaje(cliente_fd);
-			break;
-		case PAQUETE:
-			instrucciones = recibir_paquete(cliente_fd);
-			t_proceso* proceso = crear_proceso(instrucciones, sizeof(instrucciones)); /* sizeof(instrucciones) da siempre 4?? */
-			log_info(logger, "Me llegaron los siguientes valores:\n");
-			list_iterate(instrucciones, (void*) iterator);
-			log_info(logger, "tamanio de proceso: %s", string_itoa(proceso->pcb.tamanio_proceso));
-			free(proceso);
-			break;
-		case -1:
-			log_error(logger, "el cliente se desconecto. Terminando Kernel");
-			return EXIT_FAILURE;
-		default:
-			log_warning(logger,"Operacion desconocida");
-			break;
-		}
+	if(proceso->tamanio == -1) {
+		log_error(logger, "Ocurrió un error al recibir el tamanio del proceso");
+		log_destroy(logger);
+		return EXIT_FAILURE;
 	}
-	terminar_programa(logger);
+
+	char* tamanio_recibido = string_new();
+	string_append(&tamanio_recibido, "Tamanio recibido: ");
+	string_append(&tamanio_recibido, string_itoa(proceso->tamanio));
+	log_info(logger, tamanio_recibido);
+
+	log_info(logger, "Me llegaron los siguientes valores:\n");
+	list_iterate(proceso->instrucciones, (void*) iterator);
+
+	// Ya se copiaron todos los bytes que venian de la consola
+	// de ahora en mas puedo agregar lo que quiera al proceso
+	proceso->pcb = crear_pcb(proceso->tamanio);
+	terminar_programa(logger, proceso);
+
 	return EXIT_SUCCESS;
 }
 
@@ -63,14 +56,6 @@ bool conexion_exitosa(int cliente) {
 	return cliente != -1;
 }
 
-t_proceso* crear_proceso(t_list* instrucciones, unsigned int tamanio) {
-	t_proceso* proceso = malloc(sizeof(*proceso));
-	t_pcb pcb = crear_pcb(tamanio);
-	proceso->pcb = pcb;
-	proceso->instrucciones = *instrucciones;
-	return proceso;
-}
-
 t_pcb crear_pcb(unsigned int tamanio) {
 	t_pcb pcb;
 	pcb.id = 0;
@@ -81,6 +66,7 @@ t_pcb crear_pcb(unsigned int tamanio) {
 	return pcb;
 } // crea un pcb muy basico, ni siquiera se si está bien, es solo para probar
 
-void terminar_programa(t_log* logger) {
+void terminar_programa(t_log* logger, t_proceso* proceso) {
 	log_destroy(logger);
+	destruir_proceso(proceso);
 }
