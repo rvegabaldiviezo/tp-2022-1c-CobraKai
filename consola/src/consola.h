@@ -16,7 +16,10 @@
 
 
 bool cantidad_parametros_correcta(int);
-void terminar_programa(int, t_log*, t_config*);
-t_paquete* armar_paquete();
+void terminar_programa(int, t_log*, t_config*, t_proceso*);
+t_paquete* parsear_instrucciones(t_paquete* paquete);
+//t_proceso* crear_proceso();
+t_proceso* cargar_proceso(t_proceso*);
+void destruir_proceso(t_proceso*);
 
 #endif /* CONSOLA_H_ */

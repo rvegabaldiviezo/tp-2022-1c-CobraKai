@@ -1,22 +1,20 @@
-#include "../cliente/utils.h"
+#include "utils.h"
 
-void* serializar_paquete(t_paquete* paquete, int bytes)
-{
+void* serializar_paquete(t_proceso* proceso, int bytes) {
 	void * magic = malloc(bytes);
 	int desplazamiento = 0;
 
-	memcpy(magic + desplazamiento, &(paquete->codigo_operacion), sizeof(int));
+	memcpy(magic + desplazamiento, &(proceso->tamanio), sizeof(int));
 	desplazamiento+= sizeof(int);
-	memcpy(magic + desplazamiento, &(paquete->buffer->size), sizeof(int));
+	memcpy(magic + desplazamiento, &(proceso->buffer->size), sizeof(int));
 	desplazamiento+= sizeof(int);
-	memcpy(magic + desplazamiento, paquete->buffer->stream, paquete->buffer->size);
-	desplazamiento+= paquete->buffer->size;
+	memcpy(magic + desplazamiento, proceso->buffer->stream, proceso->buffer->size);
+	desplazamiento+= proceso->buffer->size;
 
 	return magic;
 }
 
-int crear_conexion(char *ip, char* puerto)
-{
+int crear_conexion(char *ip, char* puerto) {
 	struct addrinfo hints;
 	struct addrinfo *server_info;
 
@@ -36,87 +34,48 @@ int crear_conexion(char *ip, char* puerto)
 	// Ahora que tenemos el socket, vamos a conectarlo
 	connect(socket_cliente, server_info->ai_addr, server_info->ai_addrlen);
 
-
 	freeaddrinfo(server_info);
 
 	return socket_cliente;
 }
 
-void enviar_mensaje(char* mensaje, int socket_cliente)
-{
-	t_paquete* paquete = malloc(sizeof(t_paquete));
-
-	paquete->codigo_operacion = MENSAJE;
-	paquete->buffer = malloc(sizeof(t_buffer));
-	paquete->buffer->size = strlen(mensaje) + 1;
-	paquete->buffer->stream = malloc(paquete->buffer->size);
-	memcpy(paquete->buffer->stream, mensaje, paquete->buffer->size);
-
-	int bytes = paquete->buffer->size + 2*sizeof(int);
-
-	void* a_enviar = serializar_paquete(paquete, bytes);
-
-	send(socket_cliente, a_enviar, bytes, 0);
-
-	free(a_enviar);
-	eliminar_paquete(paquete);
+void crear_buffer(t_proceso* proceso) {
+	proceso->buffer = malloc(sizeof(t_buffer));
+	proceso->buffer->size = 0;
+	proceso->buffer->stream = NULL;
 }
 
-
-void crear_buffer(t_paquete* paquete)
-{
-	paquete->buffer = malloc(sizeof(t_buffer));
-	paquete->buffer->size = 0;
-	paquete->buffer->stream = NULL;
+t_proceso* crear_proceso(int tamanio) {
+	t_proceso* proceso = malloc(sizeof(t_proceso));
+	proceso->tamanio = tamanio;
+	crear_buffer(proceso);
+	return proceso;
 }
 
-t_paquete* crear_super_paquete(void)
-{
-	//me falta un malloc!
-	t_paquete* paquete = malloc(sizeof(t_paquete));
-
-	//descomentar despues de arreglar
-	paquete->codigo_operacion = PAQUETE;
-	crear_buffer(paquete);
-	return paquete;
+void agregar_instruccion(t_proceso* proceso, void* valor, int tamanio) {
+	proceso->buffer->stream = realloc(proceso->buffer->stream, proceso->buffer->size + tamanio + sizeof(int));
+	memcpy(proceso->buffer->stream + proceso->buffer->size, &tamanio, sizeof(int));
+	memcpy(proceso->buffer->stream + proceso->buffer->size + sizeof(int), valor, tamanio);
+	proceso->buffer->size += tamanio + sizeof(int);
 }
 
-t_paquete* crear_paquete(void)
-{
-	t_paquete* paquete = malloc(sizeof(t_paquete));
-	paquete->codigo_operacion = PAQUETE;
-	crear_buffer(paquete);
-	return paquete;
-}
-
-void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio)
-{
-	paquete->buffer->stream = realloc(paquete->buffer->stream, paquete->buffer->size + tamanio + sizeof(int));
-
-	memcpy(paquete->buffer->stream + paquete->buffer->size, &tamanio, sizeof(int));
-	memcpy(paquete->buffer->stream + paquete->buffer->size + sizeof(int), valor, tamanio);
-
-	paquete->buffer->size += tamanio + sizeof(int);
-}
-
-void enviar_paquete(t_paquete* paquete, int socket_cliente)
-{
-	int bytes = paquete->buffer->size + 2*sizeof(int);
-	void* a_enviar = serializar_paquete(paquete, bytes);
+void enviar_a_kernel(t_proceso* proceso, int socket_cliente) {
+	int bytes = proceso->buffer->size + 2*sizeof(int);
+	void* a_enviar = serializar_paquete(proceso, bytes);
 
 	send(socket_cliente, a_enviar, bytes, 0);
 
 	free(a_enviar);
 }
 
-void eliminar_paquete(t_paquete* paquete)
-{
-	free(paquete->buffer->stream);
-	free(paquete->buffer);
-	free(paquete);
+void eliminar_proceso(t_proceso* proceso) {
+	free(proceso->buffer->stream);
+	free(proceso->buffer);
+	free(proceso);
 }
 
-void liberar_conexion(int socket_cliente)
-{
+void liberar_conexion(int socket_cliente) {
 	close(socket_cliente);
 }
+
+
