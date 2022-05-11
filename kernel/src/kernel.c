@@ -15,15 +15,15 @@ int main(void) {
 
 	log_info(logger, "Kernel listo para recibir al cliente");
 
-	int cliente_fd = esperar_cliente(server_fd);
+	int socket_consola = esperar_cliente(server_fd);
 
-	if (!conexion_exitosa(cliente_fd)) {
+	if (!conexion_exitosa(socket_consola)) {
 		log_error(logger, "No se pudo establecer la conexion con el cliente");
 		log_destroy(logger);
 		return EXIT_FAILURE;
 	}
 
-	t_proceso* proceso = recibir_proceso(cliente_fd);
+	t_proceso* proceso = recibir_proceso(socket_consola);
 
 	if(proceso->tamanio == -1) {
 		log_error(logger, "Ocurrió un error al recibir el tamanio del proceso");
@@ -42,7 +42,24 @@ int main(void) {
 	// Ya se copiaron todos los bytes que venian de la consola
 	// de ahora en mas puedo agregar lo que quiera al proceso
 	proceso->pcb = crear_pcb(proceso->tamanio);
-	terminar_programa(logger, proceso);
+
+	// asignar proceso a estado NEW
+
+	t_config* config = config_create(PATH_CONFIG);
+	char* ip_memoria = config_get_string_value(config, IP_MEMORIA);
+	char* puerto_memoria = config_get_string_value(config, PUERTO_MEMORIA);
+	int conexion_con_memoria = crear_conexion(ip_memoria, puerto_memoria);
+
+	int numero_de_tabla = recibir_numero_de_tabla(conexion_con_memoria);
+	if(!numero_de_tabla_valido(numero_de_tabla)) {
+		log_error(logger, "El número de tabla no es valido");
+		return EXIT_FAILURE;
+	}
+
+	proceso->pcb.tablas_paginas = numero_de_tabla;
+	printf("Numero de tabla: %d", numero_de_tabla);
+
+	terminar_programa(logger, proceso, server_fd, socket_consola);
 
 	return EXIT_SUCCESS;
 }
@@ -50,6 +67,7 @@ int main(void) {
 void iterator(char* value) {
 	t_log* logger = log_create("./kernel.log", "KERNEL", true, LOG_LEVEL_DEBUG);
 	log_info(logger,"%s", value);
+	log_destroy(logger);
 }
 
 bool conexion_exitosa(int cliente) {
@@ -66,7 +84,13 @@ t_pcb crear_pcb(unsigned int tamanio) {
 	return pcb;
 } // crea un pcb muy basico, ni siquiera se si está bien, es solo para probar
 
-void terminar_programa(t_log* logger, t_proceso* proceso) {
+void terminar_programa(t_log* logger, t_proceso* proceso, int socket_servidor, int socket_cliente) {
 	log_destroy(logger);
 	destruir_proceso(proceso);
+	liberar_conexion(socket_servidor);
+	liberar_conexion(socket_cliente);
+}
+
+bool numero_de_tabla_valido(int numero) {
+	return numero != -1;
 }

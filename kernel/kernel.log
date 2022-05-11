@@ -407,3 +407,63 @@
 [INFO] 19:59:21:919 KERNEL/(4237:4237): A VER HASTA CUANTO LEE
 [INFO] 19:59:21:919 KERNEL/(4237:4237): OTRA LINEA
 [INFO] 19:59:21:919 KERNEL/(4237:4237): FIN
+[INFO] 22:15:42:425 KERNEL/(4535:4535): Kernel listo para recibir al cliente
+[INFO] 22:15:59:284 KERNEL/(4535:4535): Tamanio recibido: 27
+[INFO] 22:15:59:284 KERNEL/(4535:4535): Me llegaron los siguientes valores:
+
+[INFO] 22:15:59:284 KERNEL/(4535:4535): NO_OP 5
+[INFO] 22:15:59:284 KERNEL/(4535:4535): ERROR 1
+[INFO] 22:15:59:284 KERNEL/(4535:4535): COPY 12 23
+[INFO] 22:16:03:776 KERNEL/(4622:4622): Kernel listo para recibir al cliente
+[INFO] 22:16:05:633 KERNEL/(4622:4622): Tamanio recibido: 27
+[INFO] 22:16:05:633 KERNEL/(4622:4622): Me llegaron los siguientes valores:
+
+[INFO] 22:16:05:633 KERNEL/(4622:4622): NO_OP 5
+[INFO] 22:16:05:634 KERNEL/(4622:4622): ERROR 1
+[INFO] 22:16:05:634 KERNEL/(4622:4622): COPY 12 23
+[INFO] 22:16:08:913 KERNEL/(4645:4645): Kernel listo para recibir al cliente
+[INFO] 22:19:34:913 KERNEL/(5459:5459): Kernel listo para recibir al cliente
+[INFO] 22:19:37:841 KERNEL/(5459:5459): Tamanio recibido: 27
+[INFO] 22:19:37:842 KERNEL/(5459:5459): Me llegaron los siguientes valores:
+
+[INFO] 22:19:37:842 KERNEL/(5459:5459): NO_OP 5
+[INFO] 22:19:37:842 KERNEL/(5459:5459): ERROR 1
+[INFO] 22:19:37:842 KERNEL/(5459:5459): COPY 12 23
+[INFO] 22:19:40:673 KERNEL/(5493:5493): Kernel listo para recibir al cliente
+[INFO] 22:20:06:281 KERNEL/(5592:5592): Kernel listo para recibir al cliente
+[INFO] 22:21:11:912 KERNEL/(5858:5858): Kernel listo para recibir al cliente
+[INFO] 22:21:13:256 KERNEL/(5858:5858): Tamanio recibido: 27
+[INFO] 22:21:13:257 KERNEL/(5858:5858): Me llegaron los siguientes valores:
+
+[INFO] 22:21:13:257 KERNEL/(5858:5858): NO_OP 5
+[INFO] 22:21:13:257 KERNEL/(5858:5858): ERROR 1
+[INFO] 22:21:13:257 KERNEL/(5858:5858): COPY 12 23
+[INFO] 22:21:14:817 KERNEL/(5877:5877): Kernel listo para recibir al cliente
+[INFO] 22:21:16:113 KERNEL/(5877:5877): Tamanio recibido: 27
+[INFO] 22:21:16:114 KERNEL/(5877:5877): Me llegaron los siguientes valores:
+
+[INFO] 22:21:16:114 KERNEL/(5877:5877): NO_OP 5
+[INFO] 22:21:16:114 KERNEL/(5877:5877): ERROR 1
+[INFO] 22:21:16:114 KERNEL/(5877:5877): COPY 12 23
+[INFO] 22:21:17:369 KERNEL/(5896:5896): Kernel listo para recibir al cliente
+[INFO] 01:28:55:599 KERNEL/(16165:16165): Kernel listo para recibir al cliente
+[INFO] 01:28:59:563 KERNEL/(16165:16165): Tamanio recibido: 27
+[INFO] 01:28:59:563 KERNEL/(16165:16165): Me llegaron los siguientes valores:
+
+[INFO] 01:28:59:563 KERNEL/(16165:16165): NO_OP 5
+[INFO] 01:28:59:563 KERNEL/(16165:16165): ERROR 1
+[INFO] 01:28:59:563 KERNEL/(16165:16165): COPY 12 23
+[ERROR] 01:28:59:563 KERNEL/(16165:16165): El número de tabla no es valido
+[INFO] 01:35:19:980 KERNEL/(17805:17805): Kernel listo para recibir al cliente
+[INFO] 01:36:19:091 KERNEL/(18074:18074): Kernel listo para recibir al cliente
+[INFO] 01:40:00:513 KERNEL/(19077:19077): Kernel listo para recibir al cliente
+[INFO] 01:44:27:071 KERNEL/(20376:20376): Kernel listo para recibir al cliente
+[INFO] 01:45:46:048 KERNEL/(20702:20702): Kernel listo para recibir al cliente
+[INFO] 01:45:47:736 KERNEL/(20702:20702): Tamanio recibido: 27
+[INFO] 01:45:47:736 KERNEL/(20702:20702): Me llegaron los siguientes valores:
+
+[INFO] 01:45:47:736 KERNEL/(20702:20702): NO_OP 5
+[INFO] 01:45:47:736 KERNEL/(20702:20702): ERROR 1
+[INFO] 01:45:47:736 KERNEL/(20702:20702): COPY 12 23
+[ERROR] 01:45:47:736 KERNEL/(20702:20702): El número de tabla no es valido
+[INFO] 01:47:06:232 KERNEL/(21033:21033): Kernel listo para recibir al cliente
