@@ -20,9 +20,22 @@ int main(void) {
 		return EXIT_FAILURE;
 	}
 
-	// crear tablas de paginas
-	int numero_de_pagina = 5; // para probar
-	enviar_numero_de_tabla(conexion_kernel, numero_de_pagina);
+	int operacion = recibir_operacion(conexion_kernel);
+
+	while(1) {
+		switch(operacion) {
+			case CREAR_TABLA_PAGINAS:
+				// crear tablas de paginas
+				enviar_numero_de_tabla(conexion_kernel, 1);
+				break;
+			case ERROR:
+				log_error(logger, "Se desconecto el cliente");
+				return EXIT_FAILURE;
+			default:
+				log_info(logger, "Operacion desconocida");
+				break;
+		}
+	}
 
 	liberar_conexion(conexion_kernel);
 

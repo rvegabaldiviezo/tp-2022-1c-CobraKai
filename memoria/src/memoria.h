@@ -6,6 +6,13 @@
 #include <commons/log.h>
 #include "utils_memoria/utils_memoria.h"
 
+#define PATH_CONFIG "src/memoria.config"
+
+enum {
+	CREAR_TABLA_PAGINAS = 1,
+	ERROR = -1
+};
+
 typedef struct {
 	void* buffer;
 

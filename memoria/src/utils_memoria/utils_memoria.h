@@ -13,12 +13,12 @@
 #include <commons/log.h>
 #include <commons/collections/list.h>
 #include <netdb.h>
-#include <commons/collections/list.h>
 #include <assert.h>
+#include <commons/config.h>
+#include "../memoria.h"
 
 
 #define IP "127.0.0.1"
-#define PUERTO "4444"
 
 typedef struct
 {
