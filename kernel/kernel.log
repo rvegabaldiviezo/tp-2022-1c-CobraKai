@@ -25,7 +25,7 @@
 [INFO] 00:28:18:153 KERNEL/(24676:24676): Kernel listo para recibir al cliente
 [INFO] 00:28:22:586 KERNEL/(24676:24676): Me llegaron los siguientes valores:
 
-[INFO] 00:28:22:586 KERNEL/(24676:24676): P¶î
+[INFO] 00:28:22:586 KERNEL/(24676:24676): PÔøΩÔøΩ
 [ERROR] 00:28:22:586 KERNEL/(24676:24676): el cliente se desconecto. Terminando Kernel
 [INFO] 00:28:27:048 KERNEL/(24716:24716): Kernel listo para recibir al cliente
 [INFO] 00:28:30:753 KERNEL/(24716:24716): Me llegaron los siguientes valores:
@@ -36,22 +36,22 @@
 [INFO] 00:33:19:371 KERNEL/(25974:25974): Kernel listo para recibir al cliente
 [INFO] 00:33:23:646 KERNEL/(25974:25974): Me llegaron los siguientes valores:
 
-[INFO] 00:33:23:646 KERNEL/(25974:25974): PVê
+[INFO] 00:33:23:646 KERNEL/(25974:25974): PVÔøΩ
 [ERROR] 00:33:23:646 KERNEL/(25974:25974): el cliente se desconecto. Terminando Kernel
 [INFO] 00:33:39:903 KERNEL/(26055:26055): Kernel listo para recibir al cliente
 [INFO] 00:33:41:645 KERNEL/(26055:26055): Me llegaron los siguientes valores:
 
-[INFO] 00:33:41:645 KERNEL/(26055:26055): PV“
+[INFO] 00:33:41:645 KERNEL/(26055:26055): PVÔøΩ
 [ERROR] 00:33:41:646 KERNEL/(26055:26055): el cliente se desconecto. Terminando Kernel
 [INFO] 00:33:43:616 KERNEL/(26079:26079): Kernel listo para recibir al cliente
 [INFO] 00:33:47:535 KERNEL/(26079:26079): Me llegaron los siguientes valores:
 
-[INFO] 00:33:47:535 KERNEL/(26079:26079): P¶a
+[INFO] 00:33:47:535 KERNEL/(26079:26079): PÔøΩa
 [ERROR] 00:33:47:535 KERNEL/(26079:26079): el cliente se desconecto. Terminando Kernel
 [INFO] 00:38:09:845 KERNEL/(27133:27133): Kernel listo para recibir al cliente
 [INFO] 00:38:13:621 KERNEL/(27133:27133): Me llegaron los siguientes valores:
 
-[INFO] 00:38:13:621 KERNEL/(27133:27133): P∂ç
+[INFO] 00:38:13:621 KERNEL/(27133:27133): PÔøΩÔøΩ
 [ERROR] 00:38:13:621 KERNEL/(27133:27133): el cliente se desconecto. Terminando Kernel
 [INFO] 00:39:29:313 KERNEL/(27436:27436): Kernel listo para recibir al cliente
 [INFO] 00:39:35:010 KERNEL/(27436:27436): Me llegaron los siguientes valores:
@@ -63,13 +63,13 @@
 [INFO] 00:45:13:356 KERNEL/(28866:28866): Me llegaron los siguientes valores:
 
 [INFO] 00:45:13:356 KERNEL/(28866:28866): NO_O
-[INFO] 00:45:13:356 KERNEL/(28866:28866): ERROÿ7Ï∑
+[INFO] 00:45:13:356 KERNEL/(28866:28866): ERROÔøΩ7ÔøΩ
 [ERROR] 00:45:13:356 KERNEL/(28866:28866): el cliente se desconecto. Terminando Kernel
 [INFO] 00:45:19:381 KERNEL/(28912:28912): Kernel listo para recibir al cliente
 [INFO] 00:45:23:741 KERNEL/(28912:28912): Me llegaron los siguientes valores:
 
 [INFO] 00:45:23:741 KERNEL/(28912:28912): NO_O
-[INFO] 00:45:23:741 KERNEL/(28912:28912): ERROÿ∑ˆ∑
+[INFO] 00:45:23:741 KERNEL/(28912:28912): ERROÿ∑ÔøΩÔøΩ
 [ERROR] 00:45:23:742 KERNEL/(28912:28912): el cliente se desconecto. Terminando Kernel
 [INFO] 00:45:59:062 KERNEL/(29094:29094): Kernel listo para recibir al cliente
 [INFO] 00:46:02:415 KERNEL/(29094:29094): Me llegaron los siguientes valores:
@@ -152,19 +152,19 @@
 [INFO] 01:03:53:174 KERNEL/(26271:26271): Kernel listo para recibir al cliente
 [INFO] 01:07:14:386 KERNEL/(26271:26271): Me llegaron los siguientes valores:
 
-[INFO] 01:07:14:387 KERNEL/(26271:26271): PÜ@
+[INFO] 01:07:14:387 KERNEL/(26271:26271): PÔøΩ@
 [INFO] 01:07:24:990 KERNEL/(27240:27240): Kernel listo para recibir al cliente
 [INFO] 01:07:48:999 KERNEL/(27340:27340): Kernel listo para recibir al cliente
 [INFO] 01:10:13:760 KERNEL/(28011:28011): Kernel listo para recibir al cliente
 [INFO] 01:10:15:824 KERNEL/(28011:28011): Me llegaron los siguientes valores:
 
-[INFO] 01:10:15:824 KERNEL/(28011:28011): P∆i
+[INFO] 01:10:15:824 KERNEL/(28011:28011): PÔøΩi
 [INFO] 01:10:20:647 KERNEL/(28048:28048): Kernel listo para recibir al cliente
 [INFO] 01:10:27:527 KERNEL/(28078:28078): Kernel listo para recibir al cliente
 [INFO] 20:36:59:821 KERNEL/(11898:11898): Kernel listo para recibir al cliente
 [INFO] 20:37:26:991 KERNEL/(11898:11898): Me llegaron los siguientes valores:
 
-[INFO] 20:37:26:991 KERNEL/(11898:11898): P÷L
+[INFO] 20:37:26:991 KERNEL/(11898:11898): PÔøΩL
 [INFO] 21:05:48:150 KERNEL/(18705:18705): Kernel listo para recibir al cliente
 [INFO] 21:06:43:134 KERNEL/(18876:18876): Kernel listo para recibir al cliente
 [INFO] 21:16:28:149 KERNEL/(21521:21521): Kernel listo para recibir al cliente
@@ -173,74 +173,74 @@
 [INFO] 21:16:42:308 KERNEL/(21587:21587): Kernel listo para recibir al cliente
 [INFO] 21:16:43:796 KERNEL/(21587:21587): Me llegaron los siguientes valores:
 
-[INFO] 21:16:43:796 KERNEL/(21587:21587): @5≤23
-[INFO] 21:16:43:796 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:796 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:796 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:797 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:798 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:799 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:799 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
-[INFO] 21:16:43:799 KERNEL/(21587:21587): ÿ'Î∑ÿ'Î∑
+[INFO] 21:16:43:796 KERNEL/(21587:21587): @5ÔøΩ23
+[INFO] 21:16:43:796 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:796 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:796 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:797 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:798 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:799 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:799 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
+[INFO] 21:16:43:799 KERNEL/(21587:21587): ÔøΩ'ÔøΩÔøΩ'ÔøΩ
 [INFO] 21:16:52:788 KERNEL/(21635:21635): Kernel listo para recibir al cliente
 [INFO] 21:16:57:069 KERNEL/(21635:21635): Me llegaron los siguientes valores:
 
@@ -467,3 +467,215 @@
 [INFO] 01:45:47:736 KERNEL/(20702:20702): COPY 12 23
 [ERROR] 01:45:47:736 KERNEL/(20702:20702): El n√∫mero de tabla no es valido
 [INFO] 01:47:06:232 KERNEL/(21033:21033): Kernel listo para recibir al cliente
+[ERROR] 11:19:22:996 KERNEL/(29395:29395): El n√∫mero de tabla no es valido
+[ERROR] 11:19:29:060 KERNEL/(29421:29421): El n√∫mero de tabla no es valido
+[ERROR] 11:19:30:412 KERNEL/(29430:29430): El n√∫mero de tabla no es valido
+[ERROR] 11:19:30:908 KERNEL/(29434:29434): El n√∫mero de tabla no es valido
+[ERROR] 11:19:31:107 KERNEL/(29438:29438): El n√∫mero de tabla no es valido
+[ERROR] 11:19:31:283 KERNEL/(29442:29442): El n√∫mero de tabla no es valido
+[ERROR] 11:19:31:460 KERNEL/(29446:29446): El n√∫mero de tabla no es valido
+[ERROR] 11:19:35:731 KERNEL/(29473:29473): El n√∫mero de tabla no es valido
+[INFO] 11:44:32:734 KERNEL/(3054:3054): Kernel listo para recibir al cliente
+[INFO] 11:44:50:695 KERNEL/(3129:3129): Kernel listo para recibir al cliente
+[INFO] 11:45:22:966 KERNEL/(3257:3257): Kernel listo para recibir al cliente
+[INFO] 11:47:13:679 KERNEL/(3732:3732): Kernel listo para recibir al cliente
+[INFO] 11:47:27:118 KERNEL/(3793:3793): Kernel listo para recibir al cliente
+[INFO] 11:48:42:721 KERNEL/(4103:4103): Kernel listo para recibir al cliente
+[INFO] 11:50:27:624 KERNEL/(4541:4541): Kernel listo para recibir al cliente
+[INFO] 11:52:27:688 KERNEL/(5091:5091): Kernel listo para recibir al cliente
+[INFO] 11:54:30:392 KERNEL/(5641:5641): Kernel listo para recibir al cliente
+[INFO] 11:56:44:329 KERNEL/(6206:6206): Kernel listo para recibir al cliente
+[INFO] 12:00:02:763 KERNEL/(7066:7066): Kernel listo para recibir al cliente
+[INFO] 12:00:32:402 KERNEL/(7233:7233): Kernel listo para recibir al cliente
+[INFO] 12:11:28:613 KERNEL/(9852:9852): Kernel listo para recibir al cliente
+[INFO] 12:11:41:020 KERNEL/(9908:9908): Kernel listo para recibir al cliente
+[INFO] 12:13:57:988 KERNEL/(10497:10497): Kernel listo para recibir al cliente
+[INFO] 12:14:01:508 KERNEL/(10497:10497): Tamanio recibido: 10
+[INFO] 12:14:01:508 KERNEL/(10497:10497): Me llegaron los siguientes valores:
+
+[INFO] 12:14:01:508 KERNEL/(10497:10497): NO_OP 5
+[INFO] 12:14:01:508 KERNEL/(10497:10497): ERROR 1
+[INFO] 12:14:01:508 KERNEL/(10497:10497): COPY 12 23
+[INFO] 12:16:51:085 KERNEL/(11227:11227): Kernel listo para recibir al cliente
+[INFO] 12:16:55:030 KERNEL/(11227:11227): Tamanio recibido: 10
+[INFO] 12:16:55:030 KERNEL/(11227:11227): Me llegaron los siguientes valores:
+
+[INFO] 12:16:55:030 KERNEL/(11227:11227): NO_OP 5
+[INFO] 12:16:55:030 KERNEL/(11227:11227): ERROR 1
+[INFO] 12:16:55:030 KERNEL/(11227:11227): COPY 12 23
+[INFO] 12:20:00:310 KERNEL/(11982:11982): Kernel listo para recibir al cliente
+[INFO] 12:20:03:566 KERNEL/(11982:11982): Tamanio recibido: 10
+[INFO] 12:20:03:567 KERNEL/(11982:11982): Me llegaron los siguientes valores:
+
+[INFO] 12:20:03:567 KERNEL/(11982:11982): NO_OP 5
+[INFO] 12:20:03:567 KERNEL/(11982:11982): ERROR 1
+[INFO] 12:20:03:567 KERNEL/(11982:11982): COPY 12 23
+[INFO] 12:20:03:567 KERNEL/(11982:11982): conectado a memoria
+[INFO] 12:22:39:413 KERNEL/(12591:12591): Kernel listo para recibir al cliente
+[INFO] 12:22:42:564 KERNEL/(12591:12591): Tamanio recibido: 10
+[INFO] 12:22:42:564 KERNEL/(12591:12591): Me llegaron los siguientes valores:
+
+[INFO] 12:22:42:564 KERNEL/(12591:12591): NO_OP 5
+[INFO] 12:22:42:564 KERNEL/(12591:12591): ERROR 1
+[INFO] 12:22:42:564 KERNEL/(12591:12591): COPY 12 23
+[INFO] 12:22:42:565 KERNEL/(12591:12591): conectado a memoria
+[INFO] 12:23:35:764 KERNEL/(12854:12854): Kernel listo para recibir al cliente
+[INFO] 12:23:38:667 KERNEL/(12854:12854): Tamanio recibido: 10
+[INFO] 12:23:38:668 KERNEL/(12854:12854): Me llegaron los siguientes valores:
+
+[INFO] 12:23:38:668 KERNEL/(12854:12854): NO_OP 5
+[INFO] 12:23:38:668 KERNEL/(12854:12854): ERROR 1
+[INFO] 12:23:38:668 KERNEL/(12854:12854): COPY 12 23
+[INFO] 12:23:38:668 KERNEL/(12854:12854): conectado a memoria
+[ERROR] 12:23:38:759 KERNEL/(12854:12854): El n√∫mero de tabla no es valido
+[INFO] 12:29:47:167 KERNEL/(14465:14465): Kernel listo para recibir al cliente
+[INFO] 12:30:32:639 KERNEL/(14678:14678): Kernel listo para recibir al cliente
+[INFO] 12:32:16:758 KERNEL/(15127:15127): Kernel listo para recibir al cliente
+[INFO] 12:33:30:823 KERNEL/(15496:15496): Kernel listo para recibir al cliente
+[INFO] 12:33:34:094 KERNEL/(15496:15496): Tamanio recibido: 10
+[INFO] 12:33:34:094 KERNEL/(15496:15496): Me llegaron los siguientes valores:
+
+[INFO] 12:33:34:094 KERNEL/(15496:15496): NO_OP 5
+[INFO] 12:33:34:094 KERNEL/(15496:15496): ERROR 1
+[INFO] 12:33:34:094 KERNEL/(15496:15496): COPY 12 23
+[INFO] 12:33:34:094 KERNEL/(15496:15496): conectado a memoria
+[ERROR] 12:33:34:185 KERNEL/(15496:15496): El n√∫mero de tabla no es valido
+[INFO] 12:34:20:087 KERNEL/(15728:15728): Kernel listo para recibir al cliente
+[INFO] 12:34:23:470 KERNEL/(15728:15728): Tamanio recibido: 10
+[INFO] 12:34:23:470 KERNEL/(15728:15728): Me llegaron los siguientes valores:
+
+[INFO] 12:34:23:470 KERNEL/(15728:15728): NO_OP 5
+[INFO] 12:34:23:470 KERNEL/(15728:15728): ERROR 1
+[INFO] 12:34:23:470 KERNEL/(15728:15728): COPY 12 23
+[INFO] 12:34:23:471 KERNEL/(15728:15728): conectado a memoria
+[INFO] 12:43:49:557 KERNEL/(17863:17863): Kernel listo para recibir al cliente
+[INFO] 13:15:55:795 KERNEL/(25085:25085): Kernel listo para recibir al cliente
+[INFO] 13:15:59:626 KERNEL/(25085:25085): Tamanio recibido: 10
+[INFO] 13:15:59:626 KERNEL/(25085:25085): Me llegaron los siguientes valores:
+
+[INFO] 13:15:59:626 KERNEL/(25085:25085): NO_OP 5
+[INFO] 13:15:59:626 KERNEL/(25085:25085): ERROR 1
+[INFO] 13:15:59:626 KERNEL/(25085:25085): COPY 12 23
+[INFO] 13:15:59:626 KERNEL/(25085:25085): conectado a memoria
+[ERROR] 13:15:59:720 KERNEL/(25085:25085): El n√∫mero de tabla no es valido
+[INFO] 13:16:21:379 KERNEL/(25220:25220): Kernel listo para recibir al cliente
+[INFO] 13:16:24:620 KERNEL/(25220:25220): Tamanio recibido: 10
+[INFO] 13:16:24:620 KERNEL/(25220:25220): Me llegaron los siguientes valores:
+[INFO] 17:05:39:438 KERNEL/(13370:13370): Kernel listo para recibir al cliente
+[INFO] 17:05:42:198 KERNEL/(13370:13370): conectado a memoria
+[INFO] 17:05:42:198 KERNEL/(13370:13370): Operacion desconocida
+[INFO] 17:05:48:269 KERNEL/(13370:13370): Operacion desconocida
+[INFO] 17:05:48:269 KERNEL/(13370:13370): Operacion desconocida
+[INFO] 17:05:48:269 KERNEL/(13370:13370): Operacion desconocida
+[INFO] 17:05:48:269 KERNEL/(13370:13370): Operacion desconocida
+[INFO] 17:05:48:269 KERNEL/(13370:13370): Operacion desconocida
+[INFO] 17:05:48:269 KERNEL/(13370:13370): Operacion desconocida
+[INFO] 17:05:48:269 KERNEL/(13370:13370): Operacion desconocida
+[INFO] 17:05:48:269 KERNEL/(13370:13370): Operacion desconocida
+[INFO] 17:05:48:269 KERNEL/(13370:13370): Operacion desconocida
+[INFO] 17:05:48:269 KERNEL/(13370:13370): Operacion desconocida
+[INFO] 17:05:48:269 KERNEL/(13370:13370): Operacion desconocida
+[ERROR] 17:05:48:269 KERNEL/(13370:13370): se desconecto la consola
+[INFO] 17:14:01:712 KERNEL/(16166:16166): Kernel listo para recibir al cliente
+[INFO] 17:14:05:196 KERNEL/(16166:16166): conectado a memoria
+[INFO] 17:14:05:196 KERNEL/(16166:16166): Operacion desconocida
+[INFO] 17:14:05:196 KERNEL/(16166:16166): Operacion desconocida
+[INFO] 17:14:05:197 KERNEL/(16166:16166): Operacion desconocida
+[INFO] 17:14:05:197 KERNEL/(16166:16166): Operacion desconocida
+[INFO] 17:14:05:197 KERNEL/(16166:16166): Operacion desconocida
+[INFO] 17:14:05:197 KERNEL/(16166:16166): Operacion desconocida
+[INFO] 17:14:05:197 KERNEL/(16166:16166): Operacion desconocida
+[INFO] 17:14:05:197 KERNEL/(16166:16166): Operacion desconocida
+[INFO] 17:14:05:197 KERNEL/(16166:16166): Operacion desconocida
+[INFO] 17:14:05:197 KERNEL/(16166:16166): Operacion desconocida
+[INFO] 17:14:05:197 KERNEL/(16166:16166): Operacion desconocida
+[INFO] 17:14:05:197 KERNEL/(16166:16166): Operacion desconocida
+[ERROR] 17:14:05:197 KERNEL/(16166:16166): se desconecto la consola
+[INFO] 17:14:55:520 KERNEL/(16393:16393): Kernel listo para recibir al cliente
+[INFO] 17:14:58:543 KERNEL/(16393:16393): conectado a memoria
+[INFO] 17:14:58:543 KERNEL/(16393:16393): Operacion desconocida
+[INFO] 17:14:58:543 KERNEL/(16393:16393): Operacion desconocida
+[INFO] 17:14:58:543 KERNEL/(16393:16393): Operacion desconocida
+[INFO] 17:14:58:543 KERNEL/(16393:16393): Operacion desconocida
+[INFO] 17:14:58:543 KERNEL/(16393:16393): Operacion desconocida
+[INFO] 17:14:58:543 KERNEL/(16393:16393): Operacion desconocida
+[INFO] 17:14:58:543 KERNEL/(16393:16393): Operacion desconocida
+[INFO] 17:14:58:543 KERNEL/(16393:16393): Operacion desconocida
+[INFO] 17:14:58:543 KERNEL/(16393:16393): Operacion desconocida
+[INFO] 17:14:58:543 KERNEL/(16393:16393): Operacion desconocida
+[INFO] 17:14:58:543 KERNEL/(16393:16393): Operacion desconocida
+[INFO] 17:14:58:543 KERNEL/(16393:16393): Operacion desconocida
+[ERROR] 17:14:58:543 KERNEL/(16393:16393): se desconecto la consola
+[INFO] 17:36:32:176 KERNEL/(21687:21687): Kernel listo para recibir al cliente
+[INFO] 17:36:35:921 KERNEL/(21687:21687): conectado a memoria
+[INFO] 17:36:35:921 KERNEL/(21687:21687): Operacion desconocida
+[INFO] 17:36:35:921 KERNEL/(21687:21687): Operacion desconocida
+[INFO] 17:36:35:921 KERNEL/(21687:21687): Operacion desconocida
+[INFO] 17:36:35:921 KERNEL/(21687:21687): Operacion desconocida
+[INFO] 17:36:35:921 KERNEL/(21687:21687): Operacion desconocida
+[INFO] 17:36:35:921 KERNEL/(21687:21687): Operacion desconocida
+[INFO] 17:36:35:921 KERNEL/(21687:21687): Operacion desconocida
+[INFO] 17:36:35:921 KERNEL/(21687:21687): Operacion desconocida
+[INFO] 17:36:35:921 KERNEL/(21687:21687): Operacion desconocida
+[INFO] 17:36:35:921 KERNEL/(21687:21687): Operacion desconocida
+[INFO] 17:36:35:921 KERNEL/(21687:21687): Operacion desconocida
+[INFO] 17:36:35:921 KERNEL/(21687:21687): Operacion desconocida
+[ERROR] 17:36:35:921 KERNEL/(21687:21687): se desconecto la consola
+[INFO] 17:39:58:152 KERNEL/(22555:22555): Kernel listo para recibir al cliente
+[INFO] 17:43:58:144 KERNEL/(23503:23503): Kernel listo para recibir al cliente
+[INFO] 17:49:02:848 KERNEL/(24783:24783): Kernel listo para recibir al cliente
+[INFO] 17:49:07:953 KERNEL/(24783:24783): conectado a memoria
+[INFO] 17:49:07:953 KERNEL/(24783:24783): Operacion desconocida
+[INFO] 17:49:07:953 KERNEL/(24783:24783): Operacion desconocida
+[INFO] 17:49:07:953 KERNEL/(24783:24783): Operacion desconocida
+[INFO] 17:49:07:953 KERNEL/(24783:24783): Operacion desconocida
+[INFO] 17:49:07:953 KERNEL/(24783:24783): Operacion desconocida
+[INFO] 17:49:07:953 KERNEL/(24783:24783): Operacion desconocida
+[INFO] 17:49:07:953 KERNEL/(24783:24783): Operacion desconocida
+[INFO] 17:49:07:953 KERNEL/(24783:24783): Operacion desconocida
+[INFO] 17:49:07:953 KERNEL/(24783:24783): Operacion desconocida
+[INFO] 17:49:07:953 KERNEL/(24783:24783): Operacion desconocida
+[INFO] 17:49:07:953 KERNEL/(24783:24783): Operacion desconocida
+[INFO] 17:49:07:953 KERNEL/(24783:24783): Operacion desconocida
+[ERROR] 17:49:07:953 KERNEL/(24783:24783): se desconecto la consola
+[INFO] 17:51:08:120 KERNEL/(25328:25328): Kernel listo para recibir al cliente
+[INFO] 17:51:12:376 KERNEL/(25328:25328): conectado a memoria
+[INFO] 17:51:12:376 KERNEL/(25328:25328): Operacion desconocida
+[INFO] 17:51:12:376 KERNEL/(25328:25328): Operacion desconocida
+[INFO] 17:51:12:376 KERNEL/(25328:25328): Operacion desconocida
+[INFO] 17:51:12:376 KERNEL/(25328:25328): Operacion desconocida
+[INFO] 17:51:12:376 KERNEL/(25328:25328): Operacion desconocida
+[INFO] 17:51:12:376 KERNEL/(25328:25328): Operacion desconocida
+[INFO] 17:51:12:376 KERNEL/(25328:25328): Operacion desconocida
+[INFO] 17:51:12:376 KERNEL/(25328:25328): Operacion desconocida
+[INFO] 17:51:12:376 KERNEL/(25328:25328): Operacion desconocida
+[INFO] 17:51:12:376 KERNEL/(25328:25328): Operacion desconocida
+[INFO] 17:51:12:376 KERNEL/(25328:25328): Operacion desconocida
+[INFO] 17:51:12:376 KERNEL/(25328:25328): Operacion desconocida
+[ERROR] 17:51:12:376 KERNEL/(25328:25328): se desconecto la consola
+[INFO] 17:53:13:144 KERNEL/(25859:25859): Kernel listo para recibir al cliente
+[INFO] 17:53:16:808 KERNEL/(25859:25859): conectado a memoria
+[INFO] 17:53:16:808 KERNEL/(25859:25859): Operacion desconocida
+[INFO] 17:53:16:808 KERNEL/(25859:25859): Operacion desconocida
+[INFO] 17:53:16:808 KERNEL/(25859:25859): Operacion desconocida
+[INFO] 17:53:16:808 KERNEL/(25859:25859): Operacion desconocida
+[INFO] 17:53:16:808 KERNEL/(25859:25859): Operacion desconocida
+[INFO] 17:53:16:808 KERNEL/(25859:25859): Operacion desconocida
+[INFO] 17:53:16:808 KERNEL/(25859:25859): Operacion desconocida
+[INFO] 17:53:16:808 KERNEL/(25859:25859): Operacion desconocida
+[INFO] 17:53:16:808 KERNEL/(25859:25859): Operacion desconocida
+[INFO] 17:53:16:808 KERNEL/(25859:25859): Operacion desconocida
+[INFO] 17:53:16:808 KERNEL/(25859:25859): Operacion desconocida
+[INFO] 17:53:16:808 KERNEL/(25859:25859): Operacion desconocida
+[INFO] 17:53:16:808 KERNEL/(25859:25859): Operacion desconocida
+[ERROR] 17:53:16:808 KERNEL/(25859:25859): se desconecto la consola
+[INFO] 17:55:02:289 KERNEL/(26271:26271): Kernel listo para recibir al cliente
+[INFO] 17:55:24:441 KERNEL/(26271:26271): conectado a memoria
+[INFO] 17:59:03:544 KERNEL/(27357:27357): Kernel listo para recibir al cliente
+[INFO] 17:59:07:634 KERNEL/(27357:27357): conectado a memoria
+[INFO] 17:59:07:634 KERNEL/(27357:27357): Tamanio recibido: 10
+[INFO] 17:59:07:634 KERNEL/(27357:27357): Me llegaron los siguientes valores:
+
+[INFO] 17:59:07:634 KERNEL/(27357:27357): NO_OP 5
+[INFO] 17:59:07:634 KERNEL/(27357:27357): ERROR 1
+[INFO] 17:59:07:634 KERNEL/(27357:27357): COPY 12

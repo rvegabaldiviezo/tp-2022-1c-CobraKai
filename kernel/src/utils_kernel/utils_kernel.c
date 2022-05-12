@@ -77,6 +77,16 @@ int recibir_tamanio_proceso(int socket_cliente) {
 	}
 }
 
+int recibir_operacion(int socket_cliente) {
+	int operacion;
+	if(recv(socket_cliente, &operacion, sizeof(int), MSG_WAITALL) > 0) {
+		return operacion;
+	} else {
+		close(socket_cliente);
+		return -1;
+	}
+}
+
 t_list* recibir_instrucciones(int socket_cliente) {
 	int size;
 	int desplazamiento = 0;
@@ -285,9 +295,14 @@ void liberar_conexion(int socket_cliente)
 	close(socket_cliente);
 }
 
+void solicitar_numero_de_tabla(int conexion) {
+	int operacion = 1;
+	send(conexion, &operacion, sizeof(int), 0);
+}
+
 int recibir_numero_de_tabla(int conexion_memoria) {
 	int numero_de_tabla;
-	int bytes_recibidos = recv(conexion_memoria, &numero_de_tabla, 4, 0);
+	int bytes_recibidos = recv(conexion_memoria, &numero_de_tabla, 4, MSG_WAITALL);
 	if (bytes_recibidos <= 0) {
 		return -1;
 	} else {

@@ -23,43 +23,69 @@ int main(void) {
 		return EXIT_FAILURE;
 	}
 
-	t_proceso* proceso = recibir_proceso(socket_consola);
-
-	if(proceso->tamanio == -1) {
-		log_error(logger, "Ocurrió un error al recibir el tamanio del proceso");
-		log_destroy(logger);
-		return EXIT_FAILURE;
-	}
-
-	char* tamanio_recibido = string_new();
-	string_append(&tamanio_recibido, "Tamanio recibido: ");
-	string_append(&tamanio_recibido, string_itoa(proceso->tamanio));
-	log_info(logger, tamanio_recibido);
-
-	log_info(logger, "Me llegaron los siguientes valores:\n");
-	list_iterate(proceso->instrucciones, (void*) iterator);
-
-	// Ya se copiaron todos los bytes que venian de la consola
-	// de ahora en mas puedo agregar lo que quiera al proceso
-	proceso->pcb = crear_pcb(proceso->tamanio);
-
-	// asignar proceso a estado NEW
-
 	t_config* config = config_create(PATH_CONFIG);
 	char* ip_memoria = config_get_string_value(config, IP_MEMORIA);
 	char* puerto_memoria = config_get_string_value(config, PUERTO_MEMORIA);
 	int conexion_con_memoria = crear_conexion(ip_memoria, puerto_memoria);
+	log_info(logger, "conectado a memoria");
 
-	int numero_de_tabla = recibir_numero_de_tabla(conexion_con_memoria);
-	if(!numero_de_tabla_valido(numero_de_tabla)) {
-		log_error(logger, "El número de tabla no es valido");
-		return EXIT_FAILURE;
+	t_proceso* proceso;
+
+	while(1) {
+		int operacion_consola = recibir_operacion(socket_consola);
+		switch(operacion_consola) {
+			case LISTA_DE_INSTRUCCIONES:
+				proceso = recibir_proceso(socket_consola);
+
+				if(proceso->tamanio == -1) {
+					log_error(logger, "Ocurrió un error al recibir el tamanio del proceso");
+					log_destroy(logger);
+					return EXIT_FAILURE;
+				}
+
+				// Ya se copiaron todos los bytes que venian de la consola
+				// de ahora en mas puedo agregar lo que quiera al proceso
+				proceso->pcb = crear_pcb(proceso->tamanio);
+
+				char* tamanio_recibido = string_new();
+				string_append(&tamanio_recibido, "Tamanio recibido: ");
+				string_append(&tamanio_recibido, string_itoa(proceso->tamanio));
+				log_info(logger, tamanio_recibido);
+
+				log_info(logger, "Me llegaron los siguientes valores:\n");
+				list_iterate(proceso->instrucciones, (void*) iterator);
+
+				solicitar_numero_de_tabla(conexion_con_memoria);
+
+				int numero_de_tabla = recibir_numero_de_tabla(conexion_con_memoria);
+				if(!numero_de_tabla_valido(numero_de_tabla)) {
+					log_error(logger, "El número de tabla no es valido");
+					return EXIT_FAILURE;
+				}
+
+				// asignar proceso a estado NEW
+
+				proceso->pcb.tablas_paginas = numero_de_tabla;
+				printf("Numero de tabla: %d", numero_de_tabla);
+				break;
+
+			case ERROR:
+				log_error(logger, "se desconecto la consola");
+				return EXIT_FAILURE;
+				break;
+
+			default:
+				log_info(logger, "Operacion desconocida");
+				break;
+		}
+
+		int operacion_memoria = recibir_operacion(conexion_con_memoria);
+
 	}
 
-	proceso->pcb.tablas_paginas = numero_de_tabla;
-	printf("Numero de tabla: %d", numero_de_tabla);
 
-	terminar_programa(logger, proceso, server_fd, socket_consola);
+
+	terminar_programa(logger, server_fd, socket_consola);
 
 	return EXIT_SUCCESS;
 }
@@ -84,9 +110,8 @@ t_pcb crear_pcb(unsigned int tamanio) {
 	return pcb;
 } // crea un pcb muy basico, ni siquiera se si está bien, es solo para probar
 
-void terminar_programa(t_log* logger, t_proceso* proceso, int socket_servidor, int socket_cliente) {
+void terminar_programa(t_log* logger, int socket_servidor, int socket_cliente) {
 	log_destroy(logger);
-	destruir_proceso(proceso);
 	liberar_conexion(socket_servidor);
 	liberar_conexion(socket_cliente);
 }

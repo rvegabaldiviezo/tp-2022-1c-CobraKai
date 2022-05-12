@@ -1,17 +1,18 @@
 #ifndef UTILS_H_
 #define UTILS_H_
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<sys/socket.h> // Biblioteca de Socket: Crea un punto final para la comunicacion
-#include<unistd.h>
-#include<netdb.h>
-#include<commons/log.h>
-#include<commons/collections/list.h>
-#include<string.h>
-#include<assert.h>
-#include<signal.h>
-#include<netdb.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/socket.h> // Biblioteca de Socket: Crea un punto final para la comunicacion
+#include <unistd.h>
+#include <netdb.h>
+#include <commons/log.h>
+#include <commons/collections/list.h>
+#include <string.h>
+#include <assert.h>
+#include <signal.h>
+#include <netdb.h>
+#include "../kernel.h"
 
 #define IP "127.0.0.1"
 #define PUERTO "4444"
@@ -37,10 +38,11 @@ typedef struct {
 } t_proceso;
 
 void* recibir_buffer(int*, int);
-
+int recibir_operacion(int);
 int iniciar_servidor(void);
 int esperar_cliente(int);
 t_proceso* crear_proceso(void);
+t_pcb crear_pcb(unsigned int);
 t_list* recibir_instrucciones(int socket_cliente);
 t_proceso* recibir_proceso(int socket_cliente);
 void recibir_mensaje(int);
@@ -75,5 +77,6 @@ void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void liberar_conexion(int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
 int recibir_numero_de_tabla(int);
+void notificar_a_memoria(int, int*);
 
 #endif /* UTILS_H_ */
