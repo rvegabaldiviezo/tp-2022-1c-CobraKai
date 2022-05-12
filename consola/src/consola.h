@@ -14,6 +14,10 @@
 #define IP_KERNEL "IP_KERNEL"
 #define PUERTO_KERNEL "PUERTO_KERNEL"
 
+enum {
+	LISTA_DE_INSTRUCCIONES = 1
+};
+
 
 bool cantidad_parametros_correcta(int);
 void terminar_programa(int, t_log*, t_config*, t_proceso*);

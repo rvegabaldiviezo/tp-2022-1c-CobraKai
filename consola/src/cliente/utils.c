@@ -4,6 +4,8 @@ void* serializar_paquete(t_proceso* proceso, int bytes) {
 	void * magic = malloc(bytes);
 	int desplazamiento = 0;
 
+	memcpy(magic + desplazamiento, &(proceso->operacion), sizeof(int));
+	desplazamiento += sizeof(int);
 	memcpy(magic + desplazamiento, &(proceso->tamanio), sizeof(int));
 	desplazamiento+= sizeof(int);
 	memcpy(magic + desplazamiento, &(proceso->buffer->size), sizeof(int));

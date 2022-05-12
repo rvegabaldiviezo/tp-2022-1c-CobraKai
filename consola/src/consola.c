@@ -34,6 +34,7 @@ int main(int argc, char** argv) {
 }
 
 t_proceso* cargar_proceso(t_proceso* proceso) {
+	proceso->operacion = LISTA_DE_INSTRUCCIONES;
 	char* instruccion;
 	FILE* pseudocodigo = fopen("./src/pseudocodigo.txt", "rt");
 	instruccion = leer_hasta(CARACTER_SALTO_DE_LINEA, pseudocodigo);
@@ -54,6 +55,6 @@ bool cantidad_parametros_correcta(int cantidad) {
 void terminar_programa(int conexion, t_log* logger, t_config* config, t_proceso* proceso) {
 	config_destroy(config);
 	log_destroy(logger);
-	liberar_conexion(conexion);
+	//liberar_conexion(conexion);
 	eliminar_proceso(proceso);
 }

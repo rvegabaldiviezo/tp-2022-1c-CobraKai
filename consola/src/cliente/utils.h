@@ -24,6 +24,7 @@ typedef struct
 
 typedef struct
 {
+	int operacion;
 	int tamanio;
 	t_buffer* buffer;
 } t_proceso;
