@@ -26,7 +26,7 @@ int main(void) {
 		switch(operacion) {
 			case CREAR_TABLA_PAGINAS:
 				// crear tablas de paginas
-				enviar_numero_de_tabla(conexion_kernel, 1);
+				enviar_numero_de_tabla(conexion_kernel, 123);
 				break;
 			case ERROR:
 				log_error(logger, "Se desconecto el cliente");

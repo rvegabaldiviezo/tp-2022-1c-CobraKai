@@ -76,6 +76,7 @@ void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
 void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void liberar_conexion(int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
+void solicitar_numero_de_tabla(int);
 int recibir_numero_de_tabla(int);
 void notificar_a_memoria(int, int*);
 

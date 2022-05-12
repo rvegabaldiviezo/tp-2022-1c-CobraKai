@@ -55,7 +55,6 @@ int main(void) {
 				log_info(logger, "Me llegaron los siguientes valores:\n");
 				list_iterate(proceso->instrucciones, (void*) iterator);
 
-				solicitar_numero_de_tabla(conexion_con_memoria);
 
 				int numero_de_tabla = recibir_numero_de_tabla(conexion_con_memoria);
 				if(!numero_de_tabla_valido(numero_de_tabla)) {
@@ -79,11 +78,7 @@ int main(void) {
 				break;
 		}
 
-		int operacion_memoria = recibir_operacion(conexion_con_memoria);
-
 	}
-
-
 
 	terminar_programa(logger, server_fd, socket_consola);
 

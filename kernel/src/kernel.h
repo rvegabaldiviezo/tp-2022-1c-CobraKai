@@ -27,7 +27,7 @@ bool conexion_exitosa(int);
 void terminar_programa(t_log*, int, int);
 //t_proceso* crear_proceso(void);
 //t_pcb crear_pcb(unsigned int);
-int recibir_numero_de_tabla(int);
+//int solicitar_numero_de_tabla(int);
 bool numero_de_tabla_valido(int);
 
 #endif /* KERNEL_H_ */

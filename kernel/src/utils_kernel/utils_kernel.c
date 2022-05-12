@@ -301,6 +301,7 @@ void solicitar_numero_de_tabla(int conexion) {
 }
 
 int recibir_numero_de_tabla(int conexion_memoria) {
+	solicitar_numero_de_tabla(conexion_memoria);
 	int numero_de_tabla;
 	int bytes_recibidos = recv(conexion_memoria, &numero_de_tabla, 4, MSG_WAITALL);
 	if (bytes_recibidos <= 0) {

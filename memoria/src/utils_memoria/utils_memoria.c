@@ -147,7 +147,7 @@ int iniciar_servidor(void)
 
 	t_config* config_memoria = config_create(PATH_CONFIG);
 
-	getaddrinfo(IP, config_get_string_value(config_memoria, "PUERTO_MEMORIA"), &hints, &servinfo);
+	getaddrinfo(IP, config_get_string_value(config_memoria, "PUERTO_ESCUCHA"), &hints, &servinfo);
 
 	// Creamos el socket de escucha del servidor
 	socket_servidor = socket(servinfo->ai_family,
