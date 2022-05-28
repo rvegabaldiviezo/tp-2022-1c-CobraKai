@@ -52,7 +52,7 @@ int main(void) {
 				string_append(&tamanio_recibido, string_itoa(proceso->tamanio));
 				log_info(logger, tamanio_recibido);
 
-				log_info(logger, "Me llegaron los siguientes valores:\n");
+				log_info(logger, "Me llegaron los siguientes valores:");
 				list_iterate(proceso->instrucciones, (void*) iterator);
 
 
@@ -65,11 +65,14 @@ int main(void) {
 				// asignar proceso a estado NEW
 
 				proceso->pcb.tablas_paginas = numero_de_tabla;
-				printf("Numero de tabla: %d", numero_de_tabla);
+				log_info(logger, "Se asignó el numero de tabla: %d al proceso de id: %d %s", numero_de_tabla, proceso->pcb.id, "\n");
+
+				enviar_respuesta_exitosa(socket_consola);
+				liberar_conexion(socket_consola);
 				break;
 
 			case ERROR:
-				log_error(logger, "se desconecto la consola");
+				log_error(logger, "La consola se desconectó inesperadamente");
 				return EXIT_FAILURE;
 				break;
 
@@ -97,7 +100,7 @@ bool conexion_exitosa(int cliente) {
 
 t_pcb crear_pcb(unsigned int tamanio) {
 	t_pcb pcb;
-	pcb.id = 0;
+	pcb.id = getpid();
 	pcb.estimacion_rafaga = 0;
 	pcb.program_counter = 0;
 	pcb.tablas_paginas = 0;
