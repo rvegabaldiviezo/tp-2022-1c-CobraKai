@@ -39,6 +39,16 @@ int main(int argc, char** argv) {
 
 	enviar_a_kernel(proceso, conexion_con_kernel);
 
+	int respuesta = recibir_respuesta(conexion_con_kernel);
+
+	if(respuesta > 0) {
+		log_info(logger, "El proceso finalizó correctamente");
+	} else {
+		log_error(logger, "Ocurrió un error durante la ejecucion del proceso");
+		terminar_programa();
+		return EXIT_FAILURE;
+	}
+
 	terminar_programa();
 
 	return EXIT_SUCCESS;
@@ -61,7 +71,6 @@ t_proceso* cargar_proceso(int tamanio, char* path_pseudocodigo) {
 		instruccion = leer_hasta(CARACTER_SALTO_DE_LINEA, pseudocodigo);
 	}
 	agregar_instruccion(proceso, instruccion, string_length(instruccion) + 1);
-	int t = string_length(instruccion) + 1;
 	free(instruccion);
 	fclose(pseudocodigo);
 	return proceso;
