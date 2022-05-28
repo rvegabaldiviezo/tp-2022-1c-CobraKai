@@ -49,6 +49,7 @@ void recibir_mensaje(int);
 int recibir_tamanio_proceso(int);
 void destruir_proceso(t_proceso*);
 void destruir_nodo(t_link_element *);
+void enviar_respuesta_exitosa(int conexion);
 
 
 
