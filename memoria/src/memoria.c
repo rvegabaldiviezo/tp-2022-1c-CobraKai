@@ -1,10 +1,3 @@
-/*
- todo: handshake cpu
- 	 enviar cantidad de entradas por tabla de paginas
- 	 tamaño de pagina
- */
-
-
 #include "memoria.h"
 
 int main(void) {
@@ -24,9 +17,16 @@ int main(void) {
 
 	while(1) {
 		switch(operacion) {
-			case CREAR_TABLA_PAGINAS:
+			case INICIO_PROCESO:
+				log_info(logger, "Kernel solicita INICIO PROCESO");
 				// crear tablas de paginas
 				enviar_numero_de_tabla(conexion_kernel, 123);
+				break;
+			case SUSPENCION_PROCESO:
+				log_info(logger, "Kernel solicita SUSPENCION PROCESO");
+				break;
+			case FINALIZACION_PROCESO:
+				log_info(logger, "Kernel solicita FINALIZACION PROCESO");
 				break;
 			case ERROR:
 				log_error(logger, "Se desconecto el cliente");

@@ -9,9 +9,11 @@
 #define PATH_CONFIG "src/memoria.config"
 
 enum {
-	CREAR_TABLA_PAGINAS = 1,
+	INICIO_PROCESO = 1,
+	SUSPENCION_PROCESO = 2,
+	FINALIZACION_PROCESO = 3,
 	ERROR = -1
-};
+} operaciones_kernel;
 
 typedef struct {
 	void* buffer;
