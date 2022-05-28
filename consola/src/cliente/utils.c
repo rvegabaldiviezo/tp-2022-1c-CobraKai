@@ -73,4 +73,14 @@ void liberar_conexion(int socket_cliente) {
 	close(socket_cliente);
 }
 
+int recibir_respuesta(int conexion) {
+	int respuesta;
+	int bytes_recibidos = recv(conexion, &respuesta, sizeof(int), MSG_WAITALL);
+	if (bytes_recibidos <= 0) {
+		return -1;
+	} else {
+		return respuesta;
+	}
+}
+
 

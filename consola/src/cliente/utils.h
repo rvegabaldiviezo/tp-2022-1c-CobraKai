@@ -38,5 +38,6 @@ void enviar_a_kernel(t_proceso*, int);
 void liberar_conexion(int socket_cliente);
 void eliminar_proceso(t_proceso*);
 void* serializar_paquete(t_proceso*, int);
+int recibir_respuesta(int conexion);
 
 #endif /* UTILS_CLIENTE_H_ */
