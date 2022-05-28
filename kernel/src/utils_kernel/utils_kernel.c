@@ -296,7 +296,12 @@ void liberar_conexion(int socket_cliente)
 }
 
 void solicitar_numero_de_tabla(int conexion) {
-	int operacion = 1;
+	int operacion = TABLA_PAGINAS_PRIMER_NIVEL;
+	send(conexion, &operacion, sizeof(int), 0);
+}
+
+void enviar_respuesta_exitosa(int conexion) {
+	int operacion = RESPUESTA_EXITO;
 	send(conexion, &operacion, sizeof(int), 0);
 }
 
