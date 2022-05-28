@@ -8,8 +8,15 @@
 
 #include "consola.h" // Los includes necesarios van en consola.h, aca solo va este
 
+// Variables Globales
+int conexion_con_kernel;
+t_log* logger;
+t_config* config;
+t_proceso* proceso;
+
 int main(int argc, char** argv) {
-	t_log* logger = log_create("./src/consola.log", "CONSOLA", true, LOG_LEVEL_INFO);
+
+	logger = log_create("./src/consola.log", "CONSOLA", true, LOG_LEVEL_INFO);
 
 	if (!cantidad_parametros_correcta(argc)) {
 		log_error(logger, "Cantidad de parametros incorrecta, abortando...");
@@ -17,32 +24,44 @@ int main(int argc, char** argv) {
 		return EXIT_FAILURE;
 	}
 
-	t_config* config = config_create(argv[1]); // RUTA: "src/consola.config"
+	config = config_create(PATH_CONFIG);
 	char* ip_kernel = config_get_string_value(config, IP_KERNEL);
 	char* puerto_kernel = config_get_string_value(config, PUERTO_KERNEL);
 
-	int conexion_con_kernel = crear_conexion(ip_kernel, puerto_kernel);
-	t_proceso* proceso = crear_proceso(atoi(argv[2]));
+	char* path_pseudocodigo = string_new();
+	string_append(&path_pseudocodigo, argv[1]); // "src/pseudocodigo.txt"
+	int tamanio_proceso = atoi(argv[2]);
 
-	proceso = cargar_proceso(proceso);
+	conexion_con_kernel = crear_conexion(ip_kernel, puerto_kernel);
+
+	proceso = crear_proceso();
+	proceso = cargar_proceso(tamanio_proceso, path_pseudocodigo);
 
 	enviar_a_kernel(proceso, conexion_con_kernel);
 
-	terminar_programa(conexion_con_kernel, logger, config, proceso);
+	terminar_programa();
 
 	return EXIT_SUCCESS;
 }
 
-t_proceso* cargar_proceso(t_proceso* proceso) {
+t_proceso* crear_proceso() {
+	t_proceso* proceso = malloc(sizeof(t_proceso));
+	crear_buffer(proceso);
+	return proceso;
+}
+
+t_proceso* cargar_proceso(int tamanio, char* path_pseudocodigo) {
 	proceso->operacion = LISTA_DE_INSTRUCCIONES;
+	proceso->tamanio = tamanio;
 	char* instruccion;
-	FILE* pseudocodigo = fopen("./src/pseudocodigo.txt", "rt");
+	FILE* pseudocodigo = fopen(path_pseudocodigo, "rt");
 	instruccion = leer_hasta(CARACTER_SALTO_DE_LINEA, pseudocodigo);
 	while(!feof(pseudocodigo)) {
 		agregar_instruccion(proceso, instruccion, string_length(instruccion) + 1);
 		instruccion = leer_hasta(CARACTER_SALTO_DE_LINEA, pseudocodigo);
 	}
 	agregar_instruccion(proceso, instruccion, string_length(instruccion) + 1);
+	int t = string_length(instruccion) + 1;
 	free(instruccion);
 	fclose(pseudocodigo);
 	return proceso;
@@ -52,9 +71,9 @@ bool cantidad_parametros_correcta(int cantidad) {
 	return cantidad == 3;
 }
 
-void terminar_programa(int conexion, t_log* logger, t_config* config, t_proceso* proceso) {
+void terminar_programa() {
 	config_destroy(config);
 	log_destroy(logger);
-	//liberar_conexion(conexion);
 	eliminar_proceso(proceso);
+	liberar_conexion(conexion_con_kernel);
 }

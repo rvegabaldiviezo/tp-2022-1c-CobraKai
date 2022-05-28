@@ -47,13 +47,6 @@ void crear_buffer(t_proceso* proceso) {
 	proceso->buffer->stream = NULL;
 }
 
-t_proceso* crear_proceso(int tamanio) {
-	t_proceso* proceso = malloc(sizeof(t_proceso));
-	proceso->tamanio = tamanio;
-	crear_buffer(proceso);
-	return proceso;
-}
-
 void agregar_instruccion(t_proceso* proceso, void* valor, int tamanio) {
 	proceso->buffer->stream = realloc(proceso->buffer->stream, proceso->buffer->size + tamanio + sizeof(int));
 	memcpy(proceso->buffer->stream + proceso->buffer->size, &tamanio, sizeof(int));
@@ -62,7 +55,7 @@ void agregar_instruccion(t_proceso* proceso, void* valor, int tamanio) {
 }
 
 void enviar_a_kernel(t_proceso* proceso, int socket_cliente) {
-	int bytes = proceso->buffer->size + 2*sizeof(int);
+	int bytes = proceso->buffer->size + 3*sizeof(int);
 	void* a_enviar = serializar_paquete(proceso, bytes);
 
 	send(socket_cliente, a_enviar, bytes, 0);

@@ -32,8 +32,7 @@ typedef struct
 
 int crear_conexion(char*, char*);
 void enviar_mensaje(char* mensaje, int socket_cliente);
-t_proceso* crear_proceso(int);
-//t_paquete* crear_super_paquete(void);
+void crear_buffer(t_proceso*);
 void agregar_instruccion(t_proceso*, void*, int);
 void enviar_a_kernel(t_proceso*, int);
 void liberar_conexion(int socket_cliente);

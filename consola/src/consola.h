@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <pthread.h>
 #include "cliente/utils.h"
 #include "commons/string.h"
 #include "commons/config.h"
@@ -13,6 +14,7 @@
 #define CARACTER_SALTO_DE_LINEA '\n'
 #define IP_KERNEL "IP_KERNEL"
 #define PUERTO_KERNEL "PUERTO_KERNEL"
+#define PATH_CONFIG "src/consola.config"
 
 enum {
 	LISTA_DE_INSTRUCCIONES = 1
@@ -20,10 +22,9 @@ enum {
 
 
 bool cantidad_parametros_correcta(int);
-void terminar_programa(int, t_log*, t_config*, t_proceso*);
-t_paquete* parsear_instrucciones(t_paquete* paquete);
-//t_proceso* crear_proceso();
-t_proceso* cargar_proceso(t_proceso*);
+t_proceso* crear_proceso();
+t_proceso* cargar_proceso(int, char*);
 void destruir_proceso(t_proceso*);
+void terminar_programa();
 
 #endif /* CONSOLA_H_ */
