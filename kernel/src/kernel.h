@@ -17,9 +17,16 @@
 #define IP_CPU "IP_CPU"
 #define PUERTO_CPU "PUERTO_CPU"
 
+// Operaciones con consola
 enum {
 	LISTA_DE_INSTRUCCIONES = 1,
+	RESPUESTA_EXITO,
 	ERROR = -1
+};
+
+// Operaciones con memoria
+enum {
+	TABLA_PAGINAS_PRIMER_NIVEL = 1
 };
 
 void iterator(char* value);
