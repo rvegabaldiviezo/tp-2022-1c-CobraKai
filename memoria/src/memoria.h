@@ -8,11 +8,12 @@
 #include "utils_memoria/utils_memoria.h"
 
 #define PATH_CONFIG "src/memoria.config"
+#define PATH_LOG "./memoria.log"
 
 enum {
 	INICIO_PROCESO = 1,
-	SUSPENCION_PROCESO = 2,
-	FINALIZACION_PROCESO = 3,
+	SUSPENCION_PROCESO,
+	FINALIZACION_PROCESO,
 	ERROR = -1
 } operaciones_kernel;
 
