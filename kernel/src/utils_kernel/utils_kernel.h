@@ -26,6 +26,7 @@ typedef struct
 typedef struct {
 	pid_t id;
 	unsigned int tamanio_proceso;
+	t_list* instrucciones;
 	unsigned int program_counter;
 	unsigned int tablas_paginas;
 	unsigned int estimacion_rafaga;
@@ -42,7 +43,7 @@ int recibir_operacion(int);
 int iniciar_servidor(void);
 int esperar_cliente(int);
 t_proceso* crear_proceso(void);
-t_pcb crear_pcb(unsigned int);
+t_pcb crear_pcb();
 t_list* recibir_instrucciones(int socket_cliente);
 t_proceso* recibir_proceso(int socket_cliente);
 void recibir_mensaje(int);

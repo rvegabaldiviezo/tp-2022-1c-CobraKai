@@ -12,6 +12,7 @@
 #include "utils_kernel/utils_kernel.h"
 
 #define PATH_CONFIG "src/kernel.config"
+#define PATH_LOG "./kernel.log"
 #define IP_MEMORIA "IP_MEMORIA"
 #define PUERTO_MEMORIA "PUERTO_MEMORIA"
 #define IP_CPU "IP_CPU"
@@ -31,8 +32,9 @@ enum {
 
 void iterator(char* value);
 bool conexion_exitosa(int);
-void terminar_programa(t_log*, int, int);
+void terminar_programa();
 //t_proceso* crear_proceso(void);
+//t_pcb crear_pcb();
 //t_pcb crear_pcb(unsigned int);
 //int solicitar_numero_de_tabla(int);
 bool numero_de_tabla_valido(int);
