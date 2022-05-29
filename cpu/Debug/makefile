@@ -8,6 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include src/utils_cpu/subdir.mk
 -include src/subdir.mk
 -include subdir.mk
 -include objects.mk
@@ -23,19 +24,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: CPU
+all: cpu
 
 # Tool invocations
-CPU: $(OBJS) $(USER_OBJS)
+cpu: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc  -o "CPU" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc  -o "cpu" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) CPU
+	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) cpu
 	-@echo ' '
 
 .PHONY: all clean dependents
