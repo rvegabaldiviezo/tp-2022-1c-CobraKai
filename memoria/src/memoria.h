@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <commons/log.h>
+#include <pthread.h>
 #include "utils_memoria/utils_memoria.h"
 
 #define PATH_CONFIG "src/memoria.config"
@@ -31,5 +32,5 @@ typedef struct {
 } t_tabla_paginas_primer_nivel;
 
 bool conexion_exitosa(int);
-
+void crear_tabla_paginas();
 #endif /* MEMORIA_H_ */
