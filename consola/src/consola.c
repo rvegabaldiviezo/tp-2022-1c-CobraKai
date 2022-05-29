@@ -3,7 +3,7 @@
  * 1. Compilo consola.c
  * 2. Levanto el kernel (explicado en kernel.c)
  * 3. Me paro en tp-2022-1c-CobraKai/consola
- * 4. Escribo ./Debug/consola "src/consola.config" "tamaño"
+ * 4. Escribo ./Debug/consola "src/pseudocodigo.txt" "tamaño"
  */
 
 #include "consola.h" // Los includes necesarios van en consola.h, aca solo va este
