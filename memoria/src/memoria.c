@@ -1,10 +1,11 @@
 #include "memoria.h"
 
+t_log* logger;
 int conexion_kernel;
 
 int main(void) {
 
-	t_log* logger = log_create("./memoria.log", "MEMORIA", true, LOG_LEVEL_DEBUG);
+	logger = log_create(PATH_LOG, "MEMORIA", true, LOG_LEVEL_DEBUG);
 	int server_memoria = iniciar_servidor();
 	log_info(logger, "Memoria lista para recibir clientes");
 
@@ -15,15 +16,15 @@ int main(void) {
 		return EXIT_FAILURE;
 	}
 
-	int operacion = recibir_operacion(conexion_kernel);
-
 	while(1) {
+		int operacion = recibir_operacion(conexion_kernel);
 		switch(operacion) {
 			case INICIO_PROCESO:
 				log_info(logger, "Kernel solicita INICIO PROCESO");
 				pthread_t hilo_inicio_proceso;
 				pthread_create(&hilo_inicio_proceso, NULL, (void*) crear_tabla_paginas, NULL);
 				pthread_join(hilo_inicio_proceso, NULL);
+
 				// crear tablas de paginas
 
 				break;
@@ -41,8 +42,6 @@ int main(void) {
 				break;
 		}
 	}
-
-	liberar_conexion(conexion_kernel);
 
 	return EXIT_SUCCESS;
 }
