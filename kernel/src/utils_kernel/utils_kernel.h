@@ -34,7 +34,6 @@ typedef struct {
 
 typedef struct {
 	t_pcb pcb;
-	char estado;
 	int socket;
 } t_proceso;
 
@@ -67,6 +66,12 @@ typedef struct
 	op_code codigo_operacion;
 	t_buffer* buffer;
 } t_paquete;
+
+typedef struct
+{
+	t_proceso* proceso;
+	int tiempo_de_bloqueo;
+} t_proceso_bloqueado;
 
 
 

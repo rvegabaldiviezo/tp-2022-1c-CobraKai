@@ -39,9 +39,10 @@ enum {
 	TABLA_PAGINAS_PRIMER_NIVEL = 1
 };
 
+// Operaciones con cpu
 enum {
 	BLOQUEO_IO = 1,
-	ERROR_2 = -1
+	ERROR_CPU = -1
 } operaciones_cpu;
 
 
@@ -56,5 +57,11 @@ bool numero_de_tabla_valido(int);
 void inicializar_colas();
 int atender_consola();
 void planificar_srt();
+void planificar_fifo();
+void agregar_a_bloqueados(t_proceso_bloqueado* proceso);
+void iniciar_planificacion_io();
+int recibir_tiempo_bloqueo();
+void iniciar_planificacion(char* planificacion);
+void comunicacion_con_cpu();
 
 #endif /* KERNEL_H_ */
