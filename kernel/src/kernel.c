@@ -10,8 +10,13 @@
 // Hilos
 pthread_t planificador_srt;
 
-// Semaforos
+// Semaforos Mutex
 pthread_mutex_t mutex_ready_queue;
+pthread_mutex_t mutex_new_queue;
+
+// Semaforos
+sem_t sem_ready;
+sem_t sem_new;
 
 // Colas / Listas
 t_queue* new;
@@ -21,7 +26,7 @@ t_queue* susp_blocked;
 t_queue* susp_ready;
 
 // Generales
-t_proceso* proceso;
+//t_proceso* proceso;
 t_log* logger;
 t_config* config;
 int conexion_consola;
@@ -50,6 +55,7 @@ int main(void) {
 	conexion_con_memoria = crear_conexion(ip_memoria, puerto_memoria);
 
 	inicializar_colas();
+	inicializar_semaforos();
 
 	while(1) {
 		conexion_consola = esperar_cliente(socket_servidor);
@@ -60,9 +66,8 @@ int main(void) {
 		}
 		pthread_t hilo_consola;
 		pthread_create(&hilo_consola, NULL, (void*) atender_consola, NULL);
-		long int id_devuelto;
-		pthread_join(hilo_consola, &id_devuelto);
-		log_info(logger, "Finalizo el proceso %lu", id_devuelto);
+		//pthread_join(hilo_consola, NULL);
+		log_info(logger, "Finalizo el proceso %lu", hilo_consola);
 		enviar_respuesta_exitosa(conexion_consola);
 	}
 
@@ -73,8 +78,9 @@ int main(void) {
 
 pid_t atender_consola() {
 	int operacion_consola = recibir_operacion(conexion_consola);
-	//t_proceso* proceso;
+	t_proceso* proceso;
 	pthread_mutex_init(&mutex_ready_queue, NULL);
+	pthread_mutex_init(&mutex_new_queue, NULL);
 	switch(operacion_consola) {
 	case LISTA_DE_INSTRUCCIONES:
 
@@ -94,10 +100,7 @@ pid_t atender_consola() {
 		// Ya se copiaron todos los bytes que venian de la consola
 		// de ahora en mas puedo agregar lo que quiera al proceso
 
-		char* tamanio_recibido = string_new();
-		string_append(&tamanio_recibido, "Tamanio recibido: ");
-		string_append(&tamanio_recibido, string_itoa(proceso->pcb.tamanio_proceso));
-		log_info(logger, tamanio_recibido);
+		log_info(logger, "Tamaño recibido: %d", proceso->pcb.tamanio_proceso);
 
 
 		int numero_de_tabla = recibir_numero_de_tabla(conexion_con_memoria);
@@ -109,21 +112,16 @@ pid_t atender_consola() {
 		proceso->pcb.tablas_paginas = numero_de_tabla;
 		log_info(logger, "Se asignó el numero de tabla: %d al proceso de id: %lu\n", proceso->pcb.tablas_paginas, proceso->pcb.id);
 
+		pthread_mutex_lock(&mutex_new_queue);
 		queue_push(new, proceso);
-		log_info(logger, "Proceso %lu asignado a la cola NEW", proceso->pcb.id);
-		if(list_size(ready) < grado_multiprogramacion) {
-			t_proceso* proceso = queue_pop(new);
-			pthread_mutex_lock(&mutex_ready_queue);
-			list_add(ready, proceso);
-			pthread_mutex_unlock(&mutex_ready_queue);
-			if(strcmp(planificador, "SRT") == 0) {
-				//replanificar
-				pthread_create(&planificador_srt, NULL, (void*) planificar_srt, NULL);
-				pthread_join(planificador_srt, NULL);
-			}
-			log_info(logger, "El proceso %lu fue asignado a la cola READY", proceso->pcb.id);
-		} else {
-			log_info(logger, "Se alcanzó el maximo grado de multiprogramacion, el proceso %lu permanece en la cola de NEW", proceso->pcb.id);
+		sem_post(&sem_new);
+		pthread_mutex_unlock(&mutex_new_queue);
+
+		log_info(logger, "Proceso %lu asignado a la cola NEW\n", proceso->pcb.id);
+
+		if(strcmp(planificador, "SRT") == 0) {
+			pthread_create(&planificador_srt, NULL, (void*) planificar_srt, NULL);
+			//pthread_join(planificador_srt, NULL);
 		}
 
 		break;
@@ -172,6 +170,8 @@ void terminar_programa() {
 	liberar_conexion(socket_servidor);
 	liberar_conexion(conexion_con_memoria);
 	liberar_conexion(conexion_consola);
+	sem_destroy(&sem_new);
+	sem_destroy(&sem_ready);
 }
 
 bool numero_de_tabla_valido(int numero) {
@@ -186,9 +186,62 @@ void inicializar_colas() {
 	susp_ready = queue_create();
 }
 
+void inicializar_semaforos() {
+	sem_init(&sem_ready, 0, grado_multiprogramacion);
+	sem_init(&sem_new, 0, 0);
+}
+
 void planificar_srt() {
 	// TODO: implementar planificador posta
-	t_proceso* proceso = list_get(ready, 0);
+	// Agarro el mas corto de ready
+	pthread_mutex_lock(&mutex_new_queue);
+	sem_wait(&sem_new);
+	t_proceso* proceso = queue_pop(new);
+	pthread_mutex_unlock(&mutex_new_queue);
+
+	pthread_mutex_lock(&mutex_ready_queue);
+	sem_wait(&sem_ready);
+	list_add(ready, proceso);
+	log_info(logger, "Proceso %lu asignado a la cola READY", proceso->pcb.id);
+	pthread_mutex_unlock(&mutex_ready_queue);
+
+	// Pido a cpu pcb y tiempo restante de proceso que esté ejecutando y comparo con proceso_mas_corto_disponible
+	// t_proceso* proceso_ejecutando = solicitar_a_cpu(REPLANIFICACION); -> implementar
+
+	sleep(5); // solo para probar
+	pthread_mutex_lock(&mutex_ready_queue);
+	list_sort(ready, (void*) lista_mas_corta);
+	t_proceso* proceso_mas_corto_disponible = list_pop(ready);
+	sem_post(&sem_ready);
+	pthread_mutex_unlock(&mutex_ready_queue);
+
+	// comparo con estimacion del que llegó, mando al mas corto
+
 	log_info(logger, "Me llegaron los siguientes valores:");
-	list_iterate(proceso->pcb.instrucciones, (void*) iterator);
+	list_iterate(proceso_mas_corto_disponible->pcb.instrucciones, (void*) iterator);
+
+}
+
+void * list_pop(t_list* list) {
+	void * elemento = list_get(list, 0);
+	list_remove(list, 0);
+	return elemento;
+
+}
+
+t_proceso* menor_tiempo_restante(t_proceso* p1, t_proceso* p2) {
+	if(p1->pcb.estimacion_rafaga > p2->pcb.estimacion_rafaga) {
+		return p2;
+	} else {
+		return p1;
+	}
+}
+
+// funcion para probar las prioridade de la cola ready
+t_proceso* lista_mas_corta(t_proceso* p1, t_proceso* p2) {
+	if(list_size(p1->pcb.instrucciones) > list_size(p2->pcb.instrucciones)) {
+		return p2;
+	} else {
+		return p1;
+	}
 }
