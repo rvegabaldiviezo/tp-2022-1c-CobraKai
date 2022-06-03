@@ -33,9 +33,8 @@ typedef struct {
 } t_pcb;
 
 typedef struct {
-	int tamanio;
-	t_list* instrucciones;
 	t_pcb pcb;
+	int socket;
 } t_proceso;
 
 void* recibir_buffer(int*, int);

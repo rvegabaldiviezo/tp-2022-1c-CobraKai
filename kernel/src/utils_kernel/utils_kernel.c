@@ -119,7 +119,7 @@ void destruir_nodo(t_link_element* nodo) {
 }
 
 void destruir_proceso(t_proceso* proceso) {
-	list_destroy_and_destroy_elements(proceso->instrucciones, (void*) destruir_nodo);
+	list_destroy_and_destroy_elements(proceso->pcb.instrucciones, (void*) destruir_nodo);
 	free(proceso);
 }
 
