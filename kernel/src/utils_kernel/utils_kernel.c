@@ -104,6 +104,7 @@ t_list* recibir_instrucciones(int socket_cliente) {
 		list_add(instrucciones, valor);
 	}
 	free(buffer);
+	instrucciones = parsear_instrucciones(instrucciones);
 	return instrucciones;
 }
 
@@ -121,6 +122,23 @@ void destruir_nodo(t_link_element* nodo) {
 void destruir_proceso(t_proceso* proceso) {
 	list_destroy_and_destroy_elements(proceso->pcb.instrucciones, (void*) destruir_nodo);
 	free(proceso);
+}
+
+t_list* parsear_instrucciones(t_list* instrucciones) {
+	t_list* aux = list_create();
+	for(int i = 0; i < list_size(instrucciones); i++) {
+		char* instruccion = list_get(instrucciones, i);
+		if(strstr(instruccion, "NO_OP") != NULL) {
+			int parametro = atoi(string_substring(instruccion, 6, string_length(instruccion)));
+			for(int j = 0; j < parametro; j++) {
+				list_add(aux, "NO_OP");
+			}
+		} else {
+			list_add(aux, instruccion);
+		}
+
+	}
+	return aux;
 }
 
 
