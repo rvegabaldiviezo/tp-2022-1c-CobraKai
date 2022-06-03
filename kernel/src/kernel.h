@@ -9,6 +9,8 @@
 #include <commons/collections/queue.h>
 #include <commons/string.h>
 #include <commons/config.h>
+#include <pthread.h>
+#include <semaphore.h>
 #include "utils_kernel/utils_kernel.h"
 
 #define PATH_CONFIG "src/kernel.config"
@@ -21,14 +23,21 @@
 // Operaciones con consola
 enum {
 	LISTA_DE_INSTRUCCIONES = 1,
+	EXIT,
 	RESPUESTA_EXITO,
-	ERROR = -1
+	ERROR
 };
 
 // Operaciones con memoria
 enum {
 	TABLA_PAGINAS_PRIMER_NIVEL = 1
 };
+
+enum {
+	BLOQUEO_IO = 1,
+	ERROR_2 = -1
+} operaciones_cpu;
+
 
 void iterator(char* value);
 bool conexion_exitosa(int);

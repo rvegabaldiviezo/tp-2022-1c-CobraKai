@@ -13,8 +13,23 @@ t_proceso* proceso;
 int conexion_consola;
 int socket_servidor;
 int conexion_con_memoria;
+int conexion_con_cpu;
+
+sem_t i_o;
+sem_t sem_lista_ready;
+sem_t sem_lista_bloqueados;
+
+t_list procesos_ready = list_create();
+t_queue procesos_ready_fifo = queue_create();
+t_list procesos_en_memoria = list_create();
+t_list procesos_bloqueados = list_create();
 
 int main(void) {
+
+	sem_init(&i_o, 0, 1);
+	sem_init(&sem_lista_ready ,0, 1);
+	sem_init(&sem_lista_bloqueados ,0, 1);
+
 
 	logger = log_create(PATH_LOG, "KERNEL", true, LOG_LEVEL_DEBUG);
 
@@ -31,10 +46,15 @@ int main(void) {
 	}
 
 	config = config_create(PATH_CONFIG);
+
 	char* ip_memoria = config_get_string_value(config, IP_MEMORIA);
+	char* planificacion = config_get_string_value(config, ALGORITMO_PLANIFICACION);
 	char* puerto_memoria = config_get_string_value(config, PUERTO_MEMORIA);
 	conexion_con_memoria = crear_conexion(ip_memoria, puerto_memoria);
 	log_info(logger, "conectado a memoria");
+
+
+	int grado_multitarea = config_get_int_value(config, GRADO_MULTIPROGRAMACION);
 
 	while(1) {
 		int operacion_consola = recibir_operacion(conexion_consola);
@@ -62,18 +82,31 @@ int main(void) {
 
 				log_info(logger, "Me llegaron los siguientes valores:");
 				list_iterate(proceso->pcb.instrucciones, (void*) iterator);
-
+				//El grado de multiprogramacion es la suma de los procesos en memoria
+				int numero_procesos_en_memoria = list_size(procesos_en_memoria);
+				if(numero_procesos_en_memoria >= grado_multitarea){
+					log_error(logger, "No pueden ingresar mas procesos");
+					return EXIT_FAILURE;
+				}
 
 				int numero_de_tabla = recibir_numero_de_tabla(conexion_con_memoria);
+
 				if(!numero_de_tabla_valido(numero_de_tabla)) {
 					log_error(logger, "El número de tabla no es valido");
 					return EXIT_FAILURE;
 				}
 				liberar_conexion(conexion_con_memoria);
-				// asignar proceso a estado NEW
+				// asignar proceso a estado READY
 
 				proceso->pcb.tablas_paginas = numero_de_tabla;
+				proceso->estado = 'R';
 				log_info(logger, "Se asignó el numero de tabla: %d al proceso de id: %d %s", proceso->pcb.tablas_paginas, proceso->pcb.id, "\n");
+
+				if(strcmp(planificacion, "SRT")){
+					list_add(procesos_ready, proceso);
+				} else {
+					queue_push(procesos_ready_fifo, proceso);
+				}
 
 				enviar_respuesta_exitosa(conexion_consola);
 				//liberar_conexion(conexion_consola);
@@ -112,6 +145,7 @@ t_proceso* crear_proceso() {
 	proceso->instrucciones = list_create();
 	proceso->tamanio = 0;
 	proceso->pcb = crear_pcb();
+	proceso->estado = 'N';
 	return proceso;
 }
 
@@ -136,4 +170,99 @@ void terminar_programa() {
 
 bool numero_de_tabla_valido(int numero) {
 	return numero != -1;
+}
+
+void planificacionFIFO(){
+	log_info(logger,"se inicio la planificacion FIFO");
+	    int blockIO = list_size(procesos_bloqueados);
+		int tamanio_ready;
+
+		while(1){
+
+			tamanio_ready = queue_size(procesos_ready_fifo);
+			if (tamanio_ready > 0) {
+						sem_wait(&sem_lista_ready);
+						t_proceso* primer_proceso = queue_pop(procesos_ready_fifo);
+						sem_post(&sem_lista_ready);
+						primer_proceso->estado='E';
+						log_info(logger,"Se paso un proceso de Ready a Ejecutando");
+						//se manda el pcb a la cpu
+					}
+				}
+
+			//semaforo que sincronice con cpu. Si el proceso terminó de ejecutar, continúa
+
+
+			if (blockIO > 0) {
+				for(int i = 0; i < blockIO; i++){
+					sem_wait(&sem_lista_bloqueados);
+					t_proceso* bloqueado = list_get(procesos_bloqueados, i);
+					sem_post(&sem_lista_bloqueados);
+					if(bloqueado->estado == 'R'){
+						sem_wait(&sem_lista_ready);
+						queue_push(procesos_ready_fifo, bloqueado);
+						sem_post(&sem_lista_ready);
+						sem_wait(&sem_lista_bloqueados);
+						list_remove(procesos_bloqueados, 0);
+						sem_post(&sem_lista_bloqueados);
+					}
+				}
+
+		}
+}
+
+void planificacionSRT(){
+
+
+}
+
+bool puede_ingresar_proceso(){
+		return true;
+}
+
+void comunicacion_con_cpu(){
+	int operacion = recibir_operacion(conexion_con_cpu);
+		switch(operacion) {
+			case BLOQUEO_IO:
+				log_info(logger, "La CPU envio un pcb con estado bloqueado por I/0");
+				pthread_t hilo_proceso_bloqueado;
+				int tiempo_de_espera = recibir_tiempo_bloqueo(conexion_con_cpu);
+				t_pcb* pcb = recibir_pcb(conexion_con_cpu);
+
+				pthread_create(&hilo_proceso_bloqueado, NULL, (void*) esperar_tiempo_bloqueado(tiempo_de_espera, proceso), NULL);
+				pthread_join(hilo_proceso_bloqueado, NULL);
+
+
+				break;
+
+			case EXIT:
+				log_info(logger, "La CPU envio un pcb con estado finalizado");
+			    t_proceso* proceso = recibir_proceso(conexion_con_cpu);
+			    proceso->estado = 'F';
+			    //avisar a memoria
+			    //avisar a consola
+			break;
+			case ERROR_2:
+				log_error(logger, "Se desconecto el cliente");
+				return;
+			default:
+				log_info(logger, "Operacion desconocida");
+				break;
+		}
+	}
+
+void esperar_tiempo_bloqueado(int tiempo, t_proceso* proceso){
+	proceso->estado = 'B';
+	sem_wait(&sem_lista_bloqueados);
+	list_add(procesos_bloqueados, proceso);
+	sem_post(&sem_lista_bloqueados);
+	sem_wait(&i_o);//supongo que el semaforo va desbloqueando a los hilos con fifo
+	usleep(tiempo*1000);//usleep o sleep
+	sem_post(i_o);
+	proceso->estado = 'R';
+
+}
+
+int recibir_tiempo_bloqueo(){
+	return 1;
 }

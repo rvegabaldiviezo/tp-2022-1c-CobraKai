@@ -36,6 +36,7 @@ typedef struct {
 	int tamanio;
 	t_list* instrucciones;
 	t_pcb pcb;
+	char estado;
 } t_proceso;
 
 void* recibir_buffer(int*, int);
