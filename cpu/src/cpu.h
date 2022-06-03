@@ -25,4 +25,5 @@ enum {
 	PEDIDO_ESCRITURA
 } operaciones_memoria;
 
-bool conexion_exitosa(int cliente);
+//bool conexion_exitosa(int cliente);
+void iterator(char* value);

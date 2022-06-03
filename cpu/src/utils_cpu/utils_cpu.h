@@ -17,8 +17,24 @@
 #include "../cpu.config"
 
 #define PATH_CONFIG "../../cpu.config"
+typedef enum
+{
+	MENSAJE,
+	PAQUETE
+}op_code;
 
-int iniciar_servidor(void);
+t_log* logger;
 
+int iniciar_servidor(char* conf_puerto,char* conf_ip);
+
+void* recibir_buffer(int* size, int socket_cliente);
+void recibir_mensaje(int socket_cliente);
+t_list* recibir_paquete(int socket_cliente);
+int recibir_operacion(int socket_cliente);
+int esperar_cliente(int socket_servidor);
+
+
+int iniciar_servidor_dispatch(void);
+int iniciar_servidor_interrupt(void);
 
 #endif /* UTILS_CPU_UTILS_CPU_H_ */
