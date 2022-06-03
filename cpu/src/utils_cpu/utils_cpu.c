@@ -101,9 +101,9 @@ t_list* recibir_paquete(int socket_cliente)
 
 //######## funciones para dejar mas prolijo el codigo #########3
 int iniciar_servidor_dispatch(void) {
-	return iniciar_servidor_fentch("PUERTO_ESCUCHA_DISPATCH","IP_CPU");
+	return iniciar_servidor("PUERTO_ESCUCHA_DISPATCH","IP_CPU");
 }
 
 int iniciar_servidor_interrupt(void) {
-	return iniciar_servidor_fentch("PUERTO_ESCUCHA_INTERRUPT","IP_CPU");
+	return iniciar_servidor("PUERTO_ESCUCHA_INTERRUPT","IP_CPU");
 }
