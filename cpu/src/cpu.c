@@ -1,60 +1,133 @@
-#include "cpu.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "cpu-3.h"
 
-t_log* logger;
-t_list* lista;
-int conexion_dispatch;
-int conexion_interrupt;
+
+int interrupcion = 0;//false
+
 
 int main(void) {
+	t_proceso proceso;
+	proceso.interrucion=0;
 
-	// 1) loggear
-	logger = log_create(PATH_LOG, "CPU", true, LOG_LEVEL_INFO);
+	//Hilo interrup: iniciar_conexion()y  escuchar(proceso_interrup)
 
-	// 2) Conectarnos con la memoria  (no hacerlo)
-	/*
-		int server_cpu = inciar_servidor();
-		conexion_memoria = esperar_cliente(server_cpu);
+	//Hilo Proceso de las instrucciones: iniciar_conexion()y  escuchar(proceso_intrucciones)
 
-		if(!conexion_exitosa(conexion_memoria)) {
-			log_error(logger, "No se pudo establecer la conexion con el kernel");
-			return EXIT_FAILURE;
-		}
+	// instanciar_proceso_instrucciones(&proceso,sockect_cliente)
 
-		int operacion = recibir_operacion(conexion_memoria);  */
+	int nro_intrucciones = size_instrucciones(proceso);
 
-	// 3) Levantar server puerto DISPATCH
-	int server_dispatch = iniciar_servidor_dispatch();
-	conexion_dispatch= esperar_cliente(server_dispatch);
+	for(int i = 0; i< nro_intrucciones ;i++){
 
+		int nro_instrucion = fetch(proceso);
 
-	// 4) Levantar server puerto INTERRUPT
-	//int server_interrupt = iniciar_servidor_interrupt();
-	//conexion_interrupt = esperar_cliente(server_interrupt);
-	while (1) {
-		int cod_op = recibir_operacion(cliente_fd);
-		switch (cod_op) {
-		case MENSAJE:
-			recibir_mensaje(cliente_fd);
-			break;
-		case PAQUETE:
-			lista = recibir_paquete(cliente_fd);
-			log_info(logger, "Me llegaron los siguientes valores:\n");
-			list_iterate(lista, (void*) iterator);
-			break;
-		case -1:
-			log_error(logger, "el cliente se desconecto. Terminando servidor");
-			return EXIT_FAILURE;
-		default:
-			log_warning(logger,"Operacion desconocida");
-			break;
-		}
+		t_instruction instruccion = decode(proceso,nro_instrucion);
+
+		fetch_operands(instruccion);
+
+		execute(proceso, instruccion);
+
+		check_interrupt(proceso);
 	}
+
 	return EXIT_SUCCESS;
 }
 
-void iterator(char* value) {
-	log_info(logger,"%s", value);
+int fetch(t_proceso proceso){
+	//Proxima instruccion a ejecutar
+	return proceso.pcb.program_counter;
 }
-//bool conexion_exitosa(int cliente) {
-//	return cliente != -1;
-//}
+t_instruction decode(t_proceso proceso,int nro_intruccion){
+	t_instruction instruction;
+	//Busca en las lista la instruccion a ejecutar:
+
+	return  instruction;
+}
+
+void fetch_operands(t_proceso proces, t_instruction instruccion){
+
+}
+void execute(t_proceso proceso, t_instruction instruccion){
+
+	switch(instruccion.id) {
+		case NO_OP://NO_OP
+			int time = config_get_string_value(proceso.config, "RETARDO_NOOP");//
+			no_op(time,instruccion.params[1]);
+			break;
+		case I_O://I/O
+			i_o(proceso,instruccion.params[1]);
+			//return EXIT_FAILURE;
+			break;
+		case EXIT://EXIT
+			exit(proceso);
+			break;
+		case COPY://COPY
+			break;
+		case READ://READ
+			break;
+		case WRITE://WRITE
+			break;
+		default:
+			//log_info(logger, "Operacion desconocida");
+			break;
+	}
+
+
+}
+
+void no_op(int tiempo,int repeticiones){
+	usleep(1000*tiempo*repeticiones);
+}
+
+void i_o(t_proceso proceso, int tiempo){
+	incrementarpcb(proceso);
+	responsePorBloqueo(proceso,tiempo);
+}
+void exit(t_proceso proceso){
+	incrementarpcb(proceso);
+	responsePorFinDeProceso(proceso);
+}
+
+
+void  check_interrupt(t_proceso proceso){
+
+	incrementarpcb(proceso);
+
+	if(proceso.interrucion){
+		//responderle al kernel
+		responseInterrupcion(proceso);
+	}
+}
+
+void responseInterrupcion(t_proceso proceso){
+	int socket = proceso.socket;
+}
+
+void responsePorBloqueo(t_proceso proceso,int tiempo){
+	//
+}
+void responsePorFinDeProceso(t_proceso proceso){
+	//
+}
+
+void incrementarpcb(t_proceso proceso){
+	 proceso.pcb.id = proceso.pcb.id + 1;
+}
+
+int size_instrucciones(t_proceso proceso){
+	return proceso.pcb.instrucciones->elements_count;
+}
+
+
+
+/*
+void config(){
+
+	t_config* config = config_create(PATH_CONFIG);
+	char* puerto = config_get_string_value(config, conf_puerto);
+	char* ip = config_get_string_value(config, conf_ip);
+}*/
+
+
+
