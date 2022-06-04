@@ -8,6 +8,7 @@
 #include "kernel.h"
 
 // Hilos
+pthread_t hilo_consola;
 pthread_t planificador_srt;
 
 // Semaforos Mutex
@@ -64,11 +65,11 @@ int main(void) {
 			log_destroy(logger);
 			return EXIT_FAILURE;
 		}
-		pthread_t hilo_consola;
+
 		pthread_create(&hilo_consola, NULL, (void*) atender_consola, NULL);
 		//pthread_join(hilo_consola, NULL);
 		log_info(logger, "Finalizo el proceso %lu", hilo_consola);
-		enviar_respuesta_exitosa(conexion_consola);
+
 	}
 
 	terminar_programa();
@@ -203,6 +204,7 @@ void planificar_srt() {
 	sem_wait(&sem_ready);
 	list_add(ready, proceso);
 	log_info(logger, "Proceso %lu asignado a la cola READY", proceso->pcb.id);
+	log_info(logger, "Tamaño de la cola READY %d", list_size(ready));
 	pthread_mutex_unlock(&mutex_ready_queue);
 
 	// Pido a cpu pcb y tiempo restante de proceso que esté ejecutando y comparo con proceso_mas_corto_disponible
@@ -212,6 +214,7 @@ void planificar_srt() {
 	pthread_mutex_lock(&mutex_ready_queue);
 	list_sort(ready, (void*) lista_mas_corta);
 	t_proceso* proceso_mas_corto_disponible = list_pop(ready);
+	log_info(logger, "Proceso %lu pasó a ejecutar, nuevo tamaño de la cola READY %d", proceso->pcb.id, list_size(ready));
 	sem_post(&sem_ready);
 	pthread_mutex_unlock(&mutex_ready_queue);
 
@@ -219,7 +222,7 @@ void planificar_srt() {
 
 	log_info(logger, "Me llegaron los siguientes valores:");
 	list_iterate(proceso_mas_corto_disponible->pcb.instrucciones, (void*) iterator);
-
+	enviar_respuesta_exitosa(conexion_consola);
 }
 
 void * list_pop(t_list* list) {
