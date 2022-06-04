@@ -123,3 +123,32 @@
 [INFO] 01:35:35:227 MEMORIA/(25618:25618): Kernel solicita INICIO PROCESO
 [INFO] 01:35:36:825 MEMORIA/(25618:25618): Kernel solicita INICIO PROCESO
 [ERROR] 01:35:49:270 MEMORIA/(25618:25618): Se desconecto el cliente
+[INFO] 17:33:43:488 MEMORIA/(1324:1324): Memoria lista para recibir clientes
+[ERROR] 17:51:28:684 MEMORIA/(1324:1324): Se desconecto el cliente
+[INFO] 17:52:55:197 MEMORIA/(6436:6436): Memoria lista para recibir clientes
+[ERROR] 17:52:56:801 MEMORIA/(6436:6436): Se desconecto el cliente
+[INFO] 17:59:35:360 MEMORIA/(8170:8170): Memoria lista para recibir clientes
+[ERROR] 18:00:45:312 MEMORIA/(8170:8170): Se desconecto el cliente
+[INFO] 18:04:25:764 MEMORIA/(9394:9394): Memoria lista para recibir clientes
+[INFO] 18:04:29:578 MEMORIA/(9394:9394): Kernel solicita INICIO PROCESO
+[ERROR] 18:04:29:665 MEMORIA/(9394:9394): Se desconecto el cliente
+[INFO] 01:57:14:656 MEMORIA/(18540:18540): Memoria lista para recibir clientes
+[INFO] 01:57:32:951 MEMORIA/(18540:18540): Kernel solicita INICIO PROCESO
+[ERROR] 01:57:33:043 MEMORIA/(18540:18540): Se desconecto el cliente
+[INFO] 01:58:39:862 MEMORIA/(18883:18883): Memoria lista para recibir clientes
+[ERROR] 02:07:25:038 MEMORIA/(18883:18883): Se desconecto el cliente
+[INFO] 02:07:38:464 MEMORIA/(21445:21445): Memoria lista para recibir clientes
+[ERROR] 02:08:09:537 MEMORIA/(21445:21445): Se desconecto el cliente
+[INFO] 02:08:22:688 MEMORIA/(21742:21742): Memoria lista para recibir clientes
+[ERROR] 02:08:58:334 MEMORIA/(21742:21742): Se desconecto el cliente
+[INFO] 03:00:57:618 MEMORIA/(1748:1748): Memoria lista para recibir clientes
+[INFO] 03:01:26:074 MEMORIA/(1909:1909): Memoria lista para recibir clientes
+[ERROR] 03:01:27:769 MEMORIA/(1909:1909): Se desconecto el cliente
+[INFO] 03:01:37:667 MEMORIA/(1959:1959): Memoria lista para recibir clientes
+[ERROR] 03:02:04:412 MEMORIA/(1959:1959): Se desconecto el cliente
+[INFO] 03:05:13:492 MEMORIA/(3069:3069): Memoria lista para recibir clientes
+[ERROR] 03:05:15:551 MEMORIA/(3069:3069): Se desconecto el cliente
+[INFO] 03:09:26:734 MEMORIA/(4106:4106): Memoria lista para recibir clientes
+[INFO] 03:09:30:262 MEMORIA/(4123:4123): Memoria lista para recibir clientes
+[INFO] 03:09:33:338 MEMORIA/(4123:4123): Kernel solicita INICIO PROCESO
+[ERROR] 03:09:33:560 MEMORIA/(4123:4123): Se desconecto el cliente

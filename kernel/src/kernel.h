@@ -1,6 +1,7 @@
 #ifndef KERNEL_H_
 #define KERNEL_H_
 
+#include "utils_kernel/utils_kernel.h"
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,7 +13,6 @@
 #include <commons/config.h>
 #include <pthread.h>
 #include <semaphore.h>
-#include "utils_kernel/utils_kernel.h"
 
 #define PATH_CONFIG "src/kernel.config"
 #define PATH_LOG "./kernel.log"
@@ -25,6 +25,26 @@
 #define IP_CPU "IP_CPU"
 #define PUERTO_CPU "PUERTO_CPU"
 #define ALGORITMO_PLANIFICACION "ALGORITMO_PLANIFICACION"
+
+typedef struct {
+	pid_t id;
+	unsigned int tamanio_proceso;
+	t_list* instrucciones;
+	unsigned int program_counter;
+	unsigned int tablas_paginas;
+	unsigned int estimacion_rafaga;
+} t_pcb;
+
+typedef struct {
+	t_pcb pcb;
+	int socket;
+} t_proceso;
+
+typedef struct
+{
+	t_proceso* proceso;
+	int tiempo_de_bloqueo;
+} t_proceso_bloqueado;
 
 // Operaciones con consola
 enum {
@@ -49,10 +69,11 @@ enum {
 void iterator(char* value);
 bool conexion_exitosa(int);
 void terminar_programa();
-//t_proceso* crear_proceso(void);
-//t_pcb crear_pcb();
-//t_pcb crear_pcb(unsigned int);
-//int solicitar_numero_de_tabla(int);
+
+t_proceso* crear_proceso(void);
+t_pcb crear_pcb();
+t_proceso* recibir_proceso(int socket_cliente);
+void destruir_proceso(t_proceso*);
 bool numero_de_tabla_valido(int);
 void inicializar_colas();
 int atender_consola();

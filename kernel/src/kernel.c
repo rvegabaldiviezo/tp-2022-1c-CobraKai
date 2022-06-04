@@ -52,8 +52,8 @@ int main(void) {
 	pthread_mutex_init(&mutex_blocked_list, NULL);
 	pthread_mutex_init(&mutex_blocked_queue, NULL);
 	pthread_mutex_init(&i_o, NULL);
-	sem_init(&elementos_en_cola_bloqueados, 0, 0);
-	sem_init(&elementos_en_cola_ready, 0, 0);
+	sem_init(&elementos_en_cola_bloqueados, 0, 1);
+	sem_init(&elementos_en_cola_ready, 0, 1);
 
 	logger = log_create(PATH_LOG, "KERNEL", true, LOG_LEVEL_DEBUG);
 
@@ -69,15 +69,14 @@ int main(void) {
 
 	config = config_create(PATH_CONFIG);
 	char* ip_memoria = config_get_string_value(config, IP_MEMORIA);
-	char* planificacion = config_get_string_value(config, ALGORITMO_PLANIFICACION);
+	//char* planificacion = config_get_string_value(config, ALGORITMO_PLANIFICACION);
 	char* puerto_memoria = config_get_string_value(config, PUERTO_MEMORIA);
 	conexion_con_memoria = crear_conexion(ip_memoria, puerto_memoria);
 
 	log_info(logger, "conectado a memoria");
 
-
 	inicializar_colas();
-	iniciar_planificacion(planificador);
+
 
 	while(1) {
 		conexion_consola = esperar_cliente(socket_servidor);
@@ -88,8 +87,8 @@ int main(void) {
 		}
 		pthread_t hilo_consola;
 		pthread_create(&hilo_consola, NULL, (void*) atender_consola, NULL);
-		long int id_devuelto;
-		pthread_join(hilo_consola, &id_devuelto);
+		long int* id_devuelto;
+		//pthread_join(hilo_consola, id_devuelto);
 		log_info(logger, "Finalizo el proceso %lu", id_devuelto);
 		enviar_respuesta_exitosa(conexion_consola);
 	}
@@ -106,14 +105,13 @@ pid_t atender_consola() {
 	switch(operacion_consola) {
 	case LISTA_DE_INSTRUCCIONES:
 		//TODO: como hacer para distinguir entre los distintos semaforos de los procesos?
-		sem_t fin_de_proceso;
-		sem_init(&fin_de_proceso, 0, 0);
-
 		proceso = crear_proceso();
 		proceso = recibir_proceso(conexion_consola);
 		proceso->socket = conexion_consola;
 		proceso->pcb.estimacion_rafaga = config_get_int_value(config, ESTIMACION_INICIAL);
 		proceso->pcb.id = pthread_self();
+		sem_t fin_de_proceso;
+		sem_init(&fin_de_proceso, 0, 0);
 		// Calculo de la rafaga
 		// prox_rafaga = alfa * tiempo_ultima_rafaga + (1 - alfa) * pcb.estimacion_rafaga
 		if(proceso->pcb.tamanio_proceso == -1) {
@@ -153,7 +151,9 @@ pid_t atender_consola() {
 			if(strcmp(planificador, "SRT") == 0) {
 				pthread_mutex_lock(&mutex_ready_list);
 				list_add(ready, proceso);
+				sem_post(&elementos_en_cola_ready);
 				pthread_mutex_unlock(&mutex_ready_list);
+				iniciar_planificacion(planificador);
 				log_info(logger, "El proceso %lu fue asignado a la cola READY", proceso->pcb.id);
 
 
@@ -162,6 +162,7 @@ pid_t atender_consola() {
 						queue_push(ready_fifo, proceso);
 						pthread_mutex_unlock(&mutex_ready_queue);
 						sem_post(&elementos_en_cola_ready);
+						iniciar_planificacion(planificador);
 						log_info(logger, "El proceso %lu fue asignado a la cola READY", proceso->pcb.id);
 					}
 		} else {
@@ -246,20 +247,20 @@ void comunicacion_con_cpu(){
 	int operacion = recibir_operacion(conexion_con_cpu);
 		switch(operacion) {
 			case BLOQUEO_IO:
-				t_proceso_bloqueado* proceso_bloqueado;
 				log_info(logger, "La CPU envio un pcb con estado bloqueado por I/0");
+				t_proceso_bloqueado* proceso_bloqueado;
 				int tiempo_de_espera = recibir_tiempo_bloqueo(conexion_con_cpu);
 				//TODO
 				//t_pcb* pcb = recibir_pcb(conexion_con_cpu);
 				//TODO: agregar pcb y tiempo a proceso_bloqueado
-				agregar_a_bloqueados(proceso);
+				agregar_a_bloqueados(proceso_bloqueado);
 
 
 				break;
 
 			case EXIT:
 				log_info(logger, "La CPU envio un pcb con estado finalizado");
-			    t_proceso* proceso = recibir_proceso(conexion_con_cpu);
+			    //t_proceso* proceso = recibir_proceso(conexion_con_cpu);
 			    //TODO:
 			    //avisar a memoria
 			    //avisar a consola
@@ -285,7 +286,7 @@ void agregar_a_bloqueados(t_proceso_bloqueado* proceso){
 
 void planificacion_io(){
 	while(1){
-		sem_wait(&elementos_en_cola_bloqueados);
+		//sem_wait(&elementos_en_cola_bloqueados);
 		t_proceso_bloqueado* primer_proceso = queue_pop(blocked_fifo);
 
 		usleep(primer_proceso->tiempo_de_bloqueo*1000);
@@ -305,8 +306,6 @@ void iniciar_planificacion_io(){
 	log_info(logger, "Inicio la planificacion IO");
 	pthread_join(planificador_io, NULL);
 }
-
-
 
 
 //TODO
@@ -332,9 +331,9 @@ void planificar_srt() {
 void iniciar_planificacion(char* planificacion){
 	if(strcmp(planificacion, "FIFO") == 0) {
 		pthread_create(&planificador_fifo, NULL, (void*) planificar_fifo, NULL);
-		pthread_join(planificador_fifo, NULL);
+		//pthread_join(planificador_fifo, NULL);
 	} else if(strcmp(planificacion, "SRT") == 0) {
 		pthread_create(&planificador_srt, NULL, (void*) planificar_srt, NULL);
-		pthread_join(planificador_srt, NULL);
+		//pthread_join(planificador_srt, NULL);
 	}
 }

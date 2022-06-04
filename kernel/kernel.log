@@ -2840,3 +2840,60 @@
 [INFO] 01:35:36:837 KERNEL/(25620:25648): EXIT
 [INFO] 01:35:36:837 KERNEL/(25620:25645): El proceso 3084077888 fue asignado a la cola READY
 [INFO] 01:35:36:837 KERNEL/(25620:25620): Finalizo el proceso 3084077888
+[INFO] 17:51:28:557 KERNEL/(6054:6054): Kernel listo para recibir al cliente
+[INFO] 17:51:28:557 KERNEL/(6054:6054): conectado a memoria
+[INFO] 17:52:56:717 KERNEL/(6442:6442): Kernel listo para recibir al cliente
+[INFO] 17:52:56:718 KERNEL/(6442:6442): conectado a memoria
+[INFO] 17:53:21:413 KERNEL/(6521:6521): Kernel listo para recibir al cliente
+[INFO] 17:53:27:725 KERNEL/(6521:6521): conectado a memoria
+[INFO] 17:54:23:573 KERNEL/(6810:6810): Kernel listo para recibir al cliente
+[INFO] 17:54:25:169 KERNEL/(6810:6810): conectado a memoria
+[INFO] 17:59:36:640 KERNEL/(8177:8177): Kernel listo para recibir al cliente
+[INFO] 17:59:36:640 KERNEL/(8177:8177): conectado a memoria
+[INFO] 18:04:21:786 KERNEL/(9380:9380): Kernel listo para recibir al cliente
+[INFO] 18:04:21:787 KERNEL/(9380:9380): conectado a memoria
+[INFO] 18:04:27:866 KERNEL/(9407:9407): Kernel listo para recibir al cliente
+[INFO] 18:04:27:867 KERNEL/(9407:9407): conectado a memoria
+[INFO] 18:04:29:578 KERNEL/(9407:9415): Tamanio recibido: 100
+[INFO] 18:04:29:578 KERNEL/(9407:9415): Se asignó el numero de tabla: 123 al proceso de id: 3084282688
+
+[INFO] 18:04:29:579 KERNEL/(9407:9415): Proceso 3084282688 asignado a la cola NEW
+[INFO] 01:57:19:511 KERNEL/(18557:18557): Kernel listo para recibir al cliente
+[INFO] 01:57:19:511 KERNEL/(18557:18557): conectado a memoria
+[INFO] 01:57:32:951 KERNEL/(18557:18608): Tamanio recibido: 10
+[INFO] 01:57:32:951 KERNEL/(18557:18608): Se asignó el numero de tabla: 123 al proceso de id: 3084249920
+
+[INFO] 01:57:32:951 KERNEL/(18557:18608): Proceso 3084249920 asignado a la cola NEW
+[INFO] 01:59:00:082 KERNEL/(18941:18941): Kernel listo para recibir al cliente
+[INFO] 01:59:01:809 KERNEL/(18941:18941): conectado a memoria
+[INFO] 01:59:18:447 KERNEL/(18941:19097): se inicio la planificacion FIFO
+[INFO] 01:59:19:600 KERNEL/(18941:19097): Inicio la planificacion IO
+[INFO] 02:07:47:616 KERNEL/(21503:21503): Kernel listo para recibir al cliente
+[INFO] 02:07:49:185 KERNEL/(21503:21503): conectado a memoria
+[INFO] 02:07:55:369 KERNEL/(21503:21575): se inicio la planificacion FIFO
+[INFO] 02:07:55:852 KERNEL/(21503:21575): Inicio la planificacion IO
+[INFO] 02:08:31:250 KERNEL/(21785:21785): Kernel listo para recibir al cliente
+[INFO] 02:08:32:201 KERNEL/(21785:21785): conectado a memoria
+[INFO] 02:08:35:377 KERNEL/(21785:21841): se inicio la planificacion FIFO
+[INFO] 02:08:35:804 KERNEL/(21785:21841): Inicio la planificacion IO
+[INFO] 03:01:27:661 KERNEL/(1917:1917): Kernel listo para recibir al cliente
+[INFO] 03:01:27:662 KERNEL/(1917:1917): conectado a memoria
+[INFO] 03:01:27:662 KERNEL/(1917:1918): se inicio la planificacion FIFO
+[INFO] 03:01:27:662 KERNEL/(1917:1918): Inicio la planificacion IO
+[INFO] 03:01:46:811 KERNEL/(2002:2002): Kernel listo para recibir al cliente
+[INFO] 03:01:48:156 KERNEL/(2002:2002): conectado a memoria
+[INFO] 03:02:00:780 KERNEL/(2002:2126): se inicio la planificacion FIFO
+[INFO] 03:02:01:461 KERNEL/(2002:2126): Inicio la planificacion IO
+[INFO] 03:05:15:469 KERNEL/(3081:3081): Kernel listo para recibir al cliente
+[INFO] 03:05:15:469 KERNEL/(3081:3081): conectado a memoria
+[INFO] 03:05:15:469 KERNEL/(3081:3082): se inicio la planificacion FIFO
+[INFO] 03:05:15:469 KERNEL/(3081:3082): Inicio la planificacion IO
+[INFO] 03:09:24:982 KERNEL/(4098:4098): Kernel listo para recibir al cliente
+[INFO] 03:09:24:982 KERNEL/(4098:4098): conectado a memoria
+[INFO] 03:09:31:630 KERNEL/(4130:4130): Kernel listo para recibir al cliente
+[INFO] 03:09:31:630 KERNEL/(4130:4130): conectado a memoria
+[INFO] 03:09:33:338 KERNEL/(4130:4130): Finalizo el proceso 3218068492
+[INFO] 03:09:33:338 KERNEL/(4130:4138): Tamanio recibido: 10
+[INFO] 03:09:33:338 KERNEL/(4130:4138): Se asignó el numero de tabla: 123 al proceso de id: 3083860800
+
+[INFO] 03:09:33:338 KERNEL/(4130:4138): Proceso 3083860800 asignado a la cola NEW

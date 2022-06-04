@@ -145,3 +145,8 @@
 [INFO] 01:30:48:168 CONSOLA/(24278:24278): El proceso finalizó correctamente
 [INFO] 01:35:35:232 CONSOLA/(25626:25626): El proceso finalizó correctamente
 [INFO] 01:35:36:837 CONSOLA/(25644:25644): El proceso finalizó correctamente
+[ERROR] 18:00:45:312 CONSOLA/(8189:8189): Ocurrió un error durante la ejecucion del proceso
+[ERROR] 18:04:29:664 CONSOLA/(9414:9414): Ocurrió un error durante la ejecucion del proceso
+[ERROR] 01:57:33:043 CONSOLA/(18607:18607): Ocurrió un error durante la ejecucion del proceso
+[ERROR] 02:07:25:038 CONSOLA/(19258:19258): Ocurrió un error durante la ejecucion del proceso
+[INFO] 03:09:33:338 CONSOLA/(4137:4137): El proceso finalizó correctamente

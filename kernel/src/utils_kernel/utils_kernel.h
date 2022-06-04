@@ -1,6 +1,7 @@
 #ifndef UTILS_H_
 #define UTILS_H_
 
+#include "../kernel.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/socket.h> // Biblioteca de Socket: Crea un punto final para la comunicacion
@@ -12,7 +13,7 @@
 #include <assert.h>
 #include <signal.h>
 #include <netdb.h>
-#include "../kernel.h"
+
 
 #define IP "127.0.0.1"
 #define PUERTO "4444"
@@ -23,36 +24,16 @@ typedef struct
 	void* stream;
 } t_buffer;
 
-typedef struct {
-	pid_t id;
-	unsigned int tamanio_proceso;
-	t_list* instrucciones;
-	unsigned int program_counter;
-	unsigned int tablas_paginas;
-	unsigned int estimacion_rafaga;
-} t_pcb;
-
-typedef struct {
-	t_pcb pcb;
-	int socket;
-} t_proceso;
 
 void* recibir_buffer(int*, int);
 int recibir_operacion(int);
 int iniciar_servidor(void);
 int esperar_cliente(int);
-t_proceso* crear_proceso(void);
-t_pcb crear_pcb();
 t_list* recibir_instrucciones(int socket_cliente);
-t_proceso* recibir_proceso(int socket_cliente);
 void recibir_mensaje(int);
 int recibir_tamanio_proceso(int);
-void destruir_proceso(t_proceso*);
 void destruir_nodo(t_link_element *);
 void enviar_respuesta_exitosa(int conexion);
-
-
-
 
 typedef enum
 {
@@ -66,13 +47,6 @@ typedef struct
 	op_code codigo_operacion;
 	t_buffer* buffer;
 } t_paquete;
-
-typedef struct
-{
-	t_proceso* proceso;
-	int tiempo_de_bloqueo;
-} t_proceso_bloqueado;
-
 
 
 int crear_conexion(char* ip, char* puerto);
