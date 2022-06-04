@@ -51,7 +51,7 @@ enum {
 	LISTA_DE_INSTRUCCIONES = 1,
 	EXIT,
 	RESPUESTA_EXITO,
-	ERROR
+	ERROR = -1
 };
 
 // Operaciones con memoria
