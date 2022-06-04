@@ -123,6 +123,22 @@ void destruir_proceso(t_proceso* proceso) {
 	free(proceso);
 }
 
+t_list* parsear_instrucciones(t_list* instrucciones) {
+	t_list* aux = list_create();
+	for(int i = 0; i < list_size(instrucciones); i++) {
+		char* instruccion = list_get(instrucciones, i);
+		if(strstr(instruccion, "NO_OP") != NULL) {
+			int parametro = atoi(string_substring(instruccion, 6, string_length(instruccion)));
+			for(int j = 0; j < parametro; j++) {
+				list_add(aux, "NO_OP");
+			}
+		} else {
+			list_add(aux, instruccion);
+		}
+
+	}
+	return aux;
+}
 
 /* Un socket es la representacion que el Sistema Operativo le da
  * a esa conexion.
