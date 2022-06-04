@@ -23,6 +23,7 @@ sem_t elementos_en_cola_bloqueados;
 sem_t elementos_en_cola_ready;
 sem_t multiprogramacion;
 sem_t elementos_en_cola_susp_ready;
+sem_t cola_susp_ready_vacia;
 
 
 // Colas / Listas
@@ -57,7 +58,6 @@ int main(void) {
 	pthread_mutex_init(&mutex_blocked_list, NULL);
 	pthread_mutex_init(&mutex_blocked_queue, NULL);
 	pthread_mutex_init(&mutex_susp_ready_queue, NULL);
-	pthread_mutex_init(&hay_elemento_en_susp_ready, NULL);
 	pthread_mutex_init(&i_o, NULL);
 	sem_init(&elementos_en_cola_bloqueados, 0, 0);
 	sem_init(&elementos_en_cola_ready, 0, 0);
@@ -148,11 +148,10 @@ pid_t atender_consola() {
 		queue_push(new, proceso);
 		log_info(logger, "Proceso %lu asignado a la cola NEW", proceso->pcb.id);
 
-		//TODO: chequear cómo se va a calcular el grado de multiprogramacion. Creo que con ese semaforo basta
-		//aplicar semaforo para la cola de suspendido ready? Los suspendidos ready tienen mas prioridad
+		//TODO: aplicar semaforo para la cola de suspendido ready? Los suspendidos ready tienen mas prioridad
 		sem_wait(&multiprogramacion);
 		if(queue_size(susp_ready) <= 0) {
-
+			//todo: mutex
 			t_proceso* proceso = queue_pop(new);
 
 
@@ -174,6 +173,8 @@ pid_t atender_consola() {
 			//TODO: creo que no deberia pasar esto
 			log_info(logger, "Se alcanzó el maximo grado de multiprogramacion, el proceso %lu permanece en la cola de NEW", proceso->pcb.id);
 		}
+
+
 		break;
 
 	case ERROR:
@@ -328,12 +329,14 @@ void iniciar_planificacion_io(){
 	pthread_join(planificador_io, NULL);
 }
 
-void suspedidor(){
+void mandar_a_suspendido(){
 
 	int tamanio_cola_bloqueados;
 
 	while(1){
+		//TODO: aplicar semaforos
 		tamanio_cola_bloqueados = queue_size(blocked_fifo);
+		//TODO: volver a hacer
 		for(int i = 0; i < tamanio_cola_bloqueados; i++){
 
 			t_proceso_bloqueado* proceso = queue_pop(blocked_fifo);
