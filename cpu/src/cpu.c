@@ -1,4 +1,4 @@
-#include "cpu-3.h"
+#include "cpu.h"
 //interfaz provisorias
 //pthread_t dispatch;
 pthread_t interrupt;

@@ -23,19 +23,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: cpu-3
+all: cpu
 
 # Tool invocations
-cpu-3: $(OBJS) $(USER_OBJS)
+cpu: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc  -o "cpu-3" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc  -o "cpu" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) cpu-3
+	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) cpu
 	-@echo ' '
 
 .PHONY: all clean dependents
