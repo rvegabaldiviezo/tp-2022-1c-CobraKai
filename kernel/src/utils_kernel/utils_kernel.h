@@ -71,6 +71,8 @@ typedef struct
 {
 	t_proceso* proceso;
 	int tiempo_de_bloqueo;
+	int inicio_bloqueo;
+	int suspendido = 0;
 } t_proceso_bloqueado;
 
 

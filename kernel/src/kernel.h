@@ -12,6 +12,7 @@
 #include <commons/config.h>
 #include <pthread.h>
 #include <semaphore.h>
+#include <time.h>
 #include "utils_kernel/utils_kernel.h"
 
 #define PATH_CONFIG "src/kernel.config"
@@ -25,6 +26,7 @@
 #define IP_CPU "IP_CPU"
 #define PUERTO_CPU "PUERTO_CPU"
 #define ALGORITMO_PLANIFICACION "ALGORITMO_PLANIFICACION"
+#define TIEMPO_MAXIMO_BLOQUEADO "TIEMPO_MAXIMO_BLOQUEADO"
 
 // Operaciones con consola
 enum {
