@@ -53,6 +53,7 @@ void eliminar_paquete(t_paquete* paquete);*/
 //---------------------------
 t_log* iniciar_logger(void);
 t_config* iniciar_config(void);
+void liberar_conexion(int socket_cliente);
 
 /*
 t_config* iniciar_config(void);

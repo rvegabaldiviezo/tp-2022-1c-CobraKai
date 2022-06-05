@@ -50,6 +50,15 @@ typedef struct {
 	t_log* logger;
 } t_proceso;
 
+typedef struct {
+	t_config* config;
+	t_log* logger;
+	t_proceso process;
+	int socket_servidor;
+	int conexion_con_memoria;
+	int conexion_con_kernel;
+} t_proceso_cpu;
+
 enum {
 	NO_OP = 1,
 	I_O,
@@ -68,7 +77,8 @@ enum {
 //###### INTERFAZ FUNCIONES ######
 
 void escuchaInterrup();
-void proceso_init();
+void inicializar_cpu();
+void finalizar_cpu();
 
 /*
 int fetch(t_proceso proceso);

@@ -5,12 +5,13 @@ pthread_t interrupt;
 sem_t sem_interrupt;
 sem_t dispatch;
 
+t_proceso_cpu cpu;
 t_proceso proceso;
 
 int main(void) {
 
 	// 1) Inciar las configuraciones: Loggear y Archivo de configuraciones
-	proceso_init();
+	inicializar_cpu();
 
 		// 1.1) Inicio los semaforos
 
@@ -63,9 +64,11 @@ int main(void) {
 	//pthread_join(interrupt, NULL);
 
 
-	log_info(proceso.logger,"main: Termino de ejecutar");
-	puts("main: FIN PROGRAMA");
+	log_info(cpu.logger,"main: Termino de ejecutar");
 
+	finalizar_cpu();
+
+	puts("main: FIN PROGRAMA");
 	return EXIT_SUCCESS;
 }
 
@@ -78,25 +81,34 @@ void escuchaInterrup(){
 	puts("escuchaInterrup: salio del bloqueo, se cambio en el proceso el atributo bloqueo a 1");
 	//log_info(proceso->logger,"escuchaInterrup: salio del bloqueo, se cambio la var bloqueo a 1");
 	//sem_post(&dispatch);
-	log_info(proceso.logger,"escuchaInterrup: Termino de ejecutar la funcion");
+	log_info(cpu.logger,"escuchaInterrup: Termino de ejecutar la funcion");
 	sem_post(&dispatch);
 }
 
-void proceso_init(){
+void inicializar_cpu(){
 
 	// 1)  Iniciar/Crear logs
-	proceso.logger  = iniciar_logger();
-	log_info(proceso.logger," Inicio el Logger");
+	cpu.logger = iniciar_logger();
+	log_info(cpu.logger,"Inicio el Logger");
 
 	// 2) Leer el archivo de Configuraciones
-
-	log_info(proceso.logger,"proceso_init(): 2-Leyo archivo de configuraciones");
+	cpu.config = iniciar_config();
+	log_info(cpu.logger,"Lee archivo de configuraciones");
 
 	//3) Asignamos los valores iniciales
-
-	log_info(proceso.logger,"proceso_init(): 3-Asigno valores iniciales a las variables");
+	t_proceso nuevo_proceso;
+	nuevo_proceso.interrucion = 0; //en ppio es falsa la interrupcion
+	cpu.process = nuevo_proceso;
+	log_info(cpu.logger,"Asigno valores iniciales");
 }
 
+void finalizar_cpu(){
+	log_destroy(cpu.logger);
+	config_destroy(cpu.config);
+	liberar_conexion(cpu.socket_servidor);
+	liberar_conexion(cpu.conexion_con_memoria);
+	liberar_conexion(cpu.conexion_con_kernel);
+}
 
 
 

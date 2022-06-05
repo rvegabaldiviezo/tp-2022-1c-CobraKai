@@ -17,6 +17,10 @@ t_config* iniciar_config(void)
 	return nuevo_config;
 }
 
+void liberar_conexion(int socket_cliente)
+{
+	close(socket_cliente);
+}
 /*
 t_config* iniciar_config(void)
 {
