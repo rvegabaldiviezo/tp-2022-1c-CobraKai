@@ -84,5 +84,7 @@ void iniciar_planificacion_io();
 int recibir_tiempo_bloqueo();
 void iniciar_planificacion(char* planificacion);
 void comunicacion_con_cpu();
+void inicializar_semaforos();
+void * list_pop(t_list* lista);
 
 #endif /* KERNEL_H_ */
