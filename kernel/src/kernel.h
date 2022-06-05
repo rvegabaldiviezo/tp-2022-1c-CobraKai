@@ -86,5 +86,6 @@ void iniciar_planificacion(char* planificacion);
 void comunicacion_con_cpu();
 void inicializar_semaforos();
 void * list_pop(t_list* lista);
+t_proceso* lista_mas_corta(t_proceso*, t_proceso*);
 
 #endif /* KERNEL_H_ */

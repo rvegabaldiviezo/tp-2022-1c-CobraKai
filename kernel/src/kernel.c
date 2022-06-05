@@ -18,7 +18,6 @@ pthread_mutex_t mutex_new_queue;
 pthread_mutex_t mutex_ready_list;
 pthread_mutex_t i_o;
 pthread_mutex_t mutex_blocked_list;
-//pthread_mutex_t mutex_blocked_queue;
 sem_t elementos_en_cola_bloqueados;
 sem_t elementos_en_cola_ready;
 
@@ -30,7 +29,6 @@ t_list* blocked;
 t_queue* blocked_fifo;
 t_queue* susp_blocked;
 t_queue* susp_ready;
-//t_queue* ready_fifo;
 
 // Generales
 t_proceso* proceso;
@@ -61,7 +59,6 @@ int main(void) {
 
 	config = config_create(PATH_CONFIG);
 	char* ip_memoria = config_get_string_value(config, IP_MEMORIA);
-	//char* planificacion = config_get_string_value(config, ALGORITMO_PLANIFICACION);
 	char* puerto_memoria = config_get_string_value(config, PUERTO_MEMORIA);
 	conexion_con_memoria = crear_conexion(ip_memoria, puerto_memoria);
 
@@ -81,21 +78,17 @@ int main(void) {
 		}
 
 		pthread_create(&hilo_consola, NULL, (void*) atender_consola, NULL);
-		//long int* id_devuelto;
-
 
 		enviar_respuesta_exitosa(conexion_consola);
 	}
 
 	terminar_programa();
 
-
 	return EXIT_SUCCESS;
 }
 
 pid_t atender_consola() {
 	int operacion_consola = recibir_operacion(conexion_consola);
-	//t_proceso* proceso;
 	switch(operacion_consola) {
 	case LISTA_DE_INSTRUCCIONES:
 		//TODO: como hacer para distinguir entre los distintos semaforos de los procesos?
@@ -275,7 +268,6 @@ void agregar_a_bloqueados(t_proceso_bloqueado* proceso){
 	pthread_mutex_unlock(&mutex_blocked_list);
 	sem_post(&elementos_en_cola_bloqueados);
 	log_info(logger, "Se agrego un proceso a la cola de bloqueados por I/0");
-
 }
 
 void planificacion_io(){
@@ -329,10 +321,14 @@ void planificar_srt() {
 	while(1) {
 		sem_wait(&elementos_en_cola_ready);
 		pthread_mutex_lock(&mutex_ready_list);
-		t_proceso* proceso = list_get(ready, 0);
+		if(list_size(ready) > 1) {
+			list_sort(ready, (void *) menor_tiempo_restante);
+		}
+		t_proceso* proceso_mas_corto = list_pop(ready);
 		pthread_mutex_unlock(&mutex_ready_list);
+		// solo para ver si ordena bien
 		log_info(logger, "Me llegaron los siguientes valores:");
-		list_iterate(proceso->pcb.instrucciones, (void*) iterator);
+		list_iterate(proceso_mas_corto->pcb.instrucciones, (void*) iterator);
 	}
 
 }
@@ -340,10 +336,8 @@ void planificar_srt() {
 void iniciar_planificacion(char* planificacion){
 	if(strcmp(planificacion, "FIFO") == 0) {
 		pthread_create(&planificador_fifo, NULL, (void*) planificar_fifo, NULL);
-		//pthread_join(planificador_fifo, NULL);
 	} else if(strcmp(planificacion, "SRT") == 0) {
 		pthread_create(&planificador_srt, NULL, (void*) planificar_srt, NULL);
-		//pthread_join(planificador_srt, NULL);
 	}
 }
 
@@ -352,4 +346,12 @@ void* list_pop(t_list* lista) {
 	list_remove(lista, 0);
 	return elemento;
 
+}
+
+t_proceso* menor_tiempo_restante(t_proceso* p1, t_proceso* p2) {
+	if(list_size(p1->pcb.estimacion_rafaga) > list_size(p2->pcb.estimacion_rafaga)) {
+		return p2;
+	} else {
+		return p1;
+	}
 }
