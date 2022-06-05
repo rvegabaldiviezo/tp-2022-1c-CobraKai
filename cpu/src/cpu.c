@@ -4,14 +4,26 @@
 pthread_t interrupt;
 sem_t sem_interrupt;
 sem_t dispatch;
-int bloqueado;
+
 t_proceso proceso;
 
 int main(void) {
 
-	sem_init(&sem_interrupt,0,0);
+	// 1) Inciar las configuraciones: Loggear y Archivo de configuraciones
+	proceso_init();
 
-	pthread_create(&interrupt, NULL, (void*) escuchaInterrup, NULL);
+		// 1.1) Inicio los semaforos
+
+		// Semaforo para bloquear las interrupciones que llegan
+		sem_init(&sem_interrupt,0,0);
+		sem_init(&dispatch,0,0);
+
+		// 1.2) Inicio los hilos
+
+		//Hilo para tener abierta la conecion que escuche el bloqueo
+		pthread_create(&interrupt, NULL, (void*) escuchaInterrup, NULL);
+
+
 	/*
 	t_proceso proceso = iniciar_cpu();
 	   iniciar logear, 	proceso.interrucion=0;
@@ -38,27 +50,58 @@ int main(void) {
 		check_interrupt(proceso);
 	}
 	*/
-	printf("proceso interrucion (antes): %i \n",proceso.interrucion);
-
+	//printf("proceso interrucion (antes): %i \n",proceso->interrucion);
+	puts("main: antes");
 	sem_post(&sem_interrupt);
-
 	sem_wait(&dispatch);
-	printf("proceso interrucion (despues): %i \n",proceso.interrucion);
+	puts("main: despues");
+	//escuchaInterrup();
+	//sem_wait(&dispatch);
 
-	pthread_join(interrupt, NULL);
+	//printf("proceso interrucion (despues): %i \n",proceso->interrucion);
 
+	//pthread_join(interrupt, NULL);
+
+
+	log_info(proceso.logger,"main: Termino de ejecutar");
 	puts("main: FIN PROGRAMA");
+
 	return EXIT_SUCCESS;
 }
 
 void escuchaInterrup(){
+
 	puts("escuchaInterrup: antes del bloqueo");
+	//log_info(proceso->logger,"escuchaInterrup: antes del bloqueo");
 	sem_wait(&sem_interrupt);
-	proceso.interrucion=1;
+	//proceso->interrucion = 1;
 	puts("escuchaInterrup: salio del bloqueo, se cambio en el proceso el atributo bloqueo a 1");
+	//log_info(proceso->logger,"escuchaInterrup: salio del bloqueo, se cambio la var bloqueo a 1");
+	//sem_post(&dispatch);
+	log_info(proceso.logger,"escuchaInterrup: Termino de ejecutar la funcion");
 	sem_post(&dispatch);
 }
+
+void proceso_init(){
+
+	// 1)  Iniciar/Crear logs
+	proceso.logger  = iniciar_logger();
+	log_info(proceso.logger," Inicio el Logger");
+
+	// 2) Leer el archivo de Configuraciones
+
+	log_info(proceso.logger,"proceso_init(): 2-Leyo archivo de configuraciones");
+
+	//3) Asignamos los valores iniciales
+
+	log_info(proceso.logger,"proceso_init(): 3-Asigno valores iniciales a las variables");
+}
+
+
+
+
 /*
+ *
 int fetch(t_proceso proceso){
 	//Proxima instruccion a ejecutar
 	return proceso.pcb.program_counter;
@@ -145,5 +188,28 @@ void config(){
 	char* ip = config_get_string_value(config, conf_ip);
 }*/
 
+
+
+/*
+ * void log_s(char* titulo_log, char* valor_log){
+	char * mensaje_log = string_new();
+	string_append(&mensaje_log, titulo_log);
+	string_append(&mensaje_log, valor_log);
+	log_info(proceso.logger,"%s", mensaje_log);
+}
+void log_i(char* titulo_log, int valor_log){
+	char * mensaje_log = string_new();
+	string_append(&mensaje_log, titulo_log);
+	string_append(&mensaje_log, string_itoa(valor_log));
+	log_info(proceso.logger,"%s",mensaje_log);
+}
+
+void loggear(char* mensajelog){
+	log_info(proceso->logger,"%s",mensajelog);
+}
+
+
+
+ * */
 
 

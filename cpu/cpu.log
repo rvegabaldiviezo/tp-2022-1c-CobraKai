@@ -1,0 +1,18 @@
+[INFO] 01:05:18:678 CPU/(17896:17896): proceso_init: Termino las configuraciones iniciales
+[INFO] 01:05:18:678 CPU/(17896:17896): main: Termino de ejecutar
+[INFO] 01:16:36:189 CPU/(18013:18013): proceso_init: Termino las configuraciones iniciales
+[INFO] 01:16:36:192 CPU/(18013:18019): escuchaInterrup: Termino de ejecutar la funcion
+[INFO] 01:16:36:192 CPU/(18013:18013): main: Termino de ejecutar
+[INFO] 01:30:59:748 CPU/(18978:18978): proceso_init: Termino las configuraciones iniciales
+[INFO] 01:30:59:754 CPU/(18978:18984): escuchaInterrup: Termino de ejecutar la funcion
+[INFO] 01:30:59:754 CPU/(18978:18978): main: Termino de ejecutar
+[INFO] 02:14:14:713 CPU/(19640:19640):  Inicio el Logger
+[INFO] 02:14:14:713 CPU/(19640:19640): proceso_init(): 2-Leyo archivo de configuraciones
+[INFO] 02:14:14:713 CPU/(19640:19640): proceso_init(): 3-Asigno valores iniciales a las variables
+[INFO] 02:14:14:717 CPU/(19640:19645): escuchaInterrup: Termino de ejecutar la funcion
+[INFO] 02:14:14:717 CPU/(19640:19640): main: Termino de ejecutar
+[INFO] 02:52:00:674 CPU/(20490:20490):  Inicio el Logger
+[INFO] 02:52:00:674 CPU/(20490:20490): proceso_init(): 2-Leyo archivo de configuraciones
+[INFO] 02:52:00:674 CPU/(20490:20490): proceso_init(): 3-Asigno valores iniciales a las variables
+[INFO] 02:52:00:682 CPU/(20490:20496): escuchaInterrup: Termino de ejecutar la funcion
+[INFO] 02:52:00:682 CPU/(20490:20490): main: Termino de ejecutar

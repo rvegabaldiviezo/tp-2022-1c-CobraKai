@@ -1,12 +1,13 @@
 #ifndef CPU_H_
 #define CPU_H_
 
+#include <string.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/socket.h>
 #include <unistd.h>
 #include <netdb.h>
-#include <string.h>
 #include <assert.h>
 #include <signal.h>
 #include <netdb.h>
@@ -18,9 +19,13 @@
 #include <commons/string.h>
 #include <commons/config.h>
 #include <commons/collections/list.h>
+// Include de utils
+#include "utils/client_utils.h"
 
-
-#define PATH_CONFIG "src/cpu.config"
+// Rutas de Archivos
+#define PATH_CONFIG "./cpu.config"
+#define PATH_LOG "./cpu.log"
+#define NAME_LOG "CPU"
 
 //###### ESTRUCTURAS ######
 typedef struct instruction {
@@ -42,6 +47,7 @@ typedef struct {
 	int socket;
 	int interrucion;//0: false
 	t_config* config;
+	t_log* logger;
 } t_proceso;
 
 enum {
@@ -62,7 +68,7 @@ enum {
 //###### INTERFAZ FUNCIONES ######
 
 void escuchaInterrup();
-
+void proceso_init();
 
 /*
 int fetch(t_proceso proceso);
