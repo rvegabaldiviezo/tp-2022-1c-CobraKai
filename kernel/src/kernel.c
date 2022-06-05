@@ -14,11 +14,11 @@ pthread_t planificador_io;
 pthread_t hilo_consola;
 
 // Semaforos
+pthread_mutex_t mutex_new_queue;
 pthread_mutex_t mutex_ready_list;
-pthread_mutex_t mutex_ready_queue;
 pthread_mutex_t i_o;
 pthread_mutex_t mutex_blocked_list;
-pthread_mutex_t mutex_blocked_queue;
+//pthread_mutex_t mutex_blocked_queue;
 sem_t elementos_en_cola_bloqueados;
 sem_t elementos_en_cola_ready;
 
@@ -30,7 +30,7 @@ t_list* blocked;
 t_queue* blocked_fifo;
 t_queue* susp_blocked;
 t_queue* susp_ready;
-t_queue* ready_fifo;
+//t_queue* ready_fifo;
 
 // Generales
 t_proceso* proceso;
@@ -46,14 +46,6 @@ int grado_multiprogramacion;
 char* planificador;
 
 int main(void) {
-
-	pthread_mutex_init(&mutex_ready_list, NULL);
-	pthread_mutex_init(&mutex_ready_queue, NULL);
-	pthread_mutex_init(&mutex_blocked_list, NULL);
-	pthread_mutex_init(&mutex_blocked_queue, NULL);
-	pthread_mutex_init(&i_o, NULL);
-	sem_init(&elementos_en_cola_bloqueados, 0, 0);
-	sem_init(&elementos_en_cola_ready, 0, 0);
 
 	logger = log_create(PATH_LOG, "KERNEL", true, LOG_LEVEL_DEBUG);
 
@@ -75,6 +67,7 @@ int main(void) {
 
 	log_info(logger, "conectado a memoria");
 
+	inicializar_semaforos();
 	inicializar_colas();
 	iniciar_planificacion(planificador);
 
@@ -94,19 +87,6 @@ int main(void) {
 		enviar_respuesta_exitosa(conexion_consola);
 	}
 
-<<<<<<< HEAD
-	if(strcmp(planificador, "SRT") == 0) {
-		pthread_join(planificador_srt, NULL);
-	} else {
-		pthread_join(planificador_fifo, NULL);
-	}
-
-	pthread_join(planificador_io, NULL);
-	pthread_join(hilo_consola, NULL);
-=======
-
->>>>>>> b6da311d0fe5dcc6601e756f50d85b7f316c465c
-
 	terminar_programa();
 
 
@@ -121,6 +101,8 @@ pid_t atender_consola() {
 		//TODO: como hacer para distinguir entre los distintos semaforos de los procesos?
 		proceso = crear_proceso();
 		proceso = recibir_proceso(conexion_consola);
+		// Ya se copiaron todos los bytes que venian de la consola
+		// de ahora en mas puedo agregar lo que quiera al proceso
 		proceso->pcb.instrucciones = parsear_instrucciones(proceso->pcb.instrucciones);
 		proceso->socket = conexion_consola;
 		proceso->pcb.estimacion_rafaga = config_get_int_value(config, ESTIMACION_INICIAL);
@@ -135,14 +117,7 @@ pid_t atender_consola() {
 			return EXIT_FAILURE;
 		}
 
-		// Ya se copiaron todos los bytes que venian de la consola
-		// de ahora en mas puedo agregar lo que quiera al proceso
-
-		char* tamanio_recibido = string_new();
-		string_append(&tamanio_recibido, "Tamanio recibido: ");
-		string_append(&tamanio_recibido, string_itoa(proceso->pcb.tamanio_proceso));
-		log_info(logger, tamanio_recibido);
-
+		log_info(logger, "Tamaño recibido: %d", proceso->pcb.tamanio_proceso);
 
 		int numero_de_tabla = recibir_numero_de_tabla(conexion_con_memoria);
 		if(!numero_de_tabla_valido(numero_de_tabla)) {
@@ -153,15 +128,17 @@ pid_t atender_consola() {
 		proceso->pcb.tablas_paginas = numero_de_tabla;
 		log_info(logger, "Se asignó el numero de tabla: %d al proceso de id: %lu\n", proceso->pcb.tablas_paginas, proceso->pcb.id);
 
+		pthread_mutex_lock(&mutex_new_queue);
 		queue_push(new, proceso);
+		pthread_mutex_unlock(&mutex_new_queue);
 		log_info(logger, "Proceso %lu asignado a la cola NEW", proceso->pcb.id);
 
 		//TODO: chequear cómo se va a calcular el grado de multiprogramacion
 		//TODO: chequear si usar un semáforo, para que continue cuando se libere un proceso
 		if(list_size(ready) < grado_multiprogramacion) {
-
+			pthread_mutex_lock(&mutex_new_queue);
 			t_proceso* proceso = queue_pop(new);
-
+			pthread_mutex_unlock(&mutex_new_queue);
 
 			if(strcmp(planificador, "SRT") == 0) {
 				pthread_mutex_lock(&mutex_ready_list);
@@ -170,9 +147,9 @@ pid_t atender_consola() {
 				pthread_mutex_unlock(&mutex_ready_list);
 				log_info(logger, "El proceso %lu fue asignado a la cola READY", proceso->pcb.id);
 			} else if(strcmp(planificador, "FIFO") == 0){
-				pthread_mutex_lock(&mutex_ready_queue);
-				queue_push(ready_fifo, proceso);
-				pthread_mutex_unlock(&mutex_ready_queue);
+				pthread_mutex_lock(&mutex_ready_list);
+				list_add(ready, proceso);
+				pthread_mutex_unlock(&mutex_ready_list);
 				log_info(logger, "El proceso %lu fue asignado a la cola READY", proceso->pcb.id);
 				sem_post(&elementos_en_cola_ready);
 			}
@@ -244,12 +221,13 @@ void planificar_fifo(){
 		while(1){
 			sem_wait(&elementos_en_cola_ready);
 
-			pthread_mutex_lock(&mutex_ready_queue);
-			t_proceso* primer_proceso = queue_pop(ready_fifo);
-			pthread_mutex_unlock(&mutex_ready_queue);
+			pthread_mutex_lock(&mutex_ready_list);
+			t_proceso* primer_proceso = list_pop(ready);
+			pthread_mutex_unlock(&mutex_ready_list);
 
+			list_iterate(primer_proceso->pcb.instrucciones, (void *) iterator);
 			//TODO: se manda el pcb a la cpu
-			log_info(logger,"Se paso un proceso de Ready a Ejecutando");
+			//log_info(logger,"Se paso un proceso de Ready a Ejecutando");
 
 			//semaforo que sincronice con cpu. Si el proceso terminó de ejecutar, continúa
 			log_info(logger,"Un proceso termino de ejecutar");
@@ -292,9 +270,9 @@ void comunicacion_con_cpu(){
 
 
 void agregar_a_bloqueados(t_proceso_bloqueado* proceso){
-	pthread_mutex_lock(&mutex_blocked_queue);
+	pthread_mutex_lock(&mutex_blocked_list);
 	queue_push(blocked_fifo, proceso);
-	pthread_mutex_unlock(&mutex_blocked_queue);
+	pthread_mutex_unlock(&mutex_blocked_list);
 	sem_post(&elementos_en_cola_bloqueados);
 	log_info(logger, "Se agrego un proceso a la cola de bloqueados por I/0");
 
@@ -308,9 +286,9 @@ void planificacion_io(){
 		usleep(primer_proceso->tiempo_de_bloqueo*1000);
 		log_info(logger, "Un proceso finalizo su I/0");
 
-		pthread_mutex_lock(&mutex_ready_queue);
-		queue_push(ready_fifo, primer_proceso->proceso);
-		pthread_mutex_unlock(&mutex_ready_queue);
+		pthread_mutex_lock(&mutex_ready_list);
+		list_add(ready, primer_proceso->proceso);
+		pthread_mutex_unlock(&mutex_ready_list);
 		sem_post(&elementos_en_cola_ready);
 
 		log_info(logger, "Se paso un proceso de bloqueado a ready");
@@ -332,10 +310,18 @@ int recibir_tiempo_bloqueo(){
 void inicializar_colas() {
 	new = queue_create();
 	ready = list_create();
-	blocked = queue_create();
+	blocked = list_create();
 	susp_blocked = queue_create();
 	susp_ready = queue_create();
-	ready_fifo = queue_create();
+}
+
+void inicializar_semaforos() {
+	pthread_mutex_init(&mutex_ready_list, NULL);
+	pthread_mutex_init(&mutex_blocked_list, NULL);
+	pthread_mutex_init(&i_o, NULL);
+	sem_init(&elementos_en_cola_bloqueados, 0, 0);
+	sem_init(&elementos_en_cola_ready, 0, 0);
+
 }
 
 void planificar_srt() {
@@ -359,4 +345,11 @@ void iniciar_planificacion(char* planificacion){
 		pthread_create(&planificador_srt, NULL, (void*) planificar_srt, NULL);
 		//pthread_join(planificador_srt, NULL);
 	}
+}
+
+void* list_pop(t_list* lista) {
+	void* elemento = list_get(lista, 0);
+	list_remove(lista, 0);
+	return elemento;
+
 }
