@@ -94,14 +94,7 @@ int main(void) {
 		enviar_respuesta_exitosa(conexion_consola);
 	}
 
-	if(strcmp(planificador, "SRT") == 0) {
-		pthread_join(planificador_srt, NULL);
-	} else {
-		pthread_join(planificador_fifo, NULL);
-	}
 
-	pthread_join(planificador_io, NULL);
-	pthread_join(hilo_consola, NULL);
 
 	terminar_programa();
 
@@ -214,6 +207,14 @@ t_pcb crear_pcb() {
 }
 
 void terminar_programa() {
+	if(strcmp(planificador, "SRT") == 0) {
+			pthread_join(planificador_srt, NULL);
+	} else {
+		pthread_join(planificador_fifo, NULL);
+	}
+	pthread_join(planificador_io, NULL);
+	pthread_join(hilo_consola, NULL);
+
 	log_destroy(logger);
 	config_destroy(config);
 	liberar_conexion(socket_servidor);
