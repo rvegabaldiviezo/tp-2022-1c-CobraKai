@@ -8,10 +8,6 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
-<<<<<<< HEAD
--include src/utils_cpu/subdir.mk
-=======
->>>>>>> b6da311d0fe5dcc6601e756f50d85b7f316c465c
 -include src/subdir.mk
 -include subdir.mk
 -include objects.mk
