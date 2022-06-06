@@ -1,10 +1,17 @@
 #include "cpu.h"
 //interfaz provisorias
 //pthread_t dispatch;
+
+//Hilos
 pthread_t interrupt;
+//pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
+
+//Semaforos
 sem_t sem_interrupt;
 sem_t dispatch;
 
+//Variables Globales del Proceso
 t_proceso_cpu cpu;
 t_proceso proceso;
 
@@ -12,19 +19,6 @@ int main(void) {
 
 	// 1) Inciar las configuraciones: Loggear y Archivo de configuraciones
 	inicializar_cpu();
-
-		// 1.1) Inicio los semaforos
-
-		// Semaforo para bloquear las interrupciones que llegan
-		sem_init(&sem_interrupt,0,0);
-		sem_init(&dispatch,0,0);
-
-		// 1.2) Inicio los hilos
-
-		//Hilo para tener abierta la conecion que escuche el bloqueo
-		pthread_create(&interrupt, NULL, (void*) escuchaInterrup, NULL);
-
-
 	/*
 	t_proceso proceso = iniciar_cpu();
 	   iniciar logear, 	proceso.interrucion=0;
@@ -52,16 +46,24 @@ int main(void) {
 	}
 	*/
 	//printf("proceso interrucion (antes): %i \n",proceso->interrucion);
-	puts("main: antes");
+	puts("main: antes del desbloque de interrup");
+	printf("proceso interrucion (antes): %i \n", cpu.process.interrupcion);
+
+
 	sem_post(&sem_interrupt);
+
+	//Bloqueo en hilo principal
 	sem_wait(&dispatch);
-	puts("main: despues");
+	if(0!=cpu.process.interrupcion){
+		printf("proceso interrucion (en mutex): %i \n", cpu.process.interrupcion);
+	}
+	puts("main: despues del desbloqueo");
 	//escuchaInterrup();
 	//sem_wait(&dispatch);
 
 	//printf("proceso interrucion (despues): %i \n",proceso->interrucion);
 
-	//pthread_join(interrupt, NULL);
+	pthread_join(interrupt, NULL);
 
 
 	log_info(cpu.logger,"main: Termino de ejecutar");
@@ -69,27 +71,37 @@ int main(void) {
 	finalizar_cpu();
 
 	puts("main: FIN PROGRAMA");
+
 	return EXIT_SUCCESS;
 }
 
 void escuchaInterrup(){
 
-	puts("escuchaInterrup: antes del bloqueo");
-	//log_info(proceso->logger,"escuchaInterrup: antes del bloqueo");
+	//pthread_mutex_lock(&mutex);
+
+	puts("escuchaInterrup: Esta bloqueado el interrup ");
+
 	sem_wait(&sem_interrupt);
-	//proceso->interrucion = 1;
-	puts("escuchaInterrup: salio del bloqueo, se cambio en el proceso el atributo bloqueo a 1");
-	//log_info(proceso->logger,"escuchaInterrup: salio del bloqueo, se cambio la var bloqueo a 1");
+	//log_info(proceso->logger,"escuchaInterrup: antes del bloqueo");
+	cpu.process.interrupcion = 1;
+
+	printf("salio del bloqueo, el atributo bloqueo es: %i \n", cpu.process.interrupcion);
+
+	//log_info(pssroceso->logger,"escuchaInterrup: salio del bloqueo, se cambio la var bloqueo a 1");
 	//sem_post(&dispatch);
-	log_info(cpu.logger,"escuchaInterrup: Termino de ejecutar la funcion");
+
+	//pthread_mutex_lock(&mutex);
+	puts("escuchaInterrup: Se bloquea el dispatch ");
 	sem_post(&dispatch);
+
+	log_info(cpu.logger,"escuchaInterrup: Termino de ejecutar la funcion");
 }
 
 void inicializar_cpu(){
 
 	// 1)  Iniciar/Crear logs
 	cpu.logger = iniciar_logger();
-	log_info(cpu.logger,"Inicio el Logger");
+	log_info(cpu.logger,"\n### Inicio el Logger ###");
 
 	// 2) Leer el archivo de Configuraciones
 	cpu.config = iniciar_config();
@@ -97,19 +109,40 @@ void inicializar_cpu(){
 
 	//3) Asignamos los valores iniciales
 	t_proceso nuevo_proceso;
-	nuevo_proceso.interrucion = 0; //en ppio es falsa la interrupcion
+	nuevo_proceso.interrupcion = 0; //en ppio es falsa la interrupcion
 	cpu.process = nuevo_proceso;
 	log_info(cpu.logger,"Asigno valores iniciales");
+
+	//4) Inicio los Semaforos
+	sem_init(&sem_interrupt,0,0);
+	sem_init(&dispatch,0,0);
+	log_info(cpu.logger,"Asigno a los semaforos con valores iniciales");
+
+	//5) Inicio lo Hilos
+	if(0 != pthread_create(&interrupt, NULL, (void*) escuchaInterrup, NULL)){//Rutina: la funcion q le pasamos
+		log_info(cpu.logger,"theread de interrupcion no fue creado");
+		exit(1);
+	}
+	log_info(cpu.logger,"Se crearon los hilos necesarios");
+
 }
 
 void finalizar_cpu(){
 	log_destroy(cpu.logger);
 	config_destroy(cpu.config);
-	liberar_conexion(cpu.socket_servidor);
-	liberar_conexion(cpu.conexion_con_memoria);
-	liberar_conexion(cpu.conexion_con_kernel);
+	//liberar_conexion(cpu.socket_servidor);
+	//liberar_conexion(cpu.conexion_con_memoria);
+	//liberar_conexion(cpu.conexion_con_kernel);
 }
 
+
+
+/*
+ * 1) levantar la conecciones cliente servidor
+ * 2)
+ *
+ *
+ * */
 
 
 /*

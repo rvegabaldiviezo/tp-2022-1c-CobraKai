@@ -45,7 +45,7 @@ typedef struct {
 typedef struct {
 	t_pcb pcb;
 	int socket;
-	int interrucion;//0: false
+	int interrupcion;//0: false
 	t_config* config;
 	t_log* logger;
 } t_proceso;

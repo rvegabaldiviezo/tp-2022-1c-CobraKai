@@ -31,3 +31,54 @@
 [INFO] 04:10:03:594 CPU/(22856:22856): Asigno valores iniciales
 [INFO] 04:10:03:602 CPU/(22856:22861): escuchaInterrup: Termino de ejecutar la funcion
 [INFO] 04:10:03:602 CPU/(22856:22856): main: Termino de ejecutar
+[INFO] 16:13:13:998 CPU/(3732:3732): Inicio el Logger
+[INFO] 16:13:13:999 CPU/(3732:3732): Lee archivo de configuraciones
+[INFO] 16:13:13:999 CPU/(3732:3732): Asigno valores iniciales
+[INFO] 16:13:14:007 CPU/(3732:3737): escuchaInterrup: Termino de ejecutar la funcion
+[INFO] 16:13:14:007 CPU/(3732:3732): main: Termino de ejecutar
+[INFO] 16:17:51:831 CPU/(3904:3904): Inicio el Logger
+[INFO] 16:17:51:831 CPU/(3904:3904): Lee archivo de configuraciones
+[INFO] 16:17:51:831 CPU/(3904:3904): Asigno valores iniciales
+[INFO] 16:17:51:831 CPU/(3904:3904): Asigno a los semaforos con valores iniciales
+[INFO] 16:17:51:831 CPU/(3904:3904): Se crearon los hilos necesarios
+[INFO] 16:17:51:843 CPU/(3904:3909): escuchaInterrup: Termino de ejecutar la funcion
+[INFO] 16:17:51:843 CPU/(3904:3904): main: Termino de ejecutar
+[INFO] 17:20:31:108 CPU/(4983:4983): Inicio el Logger
+[INFO] 17:20:31:108 CPU/(4983:4983): Lee archivo de configuraciones
+[INFO] 17:20:31:108 CPU/(4983:4983): Asigno valores iniciales
+[INFO] 17:20:31:108 CPU/(4983:4983): Asigno a los semaforos con valores iniciales
+[INFO] 17:22:29:035 CPU/(5047:5047): Inicio el Logger
+[INFO] 17:22:29:035 CPU/(5047:5047): Lee archivo de configuraciones
+[INFO] 17:22:29:035 CPU/(5047:5047): Asigno valores iniciales
+[INFO] 17:22:29:035 CPU/(5047:5047): Asigno a los semaforos con valores iniciales
+[INFO] 17:22:29:035 CPU/(5047:5047): Se crearon los hilos necesarios
+[INFO] 17:22:29:042 CPU/(5047:5052): escuchaInterrup: Termino de ejecutar la funcion
+[INFO] 17:22:29:042 CPU/(5047:5047): main: Termino de ejecutar
+[INFO] 17:42:35:655 CPU/(5343:5343): Inicio el Logger
+[INFO] 17:42:35:655 CPU/(5343:5343): Lee archivo de configuraciones
+[INFO] 17:42:35:655 CPU/(5343:5343): Asigno valores iniciales
+[INFO] 17:42:35:655 CPU/(5343:5343): Asigno a los semaforos con valores iniciales
+[INFO] 17:42:35:656 CPU/(5343:5343): Se crearon los hilos necesarios
+[INFO] 17:42:35:659 CPU/(5343:5343): main: Termino de ejecutar
+[INFO] 17:45:30:143 CPU/(5405:5405): Inicio el Logger
+[INFO] 17:45:30:143 CPU/(5405:5405): Lee archivo de configuraciones
+[INFO] 17:45:30:143 CPU/(5405:5405): Asigno valores iniciales
+[INFO] 17:45:30:143 CPU/(5405:5405): Asigno a los semaforos con valores iniciales
+[INFO] 17:45:30:143 CPU/(5405:5405): Se crearon los hilos necesarios
+[INFO] 17:45:30:148 CPU/(5405:5405): main: Termino de ejecutar
+[INFO] 17:50:16:062 CPU/(5508:5508): 
+### Inicio el Logger ###
+[INFO] 17:50:16:062 CPU/(5508:5508): Lee archivo de configuraciones
+[INFO] 17:50:16:062 CPU/(5508:5508): Asigno valores iniciales
+[INFO] 17:50:16:062 CPU/(5508:5508): Asigno a los semaforos con valores iniciales
+[INFO] 17:50:16:062 CPU/(5508:5508): Se crearon los hilos necesarios
+[INFO] 17:50:16:075 CPU/(5508:5513): escuchaInterrup: Termino de ejecutar la funcion
+[INFO] 17:50:16:075 CPU/(5508:5508): main: Termino de ejecutar
+[INFO] 17:53:08:786 CPU/(5578:5578): 
+### Inicio el Logger ###
+[INFO] 17:53:08:786 CPU/(5578:5578): Lee archivo de configuraciones
+[INFO] 17:53:08:786 CPU/(5578:5578): Asigno valores iniciales
+[INFO] 17:53:08:786 CPU/(5578:5578): Asigno a los semaforos con valores iniciales
+[INFO] 17:53:08:786 CPU/(5578:5578): Se crearon los hilos necesarios
+[INFO] 17:53:08:804 CPU/(5578:5583): escuchaInterrup: Termino de ejecutar la funcion
+[INFO] 17:53:08:804 CPU/(5578:5578): main: Termino de ejecutar
