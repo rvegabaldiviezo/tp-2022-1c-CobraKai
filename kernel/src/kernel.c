@@ -159,6 +159,7 @@ pid_t atender_consola() {
 				pthread_mutex_lock(&mutex_ready_list);
 				list_add(ready, proceso);
 				pthread_mutex_unlock(&mutex_ready_list);
+				//TODO: replanificar
 				log_info(logger, "El proceso %lu fue asignado a la cola READY", proceso->pcb.id);
 
 
@@ -232,10 +233,14 @@ void planificar_fifo(){
 		iniciar_planificacion_io();
 
 		while(1){
+			if(strcmp(planificador, "SRT") == 0) {
+
+						} else if(strcmp(planificador, "FIFO") == 0){
 			sem_wait(&elementos_en_cola_ready);
 			pthread_mutex_lock(&mutex_ready_queue);
 			t_proceso* primer_proceso = queue_pop(ready_fifo);
 			pthread_mutex_unlock(&mutex_ready_queue);
+
 
 			//TODO: se manda el pcb a la cpu
 			log_info(logger,"Se paso un proceso de Ready a Ejecutando");
@@ -261,6 +266,10 @@ void comunicacion_con_cpu(){
 				//TODO: agregar pcb y tiempo a proceso_bloqueado
 				agregar_a_bloqueados(proceso);
 				sem_post(&elementos_en_cola_bloqueados);
+
+				break;
+
+			case INTERRUPT:
 
 				break;
 			case EXIT:
@@ -383,13 +392,6 @@ void inicializar_colas() {
 	susp_ready = queue_create();
 }
 
-void planificar_srt() {
-	// TODO: implementar planificador posta
-	t_proceso* proceso = list_get(ready, 0);
-	log_info(logger, "Me llegaron los siguientes valores:");
-	list_iterate(proceso->pcb.instrucciones, (void*) iterator);
-}
-
 void iniciar_planificacion(char* planificacion){
 	if(strcmp(planificacion, "FIFO") == 0) {
 		pthread_create(&planificador_fifo, NULL, (void*) planificar_fifo, NULL);
@@ -397,5 +399,61 @@ void iniciar_planificacion(char* planificacion){
 	} else if(strcmp(planificacion, "SRT") == 0) {
 		pthread_create(&planificador_srt, NULL, (void*) planificar_srt, NULL);
 		pthread_join(planificador_srt, NULL);
+	}
+}
+
+
+void inicializar_semaforos() {
+	sem_init(&sem_ready, 0, grado_multiprogramacion);
+	sem_init(&sem_new, 0, 0);
+}
+
+void planificar_srt() {
+	// TODO: implementar planificador posta
+	// Agarro el mas corto de ready
+	pthread_mutex_lock(&mutex_ready_queue);
+	//sem_wait(&sem_ready);
+	list_add(ready, proceso);
+	log_info(logger, "Proceso %lu asignado a la cola READY", proceso->pcb.id);
+	pthread_mutex_unlock(&mutex_ready_queue);
+
+	// Pido a cpu pcb y tiempo restante de proceso que esté ejecutando y comparo con proceso_mas_corto_disponible
+	// t_proceso* proceso_ejecutando = solicitar_a_cpu(REPLANIFICACION); -> implementar
+
+	sleep(5); // solo para probar
+	pthread_mutex_lock(&mutex_ready_queue);
+	list_sort(ready, (void*) lista_mas_corta);
+	t_proceso* proceso_mas_corto_disponible = list_pop(ready);
+	sem_post(&sem_ready);
+	pthread_mutex_unlock(&mutex_ready_queue);
+
+	// comparo con estimacion del que llegó, mando al mas corto
+
+	log_info(logger, "Me llegaron los siguientes valores:");
+	list_iterate(proceso_mas_corto_disponible->pcb.instrucciones, (void*) iterator);
+
+}
+
+void * list_pop(t_list* list) {
+	void * elemento = list_get(list, 0);
+	list_remove(list, 0);
+	return elemento;
+
+}
+
+t_proceso* menor_tiempo_restante(t_proceso* p1, t_proceso* p2) {
+	if(p1->pcb.estimacion_rafaga > p2->pcb.estimacion_rafaga) {
+		return p2;
+	} else {
+		return p1;
+	}
+}
+
+// funcion para probar las prioridade de la cola ready
+t_proceso* lista_mas_corta(t_proceso* p1, t_proceso* p2) {
+	if(list_size(p1->pcb.instrucciones) > list_size(p2->pcb.instrucciones)) {
+		return p2;
+	} else {
+		return p1;
 	}
 }
