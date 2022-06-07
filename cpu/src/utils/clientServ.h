@@ -1,5 +1,5 @@
-#ifndef CLIENT_UTILS_H_
-#define CLIENT_UTILS_H_
+#ifndef CLIENT_SERV_H_
+#define CLIENT_SERV_H_
 
 #include <string.h>
 #include <stdlib.h>
@@ -21,6 +21,14 @@
 #include <commons/collections/list.h>
 // Include de utils
 #include "../cpu.h"
+
+//###### DEFINICIONES #####
+#define KEY_IP_CPU "IP"
+#define KEY_PUERTO_DISPATCH "PUERTO_ESCUCHA_DISPATCH"
+
+
+//###### STRUCTURAS #####
+
 
 typedef enum
 {
@@ -61,5 +69,26 @@ void leer_consola(t_log* logger);
 void paquete(int conexion);
 void terminar_programa(int conexion, t_log* logger, t_config* config);
 */
+/***********************************************************************************/
+/************************************ SERVER **************************************/
+/***********************************************************************************/
 
-#endif /* CLIENT_UTILS_H_ */
+
+
+/***********************************************************************************/
+/************************************ SERVER **************************************/
+/***********************************************************************************/
+//### funcionales a cpu
+void iniciar_servidor_dispatch(t_proceso_cpu cpu_process);
+void iniciar_servidor_interrupt(t_proceso_cpu cpu_process);
+int iniciar_servidor_cpu(t_proceso_cpu cpu_process, char* key_puerto);
+int esperar_cliente_cpu(t_proceso_cpu cpu_process, int socket_server, char* tipo_puerto);
+int esperar_cliente_dispatch(t_proceso_cpu cpu_process);
+int esperar_cliente_interrupt(t_proceso_cpu cpu_process);
+//### primitivas
+int iniciar_servidor(char* ip, char* puerto);
+int esperar_cliente(int socket_servidor);
+int recibir_operacion(int socket_cliente);
+
+
+#endif /* CLIENT_SERV_H_ */

@@ -14,11 +14,19 @@ sem_t dispatch;
 //Variables Globales del Proceso
 t_proceso_cpu cpu;
 t_proceso proceso;
+int conexion_kernel;
+
 
 int main(void) {
 
 	// 1) Inciar las configuraciones: Loggear y Archivo de configuraciones
 	inicializar_cpu();
+
+	iniciar_servidor_dispatch(cpu);
+
+	conexion_kernel = esperar_cliente_dispatch(cpu);
+
+	atender_kernel(cpu, conexion_kernel);
 	/*
 	t_proceso proceso = iniciar_cpu();
 	   iniciar logear, 	proceso.interrucion=0;
@@ -46,24 +54,24 @@ int main(void) {
 	}
 	*/
 	//printf("proceso interrucion (antes): %i \n",proceso->interrucion);
-	puts("main: antes del desbloque de interrup");
-	printf("proceso interrucion (antes): %i \n", cpu.process.interrupcion);
+	//puts("main: antes del desbloque de interrup");
+	//printf("proceso interrucion (antes): %i \n", cpu.process.interrupcion);
 
 
-	sem_post(&sem_interrupt);
+	//sem_post(&sem_interrupt);
 
 	//Bloqueo en hilo principal
-	sem_wait(&dispatch);
-	if(0!=cpu.process.interrupcion){
-		printf("proceso interrucion (en mutex): %i \n", cpu.process.interrupcion);
-	}
-	puts("main: despues del desbloqueo");
+	//sem_wait(&dispatch);
+	//if(0!=cpu.process.interrupcion){
+	//	printf("proceso interrucion (en mutex): %i \n", cpu.process.interrupcion);
+	//}
+	//puts("main: despues del desbloqueo");
 	//escuchaInterrup();
 	//sem_wait(&dispatch);
 
 	//printf("proceso interrucion (despues): %i \n",proceso->interrucion);
 
-	pthread_join(interrupt, NULL);
+	//pthread_join(interrupt, NULL);
 
 
 	log_info(cpu.logger,"main: Termino de ejecutar");
@@ -99,14 +107,16 @@ void escuchaInterrup(){
 
 void inicializar_cpu(){
 
-	// 1)  Iniciar/Crear logs
+	// Iniciar logs
 	cpu.logger = iniciar_logger();
 	log_info(cpu.logger,"\n### Inicio el Logger ###");
 
-	// 2) Leer el archivo de Configuraciones
+	// Leer el archivo de Configuraciones
 	cpu.config = iniciar_config();
 	log_info(cpu.logger,"Lee archivo de configuraciones");
 
+
+	/*
 	//3) Asignamos los valores iniciales
 	t_proceso nuevo_proceso;
 	nuevo_proceso.interrupcion = 0; //en ppio es falsa la interrupcion
@@ -124,7 +134,7 @@ void inicializar_cpu(){
 		exit(1);
 	}
 	log_info(cpu.logger,"Se crearon los hilos necesarios");
-
+	*/
 }
 
 void finalizar_cpu(){
@@ -135,6 +145,25 @@ void finalizar_cpu(){
 	//liberar_conexion(cpu.conexion_con_kernel);
 }
 
+
+void atender_kernel_dispatch(t_proceso_cpu cpu_process,int conexion_kernel){
+
+	while(1){
+		int operacion_kernel = recibir_operacion(conexion_kernel);
+		switch(operacion_kernel) {
+			case PCB:
+				log_info(cpu_process.logger, "Me llego un pcb desde el kernel");
+				break;
+			case ERROR:
+				log_error(cpu_process.logger, "El kernel se desconectó inesperadamente");
+				break;
+
+			default:
+				log_info(cpu_process.logger, "Operacion desconocida");
+				break;
+		}
+	}
+}
 
 
 /*

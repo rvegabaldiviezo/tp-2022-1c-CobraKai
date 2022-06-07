@@ -20,7 +20,7 @@
 #include <commons/config.h>
 #include <commons/collections/list.h>
 // Include de utils
-#include "utils/client_utils.h"
+#include "./utils/clientServ.h"
 
 // Rutas de Archivos
 #define PATH_CONFIG "./cpu.config"
@@ -57,6 +57,8 @@ typedef struct {
 	int socket_servidor;
 	int conexion_con_memoria;
 	int conexion_con_kernel;
+	int socket_servidor_dispatch;//DISPATCH
+	int socket_servidor_interrupt;//INTERRUPT
 } t_proceso_cpu;
 
 enum {
@@ -65,7 +67,14 @@ enum {
 	EXIT,
 	COPY,
 	READ,
-	WRITE
+	WRITE,
+};
+
+// Operaciones recibidas por kernel
+enum {
+	PCB = 1,//Recibimos del kernel una lista de instrucciones
+	INTERRUPCION,//Recibimos del kernel la orden de interrupcion
+	ERROR = -1 //Ocurrio un error en la comunicacion
 };
 
 enum {
@@ -79,7 +88,7 @@ enum {
 void escuchaInterrup();
 void inicializar_cpu();
 void finalizar_cpu();
-
+void atender_kernel_dispatch(t_proceso_cpu cpu_process,int conexion_kernel);
 /*
 int fetch(t_proceso proceso);
 void fetch_operands(t_proceso proces, t_instruction instruccion);
