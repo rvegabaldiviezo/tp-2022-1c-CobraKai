@@ -69,7 +69,6 @@ enum {
 void iterator(char* value);
 bool conexion_exitosa(int);
 void terminar_programa();
-
 t_proceso* crear_proceso(void);
 t_pcb crear_pcb();
 t_proceso* recibir_proceso(int socket_cliente);
@@ -86,6 +85,7 @@ void iniciar_planificacion(char* planificacion);
 void comunicacion_con_cpu();
 void inicializar_semaforos();
 void * list_pop(t_list* lista);
-t_proceso* lista_mas_corta(t_proceso*, t_proceso*);
+bool lista_mas_corta(t_proceso*, t_proceso*);
+t_proceso* menor_tiempo_restante(t_proceso* p1, t_proceso* p2);
 
 #endif /* KERNEL_H_ */

@@ -136,10 +136,12 @@ pid_t atender_consola() {
 			if(strcmp(planificador, "SRT") == 0) {
 				pthread_mutex_lock(&mutex_ready_list);
 				list_add(ready, proceso);
-				sem_post(&elementos_en_cola_ready);
+
 				pthread_mutex_unlock(&mutex_ready_list);
+				sem_post(&elementos_en_cola_ready);
+
 				log_info(logger, "El proceso %lu fue asignado a la cola READY", proceso->pcb.id);
-			} else if(strcmp(planificador, "FIFO") == 0){
+			} else if(strcmp(planificador, "FIFO") == 0) {
 				pthread_mutex_lock(&mutex_ready_list);
 				list_add(ready, proceso);
 				pthread_mutex_unlock(&mutex_ready_list);
@@ -189,7 +191,7 @@ t_pcb crear_pcb() {
 
 void terminar_programa() {
 	if(strcmp(planificador, "SRT") == 0) {
-			pthread_join(planificador_srt, NULL);
+		pthread_join(planificador_srt, NULL);
 	} else {
 		pthread_join(planificador_fifo, NULL);
 	}
@@ -217,7 +219,7 @@ void planificar_fifo(){
 			pthread_mutex_lock(&mutex_ready_list);
 			t_proceso* primer_proceso = list_pop(ready);
 			pthread_mutex_unlock(&mutex_ready_list);
-
+			sleep(5);
 			list_iterate(primer_proceso->pcb.instrucciones, (void *) iterator);
 			//TODO: se manda el pcb a la cpu
 			//log_info(logger,"Se paso un proceso de Ready a Ejecutando");
@@ -318,14 +320,18 @@ void inicializar_semaforos() {
 
 void planificar_srt() {
 	// TODO: implementar planificador posta
+	log_info(logger, "Se inicio la planificacion SRT");
+	iniciar_planificacion_io();
 	while(1) {
 		sem_wait(&elementos_en_cola_ready);
+		sleep(5);
 		pthread_mutex_lock(&mutex_ready_list);
 		if(list_size(ready) > 1) {
-			list_sort(ready, (void *) menor_tiempo_restante);
+			list_sort(ready, (void *) lista_mas_corta);
 		}
 		t_proceso* proceso_mas_corto = list_pop(ready);
 		pthread_mutex_unlock(&mutex_ready_list);
+
 		// solo para ver si ordena bien
 		log_info(logger, "Me llegaron los siguientes valores:");
 		list_iterate(proceso_mas_corto->pcb.instrucciones, (void*) iterator);
@@ -345,11 +351,14 @@ void* list_pop(t_list* lista) {
 	void* elemento = list_get(lista, 0);
 	list_remove(lista, 0);
 	return elemento;
+}
 
+bool lista_mas_corta(t_proceso* p1, t_proceso* p2) {
+	return (list_size(p1->pcb.instrucciones) < list_size(p2->pcb.instrucciones));
 }
 
 t_proceso* menor_tiempo_restante(t_proceso* p1, t_proceso* p2) {
-	if(list_size(p1->pcb.estimacion_rafaga) > list_size(p2->pcb.estimacion_rafaga)) {
+	if(p1->pcb.estimacion_rafaga > p2->pcb.estimacion_rafaga) {
 		return p2;
 	} else {
 		return p1;
