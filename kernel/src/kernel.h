@@ -62,6 +62,7 @@ enum {
 // Operaciones con cpu
 enum {
 	BLOQUEO_IO = 1,
+	INTERRUPCION,
 	ERROR_CPU = -1
 } operaciones_cpu;
 
@@ -87,5 +88,6 @@ void inicializar_semaforos();
 void * list_pop(t_list* lista);
 bool lista_mas_corta(t_proceso*, t_proceso*);
 t_proceso* menor_tiempo_restante(t_proceso* p1, t_proceso* p2);
+void solicitar_interrupcion();
 
 #endif /* KERNEL_H_ */
