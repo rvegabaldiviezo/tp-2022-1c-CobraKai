@@ -104,7 +104,6 @@ t_list* recibir_instrucciones(int socket_cliente) {
 		list_add(instrucciones, valor);
 	}
 	free(buffer);
-	instrucciones = parsear_instrucciones(instrucciones);
 	return instrucciones;
 }
 
@@ -130,9 +129,14 @@ t_list* parsear_instrucciones(t_list* instrucciones) {
 		char* instruccion = list_get(instrucciones, i);
 		if(strstr(instruccion, "NO_OP") != NULL) {
 			int parametro = atoi(string_substring(instruccion, 6, string_length(instruccion)));
-			for(int j = 0; j < parametro; j++) {
+			if(parametro != 0) {
+				for(int j = 0; j < parametro; j++) {
+					list_add(aux, "NO_OP");
+				}
+			} else {
 				list_add(aux, "NO_OP");
 			}
+
 		} else {
 			list_add(aux, instruccion);
 		}
@@ -140,7 +144,6 @@ t_list* parsear_instrucciones(t_list* instrucciones) {
 	}
 	return aux;
 }
-
 
 /* Un socket es la representacion que el Sistema Operativo le da
  * a esa conexion.

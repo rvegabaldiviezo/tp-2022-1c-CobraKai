@@ -3,7 +3,6 @@
 
 #include "utils_kernel/utils_kernel.h"
 #include <pthread.h>
-#include <semaphore.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -12,7 +11,7 @@
 #include <commons/collections/queue.h>
 #include <commons/string.h>
 #include <commons/config.h>
-
+#include <semaphore.h>
 
 #define PATH_CONFIG "src/kernel.config"
 #define PATH_LOG "./kernel.log"
@@ -60,11 +59,13 @@ enum {
 } operaciones_memoria;
 
 
+
 // Operaciones con cpu
 enum {
 	REPLANIFICACION = 100, // se envía a traves de la conexion INTERRUPT: cpu corta la ejecucion en curso y devuelve el proceso con el pcb actualizado y la estimacion restante
 	BLOQUEO_IO,
 	EXIT,
+	INTERRUPT,
 	ERROR_CPU = -1
 } operaciones_cpu;
 
@@ -73,9 +74,11 @@ enum {
 void iterator(char* value);
 bool conexion_exitosa(int);
 void terminar_programa();
+t_pcb crear_pcb();
+t_proceso* recibir_proceso(int socket_cliente);
+void destruir_proceso(t_proceso*);
 bool numero_de_tabla_valido(int);
 void inicializar_colas();
-void inicializar_semaforos();
 int atender_consola();
 void planificar_srt();
 void planificar_fifo();
@@ -93,5 +96,10 @@ t_proceso* recibir_proceso(int socket_cliente);
 void destruir_proceso(t_proceso*);
 t_proceso* lista_mas_corta(t_proceso*, t_proceso*);
 bool repetido(t_proceso* p1, t_proceso* p2);
+void inicializar_semaforos();
+void * list_pop(t_list* lista);
+void list_push(t_list* lista, void* elemento);
+t_proceso* lista_mas_corta(t_proceso*, t_proceso*);
+void replanificar_srt();
 
 #endif /* KERNEL_H_ */

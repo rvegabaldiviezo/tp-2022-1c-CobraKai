@@ -25,19 +25,16 @@ typedef struct
 } t_buffer;
 
 
-
 void* recibir_buffer(int*, int);
 int recibir_operacion(int);
 int iniciar_servidor(void);
 int esperar_cliente(int);
-t_list* parsear_instrucciones(t_list* instrucciones);
+t_list* recibir_instrucciones(int socket_cliente);
 void recibir_mensaje(int);
 int recibir_tamanio_proceso(int);
 void destruir_nodo(t_link_element *);
 void enviar_respuesta_exitosa(int conexion);
-
-
-
+t_list* parsear_instrucciones(t_list* instrucciones);
 
 typedef enum
 {
@@ -51,9 +48,6 @@ typedef struct
 	op_code codigo_operacion;
 	t_buffer* buffer;
 } t_paquete;
-
-
-
 
 
 int crear_conexion(char* ip, char* puerto);
