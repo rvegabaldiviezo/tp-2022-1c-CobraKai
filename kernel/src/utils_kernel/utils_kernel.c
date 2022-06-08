@@ -271,3 +271,8 @@ int recibir_numero_de_tabla(int conexion_memoria) {
 	}
 }
 
+void enviar_interrupcion(int conexion_con_cpu_interrupt) {
+	int operacion = INTERRUPCION;
+	send(conexion_con_cpu_interrupt, &operacion, sizeof(int), 0);
+}
+
