@@ -1,7 +1,145 @@
-#include "client_utils.h"
+#include "clientServ.h"
+#include "../cpu.h"
+
+/***********************************************************************************/
+/************************************ SERVER **************************************/
+/***********************************************************************************/
+
+//##### FUNCIONES SERVER PARA CPU #######
+
+int esperar_cliente_dispatch(t_proceso_cpu cpu_process){//t_proceso_cpu
+	return esperar_cliente_cpu(cpu_process, cpu_process.socket_servidor_dispatch, "dispatch");
+}
+
+int esperar_cliente_interrupt(t_proceso_cpu cpu_process){
+	return esperar_cliente_cpu(cpu_process, cpu_process.socket_servidor_interrupt, "interrupt");
+}
+
+int esperar_cliente_cpu(t_proceso_cpu cpu_process, int socket_server, char* tipo_puerto){
+
+	int socket_cliente = esperar_cliente(socket_server);
+
+	if (socket_cliente<0) {
+			log_error(cpu.logger, " Error de Conexion del cliente, puerto tipo: %s",tipo_puerto);
+			log_destroy(cpu_process.logger);
+			exit(1);
+	}
+	log_info(cpu_process.logger, " Conexion valida cliente, puerto tipo: %s. Nro de socket: %d",tipo_puerto, socket_cliente);
+
+	return socket_cliente;
+}
+
+void iniciar_servidor_dispatch(t_proceso_cpu cpu_process)
+{
+	cpu_process.socket_servidor_dispatch = iniciar_servidor_cpu(cpu_process, KEY_PUERTO_DISPATCH);;
+}
+
+void iniciar_servidor_interrupt(t_proceso_cpu cpu_process)
+{
+	cpu_process.socket_servidor_interrupt = iniciar_servidor_cpu(cpu_process, KEY_PUERTO_DISPATCH);
+}
+
+//
+int iniciar_servidor_cpu(t_proceso_cpu cpu_process, char* key_puerto)
+{
+	//Lee las configuraciones del archivo .config y obtiene las values
+	char* ip = config_get_string_value(cpu_process.config, KEY_IP_CPU);
+	char* puerto = config_get_string_value(cpu_process.config, key_puerto);
+	log_info(cpu_process.logger, "Se creara un socket_servidor en el puerto: %s", puerto);
+
+	int socket_servidor = iniciar_servidor(ip,puerto);
+
+	if(0 <= socket_servidor){
+		log_info(cpu_process.logger, " ERROR: NO SE CREO EL SOCKET SERVIDOR");
+		exit(1);
+	}
+	log_info(cpu_process.logger, "Se creo el socket_servidor:  %i, listo para escuchar al cliente", socket_servidor);
+
+	return socket_servidor;
+}
+
+//##### FUNCIONES SERVER  #######
+
+// Crear el socket del servidor, para poder recibir peticiones del cliente que se conecte al servidor.
+int iniciar_servidor(char* ip, char* puerto)
+{	//Guarda el File Descriptor(IDs)
+	int socket_servidor;
+
+	//Estruc q Contendra información sobre la dirección de un proveedor de servicios.
+	struct addrinfo hints, *servinfo, *p;
+
+	memset(&hints, 0, sizeof(hints));
+	hints.ai_family = AF_UNSPEC;
+	hints.ai_socktype = SOCK_STREAM;
+	hints.ai_flags = AI_PASSIVE;
+
+	//Traduce el nombre de una ubicación de servicio a un conjunto de direcciones de socket.
+	getaddrinfo(ip, puerto, &hints, &servinfo);
+	// El cliente para poder conectarse con el servidor, deben hacerlo
+	// a traves de la IP ("127.0.0.1") y el PUERTO ("127.0.0.1") de dicho
+	// servidor, que esta a la espera de NUEVAS CONEXIONES.
+
+	// Creamos el socket de escucha del servidor
+	socket_servidor = socket(servinfo->ai_family,
+							 servinfo->ai_socktype,
+							 servinfo->ai_protocol);
+
+	//bind() y listen() son las llamadas al sistema que realiza la preparacion por parte del proceso servidor
+
+	// Asociamos el socket creado a un puerto
+	bind(socket_servidor,servinfo->ai_addr, servinfo->ai_addrlen);
+
+	// Escuchamos las conexiones entrantes a ese socket, notificara cuando un nuevo cliente este intentando conectarse.
+	listen(socket_servidor,SOMAXCONN);
+
+	//Liberamos memoria tomada
+	freeaddrinfo(servinfo);
+
+	return socket_servidor;
+}
+
+//### Retona un nuevo socket que representa la CONEXION BIDIRECCIONAL entre el SERVIDOR y CLIENTE
+int esperar_cliente(int socket_servidor)
+{
+	int socket_cliente = accept(socket_servidor, NULL, NULL);
+	return socket_cliente;
+}
+// Aceptamos un nuevo cliente, accept(): Es una llamada al sistema que es BLOQUEANTE, entonces,
+// el proceso servidor se quedara BLOQUEADO en accept hasta que llegue un cliente.
+// Si el servidor no esta en accept, cuando el cliente intente conectarse connect(), fallara y devolvera un error
+
+//### Esta función devuelve el número de bytes recibidos o -1 en caso de error.
+int recibir_operacion(int socket_cliente)
+{
+	int cod_op;
+	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) > 0)
+		return cod_op;
+	else
+	{
+		close(socket_cliente);
+		return -1;
+	}
+}
+// La función recv es como leer, pero con las banderas adicionales. Los posibles valores de las banderas son descrito en Opciones de datos de socket.
 
 
-//+++ CLIENTE +++
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***********************************************************************************/
+/************************************ CLIENTE **************************************/
+/***********************************************************************************/
 
 // Inicia el logger en la RUTA_LOG
 t_log* iniciar_logger(void)

@@ -62,10 +62,9 @@ enum {
 
 // Operaciones con cpu
 enum {
-	REPLANIFICACION = 100, // se envía a traves de la conexion INTERRUPT: cpu corta la ejecucion en curso y devuelve el proceso con el pcb actualizado y la estimacion restante
-	BLOQUEO_IO,
+	BLOQUEO_IO = 1,
 	EXIT,
-	INTERRUPT,
+	INTERRUPCION,
 	ERROR_CPU = -1
 } operaciones_cpu;
 
@@ -74,6 +73,7 @@ enum {
 void iterator(char* value);
 bool conexion_exitosa(int);
 void terminar_programa();
+t_proceso* crear_proceso(void);
 t_pcb crear_pcb();
 t_proceso* recibir_proceso(int socket_cliente);
 void destruir_proceso(t_proceso*);
@@ -100,6 +100,8 @@ void inicializar_semaforos();
 void * list_pop(t_list* lista);
 void list_push(t_list* lista, void* elemento);
 t_proceso* lista_mas_corta(t_proceso*, t_proceso*);
-void replanificar_srt();
+bool lista_mas_corta(t_proceso*, t_proceso*);
+t_proceso* menor_tiempo_restante(t_proceso* p1, t_proceso* p2);
+void solicitar_interrupcion();
 
 #endif /* KERNEL_H_ */
