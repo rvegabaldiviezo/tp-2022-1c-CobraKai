@@ -22,10 +22,15 @@
 // Include de utils
 #include "./utils/clientServ.h"
 
-// Rutas de Archivos
+//###### Rutas de Archivos ######
 #define PATH_CONFIG "./cpu.config"
 #define PATH_LOG "./cpu.log"
 #define NAME_LOG "CPU"
+
+//###### DEFINICIONES #####
+#define KEY_IP_CPU "IP_CPU"
+#define KEY_PUERTO_DISPATCH "PUERTO_ESCUCHA_DISPATCH"
+
 
 //###### ESTRUCTURAS ######
 typedef struct instruction {
@@ -59,7 +64,7 @@ typedef struct {
 	int conexion_con_kernel;
 	int socket_servidor_dispatch;//DISPATCH
 	int socket_servidor_interrupt;//INTERRUPT
-} t_proceso_cpu;
+} proceso_cpu;
 
 enum {
 	NO_OP = 1,
@@ -86,9 +91,9 @@ enum {
 //###### INTERFAZ FUNCIONES ######
 
 void escuchaInterrup();
-void inicializar_cpu();
-void finalizar_cpu();
-void atender_kernel_dispatch(t_proceso_cpu cpu_process,int conexion_kernel);
+proceso_cpu iniciar_cpu();
+void finalizar_cpu(proceso_cpu cpu_process);
+void atender_kernel_dispatch(proceso_cpu cpu_process,int conexion_kernel);
 /*
 int fetch(t_proceso proceso);
 void fetch_operands(t_proceso proces, t_instruction instruccion);
@@ -106,5 +111,12 @@ void responsePorFinDeProceso(t_proceso proceso);
 void incrementarpcb(t_proceso proceso);
 int size_instrucciones(t_proceso proceso);
 */
+//### funcionales a cpu
+void iniciar_servidor_dispatch(proceso_cpu cpu_process);
+void iniciar_servidor_interrupt(proceso_cpu cpu_process);
+int iniciar_servidor_cpu(proceso_cpu cpu_process, char* key_puerto);
+int esperar_cliente_cpu(proceso_cpu cpu_process, int socket_server, char* tipo_puerto);
+int esperar_cliente_dispatch(proceso_cpu cpu_process);
+int esperar_cliente_interrupt(proceso_cpu cpu_process);
 
 #endif /* CPU_H_ */
