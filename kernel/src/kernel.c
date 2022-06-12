@@ -36,7 +36,7 @@ t_list* blocked;
 t_queue* susp_ready;
 
 // Generales
-t_proceso* proceso;
+t_pcb* proceso;
 t_log* logger;
 t_config* config;
 int conexion_consola;
@@ -97,20 +97,20 @@ int main(void) {
 //no debería pasarse el socket por parametro?
 pid_t atender_consola() {
 	int operacion_consola = recibir_operacion(conexion_consola);
-	t_proceso* proceso;
+	t_pcb* proceso;
 	switch(operacion_consola) {
 	case LISTA_DE_INSTRUCCIONES:
 		proceso = crear_proceso();
 		proceso = recibir_proceso(conexion_consola);
 		// Ya se copiaron todos los bytes que venian de la consola
 		// de ahora en mas puedo agregar lo que quiera al proceso
-		proceso->pcb.instrucciones = parsear_instrucciones(proceso->pcb.instrucciones);
+		proceso->instrucciones = parsear_instrucciones(proceso->instrucciones);
 		proceso->socket = conexion_consola;
-		proceso->pcb.estimacion_rafaga = config_get_int_value(config, ESTIMACION_INICIAL);
-		proceso->pcb.id = pthread_self();
+		proceso->estimacion_rafaga = config_get_int_value(config, ESTIMACION_INICIAL);
+		proceso->id = pthread_self();
 		// Calculo de la rafaga
 		// prox_rafaga = alfa * tiempo_ultima_rafaga + (1 - alfa) * pcb.estimacion_rafaga
-		if(proceso->pcb.tamanio_proceso == -1) {
+		if(proceso->tamanio_proceso == -1) {
 			log_error(logger, "Ocurrió un error al recibir el tamanio del proceso");
 			log_destroy(logger);
 			return EXIT_FAILURE;
@@ -121,9 +121,9 @@ pid_t atender_consola() {
 
 		char* tamanio_recibido = string_new();
 		string_append(&tamanio_recibido, "Tamanio recibido: ");
-		string_append(&tamanio_recibido, string_itoa(proceso->pcb.tamanio_proceso));
+		string_append(&tamanio_recibido, string_itoa(proceso->tamanio_proceso));
 
-		log_info(logger, "Tamaño recibido: %d", proceso->pcb.tamanio_proceso);
+		log_info(logger, "Tamaño recibido: %d", proceso->tamanio_proceso);
 
 		int numero_de_tabla = recibir_numero_de_tabla(conexion_con_memoria);
 		if(!numero_de_tabla_valido(numero_de_tabla)) {
@@ -131,20 +131,20 @@ pid_t atender_consola() {
 			return EXIT_FAILURE;
 		}
 
-		proceso->pcb.tablas_paginas = numero_de_tabla;
-		log_info(logger, "Se asignó el numero de tabla: %d al proceso de id: %lu\n", proceso->pcb.tablas_paginas, proceso->pcb.id);
+		proceso->tablas_paginas = numero_de_tabla;
+		log_info(logger, "Se asignó el numero de tabla: %d al proceso de id: %lu\n", proceso->tablas_paginas, proceso->id);
 
 		queue_push(new, proceso);
-		log_info(logger, "Proceso %lu asignado a la cola NEW", proceso->pcb.id);
+		log_info(logger, "Proceso %lu asignado a la cola NEW", proceso->id);
 
 		//TODO: aplicar semaforo para la cola de suspendido ready? Los suspendidos ready tienen mas prioridad
 		sem_wait(&multiprogramacion);
 		if(queue_size(susp_ready) <= 0) {
 			//todo: mutex
 			pthread_mutex_unlock(&mutex_new_queue);
-			log_info(logger, "Proceso %lu asignado a la cola NEW", proceso->pcb.id);
+			log_info(logger, "Proceso %lu asignado a la cola NEW", proceso->id);
 
-			t_proceso* proceso = queue_pop(new);
+			t_pcb* proceso = queue_pop(new);
 			pthread_mutex_unlock(&mutex_new_queue);
 
 			if(strcmp(planificador, "SRT") == 0) {
@@ -152,18 +152,18 @@ pid_t atender_consola() {
 				list_add(ready, proceso);
 				pthread_mutex_unlock(&mutex_ready_list);
 				sem_post(&elementos_en_cola_ready);
-				log_info(logger, "El proceso %lu fue asignado a la cola READY", proceso->pcb.id);
-				solicitar_interripcion();
+				log_info(logger, "El proceso %lu fue asignado a la cola READY", proceso->id);
+				solicitar_interrupcion();
 			} else if(strcmp(planificador, "FIFO") == 0){
 						pthread_mutex_lock(&mutex_ready_list);
 						list_push(ready, proceso);
 						pthread_mutex_unlock(&mutex_ready_list);
 						sem_post(&elementos_en_cola_ready);
-						log_info(logger, "El proceso %lu fue asignado a la cola READY", proceso->pcb.id);
+						log_info(logger, "El proceso %lu fue asignado a la cola READY", proceso->id);
 					}
 		} else {
 			//TODO: creo que no deberia pasar esto
-			log_info(logger, "Se alcanzó el maximo grado de multiprogramacion, el proceso %lu permanece en la cola de NEW", proceso->pcb.id);
+			log_info(logger, "Se alcanzó el maximo grado de multiprogramacion, el proceso %lu permanece en la cola de NEW", proceso->id);
 		}
 		break;
 
@@ -176,7 +176,7 @@ pid_t atender_consola() {
 		log_info(logger, "Operacion desconocida");
 		break;
 	}
-	return proceso->pcb.id;
+	return proceso->id;
 }
 
 void iterator(char* value) {
@@ -187,21 +187,15 @@ bool conexion_exitosa(int cliente) {
 	return cliente != -1;
 }
 
-t_proceso* crear_proceso() {
-	t_proceso* proceso = malloc(sizeof(t_proceso));
-	proceso->socket = 0;
-	proceso->pcb = crear_pcb();
-	return proceso;
-}
-
-t_pcb crear_pcb() {
-	t_pcb pcb;
-	pcb.id = 0;
-	pcb.tamanio_proceso = 0;
-	pcb.instrucciones = list_create();
-	pcb.program_counter = 0;
-	pcb.estimacion_rafaga = 0;
-	pcb.tablas_paginas = 0;
+t_pcb* crear_proceso() {
+	t_pcb* pcb = malloc(sizeof(t_pcb));
+	pcb->id = 0;
+	pcb->tamanio_proceso = 0;
+	pcb->instrucciones = list_create();
+	pcb->program_counter = 0;
+	pcb->estimacion_rafaga = 0;
+	pcb->tablas_paginas = 0;
+	pcb->socket = 0;
 	return pcb;
 }
 
@@ -232,14 +226,14 @@ void planificar_fifo(){
 		while(1){
 			sem_wait(&elementos_en_cola_ready);
 			pthread_mutex_lock(&mutex_ready_list);
-			t_proceso* primer_proceso = list_pop(ready);
+			t_pcb* primer_proceso = list_pop(ready);
 			pthread_mutex_unlock(&mutex_ready_list);
 			sleep(5);
-			list_iterate(primer_proceso->pcb.instrucciones, (void *) iterator);
+			list_iterate(primer_proceso->instrucciones, (void *) iterator);
 			//TODO: se manda el pcb a la cpu
 			//log_info(logger,"Se paso un proceso de Ready a Ejecutando");
 
-			//semaforo que sincronice con cpu. Si el proceso terminó de ejecutar, continúa
+			//TODO: semaforo que sincronice con cpu. Si el proceso terminó de ejecutar, continúa
 			log_info(logger,"Un proceso termino de ejecutar");
 
 		}
@@ -251,8 +245,8 @@ void comunicacion_con_cpu() {
 		switch(operacion) {
 			case BLOQUEO_IO:
 				log_info(logger, "La CPU envio un pcb con estado bloqueado por I/0");
-				t_proceso_bloqueado* proceso_bloqueado;
-				int tiempo_de_espera = recibir_tiempo_bloqueo(conexion_con_cpu);
+				t_pcb_bloqueado* proceso_bloqueado;
+				int tiempo_de_espera = recibir_tiempo_bloqueo(conexion_con_cpu_dispatch);
 				int inicio_bloqueo = (int)time(NULL);
 				proceso_bloqueado->inicio_bloqueo = inicio_bloqueo;
 				//TODO
@@ -274,11 +268,11 @@ void comunicacion_con_cpu() {
 				break;
 			case EXIT:
 				log_info(logger, "La CPU envio un pcb con estado finalizado");
-			    t_proceso* proceso = recibir_proceso(conexion_con_cpu_dispatch);
+			    t_pcb* proceso = recibir_proceso(conexion_con_cpu_dispatch);
 			    //TODO: avisar a memoria
 			    sem_post(&multiprogramacion);
 				enviar_respuesta_exitosa(proceso->socket);
-				log_info(logger, "El proceso %lu finalizo correctamente", proceso->pcb->id);
+				log_info(logger, "El proceso %lu finalizo correctamente", proceso->id);
 			break;
 
 			case ERROR_CPU:
@@ -295,7 +289,7 @@ void solicitar_interrupcion() {
 }
 
 
-void agregar_a_bloqueados(t_proceso_bloqueado* proceso){
+void agregar_a_bloqueados(t_pcb_bloqueado* proceso){
 	pthread_mutex_lock(&mutex_blocked_list);
 	list_add(blocked, proceso);
 	pthread_mutex_unlock(&mutex_blocked_list);
@@ -308,7 +302,7 @@ void planificacion_io(){
 
 		sem_wait(&elementos_en_cola_bloqueados);
 		pthread_mutex_lock(&mutex_blocked_list);
-		t_proceso_bloqueado* primer_proceso = list_pop(blocked);
+		t_pcb_bloqueado* primer_proceso = list_pop(blocked);
 		pthread_mutex_unlock(&mutex_blocked_list);
 
 		usleep(primer_proceso->tiempo_de_bloqueo*1000);
@@ -357,7 +351,7 @@ void mandar_a_suspendido(){
 
 		for(int i = 0; i < tamanio_cola_bloqueados; i++){
 
-			t_proceso_bloqueado* proceso = list_get(blocked,i);
+			t_pcb_bloqueado* proceso = list_get(blocked,i);
 			if(proceso->suspendido == 0 && ((int)(time(NULL) - proceso->inicio_bloqueo) > tiempo_max_bloqueo)){
 				//TODO: se manda a memoria y se espera confirmacion
 
@@ -373,7 +367,7 @@ void desuspendidor(){
 		sem_wait(&elementos_en_cola_susp_ready);
 		sem_wait(&multiprogramacion);
 		pthread_mutex_lock(&mutex_susp_ready_queue);
-		t_proceso* proceso = queue_pop(susp_ready);
+		t_pcb* proceso = queue_pop(susp_ready);
 		pthread_mutex_unlock(&mutex_susp_ready_queue);
 
 		pthread_mutex_lock(&mutex_ready_list);
@@ -430,9 +424,9 @@ void planificar_srt() {
 		sleep(5);
 		pthread_mutex_lock(&mutex_ready_list);
 		if(list_size(ready) > 1) {
-			list_sort(ready, (void *) lista_mas_corta);
+			list_sort(ready, (void *) menor_tiempo_restante);
 		}
-		t_proceso* proceso_mas_corto = list_pop(ready);
+		t_pcb* proceso_mas_corto = list_pop(ready);
 		pthread_mutex_unlock(&mutex_ready_list);
 
 		/*sem_post(&sem_grado_multiprogramacion);
@@ -440,18 +434,10 @@ void planificar_srt() {
 		*/
 		// solo para ver si ordena bien
 		log_info(logger, "Me llegaron los siguientes valores:");
-		list_iterate(proceso_mas_corto->pcb.instrucciones, (void*) iterator);
+		list_iterate(proceso_mas_corto->instrucciones, (void*) iterator);
 		//TODO: mandar pcb a cpu
 	}
 
-}
-
-void iniciar_planificacion(char* planificacion){
-	if(strcmp(planificacion, "FIFO") == 0) {
-		pthread_create(&planificador_fifo, NULL, (void*) planificar_fifo, NULL);
-	} else if(strcmp(planificacion, "SRT") == 0) {
-		pthread_create(&planificador_srt, NULL, (void*) planificar_srt, NULL);
-	}
 }
 
 void* list_pop(t_list* lista) {
@@ -460,16 +446,13 @@ void* list_pop(t_list* lista) {
 	return elemento;
 }
 
-bool lista_mas_corta(t_proceso* p1, t_proceso* p2) {
-	return (list_size(p1->pcb.instrucciones) < list_size(p2->pcb.instrucciones));
-}
 
 void list_push(t_list* lista, void* elemento){
 	list_add(lista, elemento);
 }
 
-t_proceso* menor_tiempo_restante(t_proceso* p1, t_proceso* p2) {
-	if(p1->pcb.estimacion_rafaga > p2->pcb.estimacion_rafaga) {
+t_pcb* menor_tiempo_restante(t_pcb* p1, t_pcb* p2) {
+	if(p1->estimacion_rafaga > p2->estimacion_rafaga) {
 		return p2;
 	} else {
 		return p1;

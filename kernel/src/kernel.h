@@ -26,27 +26,24 @@
 #define ALGORITMO_PLANIFICACION "ALGORITMO_PLANIFICACION"
 #define TIEMPO_MAXIMO_BLOQUEADO "TIEMPO_MAXIMO_BLOQUEADO"
 
+
 typedef struct {
 	pid_t id;
 	unsigned int tamanio_proceso;
-	t_list* instrucciones;
 	unsigned int program_counter;
 	unsigned int tablas_paginas;
 	unsigned int estimacion_rafaga;
-} t_pcb;
-
-typedef struct {
-	t_pcb pcb;
 	int socket;
-} t_proceso;
+	t_list* instrucciones;
+} t_pcb;
 
 typedef struct
 {
-	t_proceso* proceso;
+	t_pcb* proceso;
 	int tiempo_de_bloqueo;
 	int inicio_bloqueo;
-	int suspendido = 0;
-} t_proceso_bloqueado;
+	int suspendido;
+} t_pcb_bloqueado;
 
 enum {
 	LISTA_DE_INSTRUCCIONES = 1, // kernel crea un proceso a partir de las instrucciones recibidas y de ser posible lo asigna a la cola ready
@@ -73,35 +70,33 @@ enum {
 void iterator(char* value);
 bool conexion_exitosa(int);
 void terminar_programa();
-t_proceso* crear_proceso(void);
+t_pcb* crear_proceso(void);
 t_pcb crear_pcb();
-t_proceso* recibir_proceso(int socket_cliente);
-void destruir_proceso(t_proceso*);
+t_pcb* recibir_proceso(int socket_cliente);
+void destruir_proceso(t_pcb*);
 bool numero_de_tabla_valido(int);
 void inicializar_colas();
 int atender_consola();
 void planificar_srt();
 void planificar_fifo();
-void agregar_a_bloqueados(t_proceso_bloqueado* proceso);
+void agregar_a_bloqueados(t_pcb_bloqueado* proceso);
 void iniciar_planificacion_io();
 int recibir_tiempo_bloqueo();
 void iniciar_planificacion(char* planificacion);
 void comunicacion_con_cpu();
 void * list_pop(t_list*);
-t_proceso* menor_tiempo_restante(t_proceso*, t_proceso*);
-t_proceso* crear_proceso(void);
+t_pcb* menor_tiempo_restante(t_pcb*, t_pcb*);
+t_pcb* crear_proceso(void);
 t_pcb crear_pcb();
 t_list* recibir_instrucciones(int socket_cliente);
-t_proceso* recibir_proceso(int socket_cliente);
-void destruir_proceso(t_proceso*);
-t_proceso* lista_mas_corta(t_proceso*, t_proceso*);
-bool repetido(t_proceso* p1, t_proceso* p2);
+t_pcb* recibir_proceso(int socket_cliente);
+void destruir_proceso(t_pcb*);
+t_pcb* lista_mas_corta(t_pcb*, t_pcb*);
+bool repetido(t_pcb* p1, t_pcb* p2);
 void inicializar_semaforos();
 void * list_pop(t_list* lista);
 void list_push(t_list* lista, void* elemento);
-t_proceso* lista_mas_corta(t_proceso*, t_proceso*);
-bool lista_mas_corta(t_proceso*, t_proceso*);
-t_proceso* menor_tiempo_restante(t_proceso* p1, t_proceso* p2);
+t_pcb* menor_tiempo_restante(t_pcb* p1, t_pcb* p2);
 void solicitar_interrupcion();
 
 #endif /* KERNEL_H_ */

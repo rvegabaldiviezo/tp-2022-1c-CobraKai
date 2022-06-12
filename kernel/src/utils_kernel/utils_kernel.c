@@ -107,10 +107,10 @@ t_list* recibir_instrucciones(int socket_cliente) {
 	return instrucciones;
 }
 
-t_proceso* recibir_proceso(int socket_cliente) {
-	t_proceso* proceso = malloc(sizeof(t_proceso));
-	proceso->pcb.tamanio_proceso = recibir_tamanio_proceso(socket_cliente);
-	proceso->pcb.instrucciones = recibir_instrucciones(socket_cliente);
+t_pcb* recibir_proceso(int socket_cliente) {
+	t_pcb* proceso = malloc(sizeof(t_pcb));
+	proceso->tamanio_proceso = recibir_tamanio_proceso(socket_cliente);
+	proceso->instrucciones = recibir_instrucciones(socket_cliente);
 	return proceso;
 }
 
@@ -118,8 +118,8 @@ void destruir_nodo(t_link_element* nodo) {
 	free(nodo);
 }
 
-void destruir_proceso(t_proceso* proceso) {
-	list_destroy_and_destroy_elements(proceso->pcb.instrucciones, (void*) destruir_nodo);
+void destruir_proceso(t_pcb* proceso) {
+	list_destroy_and_destroy_elements(proceso->instrucciones, (void*) destruir_nodo);
 	free(proceso);
 }
 
