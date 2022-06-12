@@ -132,12 +132,13 @@ pid_t atender_consola() {
 		//TODO: chequear cómo se va a calcular el grado de multiprogramacion
 		//TODO: chequear si usar un semáforo, para que continue cuando se libere un proceso
 		//if(list_size(ready) < grado_multiprogramacion) {
-		sem_wait(&sem_grado_multiprogramacion);
-		log_info(logger, "El grado de multiprogramacion despues del WAIT es: %d", sem_grado_multiprogramacion);
+
 		pthread_mutex_lock(&mutex_new_queue);
 		t_proceso* proceso = queue_pop(new);
 		pthread_mutex_unlock(&mutex_new_queue);
 
+		sem_wait(&sem_grado_multiprogramacion);
+		log_info(logger, "El grado de multiprogramacion despues del WAIT es: %d", sem_grado_multiprogramacion);
 		pthread_mutex_lock(&mutex_ready_list);
 		list_add(ready, proceso);
 		if(string_equals_ignore_case(planificador, "SRT")) {
