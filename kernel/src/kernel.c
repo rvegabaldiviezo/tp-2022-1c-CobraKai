@@ -410,7 +410,6 @@ void inicializar_semaforos() {
 	sem_init(&elementos_en_cola_ready, 0, 0);
 	sem_init(&multiprogramacion, 0, grado_multiprogramacion);
 	sem_init(&elementos_en_cola_susp_ready, 0, 0);
-	sem_init(&sem_planificacion_srt, 0, 1);
 
 
 }
