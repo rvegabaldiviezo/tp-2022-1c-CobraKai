@@ -90,10 +90,11 @@ enum {
 
 //###### INTERFAZ FUNCIONES ######
 
-void escuchaInterrup();
-proceso_cpu iniciar_cpu();
-void finalizar_cpu(proceso_cpu cpu_process);
-void atender_kernel_dispatch(proceso_cpu cpu_process,int conexion_kernel);
+void escuchaInterrup(void);
+proceso_cpu* iniciar_cpu(void);
+proceso_cpu* cpu_create(void);
+void finalizar_cpu(proceso_cpu* cpu_process);
+void atender_kernel_dispatch(proceso_cpu* cpu_process,int conexion_kernel);
 /*
 int fetch(t_proceso proceso);
 void fetch_operands(t_proceso proces, t_instruction instruccion);
@@ -112,11 +113,11 @@ void incrementarpcb(t_proceso proceso);
 int size_instrucciones(t_proceso proceso);
 */
 //### funcionales a cpu
-void iniciar_servidor_dispatch(proceso_cpu cpu_process);
-void iniciar_servidor_interrupt(proceso_cpu cpu_process);
-int iniciar_servidor_cpu(proceso_cpu cpu_process, char* key_puerto);
-int esperar_cliente_cpu(proceso_cpu cpu_process, int socket_server, char* tipo_puerto);
-int esperar_cliente_dispatch(proceso_cpu cpu_process);
-int esperar_cliente_interrupt(proceso_cpu cpu_process);
+void iniciar_servidor_dispatch(proceso_cpu* cpu_process);
+void iniciar_servidor_interrupt(proceso_cpu* cpu_process);
+int iniciar_servidor_cpu(proceso_cpu* cpu_process, char* key_puerto);
+int esperar_cliente_cpu(proceso_cpu* cpu_process, int socket_server, char* tipo_puerto);
+int esperar_cliente_dispatch(proceso_cpu* cpu_process);
+int esperar_cliente_interrupt(proceso_cpu* cpu_process);
 
 #endif /* CPU_H_ */
