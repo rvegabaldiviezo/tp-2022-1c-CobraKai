@@ -1,62 +1,11 @@
 #include "clientServ.h"
-#include "../cpu.h"
+//#include "../cpu.h"
 
 /***********************************************************************************/
 /************************************ SERVER **************************************/
 /***********************************************************************************/
 
-//##### FUNCIONES SERVER PARA CPU #######
 
-int esperar_cliente_dispatch(t_proceso_cpu cpu_process){//t_proceso_cpu
-	return esperar_cliente_cpu(cpu_process, cpu_process.socket_servidor_dispatch, "dispatch");
-}
-
-int esperar_cliente_interrupt(t_proceso_cpu cpu_process){
-	return esperar_cliente_cpu(cpu_process, cpu_process.socket_servidor_interrupt, "interrupt");
-}
-
-int esperar_cliente_cpu(t_proceso_cpu cpu_process, int socket_server, char* tipo_puerto){
-
-	int socket_cliente = esperar_cliente(socket_server);
-
-	if (socket_cliente<0) {
-			log_error(cpu.logger, " Error de Conexion del cliente, puerto tipo: %s",tipo_puerto);
-			log_destroy(cpu_process.logger);
-			exit(1);
-	}
-	log_info(cpu_process.logger, " Conexion valida cliente, puerto tipo: %s. Nro de socket: %d",tipo_puerto, socket_cliente);
-
-	return socket_cliente;
-}
-
-void iniciar_servidor_dispatch(t_proceso_cpu cpu_process)
-{
-	cpu_process.socket_servidor_dispatch = iniciar_servidor_cpu(cpu_process, KEY_PUERTO_DISPATCH);;
-}
-
-void iniciar_servidor_interrupt(t_proceso_cpu cpu_process)
-{
-	cpu_process.socket_servidor_interrupt = iniciar_servidor_cpu(cpu_process, KEY_PUERTO_DISPATCH);
-}
-
-//
-int iniciar_servidor_cpu(t_proceso_cpu cpu_process, char* key_puerto)
-{
-	//Lee las configuraciones del archivo .config y obtiene las values
-	char* ip = config_get_string_value(cpu_process.config, KEY_IP_CPU);
-	char* puerto = config_get_string_value(cpu_process.config, key_puerto);
-	log_info(cpu_process.logger, "Se creara un socket_servidor en el puerto: %s", puerto);
-
-	int socket_servidor = iniciar_servidor(ip,puerto);
-
-	if(0 <= socket_servidor){
-		log_info(cpu_process.logger, " ERROR: NO SE CREO EL SOCKET SERVIDOR");
-		exit(1);
-	}
-	log_info(cpu_process.logger, "Se creo el socket_servidor:  %i, listo para escuchar al cliente", socket_servidor);
-
-	return socket_servidor;
-}
 
 //##### FUNCIONES SERVER  #######
 
@@ -66,7 +15,7 @@ int iniciar_servidor(char* ip, char* puerto)
 	int socket_servidor;
 
 	//Estruc q Contendra información sobre la dirección de un proveedor de servicios.
-	struct addrinfo hints, *servinfo, *p;
+	struct addrinfo hints, *servinfo;//, *p;
 
 	memset(&hints, 0, sizeof(hints));
 	hints.ai_family = AF_UNSPEC;
