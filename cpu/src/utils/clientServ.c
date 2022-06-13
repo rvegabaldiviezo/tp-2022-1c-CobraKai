@@ -50,7 +50,10 @@ int iniciar_servidor(char* ip, char* puerto)
 //### Retona un nuevo socket que representa la CONEXION BIDIRECCIONAL entre el SERVIDOR y CLIENTE
 int esperar_cliente(int socket_servidor)
 {
+	//printf("Entro a esperar_cliente, recibimos el socket_servidor: %d",socket_servidor);
+	//printf("Esta por entrar al accept()");
 	int socket_cliente = accept(socket_servidor, NULL, NULL);
+	//printf("Salio del accept(), xq se conecto un cliente, el socket_cliente: %d", socket_cliente);
 	return socket_cliente;
 }
 // Aceptamos un nuevo cliente, accept(): Es una llamada al sistema que es BLOQUEANTE, entonces,
@@ -93,7 +96,7 @@ int recibir_operacion(int socket_cliente)
 // Inicia el logger en la RUTA_LOG
 t_log* iniciar_logger(void)
 {
-	t_log* nuevo_logger = log_create(PATH_LOG,NAME_LOG,false,LOG_LEVEL_INFO);
+	t_log* nuevo_logger = log_create(PATH_LOG,NAME_LOG,true,LOG_LEVEL_INFO);
 	return nuevo_logger;
 }
 

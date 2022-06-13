@@ -30,6 +30,7 @@
 //###### DEFINICIONES #####
 #define KEY_IP_CPU "IP_CPU"
 #define KEY_PUERTO_DISPATCH "PUERTO_ESCUCHA_DISPATCH"
+#define KEY_PUERTO_INTERRUPT "PUERTO_ESCUCHA_INTERRUPT"
 
 
 //###### ESTRUCTURAS ######
@@ -58,7 +59,7 @@ typedef struct {
 typedef struct {
 	t_config* config;
 	t_log* logger;
-	t_proceso process;
+	t_proceso* process;
 	int socket_servidor;
 	int conexion_con_memoria;
 	int conexion_con_kernel;
@@ -90,11 +91,14 @@ enum {
 
 //###### INTERFAZ FUNCIONES ######
 
-void escuchaInterrup(void);
-proceso_cpu* iniciar_cpu(void);
+void iniciar_conexion_cpu_memoria(proceso_cpu* cpu_process);
+void escuchaInterrup(proceso_cpu* cpu_process);
+proceso_cpu* iniciar_cpu(proceso_cpu*);
 proceso_cpu* cpu_create(void);
+t_proceso* process_create(void);
 void finalizar_cpu(proceso_cpu* cpu_process);
 void atender_kernel_dispatch(proceso_cpu* cpu_process,int conexion_kernel);
+int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel);
 /*
 int fetch(t_proceso proceso);
 void fetch_operands(t_proceso proces, t_instruction instruccion);
