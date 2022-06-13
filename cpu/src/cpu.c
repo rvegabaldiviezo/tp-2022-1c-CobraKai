@@ -1,5 +1,5 @@
 #include "cpu.h"
-#include "./utils/clientServ.h"
+//#include "./utils/clientServ.h"
 //interfaz provisorias
 //pthread_t dispatch;
 
@@ -89,6 +89,8 @@ proceso_cpu* iniciar_cpu(void)
 	log_info(cpu.logger,"Se crearon los hilos necesarios");
 	*/
 	//log_info(cpu_process.logger,"-- Finalizo: iniciar_cpu --");
+	sem_init(&sem_interrupt,0,0);
+	sem_init(&dispatch,0,0);
 	cpu_process->logger = log;
 	cpu_process->config = conf;
 
