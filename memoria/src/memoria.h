@@ -5,10 +5,12 @@
 #include <stdio.h>
 #include <commons/log.h>
 #include <pthread.h>
+#include <commons/string.h>
 #include "utils_memoria/utils_memoria.h"
 
 #define PATH_CONFIG "src/memoria.config"
 #define PATH_LOG "./memoria.log"
+#define KEY_PATH_SWAP "PATH_SWAP"
 #define KEY_ENTRADAS_TABLA "ENTRADAS_POR_TABLA"
 
 enum {
@@ -36,7 +38,7 @@ typedef struct {
 	bool presencia;
 	bool inicializada;
 	// U??
-	// M??
+	bool modificada;
 } t_tabla_paginas;
 
 
@@ -45,6 +47,7 @@ void inicializar_tabla_paginas();
 void crear_tabla_paginas();
 void atender_kernel();
 void atender_cpu();
+char* get_path_archivo(int);
 void terminar_programa();
 
 
