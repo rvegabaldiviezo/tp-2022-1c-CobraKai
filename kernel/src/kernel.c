@@ -143,7 +143,6 @@ pid_t atender_consola() {
 			//todo: mutex
 			pthread_mutex_unlock(&mutex_new_queue);
 			log_info(logger, "Proceso %lu asignado a la cola NEW", proceso->id);
-
 			t_pcb* proceso = queue_pop(new);
 			pthread_mutex_unlock(&mutex_new_queue);
 
