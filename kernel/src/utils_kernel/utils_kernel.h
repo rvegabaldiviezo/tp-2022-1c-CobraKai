@@ -4,7 +4,7 @@
 #include "../kernel.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/socket.h> // Biblioteca de Socket: Crea un punto final para la comunicacion
+#include <sys/socket.h>
 #include <unistd.h>
 #include <netdb.h>
 #include <commons/log.h>
@@ -36,6 +36,9 @@ void destruir_nodo(t_link_element *);
 void enviar_respuesta_exitosa(int conexion);
 t_list* parsear_instrucciones(t_list* instrucciones);
 void enviar_interrupcion(int);
+void notificar_a_memoria(int, int*);
+int tamanio_lista(t_list*);
+
 
 typedef enum
 {
@@ -61,6 +64,5 @@ void liberar_conexion(int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
 void solicitar_numero_de_tabla(int);
 int recibir_numero_de_tabla(int);
-void notificar_a_memoria(int, int*);
 
 #endif /* UTILS_H_ */

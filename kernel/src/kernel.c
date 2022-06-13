@@ -231,6 +231,7 @@ void planificar_fifo(){
 			sleep(5);
 			list_iterate(primer_proceso->instrucciones, (void *) iterator);
 			//TODO: se manda el pcb a la cpu
+			enviar_pcb(primer_proceso, conexion_con_cpu_dispatch);
 			//log_info(logger,"Se paso un proceso de Ready a Ejecutando");
 
 			//TODO: semaforo que sincronice con cpu. Si el proceso terminó de ejecutar, continúa
@@ -238,7 +239,6 @@ void planificar_fifo(){
 
 		}
 }
-
 
 void comunicacion_con_cpu() {
 	int operacion = recibir_operacion(conexion_con_cpu_dispatch);
@@ -380,7 +380,6 @@ void desuspendidor(){
 	}
 }
 
-
 //TODO
 int recibir_tiempo_bloqueo(){
 	return 1;
@@ -410,8 +409,7 @@ void inicializar_semaforos() {
 	sem_init(&elementos_en_cola_ready, 0, 0);
 	sem_init(&multiprogramacion, 0, grado_multiprogramacion);
 	sem_init(&elementos_en_cola_susp_ready, 0, 0);
-
-
+	sem_init(&sem_planificacion_srt, 0, 1);
 }
 
 void planificar_srt() {
@@ -434,6 +432,7 @@ void planificar_srt() {
 		// solo para ver si ordena bien
 		log_info(logger, "Me llegaron los siguientes valores:");
 		list_iterate(proceso_mas_corto->instrucciones, (void*) iterator);
+		enviar_pcb(proceso_mas_corto, conexion_con_cpu_dispatch);
 		//TODO: mandar pcb a cpu
 	}
 
@@ -457,3 +456,6 @@ t_pcb* menor_tiempo_restante(t_pcb* p1, t_pcb* p2) {
 		return p1;
 	}
 }
+
+
+

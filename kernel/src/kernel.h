@@ -26,14 +26,13 @@
 #define ALGORITMO_PLANIFICACION "ALGORITMO_PLANIFICACION"
 #define TIEMPO_MAXIMO_BLOQUEADO "TIEMPO_MAXIMO_BLOQUEADO"
 
-
 typedef struct {
 	pid_t id;
 	unsigned int tamanio_proceso;
 	unsigned int program_counter;
 	unsigned int tablas_paginas;
 	unsigned int estimacion_rafaga;
-	int socket;
+	unsigned int socket;
 	t_list* instrucciones;
 } t_pcb;
 
@@ -55,16 +54,14 @@ enum {
 	TABLA_PAGINAS_PRIMER_NIVEL = 1 // memoria crea las tablas de paginas para el proceso y devuelve el numero de la tabla de nivel uno
 } operaciones_memoria;
 
-
-
 // Operaciones con cpu
 enum {
-	BLOQUEO_IO = 1,
+	PCB = 1,
+	BLOQUEO_IO,
 	EXIT,
 	INTERRUPCION,
 	ERROR_CPU = -1
 } operaciones_cpu;
-
 
 
 void iterator(char* value);
@@ -98,5 +95,7 @@ void * list_pop(t_list* lista);
 void list_push(t_list* lista, void* elemento);
 t_pcb* menor_tiempo_restante(t_pcb* p1, t_pcb* p2);
 void solicitar_interrupcion();
+void enviar_pcb(t_pcb*, int);
+void* serializar_pcb(t_pcb*, int);
 
 #endif /* KERNEL_H_ */

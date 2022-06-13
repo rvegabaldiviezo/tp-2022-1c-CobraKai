@@ -2,8 +2,7 @@
 
 #include "utils_kernel.h"
 
-int iniciar_servidor(void)
-{
+int iniciar_servidor(void) {
 	int socket_servidor; //Guarda el File Descriptor(IDs) representado por un entero.
 
 	struct addrinfo hints, *servinfo, *p; // Estruc q Contendra información sobre la dirección de un proveedor de servicios.
@@ -13,14 +12,6 @@ int iniciar_servidor(void)
 	hints.ai_socktype = SOCK_STREAM;
 	hints.ai_flags = AI_PASSIVE;
 	getaddrinfo(IP, PUERTO, &hints, &servinfo); //Traduce el nombre de una ubicación de servicio a un conjunto de direcciones de socket.
-	/*El cliente para poder conectarse con el servidor, deben hacerlo
-	 * a traves de la IP(xej: "127.0.0.1") del servidor fisico en el
-	 * que esten corriendo y el PUERTO(xej: "127.0.0.1") que esten ocupando
-	 * en dicho servidor a la espera de NUEVAS CONEXIONES
-	 * En este ejemplo le decimos que obtenga informacion sobre la computadora local
-	 * porque es donde estamos tratando de kevantar el servidor para que los clientes
-	 * en otras computadoras púedan conectar.
-	 * */
 
 	// Creamos el socket de escucha del servidor
 	socket_servidor = socket(servinfo->ai_family,
@@ -143,6 +134,54 @@ t_list* parsear_instrucciones(t_list* instrucciones) {
 
 	}
 	return aux;
+}
+
+void enviar_pcb(t_pcb* pcb, int conexion) {
+	int bytes = sizeof(pid_t) + 6 * sizeof(int) + tamanio_lista(pcb->instrucciones);
+
+	void* pcb_serializado = serializar_pcb(pcb, bytes);
+	send(conexion, pcb_serializado, bytes, 0);
+	free(pcb_serializado);
+}
+
+void* serializar_pcb(t_pcb* pcb, int bytes) {
+	void* a_enviar = malloc(bytes);
+	int desplazamiento = 0;
+
+	int operacion = PCB;
+	memcpy(a_enviar + desplazamiento, &operacion, sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->id), sizeof(pid_t));
+	desplazamiento += sizeof(pid_t);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->socket), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->tamanio_proceso), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->program_counter), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->estimacion_rafaga), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->tablas_paginas), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->instrucciones), sizeof(int));
+
+	return a_enviar;
+}
+
+int tamanio_lista(t_list* lista) {
+	int tamanio = 0;
+	for(int i = 0; i < list_size(lista); i++) {
+		char* instruccion = list_get(lista, i);
+		tamanio += string_length(instruccion) + 1;
+	}
+	return tamanio;
 }
 
 /* Un socket es la representacion que el Sistema Operativo le da
