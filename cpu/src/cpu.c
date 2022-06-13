@@ -1,5 +1,5 @@
 #include "cpu.h"
-//#include "./utils/clientServ.h"
+#include "./utils/clientServ.h"
 //interfaz provisorias
 //pthread_t dispatch;
 
@@ -16,30 +16,63 @@ sem_t dispatch;
 //proceso_cpu* cpu;
 t_proceso proceso;
 int conexion_kernel;
+int interrup_kernel;
+
 
 
 int main(void) {
 
-	proceso_cpu* cpu = iniciar_cpu();
-	puts("SALIO: iniciar_cpu() ");
+	proceso_cpu* cpu = cpu_create();
 
-	iniciar_servidor_dispatch(cpu);
+	iniciar_cpu(cpu);
 
-	int socket_kernel = esperar_cliente_dispatch(cpu);
-	log_info(cpu->logger,"socket kernel: %i",socket_kernel);
+	int socket_kernel_dispatch = esperar_cliente_dispatch(cpu);
+
+	log_info(cpu->logger, "main: Socket kernel disparch: %d",socket_kernel_dispatch);
+
+	recibir_operaciones(cpu, socket_kernel_dispatch);
+
+	//sem_wait(&dispatch);
+	if( cpu->process->interrupcion > 0){
+		log_info(cpu->logger, "   El kernel pidio INTERRUPCION");
+		//hago algo, habilito que de nuevo vuelva a escuchar por interrupcion
+		sem_post(&sem_interrupt);
+		//	printf("proceso interrucion (en mutex): %i \n", cpu.process.interrupcion);
+	}
+		//puts("main: despues del desbloqueo");
+		//escuchaInterrup();
+		//sem_wait(&dispatch);
+
+	pthread_join(interrupt, NULL);
+	log_info(cpu->logger,"Finalizamos el Hilo interrupt");
 
 	finalizar_cpu(cpu);
 
 	return EXIT_SUCCESS;
 }
 
-void escuchaInterrup(){
+void iniciar_conexion_cpu_memoria(proceso_cpu* cpu_process){
+	log_info(cpu_process->logger, "Entro: iniciar_conexion_cpu_memoria");
+	//Desarrollar que la cpu se conecte con la memoria
+}
+
+void escuchaInterrup(proceso_cpu* cpu_process){
+
+	log_info(cpu_process->logger, "Entro: escuchaInterrup(...)");
+
+	//Levantamos el servidor donde resiviremos las interrupciones
+	iniciar_servidor_interrupt(cpu_process);
+
+	//Escuchamos que el kernel se conecte al server de interrpciones
+	int socket_kernel_interrupt = esperar_cliente_interrupt(cpu_process); log_info(cpu_process->logger, " Socket kernel interrupt: %d", socket_kernel_interrupt);
+
+	//Tiene recibir n veces las peticiones de bloqueo por parte del kernel
+	recibir_operaciones(cpu_process, socket_kernel_interrupt);
+
 
 	//pthread_mutex_lock(&mutex);
 
-	puts("escuchaInterrup: Esta bloqueado el interrup ");
-
-	sem_wait(&sem_interrupt);
+	//sem_wait(&sem_interrupt);
 	//log_info(proceso->logger,"escuchaInterrup: antes del bloqueo");
 	//cpu.process.interrupcion = 1;
 
@@ -49,50 +82,89 @@ void escuchaInterrup(){
 	//sem_post(&dispatch);
 
 	//pthread_mutex_lock(&mutex);
-	puts("escuchaInterrup: Se bloquea el dispatch ");
-	sem_post(&dispatch);
+	//puts("escuchaInterrup: Se bloquea el dispatch ");
+	//sem_post(&dispatch);
 
 	//log_info(cpu.logger,"escuchaInterrup: Termino de ejecutar la funcion");
+	log_info(cpu_process->logger, "Salio: escuchaInterrup(...)");
 }
 
-proceso_cpu* iniciar_cpu(void)
-{	puts("ENTRO: iniciar_cpu() ");
-	proceso_cpu* cpu_process = cpu_create();
-	//t_paquete* paquete = malloc(sizeof(t_paquete));
+int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel){
+
+	log_info(cpu_process->logger, "INICIO: recibir_operaciones()");
+
+	while (1) {
+			int cod_op = recibir_operacion(socket_kernel);//Recibe cada peticion que envie el kernel en el puerto interrup
+
+			switch (cod_op) {
+
+				case PCB:
+					log_info(cpu_process->logger, " El kernel envio un PCB");
+					//recibir_mensaje(socket_kernel);
+					break;
+				case INTERRUPCION:
+					log_info(cpu_process->logger, " El kernel envio la operacion: INTERRUPCION");
+					cpu_process->process->interrupcion=1;//true q pidieron una interrupcion
+
+					//Desbloque en hilo principal de
+
+					//Hago un bloqueo por interrupcion
+					log_info(cpu_process->logger, "  Este hilo interrupt queda bloqueado hasta que Check Interrupt lo de desbloquee");
+					sem_wait(&sem_interrupt);
+
+					break;
+				case ERROR:
+					log_error(cpu_process->logger, "el cliente se desconecto. Terminando servidor para el socket kernel Nro: %d", socket_kernel);
+					return EXIT_FAILURE;
+				default:
+					log_warning(cpu_process->logger,"Operacion desconocida");
+					break;
+			}
+		}
+
+	log_info(cpu_process->logger, "FIN: recibir_operaciones()");
+	return EXIT_SUCCESS;
+}
+
+
+
+
+proceso_cpu* iniciar_cpu(proceso_cpu* cpu_process)
+{	// Crea un espacio de memoria para: process
+	cpu_process->process = process_create();
+	cpu_process->process->interrupcion = 0; // en ppio es falsa (0) la interrupcion.
+
 	// Iniciar logs
-	t_log* log = iniciar_logger();
-	log_info(log,"\n###### INICIO DE LOGGER ######");
-	log_info(log, "Entro: iniciar_cpu");
+	cpu_process->logger = iniciar_logger();
+	log_info(cpu_process->logger,"\n###### INICIO DE LOGGER ######");
+	log_info(cpu_process->logger, "Entro: iniciar_cpu");
 
 	// Leer el archivo de Configuraciones
-	t_config* conf = iniciar_config();
-	log_info(log," Lee archivo de configuraciones");
+	cpu_process->config = iniciar_config();
+	log_info(cpu_process->logger," Lee archivo de configuraciones");
 
+	// Crear conexiones
+	iniciar_conexion_cpu_memoria(cpu_process);
+	iniciar_servidor_dispatch(cpu_process);
 
-	/*
-	//3) Asignamos los valores iniciales
-	t_proceso nuevo_proceso;
-	nuevo_proceso.interrupcion = 0; //en ppio es falsa la interrupcion
-	cpu.process = nuevo_proceso;
-	log_info(cpu.logger,"Asigno valores iniciales");
-
-	//4) Inicio los Semaforos
+	//Iniciar los Semaforos
 	sem_init(&sem_interrupt,0,0);
 	sem_init(&dispatch,0,0);
-	log_info(cpu.logger,"Asigno a los semaforos con valores iniciales");
+	log_info(cpu_process->logger,"Asigno a los semaforos con valores iniciales");
 
 	//5) Inicio lo Hilos
-	if(0 != pthread_create(&interrupt, NULL, (void*) escuchaInterrup, NULL)){//Rutina: la funcion q le pasamos
-		log_info(cpu.logger,"theread de interrupcion no fue creado");
+	if(0 != pthread_create(&interrupt, NULL, (void*) escuchaInterrup, cpu_process)){//Rutina: la funcion q le pasamos
+		log_info(cpu_process->logger,"theread de interrupcion no fue creado");
 		exit(1);
 	}
-	log_info(cpu.logger,"Se crearon los hilos necesarios");
-	*/
+	log_info(cpu_process->logger,"Se creo el Hilo: interrupt");
+
 	//log_info(cpu_process.logger,"-- Finalizo: iniciar_cpu --");
-	sem_init(&sem_interrupt,0,0);
-	sem_init(&dispatch,0,0);
-	cpu_process->logger = log;
-	cpu_process->config = conf;
+	//cpu_process->logger = log;
+	//cpu_process->config = conf;
+	//3) Asignamos los valores iniciales
+
+	//nuevo_proceso.interrupcion = 0; //en ppio es falsa la interrupcion
 
 	return cpu_process;
 }
@@ -102,6 +174,10 @@ proceso_cpu* cpu_create(void){
 	return cpu_process;
 }
 
+t_proceso* process_create(void){
+	t_proceso* process = malloc(sizeof(t_proceso));
+	return process;
+}
 
 void finalizar_cpu(proceso_cpu* cpu_process){
 
@@ -263,30 +339,34 @@ void loggear(char* mensajelog){
 //##### FUNCIONES SERVER PARA CPU #######
 
 int esperar_cliente_dispatch(proceso_cpu* cpu_process){
+
 	char* tipo_server =  "dispatch";
+
 	log_info(cpu_process->logger, "Entro: esperar_cliente_dispatch");
-	log_info(cpu_process->logger, "socket_servidor %s: %i",tipo_server, cpu_process->socket_servidor_dispatch);
+
 	return esperar_cliente_cpu(cpu_process, cpu_process->socket_servidor_dispatch, tipo_server);
 }
 
 int esperar_cliente_interrupt(proceso_cpu* cpu_process){
 
+	char* tipo_server =  "interrupt";
+
 	log_info(cpu_process->logger, "Entro: esperar_cliente_interrupt");
-	log_info(cpu_process->logger, "socket server: %i",cpu_process->socket_servidor_dispatch);
-	return esperar_cliente_cpu(cpu_process, cpu_process->socket_servidor_interrupt, "interrupt");
+
+	return esperar_cliente_cpu(cpu_process, cpu_process->socket_servidor_interrupt, tipo_server);
 }
 
 int esperar_cliente_cpu(proceso_cpu* cpu_process, int socket_server, char* tipo_puerto){
 
 	log_info(cpu_process->logger, "Entro: esperar_cliente_cpu");
 
-	log_info(cpu_process->logger, "socket server recibido: %i",socket_server);
+	log_info(cpu_process->logger, " Socket server recibido: %i",socket_server);
 
 	log_info(cpu_process->logger, " Queda BLOQUEADO este hilo hasta que se conecte un cliente");
 
-	int socket_cliente = -1;//esperar_cliente(socket_server);//BLOQUEANTE
+	int socket_cliente = esperar_cliente(socket_server);//BLOQUEANTE
 
-	log_info(cpu_process->logger, "salio: socket_cliente");
+	log_info(cpu_process->logger, " Termino el BLOQUEO");
 
 	if (socket_cliente<0) {
 			log_error(cpu_process->logger, " Error de Conexion del cliente, socket nro: %d, puerto tipo: %s",socket_cliente,tipo_puerto);
@@ -299,7 +379,7 @@ int esperar_cliente_cpu(proceso_cpu* cpu_process, int socket_server, char* tipo_
 }
 
 void iniciar_servidor_dispatch(proceso_cpu* cpu_process){
-	puts("ENTRO: iniciar_servidor_dispatch ");
+
 	log_info(cpu_process->logger, "Entro: iniciar_servidor_dispatch");
 
 	cpu_process->socket_servidor_dispatch = iniciar_servidor_cpu(cpu_process, KEY_PUERTO_DISPATCH);
@@ -309,12 +389,12 @@ void iniciar_servidor_interrupt(proceso_cpu* cpu_process){
 
 	log_info(cpu_process->logger, "Entro: iniciar_servidor_interrupt");
 
-	cpu_process->socket_servidor_interrupt = iniciar_servidor_cpu(cpu_process, KEY_PUERTO_DISPATCH);
+	cpu_process->socket_servidor_interrupt = iniciar_servidor_cpu(cpu_process, KEY_PUERTO_INTERRUPT);
 }
 
 //
 int iniciar_servidor_cpu(proceso_cpu* cpu_process, char* key_puerto){
-	puts("ENTRO: iniciar_servidor_cpu ");
+
 	log_info(cpu_process->logger, "Entro: iniciar_servidor_cpu");
 
 	char* ip = config_get_string_value(cpu_process->config, KEY_IP_CPU);
