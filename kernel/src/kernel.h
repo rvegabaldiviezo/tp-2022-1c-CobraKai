@@ -27,6 +27,11 @@
 #define TIEMPO_MAXIMO_BLOQUEADO "TIEMPO_MAXIMO_BLOQUEADO"
 
 typedef struct {
+	int size;
+	void* stream;
+} t_buffer;
+
+typedef struct {
 	pid_t id;
 	unsigned int tamanio_proceso;
 	unsigned int program_counter;
@@ -36,13 +41,17 @@ typedef struct {
 	t_list* instrucciones;
 } t_pcb;
 
-typedef struct
-{
+typedef struct {
 	t_pcb* proceso;
 	int tiempo_de_bloqueo;
 	int inicio_bloqueo;
 	int suspendido;
 } t_pcb_bloqueado;
+
+typedef struct {
+	char* cadena;
+	unsigned int tamanio;
+} t_instruccion;
 
 enum {
 	LISTA_DE_INSTRUCCIONES = 1, // kernel crea un proceso a partir de las instrucciones recibidas y de ser posible lo asigna a la cola ready
@@ -81,7 +90,7 @@ void iniciar_planificacion_io();
 int recibir_tiempo_bloqueo();
 void iniciar_planificacion(char* planificacion);
 void comunicacion_con_cpu();
-void * list_pop(t_list*);
+void* list_pop(t_list*);
 t_pcb* menor_tiempo_restante(t_pcb*, t_pcb*);
 t_pcb* crear_proceso(void);
 t_pcb crear_pcb();
@@ -91,11 +100,12 @@ void destruir_proceso(t_pcb*);
 t_pcb* lista_mas_corta(t_pcb*, t_pcb*);
 bool repetido(t_pcb* p1, t_pcb* p2);
 void inicializar_semaforos();
-void * list_pop(t_list* lista);
 void list_push(t_list* lista, void* elemento);
 t_pcb* menor_tiempo_restante(t_pcb* p1, t_pcb* p2);
 void solicitar_interrupcion();
 void enviar_pcb(t_pcb*, int);
-void* serializar_pcb(t_pcb*, int);
+void* serializar_pcb(t_pcb*, t_buffer*, int);
+void agregar_instruccion(t_buffer* buffer, char* valor, int tamanio);
+t_buffer* cargar_buffer(t_list* lista);
 
 #endif /* KERNEL_H_ */

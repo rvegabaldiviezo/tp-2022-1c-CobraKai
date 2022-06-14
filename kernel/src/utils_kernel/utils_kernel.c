@@ -5,7 +5,7 @@
 int iniciar_servidor(void) {
 	int socket_servidor; //Guarda el File Descriptor(IDs) representado por un entero.
 
-	struct addrinfo hints, *servinfo, *p; // Estruc q Contendra información sobre la dirección de un proveedor de servicios.
+	struct addrinfo hints, *servinfo; // Estruc q Contendra información sobre la dirección de un proveedor de servicios.
 
 	memset(&hints, 0, sizeof(hints));
 	hints.ai_family = AF_UNSPEC;
@@ -137,14 +137,15 @@ t_list* parsear_instrucciones(t_list* instrucciones) {
 }
 
 void enviar_pcb(t_pcb* pcb, int conexion) {
-	int bytes = sizeof(pid_t) + 6 * sizeof(int) + tamanio_lista(pcb->instrucciones);
+	t_buffer* buffer = cargar_buffer(pcb->instrucciones);
+	int bytes = sizeof(long int) + 7 * sizeof(int) + buffer->size;
 
-	void* pcb_serializado = serializar_pcb(pcb, bytes);
+	void* pcb_serializado = serializar_pcb(pcb, buffer, bytes);
 	send(conexion, pcb_serializado, bytes, 0);
 	free(pcb_serializado);
 }
 
-void* serializar_pcb(t_pcb* pcb, int bytes) {
+void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes) {
 	void* a_enviar = malloc(bytes);
 	int desplazamiento = 0;
 
@@ -153,7 +154,7 @@ void* serializar_pcb(t_pcb* pcb, int bytes) {
 	desplazamiento += sizeof(int);
 
 	memcpy(a_enviar + desplazamiento, &(pcb->id), sizeof(pid_t));
-	desplazamiento += sizeof(pid_t);
+	desplazamiento += sizeof(long int);
 
 	memcpy(a_enviar + desplazamiento, &(pcb->socket), sizeof(int));
 	desplazamiento += sizeof(int);
@@ -170,84 +171,36 @@ void* serializar_pcb(t_pcb* pcb, int bytes) {
 	memcpy(a_enviar + desplazamiento, &(pcb->tablas_paginas), sizeof(int));
 	desplazamiento += sizeof(int);
 
-	memcpy(a_enviar + desplazamiento, &(pcb->instrucciones), sizeof(int));
+	memcpy(a_enviar + desplazamiento, &(buffer->size), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, buffer->stream, buffer->size);
 
 	return a_enviar;
 }
 
-int tamanio_lista(t_list* lista) {
-	int tamanio = 0;
+t_buffer* cargar_buffer(t_list* lista) {
+	t_buffer* buffer = malloc(sizeof(t_buffer));
+	buffer->size = 0;
+	buffer->stream = NULL;
 	for(int i = 0; i < list_size(lista); i++) {
 		char* instruccion = list_get(lista, i);
-		tamanio += string_length(instruccion) + 1;
+		agregar_instruccion(buffer, instruccion, string_length(instruccion) + 1);
 	}
-	return tamanio;
+	return buffer;
 }
 
-/* Un socket es la representacion que el Sistema Operativo le da
- * a esa conexion.
- *
- * Socket: Crea un punto final para la comunicacion y devuelve un
- * descriptor  que hace referencia a ese punto final.
- *
- * int socket(int DOMINIO, int TIPO, int PROTOCOLO);
- *
- * @DOMINIO: Familias de DIRECCIONES de socket (dominios), es decir,
- * especifica un DOMINIO de comunicacion,
- * esto selecciona la familia de protocolos que se utilizara
- * para la comunicacion.
- *   Name_Comunicacion  Proposito/Objetivo
- *   	AF_UNIX				Comunicacion Local
- *  	AF_LOCAL			Sinonimo de AF_UNIX
- *  	AF_INET				Protocolos de Internet IPv4
- *   	AF_INET6			Protocolos de Internet IPv6
- *
- * @TIPO: Especifica la semantica de la comunicacion. Ej tipos:
- * 		SOCKET_STREAM: Proporsiona flujos de Bytes secuenciados,
- * 		fiables, bidireccionables y basados en conexion.
- *
- * @PROTOCOLO: Especifica un protocolo particular que se utilizara
- * con el socket.
- * 	Los sockets de tipo SOCK_STREAM son flujos de bytes de duplex
- * 	completo. No conservan los limites de los registros. Deben estar en
- * 	un estado CONECTADO ANTES DE SE PUEDAN ENVIAR O RECIBIR DATOS de el.
- * 	Se crea una conexion a otro socket con una llamada connect(). Una vez
- * 	conectados, los datos pueden transferirse mediante llamadas de lectura
- * 	y escritura o alguna variante de las llamadas de envio y recepcion.
- * 	Cuando se ha completado una sesion se puede realizar un cierre.
- * 	Los protocolos de comunicacion que implementan un SOCK_STREAM aseguran
- * 	que LOS DATOS NO SE PIERDEN NI SE DUPLIQUEN.
- *
- * Info_Oficial: https://man7.org/linux/man-pages/man2/socket.2.html
- */
-
-/* ai_family: Este campo especifica la familia de direcciones
- * deseada para las direcciones devueltas. Los valores validos
- * para este campo incluyen AF_INET y AF_INET6. El valor AF_UNSPEC
- * indica que getaddrinfo() debe devolver direcciones de socket
- * para cualquier familia de direcciones (ya sea IPv4 o IPv6) que
- * se puedan usar con el nodo y el servicio.
- */
+void agregar_instruccion(t_buffer* buffer, char* valor, int tamanio) {
+	buffer->stream = realloc(buffer->stream, buffer->size + tamanio + sizeof(int));
+	memcpy(buffer->stream + buffer->size, &tamanio, sizeof(int));
+	memcpy(buffer->stream + buffer->size + sizeof(int), valor, tamanio);
+	buffer->size += tamanio + sizeof(int);
+}
 
 
 /***********************************************************************************/
 /************************************ CLIENTE **************************************/
 /***********************************************************************************/
-
-void* serializar_paquete(t_paquete* paquete, int bytes)
-{
-	void * magic = malloc(bytes);
-	int desplazamiento = 0;
-
-	memcpy(magic + desplazamiento, &(paquete->codigo_operacion), sizeof(int));
-	desplazamiento+= sizeof(int);
-	memcpy(magic + desplazamiento, &(paquete->buffer->size), sizeof(int));
-	desplazamiento+= sizeof(int);
-	memcpy(magic + desplazamiento, paquete->buffer->stream, paquete->buffer->size);
-	desplazamiento+= paquete->buffer->size;
-
-	return magic;
-}
 
 int crear_conexion(char *ip, char* puerto)
 {
@@ -277,15 +230,7 @@ int crear_conexion(char *ip, char* puerto)
 }
 
 
-void crear_buffer(t_paquete* paquete)
-{
-	paquete->buffer = malloc(sizeof(t_buffer));
-	paquete->buffer->size = 0;
-	paquete->buffer->stream = NULL;
-}
-
-void liberar_conexion(int socket_cliente)
-{
+void liberar_conexion(int socket_cliente) {
 	close(socket_cliente);
 }
 

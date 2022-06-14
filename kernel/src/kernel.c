@@ -71,6 +71,10 @@ int main(void) {
 	char* puerto_memoria = config_get_string_value(config, PUERTO_MEMORIA);
 	conexion_con_memoria = crear_conexion(ip_memoria, puerto_memoria);
 
+	char* ip_cpu = config_get_string_value(config, "IP_CPU");
+	char* puerto_cpu_dispatch = config_get_string_value(config, "PUERTO_CPU_DISPATCH");
+	conexion_con_cpu_dispatch = crear_conexion(ip_cpu, puerto_cpu_dispatch);
+
 	log_info(logger, "conectado a memoria");
 
 	inicializar_semaforos();
