@@ -110,3 +110,13 @@ int recibir_operacion(int socket_cliente)
 		return -1;
 	}
 }
+
+pid_t recibir_id_proceso(int conexion) {
+	pid_t id;
+	if(recv(conexion, &id, sizeof(pid_t), MSG_WAITALL) > 0) {
+		return id;
+	} else {
+		close(conexion);
+		return -1;
+	}
+}

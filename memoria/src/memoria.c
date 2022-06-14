@@ -96,7 +96,7 @@ void atender_cpu() {
 	}
 
 	while(1) {
-		int operacion = recibir_operacion(conexion_kernel);
+		operacion operacion = recibir_operacion(conexion_kernel);
 		switch(operacion) {
 			case ACCESO_TABLA_PRIMER_NIVEL:
 				log_info(logger, "CPU solicita acceso a tabla pagina de primer nivel");
@@ -111,7 +111,7 @@ void atender_cpu() {
 			case ESCRITURA_MEMORIA_USUARIO:
 				log_info(logger, "CPU solicita escritura a memoria de usuario");
 				break;
-			case ERROR_CPU:
+			case ERROR:
 				log_error(logger, "Se desconecto la cpu");
 				exit(EXIT_FAILURE);
 			default:
@@ -130,7 +130,7 @@ void atender_kernel() {
 	}
 
 	while(1) {
-		int operacion = recibir_operacion(conexion_kernel);
+		operacion operacion = recibir_operacion(conexion_kernel);
 		switch(operacion) {
 			case INICIO_PROCESO:
 				log_info(logger, "Kernel solicita INICIO PROCESO");
@@ -145,9 +145,11 @@ void atender_kernel() {
 				break;
 			case FINALIZACION_PROCESO:
 				log_info(logger, "Kernel solicita FINALIZACION PROCESO");
+				pid_t id = recibir_id_proceso(conexion_kernel);
+				log_info(logger, "Id a finalizar: %lu", id);
 
 				break;
-			case ERROR_KERNEL:
+			case ERROR:
 				log_error(logger, "Se desconecto el kernel");
 				exit(EXIT_FAILURE);
 			default:

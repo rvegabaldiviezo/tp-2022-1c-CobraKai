@@ -75,12 +75,23 @@ enum {
 	WRITE,
 };
 
-// Operaciones recibidas por kernel
-enum {
-	PCB = 1,//Recibimos del kernel una lista de instrucciones
-	INTERRUPCION,//Recibimos del kernel la orden de interrupcion
+typedef enum {
+	// Operaciones con cpu
+	PCB = 200, //Recibimos del kernel una lista de instrucciones
+	BLOQUEO_IO, // notifico al kernel que un proceso entró a I/O
+	FINALIZACION_PROCESO, // notifico al kernel la finalizacion de un proceso
+	INTERRUPCION, //Recibimos del kernel la orden de interrupcion
+
+	// Operaciones con memoria
+	HANDSHAKE = 300, // solicito a memoria cantidad de entradas por tabla de pagina y tamanio de las paginas
+	NUMERO_DE_TABLA_PRIMER_NIVEL, // solicito a memoria el numero de tabla de primer nivel de un proceso
+	NUMERO_DE_TABLA_SEGUNDO_NIVEL, // solicito a memoria el numero de tabla de segundo snivel de un proceso
+	LECTURA_MEMORIA_USUARIO, // solicito lectura de un espacio de memoria
+	ESCRITURA_MEMORIA_USUARIO, // solicito escritura en un espacio de memoria
+	CONFIRMACION_ESCRITURA, // recibo de memoria la confirmacion de la escritura exitosa
+
 	ERROR = -1 //Ocurrio un error en la comunicacion
-};
+} operacion;
 
 enum {
 	COD_RESP_BLOQUEO = 150, // pcb + tiempo

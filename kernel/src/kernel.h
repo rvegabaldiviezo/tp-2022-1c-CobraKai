@@ -53,24 +53,50 @@ typedef struct {
 	unsigned int tamanio;
 } t_instruccion;
 
-enum {
+typedef enum {
+	// Operaciones con consola
 	LISTA_DE_INSTRUCCIONES = 1, // kernel crea un proceso a partir de las instrucciones recibidas y de ser posible lo asigna a la cola ready
 	RESPUESTA_EXITO, // al finalizar el proceso kernel envía la respuesta a la consola que lo haya solicitado
-	ERROR = -1
-} operaciones_consola;
 
-enum {
-	TABLA_PAGINAS_PRIMER_NIVEL = 1 // memoria crea las tablas de paginas para el proceso y devuelve el numero de la tabla de nivel uno
-} operaciones_memoria;
+	// Operaciones con memoria
+	INICIO_PROCESO = 100, // memoria crea las tablas de paginas para el proceso y devuelve el numero de la tabla de nivel uno
+	SUSPENCION_PROCESO, // memoria libera espacio del proceso y manda a swap espacio de memoria de usuario
+	FINALIZACION_PROCESO, // memoria libera las estructuras asociadas al proceso y elimina su archivo de swap, no eliminar tablas
+
+	TABLA_PAGINAS_PRIMER_NIVEL, // se recibe el numero de tabla asociado al proceso
+	CONFIRMACION_PROCESO_SUSPENDIDO, // luego de enviar una suspencion a memoria, se espera la confirmacion de la misma
+
+	// Operaciones con cpu
+	PCB = 200, // envio el pcb para su ejecucion y recibo un pcb de cpu
+	BLOQUEO_IO, // se recibe de la cpu la notificacion de proceso bloqueado por I/O
+	EXIT, // se recibe de la cpu la notificacion de finalizacion de un proceso
+	INTERRUPCION, // solo para SRT, se envia una interrupcion a cpu para que se corte la ejecucion y devuelva el pcb actualizado
+
+	ERROR = -1
+} operacion;
+
+typedef struct {
+	operacion op;
+	void* elemento;
+} envio_con_operacion;
+
+/*typedef enum {
+	TABLA_PAGINAS_PRIMER_NIVEL = 1, // memoria crea las tablas de paginas para el proceso y devuelve el numero de la tabla de nivel uno
+	INICIO_PROCESO,
+	SUSPENCION_PROCESO,
+	FINALIZACION_PROCESO
+} operacion_memoria;
 
 // Operaciones con cpu
-enum {
+typedef enum {
 	PCB = 1,
 	BLOQUEO_IO,
 	EXIT,
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 	INTERRUPCION,
 	ERROR_CPU = -1
-} operaciones_cpu;
+} operacion_cpu;*/
 
 
 void iterator(char* value);
@@ -107,5 +133,7 @@ void enviar_pcb(t_pcb*, int);
 void* serializar_pcb(t_pcb*, t_buffer*, int);
 void agregar_instruccion(t_buffer* buffer, char* valor, int tamanio);
 t_buffer* cargar_buffer(t_list* lista);
+void enviar_finalizacion_a_memoria(pid_t id, int conexion_con_memoria);
+
 
 #endif /* KERNEL_H_ */

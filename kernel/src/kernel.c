@@ -100,7 +100,7 @@ int main(void) {
 }
 //no debería pasarse el socket por parametro?
 pid_t atender_consola() {
-	int operacion_consola = recibir_operacion(conexion_consola);
+	operacion operacion_consola = recibir_operacion(conexion_consola);
 	t_pcb* proceso;
 	switch(operacion_consola) {
 	case LISTA_DE_INSTRUCCIONES:
@@ -111,7 +111,7 @@ pid_t atender_consola() {
 		proceso->instrucciones = parsear_instrucciones(proceso->instrucciones);
 		proceso->socket = conexion_consola;
 		proceso->estimacion_rafaga = config_get_int_value(config, ESTIMACION_INICIAL);
-		proceso->id = pthread_self();
+		proceso->id = getpid();
 		// Calculo de la rafaga
 		// prox_rafaga = alfa * tiempo_ultima_rafaga + (1 - alfa) * pcb.estimacion_rafaga
 		if(proceso->tamanio_proceso == -1) {
@@ -244,7 +244,7 @@ void planificar_fifo(){
 }
 
 void comunicacion_con_cpu() {
-	int operacion = recibir_operacion(conexion_con_cpu_dispatch);
+	operacion operacion = recibir_operacion(conexion_con_cpu_dispatch);
 		switch(operacion) {
 			case BLOQUEO_IO:
 				log_info(logger, "La CPU envio un pcb con estado bloqueado por I/0");
@@ -272,13 +272,12 @@ void comunicacion_con_cpu() {
 			case EXIT:
 				log_info(logger, "La CPU envio un pcb con estado finalizado");
 			    t_pcb* proceso = recibir_proceso(conexion_con_cpu_dispatch);
-			    //TODO: avisar a memoria
+			    enviar_finalizacion_a_memoria(proceso->id, conexion_con_memoria);
 			    sem_post(&multiprogramacion);
 				enviar_respuesta_exitosa(proceso->socket);
 				log_info(logger, "El proceso %lu finalizo correctamente", proceso->id);
-			break;
-
-			case ERROR_CPU:
+				break;
+			case ERROR:
 				log_error(logger, "Se desconecto el cliente");
 				return;
 			default:
@@ -436,7 +435,7 @@ void planificar_srt() {
 		log_info(logger, "Me llegaron los siguientes valores:");
 		list_iterate(proceso_mas_corto->instrucciones, (void*) iterator);
 		enviar_pcb(proceso_mas_corto, conexion_con_cpu_dispatch);
-		//TODO: mandar pcb a cpu
+		enviar_finalizacion_a_memoria(proceso_mas_corto->id, conexion_con_memoria);
 	}
 
 }
@@ -446,7 +445,6 @@ void* list_pop(t_list* lista) {
 	list_remove(lista, 0);
 	return elemento;
 }
-
 
 void list_push(t_list* lista, void* elemento){
 	list_add(lista, elemento);

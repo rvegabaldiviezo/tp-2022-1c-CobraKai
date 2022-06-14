@@ -16,9 +16,9 @@
 #define PUERTO_KERNEL "PUERTO_KERNEL"
 #define PATH_CONFIG "src/consola.config"
 
-enum {
+typedef enum {
 	LISTA_DE_INSTRUCCIONES = 1
-};
+} operacion;
 
 
 bool cantidad_parametros_correcta(int);

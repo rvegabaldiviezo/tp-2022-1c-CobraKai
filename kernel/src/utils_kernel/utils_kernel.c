@@ -235,7 +235,7 @@ void liberar_conexion(int socket_cliente) {
 }
 
 void solicitar_numero_de_tabla(int conexion) {
-	int operacion = TABLA_PAGINAS_PRIMER_NIVEL;
+	int operacion = INICIO_PROCESO;
 	send(conexion, &operacion, sizeof(int), 0);
 }
 
@@ -258,5 +258,26 @@ int recibir_numero_de_tabla(int conexion_memoria) {
 void enviar_interrupcion(int conexion_con_cpu_interrupt) {
 	int operacion = INTERRUPCION;
 	send(conexion_con_cpu_interrupt, &operacion, sizeof(int), 0);
+}
+
+void enviar_finalizacion_a_memoria(pid_t id, int conexion_con_memoria) {
+	operacion op = FINALIZACION_PROCESO;
+	envio_con_operacion paquete;
+	paquete.op = op;
+	paquete.elemento = id;
+
+	int bytes = (sizeof(paquete));
+	void* a_enviar;
+
+	int desp = 0;
+	memcpy(a_enviar + desp, &(paquete.op), sizeof(operacion));
+	desp += sizeof(operacion);
+
+	memcpy(a_enviar + desp, &(paquete.elemento), sizeof(paquete.elemento));
+	desp += sizeof(paquete.elemento);
+
+	send(conexion_con_memoria, a_enviar, sizeof(paquete), 0);
+
+
 }
 
