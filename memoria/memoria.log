@@ -1,0 +1,492 @@
+[INFO] 20:15:38:088 MEMORIA/(15675:15675): Memoria lista para recibir clientes
+[INFO] 20:16:33:261 MEMORIA/(15937:15937): Memoria lista para recibir clientes
+[INFO] 20:16:40:185 MEMORIA/(15937:15938): Kernel solicita INICIO PROCESO
+[INFO] 20:16:40:186 MEMORIA/(15937:15970): Se creo la tabla numero: 0
+[INFO] 20:16:55:550 MEMORIA/(15937:15970): id: -1
+
+[INFO] 20:16:55:550 MEMORIA/(15937:15970): estimacion: -1
+
+[INFO] 20:16:55:550 MEMORIA/(15937:15970): program counter: -1
+
+[INFO] 20:16:55:550 MEMORIA/(15937:15970): socket: -1
+
+[INFO] 20:16:55:551 MEMORIA/(15937:15970): numero de tabla: -1
+
+[INFO] 20:16:55:551 MEMORIA/(15937:15970): tamanio de consola: -1
+
+[INFO] 20:16:55:551 MEMORIA/(15937:15970): lista:
+
+[ERROR] 20:16:55:551 MEMORIA/(15937:15938): Se desconecto el kernel
+[INFO] 20:17:30:278 MEMORIA/(16212:16212): Memoria lista para recibir clientes
+[INFO] 20:17:33:238 MEMORIA/(16212:16213): Kernel solicita INICIO PROCESO
+[INFO] 20:17:33:239 MEMORIA/(16212:16230): Se creo la tabla numero: 0
+[INFO] 20:18:25:751 MEMORIA/(16371:16371): Memoria lista para recibir clientes
+[INFO] 20:18:34:447 MEMORIA/(16371:16469): Kernel solicita INICIO PROCESO
+[INFO] 20:18:34:453 MEMORIA/(16371:16511): Se creo la tabla numero: 0
+[INFO] 20:20:19:247 MEMORIA/(16969:16969): Memoria lista para recibir clientes
+[INFO] 20:20:22:191 MEMORIA/(16969:16970): Kernel solicita INICIO PROCESO
+[INFO] 20:20:22:191 MEMORIA/(16969:16986): Se creo la tabla numero: 0
+[INFO] 20:20:51:922 MEMORIA/(17175:17175): Memoria lista para recibir clientes
+[INFO] 20:20:57:599 MEMORIA/(17175:17202): Kernel solicita INICIO PROCESO
+[INFO] 20:20:57:606 MEMORIA/(17175:17227): Se creo la tabla numero: 0
+[INFO] 20:24:24:472 MEMORIA/(18040:18040): Memoria lista para recibir clientes
+[INFO] 20:24:27:464 MEMORIA/(18040:18041): Kernel solicita INICIO PROCESO
+[INFO] 20:24:27:464 MEMORIA/(18040:18057): Se creo la tabla numero: 0
+[INFO] 20:25:05:810 MEMORIA/(18222:18222): Memoria lista para recibir clientes
+[INFO] 20:25:11:281 MEMORIA/(18222:18250): Kernel solicita INICIO PROCESO
+[INFO] 20:25:11:292 MEMORIA/(18222:18273): Se creo la tabla numero: 0
+[INFO] 20:32:45:659 MEMORIA/(20057:20057): Memoria lista para recibir clientes
+[INFO] 20:32:48:267 MEMORIA/(20057:20058): Kernel solicita INICIO PROCESO
+[INFO] 20:32:48:267 MEMORIA/(20057:20074): Se creo la tabla numero: 0
+[INFO] 21:02:37:117 MEMORIA/(27400:27400): Memoria lista para recibir clientes
+[INFO] 21:02:40:281 MEMORIA/(27400:27401): Kernel solicita INICIO PROCESO
+[INFO] 21:02:40:281 MEMORIA/(27400:27417): Se creo la tabla numero: 0
+[INFO] 21:02:45:407 MEMORIA/(27400:27417): id: -1
+
+[INFO] 21:02:45:407 MEMORIA/(27400:27417): estimacion: -1
+
+[INFO] 21:02:45:407 MEMORIA/(27400:27417): program counter: -1
+
+[INFO] 21:02:45:407 MEMORIA/(27400:27417): socket: -1
+
+[INFO] 21:02:45:407 MEMORIA/(27400:27417): numero de tabla: -1
+
+[INFO] 21:02:45:407 MEMORIA/(27400:27417): tamanio de consola: -1
+
+[INFO] 21:02:45:407 MEMORIA/(27400:27417): lista:
+
+[ERROR] 21:02:45:407 MEMORIA/(27400:27401): Se desconecto el kernel
+[INFO] 21:03:53:315 MEMORIA/(27751:27751): Memoria lista para recibir clientes
+[ERROR] 21:04:05:829 MEMORIA/(27751:27752): Se desconecto el kernel
+[INFO] 21:04:08:033 MEMORIA/(27837:27837): Memoria lista para recibir clientes
+[INFO] 21:04:22:474 MEMORIA/(27837:27838): Kernel solicita INICIO PROCESO
+[INFO] 21:04:22:478 MEMORIA/(27837:27952): Se creo la tabla numero: 0
+[INFO] 21:04:51:024 MEMORIA/(27837:27952): id: -1
+
+[INFO] 21:04:51:024 MEMORIA/(27837:27952): estimacion: -1
+
+[INFO] 21:04:51:024 MEMORIA/(27837:27952): program counter: -1
+
+[INFO] 21:04:51:024 MEMORIA/(27837:27952): socket: -1
+
+[INFO] 21:04:51:024 MEMORIA/(27837:27952): numero de tabla: -1
+
+[INFO] 21:04:51:025 MEMORIA/(27837:27952): tamanio de consola: -1
+
+[INFO] 21:04:51:025 MEMORIA/(27837:27952): lista:
+
+[ERROR] 21:04:51:025 MEMORIA/(27837:27838): Se desconecto el kernel
+[INFO] 21:09:11:284 MEMORIA/(29258:29258): Memoria lista para recibir clientes
+[INFO] 21:09:14:213 MEMORIA/(29258:29259): Kernel solicita INICIO PROCESO
+[INFO] 21:09:14:213 MEMORIA/(29258:29275): Se creo la tabla numero: 0
+[INFO] 21:09:19:301 MEMORIA/(29258:29275): id: -1
+
+[INFO] 21:09:19:301 MEMORIA/(29258:29275): estimacion: -1
+
+[INFO] 21:09:19:301 MEMORIA/(29258:29275): program counter: -1
+
+[INFO] 21:09:19:301 MEMORIA/(29258:29275): socket: -1
+
+[INFO] 21:09:19:301 MEMORIA/(29258:29275): numero de tabla: -1
+
+[INFO] 21:09:19:301 MEMORIA/(29258:29275): tamanio de consola: -1
+
+[INFO] 21:09:19:301 MEMORIA/(29258:29275): lista:
+
+[ERROR] 21:09:19:302 MEMORIA/(29258:29259): Se desconecto el kernel
+[INFO] 21:09:30:533 MEMORIA/(29341:29341): Memoria lista para recibir clientes
+[INFO] 21:09:42:867 MEMORIA/(29341:29342): Kernel solicita INICIO PROCESO
+[INFO] 21:09:42:873 MEMORIA/(29341:29450): Se creo la tabla numero: 0
+[INFO] 21:09:50:022 MEMORIA/(29341:29450): id: -1
+
+[INFO] 21:09:50:022 MEMORIA/(29341:29450): estimacion: -1
+
+[INFO] 21:09:50:022 MEMORIA/(29341:29450): program counter: -1
+
+[INFO] 21:09:50:022 MEMORIA/(29341:29450): socket: -1
+
+[INFO] 21:09:50:022 MEMORIA/(29341:29450): numero de tabla: -1
+
+[INFO] 21:09:50:022 MEMORIA/(29341:29450): tamanio de consola: -1
+
+[INFO] 21:09:50:022 MEMORIA/(29341:29450): lista:
+
+[ERROR] 21:09:50:022 MEMORIA/(29341:29342): Se desconecto el kernel
+[INFO] 21:10:15:563 MEMORIA/(29576:29576): Memoria lista para recibir clientes
+[INFO] 21:10:25:781 MEMORIA/(29576:29577): Kernel solicita INICIO PROCESO
+[INFO] 21:10:25:789 MEMORIA/(29576:29673): Se creo la tabla numero: 0
+[INFO] 21:11:01:383 MEMORIA/(29576:29673): id: -1
+
+[INFO] 21:11:01:383 MEMORIA/(29576:29673): estimacion: -1
+
+[INFO] 21:11:01:383 MEMORIA/(29576:29673): program counter: -1
+
+[INFO] 21:11:01:383 MEMORIA/(29576:29673): socket: -1
+
+[INFO] 21:11:01:383 MEMORIA/(29576:29673): numero de tabla: -1
+
+[INFO] 21:11:01:384 MEMORIA/(29576:29673): tamanio de consola: -1
+
+[INFO] 21:11:01:384 MEMORIA/(29576:29673): lista:
+
+[ERROR] 21:11:01:384 MEMORIA/(29576:29577): Se desconecto el kernel
+[INFO] 21:11:35:314 MEMORIA/(29989:29989): Memoria lista para recibir clientes
+[INFO] 21:11:38:126 MEMORIA/(29989:29991): Kernel solicita INICIO PROCESO
+[INFO] 21:11:38:126 MEMORIA/(29989:30006): Se creo la tabla numero: 0
+[INFO] 21:11:43:213 MEMORIA/(29989:30006): id: -1
+
+[INFO] 21:11:43:213 MEMORIA/(29989:30006): estimacion: -1
+
+[INFO] 21:11:43:213 MEMORIA/(29989:30006): program counter: -1
+
+[INFO] 21:11:43:213 MEMORIA/(29989:30006): socket: -1
+
+[INFO] 21:11:43:213 MEMORIA/(29989:30006): numero de tabla: -1
+
+[INFO] 21:11:43:213 MEMORIA/(29989:30006): tamanio de consola: -1
+
+[INFO] 21:11:43:213 MEMORIA/(29989:30006): lista:
+
+[ERROR] 21:11:43:213 MEMORIA/(29989:29991): Se desconecto el kernel
+[INFO] 21:13:24:454 MEMORIA/(30444:30444): Memoria lista para recibir clientes
+[INFO] 21:13:27:374 MEMORIA/(30444:30445): Kernel solicita INICIO PROCESO
+[INFO] 21:13:27:374 MEMORIA/(30444:30461): Se creo la tabla numero: 0
+[INFO] 21:13:32:459 MEMORIA/(30444:30461): id: -1
+
+[INFO] 21:13:32:459 MEMORIA/(30444:30461): estimacion: -1
+
+[INFO] 21:13:32:459 MEMORIA/(30444:30461): program counter: -1
+
+[INFO] 21:13:32:459 MEMORIA/(30444:30461): socket: -1
+
+[INFO] 21:13:32:459 MEMORIA/(30444:30461): numero de tabla: -1
+
+[INFO] 21:13:32:459 MEMORIA/(30444:30461): tamanio de consola: -1
+
+[INFO] 21:13:32:459 MEMORIA/(30444:30461): lista:
+
+[ERROR] 21:13:32:460 MEMORIA/(30444:30445): Se desconecto el kernel
+[INFO] 21:14:04:790 MEMORIA/(30611:30611): Memoria lista para recibir clientes
+[INFO] 21:14:16:237 MEMORIA/(30611:30612): Kernel solicita INICIO PROCESO
+[INFO] 21:14:16:241 MEMORIA/(30611:30707): Se creo la tabla numero: 0
+[INFO] 21:14:32:966 MEMORIA/(30611:30707): id: -1
+
+[INFO] 21:14:32:966 MEMORIA/(30611:30707): estimacion: -1
+
+[INFO] 21:14:32:966 MEMORIA/(30611:30707): program counter: -1
+
+[INFO] 21:14:32:966 MEMORIA/(30611:30707): socket: -1
+
+[INFO] 21:14:32:966 MEMORIA/(30611:30707): numero de tabla: -1
+
+[INFO] 21:14:32:966 MEMORIA/(30611:30707): tamanio de consola: -1
+
+[INFO] 21:14:32:966 MEMORIA/(30611:30707): lista:
+
+[ERROR] 21:14:32:966 MEMORIA/(30611:30612): Se desconecto el kernel
+[INFO] 21:15:00:357 MEMORIA/(30918:30918): Memoria lista para recibir clientes
+[INFO] 21:15:03:183 MEMORIA/(30918:30919): Kernel solicita INICIO PROCESO
+[INFO] 21:15:03:183 MEMORIA/(30918:30935): Se creo la tabla numero: 0
+[INFO] 21:16:29:182 MEMORIA/(31266:31266): Memoria lista para recibir clientes
+[INFO] 21:16:35:143 MEMORIA/(31266:31305): Kernel solicita INICIO PROCESO
+[INFO] 21:16:35:153 MEMORIA/(31266:31328): Se creo la tabla numero: 0
+[INFO] 21:29:41:272 MEMORIA/(1819:1819): Memoria lista para recibir clientes
+[INFO] 21:30:06:492 MEMORIA/(2058:2058): Memoria lista para recibir clientes
+[INFO] 21:30:32:129 MEMORIA/(2291:2291): Memoria lista para recibir clientes
+[INFO] 21:31:04:792 MEMORIA/(2478:2478): Memoria lista para recibir clientes
+[INFO] 21:31:59:368 MEMORIA/(2725:2725): Memoria lista para recibir clientes
+[INFO] 21:32:02:554 MEMORIA/(2725:2726): Kernel solicita INICIO PROCESO
+[INFO] 21:32:02:554 MEMORIA/(2725:2742): Se creo la tabla numero: 0
+[INFO] 21:32:13:376 MEMORIA/(2792:2792): Memoria lista para recibir clientes
+[INFO] 21:32:31:589 MEMORIA/(2792:2793): Kernel solicita INICIO PROCESO
+[INFO] 21:32:31:592 MEMORIA/(2792:2931): Se creo la tabla numero: 0
+[INFO] 21:35:16:485 MEMORIA/(3667:3667): Memoria lista para recibir clientes
+[INFO] 21:35:22:019 MEMORIA/(3667:3696): Kernel solicita INICIO PROCESO
+[INFO] 21:35:22:025 MEMORIA/(3667:3728): Se creo la tabla numero: 0
+[INFO] 21:40:12:960 MEMORIA/(4855:4855): Memoria lista para recibir clientes
+[INFO] 21:40:15:560 MEMORIA/(4855:4856): Kernel solicita INICIO PROCESO
+[INFO] 21:40:15:561 MEMORIA/(4855:4867): Se creo la tabla numero: 0
+[INFO] 21:40:24:705 MEMORIA/(4855:4867): id: -1229984960
+
+[INFO] 21:40:24:706 MEMORIA/(4855:4867): estimacion: 10000
+
+[INFO] 21:40:24:706 MEMORIA/(4855:4867): program counter: 0
+
+[INFO] 21:40:24:706 MEMORIA/(4855:4867): socket: 7
+
+[INFO] 21:40:24:706 MEMORIA/(4855:4867): numero de tabla: 0
+
+[INFO] 21:40:24:706 MEMORIA/(4855:4867): tamanio de consola: 10
+
+[INFO] 21:40:24:708 MEMORIA/(4855:4867): lista:
+
+[INFO] 21:40:24:708 MEMORIA/(4855:4867): NO_OP
+[INFO] 21:40:24:708 MEMORIA/(4855:4867): NO_OP
+[INFO] 21:40:24:708 MEMORIA/(4855:4867): NO_OP
+[INFO] 21:40:24:708 MEMORIA/(4855:4867): NO_OP
+[INFO] 21:40:24:708 MEMORIA/(4855:4867): I/O 1500
+[INFO] 21:40:24:708 MEMORIA/(4855:4867): Enume
+[ERROR] 21:40:24:708 MEMORIA/(4855:4856): Se desconecto el kernel
+[INFO] 21:40:34:032 MEMORIA/(4983:4983): Memoria lista para recibir clientes
+[INFO] 21:40:37:199 MEMORIA/(4983:4984): Kernel solicita INICIO PROCESO
+[INFO] 21:40:37:199 MEMORIA/(4983:5004): Se creo la tabla numero: 0
+[INFO] 21:40:42:201 MEMORIA/(4983:5004): id: -1228936384
+
+[INFO] 21:40:42:201 MEMORIA/(4983:5004): estimacion: 10000
+
+[INFO] 21:40:42:201 MEMORIA/(4983:5004): program counter: 0
+
+[INFO] 21:40:42:201 MEMORIA/(4983:5004): socket: 7
+
+[INFO] 21:40:42:201 MEMORIA/(4983:5004): numero de tabla: 0
+
+[INFO] 21:40:42:201 MEMORIA/(4983:5004): tamanio de consola: 10
+
+[INFO] 21:40:42:201 MEMORIA/(4983:5004): lista:
+
+[INFO] 21:40:42:201 MEMORIA/(4983:5004): NO_OP
+[INFO] 21:40:42:201 MEMORIA/(4983:5004): NO_OP
+[INFO] 21:40:42:201 MEMORIA/(4983:5004): NO_OP
+[INFO] 21:40:42:201 MEMORIA/(4983:5004): NO_OP
+[INFO] 21:40:42:201 MEMORIA/(4983:5004): I/O 1500
+[INFO] 21:40:42:201 MEMORIA/(4983:5004): EXIT
+[INFO] 21:41:16:696 MEMORIA/(5151:5151): Memoria lista para recibir clientes
+[INFO] 21:41:32:838 MEMORIA/(5229:5229): Memoria lista para recibir clientes
+[INFO] 21:42:06:439 MEMORIA/(5366:5366): Memoria lista para recibir clientes
+[INFO] 21:42:19:974 MEMORIA/(5448:5448): Memoria lista para recibir clientes
+[INFO] 21:42:22:960 MEMORIA/(5448:5449): Kernel solicita INICIO PROCESO
+[INFO] 21:42:22:960 MEMORIA/(5448:5465): Se creo la tabla numero: 0
+[INFO] 21:42:27:962 MEMORIA/(5448:5465): id: -1228936384
+
+[INFO] 21:42:27:962 MEMORIA/(5448:5465): estimacion: 10000
+
+[INFO] 21:42:27:962 MEMORIA/(5448:5465): program counter: 0
+
+[INFO] 21:42:27:962 MEMORIA/(5448:5465): socket: 7
+
+[INFO] 21:42:27:963 MEMORIA/(5448:5465): numero de tabla: 0
+
+[INFO] 21:42:27:963 MEMORIA/(5448:5465): tamanio de consola: 10
+
+[INFO] 21:42:27:963 MEMORIA/(5448:5465): lista:
+
+[INFO] 21:42:27:963 MEMORIA/(5448:5465): EXIT
+[ERROR] 21:42:37:672 MEMORIA/(5448:5449): Se desconecto el kernel
+[INFO] 21:42:39:287 MEMORIA/(5534:5534): Memoria lista para recibir clientes
+[INFO] 21:42:45:218 MEMORIA/(5534:5535): Kernel solicita INICIO PROCESO
+[INFO] 21:42:45:218 MEMORIA/(5534:5563): Se creo la tabla numero: 0
+[INFO] 21:42:50:220 MEMORIA/(5534:5563): id: -1228936384
+
+[INFO] 21:42:50:220 MEMORIA/(5534:5563): estimacion: 10000
+
+[INFO] 21:42:50:220 MEMORIA/(5534:5563): program counter: 0
+
+[INFO] 21:42:50:220 MEMORIA/(5534:5563): socket: 7
+
+[INFO] 21:42:50:220 MEMORIA/(5534:5563): numero de tabla: 0
+
+[INFO] 21:42:50:220 MEMORIA/(5534:5563): tamanio de consola: 10
+
+[INFO] 21:42:50:220 MEMORIA/(5534:5563): lista:
+
+[INFO] 21:42:50:220 MEMORIA/(5534:5563): NO_OP
+[INFO] 21:42:50:220 MEMORIA/(5534:5563): READ 9
+[INFO] 21:42:50:220 MEMORIA/(5534:5563): EXIT
+[ERROR] 21:42:56:413 MEMORIA/(5534:5535): Se desconecto el kernel
+[INFO] 21:54:47:868 MEMORIA/(8185:8185): Memoria lista para recibir clientes
+[INFO] 21:55:18:365 MEMORIA/(8185:8186): Kernel solicita INICIO PROCESO
+[INFO] 21:55:18:365 MEMORIA/(8185:8418): Se creo la tabla numero: 0
+[INFO] 21:55:23:366 MEMORIA/(8185:8418): id: 1
+
+[INFO] 21:55:23:366 MEMORIA/(8185:8418): estimacion: 0
+
+[INFO] 21:55:23:366 MEMORIA/(8185:8418): program counter: 10
+
+[INFO] 21:55:23:366 MEMORIA/(8185:8418): socket: -1229984960
+
+[INFO] 21:55:23:366 MEMORIA/(8185:8418): numero de tabla: 10000
+
+[INFO] 21:55:23:366 MEMORIA/(8185:8418): tamanio de consola: 7
+
+[INFO] 21:55:23:366 MEMORIA/(8185:8418): lista:
+
+[INFO] 21:55:23:366 MEMORIA/(8185:8186): Operacion desconocida
+[INFO] 21:55:23:366 MEMORIA/(8185:8186): Operacion desconocida
+[INFO] 21:55:23:366 MEMORIA/(8185:8186): Operacion desconocida
+[INFO] 21:55:23:366 MEMORIA/(8185:8186): Operacion desconocida
+[INFO] 21:55:23:366 MEMORIA/(8185:8186): Operacion desconocida
+[INFO] 21:55:23:366 MEMORIA/(8185:8186): Operacion desconocida
+[INFO] 21:55:23:366 MEMORIA/(8185:8186): Operacion desconocida
+[INFO] 21:55:23:366 MEMORIA/(8185:8186): Operacion desconocida
+[INFO] 21:55:55:062 MEMORIA/(8185:8186): Operacion desconocida
+[ERROR] 21:55:55:064 MEMORIA/(8185:8186): Se desconecto el kernel
+[INFO] 21:56:11:772 MEMORIA/(8629:8629): Memoria lista para recibir clientes
+[INFO] 21:56:13:965 MEMORIA/(8629:8630): Kernel solicita INICIO PROCESO
+[INFO] 21:56:13:965 MEMORIA/(8629:8642): Se creo la tabla numero: 0
+[INFO] 21:56:18:968 MEMORIA/(8629:8642): id: -1228936384
+
+[INFO] 21:56:18:968 MEMORIA/(8629:8642): estimacion: 10000
+
+[INFO] 21:56:18:968 MEMORIA/(8629:8642): program counter: 0
+
+[INFO] 21:56:18:968 MEMORIA/(8629:8642): socket: 7
+
+[INFO] 21:56:18:969 MEMORIA/(8629:8642): numero de tabla: 0
+
+[INFO] 21:56:18:969 MEMORIA/(8629:8642): tamanio de consola: 20
+
+[INFO] 21:56:18:969 MEMORIA/(8629:8642): lista:
+
+[INFO] 21:56:18:969 MEMORIA/(8629:8642): NO_OP
+[INFO] 21:56:18:969 MEMORIA/(8629:8642): NO_OP
+[INFO] 21:56:18:969 MEMORIA/(8629:8642): NO_OP
+[INFO] 21:56:18:969 MEMORIA/(8629:8642): NO_OP
+[INFO] 21:56:18:969 MEMORIA/(8629:8642): I/O 1500
+[INFO] 21:56:18:969 MEMORIA/(8629:8642): EXIT
+[ERROR] 21:56:34:189 MEMORIA/(8629:8630): Se desconecto el kernel
+[INFO] 22:02:01:396 MEMORIA/(9963:9963): Memoria lista para recibir clientes
+[INFO] 22:02:04:132 MEMORIA/(9963:9964): Kernel solicita INICIO PROCESO
+[INFO] 22:02:04:133 MEMORIA/(9963:9980): Se creo la tabla numero: 0
+[INFO] 22:02:09:134 MEMORIA/(9963:9980): id: -1228936384
+
+[INFO] 22:02:09:134 MEMORIA/(9963:9980): estimacion: 10000
+
+[INFO] 22:02:09:134 MEMORIA/(9963:9980): program counter: 0
+
+[INFO] 22:02:09:134 MEMORIA/(9963:9980): socket: 7
+
+[INFO] 22:02:09:134 MEMORIA/(9963:9980): numero de tabla: 0
+
+[INFO] 22:02:09:134 MEMORIA/(9963:9980): tamanio de consola: 10
+
+[INFO] 22:02:09:134 MEMORIA/(9963:9980): lista:
+
+[INFO] 22:02:09:134 MEMORIA/(9963:9980): NO_OP
+[INFO] 22:02:09:134 MEMORIA/(9963:9980): READ 9
+[INFO] 22:02:09:134 MEMORIA/(9963:9980): EXIT
+[ERROR] 22:02:18:509 MEMORIA/(9963:9964): Se desconecto el kernel
+[INFO] 22:14:30:540 MEMORIA/(13106:13106): Memoria lista para recibir clientes
+[INFO] 22:14:50:826 MEMORIA/(13106:13107): Kernel solicita INICIO PROCESO
+[INFO] 22:14:50:829 MEMORIA/(13106:13245): Se creo la tabla numero: 0
+[INFO] 22:17:39:148 MEMORIA/(13106:13245): id: -1
+
+[INFO] 22:17:39:148 MEMORIA/(13106:13245): estimacion: -1
+
+[INFO] 22:17:39:149 MEMORIA/(13106:13245): program counter: -1
+
+[INFO] 22:17:39:149 MEMORIA/(13106:13245): socket: -1
+
+[INFO] 22:17:39:149 MEMORIA/(13106:13245): numero de tabla: -1
+
+[INFO] 22:17:39:149 MEMORIA/(13106:13245): tamanio de consola: -1
+
+[INFO] 22:17:39:150 MEMORIA/(13106:13245): lista:
+
+[ERROR] 22:17:39:150 MEMORIA/(13106:13107): Se desconecto el kernel
+[INFO] 00:10:36:699 MEMORIA/(6378:6378): Memoria lista para recibir clientes
+[INFO] 00:11:01:450 MEMORIA/(6378:6379): Kernel solicita INICIO PROCESO
+[INFO] 00:11:01:450 MEMORIA/(6378:6483): Se creo la tabla numero: 0
+[INFO] 00:11:06:451 MEMORIA/(6378:6483): id: -1229984960
+
+[INFO] 00:11:06:451 MEMORIA/(6378:6483): estimacion: 10000
+
+[INFO] 00:11:06:451 MEMORIA/(6378:6483): program counter: 0
+
+[INFO] 00:11:06:451 MEMORIA/(6378:6483): socket: 7
+
+[INFO] 00:11:06:452 MEMORIA/(6378:6483): numero de tabla: 0
+
+[INFO] 00:11:06:452 MEMORIA/(6378:6483): tamanio de consola: 10
+
+[INFO] 00:11:06:452 MEMORIA/(6378:6483): lista:
+
+[INFO] 00:11:06:452 MEMORIA/(6378:6483): NO_OP
+[INFO] 00:11:06:452 MEMORIA/(6378:6483): READ 9
+[INFO] 00:11:06:452 MEMORIA/(6378:6483): EXIT
+[ERROR] 00:11:56:358 MEMORIA/(6378:6379): Se desconecto el kernel
+[INFO] 00:19:13:529 MEMORIA/(8311:8311): Memoria lista para recibir clientes
+[INFO] 00:19:28:736 MEMORIA/(8311:8312): Kernel solicita INICIO PROCESO
+[INFO] 00:19:28:739 MEMORIA/(8311:8427): Se creo la tabla numero: 0
+[INFO] 00:23:58:575 MEMORIA/(8311:8427): id: -1
+
+[INFO] 00:23:58:575 MEMORIA/(8311:8427): estimacion: -1
+
+[INFO] 00:23:58:575 MEMORIA/(8311:8427): program counter: -1
+
+[INFO] 00:23:58:575 MEMORIA/(8311:8427): socket: -1
+
+[INFO] 00:23:58:575 MEMORIA/(8311:8427): numero de tabla: -1
+
+[INFO] 00:23:58:575 MEMORIA/(8311:8427): tamanio de consola: -1
+
+[INFO] 00:23:58:575 MEMORIA/(8311:8427): lista:
+
+[ERROR] 00:23:58:576 MEMORIA/(8311:8312): Se desconecto el kernel
+[INFO] 00:24:10:921 MEMORIA/(9569:9569): Memoria lista para recibir clientes
+[INFO] 00:24:45:322 MEMORIA/(9785:9785): Memoria lista para recibir clientes
+[INFO] 00:24:48:321 MEMORIA/(9785:9786): Kernel solicita INICIO PROCESO
+[INFO] 00:24:48:321 MEMORIA/(9785:9807): Se creo la tabla numero: 0
+[INFO] 00:24:53:321 MEMORIA/(9785:9807): id: -1229984960
+
+[INFO] 00:24:53:321 MEMORIA/(9785:9807): estimacion: 10000
+
+[INFO] 00:24:53:321 MEMORIA/(9785:9807): program counter: 0
+
+[INFO] 00:24:53:321 MEMORIA/(9785:9807): socket: 7
+
+[INFO] 00:24:53:321 MEMORIA/(9785:9807): numero de tabla: 0
+
+[INFO] 00:24:53:321 MEMORIA/(9785:9807): tamanio de consola: 10
+
+[INFO] 00:24:53:321 MEMORIA/(9785:9807): lista:
+
+[INFO] 00:24:53:321 MEMORIA/(9785:9807): NO_OP
+[INFO] 00:24:53:321 MEMORIA/(9785:9807): READ 9
+[INFO] 00:24:53:321 MEMORIA/(9785:9807): EXIT
+[ERROR] 00:25:08:928 MEMORIA/(9785:9786): Se desconecto el kernel
+[INFO] 00:31:07:999 MEMORIA/(11446:11446): Memoria lista para recibir clientes
+[INFO] 00:31:10:911 MEMORIA/(11446:11447): Kernel solicita INICIO PROCESO
+[INFO] 00:31:10:911 MEMORIA/(11446:11464): Se creo la tabla numero: 0
+[INFO] 00:31:15:912 MEMORIA/(11446:11464): id: -1228936384
+
+[INFO] 00:31:15:912 MEMORIA/(11446:11464): estimacion: 10000
+
+[INFO] 00:31:15:912 MEMORIA/(11446:11464): program counter: 0
+
+[INFO] 00:31:15:912 MEMORIA/(11446:11464): socket: 7
+
+[INFO] 00:31:15:912 MEMORIA/(11446:11464): numero de tabla: 0
+
+[INFO] 00:31:15:912 MEMORIA/(11446:11464): tamanio de consola: 10
+
+[INFO] 00:31:15:912 MEMORIA/(11446:11464): lista:
+
+[INFO] 00:31:15:912 MEMORIA/(11446:11464): NO_OP
+[INFO] 00:31:15:912 MEMORIA/(11446:11464): READ 9
+[INFO] 00:31:15:912 MEMORIA/(11446:11464): EXIT
+[INFO] 01:24:28:757 MEMORIA/(23597:23597): Memoria lista para recibir clientes
+[ERROR] 01:25:07:146 MEMORIA/(23597:23598): Se desconecto el kernel
+[INFO] 01:28:25:883 MEMORIA/(24600:24600): Memoria lista para recibir clientes
+[INFO] 01:28:37:590 MEMORIA/(24600:24601): Kernel solicita INICIO PROCESO
+[INFO] 01:28:37:591 MEMORIA/(24600:24654): Se creo la tabla numero: 0
+[ERROR] 01:29:01:098 MEMORIA/(24600:24601): Se desconecto el kernel
+[INFO] 01:30:26:604 MEMORIA/(25119:25119): Memoria lista para recibir clientes
+[INFO] 01:30:30:854 MEMORIA/(25119:25120): Kernel solicita INICIO PROCESO
+[INFO] 01:30:30:854 MEMORIA/(25119:25143): Se creo la tabla numero: 0
+[ERROR] 01:30:41:996 MEMORIA/(25119:25120): Se desconecto el kernel
+[INFO] 01:31:04:340 MEMORIA/(25291:25291): Memoria lista para recibir clientes
+[INFO] 01:31:58:141 MEMORIA/(25291:25292): Kernel solicita INICIO PROCESO
+[INFO] 01:31:58:142 MEMORIA/(25291:25539): Se creo la tabla numero: 0
+[ERROR] 01:34:44:581 MEMORIA/(25291:25292): Se desconecto el kernel
+[INFO] 01:34:48:269 MEMORIA/(26244:26244): Memoria lista para recibir clientes
+[INFO] 01:34:53:467 MEMORIA/(26244:26245): Kernel solicita INICIO PROCESO
+[INFO] 01:34:53:467 MEMORIA/(26244:26274): Se creo la tabla numero: 0
+[ERROR] 01:35:11:700 MEMORIA/(26244:26245): Se desconecto el kernel
+[INFO] 01:38:03:436 MEMORIA/(27076:27076): Memoria lista para recibir clientes
+[INFO] 01:38:09:238 MEMORIA/(27076:27077): Kernel solicita INICIO PROCESO
+[INFO] 01:38:09:239 MEMORIA/(27076:27108): Se creo la tabla numero: 0
+[ERROR] 01:38:32:603 MEMORIA/(27076:27077): Se desconecto el kernel
+[INFO] 01:39:05:847 MEMORIA/(27340:27340): Memoria lista para recibir clientes
+[INFO] 01:39:23:021 MEMORIA/(27340:27341): Kernel solicita INICIO PROCESO
+[INFO] 01:39:23:021 MEMORIA/(27340:27405): Se creo la tabla numero: 0
+[ERROR] 01:40:01:092 MEMORIA/(27340:27341): Se desconecto el kernel
