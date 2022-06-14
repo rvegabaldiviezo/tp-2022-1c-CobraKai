@@ -98,7 +98,12 @@ t_proceso* process_create(void);
 void finalizar_cpu(proceso_cpu* cpu_process);
 void atender_kernel_dispatch(proceso_cpu* cpu_process,int conexion_kernel);
 int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel);
-void recibir_mensaje_kernel(proceso_cpu* cpu_process, int socket_kernel);
+//void recibir_mensaje_kernel(proceso_cpu* cpu_process, int socket_kernel);
+
+t_pcb* recibir_pcb(int);
+t_list* recibir_instrucciones(int);
+int recibir_entero(int);
+void iterator(char* value);
 /*
 int fetch(t_proceso proceso);
 void fetch_operands(t_proceso proces, t_instruction instruccion);

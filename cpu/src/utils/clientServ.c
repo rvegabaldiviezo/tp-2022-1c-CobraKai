@@ -116,8 +116,49 @@ t_list* recibir_paquete(int socket_cliente)
 	return valores;
 }
 
+int recibir_entero(int socket_cliente) {
+	int cod_op;
+	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) > 0) {
+		return cod_op;
+	} else {
+		close(socket_cliente);
+		return -1;
+	}
+}
 
+t_pcb* recibir_pcb(int conexion) {
+	// orden en el que vienen: operacion, id, socket, tamanio, program_counter, estimacion_rafaga, numero_tabla, tamanio_instrucciones, instrucciones
+	t_pcb* pcb = malloc(sizeof(t_pcb));
+	//int operacion = recibir_entero(conexion);
+	pcb->id = recibir_entero(conexion);
+	pcb->socket_cliente = recibir_entero(conexion);
+	pcb->tamanio_proceso = recibir_entero(conexion);
+	pcb->program_counter = recibir_entero(conexion);
+	pcb->estimacion_rafaga = recibir_entero(conexion);
+	pcb->tablas_paginas = recibir_entero(conexion);
+	pcb->instrucciones = recibir_instrucciones(conexion);
+	return pcb;
+}
 
+t_list* recibir_instrucciones(int socket_cliente) {
+	int size;
+	int desplazamiento = 0;
+	void * buffer;
+	t_list* instrucciones = list_create();
+	int tamanio;
+
+	buffer = recibir_buffer(&size, socket_cliente);
+	while(desplazamiento < size) {
+		memcpy(&tamanio, buffer + desplazamiento, sizeof(int));
+		desplazamiento+=sizeof(int);
+		char* valor = malloc(tamanio);
+		memcpy(valor, buffer+desplazamiento, tamanio);
+		desplazamiento+=tamanio;
+		list_add(instrucciones, valor);
+	}
+	free(buffer);
+	return instrucciones;
+}
 
 
 

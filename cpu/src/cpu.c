@@ -15,7 +15,7 @@ sem_t dispatch;
 //Variables Globales del Proceso
 //proceso_cpu* cpu;
 t_proceso proceso;
-int conexion_kernel;
+//int conexion_kernel;
 int interrup_kernel;
 
 
@@ -85,7 +85,16 @@ int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel){
 
 				case PCB:
 					log_info(cpu_process->logger, " El kernel envio un PCB");
-					recibir_mensaje_kernel(cpu_process, socket_kernel);
+					t_pcb* pcb = recibir_pcb(socket_kernel);
+
+					log_info(cpu_process->logger, "id: %d\n", pcb->id);
+					log_info(cpu_process->logger, "estimacion: %d\n", pcb->estimacion_rafaga);
+					log_info(cpu_process->logger, "program counter: %d\n", pcb->program_counter);
+					log_info(cpu_process->logger, "socket: %d\n", pcb->socket_cliente);
+					log_info(cpu_process->logger, "numero de tabla: %d\n", pcb->tablas_paginas);
+					log_info(cpu_process->logger, "tamanio de consola: %d\n", pcb->tamanio_proceso);
+					log_info(cpu_process->logger, "lista:\n");
+					list_iterate(pcb->instrucciones, (void*) iterator);
 					break;
 				case INTERRUPCION:
 					log_info(cpu_process->logger, " El kernel envio la operacion: INTERRUPCION");
@@ -412,6 +421,12 @@ int iniciar_servidor_cpu(proceso_cpu* cpu_process, char* key_puerto){
 
 	return socket_servidor;
 }
+
+void iterator(char* value) {
+	t_log* logger = log_create(PATH_LOG, "CPU", true, LOG_LEVEL_INFO);
+	log_info(logger,"%s", value);
+}
+
 
 
 
