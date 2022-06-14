@@ -78,6 +78,10 @@ void terminar_programa(int conexion, t_log* logger, t_config* config);
 int iniciar_servidor(char* ip, char* puerto);
 int esperar_cliente(int socket_servidor);
 int recibir_operacion(int socket_cliente);
+void* recibir_buffer(int* size, int socket_cliente);
+t_list* recibir_paquete(int socket_cliente);
+
+
 
 
 #endif /* CLIENT_SERV_H_ */

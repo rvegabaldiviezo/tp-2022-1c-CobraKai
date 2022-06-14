@@ -42,18 +42,17 @@ typedef struct instruction {
 typedef struct {
 	int id;
 	unsigned int tamanio_proceso;
-	t_list* instrucciones;
 	unsigned int program_counter;
 	unsigned int tablas_paginas;
 	unsigned int estimacion_rafaga;
+	int socket_cliente;
+	t_list* instrucciones;
 } t_pcb;
 
 typedef struct {
-	t_pcb pcb;
-	int socket;
-	int interrupcion;//0: false
-	t_config* config;
-	t_log* logger;
+	t_pcb* pcb; //
+	int socket_cliente;
+	int interrupcion; // false(0) o true(1)
 } t_proceso;
 
 typedef struct {
@@ -99,6 +98,7 @@ t_proceso* process_create(void);
 void finalizar_cpu(proceso_cpu* cpu_process);
 void atender_kernel_dispatch(proceso_cpu* cpu_process,int conexion_kernel);
 int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel);
+void recibir_mensaje_kernel(proceso_cpu* cpu_process, int socket_kernel);
 /*
 int fetch(t_proceso proceso);
 void fetch_operands(t_proceso proces, t_instruction instruccion);
