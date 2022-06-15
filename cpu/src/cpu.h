@@ -99,6 +99,12 @@ enum {
 	COD_RESP_INTERRUPCION, // interrupion por puerto
 };
 
+typedef struct
+{
+	int size;
+	void* stream;
+} t_buffer;
+
 //###### INTERFAZ FUNCIONES ######
 
 void iniciar_conexion_cpu_memoria(proceso_cpu* cpu_process);
@@ -115,6 +121,12 @@ t_pcb* recibir_pcb(int);
 t_list* recibir_instrucciones(int);
 int recibir_entero(int);
 void iterator(char* value);
+void agregar_instruccion(t_buffer* buffer, char* valor, int tamanio);
+t_buffer* cargar_buffer(t_list* lista);
+void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes);
+void enviar_pcb(t_pcb* pcb, int conexion);
+t_list* recibir_instrucciones(int socket_cliente);
+t_pcb* recibir_pcb(int conexion);
 /*
 int fetch(t_proceso proceso);
 void fetch_operands(t_proceso proces, t_instruction instruccion);

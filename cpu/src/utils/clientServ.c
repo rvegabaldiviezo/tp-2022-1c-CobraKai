@@ -160,7 +160,66 @@ t_list* recibir_instrucciones(int socket_cliente) {
 	return instrucciones;
 }
 
+void enviar_pcb(t_pcb* pcb, int conexion) {
+	t_buffer* buffer = cargar_buffer(pcb->instrucciones);
+	int bytes = sizeof(pid_t) + 7 * sizeof(int) + buffer->size;
 
+	void* pcb_serializado = serializar_pcb(pcb, buffer, bytes);
+	send(conexion, pcb_serializado, bytes, 0);
+	free(pcb_serializado);
+}
+
+void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes) {
+	void* a_enviar = malloc(bytes);
+	int desplazamiento = 0;
+
+	int operacion = PCB;
+	memcpy(a_enviar + desplazamiento, &operacion, sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->id), sizeof(pid_t));
+	desplazamiento += sizeof(pid_t);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->socket_cliente), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->tamanio_proceso), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->program_counter), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->estimacion_rafaga), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->tablas_paginas), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(buffer->size), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, buffer->stream, buffer->size);
+
+	return a_enviar;
+}
+
+t_buffer* cargar_buffer(t_list* lista) {
+	t_buffer* buffer = malloc(sizeof(t_buffer));
+	buffer->size = 0;
+	buffer->stream = NULL;
+	for(int i = 0; i < list_size(lista); i++) {
+		char* instruccion = list_get(lista, i);
+		agregar_instruccion(buffer, instruccion, string_length(instruccion) + 1);
+	}
+	return buffer;
+}
+
+void agregar_instruccion(t_buffer* buffer, char* valor, int tamanio) {
+	buffer->stream = realloc(buffer->stream, buffer->size + tamanio + sizeof(int));
+	memcpy(buffer->stream + buffer->size, &tamanio, sizeof(int));
+	memcpy(buffer->stream + buffer->size + sizeof(int), valor, tamanio);
+	buffer->size += tamanio + sizeof(int);
+}
 
 
 
