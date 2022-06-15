@@ -63,8 +63,8 @@ int esperar_cliente(int socket_servidor)
 //### Esta función devuelve el número de bytes recibidos o -1 en caso de error.
 int recibir_operacion(int socket_cliente)
 {
-	int cod_op;
-	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) > 0)
+	operacion cod_op;
+	if(recv(socket_cliente, &cod_op, sizeof(operacion), MSG_WAITALL) > 0)
 		return cod_op;
 	else
 	{

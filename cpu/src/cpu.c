@@ -79,7 +79,7 @@ int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel){
 	log_info(cpu_process->logger, "INICIO: recibir_operaciones()");
 
 	while (1) {
-			int cod_op = recibir_operacion(socket_kernel);//Recibe cada peticion que envie el kernel en el puerto interrup
+			operacion cod_op = recibir_operacion(socket_kernel);//Recibe cada peticion que envie el kernel en el puerto interrup
 
 			switch (cod_op) {
 
