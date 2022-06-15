@@ -8,7 +8,7 @@ t_config* config;
 int server_memoria;
 int conexion_kernel;
 int conexion_cpu;
-t_tabla_paginas* tabla_primer_nivel;
+t_list* tabla_primer_nivel;
 unsigned int entradas;
 char* path_swap;
 
@@ -22,13 +22,13 @@ int main(void) {
 	path_swap = config_get_string_value(config, KEY_PATH_SWAP);
 	string_append(&path_swap, "/");
 
-	inicializar_tabla_paginas();
+	tabla_primer_nivel = list_create();
 
 	server_memoria = iniciar_servidor();
 	log_info(logger, "Memoria lista para recibir clientes");
 
 	//pthread_create(&hilo_cpu, NULL, (void *) atender_cpu, NULL);
-	pthread_create(&hilo_cpu, NULL, (void *) atender_kernel, NULL);
+	pthread_create(&hilo_kernel, NULL, (void *) atender_kernel, NULL);
 
 	terminar_programa();
 	return EXIT_SUCCESS;
@@ -38,48 +38,31 @@ bool conexion_exitosa(int cliente) {
 	return cliente != -1;
 }
 
-void crear_tabla_paginas() {
-	t_tabla_paginas tabla;
-	char* path_archivo = string_new();
-	for(int i = 0; i < entradas; i++) {
-		if(tabla_primer_nivel[i].inicializada == false) {
-			// TODO: ver bien como se inicializa la tabla y crear una tabla por proceso
-			//tabla.marco = i;
-			//tabla.presencia = true;
-
-			// solo para probar que se creen los archivos
-			path_archivo = get_path_archivo(i);
-			FILE* f = fopen(path_archivo, "w");
-			fclose(f);
-			tabla.inicializada = true;
-			tabla_primer_nivel[i] = tabla;
-			log_info(logger, "Se creo la tabla numero: %d", i);
-			break;
-		}
-	}
-
-	if(tabla.inicializada == true) {
-		enviar_numero_de_tabla(conexion_kernel, tabla.marco);
-	} else { //TODO: Preguntar si enviar error o esperar a que se libere un espacio
-		log_info(logger, "Se alcanzó el maximo de entradas por tabla");
-		enviar_numero_de_tabla(conexion_kernel, -1);
-	}
-
+int crear_tabla_paginas() {
+	t_tabla_paginas_segundo_nivel* tabla = inicializar_tabla_segundo_nivel();
+	list_add(tabla_primer_nivel, tabla);
+	return list_size(tabla_primer_nivel);
 }
 
-char* get_path_archivo(int numero) {
+t_tabla_paginas_segundo_nivel* inicializar_tabla_segundo_nivel() {
+	t_tabla_paginas_segundo_nivel* tabla = malloc(sizeof(t_tabla_paginas_segundo_nivel));
+	tabla->inicializada = true;
+	tabla->marco = -1;
+	tabla->modificada = false;
+	tabla->presencia = true; // true??
+	tabla->usada = false;
+	return tabla;
+}
+
+char* get_path_archivo(pid_t id) {
 	char* extension = ".swap";
 	char* nombre = string_new();
 	char* aux = string_new();
 	string_append(&aux, path_swap);
-	nombre = string_itoa(numero);
+	nombre = string_itoa(id);
 	string_append(&nombre, extension);
 	string_append(&aux, nombre);
 	return aux;
-}
-
-void inicializar_tabla_paginas() {
-	tabla_primer_nivel = calloc(entradas, sizeof(t_tabla_paginas));
 }
 
 void terminar_programa() {
@@ -96,7 +79,7 @@ void atender_cpu() {
 	}
 
 	while(1) {
-		operacion operacion = recibir_operacion(conexion_kernel);
+		operacion operacion = recibir_operacion(conexion_cpu);
 		switch(operacion) {
 			case ACCESO_TABLA_PRIMER_NIVEL:
 				log_info(logger, "CPU solicita acceso a tabla pagina de primer nivel");
@@ -134,10 +117,15 @@ void atender_kernel() {
 		switch(operacion) {
 			case INICIO_PROCESO:
 				log_info(logger, "Kernel solicita INICIO PROCESO");
-				//pid_t id_proceso = recibir_id_proceso(conexion_kernel);
-				pthread_t hilo_inicio_proceso;
-				pthread_create(&hilo_inicio_proceso, NULL, (void*) crear_tabla_paginas, NULL);
-				pthread_join(hilo_inicio_proceso, NULL);
+				pid_t id_proceso = recibir_id_proceso(conexion_kernel);
+				//pid_t id_proceso = getpid();
+				int numero_de_tabla = crear_tabla_paginas();
+
+				char* path_archivo = string_new();
+				path_archivo = get_path_archivo(id_proceso);
+				FILE* f = fopen(path_archivo, "w");
+
+				enviar_numero_de_tabla(conexion_kernel, numero_de_tabla);
 
 				break;
 			case SUSPENCION_PROCESO:

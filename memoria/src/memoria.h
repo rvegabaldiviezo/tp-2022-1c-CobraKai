@@ -47,18 +47,20 @@ typedef struct {
 	int marco;
 	bool presencia;
 	bool inicializada;
-	// U??
+	bool usada;
 	bool modificada;
-} t_tabla_paginas;
+} t_tabla_paginas_segundo_nivel;
 
 
 bool conexion_exitosa(int);
 void inicializar_tabla_paginas();
-void crear_tabla_paginas();
+int crear_tabla_paginas();
 void atender_kernel();
 void atender_cpu();
 char* get_path_archivo(int);
 pid_t recibir_id_proceso(int conexion_kernel);
+t_tabla_paginas_segundo_nivel* inicializar_tabla_segundo_nivel();
+
 void terminar_programa();
 
 
