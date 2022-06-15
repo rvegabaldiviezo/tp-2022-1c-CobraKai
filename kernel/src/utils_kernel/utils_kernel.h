@@ -34,7 +34,7 @@ void notificar_a_memoria(int, int*);
 
 
 void liberar_conexion(int socket_cliente);
-void solicitar_numero_de_tabla(int);
-int recibir_numero_de_tabla(int);
+void solicitar_numero_de_tabla(pid_t, int);
+int recibir_numero_de_tabla(pid_t, int);
 
 #endif /* UTILS_H_ */

@@ -258,18 +258,28 @@ void liberar_conexion(int socket_cliente) {
 	close(socket_cliente);
 }
 
-void solicitar_numero_de_tabla(int conexion) {
-	int operacion = INICIO_PROCESO;
-	send(conexion, &operacion, sizeof(int), 0);
+void solicitar_numero_de_tabla(pid_t id, int conexion) {
+	operacion operacion = INICIO_PROCESO;
+	paquete p = cargar_id(operacion, id);
+
+	void* a_enviar = malloc(sizeof(paquete));
+	int desp = 0;
+	memcpy(a_enviar + desp, &(p.cod_op), sizeof(operacion));
+	desp += sizeof(operacion);
+
+	memcpy(a_enviar + desp, &(p.elemento), sizeof(p.elemento));
+	desp += sizeof(p.elemento);
+
+	send(conexion, &p, sizeof(paquete), 0);
 }
 
 void enviar_respuesta_exitosa(int conexion) {
-	int operacion = RESPUESTA_EXITO;
-	send(conexion, &operacion, sizeof(int), 0);
+	operacion operacion = RESPUESTA_EXITO;
+	send(conexion, &operacion, sizeof(operacion), 0);
 }
 
-int recibir_numero_de_tabla(int conexion_memoria) {
-	solicitar_numero_de_tabla(conexion_memoria);
+int recibir_numero_de_tabla(pid_t id, int conexion_memoria) {
+	solicitar_numero_de_tabla(id, conexion_memoria);
 	int numero_de_tabla;
 	int bytes_recibidos = recv(conexion_memoria, &numero_de_tabla, sizeof(int), MSG_WAITALL);
 	if (bytes_recibidos <= 0) {
@@ -280,8 +290,8 @@ int recibir_numero_de_tabla(int conexion_memoria) {
 }
 
 void enviar_interrupcion(int conexion_con_cpu_interrupt) {
-	int operacion = INTERRUPCION;
-	send(conexion_con_cpu_interrupt, &operacion, sizeof(int), 0);
+	operacion operacion = INTERRUPCION;
+	send(conexion_con_cpu_interrupt, &operacion, sizeof(operacion), 0);
 }
 
 void notificar_suspencion_proceso(pid_t id, int conexion) {
