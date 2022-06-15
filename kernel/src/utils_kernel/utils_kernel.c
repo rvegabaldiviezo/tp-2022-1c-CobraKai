@@ -138,7 +138,7 @@ t_list* parsear_instrucciones(t_list* instrucciones) {
 
 void enviar_pcb(t_pcb* pcb, int conexion) {
 	t_buffer* buffer = cargar_buffer(pcb->instrucciones);
-	int bytes = sizeof(long int) + 7 * sizeof(int) + buffer->size;
+	int bytes = sizeof(pid_t) + 7 * sizeof(int) + buffer->size;
 
 	void* pcb_serializado = serializar_pcb(pcb, buffer, bytes);
 	send(conexion, pcb_serializado, bytes, 0);
@@ -154,7 +154,7 @@ void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes) {
 	desplazamiento += sizeof(int);
 
 	memcpy(a_enviar + desplazamiento, &(pcb->id), sizeof(pid_t));
-	desplazamiento += sizeof(long int);
+	desplazamiento += sizeof(pid_t);
 
 	memcpy(a_enviar + desplazamiento, &(pcb->socket), sizeof(int));
 	desplazamiento += sizeof(int);
@@ -195,6 +195,30 @@ void agregar_instruccion(t_buffer* buffer, char* valor, int tamanio) {
 	memcpy(buffer->stream + buffer->size, &tamanio, sizeof(int));
 	memcpy(buffer->stream + buffer->size + sizeof(int), valor, tamanio);
 	buffer->size += tamanio + sizeof(int);
+}
+
+int recibir_entero(int socket_cliente) {
+	int cod_op;
+	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) > 0) {
+		return cod_op;
+	} else {
+		close(socket_cliente);
+		return -1;
+	}
+}
+
+t_pcb* recibir_pcb(int conexion) {
+	// orden en el que vienen: operacion, id, socket, tamanio, program_counter, estimacion_rafaga, numero_tabla, tamanio_instrucciones, instrucciones
+	t_pcb* pcb = malloc(sizeof(t_pcb));
+	//int operacion = recibir_entero(conexion);
+	pcb->id = recibir_entero(conexion);
+	pcb->socket = recibir_entero(conexion);
+	pcb->tamanio_proceso = recibir_entero(conexion);
+	pcb->program_counter = recibir_entero(conexion);
+	pcb->estimacion_rafaga = recibir_entero(conexion);
+	pcb->tablas_paginas = recibir_entero(conexion);
+	pcb->instrucciones = recibir_instrucciones(conexion);
+	return pcb;
 }
 
 
@@ -260,24 +284,41 @@ void enviar_interrupcion(int conexion_con_cpu_interrupt) {
 	send(conexion_con_cpu_interrupt, &operacion, sizeof(int), 0);
 }
 
-void enviar_finalizacion_a_memoria(pid_t id, int conexion_con_memoria) {
-	operacion op = FINALIZACION_PROCESO;
-	envio_con_operacion paquete;
-	paquete.op = op;
-	paquete.elemento = id;
+void notificar_suspencion_proceso(pid_t id, int conexion) {
+	operacion op = SUSPENCION_PROCESO;
+	paquete paquete = cargar_id(op, id);
 
-	int bytes = (sizeof(paquete));
-	void* a_enviar;
-
+	void* a_enviar = malloc(sizeof(paquete));
 	int desp = 0;
-	memcpy(a_enviar + desp, &(paquete.op), sizeof(operacion));
+	memcpy(a_enviar + desp, &(paquete.cod_op), sizeof(operacion));
 	desp += sizeof(operacion);
 
 	memcpy(a_enviar + desp, &(paquete.elemento), sizeof(paquete.elemento));
 	desp += sizeof(paquete.elemento);
 
-	send(conexion_con_memoria, a_enviar, sizeof(paquete), 0);
 
+	send(conexion, &paquete, sizeof(paquete), 0);
+}
 
+paquete cargar_id(operacion op, pid_t id) {
+	paquete p;
+	p.cod_op = op;
+	p.elemento = id;
+	return p;
+}
+
+void enviar_finalizacion_a_memoria(pid_t id, int conexion_con_memoria) {
+	operacion op = FINALIZACION_PROCESO;
+	paquete paquete = cargar_id(op, id);
+
+	void* a_enviar = malloc(sizeof(paquete));
+	int desp = 0;
+	memcpy(a_enviar + desp, &(paquete.cod_op), sizeof(operacion));
+	desp += sizeof(operacion);
+
+	memcpy(a_enviar + desp, &(paquete.elemento), sizeof(paquete.elemento));
+	desp += sizeof(paquete.elemento);
+
+	send(conexion_con_memoria, &paquete, sizeof(paquete), 0);
 }
 

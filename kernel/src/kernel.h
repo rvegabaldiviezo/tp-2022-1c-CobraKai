@@ -76,28 +76,9 @@ typedef enum {
 } operacion;
 
 typedef struct {
-	operacion op;
-	void* elemento;
-} envio_con_operacion;
-
-/*typedef enum {
-	TABLA_PAGINAS_PRIMER_NIVEL = 1, // memoria crea las tablas de paginas para el proceso y devuelve el numero de la tabla de nivel uno
-	INICIO_PROCESO,
-	SUSPENCION_PROCESO,
-	FINALIZACION_PROCESO
-} operacion_memoria;
-
-// Operaciones con cpu
-typedef enum {
-	PCB = 1,
-	BLOQUEO_IO,
-	EXIT,
->>>>>>> Stashed changes
->>>>>>> Stashed changes
-	INTERRUPCION,
-	ERROR_CPU = -1
-} operacion_cpu;*/
-
+	operacion cod_op;
+	pid_t elemento;
+} paquete;
 
 void iterator(char* value);
 bool conexion_exitosa(int);
@@ -118,22 +99,21 @@ void iniciar_planificacion(char* planificacion);
 void comunicacion_con_cpu();
 void* list_pop(t_list*);
 t_pcb* menor_tiempo_restante(t_pcb*, t_pcb*);
-t_pcb* crear_proceso(void);
-t_pcb crear_pcb();
 t_list* recibir_instrucciones(int socket_cliente);
-t_pcb* recibir_proceso(int socket_cliente);
 void destruir_proceso(t_pcb*);
-t_pcb* lista_mas_corta(t_pcb*, t_pcb*);
 bool repetido(t_pcb* p1, t_pcb* p2);
 void inicializar_semaforos();
 void list_push(t_list* lista, void* elemento);
-t_pcb* menor_tiempo_restante(t_pcb* p1, t_pcb* p2);
 void solicitar_interrupcion();
 void enviar_pcb(t_pcb*, int);
 void* serializar_pcb(t_pcb*, t_buffer*, int);
 void agregar_instruccion(t_buffer* buffer, char* valor, int tamanio);
 t_buffer* cargar_buffer(t_list* lista);
+paquete cargar_id(operacion, pid_t);
+void notificar_suspencion_proceso(pid_t, int);
 void enviar_finalizacion_a_memoria(pid_t id, int conexion_con_memoria);
+int recibir_entero(int socket_cliente);
+t_pcb* recibir_pcb(int conexion);
 
 
 #endif /* KERNEL_H_ */

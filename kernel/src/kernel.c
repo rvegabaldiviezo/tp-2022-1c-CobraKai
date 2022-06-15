@@ -98,7 +98,7 @@ int main(void) {
 
 	return EXIT_SUCCESS;
 }
-//no debería pasarse el socket por parametro?
+
 pid_t atender_consola() {
 	operacion operacion_consola = recibir_operacion(conexion_consola);
 	t_pcb* proceso;
@@ -119,9 +119,6 @@ pid_t atender_consola() {
 			log_destroy(logger);
 			return EXIT_FAILURE;
 		}
-
-		// Ya se copiaron todos los bytes que venian de la consola
-		// de ahora en mas puedo agregar lo que quiera al proceso
 
 		char* tamanio_recibido = string_new();
 		string_append(&tamanio_recibido, "Tamanio recibido: ");
@@ -144,7 +141,6 @@ pid_t atender_consola() {
 		//TODO: aplicar semaforo para la cola de suspendido ready? Los suspendidos ready tienen mas prioridad
 		sem_wait(&multiprogramacion);
 		if(queue_size(susp_ready) <= 0) {
-			//todo: mutex
 			pthread_mutex_unlock(&mutex_new_queue);
 			log_info(logger, "Proceso %lu asignado a la cola NEW", proceso->id);
 			t_pcb* proceso = queue_pop(new);
@@ -233,7 +229,6 @@ void planificar_fifo(){
 			pthread_mutex_unlock(&mutex_ready_list);
 			sleep(5);
 			list_iterate(primer_proceso->instrucciones, (void *) iterator);
-			//TODO: se manda el pcb a la cpu
 			enviar_pcb(primer_proceso, conexion_con_cpu_dispatch);
 			//log_info(logger,"Se paso un proceso de Ready a Ejecutando");
 
@@ -250,22 +245,23 @@ void comunicacion_con_cpu() {
 				log_info(logger, "La CPU envio un pcb con estado bloqueado por I/0");
 				t_pcb_bloqueado* proceso_bloqueado;
 				int tiempo_de_espera = recibir_tiempo_bloqueo(conexion_con_cpu_dispatch);
-				int inicio_bloqueo = (int)time(NULL);
-				proceso_bloqueado->inicio_bloqueo = inicio_bloqueo;
-				//TODO
-				//t_pcb* pcb = recibir_pcb(conexion_con_cpu);
-				//TODO: agregar pcb y tiempo a proceso_bloqueado
-				agregar_a_bloqueados(proceso);
+				proceso_bloqueado->inicio_bloqueo = (int)time(NULL);
+				t_pcb* pcb_bloqueado = recibir_pcb(conexion_con_cpu_dispatch);
+				proceso_bloqueado->proceso = pcb_bloqueado;
+				agregar_a_bloqueados(proceso_bloqueado);
 				sem_post(&elementos_en_cola_bloqueados);
 
 				break;
 
 			case INTERRUPCION:
 				log_info(logger, "Un proceso fue interrumpido");
-				//t_pcb* pcb = recibir_pcb(conexion_con_cpu);
-				//agregar al proceso el pcb
+				t_pcb* pcb_interrumpido = recibir_pcb(conexion_con_cpu_dispatch);
+
 				//actualizar estimacion
-				//agregar el proceso a la lista de ready
+
+				pthread_mutex_lock(&mutex_ready_list);
+				list_push(ready, pcb_interrumpido);
+				pthread_mutex_unlock(&mutex_ready_list);
 				sem_post(&sem_planificacion_srt);
 
 				break;
@@ -356,7 +352,7 @@ void mandar_a_suspendido(){
 			t_pcb_bloqueado* proceso = list_get(blocked,i);
 			if(proceso->suspendido == 0 && ((int)(time(NULL) - proceso->inicio_bloqueo) > tiempo_max_bloqueo)){
 				//TODO: se manda a memoria y se espera confirmacion
-
+				notificar_suspencion_proceso(proceso->proceso->id, conexion_con_memoria);
 				proceso->suspendido = 1;
 				sem_post(&multiprogramacion);
 			}
@@ -435,6 +431,8 @@ void planificar_srt() {
 		log_info(logger, "Me llegaron los siguientes valores:");
 		list_iterate(proceso_mas_corto->instrucciones, (void*) iterator);
 		enviar_pcb(proceso_mas_corto, conexion_con_cpu_dispatch);
+
+		// esto va en el EXIT, lo pongo aca para probar
 		enviar_finalizacion_a_memoria(proceso_mas_corto->id, conexion_con_memoria);
 	}
 
