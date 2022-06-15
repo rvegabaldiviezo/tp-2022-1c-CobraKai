@@ -212,6 +212,18 @@ void terminar_programa() {
 	liberar_conexion(socket_servidor);
 	liberar_conexion(conexion_con_memoria);
 	liberar_conexion(conexion_consola);
+	destruir_lista(ready);
+	destruir_lista(blocked);
+	destruir_queue(new);
+	destruir_queue(susp_ready);
+}
+
+void destruir_lista(t_list* lista) {
+	list_destroy_and_destroy_elements(lista, (void *) destruir_nodo);
+}
+
+void destruir_queue(t_queue* q) {
+	queue_destroy_and_destroy_elements(q, (void *) destruir_nodo);
 }
 
 bool numero_de_tabla_valido(int numero) {
@@ -271,6 +283,7 @@ void comunicacion_con_cpu() {
 			    enviar_finalizacion_a_memoria(proceso->id, conexion_con_memoria);
 			    sem_post(&multiprogramacion);
 				enviar_respuesta_exitosa(proceso->socket);
+				destruir_proceso(proceso);
 				log_info(logger, "El proceso %lu finalizo correctamente", proceso->id);
 				break;
 			case ERROR:
