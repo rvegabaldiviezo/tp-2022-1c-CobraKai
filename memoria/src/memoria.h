@@ -30,14 +30,6 @@ typedef enum {
 	ERROR = -1
 } operacion;
 
-/*enum {
-	ACCESO_TABLA_PRIMER_NIVEL = 1,
-	ACCESO_TABLA_SEGUNDO_NIVEL,
-	LECTURA_MEMORIA_USUARIO,
-	ESCRITURA_MEMORIA_USUARIO,
-	ERROR_CPU = -1
-} operaciones_cpu;*/
-
 typedef struct {
 	void* buffer;
 
@@ -45,21 +37,47 @@ typedef struct {
 
 typedef struct {
 	int marco;
-	bool presencia;
-	bool inicializada;
-	bool usada;
-	bool modificada;
+	bool bit_presencia;
+	bool bit_uso;
+	bool bit_modificacion;
+} t_pagina;
+
+typedef struct {
+	unsigned int numero;
+	t_list* paginas;
 } t_tabla_paginas_segundo_nivel;
 
+typedef struct {
+	pid_t id_proceso;
+	unsigned int numero_de_tabla;
+} tabla_x_proceso;
 
+
+// Funciones de sockets
 bool conexion_exitosa(int);
-void inicializar_tabla_paginas();
-int crear_tabla_paginas();
+pid_t recibir_id_proceso(int conexion_kernel);
+void liberar_conexion();
+
+// Funciones de tablas de paginas
+int crear_tabla_paginas(pid_t);
+void inicializar_tabla_segundo_nivel();
+t_list* inicializar_paginas();
+void destruir_tabla_segundo_nivel(t_tabla_paginas_segundo_nivel*);
+bool mismo_id(pid_t id, void* indice);
+bool mismo_numero_tabla(void* tabla);
+void destruir_elemento(void* elemento);
+//void destruir_pagina(t_pagina* pagina);
+
+// Funciones de hilos
 void atender_kernel();
 void atender_cpu();
+
+// Funciones de archivo de swap
 char* get_path_archivo(int);
-pid_t recibir_id_proceso(int conexion_kernel);
-t_tabla_paginas_segundo_nivel* inicializar_tabla_segundo_nivel();
+void crear_archivo_swap(char*);
+
+
+
 
 void terminar_programa();
 

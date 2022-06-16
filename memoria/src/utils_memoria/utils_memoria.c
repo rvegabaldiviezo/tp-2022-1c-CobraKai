@@ -38,6 +38,17 @@ void enviar_numero_de_tabla(int destino, int numero_de_tabla) {
 	send(destino, &numero_de_tabla, sizeof(numero_de_tabla), 0);
 }
 
+void destruir_tabla_segundo_nivel(t_tabla_paginas_segundo_nivel* tabla) {
+	list_destroy_and_destroy_elements(tabla->paginas, (void *) destruir_elemento);
+}
+
+void destruir_elemento(void* elemento) {
+	free(elemento);
+}
+
+/*void destruir_pagina(t_pagina* pagina) {
+	free(pagina);
+}*/
 
 /******************** SERVER *****************/
 
