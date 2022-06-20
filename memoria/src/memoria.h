@@ -31,14 +31,25 @@ typedef enum {
 } operacion;
 
 typedef struct {
+	pid_t id;
+	unsigned int tamanio;
+	unsigned int numero_tabla_primer_nivel;
+} t_proceso;
+
+typedef struct {
 	void* buffer;
 
 } memoria_de_usuario;
 
+typedef struct{
+	unsigned int numero;
+	t_list* tablas_segundo_nivel;
+} t_tabla_primer_nivel;
+
 typedef struct {
-	int marco;
+	unsigned int numero;
+	unsigned int marco;
 	bool presencia;
-	bool inicializada;
 	bool usada;
 	bool modificada;
 } t_tabla_paginas_segundo_nivel;
@@ -62,6 +73,7 @@ char* get_path_archivo(int);
 // Funciones de conexiones
 bool conexion_exitosa(int);
 pid_t recibir_id_proceso(int conexion_kernel);
+int recibir_tamanio(int conexion_kernel);
 
 
 void terminar_programa();

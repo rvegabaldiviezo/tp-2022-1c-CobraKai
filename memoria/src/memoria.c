@@ -8,7 +8,7 @@ t_config* config;
 int server_memoria;
 int conexion_kernel;
 int conexion_cpu;
-t_list* tabla_primer_nivel;
+t_list* tablas_primer_nivel;
 unsigned int entradas;
 char* path_swap;
 
@@ -22,7 +22,7 @@ int main(void) {
 	path_swap = config_get_string_value(config, KEY_PATH_SWAP);
 	string_append(&path_swap, "/");
 
-	tabla_primer_nivel = list_create();
+	tablas_primer_nivel = list_create();
 
 	server_memoria = iniciar_servidor();
 	log_info(logger, "Memoria lista para recibir clientes");
@@ -40,14 +40,13 @@ bool conexion_exitosa(int cliente) {
 
 int crear_tabla_paginas() {
 	t_tabla_paginas_segundo_nivel* tabla = inicializar_tabla_segundo_nivel();
-	list_add(tabla_primer_nivel, tabla);
-	return list_size(tabla_primer_nivel);
+	list_add(tablas_primer_nivel, tabla);
+	return list_size(tablas_primer_nivel);
 }
 
 t_tabla_paginas_segundo_nivel* inicializar_tabla_segundo_nivel() {
 	t_tabla_paginas_segundo_nivel* tabla = malloc(sizeof(t_tabla_paginas_segundo_nivel));
-	tabla->inicializada = true;
-	tabla->marco = -1;
+	tabla->marco = 1;
 	tabla->modificada = false;
 	tabla->presencia = true; // true??
 	tabla->usada = false;
@@ -122,13 +121,16 @@ void atender_kernel() {
 		switch(operacion) {
 			case INICIO_PROCESO:
 				log_info(logger, "Kernel solicita INICIO PROCESO");
-				pid_t id_proceso = recibir_id_proceso(conexion_kernel);
-				//pid_t id_proceso = getpid();
-				int numero_de_tabla = crear_tabla_paginas();
+				t_proceso* proceso = malloc(sizeof(t_proceso));
 
-				crear_archivo_swap(get_path_archivo(id_proceso));
+				proceso->id= recibir_id_proceso(conexion_kernel);
+				proceso->tamanio = recibir_tamanio(conexion_kernel);
+				log_info(logger, "tamanio: %d", proceso->tamanio);
+				proceso->numero_tabla_primer_nivel = crear_tabla_paginas();
 
-				enviar_numero_de_tabla(conexion_kernel, numero_de_tabla);
+				crear_archivo_swap(get_path_archivo(proceso->id));
+
+				enviar_numero_de_tabla(conexion_kernel, proceso->numero_tabla_primer_nivel);
 
 				break;
 			case SUSPENCION_PROCESO:
