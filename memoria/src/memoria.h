@@ -30,14 +30,6 @@ typedef enum {
 	ERROR = -1
 } operacion;
 
-/*enum {
-	ACCESO_TABLA_PRIMER_NIVEL = 1,
-	ACCESO_TABLA_SEGUNDO_NIVEL,
-	LECTURA_MEMORIA_USUARIO,
-	ESCRITURA_MEMORIA_USUARIO,
-	ERROR_CPU = -1
-} operaciones_cpu;*/
-
 typedef struct {
 	void* buffer;
 
@@ -52,14 +44,25 @@ typedef struct {
 } t_tabla_paginas_segundo_nivel;
 
 
-bool conexion_exitosa(int);
+
+
+// Funciones de tabla de paginas
 void inicializar_tabla_paginas();
 int crear_tabla_paginas();
+t_tabla_paginas_segundo_nivel* inicializar_tabla_segundo_nivel();
+
+// Funciones de hilos
 void atender_kernel();
 void atender_cpu();
+
+// Funciones de archivos
+void crear_archivo_swap(char* path);
 char* get_path_archivo(int);
+
+// Funciones de conexiones
+bool conexion_exitosa(int);
 pid_t recibir_id_proceso(int conexion_kernel);
-t_tabla_paginas_segundo_nivel* inicializar_tabla_segundo_nivel();
+
 
 void terminar_programa();
 

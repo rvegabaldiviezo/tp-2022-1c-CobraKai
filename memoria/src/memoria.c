@@ -54,6 +54,11 @@ t_tabla_paginas_segundo_nivel* inicializar_tabla_segundo_nivel() {
 	return tabla;
 }
 
+void crear_archivo_swap(char* path) {
+	FILE* f = fopen(path, "w");
+	fclose(f);
+}
+
 char* get_path_archivo(pid_t id) {
 	char* extension = ".swap";
 	char* nombre = string_new();
@@ -121,9 +126,7 @@ void atender_kernel() {
 				//pid_t id_proceso = getpid();
 				int numero_de_tabla = crear_tabla_paginas();
 
-				char* path_archivo = string_new();
-				path_archivo = get_path_archivo(id_proceso);
-				FILE* f = fopen(path_archivo, "w");
+				crear_archivo_swap(get_path_archivo(id_proceso));
 
 				enviar_numero_de_tabla(conexion_kernel, numero_de_tabla);
 
@@ -134,6 +137,7 @@ void atender_kernel() {
 			case FINALIZACION_PROCESO:
 				log_info(logger, "Kernel solicita FINALIZACION PROCESO");
 				pid_t id = recibir_id_proceso(conexion_kernel);
+				remove(get_path_archivo(id));
 				log_info(logger, "Id a finalizar: %lu", id);
 
 				break;
