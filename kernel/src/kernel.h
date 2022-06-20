@@ -115,6 +115,8 @@ void notificar_suspencion_proceso(pid_t, int);
 void enviar_finalizacion_a_memoria(pid_t id, int conexion_con_memoria);
 int recibir_entero(int socket_cliente);
 t_pcb* recibir_pcb(int conexion);
+void solicitar_numero_de_tabla(t_pcb*, int);
+int recibir_numero_de_tabla(t_pcb*, int);
 
 
 #endif /* KERNEL_H_ */

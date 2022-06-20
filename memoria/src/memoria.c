@@ -8,9 +8,8 @@ t_config* config;
 int server_memoria;
 int conexion_kernel;
 int conexion_cpu;
-t_list* tabla_primer_nivel;
-t_list* tablas_segundo_nivel;
-unsigned int maximo_entradas;
+t_list* tablas_primer_nivel;
+unsigned int entradas;
 char* path_swap;
 
 unsigned int proximo_numero_tabla;
@@ -21,12 +20,11 @@ int main(void) {
 
 	config = config_create(PATH_CONFIG);
 
-	maximo_entradas = config_get_int_value(config, KEY_ENTRADAS_TABLA);
+	entradas = config_get_int_value(config, KEY_ENTRADAS_TABLA);
 	path_swap = config_get_string_value(config, KEY_PATH_SWAP);
 	string_append(&path_swap, "/");
 
-	tabla_primer_nivel = list_create();
-	tablas_segundo_nivel = list_create();
+	tablas_primer_nivel = list_create();
 
 	server_memoria = iniciar_servidor();
 	log_info(logger, "Memoria lista para recibir clientes");
@@ -42,41 +40,24 @@ bool conexion_exitosa(int cliente) {
 	return cliente != -1;
 }
 
-int crear_tabla_paginas(pid_t id_proceso) {
-	if(list_size(tabla_primer_nivel) <= maximo_entradas) {
-		proximo_numero_tabla += 1;
-		tabla_x_proceso* indice = malloc(sizeof(tabla_x_proceso));
-		indice->id_proceso = id_proceso;
-		indice->numero_de_tabla = proximo_numero_tabla;
-		inicializar_tabla_segundo_nivel();
-		list_add(tabla_primer_nivel, indice);
-		return proximo_numero_tabla;
-	} else {
-		return -1;
-	}
-	// ver que hacer si se pasa el maximo de entradas
+int crear_tabla_paginas() {
+	t_tabla_paginas_segundo_nivel* tabla = inicializar_tabla_segundo_nivel();
+	list_add(tablas_primer_nivel, tabla);
+	return list_size(tablas_primer_nivel);
 }
 
-void inicializar_tabla_segundo_nivel() {
+t_tabla_paginas_segundo_nivel* inicializar_tabla_segundo_nivel() {
 	t_tabla_paginas_segundo_nivel* tabla = malloc(sizeof(t_tabla_paginas_segundo_nivel));
-	tabla->numero = proximo_numero_tabla;
-	tabla->paginas = inicializar_paginas();
-	list_add(tablas_segundo_nivel, tabla);
+	tabla->marco = 1;
+	tabla->modificada = false;
+	tabla->presencia = true; // true??
+	tabla->usada = false;
+	return tabla;
 }
 
-t_list* inicializar_paginas() {
-	t_list* paginas = list_create();
-
-	for(int i = 0; i < maximo_entradas; i++) {
-		t_pagina* pagina = malloc(sizeof(t_pagina));
-		pagina->bit_modificacion = false;
-		pagina->bit_presencia = true;
-		pagina->bit_uso = false;
-		pagina->marco = i;
-		list_add(paginas, pagina);
-	}
-
-	return paginas;
+void crear_archivo_swap(char* path) {
+	FILE* f = fopen(path, "w");
+	fclose(f);
 }
 
 char* get_path_archivo(pid_t id) {
@@ -89,32 +70,9 @@ char* get_path_archivo(pid_t id) {
 	return aux;
 }
 
-void crear_archivo_swap(char* path) {
-	FILE* f = fopen(path, "w");
-	fclose(f);
-}
-
-bool mismo_id(pid_t id, void* indice) {
-	if(id == ((tabla_x_proceso*) indice)->id_proceso) {
-		bool mismo_numero_tabla(void * tabla) {
-			return ((tabla_x_proceso*) indice)->numero_de_tabla == ((t_tabla_paginas_segundo_nivel *) tabla)->numero; // ni el mismisimo Linus Torvalds
-		}
-		list_remove_and_destroy_by_condition(tablas_segundo_nivel, (void *) mismo_numero_tabla, (void *) destruir_tabla_segundo_nivel);
-		log_info(logger, "Se borro la tabla numero: %d", ((tabla_x_proceso*) indice)->numero_de_tabla);
-		return true;
-	}
-	return false;
-}
-
 void terminar_programa() {
 	pthread_join(hilo_cpu, NULL);
 	pthread_join(hilo_kernel, NULL);
-	config_destroy(config);
-	log_destroy(logger);
-	liberar_conexion(conexion_cpu);
-	liberar_conexion(conexion_kernel);
-	list_destroy_and_destroy_elements(tabla_primer_nivel, (void *) destruir_elemento);
-	list_destroy_and_destroy_elements(tablas_segundo_nivel, (void *) destruir_tabla_segundo_nivel);
 }
 
 void atender_cpu() {
@@ -165,13 +123,16 @@ void atender_kernel() {
 		switch(operacion) {
 			case INICIO_PROCESO:
 				log_info(logger, "Kernel solicita INICIO PROCESO");
-				pid_t id_proceso = recibir_id_proceso(conexion_kernel);
-				int numero_de_tabla = crear_tabla_paginas(id_proceso);
+				t_proceso* proceso = malloc(sizeof(t_proceso));
 
-				crear_archivo_swap(get_path_archivo(id_proceso));
+				proceso->id= recibir_id_proceso(conexion_kernel);
+				proceso->tamanio = recibir_tamanio(conexion_kernel);
+				log_info(logger, "tamanio: %d", proceso->tamanio);
+				proceso->numero_tabla_primer_nivel = crear_tabla_paginas();
 
+				crear_archivo_swap(get_path_archivo(proceso->id));
 
-				enviar_numero_de_tabla(conexion_kernel, numero_de_tabla);
+				enviar_numero_de_tabla(conexion_kernel, proceso->numero_tabla_primer_nivel);
 
 				break;
 			case SUSPENCION_PROCESO:
@@ -180,11 +141,7 @@ void atender_kernel() {
 			case FINALIZACION_PROCESO:
 				log_info(logger, "Kernel solicita FINALIZACION PROCESO");
 				pid_t id = recibir_id_proceso(conexion_kernel);
-				remove(get_path_archivo(id)); // borro el archivo asociado al proceso
-				bool tabla_pertenece_a_proceso(void* elemento) {
-					return mismo_id(id, elemento);
-				}
-				list_remove_and_destroy_all_by_condition(tabla_primer_nivel, (void *) tabla_pertenece_a_proceso, (void *) destruir_elemento);
+				remove(get_path_archivo(id));
 				log_info(logger, "Id a finalizar: %lu", id);
 
 				break;

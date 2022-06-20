@@ -30,21 +30,29 @@ typedef enum {
 	ERROR = -1
 } operacion;
 
+
+typedef struct {
+	pid_t id;
+	unsigned int tamanio;
+	unsigned int numero_tabla_primer_nivel;
+} t_proceso;
+
 typedef struct {
 	void* buffer;
 
 } memoria_de_usuario;
 
-typedef struct {
-	int marco;
-	bool bit_presencia;
-	bool bit_uso;
-	bool bit_modificacion;
-} t_pagina;
+typedef struct{
+	unsigned int numero;
+	t_list* tablas_segundo_nivel;
+} t_tabla_primer_nivel;
 
 typedef struct {
 	unsigned int numero;
-	t_list* paginas;
+	unsigned int marco;
+	bool presencia;
+	bool usada;
+	bool modificada;
 } t_tabla_paginas_segundo_nivel;
 
 typedef struct {
@@ -53,30 +61,23 @@ typedef struct {
 } tabla_x_proceso;
 
 
-// Funciones de sockets
-bool conexion_exitosa(int);
-pid_t recibir_id_proceso(int conexion_kernel);
-void liberar_conexion();
-
-// Funciones de tablas de paginas
-int crear_tabla_paginas(pid_t);
-void inicializar_tabla_segundo_nivel();
-t_list* inicializar_paginas();
-void destruir_tabla_segundo_nivel(t_tabla_paginas_segundo_nivel*);
-bool mismo_id(pid_t id, void* indice);
-bool mismo_numero_tabla(void* tabla);
-void destruir_elemento(void* elemento);
-//void destruir_pagina(t_pagina* pagina);
+// Funciones de tabla de paginas
+void inicializar_tabla_paginas();
+int crear_tabla_paginas();
+t_tabla_paginas_segundo_nivel* inicializar_tabla_segundo_nivel();
 
 // Funciones de hilos
 void atender_kernel();
 void atender_cpu();
 
-// Funciones de archivo de swap
+// Funciones de archivos
+void crear_archivo_swap(char* path);
 char* get_path_archivo(int);
-void crear_archivo_swap(char*);
 
-
+// Funciones de conexiones
+bool conexion_exitosa(int);
+pid_t recibir_id_proceso(int conexion_kernel);
+int recibir_tamanio(int conexion_kernel);
 
 
 void terminar_programa();

@@ -34,9 +34,9 @@
 
 
 //###### ESTRUCTURAS ######
-typedef struct instruction {
+typedef struct instruction {// cadena nro nro ->  "candena", "nro",
     char* id;
-    u_int32_t* params;
+    t_list* params;
 } t_instruction;
 
 typedef struct {
@@ -50,9 +50,16 @@ typedef struct {
 } t_pcb;
 
 typedef struct {
+	int tiempo_bloqueo;
+	t_pcb* pcb;
+} t_pcb_bloqueado;
+
+
+
+typedef struct {
 	t_pcb* pcb; //
 	int socket_cliente;
-	int interrupcion; // false(0) o true(1)
+	bool interrupcion; // false(0) o true(1)
 } t_proceso;
 
 typedef struct {
@@ -123,8 +130,9 @@ int recibir_entero(int);
 void iterator(char* value);
 void agregar_instruccion(t_buffer* buffer, char* valor, int tamanio);
 t_buffer* cargar_buffer(t_list* lista);
-void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes);
-void enviar_pcb(t_pcb* pcb, int conexion);
+void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes,operacion op);
+void enviar_pcb(t_pcb* pcb, int conexion, operacion op);
+void enviar_pcb_bloqueado(int socketKernel,t_pcb_bloqueado* bloqueado);
 t_list* recibir_instrucciones(int socket_cliente);
 t_pcb* recibir_pcb(int conexion);
 /*
@@ -151,5 +159,21 @@ int iniciar_servidor_cpu(proceso_cpu* cpu_process, char* key_puerto);
 int esperar_cliente_cpu(proceso_cpu* cpu_process, int socket_server, char* tipo_puerto);
 int esperar_cliente_dispatch(proceso_cpu* cpu_process);
 int esperar_cliente_interrupt(proceso_cpu* cpu_process);
+char** getParametrosInstruccion(t_list* instrucciones,int nro_inst);
+
+
+
+char** decode(t_list* instrucciones,int nro_inst);
+void execute(proceso_cpu* cpu, t_pcb* pcb,char** instruccion);
+int fetch(t_pcb* pcb);
+void fetch_operands(char** instruccion);
+void no_op(int tiempo);
+void i_o(proceso_cpu* cpu, t_pcb* pcb,int tiempo);
+void instruccion_exit(proceso_cpu* cpu, t_pcb* pcb);
+void incrementarProgramCounter(t_pcb* pcb);
+void responsePorBloqueo(proceso_cpu* cpu,t_pcb* pcb,int tiempo);
+void responsePorFinDeProceso(t_pcb* pcb,proceso_cpu* cpu);
+bool checkInstruccionInterrupcion(char* instruccion);
+void  check_interrupt(t_pcb* pcb,proceso_cpu* cpu, bool instruccionInterrupcion);
 
 #endif /* CPU_H_ */

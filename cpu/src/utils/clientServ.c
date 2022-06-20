@@ -160,22 +160,21 @@ t_list* recibir_instrucciones(int socket_cliente) {
 	return instrucciones;
 }
 
-void enviar_pcb(t_pcb* pcb, int conexion) {
+void enviar_pcb(t_pcb* pcb, int conexion, operacion op) {
 	t_buffer* buffer = cargar_buffer(pcb->instrucciones);
 	int bytes = sizeof(pid_t) + 7 * sizeof(int) + buffer->size;
 
-	void* pcb_serializado = serializar_pcb(pcb, buffer, bytes);
+	void* pcb_serializado = serializar_pcb(pcb, buffer, bytes,op);
 	send(conexion, pcb_serializado, bytes, 0);
 	free(pcb_serializado);
 }
 
-void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes) {
+void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes,operacion op) {
 	void* a_enviar = malloc(bytes);
 	int desplazamiento = 0;
 
-	int operacion = PCB;
-	memcpy(a_enviar + desplazamiento, &operacion, sizeof(int));
-	desplazamiento += sizeof(int);
+	memcpy(a_enviar + desplazamiento, &op, sizeof(operacion));
+	desplazamiento += sizeof(operacion);
 
 	memcpy(a_enviar + desplazamiento, &(pcb->id), sizeof(pid_t));
 	desplazamiento += sizeof(pid_t);
@@ -202,6 +201,22 @@ void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes) {
 
 	return a_enviar;
 }
+
+
+void enviar_pcb_bloqueado(int socketKernel,t_pcb_bloqueado* bloqueado){
+	t_buffer* buffer = cargar_buffer(bloqueado->pcb->instrucciones);
+	int bytes = sizeof(pid_t) + 7 * sizeof(int) + buffer->size;
+
+	void* pcb_serializado = serializar_pcb(bloqueado->pcb, buffer, bytes,BLOQUEO_IO);
+	memcpy(pcb_serializado + bytes, &(bloqueado->tiempo_bloqueo), sizeof(int));
+	bytes += sizeof(int);
+	send(socketKernel, pcb_serializado, bytes, 0);
+	free(pcb_serializado);
+}
+
+
+
+
 
 t_buffer* cargar_buffer(t_list* lista) {
 	t_buffer* buffer = malloc(sizeof(t_buffer));

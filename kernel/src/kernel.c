@@ -126,7 +126,7 @@ pid_t atender_consola() {
 
 		log_info(logger, "Tamaño recibido: %d", proceso->tamanio_proceso);
 
-		int numero_de_tabla = recibir_numero_de_tabla(proceso->id, conexion_con_memoria);
+		int numero_de_tabla = recibir_numero_de_tabla(proceso, conexion_con_memoria);
 		if(!numero_de_tabla_valido(numero_de_tabla)) {
 			log_error(logger, "El número de tabla no es valido");
 			return EXIT_FAILURE;
