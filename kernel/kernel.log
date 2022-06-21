@@ -1,0 +1,102 @@
+[INFO] 14:25:28:577 KERNEL/(6554:6554): Kernel listo para recibir al cliente
+[INFO] 14:25:28:578 KERNEL/(6554:6554): conectado a memoria
+[INFO] 14:25:28:578 KERNEL/(6554:6555): Se inicio la planificacion SRT
+[INFO] 14:25:28:578 KERNEL/(6554:6555): Inicio la planificacion IO
+[INFO] 14:25:37:842 KERNEL/(6554:6554): Conexion consola: 8
+[INFO] 14:25:37:843 KERNEL/(6554:6591): Tamaño recibido: 100
+[INFO] 14:25:37:843 KERNEL/(6554:6591): Se asignó el numero de tabla: 1 al proceso de id: 6554
+
+[INFO] 14:25:37:843 KERNEL/(6554:6591): Proceso 6554 asignado a la cola NEW
+[INFO] 14:25:37:843 KERNEL/(6554:6591): Proceso 6554 asignado a la cola NEW
+[INFO] 14:25:37:843 KERNEL/(6554:6591): El proceso 6554 fue asignado a la cola READY
+[INFO] 14:25:42:843 KERNEL/(6554:6555): Me llegaron los siguientes valores:
+[INFO] 14:25:42:844 KERNEL/(6554:6555): NO_OP
+[INFO] 14:25:42:844 KERNEL/(6554:6555): NO_OP
+[INFO] 14:25:42:844 KERNEL/(6554:6555): NO_OP
+[INFO] 14:25:42:844 KERNEL/(6554:6555): NO_OP
+[INFO] 14:25:42:844 KERNEL/(6554:6555): I/O 1500
+[INFO] 14:25:42:844 KERNEL/(6554:6555): EXIT
+[INFO] 19:59:05:046 KERNEL/(3909:3909): Kernel listo para recibir al cliente
+[INFO] 19:59:05:047 KERNEL/(3909:3909): conectado a memoria
+[INFO] 19:59:05:047 KERNEL/(3909:3910): Se inicio la planificacion SRT
+[INFO] 19:59:05:047 KERNEL/(3909:3910): Inicio la planificacion IO
+[INFO] 19:59:15:334 KERNEL/(3909:3909): Conexion consola: 8
+[INFO] 19:59:15:334 KERNEL/(3909:3955): Tamaño recibido: 1024
+[INFO] 19:59:15:336 KERNEL/(3909:3955): Se asignó el numero de tabla: 1 al proceso de id: 3909
+
+[INFO] 19:59:15:336 KERNEL/(3909:3955): Proceso 3909 asignado a la cola NEW
+[INFO] 19:59:15:336 KERNEL/(3909:3955): Proceso 3909 asignado a la cola NEW
+[INFO] 19:59:15:336 KERNEL/(3909:3955): El proceso 3909 fue asignado a la cola READY
+[INFO] 19:59:20:337 KERNEL/(3909:3910): Me llegaron los siguientes valores:
+[INFO] 19:59:20:337 KERNEL/(3909:3910): NO_OP
+[INFO] 19:59:20:337 KERNEL/(3909:3910): NO_OP
+[INFO] 19:59:20:337 KERNEL/(3909:3910): NO_OP
+[INFO] 19:59:20:337 KERNEL/(3909:3910): NO_OP
+[INFO] 19:59:20:338 KERNEL/(3909:3910): I/O 1500
+[INFO] 19:59:20:338 KERNEL/(3909:3910): EXIT
+[INFO] 20:03:08:004 KERNEL/(5066:5066): Kernel listo para recibir al cliente
+[INFO] 20:03:08:005 KERNEL/(5066:5066): conectado a memoria
+[INFO] 20:03:08:005 KERNEL/(5066:5067): Se inicio la planificacion SRT
+[INFO] 20:03:08:005 KERNEL/(5066:5067): Inicio la planificacion IO
+[INFO] 20:03:09:628 KERNEL/(5066:5066): Conexion consola: 8
+[INFO] 20:03:09:628 KERNEL/(5066:5081): Tamaño recibido: 1024
+[INFO] 20:03:09:628 KERNEL/(5066:5081): Se asignó el numero de tabla: 1 al proceso de id: 5066
+
+[INFO] 20:03:09:628 KERNEL/(5066:5081): Proceso 5066 asignado a la cola NEW
+[INFO] 20:03:09:628 KERNEL/(5066:5081): Proceso 5066 asignado a la cola NEW
+[INFO] 20:03:09:628 KERNEL/(5066:5081): El proceso 5066 fue asignado a la cola READY
+[INFO] 20:03:14:629 KERNEL/(5066:5067): Me llegaron los siguientes valores:
+[INFO] 20:03:14:630 KERNEL/(5066:5067): NO_OP
+[INFO] 20:03:14:630 KERNEL/(5066:5067): NO_OP
+[INFO] 20:03:14:630 KERNEL/(5066:5067): NO_OP
+[INFO] 20:03:14:630 KERNEL/(5066:5067): NO_OP
+[INFO] 20:03:14:630 KERNEL/(5066:5067): I/O 1500
+[INFO] 20:03:14:631 KERNEL/(5066:5067): EXIT
+[INFO] 20:07:47:998 KERNEL/(6271:6271): Kernel listo para recibir al cliente
+[INFO] 20:07:47:999 KERNEL/(6271:6271): conectado a memoria
+[INFO] 20:07:47:999 KERNEL/(6271:6272): Se inicio la planificacion SRT
+[INFO] 20:07:47:999 KERNEL/(6271:6272): Inicio la planificacion IO
+[INFO] 20:07:49:734 KERNEL/(6271:6271): Conexion consola: 8
+[INFO] 20:07:49:734 KERNEL/(6271:6282): Tamaño recibido: 1024
+[INFO] 20:07:49:735 KERNEL/(6271:6282): Se asignó el numero de tabla: 1 al proceso de id: 6271
+
+[INFO] 20:07:49:736 KERNEL/(6271:6282): Proceso 6271 asignado a la cola NEW
+[INFO] 20:07:49:736 KERNEL/(6271:6282): Proceso 6271 asignado a la cola NEW
+[INFO] 20:07:49:736 KERNEL/(6271:6282): El proceso 6271 fue asignado a la cola READY
+[INFO] 20:07:54:736 KERNEL/(6271:6272): Me llegaron los siguientes valores:
+[INFO] 20:07:54:736 KERNEL/(6271:6272): NO_OP
+[INFO] 20:07:54:737 KERNEL/(6271:6272): NO_OP
+[INFO] 20:07:54:737 KERNEL/(6271:6272): NO_OP
+[INFO] 20:07:54:737 KERNEL/(6271:6272): NO_OP
+[INFO] 20:07:54:737 KERNEL/(6271:6272): I/O 1500
+[INFO] 20:07:54:737 KERNEL/(6271:6272): EXIT
+[INFO] 20:07:58:744 KERNEL/(6271:6273): La CPU envio un pcb con estado bloqueado por I/0
+[INFO] 20:07:58:744 KERNEL/(6271:6273): Tiempo de bloqueo: 1500
+[INFO] 20:07:58:744 KERNEL/(6271:6273): Inicio de bloqueo: 1655852878
+[INFO] 20:07:58:744 KERNEL/(6271:6273): Se agrego un proceso a la cola de bloqueados por I/O
+[INFO] 20:08:00:245 KERNEL/(6271:6274): Un proceso finalizo su I/0
+[INFO] 20:08:00:245 KERNEL/(6271:6274): Se paso un proceso de bloqueado a ready
+[INFO] 20:14:12:678 KERNEL/(8211:8211): Kernel listo para recibir al cliente
+[INFO] 20:14:12:679 KERNEL/(8211:8211): conectado a memoria
+[INFO] 20:14:12:679 KERNEL/(8211:8212): Se inicio la planificacion SRT
+[INFO] 20:14:12:679 KERNEL/(8211:8212): Inicio la planificacion IO
+[INFO] 20:14:13:934 KERNEL/(8211:8211): Conexion consola: 8
+[INFO] 20:14:13:934 KERNEL/(8211:8216): Tamaño recibido: 1024
+[INFO] 20:14:13:937 KERNEL/(8211:8216): Se asignó el numero de tabla: 1 al proceso de id: 8211
+
+[INFO] 20:14:13:937 KERNEL/(8211:8216): Proceso 8211 asignado a la cola NEW
+[INFO] 20:14:13:937 KERNEL/(8211:8216): Proceso 8211 asignado a la cola NEW
+[INFO] 20:14:13:937 KERNEL/(8211:8216): El proceso 8211 fue asignado a la cola READY
+[INFO] 20:14:18:938 KERNEL/(8211:8212): Me llegaron los siguientes valores:
+[INFO] 20:14:18:938 KERNEL/(8211:8212): NO_OP
+[INFO] 20:14:18:938 KERNEL/(8211:8212): NO_OP
+[INFO] 20:14:18:938 KERNEL/(8211:8212): NO_OP
+[INFO] 20:14:18:938 KERNEL/(8211:8212): NO_OP
+[INFO] 20:14:18:938 KERNEL/(8211:8212): I/O 5000
+[INFO] 20:14:18:939 KERNEL/(8211:8212): EXIT
+[INFO] 20:14:22:947 KERNEL/(8211:8213): La CPU envio un pcb con estado bloqueado por I/0
+[INFO] 20:14:22:947 KERNEL/(8211:8213): Tiempo de bloqueo: 5000
+[INFO] 20:14:22:947 KERNEL/(8211:8213): Inicio de bloqueo: 1655853262
+[INFO] 20:14:22:947 KERNEL/(8211:8213): Se agrego un proceso a la cola de bloqueados por I/O
+[INFO] 20:14:27:948 KERNEL/(8211:8214): Un proceso finalizo su I/0
+[INFO] 20:14:27:949 KERNEL/(8211:8214): Se paso un proceso de bloqueado a ready
