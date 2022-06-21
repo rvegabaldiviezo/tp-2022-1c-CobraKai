@@ -13,6 +13,7 @@ pthread_t planificador_fifo;
 pthread_t planificador_io;
 pthread_t hilo_consola;
 pthread_t interrumpir_ejecucion;
+pthread_t hilo_cpu_dispatch;
 
 // Semaforos
 pthread_mutex_t mutex_new_queue;
@@ -80,6 +81,7 @@ int main(void) {
 	inicializar_semaforos();
 	inicializar_colas();
 	iniciar_planificacion(planificador);
+	escuchar_cpu_dispatch();
 
 	while(1) {
 		conexion_consola = esperar_cliente(socket_servidor);
@@ -154,11 +156,11 @@ pid_t atender_consola() {
 				log_info(logger, "El proceso %lu fue asignado a la cola READY", proceso->id);
 				solicitar_interrupcion();
 			} else if(strcmp(planificador, "FIFO") == 0){
-						pthread_mutex_lock(&mutex_ready_list);
-						list_push(ready, proceso);
-						pthread_mutex_unlock(&mutex_ready_list);
-						sem_post(&elementos_en_cola_ready);
-						log_info(logger, "El proceso %lu fue asignado a la cola READY", proceso->id);
+				pthread_mutex_lock(&mutex_ready_list);
+				list_push(ready, proceso);
+				pthread_mutex_unlock(&mutex_ready_list);
+				sem_post(&elementos_en_cola_ready);
+				log_info(logger, "El proceso %lu fue asignado a la cola READY", proceso->id);
 					}
 		} else {
 			//TODO: creo que no deberia pasar esto
@@ -199,6 +201,7 @@ t_pcb* crear_proceso() {
 }
 
 void terminar_programa() {
+	pthread_join(hilo_cpu_dispatch, NULL);
 	if(strcmp(planificador, "SRT") == 0) {
 		pthread_join(planificador_srt, NULL);
 	} else {
@@ -250,16 +253,19 @@ void planificar_fifo(){
 		}
 }
 
+void escuchar_cpu_dispatch() {
+	pthread_create(&hilo_cpu_dispatch, NULL, (void*) comunicacion_con_cpu, NULL);
+}
+
 void comunicacion_con_cpu() {
 	operacion operacion = recibir_operacion(conexion_con_cpu_dispatch);
 		switch(operacion) {
 			case BLOQUEO_IO:
 				log_info(logger, "La CPU envio un pcb con estado bloqueado por I/0");
-				t_pcb_bloqueado* proceso_bloqueado;
-				int tiempo_de_espera = recibir_tiempo_bloqueo(conexion_con_cpu_dispatch);
-				proceso_bloqueado->inicio_bloqueo = (int)time(NULL);
-				t_pcb* pcb_bloqueado = recibir_pcb(conexion_con_cpu_dispatch);
-				proceso_bloqueado->proceso = pcb_bloqueado;
+				t_pcb_bloqueado* proceso_bloqueado = recibir_pcb_bloqueado(conexion_con_cpu_dispatch);
+
+				log_info(logger, "Tiempo de bloqueo: %d", proceso_bloqueado->tiempo_de_bloqueo);
+				log_info(logger, "Inicio de bloqueo: %li", proceso_bloqueado->inicio_bloqueo);
 				agregar_a_bloqueados(proceso_bloqueado);
 				sem_post(&elementos_en_cola_bloqueados);
 
@@ -389,11 +395,6 @@ void desuspendidor(){
 				solicitar_interrupcion();
 		}
 	}
-}
-
-//TODO
-int recibir_tiempo_bloqueo(){
-	return 1;
 }
 
 void inicializar_colas() {

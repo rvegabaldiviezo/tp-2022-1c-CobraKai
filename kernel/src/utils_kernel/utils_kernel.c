@@ -47,8 +47,7 @@ int esperar_cliente(int socket_servidor) {
 	return socket_cliente;
 }
 
-void* recibir_buffer(int* size, int socket_cliente)
-{
+void* recibir_buffer(int* size, int socket_cliente) {
 	void * buffer;
 
 	recv(socket_cliente, size, sizeof(int), MSG_WAITALL);
@@ -198,9 +197,9 @@ void agregar_instruccion(t_buffer* buffer, char* valor, int tamanio) {
 }
 
 int recibir_entero(int socket_cliente) {
-	int cod_op;
-	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) > 0) {
-		return cod_op;
+	int entero;
+	if(recv(socket_cliente, &entero, sizeof(int), MSG_WAITALL) > 0) {
+		return entero;
 	} else {
 		close(socket_cliente);
 		return -1;
@@ -221,6 +220,17 @@ t_pcb* recibir_pcb(int conexion) {
 	return pcb;
 }
 
+t_pcb_bloqueado* recibir_pcb_bloqueado(int conexion) {
+	t_pcb_bloqueado* bloqueado = malloc(sizeof(t_pcb_bloqueado));
+	bloqueado->proceso = recibir_pcb(conexion);
+	bloqueado->tiempo_de_bloqueo = recibir_tiempo_bloqueo(conexion);
+	bloqueado->inicio_bloqueo = time(NULL);
+	return bloqueado;
+}
+
+int recibir_tiempo_bloqueo(int conexion) {
+	return recibir_entero(conexion);
+}
 
 /***********************************************************************************/
 /************************************ CLIENTE **************************************/
