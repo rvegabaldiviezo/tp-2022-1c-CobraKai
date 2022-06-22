@@ -173,7 +173,7 @@ char** getParametrosInstruccion(t_list* instrucciones,int nro_inst);
 char** decode(t_list* instrucciones,int nro_inst);
 void execute(proceso_cpu* cpu, t_pcb* pcb,char** instruccion);
 int fetch(t_pcb* pcb);
-void fetch_operands(char** instruccion);
+void fetch_operands(proceso_cpu* cpu,char** instruccion);
 void no_op(int tiempo,t_pcb* pcb);
 void i_o(proceso_cpu* cpu, t_pcb* pcb,int tiempo);
 void instruccion_exit(proceso_cpu* cpu, t_pcb* pcb);

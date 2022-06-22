@@ -408,8 +408,10 @@ void inicializar_colas() {
 
 void iniciar_planificacion(char* planificacion){
 	if(strcmp(planificacion, "FIFO") == 0) {
+		puts("FIFO");
 		pthread_create(&planificador_fifo, NULL, (void*) planificar_fifo, NULL);
 	} else if(strcmp(planificacion, "SRT") == 0) {
+		puts("SRT");
 		pthread_create(&planificador_srt, NULL, (void*) planificar_srt, NULL);
 	}
 }
@@ -446,7 +448,7 @@ void planificar_srt() {
 		log_info(logger, "Me llegaron los siguientes valores:");
 		list_iterate(proceso_mas_corto->instrucciones, (void*) iterator);
 		enviar_pcb(proceso_mas_corto, conexion_con_cpu_dispatch);
-		log_info(logger,"Se paso el proceso %lu de Ready a Ejecutando", proceso_mas_corto->id);
+		//log_info(logger,"Se paso el proceso %lu de Ready a Ejecutando", proceso_mas_corto->id);
 
 		// esto va en el EXIT, lo pongo aca para probar
 		//enviar_finalizacion_a_memoria(proceso_mas_corto->id, conexion_con_memoria);

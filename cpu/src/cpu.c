@@ -67,7 +67,7 @@ int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel){
 	log_info(cpu_process->logger, "INICIO: recibir_operaciones()");
 
 	while (1) {
-			log_info(cpu_process->logger, " --- A ESPERA DE UNA OPERACION");
+			log_info(cpu_process->logger, "--- A ESPERA DE UNA OPERACION\n");
 			operacion cod_op = recibir_operacion(socket_kernel);//Recibe cada peticion que envie el kernel en el puerto interrup
 
 			switch (cod_op) {
@@ -93,7 +93,7 @@ int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel){
 
 						log_info(cpu_process->logger, "  instruccion/codigo op: %s", instruccion[0]);
 
-						fetch_operands(instruccion);
+						fetch_operands(cpu_process,instruccion);
 
 						execute(cpu_process,pcb, instruccion);
 
@@ -131,14 +131,16 @@ int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel){
 
 
 void mostrarPCB(proceso_cpu* cpu_process,t_pcb* pcb){
-	log_info(cpu_process->logger, "   id: %d", pcb->id);
-	log_info(cpu_process->logger, "   estimacion: %d", pcb->estimacion_rafaga);
-	log_info(cpu_process->logger, "   program counter: %d", pcb->program_counter);
-	log_info(cpu_process->logger, "   socket: %d", pcb->socket_cliente);
-	log_info(cpu_process->logger, "   numero de tabla: %d", pcb->tablas_paginas);
-	log_info(cpu_process->logger, "   tamanio de consola: %d", pcb->tamanio_proceso);
-	log_info(cpu_process->logger, "   lista Instrucciones:");
+	log_info(cpu_process->logger, "-----PCB ------");
+	log_info(cpu_process->logger, "id: %d", pcb->id);
+	log_info(cpu_process->logger, "estimacion: %d", pcb->estimacion_rafaga);
+	log_info(cpu_process->logger, "program counter: %d", pcb->program_counter);
+	log_info(cpu_process->logger, "socket: %d", pcb->socket_cliente);
+	log_info(cpu_process->logger, "numero de tabla: %d", pcb->tablas_paginas);
+	log_info(cpu_process->logger, "tamanio de consola: %d", pcb->tamanio_proceso);
+	log_info(cpu_process->logger, "lista Instrucciones:");
 	list_iterate(pcb->instrucciones, (void*) iterator);
+	log_info(cpu_process->logger, "--------------");
 }
 
 void mostrar_PCB_Bloqueado(proceso_cpu* cpu_process,t_pcb_bloqueado* bloqueado,int tiempo){
@@ -159,7 +161,7 @@ void execute(proceso_cpu* cpu, t_pcb* pcb,char** instruccion){
 
 	if(strcmp("NO_OP",instrucc) == 0){
 
-		int time = config_get_int_value(cpu->config, "  RETARDO_NOOP");
+		int time = config_get_int_value(cpu->config, "RETARDO_NOOP");
 		log_info(cpu->logger, "  Time: %d", time);
 		no_op(time,pcb);
 
@@ -187,8 +189,8 @@ void execute(proceso_cpu* cpu, t_pcb* pcb,char** instruccion){
 int fetch(t_pcb* pcb){
 	return pcb->program_counter;
 }
-void fetch_operands(char** instruccion){
-//proximamnet
+void fetch_operands(proceso_cpu* cpu,char** instruccion){
+	//log_info(cpu->logger, "  Entro a fetch_operands");
 }
 void no_op(int tiempo,t_pcb* pcb){
 	usleep(1000*tiempo);
