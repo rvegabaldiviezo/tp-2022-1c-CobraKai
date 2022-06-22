@@ -91,6 +91,7 @@ void liberar_tabla_primer_nivel(int);
 void liberar_tablas_segundo_nivel(t_list*);
 void liberar_tabla_segundo_nivel(t_tabla_paginas_segundo_nivel* tabla);
 void liberar_pagina(t_pagina* pagina);
+void liberar_espacio_de_usuario(espacio_de_usuario espacio);
 void terminar_programa();
 
 

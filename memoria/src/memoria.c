@@ -5,6 +5,7 @@ pthread_t hilo_kernel;
 
 t_log* logger;
 t_config* config;
+//t_proceso* proceso;
 int server_memoria;
 int conexion_kernel;
 int conexion_cpu;
@@ -144,6 +145,10 @@ void liberar_pagina(t_pagina* pagina) {
 	free(pagina);
 }
 
+void liberar_espacio_de_usuario(espacio_de_usuario espacio) {
+	free(espacio.buffer);
+}
+
 void terminar_programa() {
 	pthread_join(hilo_cpu, NULL);
 	pthread_join(hilo_kernel, NULL);
@@ -215,7 +220,7 @@ void atender_kernel() {
 		operacion operacion = recibir_operacion(conexion_kernel);
 		switch(operacion) {
 			case INICIO_PROCESO:
-				// TODO: ver que pasa si el proceso no es nuevo, sino que viene de suspendido, habría que hacer una nueva operacion?
+				// TODO: el kernel debería solicitar esto solo si el proceso no tiene ya asignado un numero de tabla
 				log_info(logger, "Kernel solicita INICIO PROCESO");
 				t_proceso* proceso = malloc(sizeof(t_proceso));
 
@@ -241,12 +246,11 @@ void atender_kernel() {
 				break;
 			case FINALIZACION_PROCESO:
 				log_info(logger, "Kernel solicita FINALIZACION PROCESO");
-				pid_t id = recibir_id_proceso(conexion_kernel);
-				// recibir numero de tabla de primer nivel
-				int numero_tabla = 1; // recibir_numero_tabla(conexion_kernel);
-				liberar_tabla_primer_nivel(numero_tabla);
-				remove(get_path_archivo(id));
-				log_info(logger, "Id a finalizar: %lu", id);
+				// No hace falta recibir nada ya que se libera el proceso que actualmente está en memoria
+				liberar_tabla_primer_nivel(proceso->numero_tabla_primer_nivel);
+				liberar_espacio_de_usuario(proceso->espacio_utilizable);
+				remove(get_path_archivo(proceso->id));
+				log_info(logger, "Id a finalizar: %lu", proceso->id);
 
 				break;
 			case ERROR:
