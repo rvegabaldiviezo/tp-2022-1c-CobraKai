@@ -5,8 +5,6 @@
 
 //Hilos
 pthread_t interrupt;
-//pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
-
 
 //Semaforos
 sem_t sem_interrupt;
@@ -30,26 +28,6 @@ int main(void) {
 	int socket_kernel_dispatch = esperar_cliente_dispatch(cpu);
 
 	recibir_operaciones(cpu, socket_kernel_dispatch);
-
-
-
-
-
-	//sem_wait(&dispatch);
-	if( cpu->process->interrupcion > 0){
-		log_info(cpu->logger, "   El kernel pidio INTERRUPCION");
-		//hago algo, habilito que de nuevo vuelva a escuchar por interrupcion
-		sem_post(&sem_interrupt);
-		sem_wait(&dispatch);
-		//	printf("proceso interrucion (en mutex): %i \n", cpu.process.interrupcion);
-	}else{
-		log_info(cpu->logger, "   El pcb tiene un id de proceso: %d", cpu->process->pcb->id);
-	}
-
-		//puts("main: despues del desbloqueo");
-		//escuchaInterrup();
-		//sem_wait(&dispatch);
-
 
 	finalizar_cpu(cpu);
 
@@ -91,10 +69,10 @@ int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel){
 				case PCB:
 
 					log_info(cpu_process->logger, " -----------");
-					log_info(cpu_process->logger, " El kernel envio un PCB con losn siguientes datos:\n");
+					log_info(cpu_process->logger, " El kernel envio un PCB:");
 					t_pcb* pcb = recibir_pcb(socket_kernel);
 
-					verPCB(cpu_process,pcb);
+					mostrarPCB(cpu_process,pcb);
 
 					int nro_intrucciones = list_size(pcb->instrucciones);
 
@@ -102,14 +80,14 @@ int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel){
 
 					for(int i = nro_instrucion; i< nro_intrucciones ;i++){
 
-						log_info(cpu_process->logger, " Nro de instrucion: %d",i);
+						log_info(cpu_process->logger, "  Nro de instrucion: %d",i);
 
 						char** instruccion = decode(pcb->instrucciones,i);
 						char* operacion = instruccion[0];
 
-						log_info(cpu_process->logger, "instruccion/codigo op: %s", instruccion[0]);
+						log_info(cpu_process->logger, "  instruccion/codigo op: %s", instruccion[0]);
 
-						fetch_operands(instruccion);//copy
+						fetch_operands(instruccion);
 
 						execute(cpu_process,pcb, instruccion);
 
@@ -125,9 +103,7 @@ int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel){
 					break;
 				case INTERRUPCION:
 					log_info(cpu_process->logger, " El kernel envio la operacion: INTERRUPCION");
-					cpu_process->process->interrupcion=1;//true q pidieron una interrupcion
-
-					//Desbloque en hilo principal de
+					cpu_process->interrupcion=1;//true q pidieron una interrupcion
 
 					//Hago un bloqueo por interrupcion
 					log_info(cpu_process->logger, "  Este hilo interrupt queda bloqueado hasta que Check Interrupt lo de desbloquee");
@@ -148,16 +124,20 @@ int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel){
 }
 
 
-void verPCB(proceso_cpu* cpu_process,t_pcb* pcb){
-	log_info(cpu_process->logger, "id: %d\n", pcb->id);
-	log_info(cpu_process->logger, "estimacion: %d\n", pcb->estimacion_rafaga);
-	log_info(cpu_process->logger, "program counter: %d\n", pcb->program_counter);
-	log_info(cpu_process->logger, "socket: %d\n", pcb->socket_cliente);
-	log_info(cpu_process->logger, "numero de tabla: %d\n", pcb->tablas_paginas);
-	log_info(cpu_process->logger, "tamanio de consola: %d\n", pcb->tamanio_proceso);
-	log_info(cpu_process->logger, "lista Instrucciones:\n");
+void mostrarPCB(proceso_cpu* cpu_process,t_pcb* pcb){
+	log_info(cpu_process->logger, "   id: %d", pcb->id);
+	log_info(cpu_process->logger, "   estimacion: %d", pcb->estimacion_rafaga);
+	log_info(cpu_process->logger, "   program counter: %d", pcb->program_counter);
+	log_info(cpu_process->logger, "   socket: %d", pcb->socket_cliente);
+	log_info(cpu_process->logger, "   numero de tabla: %d", pcb->tablas_paginas);
+	log_info(cpu_process->logger, "   tamanio de consola: %d", pcb->tamanio_proceso);
+	log_info(cpu_process->logger, "   lista Instrucciones:");
 	list_iterate(pcb->instrucciones, (void*) iterator);
-	log_info(cpu_process->logger, " -----------\n");
+}
+
+void mostrar_PCB_Bloqueado(proceso_cpu* cpu_process,t_pcb_bloqueado* pcb,int tiempo){
+	mostrarPCB(cpu_process, pcb);
+	log_info(cpu_process->logger, "   tiempo de bloqueo: %d", tiempo);
 }
 
 bool checkInstruccionInterrupcion(char* instruccion){
@@ -173,19 +153,19 @@ void execute(proceso_cpu* cpu, t_pcb* pcb,char** instruccion){
 
 	if(strcmp("NO_OP",instrucc) == 0){
 
-		int time = config_get_int_value(cpu->config, "RETARDO_NOOP");
-		log_info(cpu->logger, "Time: %d", time);
+		int time = config_get_int_value(cpu->config, "  RETARDO_NOOP");
+		log_info(cpu->logger, "  Time: %d", time);
 		no_op(time,pcb);
 
 	}else if(strcmp("I/O",instrucc)==0){
 
 		i_o(cpu,pcb,atoi(instruccion[1]));
-		log_info(cpu->logger, " Ocurrio la interrupcion por instruccion: %s", instrucc);
+		log_info(cpu->logger, "   Ocurrio la interrupcion por instruccion: %s", instrucc);
 
 	}else if(strcmp("EXIT",instrucc)==0){
 
 		instruccion_exit(cpu,pcb);
-		log_info(cpu->logger, " Ocurrio la interrupcion por instruccion: %s", instrucc);
+		log_info(cpu->logger, "    Ocurrio la interrupcion por instruccion: %s", instrucc);
 
 	}else if(strcmp("COPY",instrucc)==0){
 
@@ -194,12 +174,11 @@ void execute(proceso_cpu* cpu, t_pcb* pcb,char** instruccion){
 	}else if(strcmp("WRITE",instrucc)==0){
 
 	}else{
-		log_info(cpu->logger, "NO TENIA INSTRUCCIONES EL PCB");
+		log_info(cpu->logger, "   NO TENIA INSTRUCCIONES EL PCB");
 	}
 }
 
 int fetch(t_pcb* pcb){
-	//Proxima instruccion a ejecutar
 	return pcb->program_counter;
 }
 void fetch_operands(char** instruccion){
@@ -210,16 +189,14 @@ void no_op(int tiempo,t_pcb* pcb){
 	incrementarProgramCounter(pcb);
 }
 void i_o(proceso_cpu* cpu, t_pcb* pcb,int tiempo){
-	log_info(cpu->logger, "Llego a i_o()");
+	log_info(cpu->logger, "   Llego a i_o()");
 	incrementarProgramCounter(pcb);
 	responsePorBloqueo(cpu,pcb,tiempo);
-	verPCB(cpu,pcb);
-
 }
 void instruccion_exit(proceso_cpu* cpu, t_pcb* pcb){
 	incrementarProgramCounter(pcb);
 	responsePorFinDeProceso(pcb,cpu);
-	verPCB(cpu,pcb);
+	mostrarPCB(cpu,pcb);
 }
 
 void incrementarProgramCounter(t_pcb* pcb){
@@ -227,11 +204,12 @@ void incrementarProgramCounter(t_pcb* pcb){
 }
 
 void responsePorBloqueo(proceso_cpu* cpu,t_pcb* pcb,int tiempo){
-	log_info(cpu->logger, "Llego responsePorBloqueo()");
+	log_info(cpu->logger, "   Llego responsePorBloqueo()");
 	t_pcb_bloqueado* bloqueado = malloc(sizeof(t_pcb_bloqueado));
 	bloqueado->pcb = pcb;
 	bloqueado->tiempo_bloqueo = tiempo;
 	enviar_pcb_bloqueado(cpu->conexion_con_kernel,bloqueado);
+	mostrar_PCB_Bloqueado(cpu,bloqueado,tiempo);
 }
 void responsePorFinDeProceso(t_pcb* pcb,proceso_cpu* cpu){
 	enviar_pcb(pcb,cpu->conexion_con_kernel,FINALIZACION_PROCESO);
@@ -240,14 +218,19 @@ void responsePorFinDeProceso(t_pcb* pcb,proceso_cpu* cpu){
 void  check_interrupt(proceso_cpu* cpu,t_pcb* pcb,char* operacion){
 
 	if((check_interrupcion(cpu)) && (!checkInstruccionInterrupcion(operacion))){
-		log_info(cpu->logger, " Ocurrio la interrupcion por puerto Interrup: 8005");
+		log_info(cpu->logger, "   Ocurrio la interrupcion por puerto Interrup: 8005");
+
+		//Volvemos a dejarlo en falso, para que inicie el ciclo
+		cpu->interrupcion=false;
+
 		responseInterrupcion(pcb,cpu);
 	}
-
+	//Desbloqueamos el hilo de Interrupt, asi puede seguir recibiendo peticiones de interrupcion
+	sem_post(&sem_interrupt);
 }
 
 bool check_interrupcion(proceso_cpu* cpu){
-	return cpu->process->interrupcion;
+	return cpu->interrupcion;
 }
 
 void responseInterrupcion(t_pcb* pcb,proceso_cpu* cpu){
@@ -257,7 +240,7 @@ void responseInterrupcion(t_pcb* pcb,proceso_cpu* cpu){
 proceso_cpu* iniciar_cpu(proceso_cpu* cpu_process)
 {	// Crea un espacio de memoria para: process
 	cpu_process->process = process_create();
-	cpu_process->process->interrupcion = false; // en ppio no hay interrupcion (false: 0).
+	cpu_process->interrupcion = false; // en ppio no hay interrupcion (false: 0).
 
 	// Iniciar logs
 	cpu_process->logger = iniciar_logger(); log_info(cpu_process->logger,"\n###### INICIO DE LOGGER ######");
@@ -409,8 +392,6 @@ void iterator(char* value) {
 	t_log* logger = log_create(PATH_LOG, "CPU", true, LOG_LEVEL_INFO);
 	log_info(logger,"%s", value);
 }
-
-
 
 
 
