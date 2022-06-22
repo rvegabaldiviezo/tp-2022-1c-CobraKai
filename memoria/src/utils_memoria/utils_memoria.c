@@ -100,8 +100,7 @@ void recibir_mensaje(int socket_cliente)
 	free(buffer);
 }
 
-int recibir_operacion(int socket_cliente)
-{
+operacion recibir_operacion(int socket_cliente) {
 	int cod_op;
 	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) > 0) {
 		return cod_op;
@@ -120,3 +119,14 @@ pid_t recibir_id_proceso(int conexion) {
 		return -1;
 	}
 }
+
+int recibir_tamanio(int socket_cliente) {
+	int tamanio;
+	if(recv(socket_cliente, &tamanio, sizeof(int), MSG_WAITALL) > 0) {
+		return tamanio;
+	} else {
+		close(socket_cliente);
+		return -1;
+	}
+}
+

@@ -6,12 +6,16 @@
 #include <commons/log.h>
 #include <pthread.h>
 #include <commons/string.h>
+#include <commons/collections/dictionary.h>
+#include <commons/bitarray.h>
 #include "utils_memoria/utils_memoria.h"
 
 #define PATH_CONFIG "src/memoria.config"
 #define PATH_LOG "./memoria.log"
 #define KEY_PATH_SWAP "PATH_SWAP"
 #define KEY_ENTRADAS_TABLA "ENTRADAS_POR_TABLA"
+#define KEY_TAM_MEMORIA "TAM_MEMORIA"
+#define KEY_TAM_PAGINAS "TAM_PAGINA"
 
 typedef enum {
 	// Operaciones kernel
@@ -30,37 +34,68 @@ typedef enum {
 	ERROR = -1
 } operacion;
 
-/*enum {
-	ACCESO_TABLA_PRIMER_NIVEL = 1,
-	ACCESO_TABLA_SEGUNDO_NIVEL,
-	LECTURA_MEMORIA_USUARIO,
-	ESCRITURA_MEMORIA_USUARIO,
-	ERROR_CPU = -1
-} operaciones_cpu;*/
+
+typedef struct {
+	pid_t id;
+	unsigned int tamanio;
+	unsigned int numero_tabla_primer_nivel;
+} t_proceso;
 
 typedef struct {
 	void* buffer;
 
 } memoria_de_usuario;
+/*
+typedef struct{
+	unsigned int numero;
+	t_list* tablas_segundo_nivel;
+} t_tabla_primer_nivel;
+*/
 
 typedef struct {
-	int marco;
+	unsigned int marco;
 	bool presencia;
-	bool inicializada;
 	bool usada;
 	bool modificada;
+} t_pagina;
+
+typedef struct {
+	unsigned int numero;
+	t_list* paginas;
 } t_tabla_paginas_segundo_nivel;
 
 
-bool conexion_exitosa(int);
+// Funciones de tabla de paginas
 void inicializar_tabla_paginas();
 int crear_tabla_paginas();
+t_tabla_paginas_segundo_nivel* inicializar_tabla_segundo_nivel();
+t_pagina* inicializar_pagina();
+t_bitarray* inicializar_bitarray();
+int proximo_marco_libre();
+
+// Funciones de hilos
 void atender_kernel();
 void atender_cpu();
-char* get_path_archivo(int);
-pid_t recibir_id_proceso(int conexion_kernel);
-t_tabla_paginas_segundo_nivel* inicializar_tabla_segundo_nivel();
 
+// Funciones de archivos
+void crear_archivo_swap(char* path);
+char* get_path_archivo(int);
+
+// Funciones de conexiones
+bool conexion_exitosa(int);
+pid_t recibir_id_proceso(int conexion_kernel);
+int recibir_tamanio(int conexion_kernel);
+void liberar_conexion(int);
+
+void iterador_tablas_segundo_nivel(t_tabla_paginas_segundo_nivel* tabla);
+void iterador_paginas(t_pagina* pag);
+
+// Funciones para liberar memroia
+void liberar_tablas();
+void liberar_tabla_primer_nivel(int);
+void liberar_tablas_segundo_nivel(t_list*);
+void liberar_tabla_segundo_nivel(t_tabla_paginas_segundo_nivel* tabla);
+void liberar_pagina(t_pagina* pagina);
 void terminar_programa();
 
 

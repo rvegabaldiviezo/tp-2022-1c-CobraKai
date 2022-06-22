@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
+#include <time.h>
 #include <commons/log.h>
 #include <commons/collections/queue.h>
 #include <commons/string.h>
@@ -44,7 +45,7 @@ typedef struct {
 typedef struct {
 	t_pcb* proceso;
 	int tiempo_de_bloqueo;
-	int inicio_bloqueo;
+	time_t inicio_bloqueo;
 	int suspendido;
 } t_pcb_bloqueado;
 
@@ -87,6 +88,8 @@ t_pcb* crear_proceso(void);
 t_pcb crear_pcb();
 t_pcb* recibir_proceso(int socket_cliente);
 void destruir_proceso(t_pcb*);
+void destruir_lista(t_list*);
+void destruir_queue(t_queue*);
 bool numero_de_tabla_valido(int);
 void inicializar_colas();
 int atender_consola();
@@ -100,7 +103,6 @@ void comunicacion_con_cpu();
 void* list_pop(t_list*);
 t_pcb* menor_tiempo_restante(t_pcb*, t_pcb*);
 t_list* recibir_instrucciones(int socket_cliente);
-void destruir_proceso(t_pcb*);
 bool repetido(t_pcb* p1, t_pcb* p2);
 void inicializar_semaforos();
 void list_push(t_list* lista, void* elemento);
@@ -114,6 +116,10 @@ void notificar_suspencion_proceso(pid_t, int);
 void enviar_finalizacion_a_memoria(pid_t id, int conexion_con_memoria);
 int recibir_entero(int socket_cliente);
 t_pcb* recibir_pcb(int conexion);
+t_pcb_bloqueado* recibir_pcb_bloqueado(int conexion);
+void solicitar_numero_de_tabla(t_pcb*, int);
+int recibir_numero_de_tabla(t_pcb*, int);
+void escuchar_cpu_dispatch();
 
 
 #endif /* KERNEL_H_ */

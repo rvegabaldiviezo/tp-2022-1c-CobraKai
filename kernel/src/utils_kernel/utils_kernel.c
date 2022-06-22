@@ -47,8 +47,7 @@ int esperar_cliente(int socket_servidor) {
 	return socket_cliente;
 }
 
-void* recibir_buffer(int* size, int socket_cliente)
-{
+void* recibir_buffer(int* size, int socket_cliente) {
 	void * buffer;
 
 	recv(socket_cliente, size, sizeof(int), MSG_WAITALL);
@@ -198,13 +197,17 @@ void agregar_instruccion(t_buffer* buffer, char* valor, int tamanio) {
 }
 
 int recibir_entero(int socket_cliente) {
-	int cod_op;
-	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) > 0) {
-		return cod_op;
+	int entero;
+	if(recv(socket_cliente, &entero, sizeof(int), MSG_WAITALL) > 0) {
+		return entero;
 	} else {
 		close(socket_cliente);
 		return -1;
 	}
+}
+
+int recibir_tiempo_bloqueo(int conexion){
+	return recibir_entero(conexion);
 }
 
 t_pcb* recibir_pcb(int conexion) {
@@ -220,6 +223,15 @@ t_pcb* recibir_pcb(int conexion) {
 	pcb->instrucciones = recibir_instrucciones(conexion);
 	return pcb;
 }
+
+t_pcb_bloqueado* recibir_pcb_bloqueado(int conexion) {
+	t_pcb_bloqueado* bloqueado = malloc(sizeof(t_pcb_bloqueado));
+	bloqueado->proceso = recibir_pcb(conexion);
+	bloqueado->tiempo_de_bloqueo = recibir_tiempo_bloqueo(conexion);
+	bloqueado->inicio_bloqueo = time(NULL);
+	return bloqueado;
+}
+
 
 
 /***********************************************************************************/
@@ -258,19 +270,23 @@ void liberar_conexion(int socket_cliente) {
 	close(socket_cliente);
 }
 
-void solicitar_numero_de_tabla(pid_t id, int conexion) {
-	operacion operacion = INICIO_PROCESO;
-	paquete p = cargar_id(operacion, id);
+void solicitar_numero_de_tabla(t_pcb* pcb, int conexion) {
+	operacion op = INICIO_PROCESO;
+	//paquete p = cargar_id(operacion, pcb->id);
 
-	void* a_enviar = malloc(sizeof(paquete));
+	unsigned int bytes = sizeof(operacion) + sizeof(pid_t) + sizeof(int);
+	void* a_enviar = malloc(bytes);
 	int desp = 0;
-	memcpy(a_enviar + desp, &(p.cod_op), sizeof(operacion));
+	memcpy(a_enviar + desp, &(op), sizeof(operacion));
 	desp += sizeof(operacion);
 
-	memcpy(a_enviar + desp, &(p.elemento), sizeof(p.elemento));
-	desp += sizeof(p.elemento);
+	memcpy(a_enviar + desp, &(pcb->id), sizeof(pid_t));
+	desp += sizeof(pid_t);
 
-	send(conexion, &p, sizeof(paquete), 0);
+	memcpy(a_enviar + desp, &(pcb->tamanio_proceso), sizeof(int));
+	//desp += sizeof(int);
+
+	send(conexion, a_enviar, bytes, 0);
 }
 
 void enviar_respuesta_exitosa(int conexion) {
@@ -278,8 +294,8 @@ void enviar_respuesta_exitosa(int conexion) {
 	send(conexion, &operacion, sizeof(operacion), 0);
 }
 
-int recibir_numero_de_tabla(pid_t id, int conexion_memoria) {
-	solicitar_numero_de_tabla(id, conexion_memoria);
+int recibir_numero_de_tabla(t_pcb* pcb, int conexion_memoria) {
+	solicitar_numero_de_tabla(pcb, conexion_memoria);
 	int numero_de_tabla;
 	int bytes_recibidos = recv(conexion_memoria, &numero_de_tabla, sizeof(int), MSG_WAITALL);
 	if (bytes_recibidos <= 0) {
