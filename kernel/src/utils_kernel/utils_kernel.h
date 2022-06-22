@@ -31,7 +31,7 @@ void enviar_respuesta_exitosa(int conexion);
 t_list* parsear_instrucciones(t_list* instrucciones);
 void enviar_interrupcion(int);
 void notificar_a_memoria(int, int*);
-
+int recibir_tiempo_bloqueado(int);
 
 void liberar_conexion(int socket_cliente);
 

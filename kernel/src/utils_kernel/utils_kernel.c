@@ -206,6 +206,10 @@ int recibir_entero(int socket_cliente) {
 	}
 }
 
+int recibir_tiempo_bloqueo(int conexion){
+	return recibir_entero(conexion);
+}
+
 t_pcb* recibir_pcb(int conexion) {
 	// orden en el que vienen: operacion, id, socket, tamanio, program_counter, estimacion_rafaga, numero_tabla, tamanio_instrucciones, instrucciones
 	t_pcb* pcb = malloc(sizeof(t_pcb));
@@ -228,9 +232,7 @@ t_pcb_bloqueado* recibir_pcb_bloqueado(int conexion) {
 	return bloqueado;
 }
 
-int recibir_tiempo_bloqueo(int conexion) {
-	return recibir_entero(conexion);
-}
+
 
 /***********************************************************************************/
 /************************************ CLIENTE **************************************/
