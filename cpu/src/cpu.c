@@ -35,8 +35,14 @@ int main(void) {
 }
 
 void iniciar_conexion_cpu_memoria(proceso_cpu* cpu_process){
-	log_info(cpu_process->logger, "Entro: iniciar_conexion_cpu_memoria");
-	//Desarrollar que la cpu se conecte con la memoria
+
+	char* ip_memoria = config_get_string_value(cpu_process->config, "IP_MEMORIA");
+
+	char* puerto_memoria = config_get_string_value(cpu_process->config, "PUERTO_MEMORIA");
+
+	cpu_process->conexion_con_memoria = crear_conexion(ip_memoria, puerto_memoria);
+
+	log_info(cpu_process->logger, " Conectado con Memoria, Socket cliente Memoria: %d", cpu_process->conexion_con_memoria);
 }
 
 void escuchaInterrup(proceso_cpu* cpu_process){
@@ -135,8 +141,8 @@ void mostrarPCB(proceso_cpu* cpu_process,t_pcb* pcb){
 	list_iterate(pcb->instrucciones, (void*) iterator);
 }
 
-void mostrar_PCB_Bloqueado(proceso_cpu* cpu_process,t_pcb_bloqueado* pcb,int tiempo){
-	mostrarPCB(cpu_process, pcb);
+void mostrar_PCB_Bloqueado(proceso_cpu* cpu_process,t_pcb_bloqueado* bloqueado,int tiempo){
+	mostrarPCB(cpu_process, bloqueado->pcb);
 	log_info(cpu_process->logger, "   tiempo de bloqueo: %d", tiempo);
 }
 

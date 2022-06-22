@@ -74,6 +74,7 @@ int esperar_cliente(int socket_servidor);
 int recibir_operacion(int socket_cliente);
 void* recibir_buffer(int* size, int socket_cliente);
 t_list* recibir_paquete(int socket_cliente);
+int crear_conexion(char *ip, char* puerto);
 
 
 
