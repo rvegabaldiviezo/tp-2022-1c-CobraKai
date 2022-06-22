@@ -49,6 +49,7 @@ int conexion_con_cpu_interrupt;
 float alfa;
 int grado_multiprogramacion;
 char* planificador;
+int numero_proceso = 0;
 
 int main(void) {
 
@@ -105,14 +106,16 @@ pid_t atender_consola() {
 	t_pcb* proceso;
 	switch(operacion_consola) {
 	case LISTA_DE_INSTRUCCIONES:
-		proceso = crear_proceso();
 		proceso = recibir_proceso(conexion_consola);
 		// Ya se copiaron todos los bytes que venian de la consola
 		// de ahora en mas puedo agregar lo que quiera al proceso
 		proceso->instrucciones = parsear_instrucciones(proceso->instrucciones);
 		proceso->socket = conexion_consola;
 		proceso->estimacion_rafaga = config_get_int_value(config, ESTIMACION_INICIAL);
-		proceso->id = getpid();
+		proceso->id = numero_proceso;
+		proceso->tablas_paginas = 0;
+		proceso->program_counter = 0;
+		numero_proceso++;
 		// Calculo de la rafaga
 		// prox_rafaga = alfa * tiempo_ultima_rafaga + (1 - alfa) * pcb.estimacion_rafaga
 		if(proceso->tamanio_proceso == -1) {
@@ -151,7 +154,7 @@ pid_t atender_consola() {
 			pthread_mutex_unlock(&mutex_ready_list);
 			sem_post(&elementos_en_cola_ready);
 			log_info(logger, "El proceso %lu fue asignado a la cola READY", proceso->id);
-
+			//creo que hay que chequear si la planificacion ya fue iniciada
 			if(strcmp(planificador, "SRT") == 0) {
 					solicitar_interrupcion();
 			}
@@ -252,51 +255,53 @@ void escuchar_cpu_dispatch() {
 }
 
 void comunicacion_con_cpu() {
-	operacion operacion = recibir_operacion(conexion_con_cpu_dispatch);
-		switch(operacion) {
-			case BLOQUEO_IO:
-				log_info(logger, "Codigo BLOQUEO_IO recibido");
-				t_pcb_bloqueado* proceso_bloqueado = recibir_pcb_bloqueado(conexion_con_cpu_dispatch);
-				log_info(logger, "La cpu envio el proceso %lu con estado Bloqueado por IO", proceso_bloqueado->proceso->id);
-				log_info(logger, "Tiempo de bloqueo: %d", proceso_bloqueado->tiempo_de_bloqueo);
-				log_info(logger, "Inicio de bloqueo: %li", proceso_bloqueado->inicio_bloqueo);
-				proceso_bloqueado->inicio_bloqueo = (int)time(NULL);
-				proceso_bloqueado->suspendido = 0;
-				agregar_a_bloqueados(proceso_bloqueado);
-				sem_post(&elementos_en_cola_bloqueados);
-				sem_post(&sem_planificacion);
-				break;
+	while(1){
+		operacion operacion = recibir_operacion(conexion_con_cpu_dispatch);
+			switch(operacion) {
+				case BLOQUEO_IO:
+					log_info(logger, "Codigo BLOQUEO_IO recibido");
+					t_pcb_bloqueado* proceso_bloqueado = recibir_pcb_bloqueado(conexion_con_cpu_dispatch);
+					log_info(logger, "La cpu envio el proceso %lu con estado Bloqueado por IO", proceso_bloqueado->proceso->id);
+					log_info(logger, "Tiempo de bloqueo: %d", proceso_bloqueado->tiempo_de_bloqueo);
+					log_info(logger, "Inicio de bloqueo: %li", proceso_bloqueado->inicio_bloqueo);
+					proceso_bloqueado->inicio_bloqueo = (int)time(NULL);
+					proceso_bloqueado->suspendido = 0;
+					agregar_a_bloqueados(proceso_bloqueado);
+					sem_post(&elementos_en_cola_bloqueados);
+					sem_post(&sem_planificacion);
+					break;
 
-			case INTERRUPCION:
-				log_info(logger, "Un proceso fue interrumpido");
-				t_pcb* pcb_interrumpido = recibir_pcb(conexion_con_cpu_dispatch);
+				case INTERRUPCION:
+					log_info(logger, "Un proceso fue interrumpido");
+					t_pcb* pcb_interrumpido = recibir_pcb(conexion_con_cpu_dispatch);
 
-				//actualizar estimacion
+					//actualizar estimacion
 
-				pthread_mutex_lock(&mutex_ready_list);
-				list_push(ready, pcb_interrumpido);
-				pthread_mutex_unlock(&mutex_ready_list);
-				sem_post(&sem_planificacion);
+					pthread_mutex_lock(&mutex_ready_list);
+					list_push(ready, pcb_interrumpido);
+					pthread_mutex_unlock(&mutex_ready_list);
+					sem_post(&sem_planificacion);
 
-				break;
-			case EXIT:
-				log_info(logger, "La CPU envio un pcb con estado finalizado");
-			    t_pcb* proceso = recibir_pcb(conexion_con_cpu_dispatch);
-			  //  enviar_finalizacion_a_memoria(proceso->id, conexion_con_memoria);
-			    sem_post(&multiprogramacion);
-			    log_info(logger, "El socket que recibi es %i", proceso->socket);
-				enviar_respuesta_exitosa(proceso->socket);
-				log_info(logger, "El proceso %lu finalizo correctamente", proceso->id);
-				destruir_proceso(proceso);
-				sem_post(&sem_planificacion);
-				break;
-			case ERROR:
-				log_error(logger, "Se desconecto el cliente");
-				return;
-			default:
-				log_info(logger, "Operacion desconocida");
-				break;
-		}
+					break;
+				case EXIT:
+					log_info(logger, "La CPU envio un pcb con estado finalizado");
+					t_pcb* proceso = recibir_pcb(conexion_con_cpu_dispatch);
+				  //  enviar_finalizacion_a_memoria(proceso->id, conexion_con_memoria);
+					sem_post(&multiprogramacion);
+					log_info(logger, "El socket que recibi es %i", proceso->socket);
+					enviar_respuesta_exitosa(proceso->socket);
+					log_info(logger, "El proceso %lu finalizo correctamente", proceso->id);
+					destruir_proceso(proceso);
+					sem_post(&sem_planificacion);
+					break;
+				case ERROR:
+					log_error(logger, "Se desconecto el cliente");
+					return;
+				default:
+					log_info(logger, "Operacion desconocida");
+					break;
+			}
+	}
 }
 
 void solicitar_interrupcion() {
@@ -426,6 +431,7 @@ void planificar_srt() {
 	iniciar_planificacion_io();
 	while(1) {
 		sem_wait(&sem_planificacion);
+		log_info(logger, "Planificacion despausada");
 		sem_wait(&elementos_en_cola_ready);
 		sleep(5);
 		pthread_mutex_lock(&mutex_ready_list);
@@ -435,16 +441,15 @@ void planificar_srt() {
 		t_pcb* proceso_mas_corto = list_pop(ready);
 		pthread_mutex_unlock(&mutex_ready_list);
 
-		/*sem_post(&sem_grado_multiprogramacion);
-		log_info(logger, "El grado de multiprogramacion despues del POST es: %d", sem_grado_multiprogramacion);
-		*/
+
 		// solo para ver si ordena bien
 		log_info(logger, "Me llegaron los siguientes valores:");
 		list_iterate(proceso_mas_corto->instrucciones, (void*) iterator);
 		enviar_pcb(proceso_mas_corto, conexion_con_cpu_dispatch);
+		log_info(logger,"Se paso el proceso %lu de Ready a Ejecutando", proceso_mas_corto->id);
 
 		// esto va en el EXIT, lo pongo aca para probar
-		enviar_finalizacion_a_memoria(proceso_mas_corto->id, conexion_con_memoria);
+		//enviar_finalizacion_a_memoria(proceso_mas_corto->id, conexion_con_memoria);
 	}
 
 }
