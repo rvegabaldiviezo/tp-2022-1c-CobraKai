@@ -167,13 +167,16 @@ char** decode(t_list* instrucciones,int nro_inst);
 void execute(proceso_cpu* cpu, t_pcb* pcb,char** instruccion);
 int fetch(t_pcb* pcb);
 void fetch_operands(char** instruccion);
-void no_op(int tiempo);
+void no_op(int tiempo,t_pcb* pcb);
 void i_o(proceso_cpu* cpu, t_pcb* pcb,int tiempo);
 void instruccion_exit(proceso_cpu* cpu, t_pcb* pcb);
 void incrementarProgramCounter(t_pcb* pcb);
 void responsePorBloqueo(proceso_cpu* cpu,t_pcb* pcb,int tiempo);
 void responsePorFinDeProceso(t_pcb* pcb,proceso_cpu* cpu);
 bool checkInstruccionInterrupcion(char* instruccion);
-void  check_interrupt(t_pcb* pcb,proceso_cpu* cpu, bool instruccionInterrupcion);
+void check_interrupt(proceso_cpu* cpu,t_pcb* pcb,char* operacion);
+bool check_interrupcion(proceso_cpu* cpu);
+void responseInterrupcion(t_pcb* pcb,proceso_cpu* cpu);
+void verPCB(proceso_cpu* cpu,t_pcb* pcb);
 
 #endif /* CPU_H_ */

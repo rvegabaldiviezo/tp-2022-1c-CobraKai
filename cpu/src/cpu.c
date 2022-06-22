@@ -83,31 +83,26 @@ int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel){
 	log_info(cpu_process->logger, "INICIO: recibir_operaciones()");
 
 	while (1) {
-			log_info(cpu_process->logger, " A ESPERA DE UNA OPERACION");
+			log_info(cpu_process->logger, " --- A ESPERA DE UNA OPERACION");
 			operacion cod_op = recibir_operacion(socket_kernel);//Recibe cada peticion que envie el kernel en el puerto interrup
 
 			switch (cod_op) {
 
 				case PCB:
 
-					log_info(cpu_process->logger, " El kernel envio un PCB");
+					log_info(cpu_process->logger, " -----------");
+					log_info(cpu_process->logger, " El kernel envio un PCB con losn siguientes datos:\n");
 					t_pcb* pcb = recibir_pcb(socket_kernel);
 
-					log_info(cpu_process->logger, "id: %d\n", pcb->id);
-					log_info(cpu_process->logger, "estimacion: %d\n", pcb->estimacion_rafaga);
-					log_info(cpu_process->logger, "program counter: %d\n", pcb->program_counter);
-					log_info(cpu_process->logger, "socket: %d\n", pcb->socket_cliente);
-					log_info(cpu_process->logger, "numero de tabla: %d\n", pcb->tablas_paginas);
-					log_info(cpu_process->logger, "tamanio de consola: %d\n", pcb->tamanio_proceso);
-					log_info(cpu_process->logger, "lista:\n");
-					list_iterate(pcb->instrucciones, (void*) iterator);
+					verPCB(cpu_process,pcb);
 
 					int nro_intrucciones = list_size(pcb->instrucciones);
 
 					int nro_instrucion = fetch(pcb);
-					log_info(cpu_process->logger, "nro_instrucion: %d",nro_instrucion);
 
 					for(int i = nro_instrucion; i< nro_intrucciones ;i++){
+
+						log_info(cpu_process->logger, " Nro de instrucion: %d",i);
 
 						char** instruccion = decode(pcb->instrucciones,i);
 						char* operacion = instruccion[0];
@@ -118,11 +113,10 @@ int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel){
 
 						execute(cpu_process,pcb, instruccion);
 
-						//
-						bool instruccionIterrupcion = checkInstruccionInterrupcion(operacion);
-						check_interrupt(cpu_process,pcb,instruccionIterrupcion);
+						check_interrupt(cpu_process,pcb,operacion);
 
-						if(instruccionIterrupcion){
+						if((check_interrupcion(cpu_process)) || (checkInstruccionInterrupcion(operacion))){
+
 							break;
 						}
 
@@ -153,6 +147,19 @@ int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel){
 	return EXIT_SUCCESS;
 }
 
+
+void verPCB(proceso_cpu* cpu_process,t_pcb* pcb){
+	log_info(cpu_process->logger, "id: %d\n", pcb->id);
+	log_info(cpu_process->logger, "estimacion: %d\n", pcb->estimacion_rafaga);
+	log_info(cpu_process->logger, "program counter: %d\n", pcb->program_counter);
+	log_info(cpu_process->logger, "socket: %d\n", pcb->socket_cliente);
+	log_info(cpu_process->logger, "numero de tabla: %d\n", pcb->tablas_paginas);
+	log_info(cpu_process->logger, "tamanio de consola: %d\n", pcb->tamanio_proceso);
+	log_info(cpu_process->logger, "lista Instrucciones:\n");
+	list_iterate(pcb->instrucciones, (void*) iterator);
+	log_info(cpu_process->logger, " -----------\n");
+}
+
 bool checkInstruccionInterrupcion(char* instruccion){
 	return (strcmp(instruccion, "I/O")==0) || (strcmp(instruccion, "EXIT")==0);
 }
@@ -168,15 +175,17 @@ void execute(proceso_cpu* cpu, t_pcb* pcb,char** instruccion){
 
 		int time = config_get_int_value(cpu->config, "RETARDO_NOOP");
 		log_info(cpu->logger, "Time: %d", time);
-		no_op(time);
+		no_op(time,pcb);
 
 	}else if(strcmp("I/O",instrucc)==0){
 
 		i_o(cpu,pcb,atoi(instruccion[1]));
+		log_info(cpu->logger, " Ocurrio la interrupcion por instruccion: %s", instrucc);
 
 	}else if(strcmp("EXIT",instrucc)==0){
 
 		instruccion_exit(cpu,pcb);
+		log_info(cpu->logger, " Ocurrio la interrupcion por instruccion: %s", instrucc);
 
 	}else if(strcmp("COPY",instrucc)==0){
 
@@ -196,18 +205,21 @@ int fetch(t_pcb* pcb){
 void fetch_operands(char** instruccion){
 //proximamnet
 }
-void no_op(int tiempo){
+void no_op(int tiempo,t_pcb* pcb){
 	usleep(1000*tiempo);
+	incrementarProgramCounter(pcb);
 }
 void i_o(proceso_cpu* cpu, t_pcb* pcb,int tiempo){
 	log_info(cpu->logger, "Llego a i_o()");
 	incrementarProgramCounter(pcb);
 	responsePorBloqueo(cpu,pcb,tiempo);
+	verPCB(cpu,pcb);
 
 }
 void instruccion_exit(proceso_cpu* cpu, t_pcb* pcb){
 	incrementarProgramCounter(pcb);
 	responsePorFinDeProceso(pcb,cpu);
+	verPCB(cpu,pcb);
 }
 
 void incrementarProgramCounter(t_pcb* pcb){
@@ -224,13 +236,23 @@ void responsePorBloqueo(proceso_cpu* cpu,t_pcb* pcb,int tiempo){
 void responsePorFinDeProceso(t_pcb* pcb,proceso_cpu* cpu){
 	enviar_pcb(pcb,cpu->conexion_con_kernel,FINALIZACION_PROCESO);
 }
-void  check_interrupt(t_pcb* pcb,proceso_cpu* cpu, bool instruccionInterrupcion){
 
-	//if((cpu->process->interrupcion) && (!instruccionInterrupcion)){
-		//responseInterrupcion(cpu);
-	//}
+void  check_interrupt(proceso_cpu* cpu,t_pcb* pcb,char* operacion){
+
+	if((check_interrupcion(cpu)) && (!checkInstruccionInterrupcion(operacion))){
+		log_info(cpu->logger, " Ocurrio la interrupcion por puerto Interrup: 8005");
+		responseInterrupcion(pcb,cpu);
+	}
+
 }
 
+bool check_interrupcion(proceso_cpu* cpu){
+	return cpu->process->interrupcion;
+}
+
+void responseInterrupcion(t_pcb* pcb,proceso_cpu* cpu){
+	enviar_pcb(pcb,cpu->conexion_con_kernel,INTERRUPCION);
+}
 
 proceso_cpu* iniciar_cpu(proceso_cpu* cpu_process)
 {	// Crea un espacio de memoria para: process
@@ -294,160 +316,6 @@ void finalizar_cpu(proceso_cpu* cpu_process){
 
 	log_destroy(cpu_process->logger);
 }
-
-
-
-
-/*
-void atender_kernel_dispatch(proceso_cpu* cpu_process,int conexion_kernel){
-
-	log_info(cpu_process->logger, "Entro: atender_kernel_dispatch");
-
-	while(1){
-
-		int operacion_kernel = recibir_operacion(conexion_kernel);
-
-		switch(operacion_kernel) {
-
-			case PCB:
-				log_info(cpu_process->logger, " Me llego un pcb desde el kernel");
-				break;
-
-			case ERROR:
-				log_error(cpu_process->logger, " El kernel se desconectó inesperadamente");
-				break;
-
-			default:
-				log_info(cpu_process->logger, " Operacion desconocida");
-				break;
-		}
-	}
-}
-*/
-
-/*
- * 1) levantar la conecciones cliente servidor
- * 2)
- *
- *
- * */
-
-
-/*
- *
-int fetch(t_proceso proceso){
-	//Proxima instruccion a ejecutar
-	return proceso.pcb.program_counter;
-}
-void fetch_operands(t_proceso proces, t_instruction instruccion){
-}
-t_instruction decode(t_proceso proceso,int nro_intruccion){
-	t_instruction instruction;
-	//Busca en las lista la instruccion a ejecutar:
-	return  instruction;
-}
-void execute(t_proceso proceso, t_instruction instruccion){
-
-	switch(instruccion.id) {
-		case NO_OP://NO_OP
-			int time = config_get_string_value(proceso.config, "RETARDO_NOOP");//
-			no_op(time,instruccion.params[1]);
-			break;
-		case I_O://I/O
-			i_o(proceso,instruccion.params[1]);
-			//return EXIT_FAILURE;
-			break;
-		case EXIT://EXIT
-			exit(proceso);
-			break;
-		case COPY://COPY
-			break;
-		case READ://READ
-			break;
-		case WRITE://WRITE
-			break;
-		default:
-			//log_info(logger, "Operacion desconocida");
-			break;
-	}
-
-
-}
-
-void no_op(int tiempo,int repeticiones){
-	usleep(1000*tiempo*repeticiones);
-}
-void i_o(t_proceso proceso, int tiempo){
-	incrementarpcb(proceso);
-	responsePorBloqueo(proceso,tiempo);
-}
-void exit(t_proceso proceso){
-	incrementarpcb(proceso);
-	responsePorFinDeProceso(proceso);
-}
-void  check_interrupt(t_proceso proceso){
-
-	incrementarpcb(proceso);
-
-	if(proceso.interrucion){
-		//responderle al kernel
-		responseInterrupcion(proceso);
-	}
-}
-
-void responseInterrupcion(t_proceso proceso){
-	int socket = proceso.socket;
-}
-void responsePorBloqueo(t_proceso proceso,int tiempo){
-	//
-}
-void responsePorFinDeProceso(t_proceso proceso){
-	//
-}
-void incrementarpcb(t_proceso proceso){
-	 proceso.pcb.id = proceso.pcb.id + 1;
-}
-int size_instrucciones(t_proceso proceso){
-	return proceso.pcb.instrucciones->elements_count;
-}
-
-*/
-
-/*
-void config(){
-
-	t_config* config = config_create(PATH_CONFIG);
-	char* puerto = config_get_string_value(config, conf_puerto);
-	char* ip = config_get_string_value(config, conf_ip);
-}*/
-
-
-
-/*
- * void log_s(char* titulo_log, char* valor_log){
-	char * mensaje_log = string_new();
-	string_append(&mensaje_log, titulo_log);
-	string_append(&mensaje_log, valor_log);
-	log_info(proceso.logger,"%s", mensaje_log);
-}
-void log_i(char* titulo_log, int valor_log){
-	char * mensaje_log = string_new();
-	string_append(&mensaje_log, titulo_log);
-	string_append(&mensaje_log, string_itoa(valor_log));
-	log_info(proceso.logger,"%s",mensaje_log);
-}
-
-void loggear(char* mensajelog){
-	log_info(proceso->logger,"%s",mensajelog);
-}
-
-
-
- * */
-
-
-
-
 
 
 
@@ -543,100 +411,6 @@ void iterator(char* value) {
 }
 
 
-
-
-//char* tipo(){
-
-//}
-
-
-//int main(void) {
-
-	// 1) Inciar las configuraciones: Loggear y Archivo de configuraciones
-//	iniciar_cpu(cpu);
-
-	//iniciar_servidor_dispatch(cpu);
-
-	//conexion_kernel = esperar_cliente_dispatch(cpu);
-
-	//atender_kernel(cpu, conexion_kernel);
-	/*
-	t_proceso proceso = iniciar_cpu();
-	   iniciar logear, 	proceso.interrucion=0;
-
-	//Hilo interrup: iniciar_conexion()y  escuchar(proceso_interrup)
-
-	//Hilo Proceso de las instrucciones: iniciar_conexion()y  escuchar(proceso_intrucciones)
-
-	// instanciar_proceso_instrucciones(&proceso,sockect_cliente)
-
-	int nro_intrucciones = size_instrucciones(proceso);
-	int nro_instrucion = fetch(proceso);
-
-	for(int i = nro_instrucion; i< nro_intrucciones ;i++){
-
-		nro_instrucion = fetch(proceso);
-
-		t_instruction instruccion = decode(proceso,nro_instrucion);
-
-		fetch_operands(instruccion);
-
-		execute(proceso, instruccion);
-
-		check_interrupt(proceso);
-	}
-	*/
-	//printf("proceso interrucion (antes): %i \n",proceso->interrucion);
-	//puts("main: antes del desbloque de interrup");
-	//printf("proceso interrucion (antes): %i \n", cpu.process.interrupcion);
-
-
-	//sem_post(&sem_interrupt);
-
-	//Bloqueo en hilo principal
-	//sem_wait(&dispatch);
-	//if(0!=cpu.process.interrupcion){
-	//	printf("proceso interrucion (en mutex): %i \n", cpu.process.interrupcion);
-	//}
-	//puts("main: despues del desbloqueo");
-	//escuchaInterrup();
-	//sem_wait(&dispatch);
-
-	//printf("proceso interrucion (despues): %i \n",proceso->interrucion);
-
-	//pthread_join(interrupt, NULL);
-
-
-	//log_info(cpu->logger,"main: Termino de ejecutar");
-
-	//finalizar_cpu(cpu);
-
-	//puts("main: FIN PROGRAMA");
-
-	//return EXIT_SUCCESS;
-//}
-
-
-
-
-
-
-//pthread_mutex_lock(&mutex);
-
-//sem_wait(&sem_interrupt);
-//log_info(proceso->logger,"escuchaInterrup: antes del bloqueo");
-//cpu.process.interrupcion = 1;
-
-//printf("salio del bloqueo, el atributo bloqueo es: %i \n", cpu.process.interrupcion);
-
-//log_info(pssroceso->logger,"escuchaInterrup: salio del bloqueo, se cambio la var bloqueo a 1");
-//sem_post(&dispatch);
-
-//pthread_mutex_lock(&mutex);
-//puts("escuchaInterrup: Se bloquea el dispatch ");
-//sem_post(&dispatch);
-
-//log_info(cpu.logger,"escuchaInterrup: Termino de ejecutar la funcion");
 
 
 
