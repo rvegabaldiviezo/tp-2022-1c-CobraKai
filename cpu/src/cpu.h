@@ -59,7 +59,6 @@ typedef struct {
 typedef struct {
 	t_pcb* pcb; //
 	int socket_cliente;
-	bool interrupcion; // false(0) o true(1)
 } t_proceso;
 
 typedef struct {
@@ -71,7 +70,15 @@ typedef struct {
 	int conexion_con_kernel;
 	int socket_servidor_dispatch;//DISPATCH
 	int socket_servidor_interrupt;//INTERRUPT
+	bool interrupcion; // true(1): si se conectan al puerto interrup y envian su respectivo codigo de operacion, si no, false(0): valor por default
 } proceso_cpu;
+
+
+typedef struct {
+	int socket_kernel;
+	char* tipo;
+} conexion_kernel;
+
 
 enum {
 	NO_OP = 1,
@@ -177,6 +184,7 @@ bool checkInstruccionInterrupcion(char* instruccion);
 void check_interrupt(proceso_cpu* cpu,t_pcb* pcb,char* operacion);
 bool check_interrupcion(proceso_cpu* cpu);
 void responseInterrupcion(t_pcb* pcb,proceso_cpu* cpu);
-void verPCB(proceso_cpu* cpu,t_pcb* pcb);
+void mostrarPCB(proceso_cpu* cpu,t_pcb* pcb);
+void mostrar_PCB_Bloqueado(proceso_cpu* cpu_process,t_pcb_bloqueado* pcb,int tiempo);
 
 #endif /* CPU_H_ */
