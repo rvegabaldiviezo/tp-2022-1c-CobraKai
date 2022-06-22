@@ -5,6 +5,7 @@ pthread_t hilo_kernel;
 
 t_log* logger;
 t_config* config;
+//t_proceso* proceso;
 int server_memoria;
 int conexion_kernel;
 int conexion_cpu;
@@ -31,7 +32,7 @@ int main(void) {
 	tamanio_pagina = config_get_int_value(config, KEY_TAM_PAGINAS);
 	cantidad_paginas = tamanio_memoria / tamanio_pagina;
 	marcos_libres = inicializar_bitarray();
-	log_info(logger, "Cantidad de marcos: %d", bitarray_get_max_bit(marcos_libres));
+	//log_info(logger, "Cantidad de marcos: %d", bitarray_get_max_bit(marcos_libres));
 
 	tablas_primer_nivel = dictionary_create();
 
@@ -102,6 +103,14 @@ int proximo_marco_libre() {
 	return -1;
 }
 
+espacio_de_usuario reservar_espacio_de_usuario(unsigned int tamanio) {
+	espacio_de_usuario espacio;
+	espacio.buffer = malloc(sizeof(tamanio));
+	espacio.inicio = 0;
+	espacio.fin = tamanio;
+	return espacio;
+}
+
 void crear_archivo_swap(char* path) {
 	FILE* f = fopen(path, "w");
 	fclose(f);
@@ -134,6 +143,10 @@ void liberar_tabla_segundo_nivel(t_tabla_paginas_segundo_nivel* tabla) {
 void liberar_pagina(t_pagina* pagina) {
 	bitarray_clean_bit(marcos_libres, pagina->marco);
 	free(pagina);
+}
+
+void liberar_espacio_de_usuario(espacio_de_usuario espacio) {
+	free(espacio.buffer);
 }
 
 void terminar_programa() {
@@ -173,7 +186,8 @@ void atender_cpu() {
 		switch(operacion) {
 			case ACCESO_TABLA_PRIMER_NIVEL:
 				log_info(logger, "CPU solicita acceso a tabla pagina de primer nivel");
-
+				//unsigned int numero_tabla = recibir_numero_tabla(conexion_kernel);
+				//char* tabla_segundo_nivel = dictionary_get(tablas_primer_nivel, string_itoa(numero_tabla));
 				break;
 			case ACCESO_TABLA_SEGUNDO_NIVEL:
 				log_info(logger, "CPU solicita acceso a tabla pagina de segundo nivel");
@@ -206,19 +220,21 @@ void atender_kernel() {
 		operacion operacion = recibir_operacion(conexion_kernel);
 		switch(operacion) {
 			case INICIO_PROCESO:
-				// TODO: ver que pasa si el proceso no es nuevo, sino que viene de suspendido, habría que hacer una nueva operacion?
+				// TODO: el kernel debería solicitar esto solo si el proceso no tiene ya asignado un numero de tabla
 				log_info(logger, "Kernel solicita INICIO PROCESO");
 				t_proceso* proceso = malloc(sizeof(t_proceso));
 
 				proceso->id= recibir_id_proceso(conexion_kernel);
 				proceso->tamanio = recibir_tamanio(conexion_kernel);
 				proceso->numero_tabla_primer_nivel = crear_tabla_paginas();
+				proceso->espacio_utilizable = reservar_espacio_de_usuario(proceso->tamanio);
+				log_info(logger, "Se reservo un espacio de %d bytes para el proceso %d", proceso->espacio_utilizable.fin, proceso->id);
 
 				log_info(logger, "Se creo la tabla de primer nivel: %d", proceso->numero_tabla_primer_nivel);
 
 				// Itero la tabla de nivel 1 y las de nivel 2 para ver que se asignen bien
-				char* numero = string_itoa(proceso->numero_tabla_primer_nivel);
-				list_iterate((t_list*) dictionary_get(tablas_primer_nivel, numero), (void*) iterador_tablas_segundo_nivel);
+				//char* numero = string_itoa(proceso->numero_tabla_primer_nivel);
+				//list_iterate((t_list*) dictionary_get(tablas_primer_nivel, numero), (void*) iterador_tablas_segundo_nivel);
 
 				crear_archivo_swap(get_path_archivo(proceso->id));
 
@@ -230,12 +246,11 @@ void atender_kernel() {
 				break;
 			case FINALIZACION_PROCESO:
 				log_info(logger, "Kernel solicita FINALIZACION PROCESO");
-				pid_t id = recibir_id_proceso(conexion_kernel);
-				// recibir numero de tabla de primer nivel
-				int numero_tabla = 1; // recibir_numero_tabla(conexion_kernel);
-				liberar_tabla_primer_nivel(numero_tabla);
-				remove(get_path_archivo(id));
-				log_info(logger, "Id a finalizar: %lu", id);
+				// No hace falta recibir nada ya que se libera el proceso que actualmente está en memoria
+				liberar_tabla_primer_nivel(proceso->numero_tabla_primer_nivel);
+				liberar_espacio_de_usuario(proceso->espacio_utilizable);
+				remove(get_path_archivo(proceso->id));
+				log_info(logger, "Id a finalizar: %lu", proceso->id);
 
 				break;
 			case ERROR:

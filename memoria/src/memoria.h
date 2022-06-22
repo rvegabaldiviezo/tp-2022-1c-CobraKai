@@ -34,23 +34,18 @@ typedef enum {
 	ERROR = -1
 } operacion;
 
+typedef struct {
+	void* buffer;
+	unsigned int inicio;
+	unsigned int fin;
+} espacio_de_usuario;
 
 typedef struct {
 	pid_t id;
 	unsigned int tamanio;
 	unsigned int numero_tabla_primer_nivel;
+	espacio_de_usuario espacio_utilizable;
 } t_proceso;
-
-typedef struct {
-	void* buffer;
-
-} memoria_de_usuario;
-/*
-typedef struct{
-	unsigned int numero;
-	t_list* tablas_segundo_nivel;
-} t_tabla_primer_nivel;
-*/
 
 typedef struct {
 	unsigned int marco;
@@ -96,6 +91,7 @@ void liberar_tabla_primer_nivel(int);
 void liberar_tablas_segundo_nivel(t_list*);
 void liberar_tabla_segundo_nivel(t_tabla_paginas_segundo_nivel* tabla);
 void liberar_pagina(t_pagina* pagina);
+void liberar_espacio_de_usuario(espacio_de_usuario espacio);
 void terminar_programa();
 
 
