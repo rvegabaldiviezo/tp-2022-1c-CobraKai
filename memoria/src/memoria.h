@@ -41,7 +41,7 @@ typedef struct {
 } espacio_de_usuario;
 
 typedef struct {
-	pid_t id;
+	int id;
 	unsigned int tamanio;
 	unsigned int numero_tabla_primer_nivel;
 	espacio_de_usuario espacio_utilizable;

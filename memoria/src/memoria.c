@@ -5,7 +5,6 @@ pthread_t hilo_kernel;
 
 t_log* logger;
 t_config* config;
-//t_proceso* proceso;
 int server_memoria;
 int conexion_kernel;
 int conexion_cpu;
@@ -222,35 +221,47 @@ void atender_kernel() {
 			case INICIO_PROCESO:
 				// TODO: el kernel debería solicitar esto solo si el proceso no tiene ya asignado un numero de tabla
 				log_info(logger, "Kernel solicita INICIO PROCESO");
-				t_proceso* proceso = malloc(sizeof(t_proceso));
+				t_proceso* proceso_nuevo = malloc(sizeof(t_proceso));
 
-				proceso->id= recibir_id_proceso(conexion_kernel);
-				proceso->tamanio = recibir_tamanio(conexion_kernel);
-				proceso->numero_tabla_primer_nivel = crear_tabla_paginas();
-				proceso->espacio_utilizable = reservar_espacio_de_usuario(proceso->tamanio);
-				log_info(logger, "Se reservo un espacio de %d bytes para el proceso %d", proceso->espacio_utilizable.fin, proceso->id);
+				proceso_nuevo->id= recibir_id_proceso(conexion_kernel);
+				proceso_nuevo->tamanio = recibir_tamanio(conexion_kernel);
+				proceso_nuevo->numero_tabla_primer_nivel = crear_tabla_paginas();
+				proceso_nuevo->espacio_utilizable = reservar_espacio_de_usuario(proceso_nuevo->tamanio);
+				log_info(logger, "Se reservo un espacio de %d bytes para el proceso %d", proceso_nuevo->espacio_utilizable.fin, proceso_nuevo->id);
 
-				log_info(logger, "Se creo la tabla de primer nivel: %d", proceso->numero_tabla_primer_nivel);
+				log_info(logger, "Se creo la tabla de primer nivel: %d", proceso_nuevo->numero_tabla_primer_nivel);
 
 				// Itero la tabla de nivel 1 y las de nivel 2 para ver que se asignen bien
 				//char* numero = string_itoa(proceso->numero_tabla_primer_nivel);
 				//list_iterate((t_list*) dictionary_get(tablas_primer_nivel, numero), (void*) iterador_tablas_segundo_nivel);
 
-				crear_archivo_swap(get_path_archivo(proceso->id));
+				crear_archivo_swap(get_path_archivo(proceso_nuevo->id));
 
-				enviar_numero_de_tabla(conexion_kernel, proceso->numero_tabla_primer_nivel);
+				enviar_numero_de_tabla(conexion_kernel, proceso_nuevo->numero_tabla_primer_nivel);
 
 				break;
 			case SUSPENCION_PROCESO:
 				log_info(logger, "Kernel solicita SUSPENCION PROCESO");
+				t_proceso* proceso_a_suspender = malloc(sizeof(t_proceso));
+				proceso_a_suspender->id = recibir_id_proceso(conexion_kernel);
+				proceso_a_suspender->tamanio = recibir_tamanio(conexion_kernel);
+				proceso_a_suspender->numero_tabla_primer_nivel = recibir_tamanio(conexion_kernel);
+				log_info(logger, "Proceso a suspender: %d", proceso_a_suspender->id);
+				log_info(logger, "Tamanio a suspender: %d", proceso_a_suspender->tamanio);
+				log_info(logger, "Numero a suspender: %d", proceso_a_suspender->numero_tabla_primer_nivel);
 				break;
 			case FINALIZACION_PROCESO:
 				log_info(logger, "Kernel solicita FINALIZACION PROCESO");
-				// No hace falta recibir nada ya que se libera el proceso que actualmente está en memoria
-				liberar_tabla_primer_nivel(proceso->numero_tabla_primer_nivel);
-				liberar_espacio_de_usuario(proceso->espacio_utilizable);
-				remove(get_path_archivo(proceso->id));
-				log_info(logger, "Id a finalizar: %lu", proceso->id);
+				t_proceso* proceso_a_finalizar = malloc(sizeof(t_proceso));
+				proceso_a_finalizar->id = recibir_id_proceso(conexion_kernel);
+				proceso_a_finalizar->tamanio = recibir_tamanio(conexion_kernel);
+				proceso_a_finalizar->numero_tabla_primer_nivel = recibir_tamanio(conexion_kernel);
+				liberar_tabla_primer_nivel(proceso_a_finalizar->numero_tabla_primer_nivel);
+				liberar_espacio_de_usuario(proceso_a_finalizar->espacio_utilizable);
+				remove(get_path_archivo(proceso_a_finalizar->id));
+				log_info(logger, "Id a finalizar: %d", proceso_a_finalizar->id);
+				log_info(logger, "Tamanio a finalizar: %d", proceso_a_finalizar->tamanio);
+				log_info(logger, "Tabla a liberar: %d", proceso_a_finalizar->numero_tabla_primer_nivel);
 
 				break;
 			case ERROR:
