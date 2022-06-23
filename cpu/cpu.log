@@ -1,122 +1,90 @@
-[INFO] 02:32:22:651 CPU/(11215:11215): 
-###### INICIO DE LOGGER ######
-[INFO] 02:32:22:651 CPU/(11215:11215): Entro: iniciar_cpu
-[INFO] 02:32:22:651 CPU/(11215:11215):  Lee archivo de configuraciones
-[INFO] 02:32:22:651 CPU/(11215:11215): Asigno a los semaforos con valores iniciales
-[INFO] 02:32:22:651 CPU/(11215:11215):  Conectado con Memoria, Socket cliente Memoria: 4
-[INFO] 02:32:22:651 CPU/(11215:11215): Entro: iniciar_servidor_dispatch
-[INFO] 02:32:22:651 CPU/(11215:11215): Entro: iniciar_servidor_cpu
-[INFO] 02:32:22:651 CPU/(11215:11215):  Se creara un socket_servidor para la IP: 127.0.0.1
-[INFO] 02:32:22:651 CPU/(11215:11215):  Se creara un socket_servidor en el PUERTO: 8001
-[INFO] 02:32:22:651 CPU/(11215:11215):  Se creo el socket_servidor:  5, listo para escuchar al cliente
-[INFO] 02:32:22:652 CPU/(11215:11215): Se creo el Hilo: interrupt
-[INFO] 02:32:22:652 CPU/(11215:11215): Entro: esperar_cliente_dispatch
-[INFO] 02:32:22:652 CPU/(11215:11215): Entro: esperar_cliente_cpu
-[INFO] 02:32:22:652 CPU/(11215:11215):  Socket server recibido: 5
-[INFO] 02:32:22:652 CPU/(11215:11215):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
-[INFO] 02:32:22:652 CPU/(11215:11216): Entro: escuchaInterrup(...)
-[INFO] 02:32:22:652 CPU/(11215:11216): Entro: iniciar_servidor_interrupt
-[INFO] 02:32:22:652 CPU/(11215:11216): Entro: iniciar_servidor_cpu
-[INFO] 02:32:22:652 CPU/(11215:11216):  Se creara un socket_servidor para la IP: 127.0.0.1
-[INFO] 02:32:22:652 CPU/(11215:11216):  Se creara un socket_servidor en el PUERTO: 8005
-[INFO] 02:32:22:652 CPU/(11215:11216):  Se creo el socket_servidor:  7, listo para escuchar al cliente
-[INFO] 02:32:22:652 CPU/(11215:11216): Entro: esperar_cliente_interrupt
-[INFO] 02:32:22:652 CPU/(11215:11216): Entro: esperar_cliente_cpu
-[INFO] 02:32:22:652 CPU/(11215:11216):  Socket server recibido: 7
-[INFO] 02:32:22:653 CPU/(11215:11216):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
-[INFO] 02:32:26:734 CPU/(11215:11215):  Termino el BLOQUEO
-[INFO] 02:32:26:734 CPU/(11215:11215):  Se conecto un cliente y se creo el socket_cliente: 6. Puerto tipo: dispatch
-[INFO] 02:32:26:734 CPU/(11215:11215): INICIO: recibir_operaciones()
-[INFO] 02:32:26:734 CPU/(11215:11215): --- A ESPERA DE UNA OPERACION
+[INFO] 23:35:17:236 CPU/(20207:20207):  -----------
+[INFO] 23:35:17:236 CPU/(20207:20207):  El kernel envio un PCB:
+[INFO] 23:35:17:237 CPU/(20207:20207): -----PCB ------
+[INFO] 23:35:17:237 CPU/(20207:20207): id: 0
+[INFO] 23:35:17:237 CPU/(20207:20207): estimacion: 10000
+[INFO] 23:35:17:237 CPU/(20207:20207): program counter: 0
+[INFO] 23:35:17:237 CPU/(20207:20207): socket: 8
+[INFO] 23:35:17:237 CPU/(20207:20207): numero de tabla: 1
+[INFO] 23:35:17:237 CPU/(20207:20207): tamanio de consola: 1024
+[INFO] 23:35:17:237 CPU/(20207:20207): lista Instrucciones:
+[INFO] 23:35:17:237 CPU/(20207:20207): NO_OP
+[INFO] 23:35:17:237 CPU/(20207:20207): NO_OP
+[INFO] 23:35:17:237 CPU/(20207:20207): NO_OP
+[INFO] 23:35:17:237 CPU/(20207:20207): NO_OP
+[INFO] 23:35:17:237 CPU/(20207:20207): I/O 5000
+[INFO] 23:35:17:237 CPU/(20207:20207): EXIT
+[INFO] 23:35:17:237 CPU/(20207:20207): --------------
+[INFO] 23:35:17:237 CPU/(20207:20207):   Nro de instrucion: 0
+[INFO] 23:35:17:237 CPU/(20207:20207):   instruccion/codigo op: NO_OP
+[INFO] 23:35:17:237 CPU/(20207:20207):   Time: 1000
+[INFO] 23:35:18:237 CPU/(20207:20207):   Nro de instrucion: 1
+[INFO] 23:35:18:238 CPU/(20207:20207):   instruccion/codigo op: NO_OP
+[INFO] 23:35:18:238 CPU/(20207:20207):   Time: 1000
+[INFO] 23:35:19:239 CPU/(20207:20207):   Nro de instrucion: 2
+[INFO] 23:35:19:239 CPU/(20207:20207):   instruccion/codigo op: NO_OP
+[INFO] 23:35:19:239 CPU/(20207:20207):   Time: 1000
+[INFO] 23:35:20:239 CPU/(20207:20207):   Nro de instrucion: 3
+[INFO] 23:35:20:240 CPU/(20207:20207):   instruccion/codigo op: NO_OP
+[INFO] 23:35:20:240 CPU/(20207:20207):   Time: 1000
+[INFO] 23:35:21:241 CPU/(20207:20207):   Nro de instrucion: 4
+[INFO] 23:35:21:241 CPU/(20207:20207):   instruccion/codigo op: I/O
+[INFO] 23:35:21:241 CPU/(20207:20207):    Llego a i_o()
+[INFO] 23:35:21:241 CPU/(20207:20207):    Llego responsePorBloqueo()
+[INFO] 23:35:21:241 CPU/(20207:20207): -----PCB ------
+[INFO] 23:35:21:242 CPU/(20207:20207): id: 0
+[INFO] 23:35:21:242 CPU/(20207:20207): estimacion: 10000
+[INFO] 23:35:21:242 CPU/(20207:20207): program counter: 5
+[INFO] 23:35:21:242 CPU/(20207:20207): socket: 8
+[INFO] 23:35:21:242 CPU/(20207:20207): numero de tabla: 1
+[INFO] 23:35:21:242 CPU/(20207:20207): tamanio de consola: 1024
+[INFO] 23:35:21:242 CPU/(20207:20207): lista Instrucciones:
+[INFO] 23:35:21:242 CPU/(20207:20207): NO_OP
+[INFO] 23:35:21:243 CPU/(20207:20207): NO_OP
+[INFO] 23:35:21:243 CPU/(20207:20207): NO_OP
+[INFO] 23:35:21:243 CPU/(20207:20207): NO_OP
+[INFO] 23:35:21:243 CPU/(20207:20207): I/O 5000
+[INFO] 23:35:21:243 CPU/(20207:20207): EXIT
+[INFO] 23:35:21:243 CPU/(20207:20207): --------------
+[INFO] 23:35:21:243 CPU/(20207:20207):    tiempo de bloqueo: 5000
+[INFO] 23:35:21:243 CPU/(20207:20207):    Ocurrio la interrupcion por instruccion: I/O
+[INFO] 23:35:21:244 CPU/(20207:20207): --- A ESPERA DE UNA OPERACION
+[INFO] 23:35:26:243 CPU/(20207:20207):  -----------
+[INFO] 23:35:26:243 CPU/(20207:20207):  El kernel envio un PCB:
+[INFO] 23:35:26:244 CPU/(20207:20207): -----PCB ------
+[INFO] 23:35:26:244 CPU/(20207:20207): id: 0
+[INFO] 23:35:26:244 CPU/(20207:20207): estimacion: 10000
+[INFO] 23:35:26:244 CPU/(20207:20207): program counter: 5
+[INFO] 23:35:26:244 CPU/(20207:20207): socket: 8
+[INFO] 23:35:26:244 CPU/(20207:20207): numero de tabla: 1
+[INFO] 23:35:26:244 CPU/(20207:20207): tamanio de consola: 1024
+[INFO] 23:35:26:244 CPU/(20207:20207): lista Instrucciones:
+[INFO] 23:35:26:244 CPU/(20207:20207): NO_OP
+[INFO] 23:35:26:244 CPU/(20207:20207): NO_OP
+[INFO] 23:35:26:245 CPU/(20207:20207): NO_OP
+[INFO] 23:35:26:245 CPU/(20207:20207): NO_OP
+[INFO] 23:35:26:245 CPU/(20207:20207): I/O 5000
+[INFO] 23:35:26:245 CPU/(20207:20207): EXIT
+[INFO] 23:35:26:245 CPU/(20207:20207): --------------
+[INFO] 23:35:26:245 CPU/(20207:20207):   Nro de instrucion: 5
+[INFO] 23:35:26:245 CPU/(20207:20207):   instruccion/codigo op: EXIT
+[INFO] 23:35:26:245 CPU/(20207:20207): -----PCB ------
+[INFO] 23:35:26:247 CPU/(20207:20207): id: 0
+[INFO] 23:35:26:247 CPU/(20207:20207): estimacion: 10000
+[INFO] 23:35:26:247 CPU/(20207:20207): program counter: 6
+[INFO] 23:35:26:247 CPU/(20207:20207): socket: 8
+[INFO] 23:35:26:247 CPU/(20207:20207): numero de tabla: 1
+[INFO] 23:35:26:247 CPU/(20207:20207): tamanio de consola: 1024
+[INFO] 23:35:26:247 CPU/(20207:20207): lista Instrucciones:
+[INFO] 23:35:26:247 CPU/(20207:20207): NO_OP
+[INFO] 23:35:26:247 CPU/(20207:20207): NO_OP
+[INFO] 23:35:26:247 CPU/(20207:20207): NO_OP
+[INFO] 23:35:26:247 CPU/(20207:20207): NO_OP
+[INFO] 23:35:26:247 CPU/(20207:20207): I/O 5000
+[INFO] 23:35:26:247 CPU/(20207:20207): EXIT
+[INFO] 23:35:26:247 CPU/(20207:20207): --------------
+[INFO] 23:35:26:247 CPU/(20207:20207):     Ocurrio la interrupcion por instruccion: EXIT
+[INFO] 23:35:26:247 CPU/(20207:20207): --- A ESPERA DE UNA OPERACION
 
-[INFO] 02:32:45:609 CPU/(11215:11215):  -----------
-[INFO] 02:32:45:609 CPU/(11215:11215):  El kernel envio un PCB:
-[INFO] 02:32:45:609 CPU/(11215:11215): -----PCB ------
-[INFO] 02:32:45:609 CPU/(11215:11215): id: 0
-[INFO] 02:32:45:609 CPU/(11215:11215): estimacion: 10000
-[INFO] 02:32:45:609 CPU/(11215:11215): program counter: 0
-[INFO] 02:32:45:609 CPU/(11215:11215): socket: 7
-[INFO] 02:32:45:609 CPU/(11215:11215): numero de tabla: 0
-[INFO] 02:32:45:609 CPU/(11215:11215): tamanio de consola: 15
-[INFO] 02:32:45:610 CPU/(11215:11215): lista Instrucciones:
-[INFO] 02:32:45:610 CPU/(11215:11215): NO_OP
-[INFO] 02:32:45:610 CPU/(11215:11215): NO_OP
-[INFO] 02:32:45:610 CPU/(11215:11215): NO_OP
-[INFO] 02:32:45:610 CPU/(11215:11215): NO_OP
-[INFO] 02:32:45:611 CPU/(11215:11215): I/O 5000
-[INFO] 02:32:45:611 CPU/(11215:11215): EXIT
-[INFO] 02:32:45:611 CPU/(11215:11215): --------------
-[INFO] 02:32:45:611 CPU/(11215:11215):   Nro de instrucion: 0
-[INFO] 02:32:45:611 CPU/(11215:11215):   instruccion/codigo op: NO_OP
-[INFO] 02:32:45:612 CPU/(11215:11215):   Time: 1000
-[INFO] 02:32:46:612 CPU/(11215:11215):   Nro de instrucion: 1
-[INFO] 02:32:46:612 CPU/(11215:11215):   instruccion/codigo op: NO_OP
-[INFO] 02:32:46:612 CPU/(11215:11215):   Time: 1000
-[INFO] 02:32:47:613 CPU/(11215:11215):   Nro de instrucion: 2
-[INFO] 02:32:47:613 CPU/(11215:11215):   instruccion/codigo op: NO_OP
-[INFO] 02:32:47:613 CPU/(11215:11215):   Time: 1000
-[INFO] 02:32:48:614 CPU/(11215:11215):   Nro de instrucion: 3
-[INFO] 02:32:48:614 CPU/(11215:11215):   instruccion/codigo op: NO_OP
-[INFO] 02:32:48:614 CPU/(11215:11215):   Time: 1000
-[INFO] 02:32:49:615 CPU/(11215:11215):   Nro de instrucion: 4
-[INFO] 02:32:49:615 CPU/(11215:11215):   instruccion/codigo op: I/O
-[INFO] 02:32:49:615 CPU/(11215:11215):    Llego a i_o()
-[INFO] 02:32:49:616 CPU/(11215:11215):    Llego responsePorBloqueo()
-[INFO] 02:32:49:616 CPU/(11215:11215): -----PCB ------
-[INFO] 02:32:49:617 CPU/(11215:11215): id: 0
-[INFO] 02:32:49:617 CPU/(11215:11215): estimacion: 10000
-[INFO] 02:32:49:617 CPU/(11215:11215): program counter: 5
-[INFO] 02:32:49:617 CPU/(11215:11215): socket: 7
-[INFO] 02:32:49:617 CPU/(11215:11215): numero de tabla: 0
-[INFO] 02:32:49:617 CPU/(11215:11215): tamanio de consola: 15
-[INFO] 02:32:49:617 CPU/(11215:11215): lista Instrucciones:
-[INFO] 02:32:49:618 CPU/(11215:11215): NO_OP
-[INFO] 02:32:49:618 CPU/(11215:11215): NO_OP
-[INFO] 02:32:49:618 CPU/(11215:11215): NO_OP
-[INFO] 02:32:49:618 CPU/(11215:11215): NO_OP
-[INFO] 02:32:49:618 CPU/(11215:11215): I/O 5000
-[INFO] 02:32:49:619 CPU/(11215:11215): EXIT
-[INFO] 02:32:49:619 CPU/(11215:11215): --------------
-[INFO] 02:32:49:619 CPU/(11215:11215):    tiempo de bloqueo: 5000
-[INFO] 02:32:49:619 CPU/(11215:11215):    Ocurrio la interrupcion por instruccion: I/O
-[INFO] 02:32:49:619 CPU/(11215:11215): --- A ESPERA DE UNA OPERACION
-
-[INFO] 02:32:59:619 CPU/(11215:11215):  -----------
-[INFO] 02:32:59:619 CPU/(11215:11215):  El kernel envio un PCB:
-[INFO] 02:32:59:620 CPU/(11215:11215): -----PCB ------
-[INFO] 02:32:59:620 CPU/(11215:11215): id: 0
-[INFO] 02:32:59:620 CPU/(11215:11215): estimacion: 10000
-[INFO] 02:32:59:620 CPU/(11215:11215): program counter: 5
-[INFO] 02:32:59:620 CPU/(11215:11215): socket: 7
-[INFO] 02:32:59:620 CPU/(11215:11215): numero de tabla: 0
-[INFO] 02:32:59:620 CPU/(11215:11215): tamanio de consola: 15
-[INFO] 02:32:59:620 CPU/(11215:11215): lista Instrucciones:
-[INFO] 02:32:59:620 CPU/(11215:11215): NO_OP
-[INFO] 02:32:59:620 CPU/(11215:11215): NO_OP
-[INFO] 02:32:59:620 CPU/(11215:11215): NO_OP
-[INFO] 02:32:59:621 CPU/(11215:11215): NO_OP
-[INFO] 02:32:59:621 CPU/(11215:11215): I/O 5000
-[INFO] 02:32:59:621 CPU/(11215:11215): EXIT
-[INFO] 02:32:59:621 CPU/(11215:11215): --------------
-[INFO] 02:32:59:621 CPU/(11215:11215):   Nro de instrucion: 5
-[INFO] 02:32:59:622 CPU/(11215:11215):   instruccion/codigo op: EXIT
-[INFO] 02:32:59:623 CPU/(11215:11215): -----PCB ------
-[INFO] 02:32:59:623 CPU/(11215:11215): id: 0
-[INFO] 02:32:59:623 CPU/(11215:11215): estimacion: 10000
-[INFO] 02:32:59:623 CPU/(11215:11215): program counter: 6
-[INFO] 02:32:59:623 CPU/(11215:11215): socket: 7
-[INFO] 02:32:59:623 CPU/(11215:11215): numero de tabla: 0
-[INFO] 02:32:59:623 CPU/(11215:11215): tamanio de consola: 15
-[INFO] 02:32:59:623 CPU/(11215:11215): lista Instrucciones:
-[INFO] 02:32:59:623 CPU/(11215:11215): NO_OP
-[INFO] 02:32:59:623 CPU/(11215:11215): NO_OP
-[INFO] 02:32:59:624 CPU/(11215:11215): NO_OP
-[INFO] 02:32:59:624 CPU/(11215:11215): NO_OP
-[INFO] 02:32:59:624 CPU/(11215:11215): I/O 5000
-[INFO] 02:32:59:624 CPU/(11215:11215): EXIT
-[INFO] 02:32:59:624 CPU/(11215:11215): --------------
-[INFO] 02:32:59:624 CPU/(11215:11215):     Ocurrio la interrupcion por instruccion: EXIT
-[INFO] 02:32:59:624 CPU/(11215:11215): --- A ESPERA DE UNA OPERACION
-
-[ERROR] 02:33:15:109 CPU/(11215:11215): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 6
-[INFO] 02:33:15:111 CPU/(11215:11215): Entro: finalizar_cpu
+[ERROR] 23:36:42:716 CPU/(20207:20207): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:36:42:717 CPU/(20207:20207): Entro: finalizar_cpu

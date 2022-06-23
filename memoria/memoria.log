@@ -1,23 +1,9 @@
-[INFO] 01:49:00:877 MEMORIA/(9933:9933): Cantidad de marcos: 512
-[INFO] 01:49:00:878 MEMORIA/(9933:9933): Memoria lista para recibir clientes
-[INFO] 01:49:19:468 MEMORIA/(9937:9937): Cantidad de marcos: 512
-[INFO] 01:49:19:468 MEMORIA/(9937:9937): Memoria lista para recibir clientes
-[INFO] 01:49:56:143 MEMORIA/(9937:9938): Kernel solicita FINALIZACION PROCESO
-[INFO] 01:50:52:900 MEMORIA/(9985:9985): Cantidad de marcos: 512
-[INFO] 01:50:52:900 MEMORIA/(9985:9985): Memoria lista para recibir clientes
-[INFO] 01:51:42:116 MEMORIA/(10000:10000): Cantidad de marcos: 512
-[INFO] 01:51:42:116 MEMORIA/(10000:10000): Memoria lista para recibir clientes
-[INFO] 02:06:55:936 MEMORIA/(10591:10591): Memoria lista para recibir clientes
-[ERROR] 02:08:20:076 MEMORIA/(10591:10592): Se desconecto el kernel
-[INFO] 02:11:12:651 MEMORIA/(10794:10794): Memoria lista para recibir clientes
-[ERROR] 02:11:41:213 MEMORIA/(10794:10795): Se desconecto el kernel
-[INFO] 02:14:03:786 MEMORIA/(10831:10831): Memoria lista para recibir clientes
-[ERROR] 02:19:18:701 MEMORIA/(10831:10832): Se desconecto el kernel
-[INFO] 02:19:21:181 MEMORIA/(10986:10986): Memoria lista para recibir clientes
-[ERROR] 02:19:55:249 MEMORIA/(10986:10987): Se desconecto el kernel
-[INFO] 02:20:01:983 MEMORIA/(10998:10998): Memoria lista para recibir clientes
-[ERROR] 02:21:38:446 MEMORIA/(10998:10999): Se desconecto el kernel
-[INFO] 02:23:44:435 MEMORIA/(11062:11062): Memoria lista para recibir clientes
-[ERROR] 02:27:57:076 MEMORIA/(11062:11063): Se desconecto el kernel
-[INFO] 02:28:01:087 MEMORIA/(11172:11172): Memoria lista para recibir clientes
-[ERROR] 02:29:42:105 MEMORIA/(11172:11173): Se desconecto el kernel
+[INFO] 23:35:13:518 MEMORIA/(20199:20199): Memoria lista para recibir clientes
+[INFO] 23:35:17:236 MEMORIA/(20199:20200): Kernel solicita INICIO PROCESO
+[INFO] 23:35:17:236 MEMORIA/(20199:20200): Se reservo un espacio de 1024 bytes para el proceso 0
+[INFO] 23:35:17:236 MEMORIA/(20199:20200): Se creo la tabla de primer nivel: 1
+[INFO] 23:35:26:245 MEMORIA/(20199:20200): Kernel solicita FINALIZACION PROCESO
+[INFO] 23:35:26:245 MEMORIA/(20199:20200): Id a finalizar: 0
+[INFO] 23:35:26:246 MEMORIA/(20199:20200): Tamanio a finalizar: 1024
+[INFO] 23:35:26:246 MEMORIA/(20199:20200): Tabla a liberar: 1
+[ERROR] 23:36:42:716 MEMORIA/(20199:20200): Se desconecto el kernel

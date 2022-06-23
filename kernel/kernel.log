@@ -1,216 +1,44 @@
-[INFO] 01:49:28:689 KERNEL/(9941:9941): Kernel listo para recibir al cliente
-[INFO] 01:49:28:689 KERNEL/(9941:9941): conectado a memoria
-[INFO] 01:49:28:689 KERNEL/(9941:9942): Se inicio la planificacion SRT
-[INFO] 01:49:28:689 KERNEL/(9941:9942): Inicio la planificacion IO
-[INFO] 01:49:51:142 KERNEL/(9941:9941): Conexion consola: 7
-[INFO] 01:49:51:142 KERNEL/(9941:9951): Proceso 9941 asignado a la cola NEW
-[INFO] 01:49:51:142 KERNEL/(9941:9951): El proceso 9941 fue asignado a la cola READY
-[INFO] 01:49:56:142 KERNEL/(9941:9942): Me llegaron los siguientes valores:
-[INFO] 01:49:56:143 KERNEL/(9941:9942): NO_OP
-[INFO] 01:49:56:143 KERNEL/(9941:9942): NO_OP
-[INFO] 01:49:56:143 KERNEL/(9941:9942): NO_OP
-[INFO] 01:49:56:143 KERNEL/(9941:9942): NO_OP
-[INFO] 01:49:56:143 KERNEL/(9941:9942): I/O 5000
-[INFO] 01:49:56:143 KERNEL/(9941:9942): EXIT
-[ERROR] 01:49:56:327 KERNEL/(9941:9943): Se desconecto el cliente
-[INFO] 01:50:58:728 KERNEL/(9994:9994): Kernel listo para recibir al cliente
-[INFO] 01:50:58:728 KERNEL/(9994:9994): conectado a memoria
-[ERROR] 01:50:58:728 KERNEL/(9994:9996): Se desconecto el cliente
-[INFO] 01:50:58:728 KERNEL/(9994:9995): se inicio la planificacion FIFO
-[INFO] 01:50:58:728 KERNEL/(9994:9995): Inicio la planificacion IO
-[INFO] 01:50:58:728 KERNEL/(9994:9995): Planificacion despausada
-[INFO] 01:51:08:152 KERNEL/(9994:9994): Conexion consola: 7
-[INFO] 01:51:08:152 KERNEL/(9994:9999): Proceso 0 asignado a la cola NEW
-[INFO] 01:51:08:152 KERNEL/(9994:9999): El proceso 0 fue asignado a la cola READY
-[INFO] 01:51:13:153 KERNEL/(9994:9995): NO_OP
-[INFO] 01:51:13:154 KERNEL/(9994:9995): NO_OP
-[INFO] 01:51:13:154 KERNEL/(9994:9995): NO_OP
-[INFO] 01:51:13:154 KERNEL/(9994:9995): NO_OP
-[INFO] 01:51:13:154 KERNEL/(9994:9995): I/O 5000
-[INFO] 01:51:13:154 KERNEL/(9994:9995): EXIT
-[INFO] 01:51:13:154 KERNEL/(9994:9995): Se paso el proceso 0 de Ready a Ejecutando
-[INFO] 01:52:13:937 KERNEL/(10026:10026): Kernel listo para recibir al cliente
-[INFO] 01:52:13:937 KERNEL/(10026:10026): conectado a memoria
-[INFO] 01:52:13:937 KERNEL/(10026:10027): se inicio la planificacion FIFO
-[INFO] 01:52:13:937 KERNEL/(10026:10027): Inicio la planificacion IO
-[INFO] 01:52:13:937 KERNEL/(10026:10027): Planificacion despausada
-[INFO] 01:52:24:577 KERNEL/(10026:10026): Conexion consola: 7
-[INFO] 01:52:24:577 KERNEL/(10026:10037): Proceso 0 asignado a la cola NEW
-[INFO] 01:52:24:577 KERNEL/(10026:10037): El proceso 0 fue asignado a la cola READY
-[INFO] 01:52:29:577 KERNEL/(10026:10027): NO_OP
-[INFO] 01:52:29:578 KERNEL/(10026:10027): NO_OP
-[INFO] 01:52:29:578 KERNEL/(10026:10027): NO_OP
-[INFO] 01:52:29:578 KERNEL/(10026:10027): NO_OP
-[INFO] 01:52:29:578 KERNEL/(10026:10027): I/O 5000
-[INFO] 01:52:29:578 KERNEL/(10026:10027): EXIT
-[INFO] 01:52:29:578 KERNEL/(10026:10027): Se paso el proceso 0 de Ready a Ejecutando
-[ERROR] 01:52:29:676 KERNEL/(10026:10028): Se desconecto el cliente
-[INFO] 02:07:20:613 KERNEL/(10595:10595): Kernel listo para recibir al cliente
-[INFO] 02:07:20:614 KERNEL/(10595:10595): conectado a memoria
-[INFO] 02:07:20:614 KERNEL/(10595:10596): se inicio la planificacion FIFO
-[INFO] 02:07:20:614 KERNEL/(10595:10596): Inicio la planificacion IO
-[INFO] 02:07:20:614 KERNEL/(10595:10596): Planificacion despausada
-[INFO] 02:07:40:187 KERNEL/(10595:10595): Conexion consola: 7
-[INFO] 02:07:40:187 KERNEL/(10595:10605): Proceso 0 asignado a la cola NEW
-[INFO] 02:07:40:187 KERNEL/(10595:10605): El proceso 0 fue asignado a la cola READY
-[INFO] 02:07:45:187 KERNEL/(10595:10596): NO_OP
-[INFO] 02:07:45:187 KERNEL/(10595:10596): NO_OP
-[INFO] 02:07:45:187 KERNEL/(10595:10596): NO_OP
-[INFO] 02:07:45:187 KERNEL/(10595:10596): NO_OP
-[INFO] 02:07:45:187 KERNEL/(10595:10596): I/O 5000
-[INFO] 02:07:45:187 KERNEL/(10595:10596): EXIT
-[INFO] 02:07:45:188 KERNEL/(10595:10596): Se paso el proceso 0 de Ready a Ejecutando
-[ERROR] 02:07:45:283 KERNEL/(10595:10597): Se desconecto el cliente
-[INFO] 02:11:20:391 KERNEL/(10798:10798): Kernel listo para recibir al cliente
-[INFO] 02:11:20:391 KERNEL/(10798:10798): conectado a memoria
-[INFO] 02:11:20:391 KERNEL/(10798:10799): se inicio la planificacion FIFO
-[INFO] 02:11:20:391 KERNEL/(10798:10799): Inicio la planificacion IO
-[INFO] 02:11:20:391 KERNEL/(10798:10799): Planificacion despausada
-[INFO] 02:11:24:848 KERNEL/(10798:10798): Conexion consola: 7
-[INFO] 02:11:24:848 KERNEL/(10798:10803): Proceso 0 asignado a la cola NEW
-[INFO] 02:11:24:848 KERNEL/(10798:10803): El proceso 0 fue asignado a la cola READY
-[INFO] 02:11:29:849 KERNEL/(10798:10799): NO_OP
-[INFO] 02:11:29:849 KERNEL/(10798:10799): NO_OP
-[INFO] 02:11:29:849 KERNEL/(10798:10799): NO_OP
-[INFO] 02:11:29:849 KERNEL/(10798:10799): NO_OP
-[INFO] 02:11:29:849 KERNEL/(10798:10799): I/O 5000
-[INFO] 02:11:29:849 KERNEL/(10798:10799): EXIT
-[INFO] 02:11:29:850 KERNEL/(10798:10799): Se paso el proceso 0 de Ready a Ejecutando
-[ERROR] 02:11:29:945 KERNEL/(10798:10800): Se desconecto el cliente
-[INFO] 02:14:42:315 KERNEL/(10872:10872): Kernel listo para recibir al cliente
-[INFO] 02:14:42:326 KERNEL/(10872:10872): conectado a memoria
-[INFO] 02:14:42:333 KERNEL/(10872:10873): se inicio la planificacion FIFO
-[INFO] 02:14:42:333 KERNEL/(10872:10873): Inicio la planificacion IO
-[INFO] 02:14:42:333 KERNEL/(10872:10873): Planificacion despausada
-[INFO] 02:14:54:962 KERNEL/(10872:10872): Conexion consola: 7
-[INFO] 02:14:54:962 KERNEL/(10872:10882): Proceso 0 asignado a la cola NEW
-[INFO] 02:14:54:962 KERNEL/(10872:10882): El proceso 0 fue asignado a la cola READY
-[INFO] 02:14:59:962 KERNEL/(10872:10873): NO_OP
-[INFO] 02:14:59:963 KERNEL/(10872:10873): NO_OP
-[INFO] 02:14:59:963 KERNEL/(10872:10873): NO_OP
-[INFO] 02:14:59:963 KERNEL/(10872:10873): NO_OP
-[INFO] 02:14:59:963 KERNEL/(10872:10873): I/O 5000
-[INFO] 02:14:59:963 KERNEL/(10872:10873): EXIT
-[INFO] 02:14:59:963 KERNEL/(10872:10873): Se paso el proceso 0 de Ready a Ejecutando
-[ERROR] 02:18:45:218 KERNEL/(10872:10874): Se desconecto el cliente
-[INFO] 02:19:28:387 KERNEL/(10990:10990): Kernel listo para recibir al cliente
-[INFO] 02:19:28:387 KERNEL/(10990:10990): conectado a memoria
-[ERROR] 02:19:28:388 KERNEL/(10990:10992): Se desconecto el cliente
-[INFO] 02:19:28:388 KERNEL/(10990:10991): se inicio la planificacion FIFO
-[INFO] 02:19:28:388 KERNEL/(10990:10991): Inicio la planificacion IO
-[INFO] 02:19:28:388 KERNEL/(10990:10991): Planificacion despausada
-[INFO] 02:19:33:583 KERNEL/(10990:10990): Conexion consola: 7
-[INFO] 02:19:33:583 KERNEL/(10990:10995): Proceso 0 asignado a la cola NEW
-[INFO] 02:19:33:583 KERNEL/(10990:10995): El proceso 0 fue asignado a la cola READY
-[INFO] 02:19:38:584 KERNEL/(10990:10991): NO_OP
-[INFO] 02:19:38:585 KERNEL/(10990:10991): NO_OP
-[INFO] 02:19:38:585 KERNEL/(10990:10991): NO_OP
-[INFO] 02:19:38:585 KERNEL/(10990:10991): NO_OP
-[INFO] 02:19:38:585 KERNEL/(10990:10991): I/O 5000
-[INFO] 02:19:38:585 KERNEL/(10990:10991): EXIT
-[INFO] 02:19:38:586 KERNEL/(10990:10991): Se paso el proceso 0 de Ready a Ejecutando
-[INFO] 02:20:11:516 KERNEL/(11002:11002): Kernel listo para recibir al cliente
-[INFO] 02:20:11:516 KERNEL/(11002:11002): conectado a memoria
-[INFO] 02:20:11:516 KERNEL/(11002:11003): se inicio la planificacion FIFO
-[INFO] 02:20:11:516 KERNEL/(11002:11003): Inicio la planificacion IO
-[INFO] 02:20:11:516 KERNEL/(11002:11003): Planificacion despausada
-[INFO] 02:20:18:471 KERNEL/(11002:11002): Conexion consola: 7
-[INFO] 02:20:18:471 KERNEL/(11002:11008): Proceso 0 asignado a la cola NEW
-[INFO] 02:20:18:471 KERNEL/(11002:11008): El proceso 0 fue asignado a la cola READY
-[INFO] 02:20:23:472 KERNEL/(11002:11003): NO_OP
-[INFO] 02:20:23:473 KERNEL/(11002:11003): NO_OP
-[INFO] 02:20:23:473 KERNEL/(11002:11003): NO_OP
-[INFO] 02:20:23:473 KERNEL/(11002:11003): NO_OP
-[INFO] 02:20:23:473 KERNEL/(11002:11003): I/O 5000
-[INFO] 02:20:23:473 KERNEL/(11002:11003): EXIT
-[INFO] 02:20:23:473 KERNEL/(11002:11003): Se paso el proceso 0 de Ready a Ejecutando
-[INFO] 02:20:27:478 KERNEL/(11002:11004): Codigo BLOQUEO_IO recibido
-[INFO] 02:20:27:478 KERNEL/(11002:11004): La cpu envio el proceso 0 con estado Bloqueado por IO
-[INFO] 02:20:27:478 KERNEL/(11002:11004): Tiempo de bloqueo: 5000
-[INFO] 02:20:27:478 KERNEL/(11002:11004): Inicio de bloqueo: 1655875227
-[INFO] 02:20:27:478 KERNEL/(11002:11004): Se agrego el proceso 0 a la cola de bloqueados por I/O
-[INFO] 02:20:27:478 KERNEL/(11002:11005): El proceso 0 inicio su I/0
-[INFO] 02:20:27:478 KERNEL/(11002:11003): Planificacion despausada
-[INFO] 02:20:32:479 KERNEL/(11002:11005): El proceso 0 finalizo su I/0
-[INFO] 02:20:32:479 KERNEL/(11002:11005): Se paso el proceso 0 de bloqueado a ready
-[INFO] 02:20:37:479 KERNEL/(11002:11003): NO_OP
-[INFO] 02:20:37:480 KERNEL/(11002:11003): NO_OP
-[INFO] 02:20:37:480 KERNEL/(11002:11003): NO_OP
-[INFO] 02:20:37:481 KERNEL/(11002:11003): NO_OP
-[INFO] 02:20:37:481 KERNEL/(11002:11003): I/O 5000
-[INFO] 02:20:37:481 KERNEL/(11002:11003): EXIT
-[INFO] 02:20:37:481 KERNEL/(11002:11003): Se paso el proceso 0 de Ready a Ejecutando
-[INFO] 02:20:37:484 KERNEL/(11002:11004): La CPU envio un pcb con estado finalizado
-[INFO] 02:20:37:484 KERNEL/(11002:11004): El socket que recibi es 7
-[INFO] 02:20:37:484 KERNEL/(11002:11004): El proceso 0 finalizo correctamente
-[INFO] 02:20:37:485 KERNEL/(11002:11003): Planificacion despausada
-[INFO] 02:24:07:317 KERNEL/(11073:11073): Kernel listo para recibir al cliente
-[INFO] 02:24:07:318 KERNEL/(11073:11073): conectado a memoria
-[INFO] 02:24:07:318 KERNEL/(11073:11074): se inicio la planificacion FIFO
-[INFO] 02:24:07:318 KERNEL/(11073:11074): Inicio la planificacion IO
-[INFO] 02:24:07:318 KERNEL/(11073:11074): Planificacion despausada
-[INFO] 02:24:10:162 KERNEL/(11073:11073): Conexion consola: 7
-[INFO] 02:24:10:162 KERNEL/(11073:11078): Proceso 0 asignado a la cola NEW
-[INFO] 02:24:10:162 KERNEL/(11073:11078): El proceso 0 fue asignado a la cola READY
-[INFO] 02:24:15:162 KERNEL/(11073:11074): NO_OP
-[INFO] 02:24:15:163 KERNEL/(11073:11074): NO_OP
-[INFO] 02:24:15:163 KERNEL/(11073:11074): NO_OP
-[INFO] 02:24:15:163 KERNEL/(11073:11074): NO_OP
-[INFO] 02:24:15:163 KERNEL/(11073:11074): I/O 5000
-[INFO] 02:24:15:163 KERNEL/(11073:11074): EXIT
-[INFO] 02:24:15:163 KERNEL/(11073:11074): Se paso el proceso 0 de Ready a Ejecutando
-[INFO] 02:24:19:168 KERNEL/(11073:11075): Codigo BLOQUEO_IO recibido
-[INFO] 02:24:19:168 KERNEL/(11073:11075): La cpu envio el proceso 0 con estado Bloqueado por IO
-[INFO] 02:24:19:168 KERNEL/(11073:11075): Tiempo de bloqueo: 5000
-[INFO] 02:24:19:168 KERNEL/(11073:11075): Inicio de bloqueo: 1655875459
-[INFO] 02:24:19:168 KERNEL/(11073:11075): Se agrego el proceso 0 a la cola de bloqueados por I/O
-[INFO] 02:24:19:168 KERNEL/(11073:11076): El proceso 0 inicio su I/0
-[INFO] 02:24:19:168 KERNEL/(11073:11074): Planificacion despausada
-[INFO] 02:24:24:168 KERNEL/(11073:11076): El proceso 0 finalizo su I/0
-[INFO] 02:24:24:168 KERNEL/(11073:11076): Se paso el proceso 0 de bloqueado a ready
-[INFO] 02:24:29:168 KERNEL/(11073:11074): NO_OP
-[INFO] 02:24:29:168 KERNEL/(11073:11074): NO_OP
-[INFO] 02:24:29:168 KERNEL/(11073:11074): NO_OP
-[INFO] 02:24:29:168 KERNEL/(11073:11074): NO_OP
-[INFO] 02:24:29:168 KERNEL/(11073:11074): I/O 5000
-[INFO] 02:24:29:168 KERNEL/(11073:11074): EXIT
-[INFO] 02:24:29:168 KERNEL/(11073:11074): Se paso el proceso 0 de Ready a Ejecutando
-[INFO] 02:24:29:170 KERNEL/(11073:11075): La CPU envio un pcb con estado finalizado
-[INFO] 02:24:29:171 KERNEL/(11073:11075): El socket que recibi es 7
-[INFO] 02:24:29:171 KERNEL/(11073:11075): El proceso 0 finalizo correctamente
-[INFO] 02:24:29:171 KERNEL/(11073:11074): Planificacion despausada
-[INFO] 02:28:14:207 KERNEL/(11176:11176): Kernel listo para recibir al cliente
-[INFO] 02:28:14:208 KERNEL/(11176:11176): conectado a memoria
-[INFO] 02:28:14:208 KERNEL/(11176:11177): se inicio la planificacion FIFO
-[INFO] 02:28:14:208 KERNEL/(11176:11177): Inicio la planificacion IO
-[INFO] 02:28:14:208 KERNEL/(11176:11177): Planificacion despausada
-[INFO] 02:28:17:222 KERNEL/(11176:11176): Conexion consola: 7
-[INFO] 02:28:17:222 KERNEL/(11176:11181): Proceso 0 asignado a la cola NEW
-[INFO] 02:28:17:222 KERNEL/(11176:11181): El proceso 0 fue asignado a la cola READY
-[INFO] 02:28:22:222 KERNEL/(11176:11177): NO_OP
-[INFO] 02:28:22:223 KERNEL/(11176:11177): NO_OP
-[INFO] 02:28:22:223 KERNEL/(11176:11177): NO_OP
-[INFO] 02:28:22:223 KERNEL/(11176:11177): NO_OP
-[INFO] 02:28:22:223 KERNEL/(11176:11177): I/O 5000
-[INFO] 02:28:22:223 KERNEL/(11176:11177): EXIT
-[INFO] 02:28:22:223 KERNEL/(11176:11177): Se paso el proceso 0 de Ready a Ejecutando
-[INFO] 02:28:26:229 KERNEL/(11176:11178): Codigo BLOQUEO_IO recibido
-[INFO] 02:28:26:230 KERNEL/(11176:11178): La cpu envio el proceso 0 con estado Bloqueado por IO
-[INFO] 02:28:26:230 KERNEL/(11176:11178): Tiempo de bloqueo: 5000
-[INFO] 02:28:26:230 KERNEL/(11176:11178): Inicio de bloqueo: 1655875706
-[INFO] 02:28:26:230 KERNEL/(11176:11178): Se agrego el proceso 0 a la cola de bloqueados por I/O
-[INFO] 02:28:26:230 KERNEL/(11176:11179): El proceso 0 inicio su I/0
-[INFO] 02:28:26:230 KERNEL/(11176:11177): Planificacion despausada
-[INFO] 02:28:31:230 KERNEL/(11176:11179): El proceso 0 finalizo su I/0
-[INFO] 02:28:31:230 KERNEL/(11176:11179): Se paso el proceso 0 de bloqueado a ready
-[INFO] 02:28:36:231 KERNEL/(11176:11177): NO_OP
-[INFO] 02:28:36:231 KERNEL/(11176:11177): NO_OP
-[INFO] 02:28:36:231 KERNEL/(11176:11177): NO_OP
-[INFO] 02:28:36:232 KERNEL/(11176:11177): NO_OP
-[INFO] 02:28:36:232 KERNEL/(11176:11177): I/O 5000
-[INFO] 02:28:36:232 KERNEL/(11176:11177): EXIT
-[INFO] 02:28:36:232 KERNEL/(11176:11177): Se paso el proceso 0 de Ready a Ejecutando
-[INFO] 02:28:36:235 KERNEL/(11176:11178): La CPU envio un pcb con estado finalizado
-[INFO] 02:28:36:235 KERNEL/(11176:11178): El socket que recibi es 7
-[INFO] 02:28:36:235 KERNEL/(11176:11178): El proceso 0 finalizo correctamente
-[INFO] 02:28:36:236 KERNEL/(11176:11177): Planificacion despausada
+[INFO] 23:34:17:227 KERNEL/(19699:19921): Proceso 0 asignado a la cola NEW
+[INFO] 23:34:17:227 KERNEL/(19699:19921): El proceso 0 fue asignado a la cola READY
+[INFO] 23:34:17:227 KERNEL/(19699:19892): El program counter está en: 0
+[INFO] 23:34:17:227 KERNEL/(19699:19892): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 23:34:21:230 KERNEL/(19699:19895): Codigo BLOQUEO_IO recibido
+[INFO] 23:34:21:230 KERNEL/(19699:19895): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 23:34:21:230 KERNEL/(19699:19895): Tiempo de bloqueo: 5000
+[INFO] 23:34:21:230 KERNEL/(19699:19895): Inicio de bloqueo: 1655951661
+[INFO] 23:34:21:230 KERNEL/(19699:19895): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 23:34:21:230 KERNEL/(19699:19894): El proceso 0 inicio su I/0
+[INFO] 23:34:21:230 KERNEL/(19699:19892): Planificacion despausada
+[INFO] 23:34:26:231 KERNEL/(19699:19894): El proceso 0 finalizo su I/0
+[INFO] 23:34:26:231 KERNEL/(19699:19894): Se paso el proceso 0 de bloqueado a ready
+[INFO] 23:34:26:231 KERNEL/(19699:19892): El program counter está en: 5
+[INFO] 23:34:26:231 KERNEL/(19699:19892): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 23:34:27:453 KERNEL/(19699:19895): La CPU envio un pcb con estado finalizado
+[INFO] 23:34:27:955 KERNEL/(19699:19895): El socket que recibi es 7
+[INFO] 23:35:16:004 KERNEL/(20209:20209): Kernel listo para recibir al cliente
+[INFO] 23:35:16:004 KERNEL/(20209:20209): conectado a memoria
+[INFO] 23:35:16:004 KERNEL/(20209:20210): se inicio la planificacion FIFO
+[INFO] 23:35:16:004 KERNEL/(20209:20210): Inicio la planificacion IO
+[INFO] 23:35:16:005 KERNEL/(20209:20210): Planificacion despausada
+[INFO] 23:35:17:236 KERNEL/(20209:20209): Conexion consola: 8
+[INFO] 23:35:17:236 KERNEL/(20209:20219): Tamaño recibido: 1024
+[INFO] 23:35:17:236 KERNEL/(20209:20219): Se asignó el numero de tabla: 1 al proceso de id: 0
+
+[INFO] 23:35:17:236 KERNEL/(20209:20219): Proceso 0 asignado a la cola NEW
+[INFO] 23:35:17:236 KERNEL/(20209:20210): El program counter está en: 0
+[INFO] 23:35:17:236 KERNEL/(20209:20210): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 23:35:17:237 KERNEL/(20209:20219): El proceso 0 fue asignado a la cola READY
+[INFO] 23:35:21:242 KERNEL/(20209:20211): Codigo BLOQUEO_IO recibido
+[INFO] 23:35:21:242 KERNEL/(20209:20211): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 23:35:21:242 KERNEL/(20209:20211): Tiempo de bloqueo: 5000
+[INFO] 23:35:21:242 KERNEL/(20209:20211): Inicio de bloqueo: 1655951721
+[INFO] 23:35:21:242 KERNEL/(20209:20211): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 23:35:21:242 KERNEL/(20209:20212): El proceso 0 inicio su I/0
+[INFO] 23:35:21:242 KERNEL/(20209:20210): Planificacion despausada
+[INFO] 23:35:26:242 KERNEL/(20209:20212): El proceso 0 finalizo su I/0
+[INFO] 23:35:26:243 KERNEL/(20209:20212): Se paso el proceso 0 de bloqueado a ready
+[INFO] 23:35:26:243 KERNEL/(20209:20210): El program counter está en: 5
+[INFO] 23:35:26:243 KERNEL/(20209:20210): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 23:35:26:245 KERNEL/(20209:20211): La CPU envio un pcb con estado finalizado
+[INFO] 23:35:26:245 KERNEL/(20209:20211): El socket que recibi es 8
+[INFO] 23:35:26:246 KERNEL/(20209:20210): Planificacion despausada
