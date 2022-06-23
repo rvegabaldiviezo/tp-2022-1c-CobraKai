@@ -314,7 +314,6 @@ void notificar_suspencion_proceso(t_pcb* pcb, int conexion) {
 	memcpy(pcb_serializado + (3 * sizeof(int)), &(pcb->tablas_paginas), sizeof(int));
 
 	send(conexion, pcb_serializado, 4 * sizeof(int), 0);
-	free(pcb_serializado);
 }
 
 void enviar_finalizacion_a_memoria(t_pcb* pcb, int conexion_con_memoria) {
@@ -323,6 +322,5 @@ void enviar_finalizacion_a_memoria(t_pcb* pcb, int conexion_con_memoria) {
 	memcpy(pcb_serializado + (3 * sizeof(int)), &(pcb->tablas_paginas), sizeof(int));
 
 	send(conexion_con_memoria, pcb_serializado, 4 * sizeof(int), 0);
-	//free(pcb_serializado);
 }
 
