@@ -38,7 +38,7 @@ int main(void) {
 	server_memoria = iniciar_servidor();
 	log_info(logger, "Memoria lista para recibir clientes");
 
-	//pthread_create(&hilo_cpu, NULL, (void *) atender_cpu, NULL);
+	pthread_create(&hilo_cpu, NULL, (void *) atender_cpu, NULL);
 	pthread_create(&hilo_kernel, NULL, (void *) atender_kernel, NULL);
 
 	terminar_programa();
@@ -151,7 +151,7 @@ void liberar_espacio_de_usuario(espacio_de_usuario espacio) {
 void terminar_programa() {
 	pthread_join(hilo_cpu, NULL);
 	pthread_join(hilo_kernel, NULL);
-	//liberar_conexion(conexion_cpu);
+	liberar_conexion(conexion_cpu);
 	liberar_conexion(conexion_kernel);
 	liberar_tablas();
 	bitarray_destroy(marcos_libres);
@@ -185,11 +185,16 @@ void atender_cpu() {
 		switch(operacion) {
 			case ACCESO_TABLA_PRIMER_NIVEL:
 				log_info(logger, "CPU solicita acceso a tabla pagina de primer nivel");
-				//unsigned int numero_tabla = recibir_numero_tabla(conexion_kernel);
-				//char* tabla_segundo_nivel = dictionary_get(tablas_primer_nivel, string_itoa(numero_tabla));
+				unsigned int numero_tabla = recibir_entero(conexion_cpu);
+				char* tabla_segundo_nivel = dictionary_get(tablas_primer_nivel, string_itoa(numero_tabla));
+				enviar_numero_de_tabla(atoi(tabla_segundo_nivel), conexion_cpu);
 				break;
 			case ACCESO_TABLA_SEGUNDO_NIVEL:
 				log_info(logger, "CPU solicita acceso a tabla pagina de segundo nivel");
+				//int pagina_a_buscar = recibir_numero_de_pagina(conexion_cpu);
+				// TODO: buscar marco de la pagina recibida
+				//int marco = 1;
+				//enviar_numero_de_marco(marco, conexion_cpu);
 				break;
 			case LECTURA_MEMORIA_USUARIO:
 				log_info(logger, "CPU solicita lectura a memoria de usuario");
@@ -224,7 +229,7 @@ void atender_kernel() {
 				t_proceso* proceso_nuevo = malloc(sizeof(t_proceso));
 
 				proceso_nuevo->id= recibir_id_proceso(conexion_kernel);
-				proceso_nuevo->tamanio = recibir_tamanio(conexion_kernel);
+				proceso_nuevo->tamanio = recibir_entero(conexion_kernel);
 				proceso_nuevo->numero_tabla_primer_nivel = crear_tabla_paginas();
 				proceso_nuevo->espacio_utilizable = reservar_espacio_de_usuario(proceso_nuevo->tamanio);
 				log_info(logger, "Se reservo un espacio de %d bytes para el proceso %d", proceso_nuevo->espacio_utilizable.fin, proceso_nuevo->id);
@@ -237,15 +242,15 @@ void atender_kernel() {
 
 				crear_archivo_swap(get_path_archivo(proceso_nuevo->id));
 
-				enviar_numero_de_tabla(conexion_kernel, proceso_nuevo->numero_tabla_primer_nivel);
+				enviar_numero_de_tabla(proceso_nuevo->numero_tabla_primer_nivel, conexion_kernel);
 
 				break;
 			case SUSPENCION_PROCESO:
 				log_info(logger, "Kernel solicita SUSPENCION PROCESO");
 				t_proceso* proceso_a_suspender = malloc(sizeof(t_proceso));
 				proceso_a_suspender->id = recibir_id_proceso(conexion_kernel);
-				proceso_a_suspender->tamanio = recibir_tamanio(conexion_kernel);
-				proceso_a_suspender->numero_tabla_primer_nivel = recibir_tamanio(conexion_kernel);
+				proceso_a_suspender->tamanio = recibir_entero(conexion_kernel);
+				proceso_a_suspender->numero_tabla_primer_nivel = recibir_entero(conexion_kernel);
 				log_info(logger, "Proceso a suspender: %d", proceso_a_suspender->id);
 				log_info(logger, "Tamanio a suspender: %d", proceso_a_suspender->tamanio);
 				log_info(logger, "Numero a suspender: %d", proceso_a_suspender->numero_tabla_primer_nivel);
@@ -254,8 +259,8 @@ void atender_kernel() {
 				log_info(logger, "Kernel solicita FINALIZACION PROCESO");
 				t_proceso* proceso_a_finalizar = malloc(sizeof(t_proceso));
 				proceso_a_finalizar->id = recibir_id_proceso(conexion_kernel);
-				proceso_a_finalizar->tamanio = recibir_tamanio(conexion_kernel);
-				proceso_a_finalizar->numero_tabla_primer_nivel = recibir_tamanio(conexion_kernel);
+				proceso_a_finalizar->tamanio = recibir_entero(conexion_kernel);
+				proceso_a_finalizar->numero_tabla_primer_nivel = recibir_entero(conexion_kernel);
 				liberar_tabla_primer_nivel(proceso_a_finalizar->numero_tabla_primer_nivel);
 				liberar_espacio_de_usuario(proceso_a_finalizar->espacio_utilizable);
 				remove(get_path_archivo(proceso_a_finalizar->id));

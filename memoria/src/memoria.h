@@ -79,7 +79,10 @@ char* get_path_archivo(int);
 // Funciones de conexiones
 bool conexion_exitosa(int);
 pid_t recibir_id_proceso(int conexion_kernel);
-int recibir_tamanio(int conexion_kernel);
+void enviar_numero_de_tabla(int, int);
+void enviar_numero_de_marco(int, int);
+int recibir_entero(int conexion_kernel);
+void enviar_entero(int, int, operacion);
 void liberar_conexion(int);
 
 void iterador_tablas_segundo_nivel(t_tabla_paginas_segundo_nivel* tabla);
