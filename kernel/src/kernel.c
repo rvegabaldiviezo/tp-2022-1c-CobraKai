@@ -49,7 +49,7 @@ int conexion_con_cpu_interrupt;
 float alfa;
 int grado_multiprogramacion;
 char* planificador;
-int numero_proceso = 0;
+int numero_proceso = 1;
 
 int main(void) {
 
@@ -128,7 +128,7 @@ pid_t atender_consola() {
 		string_append(&tamanio_recibido, "Tamanio recibido: ");
 		string_append(&tamanio_recibido, string_itoa(proceso->tamanio_proceso));
 
-		/*log_info(logger, "Tamaño recibido: %d", proceso->tamanio_proceso);
+		log_info(logger, "Tamaño recibido: %d", proceso->tamanio_proceso);
 
 		int numero_de_tabla = recibir_numero_de_tabla(proceso, conexion_con_memoria);
 		if(!numero_de_tabla_valido(numero_de_tabla)) {
@@ -138,7 +138,7 @@ pid_t atender_consola() {
 
 		proceso->tablas_paginas = numero_de_tabla;
 		log_info(logger, "Se asignó el numero de tabla: %d al proceso de id: %lu\n", proceso->tablas_paginas, proceso->id);
-*/
+
 		queue_push(new, proceso);
 		log_info(logger, "Proceso %lu asignado a la cola NEW", proceso->id);
 
@@ -241,8 +241,9 @@ void planificar_fifo(){
 			pthread_mutex_lock(&mutex_ready_list);
 			t_pcb* primer_proceso = list_pop(ready);
 			pthread_mutex_unlock(&mutex_ready_list);
-			sleep(5);
-			list_iterate(primer_proceso->instrucciones, (void *) iterator);
+			//sleep(5);
+			//list_iterate(primer_proceso->instrucciones, (void *) iterator);
+			log_info(logger, "El program counter está en: %d", primer_proceso->program_counter);
 			enviar_pcb(primer_proceso, conexion_con_cpu_dispatch);
 
 			log_info(logger,"Se paso el proceso %lu de Ready a Ejecutando", primer_proceso->id);
@@ -264,8 +265,9 @@ void comunicacion_con_cpu() {
 					log_info(logger, "La cpu envio el proceso %lu con estado Bloqueado por IO", proceso_bloqueado->proceso->id);
 					log_info(logger, "Tiempo de bloqueo: %d", proceso_bloqueado->tiempo_de_bloqueo);
 					log_info(logger, "Inicio de bloqueo: %li", proceso_bloqueado->inicio_bloqueo);
-					proceso_bloqueado->inicio_bloqueo = (int)time(NULL);
+					proceso_bloqueado->inicio_bloqueo = time(NULL);
 					proceso_bloqueado->suspendido = 0;
+					//notificar_suspencion_proceso(proceso, conexion_con_memoria);
 					agregar_a_bloqueados(proceso_bloqueado);
 					sem_post(&elementos_en_cola_bloqueados);
 					sem_post(&sem_planificacion);
@@ -286,11 +288,12 @@ void comunicacion_con_cpu() {
 				case EXIT:
 					log_info(logger, "La CPU envio un pcb con estado finalizado");
 					t_pcb* proceso = recibir_pcb(conexion_con_cpu_dispatch);
-				  //  enviar_finalizacion_a_memoria(proceso->id, conexion_con_memoria);
+
 					sem_post(&multiprogramacion);
 					log_info(logger, "El socket que recibi es %i", proceso->socket);
+					enviar_finalizacion_a_memoria(proceso, conexion_con_memoria);
+
 					enviar_respuesta_exitosa(proceso->socket);
-					log_info(logger, "El proceso %lu finalizo correctamente", proceso->id);
 					destruir_proceso(proceso);
 					sem_post(&sem_planificacion);
 					break;
@@ -450,8 +453,6 @@ void planificar_srt() {
 		enviar_pcb(proceso_mas_corto, conexion_con_cpu_dispatch);
 		//log_info(logger,"Se paso el proceso %lu de Ready a Ejecutando", proceso_mas_corto->id);
 
-		// esto va en el EXIT, lo pongo aca para probar
-		//enviar_finalizacion_a_memoria(proceso_mas_corto->id, conexion_con_memoria);
 	}
 
 }

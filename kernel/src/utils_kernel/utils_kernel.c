@@ -259,7 +259,6 @@ int crear_conexion(char *ip, char* puerto)
 	// Ahora que tenemos el socket, vamos a conectarlo
 	connect(socket_cliente, server_info->ai_addr, server_info->ai_addrlen);
 
-
 	freeaddrinfo(server_info);
 
 	return socket_cliente;
@@ -270,23 +269,20 @@ void liberar_conexion(int socket_cliente) {
 	close(socket_cliente);
 }
 
-void solicitar_numero_de_tabla(t_pcb* pcb, int conexion) {
-	operacion op = INICIO_PROCESO;
-	//paquete p = cargar_id(operacion, pcb->id);
-
-	unsigned int bytes = sizeof(operacion) + sizeof(pid_t) + sizeof(int);
+void* serializar_pcb_memoria(t_pcb* pcb, operacion op) {
+	unsigned int bytes = sizeof(operacion) + sizeof(int) + sizeof(int);
 	void* a_enviar = malloc(bytes);
 	int desp = 0;
 	memcpy(a_enviar + desp, &(op), sizeof(operacion));
 	desp += sizeof(operacion);
 
-	memcpy(a_enviar + desp, &(pcb->id), sizeof(pid_t));
-	desp += sizeof(pid_t);
+	memcpy(a_enviar + desp, &(pcb->id), sizeof(int));
+	desp += sizeof(int);
 
 	memcpy(a_enviar + desp, &(pcb->tamanio_proceso), sizeof(int));
 	//desp += sizeof(int);
 
-	send(conexion, a_enviar, bytes, 0);
+	return a_enviar;
 }
 
 void enviar_respuesta_exitosa(int conexion) {
@@ -295,7 +291,9 @@ void enviar_respuesta_exitosa(int conexion) {
 }
 
 int recibir_numero_de_tabla(t_pcb* pcb, int conexion_memoria) {
-	solicitar_numero_de_tabla(pcb, conexion_memoria);
+	void* pcb_serializado = serializar_pcb_memoria(pcb, INICIO_PROCESO);
+	send(conexion_memoria, pcb_serializado, 3 * sizeof(int), 0);
+	free(pcb_serializado);
 	int numero_de_tabla;
 	int bytes_recibidos = recv(conexion_memoria, &numero_de_tabla, sizeof(int), MSG_WAITALL);
 	if (bytes_recibidos <= 0) {
@@ -310,41 +308,21 @@ void enviar_interrupcion(int conexion_con_cpu_interrupt) {
 	send(conexion_con_cpu_interrupt, &operacion, sizeof(operacion), 0);
 }
 
-void notificar_suspencion_proceso(pid_t id, int conexion) {
-	operacion op = SUSPENCION_PROCESO;
-	paquete paquete = cargar_id(op, id);
+void notificar_suspencion_proceso(t_pcb* pcb, int conexion) {
+	void* pcb_serializado = serializar_pcb_memoria(pcb, SUSPENCION_PROCESO);
 
-	void* a_enviar = malloc(sizeof(paquete));
-	int desp = 0;
-	memcpy(a_enviar + desp, &(paquete.cod_op), sizeof(operacion));
-	desp += sizeof(operacion);
+	memcpy(pcb_serializado + (3 * sizeof(int)), &(pcb->tablas_paginas), sizeof(int));
 
-	memcpy(a_enviar + desp, &(paquete.elemento), sizeof(paquete.elemento));
-	desp += sizeof(paquete.elemento);
-
-
-	send(conexion, &paquete, sizeof(paquete), 0);
+	send(conexion, pcb_serializado, 4 * sizeof(int), 0);
+	free(pcb_serializado);
 }
 
-paquete cargar_id(operacion op, pid_t id) {
-	paquete p;
-	p.cod_op = op;
-	p.elemento = id;
-	return p;
-}
+void enviar_finalizacion_a_memoria(t_pcb* pcb, int conexion_con_memoria) {
+	void* pcb_serializado = serializar_pcb_memoria(pcb, FINALIZACION_PROCESO);
 
-void enviar_finalizacion_a_memoria(pid_t id, int conexion_con_memoria) {
-	operacion op = FINALIZACION_PROCESO;
-	paquete paquete = cargar_id(op, id);
+	memcpy(pcb_serializado + (3 * sizeof(int)), &(pcb->tablas_paginas), sizeof(int));
 
-	void* a_enviar = malloc(sizeof(paquete));
-	int desp = 0;
-	memcpy(a_enviar + desp, &(paquete.cod_op), sizeof(operacion));
-	desp += sizeof(operacion);
-
-	memcpy(a_enviar + desp, &(paquete.elemento), sizeof(paquete.elemento));
-	desp += sizeof(paquete.elemento);
-
-	send(conexion_con_memoria, &paquete, sizeof(paquete), 0);
+	send(conexion_con_memoria, pcb_serializado, 4 * sizeof(int), 0);
+	//free(pcb_serializado);
 }
 
