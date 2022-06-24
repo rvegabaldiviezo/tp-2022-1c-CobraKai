@@ -33,7 +33,7 @@ typedef struct {
 } t_buffer;
 
 typedef struct {
-	int id;
+	pid_t id;
 	unsigned int tamanio_proceso;
 	unsigned int program_counter;
 	unsigned int tablas_paginas;
@@ -112,12 +112,12 @@ void* serializar_pcb(t_pcb*, t_buffer*, int);
 void agregar_instruccion(t_buffer* buffer, char* valor, int tamanio);
 t_buffer* cargar_buffer(t_list* lista);
 paquete cargar_id(operacion, pid_t);
-void notificar_suspencion_proceso(t_pcb*, int);
-void enviar_finalizacion_a_memoria(t_pcb* pcb, int conexion_con_memoria);
+void notificar_suspencion_proceso(pid_t, int);
+void enviar_finalizacion_a_memoria(pid_t id, int conexion_con_memoria);
 int recibir_entero(int socket_cliente);
 t_pcb* recibir_pcb(int conexion);
 t_pcb_bloqueado* recibir_pcb_bloqueado(int conexion);
-void* serializar_pcb_memoria(t_pcb*, operacion);
+void solicitar_numero_de_tabla(t_pcb*, int);
 int recibir_numero_de_tabla(t_pcb*, int);
 void escuchar_cpu_dispatch();
 

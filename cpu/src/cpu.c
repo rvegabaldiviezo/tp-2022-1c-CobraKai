@@ -9,13 +9,8 @@ pthread_t interrupt;
 //Semaforos
 sem_t sem_interrupt;
 sem_t dispatch;
-sem_t puedeEjecutarProceso;
 
 //Variables Globales del Proceso
-//proceso_cpu* cpu;
-t_proceso proceso;
-//int conexion_kernel;
-int interrup_kernel;
 
 
 
@@ -47,19 +42,19 @@ void iniciar_conexion_cpu_memoria(proceso_cpu* cpu_process){
 
 void escuchaInterrup(proceso_cpu* cpu_process){
 
-	log_info(cpu_process->logger, "Entro: escuchaInterrup(...)");
+	log_info(cpu_process->logger, "   --- Entro: escuchaInterrup(...)");
 
 	//Levantamos el servidor donde resiviremos las interrupciones
 	iniciar_servidor_interrupt(cpu_process);
 
 	//Escuchamos que el kernel se conecte al server de interrpciones
-	int socket_kernel_interrupt = esperar_cliente_interrupt(cpu_process); log_info(cpu_process->logger, " Socket kernel interrupt: %d", socket_kernel_interrupt);
+	int socket_kernel_interrupt = esperar_cliente_interrupt(cpu_process); log_info(cpu_process->logger, " ---- Socket kernel interrupt: %d", socket_kernel_interrupt);
 
 	//Tiene recibir n veces las peticiones de bloqueo por parte del kernel
 	recibir_operaciones(cpu_process, socket_kernel_interrupt);
 
-	log_info(cpu_process->logger, "Salio: escuchaInterrup(...)");
-	sem_post(&dispatch);
+	log_info(cpu_process->logger, "     ---- Salio: escuchaInterrup(...)");
+	//sem_post(&dispatch);
 }
 
 int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel){
@@ -100,7 +95,8 @@ int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel){
 						check_interrupt(cpu_process,pcb,operacion);
 
 						if((check_interrupcion(cpu_process)) || (checkInstruccionInterrupcion(operacion))){
-
+							cpu_process->interrupcion=false;
+							sem_post(&sem_interrupt);
 							break;
 						}
 
@@ -108,11 +104,11 @@ int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel){
 
 					break;
 				case INTERRUPCION:
-					log_info(cpu_process->logger, " El kernel envio la operacion: INTERRUPCION");
-					cpu_process->interrupcion=1;//true q pidieron una interrupcion
+					//log_info(cpu_process->logger, "      --- El kernel envio la operacion: INTERRUPCION");
+					cpu_process->interrupcion=true;//true q pidieron una interrupcion
 
 					//Hago un bloqueo por interrupcion
-					log_info(cpu_process->logger, "  Este hilo interrupt queda bloqueado hasta que Check Interrupt lo de desbloquee");
+					//log_info(cpu_process->logger, "    --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo de desbloquee");
 					sem_wait(&sem_interrupt);
 
 					break;
@@ -131,21 +127,29 @@ int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel){
 
 
 void mostrarPCB(proceso_cpu* cpu_process,t_pcb* pcb){
-	log_info(cpu_process->logger, "-----PCB ------");
-	log_info(cpu_process->logger, "id: %d", pcb->id);
-	log_info(cpu_process->logger, "estimacion: %d", pcb->estimacion_rafaga);
-	log_info(cpu_process->logger, "program counter: %d", pcb->program_counter);
-	log_info(cpu_process->logger, "socket: %d", pcb->socket_cliente);
-	log_info(cpu_process->logger, "numero de tabla: %d", pcb->tablas_paginas);
-	log_info(cpu_process->logger, "tamanio de consola: %d", pcb->tamanio_proceso);
-	log_info(cpu_process->logger, "lista Instrucciones:");
-	list_iterate(pcb->instrucciones, (void*) iterator);
-	log_info(cpu_process->logger, "--------------");
+	//log_info(cpu_process->logger, "-----PCB ------");
+	//log_info(cpu_process->logger, "id: %d", pcb->id);
+	//log_info(cpu_process->logger, "estimacion: %d", pcb->estimacion_rafaga);
+	//log_info(cpu_process->logger, "program counter: %d", pcb->program_counter);
+	//log_info(cpu_process->logger, "socket: %d", pcb->socket_cliente);
+	//log_info(cpu_process->logger, "numero de tabla: %d", pcb->tablas_paginas);
+//	log_info(cpu_process->logger, "tamanio de consola: %d", pcb->tamanio_proceso);
+	//log_info(cpu_process->logger, "lista Instrucciones:");
+	//list_iterate(pcb->instrucciones, (void*) iterator);
+//	log_info(cpu_process->logger, "--------------");
 }
 
-void mostrar_PCB_Bloqueado(proceso_cpu* cpu_process,t_pcb_bloqueado* bloqueado,int tiempo){
-	mostrarPCB(cpu_process, bloqueado->pcb);
-	log_info(cpu_process->logger, "   tiempo de bloqueo: %d", tiempo);
+void mostrar_PCB_Bloqueado(proceso_cpu* cpu_process,t_pcb_bloqueado* bloqueado){
+//	log_info(cpu_process->logger, "-----PCB ------");
+//	log_info(cpu_process->logger, "  estimacion: %d", bloqueado->pcb->estimacion_rafaga);
+//	log_info(cpu_process->logger, "  program counter: %d", bloqueado->pcb->program_counter);
+//	log_info(cpu_process->logger, "  socket: %d", bloqueado->pcb->socket_cliente);
+//	log_info(cpu_process->logger, "  numero de tabla: %d", bloqueado->pcb->tablas_paginas);
+//	log_info(cpu_process->logger, "  tamanio de consola: %d", bloqueado->pcb->tamanio_proceso);
+	//log_info(cpu_process->logger, "  lista Instrucciones:");
+	//list_iterate(pcb->instrucciones, (void*) iterator);
+//	log_info(cpu_process->logger, "  tiempo de bloqueo: %d", bloqueado->tiempo_bloqueo);
+//	log_info(cpu_process->logger, "--------------");
 }
 
 bool checkInstruccionInterrupcion(char* instruccion){
@@ -168,12 +172,16 @@ void execute(proceso_cpu* cpu, t_pcb* pcb,char** instruccion){
 	}else if(strcmp("I/O",instrucc)==0){
 
 		i_o(cpu,pcb,atoi(instruccion[1]));
-		log_info(cpu->logger, "   Ocurrio la interrupcion por instruccion: %s", instrucc);
+		t_log* nuevo_logger = log_create("./cpu2.log",NAME_LOG,true,LOG_LEVEL_INFO);
+		log_info(nuevo_logger, "    Ocurrio la interrupcion por instruccion: %s", instrucc);
+		log_destroy(nuevo_logger);
 
 	}else if(strcmp("EXIT",instrucc)==0){
 
 		instruccion_exit(cpu,pcb);
-		log_info(cpu->logger, "    Ocurrio la interrupcion por instruccion: %s", instrucc);
+		t_log* nuevo_logger = log_create("./cpu3.log",true,LOG_LEVEL_INFO);
+		log_info(nuevo_logger, "    Ocurrio la interrupcion por instruccion: %s", instrucc);
+		log_destroy(nuevo_logger);
 
 	}else if(strcmp("COPY",instrucc)==0){
 
@@ -204,7 +212,6 @@ void i_o(proceso_cpu* cpu, t_pcb* pcb,int tiempo){
 void instruccion_exit(proceso_cpu* cpu, t_pcb* pcb){
 	incrementarProgramCounter(pcb);
 	responsePorFinDeProceso(pcb,cpu);
-	mostrarPCB(cpu,pcb);
 }
 
 void incrementarProgramCounter(t_pcb* pcb){
@@ -212,29 +219,29 @@ void incrementarProgramCounter(t_pcb* pcb){
 }
 
 void responsePorBloqueo(proceso_cpu* cpu,t_pcb* pcb,int tiempo){
-	log_info(cpu->logger, "   Llego responsePorBloqueo()");
+	//log_info(cpu->logger, "   Llego responsePorBloqueo()");
 	t_pcb_bloqueado* bloqueado = malloc(sizeof(t_pcb_bloqueado));
 	bloqueado->pcb = pcb;
 	bloqueado->tiempo_bloqueo = tiempo;
 	enviar_pcb_bloqueado(cpu->conexion_con_kernel,bloqueado);
-	mostrar_PCB_Bloqueado(cpu,bloqueado,tiempo);
+	//log_info(cpu->logger, "   responsePorBloqueo-Enviamos este PCB: ");
+	//mostrar_PCB_Bloqueado(cpu,bloqueado);
 }
 void responsePorFinDeProceso(t_pcb* pcb,proceso_cpu* cpu){
+	//log_info(cpu->logger, "   responsePorFinDeProceso-Enviamos este PCB: ");
+	mostrarPCB(cpu,pcb);
 	enviar_pcb(pcb,cpu->conexion_con_kernel,FINALIZACION_PROCESO);
 }
 
 void  check_interrupt(proceso_cpu* cpu,t_pcb* pcb,char* operacion){
 
 	if((check_interrupcion(cpu)) && (!checkInstruccionInterrupcion(operacion))){
-		log_info(cpu->logger, "   Ocurrio la interrupcion por puerto Interrup: 8005");
+		//log_info(cpu->logger, "   Ocurrio la interrupcion por puerto Interrup: 8005");
 
 		//Volvemos a dejarlo en falso, para que inicie el ciclo
-		cpu->interrupcion=false;
-
 		responseInterrupcion(pcb,cpu);
 	}
 	//Desbloqueamos el hilo de Interrupt, asi puede seguir recibiendo peticiones de interrupcion
-	sem_post(&sem_interrupt);
 }
 
 bool check_interrupcion(proceso_cpu* cpu){
@@ -242,6 +249,8 @@ bool check_interrupcion(proceso_cpu* cpu){
 }
 
 void responseInterrupcion(t_pcb* pcb,proceso_cpu* cpu){
+	//log_info(cpu->logger, "   responseInterrupcion/Enviamos este PCB: ");
+	//mostrarPCB(cpu,pcb);
 	enviar_pcb(pcb,cpu->conexion_con_kernel,INTERRUPCION);
 }
 
@@ -260,8 +269,7 @@ proceso_cpu* iniciar_cpu(proceso_cpu* cpu_process)
 
 	//Iniciar los Semaforos
 	sem_init(&sem_interrupt,0,0);
-	sem_init(&dispatch,0,0);
-	sem_init(&puedeEjecutarProceso,0,0);
+	//sem_init(&dispatch,0,0);
 	log_info(cpu_process->logger,"Asigno a los semaforos con valores iniciales");
 
 	// Crear conexiones

@@ -49,7 +49,7 @@ int conexion_con_cpu_interrupt;
 float alfa;
 int grado_multiprogramacion;
 char* planificador;
-int numero_proceso = 1;
+int numero_proceso = 0;
 
 int main(void) {
 
@@ -128,7 +128,7 @@ pid_t atender_consola() {
 		string_append(&tamanio_recibido, "Tamanio recibido: ");
 		string_append(&tamanio_recibido, string_itoa(proceso->tamanio_proceso));
 
-		log_info(logger, "Tamaño recibido: %d", proceso->tamanio_proceso);
+		/*log_info(logger, "Tamaño recibido: %d", proceso->tamanio_proceso);
 
 		int numero_de_tabla = recibir_numero_de_tabla(proceso, conexion_con_memoria);
 		if(!numero_de_tabla_valido(numero_de_tabla)) {
@@ -137,10 +137,11 @@ pid_t atender_consola() {
 		}
 
 		proceso->tablas_paginas = numero_de_tabla;
-		log_info(logger, "Se asignó el numero de tabla: %d al proceso de id: %d\n", proceso->tablas_paginas, proceso->id);
-
+		log_info(logger, "Se asignó el numero de tabla: %d al proceso de id: %lu\n", proceso->tablas_paginas, proceso->id);
+*/
+		// TODO: AGREGAR MUTEX
 		queue_push(new, proceso);
-		log_info(logger, "Proceso %d asignado a la cola NEW", proceso->id);
+		log_info(logger, "Proceso %lu asignado a la cola NEW", proceso->id);
 
 		//TODO: aplicar semaforo para la cola de suspendido ready? Los suspendidos ready tienen mas prioridad
 		sem_wait(&multiprogramacion);
@@ -153,15 +154,15 @@ pid_t atender_consola() {
 			list_push(ready, procesoNuevo);
 			pthread_mutex_unlock(&mutex_ready_list);
 			sem_post(&elementos_en_cola_ready);
-			log_info(logger, "El proceso %d fue asignado a la cola READY", proceso->id);
+			log_info(logger, "El proceso %lu fue asignado a la cola READY", proceso->id);
 			//creo que hay que chequear si la planificacion ya fue iniciada
-			if(strcmp(planificador, "SRT") == 0) {
+			if((strcmp(planificador, "SRT") == 0) && (list_size(ready)>1)) {
 					solicitar_interrupcion();
 			}
 
 		} else {
 			//TODO: creo que no deberia pasar esto
-			log_info(logger, "Se alcanzó el maximo grado de multiprogramacion, el proceso %d permanece en la cola de NEW", proceso->id);
+			log_info(logger, "Se alcanzó el maximo grado de multiprogramacion, el proceso %lu permanece en la cola de NEW", proceso->id);
 		}
 		break;
 
@@ -241,12 +242,11 @@ void planificar_fifo(){
 			pthread_mutex_lock(&mutex_ready_list);
 			t_pcb* primer_proceso = list_pop(ready);
 			pthread_mutex_unlock(&mutex_ready_list);
-			//sleep(5);
-			//list_iterate(primer_proceso->instrucciones, (void *) iterator);
-			log_info(logger, "El program counter está en: %d", primer_proceso->program_counter);
+			sleep(5);
+			list_iterate(primer_proceso->instrucciones, (void *) iterator);
 			enviar_pcb(primer_proceso, conexion_con_cpu_dispatch);
 
-			log_info(logger,"Se paso el proceso %d de Ready a Ejecutando", primer_proceso->id);
+			log_info(logger,"Se paso el proceso %lu de Ready a Ejecutando", primer_proceso->id);
 
 		}
 }
@@ -262,9 +262,11 @@ void comunicacion_con_cpu() {
 				case BLOQUEO_IO:
 					log_info(logger, "Codigo BLOQUEO_IO recibido");
 					t_pcb_bloqueado* proceso_bloqueado = recibir_pcb_bloqueado(conexion_con_cpu_dispatch);
-					log_info(logger, "La cpu envio el proceso %d con estado Bloqueado por IO", proceso_bloqueado->proceso->id);
+					log_info(logger, "La cpu envio el proceso %lu con estado Bloqueado por IO", proceso_bloqueado->proceso->id);
 					log_info(logger, "Tiempo de bloqueo: %d", proceso_bloqueado->tiempo_de_bloqueo);
 					log_info(logger, "Inicio de bloqueo: %li", proceso_bloqueado->inicio_bloqueo);
+					proceso_bloqueado->inicio_bloqueo = (int)time(NULL);
+					proceso_bloqueado->suspendido = 0;
 					agregar_a_bloqueados(proceso_bloqueado);
 					sem_post(&elementos_en_cola_bloqueados);
 					sem_post(&sem_planificacion);
@@ -273,7 +275,6 @@ void comunicacion_con_cpu() {
 				case INTERRUPCION:
 					log_info(logger, "Un proceso fue interrumpido");
 					t_pcb* pcb_interrumpido = recibir_pcb(conexion_con_cpu_dispatch);
-
 
 					//actualizar estimacion
 
@@ -286,12 +287,11 @@ void comunicacion_con_cpu() {
 				case EXIT:
 					log_info(logger, "La CPU envio un pcb con estado finalizado");
 					t_pcb* proceso = recibir_pcb(conexion_con_cpu_dispatch);
-
+				  //  enviar_finalizacion_a_memoria(proceso->id, conexion_con_memoria);
 					sem_post(&multiprogramacion);
 					log_info(logger, "El socket que recibi es %i", proceso->socket);
-					enviar_finalizacion_a_memoria(proceso, conexion_con_memoria);
-
 					enviar_respuesta_exitosa(proceso->socket);
+					log_info(logger, "El proceso %lu finalizo correctamente", proceso->id);
 					destruir_proceso(proceso);
 					sem_post(&sem_planificacion);
 					break;
@@ -306,6 +306,7 @@ void comunicacion_con_cpu() {
 }
 
 void solicitar_interrupcion() {
+	log_info(logger, "   Se solicito interrupcion");
 	enviar_interrupcion(conexion_con_cpu_interrupt);
 }
 
@@ -314,7 +315,7 @@ void agregar_a_bloqueados(t_pcb_bloqueado* proceso){
 	pthread_mutex_lock(&mutex_blocked_list);
 	list_add(blocked, proceso);
 	pthread_mutex_unlock(&mutex_blocked_list);
-	log_info(logger, "Se agrego el proceso %d a la cola de bloqueados por I/O", proceso->proceso->id);
+	log_info(logger, "Se agrego el proceso %lu a la cola de bloqueados por I/O", proceso->proceso->id);
 }
 
 void planificacion_io(){
@@ -324,9 +325,9 @@ void planificacion_io(){
 		pthread_mutex_lock(&mutex_blocked_list);
 		t_pcb_bloqueado* primer_proceso = list_pop(blocked);
 		pthread_mutex_unlock(&mutex_blocked_list);
-		log_info(logger, "El proceso %d inicio su I/0", primer_proceso->proceso->id);
+		log_info(logger, "El proceso %lu inicio su I/0", primer_proceso->proceso->id);
 		usleep(primer_proceso->tiempo_de_bloqueo*1000);
-		log_info(logger, "El proceso %d finalizo su I/0", primer_proceso->proceso->id);
+		log_info(logger, "El proceso %lu finalizo su I/0", primer_proceso->proceso->id);
 
 		if(primer_proceso->suspendido == 0){
 
@@ -339,7 +340,7 @@ void planificacion_io(){
 			}
 
 			sem_post(&elementos_en_cola_ready);
-			log_info(logger, "Se paso el proceso %d de bloqueado a ready", primer_proceso->proceso->id);
+			log_info(logger, "Se paso el proceso %lu de bloqueado a ready", primer_proceso->proceso->id);
 
 		} else {
 
@@ -348,8 +349,7 @@ void planificacion_io(){
 			pthread_mutex_unlock(&mutex_susp_ready_queue);
 			sem_post(&elementos_en_cola_susp_ready);
 
-			// todo: aca si el grado de multiprogramacion lo permite debería pasar directo a ready
-			log_info(logger, "Se paso el proceso %d de bloqueado a suspendido-ready", primer_proceso->proceso->id);
+			log_info(logger, "Se paso el proceso %lu de bloqueado a suspendido-ready", primer_proceso->proceso->id);
 		}
 	}
 }
@@ -373,9 +373,9 @@ void mandar_a_suspendido(){
 		for(int i = 0; i < tamanio_cola_bloqueados; i++){
 
 			t_pcb_bloqueado* proceso = list_get(blocked,i);
-			if(proceso->suspendido == 0 && (time(NULL) - proceso->inicio_bloqueo) > tiempo_max_bloqueo){
+			if(proceso->suspendido == 0 && ((int)(time(NULL) - proceso->inicio_bloqueo) > tiempo_max_bloqueo)){
 				//TODO: se manda a memoria y se espera confirmacion
-				notificar_suspencion_proceso(proceso->proceso, conexion_con_memoria);
+				notificar_suspencion_proceso(proceso->proceso->id, conexion_con_memoria);
 				proceso->suspendido = 1;
 				sem_post(&multiprogramacion);
 			}
@@ -414,6 +414,10 @@ void iniciar_planificacion(char* planificacion){
 		pthread_create(&planificador_fifo, NULL, (void*) planificar_fifo, NULL);
 	} else if(strcmp(planificacion, "SRT") == 0) {
 		puts("SRT");
+		char* ip_cpu = config_get_string_value(config, "IP_CPU");
+		char* puerto_cpu_interrupt = config_get_string_value(config, "PUERTO_CPU_INTERRUPT");
+		conexion_con_cpu_interrupt = crear_conexion(ip_cpu, puerto_cpu_interrupt);
+		puts(" Se conecto al interrupt");
 		pthread_create(&planificador_srt, NULL, (void*) planificar_srt, NULL);
 	}
 }
@@ -450,8 +454,10 @@ void planificar_srt() {
 		log_info(logger, "Me llegaron los siguientes valores:");
 		list_iterate(proceso_mas_corto->instrucciones, (void*) iterator);
 		enviar_pcb(proceso_mas_corto, conexion_con_cpu_dispatch);
-		//log_info(logger,"Se paso el proceso %d de Ready a Ejecutando", proceso_mas_corto->id);
+		//log_info(logger,"Se paso el proceso %lu de Ready a Ejecutando", proceso_mas_corto->id);
 
+		// esto va en el EXIT, lo pongo aca para probar
+		//enviar_finalizacion_a_memoria(proceso_mas_corto->id, conexion_con_memoria);
 	}
 
 }

@@ -74,10 +74,10 @@ typedef struct {
 } proceso_cpu;
 
 
-typedef struct {
-	int socket_kernel;
-	char* tipo;
-} conexion_kernel;
+//typedef struct {
+//	int socket_kernel;
+//	char* tipo;
+//} conexion_kernel;
 
 
 enum {
@@ -185,6 +185,6 @@ void check_interrupt(proceso_cpu* cpu,t_pcb* pcb,char* operacion);
 bool check_interrupcion(proceso_cpu* cpu);
 void responseInterrupcion(t_pcb* pcb,proceso_cpu* cpu);
 void mostrarPCB(proceso_cpu* cpu,t_pcb* pcb);
-void mostrar_PCB_Bloqueado(proceso_cpu* cpu_process,t_pcb_bloqueado* pcb,int tiempo);
+void mostrar_PCB_Bloqueado(proceso_cpu* cpu_process,t_pcb_bloqueado* bloqueado);
 
 #endif /* CPU_H_ */

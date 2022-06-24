@@ -34,23 +34,8 @@ void liberar_conexion(int socket_cliente)
 	close(socket_cliente);
 }
 
-void enviar_numero_de_tabla(int numero_de_tabla, int destino) {
-	send(destino, &numero_de_tabla, sizeof(int), 0);
-	//enviar_entero(numero_de_tabla, destino, ACCESO_TABLA_PRIMER_NIVEL);
-}
-
-void enviar_numero_de_marco(int marco, int destino) {
-	//enviar_entero(marco, destino, ACCESO_TABLA_SEGUNDO_NIVEL);
-}
-
-void enviar_entero(int numero, int conexion, operacion op) {
-	void* a_enviar = malloc(sizeof(int) + sizeof(operacion));
-	memcpy(a_enviar, &op, sizeof(operacion));
-
-	memcpy(a_enviar + sizeof(operacion), &numero, sizeof(int));
-
-	send(conexion, a_enviar, sizeof(int) + sizeof(operacion), 0);
-	free(a_enviar);
+void enviar_numero_de_tabla(int destino, int numero_de_tabla) {
+	send(destino, &numero_de_tabla, sizeof(numero_de_tabla), 0);
 }
 
 
@@ -117,7 +102,7 @@ void recibir_mensaje(int socket_cliente)
 
 operacion recibir_operacion(int socket_cliente) {
 	int cod_op;
-	if(recv(socket_cliente, &cod_op, sizeof(operacion), MSG_WAITALL) > 0) {
+	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) > 0) {
 		return cod_op;
 	} else {
 		close(socket_cliente);
@@ -125,9 +110,9 @@ operacion recibir_operacion(int socket_cliente) {
 	}
 }
 
-int recibir_id_proceso(int conexion) {
-	int id;
-	if(recv(conexion, &id, sizeof(int), MSG_WAITALL) > 0) {
+pid_t recibir_id_proceso(int conexion) {
+	pid_t id;
+	if(recv(conexion, &id, sizeof(pid_t), MSG_WAITALL) > 0) {
 		return id;
 	} else {
 		close(conexion);
@@ -135,7 +120,7 @@ int recibir_id_proceso(int conexion) {
 	}
 }
 
-int recibir_entero(int socket_cliente) {
+int recibir_tamanio(int socket_cliente) {
 	int tamanio;
 	if(recv(socket_cliente, &tamanio, sizeof(int), MSG_WAITALL) > 0) {
 		return tamanio;
