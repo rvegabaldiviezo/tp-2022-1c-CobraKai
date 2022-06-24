@@ -1,3 +1,3 @@
-NO_OP 6
+NO_OP 15
 I/O 5000
 EXIT
