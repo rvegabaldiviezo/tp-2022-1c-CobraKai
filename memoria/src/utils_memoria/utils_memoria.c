@@ -35,7 +35,7 @@ void liberar_conexion(int socket_cliente)
 }
 
 void enviar_numero_de_tabla(int destino, int numero_de_tabla) {
-	send(destino, &numero_de_tabla, sizeof(numero_de_tabla), 0);
+	send(destino, &numero_de_tabla, sizeof(int), 0);
 }
 
 
@@ -110,9 +110,9 @@ operacion recibir_operacion(int socket_cliente) {
 	}
 }
 
-pid_t recibir_id_proceso(int conexion) {
-	pid_t id;
-	if(recv(conexion, &id, sizeof(pid_t), MSG_WAITALL) > 0) {
+int recibir_id_proceso(int conexion) {
+	int id;
+	if(recv(conexion, &id, sizeof(int), MSG_WAITALL) > 0) {
 		return id;
 	} else {
 		close(conexion);

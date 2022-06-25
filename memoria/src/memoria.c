@@ -10,7 +10,7 @@ int server_memoria;
 int conexion_kernel;
 int conexion_cpu;
 t_dictionary* tablas_primer_nivel;
-t_list* tablas_segundo_nivel;
+//t_list* tablas_segundo_nivel;
 t_bitarray* marcos_libres;
 unsigned int entradas_por_tabla;
 char* path_swap;
@@ -51,17 +51,19 @@ bool conexion_exitosa(int cliente) {
 }
 
 int crear_tabla_paginas() {
-	tablas_segundo_nivel = list_create();
+	//tablas_segundo_nivel = list_create();
 
-	for(int i = 0; i < entradas_por_tabla; i++) {
-		t_tabla_paginas_segundo_nivel* tabla = inicializar_tabla_segundo_nivel();
-		tabla->numero = list_size(tablas_segundo_nivel) + 1;
-		list_add(tablas_segundo_nivel, tabla);
+//	for(int i = 0; i < entradas_por_tabla; i++) {
+//		t_tabla_paginas_segundo_nivel* tabla = inicializar_tabla_segundo_nivel();
+//		tabla->numero = list_size(tablas_segundo_nivel) + 1;
+//		list_add(tablas_segundo_nivel, tabla);
+//	}
 
-	}
+	t_tabla_paginas_segundo_nivel* tabla = inicializar_tabla_segundo_nivel();
+	tabla->numero = /*list_size(tablas_segundo_nivel) +*/ 1;
 
 	char* proximo_numero = string_itoa(dictionary_size(tablas_primer_nivel) + 1);
-	dictionary_put(tablas_primer_nivel, proximo_numero, tablas_segundo_nivel);
+	dictionary_put(tablas_primer_nivel, proximo_numero, tabla);
 	return dictionary_size(tablas_primer_nivel);
 }
 
@@ -99,7 +101,6 @@ int proximo_marco_libre() {
 			return i;
 		}
 	}
-	// TODO: preguntar que pasa si no hay marcos libres, por ahora retorno -1
 	return -1;
 }
 
@@ -233,8 +234,12 @@ void atender_kernel() {
 				log_info(logger, "Se creo la tabla de primer nivel: %d", proceso->numero_tabla_primer_nivel);
 
 				// Itero la tabla de nivel 1 y las de nivel 2 para ver que se asignen bien
-				//char* numero = string_itoa(proceso->numero_tabla_primer_nivel);
+				char* numero = string_itoa(proceso->numero_tabla_primer_nivel);
 				//list_iterate((t_list*) dictionary_get(tablas_primer_nivel, numero), (void*) iterador_tablas_segundo_nivel);
+
+				t_tabla_paginas_segundo_nivel* tabla = dictionary_get(tablas_primer_nivel, numero);
+				log_info(logger, "Numero de tabla de segundo nivel: %d", tabla->numero);
+				list_iterate(tabla->paginas, (void *) iterador_paginas);
 
 				crear_archivo_swap(get_path_archivo(proceso->id));
 
