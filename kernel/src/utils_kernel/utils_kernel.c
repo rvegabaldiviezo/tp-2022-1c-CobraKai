@@ -274,14 +274,14 @@ void solicitar_numero_de_tabla(t_pcb* pcb, int conexion) {
 	operacion op = INICIO_PROCESO;
 	//paquete p = cargar_id(operacion, pcb->id);
 
-	unsigned int bytes = sizeof(operacion) + sizeof(pid_t) + sizeof(int);
+	unsigned int bytes = sizeof(operacion) + sizeof(int) + sizeof(int);
 	void* a_enviar = malloc(bytes);
 	int desp = 0;
 	memcpy(a_enviar + desp, &(op), sizeof(operacion));
 	desp += sizeof(operacion);
 
-	memcpy(a_enviar + desp, &(pcb->id), sizeof(pid_t));
-	desp += sizeof(pid_t);
+	memcpy(a_enviar + desp, &(pcb->id), sizeof(int));
+	desp += sizeof(int);
 
 	memcpy(a_enviar + desp, &(pcb->tamanio_proceso), sizeof(int));
 	//desp += sizeof(int);
