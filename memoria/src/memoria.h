@@ -8,6 +8,7 @@
 #include <commons/string.h>
 #include <commons/collections/dictionary.h>
 #include <commons/bitarray.h>
+#include <math.h>
 #include "utils_memoria/utils_memoria.h"
 
 #define PATH_CONFIG "src/memoria.config"

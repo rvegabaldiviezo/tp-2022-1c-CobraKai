@@ -32,7 +32,7 @@ int main(void) {
 	tamanio_pagina = config_get_int_value(config, KEY_TAM_PAGINAS);
 	cantidad_paginas = tamanio_memoria / tamanio_pagina;
 	marcos_libres = inicializar_bitarray();
-	//log_info(logger, "Cantidad de marcos: %d", bitarray_get_max_bit(marcos_libres));
+	log_info(logger, "Cantidad de marcos: %d", bitarray_get_max_bit(marcos_libres));
 
 	tablas_primer_nivel = dictionary_create();
 
@@ -88,8 +88,9 @@ t_pagina* inicializar_pagina() {
 }
 
 t_bitarray* inicializar_bitarray() {
-	void* puntero_a_bits = malloc(cantidad_paginas);
-	t_bitarray* bitarray = bitarray_create_with_mode(puntero_a_bits, cantidad_paginas, MSB_FIRST);
+	int cant_bits = (int) ceil(cantidad_paginas / 8);
+	void* puntero_a_bits = malloc(cant_bits);
+	t_bitarray* bitarray = bitarray_create_with_mode(puntero_a_bits, cant_bits, MSB_FIRST);
 	free(puntero_a_bits);
 	return bitarray;
 }
@@ -153,7 +154,7 @@ void liberar_espacio_de_usuario(espacio_de_usuario espacio) {
 void terminar_programa() {
 	pthread_join(hilo_cpu, NULL);
 	pthread_join(hilo_kernel, NULL);
-	//liberar_conexion(conexion_cpu);
+	liberar_conexion(conexion_cpu);
 	liberar_conexion(conexion_kernel);
 	liberar_tablas();
 	bitarray_destroy(marcos_libres);
