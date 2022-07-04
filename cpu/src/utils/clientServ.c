@@ -160,6 +160,7 @@ t_list* recibir_instrucciones(int socket_cliente) {
 	return instrucciones;
 }
 
+// Comunicacion Kernel: enviar PCB
 void enviar_pcb(t_pcb* pcb, int conexion, operacion op) {
 	t_buffer* buffer = cargar_buffer(pcb->instrucciones);
 	int bytes = sizeof(pid_t) + 7 * sizeof(int) + buffer->size;
@@ -168,6 +169,16 @@ void enviar_pcb(t_pcb* pcb, int conexion, operacion op) {
 	send(conexion, pcb_serializado, bytes, 0);
 	//free(pcb_serializado);
 }
+
+// Comunicacion Memoria
+void enviar_codigo_operacion(int conexion,int operacion) {
+	send(conexion, &operacion, sizeof(int), 0);
+	//free(pcb_serializado);
+}
+
+
+
+
 
 void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes,operacion op) {
 	void* a_enviar = malloc(bytes);

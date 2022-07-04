@@ -2939,3 +2939,83 @@
 [INFO] 23:14:28:758 CPU/(14422:14422):   Nro de instrucion: 6
 [INFO] 23:14:28:759 CPU/(14422:14422):   instruccion/codigo op: I/O
 [INFO] 23:14:28:759 CPU/(14422:14422):    Llego a i_o()
+[INFO] 22:04:25:389 CPU/(15587:15587): 
+###### INICIO DE LOGGER ######
+[INFO] 22:04:25:393 CPU/(15587:15587):    ---Leyo archivo de configuraciones
+[INFO] 22:04:25:393 CPU/(15587:15587):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:04:25:393 CPU/(15587:15587):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:04:42:476 CPU/(15588:15588): 
+###### INICIO DE LOGGER ######
+[INFO] 22:04:42:477 CPU/(15588:15588):    ---Leyo archivo de configuraciones
+[INFO] 22:04:42:477 CPU/(15588:15588):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:04:42:477 CPU/(15588:15588):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:06:41:561 CPU/(15661:15661): 
+###### INICIO DE LOGGER ######
+[INFO] 22:06:41:562 CPU/(15661:15661):    ---Leyo archivo de configuraciones
+[INFO] 22:06:41:562 CPU/(15661:15661):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:06:41:562 CPU/(15661:15661):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:06:58:811 CPU/(15686:15686): 
+###### INICIO DE LOGGER ######
+[INFO] 22:06:58:811 CPU/(15686:15686):    ---Leyo archivo de configuraciones
+[INFO] 22:06:58:811 CPU/(15686:15686):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:06:58:812 CPU/(15686:15686):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:07:57:997 CPU/(15748:15748): 
+###### INICIO DE LOGGER ######
+[INFO] 22:07:57:997 CPU/(15748:15748):    ---Leyo archivo de configuraciones
+[INFO] 22:07:57:997 CPU/(15748:15748):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:09:51:292 CPU/(15748:15748):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:11:48:757 CPU/(15844:15844): 
+###### INICIO DE LOGGER ######
+[INFO] 22:11:48:757 CPU/(15844:15844):    ---Leyo archivo de configuraciones
+[INFO] 22:11:48:757 CPU/(15844:15844):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:11:55:480 CPU/(15844:15844):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:13:58:059 CPU/(15898:15898): 
+###### INICIO DE LOGGER ######
+[INFO] 22:13:58:059 CPU/(15898:15898):    ---Leyo archivo de configuraciones
+[INFO] 22:13:58:059 CPU/(15898:15898):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:13:58:059 CPU/(15898:15898):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:14:38:778 CPU/(15922:15922): 
+###### INICIO DE LOGGER ######
+[INFO] 22:14:38:778 CPU/(15922:15922):    ---Leyo archivo de configuraciones
+[INFO] 22:14:38:778 CPU/(15922:15922):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:14:56:679 CPU/(15922:15922):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:21:23:767 CPU/(16072:16072): 
+###### INICIO DE LOGGER ######
+[INFO] 22:21:23:767 CPU/(16072:16072):    ---Leyo archivo de configuraciones
+[INFO] 22:21:23:767 CPU/(16072:16072):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:21:23:767 CPU/(16072:16072):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:21:42:241 CPU/(16115:16115): 
+###### INICIO DE LOGGER ######
+[INFO] 22:21:42:241 CPU/(16115:16115):    ---Leyo archivo de configuraciones
+[INFO] 22:21:42:241 CPU/(16115:16115):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:21:44:253 CPU/(16115:16115):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:24:25:792 CPU/(16207:16207): 
+###### INICIO DE LOGGER ######
+[INFO] 22:24:25:792 CPU/(16207:16207):    ---Leyo archivo de configuraciones
+[INFO] 22:24:25:792 CPU/(16207:16207):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:24:25:792 CPU/(16207:16207):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:24:29:636 CPU/(16208:16208): 
+###### INICIO DE LOGGER ######
+[INFO] 22:24:29:636 CPU/(16208:16208):    ---Leyo archivo de configuraciones
+[INFO] 22:24:29:636 CPU/(16208:16208):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:24:29:636 CPU/(16208:16208):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:33:28:121 CPU/(16433:16433): 
+###### INICIO DE LOGGER ######
+[INFO] 22:33:28:121 CPU/(16433:16433):    ---Leyo archivo de configuraciones
+[INFO] 22:33:28:121 CPU/(16433:16433):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:33:28:121 CPU/(16433:16433):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:34:05:563 CPU/(16454:16454): 
+###### INICIO DE LOGGER ######
+[INFO] 22:34:05:563 CPU/(16454:16454):    ---Leyo archivo de configuraciones
+[INFO] 22:34:05:563 CPU/(16454:16454):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:34:05:563 CPU/(16454:16454):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:36:13:697 CPU/(16522:16522): 
+###### INICIO DE LOGGER ######
+[INFO] 22:36:13:697 CPU/(16522:16522):    ---Leyo archivo de configuraciones
+[INFO] 22:36:13:697 CPU/(16522:16522):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:36:13:697 CPU/(16522:16522):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:37:24:135 CPU/(16569:16569): 
+###### INICIO DE LOGGER ######
+[INFO] 22:37:24:135 CPU/(16569:16569):    ---Leyo archivo de configuraciones
+[INFO] 22:37:24:135 CPU/(16569:16569):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:37:24:135 CPU/(16569:16569):  Conectado con Memoria, Socket cliente Memoria: 4

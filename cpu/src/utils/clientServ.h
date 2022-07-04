@@ -31,6 +31,7 @@ typedef enum
 	PAQUETE
 }op_code;
 
+
 /*typedef struct
 {
 	op_code codigo_operacion;
@@ -51,6 +52,11 @@ void eliminar_paquete(t_paquete* paquete);*/
 t_log* iniciar_logger(void);
 t_config* iniciar_config(void);
 void liberar_conexion(int socket_cliente);
+
+
+
+void enviar_codigo_operacion(int conexion,int operacion);
+
 
 /*
 t_config* iniciar_config(void);

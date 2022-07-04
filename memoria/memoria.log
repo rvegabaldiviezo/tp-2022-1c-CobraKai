@@ -93,3 +93,11 @@
 [ERROR] 23:11:58:432 MEMORIA/(14303:14304): Se desconecto el kernel
 [INFO] 23:14:06:080 MEMORIA/(14418:14418): Memoria lista para recibir clientes
 [ERROR] 23:15:32:974 MEMORIA/(14418:14419): Se desconecto el kernel
+[INFO] 22:03:59:536 MEMORIA/(15582:15582): Memoria lista para recibir clientes
+[INFO] 22:24:17:855 MEMORIA/(16202:16202): Memoria lista para recibir clientes
+[INFO] 22:33:22:285 MEMORIA/(16430:16430): Memoria lista para recibir clientes
+[INFO] 22:34:01:614 MEMORIA/(16451:16451): Memoria lista para recibir clientes
+[INFO] 22:36:08:137 MEMORIA/(16519:16519): Memoria lista para recibir clientes
+[INFO] 22:36:08:137 MEMORIA/(16519:16520): Entro Atender CPU
+[INFO] 22:37:20:480 MEMORIA/(16566:16566): Memoria lista para recibir clientes
+[INFO] 22:37:20:480 MEMORIA/(16566:16567): Entro Atender CPU
