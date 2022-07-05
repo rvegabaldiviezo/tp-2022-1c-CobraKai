@@ -35,7 +35,7 @@ void liberar_conexion(int socket_cliente)
 }
 
 void enviar_numero_de_tabla(int destino, int numero_de_tabla) {
-	send(destino, &numero_de_tabla, sizeof(numero_de_tabla), 0);
+	send(destino, &numero_de_tabla, sizeof(numero_de_tabla), MSG_NOSIGNAL);
 }
 
 

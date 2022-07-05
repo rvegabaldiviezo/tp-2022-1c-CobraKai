@@ -39,7 +39,7 @@ int main(void) {
 	server_memoria = iniciar_servidor();
 	log_info(logger, "Memoria lista para recibir clientes");
 
-	//pthread_create(&hilo_cpu, NULL, (void *) atender_cpu, NULL);
+	pthread_create(&hilo_cpu, NULL, (void *) atender_cpu, NULL);
 	pthread_create(&hilo_kernel, NULL, (void *) atender_kernel, NULL);
 
 	terminar_programa();
@@ -174,7 +174,9 @@ void iterador_paginas(t_pagina* pag) {
 }
 
 void atender_cpu() {
+	log_info(logger, "Entro Atender CPU");
 	conexion_cpu = esperar_cliente(server_memoria);
+	log_info(logger, "Se conecto CPU: %d",conexion_cpu);
 
 	if(!conexion_exitosa(conexion_cpu)) {
 		log_error(logger, "No se pudo establecer la conexion con la cpu");
@@ -184,6 +186,13 @@ void atender_cpu() {
 	while(1) {
 		operacion operacion = recibir_operacion(conexion_cpu);
 		switch(operacion) {
+			case HANDSHAKE_CPU:
+				log_info(logger, "CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina");
+				enviar_numero_de_tabla(conexion_cpu,tamanio_pagina);
+				enviar_numero_de_tabla(conexion_cpu,entradas_por_tabla);
+				//unsigned int numero_tabla = recibir_numero_tabla(conexion_kernel);
+				//char* tabla_segundo_nivel = dictionary_get(tablas_primer_nivel, string_itoa(numero_tabla));
+				break;
 			case ACCESO_TABLA_PRIMER_NIVEL:
 				log_info(logger, "CPU solicita acceso a tabla pagina de primer nivel");
 				//unsigned int numero_tabla = recibir_numero_tabla(conexion_kernel);

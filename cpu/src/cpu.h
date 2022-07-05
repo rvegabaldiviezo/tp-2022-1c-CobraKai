@@ -55,29 +55,32 @@ typedef struct {
 } t_pcb_bloqueado;
 
 
-
 typedef struct {
 	t_pcb* pcb; //
 	int socket_cliente;
 } t_proceso;
 
+
 typedef struct {
-	t_config* config;
-	t_log* logger;
-	t_proceso* process;
-	int socket_servidor;
-	int conexion_con_memoria;
-	int conexion_con_kernel;
-	int socket_servidor_dispatch;//DISPATCH
-	int socket_servidor_interrupt;//INTERRUPT
+	int socket;
+	char* descriptcion;//Ej: si es Dispatch o Interrupt
+} conexion;
+
+
+typedef struct {
+	int memoria;
+	int kernel_dispatch;
+	int kernel_interrupt;
+	int servidor_dispatch;//DISPATCH
+	int servidor_interrupt;//INTERRUPT
 	bool interrupcion; // true(1): si se conectan al puerto interrup y envian su respectivo codigo de operacion, si no, false(0): valor por default
 } proceso_cpu;
 
 
-//typedef struct {
-//	int socket_kernel;
-//	char* tipo;
-//} conexion_kernel;
+typedef struct{
+	int nro_filas_tabla_nivel1;
+	int tamano_pagina;
+}t_handshake;
 
 
 enum {
@@ -121,14 +124,14 @@ typedef struct
 
 //###### INTERFAZ FUNCIONES ######
 
-void iniciar_conexion_cpu_memoria(proceso_cpu* cpu_process);
-void escuchaInterrup(proceso_cpu* cpu_process);
-proceso_cpu* iniciar_cpu(proceso_cpu*);
+int iniciar_conexion_cpu_memoria(void);
+void escuchaInterrup(void);
 proceso_cpu* cpu_create(void);
 t_proceso* process_create(void);
-void finalizar_cpu(proceso_cpu* cpu_process);
-void atender_kernel_dispatch(proceso_cpu* cpu_process,int conexion_kernel);
-int recibir_operaciones(proceso_cpu* cpu_process, int socket_kernel);
+void finalizar_cpu(void);
+void atender_kernel_dispatch(void);
+int recibir_operacion_interrupt(void);
+int recibir_operacion_dispatch(void);
 //void recibir_mensaje_kernel(proceso_cpu* cpu_process, int socket_kernel);
 
 t_pcb* recibir_pcb(int);
@@ -160,31 +163,39 @@ void incrementarpcb(t_proceso proceso);
 int size_instrucciones(t_proceso proceso);
 */
 //### funcionales a cpu
-void iniciar_servidor_dispatch(proceso_cpu* cpu_process);
-void iniciar_servidor_interrupt(proceso_cpu* cpu_process);
-int iniciar_servidor_cpu(proceso_cpu* cpu_process, char* key_puerto);
-int esperar_cliente_cpu(proceso_cpu* cpu_process, int socket_server, char* tipo_puerto);
-int esperar_cliente_dispatch(proceso_cpu* cpu_process);
-int esperar_cliente_interrupt(proceso_cpu* cpu_process);
+void iniciar_servidor_dispatch();
+void iniciar_servidor_interrupt();
+int iniciar_servidor_cpu(char* key_puerto);
+int esperar_cliente_cpu(char* tipo_puerto);
+int esperar_cliente_dispatch();
+int esperar_cliente_interrupt();
 char** getParametrosInstruccion(t_list* instrucciones,int nro_inst);
 
 
 
 char** decode(t_list* instrucciones,int nro_inst);
-void execute(proceso_cpu* cpu, t_pcb* pcb,char** instruccion);
-int fetch(t_pcb* pcb);
-void fetch_operands(proceso_cpu* cpu,char** instruccion);
-void no_op(int tiempo,t_pcb* pcb);
-void i_o(proceso_cpu* cpu, t_pcb* pcb,int tiempo);
-void instruccion_exit(proceso_cpu* cpu, t_pcb* pcb);
-void incrementarProgramCounter(t_pcb* pcb);
-void responsePorBloqueo(proceso_cpu* cpu,t_pcb* pcb,int tiempo);
-void responsePorFinDeProceso(t_pcb* pcb,proceso_cpu* cpu);
+void execute(char** instruccion);
+int fetch();
+void fetch_operands(char** instruccion);
+void no_op(int tiempo);
+void i_o(int tiempo);
+void instruccion_exit();
+void incrementarProgramCounter();
+void responsePorBloqueo(int tiempo);
+void responsePorFinDeProceso();
 bool checkInstruccionInterrupcion(char* instruccion);
-void check_interrupt(proceso_cpu* cpu,t_pcb* pcb,char* operacion);
-bool check_interrupcion(proceso_cpu* cpu);
-void responseInterrupcion(t_pcb* pcb,proceso_cpu* cpu);
-void mostrarPCB(proceso_cpu* cpu,t_pcb* pcb);
-void mostrar_PCB_Bloqueado(proceso_cpu* cpu_process,t_pcb_bloqueado* bloqueado);
+void check_interrupt(char* operacion);
+bool check_interrupcion();
+void responseInterrupcion();
+void mostrarPCB();
+void mostrar_PCB_Bloqueado(t_pcb_bloqueado* bloqueado);
+
+void* iniciar_cpu();
+void iniciar_logger_cpu();
+void iniciar_config_cpu();
+void iniciar_config_semaforos();
+
+t_handshake*  handshake_cpu_memoria(void);
+t_handshake* recibir_handshake_memoria(int conexion);
 
 #endif /* CPU_H_ */
