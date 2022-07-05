@@ -1,0 +1,168 @@
+[INFO] 15:22:47:682 CPU/(375:375): 
+###### INICIO DE LOGGER ######
+[INFO] 15:22:47:683 CPU/(375:375):    ---Leyo archivo de configuraciones
+[INFO] 15:22:47:683 CPU/(375:375):    ---Asigno a los semaforos con valores iniciales
+[INFO] 15:22:47:683 CPU/(375:375):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 15:22:47:683 CPU/(375:375):  Hicimos handshake_cpu_memoria
+[INFO] 15:22:47:683 CPU/(375:375): Entro: iniciar_servidor_dispatch
+[INFO] 15:22:47:683 CPU/(375:375): Entro: iniciar_servidor_cpu
+[INFO] 15:22:47:683 CPU/(375:375):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:22:47:683 CPU/(375:375):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 15:22:47:684 CPU/(375:375):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 15:22:47:684 CPU/(375:375): Se creo el Hilo: interrupt
+[INFO] 15:22:47:684 CPU/(375:375): Entro: esperar_cliente_cpu
+[INFO] 15:22:47:684 CPU/(375:375):  Socket server recibido: 4
+[INFO] 15:22:47:684 CPU/(375:375):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:22:47:684 CPU/(375:376):    --- Entro: escuchaInterrup(...)
+[INFO] 15:22:47:684 CPU/(375:376): Entro: iniciar_servidor_interrupt
+[INFO] 15:22:47:684 CPU/(375:376): Entro: iniciar_servidor_cpu
+[INFO] 15:22:47:684 CPU/(375:376):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:22:47:684 CPU/(375:376):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 15:22:47:684 CPU/(375:376):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 15:22:47:684 CPU/(375:376): Entro: esperar_cliente_cpu
+[INFO] 15:22:47:684 CPU/(375:376):  Socket server recibido: 7
+[INFO] 15:22:47:684 CPU/(375:376):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:23:12:129 CPU/(510:510): 
+###### INICIO DE LOGGER ######
+[INFO] 15:23:12:129 CPU/(510:510):    ---Leyo archivo de configuraciones
+[INFO] 15:23:12:129 CPU/(510:510):    ---Asigno a los semaforos con valores iniciales
+[INFO] 15:23:12:130 CPU/(510:510):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 15:23:12:130 CPU/(510:510):  Hicimos handshake_cpu_memoria
+[INFO] 15:23:12:130 CPU/(510:510): Entro: iniciar_servidor_dispatch
+[INFO] 15:23:12:130 CPU/(510:510): Entro: iniciar_servidor_cpu
+[INFO] 15:23:12:130 CPU/(510:510):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:23:12:130 CPU/(510:510):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 15:23:12:130 CPU/(510:510):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 15:23:12:130 CPU/(510:510): Se creo el Hilo: interrupt
+[INFO] 15:23:12:130 CPU/(510:510): Entro: esperar_cliente_cpu
+[INFO] 15:23:12:130 CPU/(510:510):  Socket server recibido: 4
+[INFO] 15:23:12:130 CPU/(510:510):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:23:12:130 CPU/(510:511):    --- Entro: escuchaInterrup(...)
+[INFO] 15:23:12:130 CPU/(510:511): Entro: iniciar_servidor_interrupt
+[INFO] 15:23:12:130 CPU/(510:511): Entro: iniciar_servidor_cpu
+[INFO] 15:23:12:130 CPU/(510:511):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:23:12:130 CPU/(510:511):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 15:23:12:130 CPU/(510:511):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 15:23:12:130 CPU/(510:511): Entro: esperar_cliente_cpu
+[INFO] 15:23:12:130 CPU/(510:511):  Socket server recibido: 7
+[INFO] 15:23:12:130 CPU/(510:511):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:23:36:180 CPU/(648:648): 
+###### INICIO DE LOGGER ######
+[INFO] 15:23:36:180 CPU/(648:648):    ---Leyo archivo de configuraciones
+[INFO] 15:23:36:180 CPU/(648:648):    ---Asigno a los semaforos con valores iniciales
+[INFO] 15:23:36:181 CPU/(648:648):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 15:23:36:181 CPU/(648:648):  Hicimos handshake_cpu_memoria
+[INFO] 15:23:36:181 CPU/(648:648): Entro: iniciar_servidor_dispatch
+[INFO] 15:23:36:181 CPU/(648:648): Entro: iniciar_servidor_cpu
+[INFO] 15:23:36:181 CPU/(648:648):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:23:36:181 CPU/(648:648):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 15:23:36:181 CPU/(648:648):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 15:23:36:181 CPU/(648:648): Se creo el Hilo: interrupt
+[INFO] 15:23:36:181 CPU/(648:648): Entro: esperar_cliente_cpu
+[INFO] 15:23:36:181 CPU/(648:648):  Socket server recibido: 4
+[INFO] 15:23:36:181 CPU/(648:648):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:23:36:181 CPU/(648:649):    --- Entro: escuchaInterrup(...)
+[INFO] 15:23:36:181 CPU/(648:649): Entro: iniciar_servidor_interrupt
+[INFO] 15:23:36:181 CPU/(648:649): Entro: iniciar_servidor_cpu
+[INFO] 15:23:36:181 CPU/(648:649):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:23:36:181 CPU/(648:649):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 15:23:36:181 CPU/(648:649):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 15:23:36:181 CPU/(648:649): Entro: esperar_cliente_cpu
+[INFO] 15:23:36:181 CPU/(648:649):  Socket server recibido: 7
+[INFO] 15:23:36:181 CPU/(648:649):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:24:36:166 CPU/(966:966): 
+###### INICIO DE LOGGER ######
+[INFO] 15:24:36:166 CPU/(966:966):    ---Leyo archivo de configuraciones
+[INFO] 15:24:36:166 CPU/(966:966):    ---Asigno a los semaforos con valores iniciales
+[INFO] 15:24:36:166 CPU/(966:966):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 15:24:36:166 CPU/(966:966):  Hicimos handshake_cpu_memoria
+[INFO] 15:24:36:166 CPU/(966:966): Entro: iniciar_servidor_dispatch
+[INFO] 15:24:36:166 CPU/(966:966): Entro: iniciar_servidor_cpu
+[INFO] 15:24:36:166 CPU/(966:966):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:24:36:166 CPU/(966:966):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 15:24:36:166 CPU/(966:966):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 15:24:36:167 CPU/(966:966): Se creo el Hilo: interrupt
+[INFO] 15:24:36:167 CPU/(966:966): Entro: esperar_cliente_cpu
+[INFO] 15:24:36:167 CPU/(966:966):  Socket server recibido: 4
+[INFO] 15:24:36:167 CPU/(966:966):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:24:36:167 CPU/(966:967):    --- Entro: escuchaInterrup(...)
+[INFO] 15:24:36:167 CPU/(966:967): Entro: iniciar_servidor_interrupt
+[INFO] 15:24:36:167 CPU/(966:967): Entro: iniciar_servidor_cpu
+[INFO] 15:24:36:167 CPU/(966:967):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:24:36:167 CPU/(966:967):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 15:24:36:167 CPU/(966:967):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 15:24:36:167 CPU/(966:967): Entro: esperar_cliente_cpu
+[INFO] 15:24:36:167 CPU/(966:967):  Socket server recibido: 7
+[INFO] 15:24:36:167 CPU/(966:967):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:25:28:233 CPU/(1193:1193): 
+###### INICIO DE LOGGER ######
+[INFO] 15:25:28:234 CPU/(1193:1193):    ---Leyo archivo de configuraciones
+[INFO] 15:25:28:234 CPU/(1193:1193):    ---Asigno a los semaforos con valores iniciales
+[INFO] 15:25:29:177 CPU/(1193:1193):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 15:25:33:255 CPU/(1193:1193):  Hicimos handshake_cpu_memoria
+[INFO] 15:26:33:052 CPU/(1525:1525): 
+###### INICIO DE LOGGER ######
+[INFO] 15:26:33:052 CPU/(1525:1525):    ---Leyo archivo de configuraciones
+[INFO] 15:26:33:052 CPU/(1525:1525):    ---Asigno a los semaforos con valores iniciales
+[INFO] 15:26:33:053 CPU/(1525:1525):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 15:26:33:053 CPU/(1525:1525):  Hicimos handshake_cpu_memoria
+[INFO] 15:26:33:053 CPU/(1525:1525): Entro: iniciar_servidor_dispatch
+[INFO] 15:26:33:053 CPU/(1525:1525): Entro: iniciar_servidor_cpu
+[INFO] 15:26:33:053 CPU/(1525:1525):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:26:33:054 CPU/(1525:1525):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 15:26:33:054 CPU/(1525:1525):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 15:26:33:054 CPU/(1525:1525): Se creo el Hilo: interrupt
+[INFO] 15:26:33:054 CPU/(1525:1525): Entro: esperar_cliente_cpu
+[INFO] 15:26:33:054 CPU/(1525:1525):  Socket server recibido: 5
+[INFO] 15:26:33:054 CPU/(1525:1525):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:26:33:054 CPU/(1525:1526):    --- Entro: escuchaInterrup(...)
+[INFO] 15:26:33:055 CPU/(1525:1526): Entro: iniciar_servidor_interrupt
+[INFO] 15:26:33:055 CPU/(1525:1526): Entro: iniciar_servidor_cpu
+[INFO] 15:26:33:055 CPU/(1525:1526):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:26:33:055 CPU/(1525:1526):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 15:26:33:055 CPU/(1525:1526):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 15:26:33:055 CPU/(1525:1526): Entro: esperar_cliente_cpu
+[INFO] 15:26:33:055 CPU/(1525:1526):  Socket server recibido: 8
+[INFO] 15:26:33:055 CPU/(1525:1526):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:27:29:580 CPU/(1764:1764): 
+###### INICIO DE LOGGER ######
+[INFO] 15:27:29:580 CPU/(1764:1764):    ---Leyo archivo de configuraciones
+[INFO] 15:27:29:580 CPU/(1764:1764):    ---Asigno a los semaforos con valores iniciales
+[INFO] 15:27:31:004 CPU/(1764:1764):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 15:27:32:459 CPU/(1764:1764):  Hicimos handshake_cpu_memoria
+[INFO] 15:27:46:894 CPU/(1873:1873): 
+###### INICIO DE LOGGER ######
+[INFO] 15:27:46:895 CPU/(1873:1873):    ---Leyo archivo de configuraciones
+[INFO] 15:27:46:895 CPU/(1873:1873):    ---Asigno a los semaforos con valores iniciales
+[INFO] 15:27:48:302 CPU/(1873:1873):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 15:27:51:261 CPU/(1873:1873):  Hicimos handshake_cpu_memoria
+[INFO] 15:28:34:813 CPU/(2283:2283): 
+###### INICIO DE LOGGER ######
+[INFO] 15:28:34:813 CPU/(2283:2283):    ---Leyo archivo de configuraciones
+[INFO] 15:28:34:813 CPU/(2283:2283):    ---Asigno a los semaforos con valores iniciales
+[INFO] 15:28:34:813 CPU/(2283:2283):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 15:28:34:813 CPU/(2283:2283):  Hicimos handshake_cpu_memoria
+[INFO] 15:28:34:813 CPU/(2283:2283): Entro: iniciar_servidor_dispatch
+[INFO] 15:28:34:813 CPU/(2283:2283): Entro: iniciar_servidor_cpu
+[INFO] 15:28:34:813 CPU/(2283:2283):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:28:34:813 CPU/(2283:2283):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 15:28:34:813 CPU/(2283:2283):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 15:28:34:813 CPU/(2283:2283): Se creo el Hilo: interrupt
+[INFO] 15:28:34:813 CPU/(2283:2283): Entro: esperar_cliente_cpu
+[INFO] 15:28:34:813 CPU/(2283:2283):  Socket server recibido: 5
+[INFO] 15:28:34:813 CPU/(2283:2283):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:28:34:813 CPU/(2283:2284):    --- Entro: escuchaInterrup(...)
+[INFO] 15:28:34:814 CPU/(2283:2284): Entro: iniciar_servidor_interrupt
+[INFO] 15:28:34:814 CPU/(2283:2284): Entro: iniciar_servidor_cpu
+[INFO] 15:28:34:814 CPU/(2283:2284):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:28:34:814 CPU/(2283:2284):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 15:28:34:814 CPU/(2283:2284):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 15:28:34:814 CPU/(2283:2284): Entro: esperar_cliente_cpu
+[INFO] 15:28:34:814 CPU/(2283:2284):  Socket server recibido: 8
+[INFO] 15:28:34:814 CPU/(2283:2284):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:28:48:510 CPU/(2358:2358): 
+###### INICIO DE LOGGER ######
+[INFO] 15:28:48:510 CPU/(2358:2358):    ---Leyo archivo de configuraciones
+[INFO] 15:28:48:510 CPU/(2358:2358):    ---Asigno a los semaforos con valores iniciales
+[INFO] 15:28:49:631 CPU/(2358:2358):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 15:28:52:943 CPU/(2358:2358):  Hicimos handshake_cpu_memoria

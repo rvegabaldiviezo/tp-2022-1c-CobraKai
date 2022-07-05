@@ -40,7 +40,7 @@ int main(void) {
 	log_info(logger, "Memoria lista para recibir clientes");
 
 	pthread_create(&hilo_cpu, NULL, (void *) atender_cpu, NULL);
-	pthread_create(&hilo_kernel, NULL, (void *) atender_kernel, NULL);
+	//pthread_create(&hilo_kernel, NULL, (void *) atender_kernel, NULL);
 
 	terminar_programa();
 	return EXIT_SUCCESS;

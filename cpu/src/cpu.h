@@ -190,7 +190,7 @@ void responseInterrupcion();
 void mostrarPCB();
 void mostrar_PCB_Bloqueado(t_pcb_bloqueado* bloqueado);
 
-void* iniciar_cpu();
+void iniciar_cpu();
 void iniciar_logger_cpu();
 void iniciar_config_cpu();
 void iniciar_config_semaforos();

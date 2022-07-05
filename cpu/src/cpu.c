@@ -294,7 +294,7 @@ void responseInterrupcion(){
 	enviar_pcb(pcb,cpu->kernel_dispatch,INTERRUPCION);
 }
 
-void* iniciar_cpu(){
+void iniciar_cpu(){
 
 	cpu = cpu_create();
 		cpu->interrupcion = false;

@@ -1,0 +1,28 @@
+[INFO] 15:22:43:443 MEMORIA/(354:354): Memoria lista para recibir clientes
+[INFO] 15:22:43:443 MEMORIA/(354:355): Entro Atender CPU
+[INFO] 15:23:10:404 MEMORIA/(502:502): Memoria lista para recibir clientes
+[INFO] 15:23:10:404 MEMORIA/(502:503): Entro Atender CPU
+[INFO] 15:23:34:404 MEMORIA/(641:641): Memoria lista para recibir clientes
+[INFO] 15:23:34:404 MEMORIA/(641:642): Entro Atender CPU
+[INFO] 15:24:34:343 MEMORIA/(955:955): Memoria lista para recibir clientes
+[INFO] 15:24:34:344 MEMORIA/(955:956): Entro Atender CPU
+[INFO] 15:25:23:146 MEMORIA/(1152:1152): Memoria lista para recibir clientes
+[INFO] 15:25:23:146 MEMORIA/(1152:1153): Entro Atender CPU
+[INFO] 15:26:31:326 MEMORIA/(1517:1517): Memoria lista para recibir clientes
+[INFO] 15:26:31:326 MEMORIA/(1517:1518): Entro Atender CPU
+[INFO] 15:26:33:053 MEMORIA/(1517:1518): Se conecto CPU: 5
+[INFO] 15:26:33:053 MEMORIA/(1517:1518): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 15:27:24:010 MEMORIA/(1727:1727): Memoria lista para recibir clientes
+[INFO] 15:27:24:010 MEMORIA/(1727:1728): Entro Atender CPU
+[INFO] 15:27:40:012 MEMORIA/(1832:1832): Memoria lista para recibir clientes
+[INFO] 15:27:40:012 MEMORIA/(1832:1833): Entro Atender CPU
+[INFO] 15:28:33:200 MEMORIA/(2276:2276): Memoria lista para recibir clientes
+[INFO] 15:28:33:200 MEMORIA/(2276:2277): Entro Atender CPU
+[INFO] 15:28:34:813 MEMORIA/(2276:2277): Se conecto CPU: 5
+[INFO] 15:28:34:813 MEMORIA/(2276:2277): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[ERROR] 15:28:36:958 MEMORIA/(2276:2277): Se desconecto la cpu
+[INFO] 15:28:43:087 MEMORIA/(2323:2323): Memoria lista para recibir clientes
+[INFO] 15:28:43:088 MEMORIA/(2323:2324): Entro Atender CPU
+[INFO] 15:28:49:472 MEMORIA/(2323:2324): Se conecto CPU: 5
+[INFO] 15:28:52:510 MEMORIA/(2323:2324): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[ERROR] 15:29:00:542 MEMORIA/(2323:2324): Se desconecto la cpu
