@@ -40,7 +40,6 @@ int main(void) {
 	log_info(logger, "Memoria lista para recibir clientes");
 
 	pthread_create(&hilo_cpu, NULL, (void *) atender_cpu, NULL);
-	//pthread_create(&hilo_kernel, NULL, (void *) atender_kernel, NULL);
 
 	terminar_programa();
 	return EXIT_SUCCESS;
@@ -150,8 +149,9 @@ void liberar_espacio_de_usuario(espacio_de_usuario espacio) {
 }
 
 void terminar_programa() {
-	pthread_join(hilo_cpu, NULL);
 	pthread_join(hilo_kernel, NULL);
+	pthread_join(hilo_cpu, NULL);
+
 	//liberar_conexion(conexion_cpu);
 	liberar_conexion(conexion_kernel);
 	liberar_tablas();
@@ -190,8 +190,7 @@ void atender_cpu() {
 				log_info(logger, "CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina");
 				enviar_numero_de_tabla(conexion_cpu,tamanio_pagina);
 				enviar_numero_de_tabla(conexion_cpu,entradas_por_tabla);
-				//unsigned int numero_tabla = recibir_numero_tabla(conexion_kernel);
-				//char* tabla_segundo_nivel = dictionary_get(tablas_primer_nivel, string_itoa(numero_tabla));
+				pthread_create(&hilo_kernel, NULL, (void *) atender_kernel, NULL);
 				break;
 			case ACCESO_TABLA_PRIMER_NIVEL:
 				log_info(logger, "CPU solicita acceso a tabla pagina de primer nivel");
@@ -218,6 +217,7 @@ void atender_cpu() {
 }
 
 void atender_kernel() {
+	log_info(logger, "Entro Atender KERNEL");
 	conexion_kernel = esperar_cliente(server_memoria);
 
 	if(!conexion_exitosa(conexion_kernel)) {
@@ -259,7 +259,7 @@ void atender_kernel() {
 				liberar_tabla_primer_nivel(proceso->numero_tabla_primer_nivel);
 				liberar_espacio_de_usuario(proceso->espacio_utilizable);
 				remove(get_path_archivo(proceso->id));
-				log_info(logger, "Id a finalizar: %lu", proceso->id);
+				log_info(logger, "Id a finalizar: %d", proceso->id);
 
 				break;
 			case ERROR:
