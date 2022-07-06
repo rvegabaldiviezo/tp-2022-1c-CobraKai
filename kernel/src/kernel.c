@@ -128,7 +128,7 @@ pid_t atender_consola() {
 		string_append(&tamanio_recibido, "Tamanio recibido: ");
 		string_append(&tamanio_recibido, string_itoa(proceso->tamanio_proceso));
 
-		/*log_info(logger, "Tamaño recibido: %d", proceso->tamanio_proceso);
+		log_info(logger, "Tamaño recibido: %d", proceso->tamanio_proceso);
 
 		int numero_de_tabla = recibir_numero_de_tabla(proceso, conexion_con_memoria);
 		if(!numero_de_tabla_valido(numero_de_tabla)) {
@@ -137,11 +137,11 @@ pid_t atender_consola() {
 		}
 
 		proceso->tablas_paginas = numero_de_tabla;
-		log_info(logger, "Se asignó el numero de tabla: %d al proceso de id: %lu\n", proceso->tablas_paginas, proceso->id);
-*/
+		log_info(logger, "Se asignó el numero de tabla: %d al proceso de id: %d\n", proceso->tablas_paginas, proceso->id);
+
 		// TODO: AGREGAR MUTEX
 		queue_push(new, proceso);
-		log_info(logger, "Proceso %lu asignado a la cola NEW", proceso->id);
+		log_info(logger, "Proceso %d asignado a la cola NEW", proceso->id);
 
 		//TODO: aplicar semaforo para la cola de suspendido ready? Los suspendidos ready tienen mas prioridad
 		sem_wait(&multiprogramacion);
