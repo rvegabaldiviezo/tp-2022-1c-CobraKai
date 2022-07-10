@@ -456,7 +456,7 @@ void pasar_a_ready(t_pcb* proceso) {
 	sem_post(&elementos_en_cola_ready);
 	log_info(logger, "El proceso %d fue asignado a la cola READY", proceso->id);
 	//creo que hay que chequear si la planificacion ya fue iniciada
-	if((strcmp(planificador, "SRT") == 0) && (list_size(ready)>0)) {
+	if((strcmp(planificador, "SRT") == 0) && (list_size(ready)>1)) {
 			solicitar_interrupcion();
 	}
 }
