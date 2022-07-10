@@ -67,7 +67,7 @@ bool conexion_exitosa(int cliente) {
 }
 
 int crear_tabla_paginas() {
-	//tablas_segundo_nivel = list_create();
+	tablas_segundo_nivel = list_create();
 
 	for(int i = 0; i < entradas_por_tabla; i++) {
 		t_tabla_paginas_segundo_nivel* tabla = inicializar_tabla_segundo_nivel();
@@ -75,7 +75,11 @@ int crear_tabla_paginas() {
 		list_add(tablas_segundo_nivel, tabla);
 	}
 
-	list_add(tablas_primer_nivel, tablas_segundo_nivel);
+	if(list_is_empty(tablas_primer_nivel)) {
+		tablas_primer_nivel = list_create();
+	}
+
+	list_add(tablas_primer_nivel, (void *) tablas_segundo_nivel);
 	return list_size(tablas_primer_nivel) - 1;
 }
 

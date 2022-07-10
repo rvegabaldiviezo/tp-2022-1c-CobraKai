@@ -259,7 +259,7 @@ void comunicacion_con_cpu() {
 					log_info(logger, "Un proceso fue interrumpido");
 					t_pcb* pcb_interrumpido = recibir_pcb(conexion_con_cpu_dispatch);
 
-					//actualizar estimacion
+					//TODO: actualizar estimacion, no se si se actualiza acá pero hay que actualizarla
 
 					pasar_a_ready(pcb_interrumpido);
 					sem_post(&sem_planificacion);
@@ -338,7 +338,7 @@ void iniciar_planificacion_io(){
 }
 
 void mandar_a_suspendido(){
-
+	//TODO: esto no se llama nunca, por lo tanto nunca se le avisa a memoria que debe suspender
 	int tamanio_cola_bloqueados;
 
 	while(1){
@@ -352,7 +352,6 @@ void mandar_a_suspendido(){
 
 			t_pcb_bloqueado* proceso = list_get(blocked,i);
 			if(proceso->suspendido == 0 && ((int)(time(NULL) - proceso->inicio_bloqueo) > tiempo_max_bloqueo)){
-				//TODO: se manda a memoria y se espera confirmacion
 				notificar_suspencion_proceso(proceso->proceso->id, conexion_con_memoria);
 				proceso->suspendido = 1;
 				sem_post(&multiprogramacion);
