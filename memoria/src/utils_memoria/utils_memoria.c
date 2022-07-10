@@ -38,6 +38,11 @@ void enviar_numero_de_tabla(int destino, int numero_de_tabla) {
 	send(destino, &numero_de_tabla, sizeof(int), 0);
 }
 
+void enviar_confirmacion(int destino) {
+	int ok = 0;
+	send(destino, &ok, sizeof(int), 0);
+}
+
 
 
 /******************** SERVER *****************/

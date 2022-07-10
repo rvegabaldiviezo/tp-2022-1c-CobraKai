@@ -88,6 +88,7 @@ void escribir_en_archivo(int, FILE*);
 bool conexion_exitosa(int);
 pid_t recibir_id_proceso(int conexion_kernel);
 int recibir_tamanio(int conexion_kernel);
+void enviar_confirmacion(int);
 void liberar_conexion(int);
 
 void iterador_tablas_segundo_nivel(t_tabla_paginas_segundo_nivel* tabla);

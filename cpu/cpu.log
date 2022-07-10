@@ -7175,3 +7175,3102 @@
 [INFO] 23:43:36:133 CPU/(495:495): Finalizamos el Hilo interrupt
 [INFO] 23:43:36:136 CPU/(495:495): 
 ###### FIN LOGGER ######
+[INFO] 15:47:22:828 CPU/(10870:10870): 
+###### INICIO DE LOGGER ######
+[INFO] 15:47:22:829 CPU/(10870:10870):    ---Leyo archivo de configuraciones
+[INFO] 15:47:22:829 CPU/(10870:10870):    ---Asigno a los semaforos con valores iniciales
+[INFO] 15:47:22:829 CPU/(10870:10870):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 15:47:22:829 CPU/(10870:10870):  Hicimos handshake_cpu_memoria
+[INFO] 15:47:22:829 CPU/(10870:10870): --- Nro de filas tabla nivel 1: 4
+[INFO] 15:47:22:829 CPU/(10870:10870): --- Tamano de pagina: 64
+[INFO] 15:47:22:829 CPU/(10870:10870): Entro: iniciar_servidor_dispatch
+[INFO] 15:47:22:829 CPU/(10870:10870): Entro: iniciar_servidor_cpu
+[INFO] 15:47:22:829 CPU/(10870:10870):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:47:22:829 CPU/(10870:10870):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 15:47:22:829 CPU/(10870:10870):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 15:47:22:829 CPU/(10870:10870): Se creo el Hilo: interrupt
+[INFO] 15:47:22:829 CPU/(10870:10870): Entro: esperar_cliente_cpu
+[INFO] 15:47:22:829 CPU/(10870:10870):  Socket server recibido: 5
+[INFO] 15:47:22:829 CPU/(10870:10870):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:47:22:829 CPU/(10870:10872):    --- Entro: escuchaInterrup(...)
+[INFO] 15:47:22:829 CPU/(10870:10872): Entro: iniciar_servidor_interrupt
+[INFO] 15:47:22:829 CPU/(10870:10872): Entro: iniciar_servidor_cpu
+[INFO] 15:47:22:829 CPU/(10870:10872):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:47:22:829 CPU/(10870:10872):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 15:47:22:830 CPU/(10870:10872):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 15:47:22:830 CPU/(10870:10872): Entro: esperar_cliente_cpu
+[INFO] 15:47:22:830 CPU/(10870:10872):  Socket server recibido: 8
+[INFO] 15:47:22:830 CPU/(10870:10872):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:47:26:267 CPU/(10870:10870):  Termino el BLOQUEO
+[INFO] 15:47:26:267 CPU/(10870:10870):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 15:47:26:267 CPU/(10870:10872):  Termino el BLOQUEO
+[INFO] 15:47:26:267 CPU/(10870:10870): INICIO: recibir_operaciones()
+[INFO] 15:47:26:267 CPU/(10870:10870): --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:47:26:267 CPU/(10870:10872):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 15:47:26:267 CPU/(10870:10872):  ---- Socket kernel interrupt: 9
+[INFO] 15:47:26:267 CPU/(10870:10872):    INICIO: recibir_operacion_interrupt()
+[INFO] 15:47:26:267 CPU/(10870:10872):   --- A ESPERA DE UNA OPERACION
+
+[ERROR] 15:47:55:313 CPU/(10870:10872): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[INFO] 15:47:55:313 CPU/(10870:10872):      ---- Salio: escuchaInterrup(...)
+[ERROR] 15:47:55:313 CPU/(10870:10870): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 15:47:55:314 CPU/(10870:10870): Entro: finalizar_cpu
+[INFO] 15:47:55:314 CPU/(10870:10870): Finalizamos el Hilo interrupt
+[INFO] 15:47:55:314 CPU/(10870:10870): 
+###### FIN LOGGER ######
+[INFO] 15:50:14:648 CPU/(12021:12021): 
+###### INICIO DE LOGGER ######
+[INFO] 15:50:14:648 CPU/(12021:12021):    ---Leyo archivo de configuraciones
+[INFO] 15:50:14:648 CPU/(12021:12021):    ---Asigno a los semaforos con valores iniciales
+[INFO] 15:50:14:648 CPU/(12021:12021):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 15:50:14:648 CPU/(12021:12021):  Hicimos handshake_cpu_memoria
+[INFO] 15:50:14:648 CPU/(12021:12021): --- Nro de filas tabla nivel 1: 4
+[INFO] 15:50:14:648 CPU/(12021:12021): --- Tamano de pagina: 64
+[INFO] 15:50:14:648 CPU/(12021:12021): Entro: iniciar_servidor_dispatch
+[INFO] 15:50:14:648 CPU/(12021:12021): Entro: iniciar_servidor_cpu
+[INFO] 15:50:14:648 CPU/(12021:12021):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:50:14:648 CPU/(12021:12021):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 15:50:14:648 CPU/(12021:12021):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 15:50:14:648 CPU/(12021:12021): Se creo el Hilo: interrupt
+[INFO] 15:50:14:648 CPU/(12021:12021): Entro: esperar_cliente_cpu
+[INFO] 15:50:14:648 CPU/(12021:12021):  Socket server recibido: 5
+[INFO] 15:50:14:648 CPU/(12021:12021):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:50:14:648 CPU/(12021:12023):    --- Entro: escuchaInterrup(...)
+[INFO] 15:50:14:648 CPU/(12021:12023): Entro: iniciar_servidor_interrupt
+[INFO] 15:50:14:648 CPU/(12021:12023): Entro: iniciar_servidor_cpu
+[INFO] 15:50:14:648 CPU/(12021:12023):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:50:14:648 CPU/(12021:12023):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 15:50:14:648 CPU/(12021:12023):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 15:50:14:648 CPU/(12021:12023): Entro: esperar_cliente_cpu
+[INFO] 15:50:14:648 CPU/(12021:12023):  Socket server recibido: 8
+[INFO] 15:50:14:648 CPU/(12021:12023):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:50:16:264 CPU/(12021:12021):  Termino el BLOQUEO
+[INFO] 15:50:16:264 CPU/(12021:12021):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 15:50:16:264 CPU/(12021:12021): INICIO: recibir_operaciones()
+[INFO] 15:50:16:264 CPU/(12021:12021): --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:50:16:265 CPU/(12021:12023):  Termino el BLOQUEO
+[INFO] 15:50:16:265 CPU/(12021:12023):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 15:50:16:265 CPU/(12021:12023):  ---- Socket kernel interrupt: 9
+[INFO] 15:50:16:265 CPU/(12021:12023):    INICIO: recibir_operacion_interrupt()
+[INFO] 15:50:16:265 CPU/(12021:12023):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:50:18:972 CPU/(12021:12021):  -----------
+[INFO] 15:50:18:972 CPU/(12021:12021):  El kernel envio un PCB:
+[INFO] 15:50:18:972 CPU/(12021:12021): -----PCB ------
+[INFO] 15:50:18:972 CPU/(12021:12021): id: 0
+[INFO] 15:50:18:972 CPU/(12021:12021): estimacion: 10000
+[INFO] 15:50:18:972 CPU/(12021:12021): program counter: 0
+[INFO] 15:50:18:972 CPU/(12021:12021): socket: 9
+[INFO] 15:50:18:972 CPU/(12021:12021): numero de tabla: 0
+[INFO] 15:50:18:972 CPU/(12021:12021): tamanio de consola: 500
+[INFO] 15:50:18:972 CPU/(12021:12021): lista Instrucciones:
+[INFO] 15:50:18:972 CPU/(12021:12021): NO_OP
+[INFO] 15:50:18:972 CPU/(12021:12021): NO_OP
+[INFO] 15:50:18:972 CPU/(12021:12021): NO_OP
+[INFO] 15:50:18:972 CPU/(12021:12021): NO_OP
+[INFO] 15:50:18:972 CPU/(12021:12021): NO_OP
+[INFO] 15:50:18:972 CPU/(12021:12021): NO_OP
+[INFO] 15:50:18:972 CPU/(12021:12021): NO_OP
+[INFO] 15:50:18:972 CPU/(12021:12021): NO_OP
+[INFO] 15:50:18:972 CPU/(12021:12021): NO_OP
+[INFO] 15:50:18:972 CPU/(12021:12021): NO_OP
+[INFO] 15:50:18:972 CPU/(12021:12021): NO_OP
+[INFO] 15:50:18:972 CPU/(12021:12021): NO_OP
+[INFO] 15:50:18:972 CPU/(12021:12021): NO_OP
+[INFO] 15:50:18:972 CPU/(12021:12021): NO_OP
+[INFO] 15:50:18:972 CPU/(12021:12021): NO_OP
+[INFO] 15:50:18:972 CPU/(12021:12021): I/O 5000
+[INFO] 15:50:18:972 CPU/(12021:12021): EXIT
+[INFO] 15:50:18:972 CPU/(12021:12021): --------------
+[INFO] 15:50:18:972 CPU/(12021:12021):   Nro de instrucion: 0
+[INFO] 15:50:18:972 CPU/(12021:12021):   instruccion/codigo op: NO_OP
+[INFO] 15:50:18:972 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:50:18:972 CPU/(12021:12021):   Time: 1000
+[INFO] 15:50:19:975 CPU/(12021:12021):   Nro de instrucion: 1
+[INFO] 15:50:19:975 CPU/(12021:12021):   instruccion/codigo op: NO_OP
+[INFO] 15:50:19:975 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:50:19:975 CPU/(12021:12021):   Time: 1000
+[INFO] 15:50:20:976 CPU/(12021:12021):   Nro de instrucion: 2
+[INFO] 15:50:20:977 CPU/(12021:12021):   instruccion/codigo op: NO_OP
+[INFO] 15:50:20:977 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:50:20:977 CPU/(12021:12021):   Time: 1000
+[INFO] 15:50:21:978 CPU/(12021:12021):   Nro de instrucion: 3
+[INFO] 15:50:21:978 CPU/(12021:12021):   instruccion/codigo op: NO_OP
+[INFO] 15:50:21:978 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:50:21:978 CPU/(12021:12021):   Time: 1000
+[INFO] 15:50:22:979 CPU/(12021:12021):   Nro de instrucion: 4
+[INFO] 15:50:22:979 CPU/(12021:12021):   instruccion/codigo op: NO_OP
+[INFO] 15:50:22:980 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:50:22:980 CPU/(12021:12021):   Time: 1000
+[INFO] 15:50:23:982 CPU/(12021:12021):   Nro de instrucion: 5
+[INFO] 15:50:23:982 CPU/(12021:12021):   instruccion/codigo op: NO_OP
+[INFO] 15:50:23:982 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:50:23:982 CPU/(12021:12021):   Time: 1000
+[INFO] 15:50:24:983 CPU/(12021:12021):   Nro de instrucion: 6
+[INFO] 15:50:24:983 CPU/(12021:12021):   instruccion/codigo op: NO_OP
+[INFO] 15:50:24:983 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:50:24:984 CPU/(12021:12021):   Time: 1000
+[INFO] 15:50:25:987 CPU/(12021:12021):   Nro de instrucion: 7
+[INFO] 15:50:25:987 CPU/(12021:12021):   instruccion/codigo op: NO_OP
+[INFO] 15:50:25:987 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:50:25:987 CPU/(12021:12021):   Time: 1000
+[INFO] 15:50:26:989 CPU/(12021:12021):   Nro de instrucion: 8
+[INFO] 15:50:26:989 CPU/(12021:12021):   instruccion/codigo op: NO_OP
+[INFO] 15:50:26:989 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:50:26:989 CPU/(12021:12021):   Time: 1000
+[INFO] 15:50:27:991 CPU/(12021:12021):   Nro de instrucion: 9
+[INFO] 15:50:27:991 CPU/(12021:12021):   instruccion/codigo op: NO_OP
+[INFO] 15:50:27:991 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:50:27:991 CPU/(12021:12021):   Time: 1000
+[INFO] 15:50:28:993 CPU/(12021:12021):   Nro de instrucion: 10
+[INFO] 15:50:28:993 CPU/(12021:12021):   instruccion/codigo op: NO_OP
+[INFO] 15:50:28:993 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:50:28:993 CPU/(12021:12021):   Time: 1000
+[INFO] 15:50:29:994 CPU/(12021:12021):   Nro de instrucion: 11
+[INFO] 15:50:29:994 CPU/(12021:12021):   instruccion/codigo op: NO_OP
+[INFO] 15:50:29:994 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:50:29:994 CPU/(12021:12021):   Time: 1000
+[INFO] 15:50:30:995 CPU/(12021:12021):   Nro de instrucion: 12
+[INFO] 15:50:30:995 CPU/(12021:12021):   instruccion/codigo op: NO_OP
+[INFO] 15:50:30:995 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:50:30:995 CPU/(12021:12021):   Time: 1000
+[INFO] 15:50:31:999 CPU/(12021:12021):   Nro de instrucion: 13
+[INFO] 15:50:31:999 CPU/(12021:12021):   instruccion/codigo op: NO_OP
+[INFO] 15:50:31:999 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:50:31:999 CPU/(12021:12021):   Time: 1000
+[INFO] 15:50:33:010 CPU/(12021:12021):   Nro de instrucion: 14
+[INFO] 15:50:33:010 CPU/(12021:12021):   instruccion/codigo op: NO_OP
+[INFO] 15:50:33:010 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:50:33:010 CPU/(12021:12021):   Time: 1000
+[INFO] 15:50:34:011 CPU/(12021:12021):   Nro de instrucion: 15
+[INFO] 15:50:34:011 CPU/(12021:12021):   instruccion/codigo op: I/O
+[INFO] 15:50:34:011 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:50:34:011 CPU/(12021:12021):    Llego a i_o()
+[INFO] 15:50:34:011 CPU/(12021:12021):    Llego responsePorBloqueo()
+[INFO] 15:50:34:011 CPU/(12021:12021):    Se le asignoMemoria:
+[INFO] 15:50:34:011 CPU/(12021:12021):    Enviamos el PCB Bloqueado 
+[WARNING] 15:50:34:011 CPU/(12021:12021): Entro por interrupcion al Break
+[INFO] 15:50:34:011 CPU/(12021:12021): --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:50:39:015 CPU/(12021:12023):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 15:50:39:015 CPU/(12021:12023):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 15:50:39:015 CPU/(12021:12023):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:50:39:015 CPU/(12021:12021):  -----------
+[INFO] 15:50:39:015 CPU/(12021:12021):  El kernel envio un PCB:
+[INFO] 15:50:39:015 CPU/(12021:12021): -----PCB ------
+[INFO] 15:50:39:015 CPU/(12021:12021): id: 0
+[INFO] 15:50:39:015 CPU/(12021:12021): estimacion: 10000
+[INFO] 15:50:39:016 CPU/(12021:12021): program counter: 16
+[INFO] 15:50:39:016 CPU/(12021:12021): socket: 9
+[INFO] 15:50:39:016 CPU/(12021:12021): numero de tabla: 1
+[INFO] 15:50:39:016 CPU/(12021:12021): tamanio de consola: 500
+[INFO] 15:50:39:016 CPU/(12021:12021): lista Instrucciones:
+[INFO] 15:50:39:016 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:016 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:016 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:016 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:016 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:016 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:016 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:016 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:016 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:016 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:016 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:016 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:016 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:016 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:016 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:016 CPU/(12021:12021): I/O 5000
+[INFO] 15:50:39:016 CPU/(12021:12021): EXIT
+[INFO] 15:50:39:016 CPU/(12021:12021): --------------
+[INFO] 15:50:39:017 CPU/(12021:12021):   Nro de instrucion: 16
+[INFO] 15:50:39:017 CPU/(12021:12021):   instruccion/codigo op: EXIT
+[INFO] 15:50:39:017 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:50:39:017 CPU/(12021:12021):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 15:50:39:017 CPU/(12021:12021): -----PCB ------
+[INFO] 15:50:39:017 CPU/(12021:12021): id: 0
+[INFO] 15:50:39:017 CPU/(12021:12021): estimacion: 10000
+[INFO] 15:50:39:017 CPU/(12021:12021): program counter: 17
+[INFO] 15:50:39:017 CPU/(12021:12021): socket: 9
+[INFO] 15:50:39:017 CPU/(12021:12021): numero de tabla: 1
+[INFO] 15:50:39:017 CPU/(12021:12021): tamanio de consola: 500
+[INFO] 15:50:39:017 CPU/(12021:12021): lista Instrucciones:
+[INFO] 15:50:39:017 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:017 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:017 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:017 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:017 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:017 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:017 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:017 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:018 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:018 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:018 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:018 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:018 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:018 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:018 CPU/(12021:12021): NO_OP
+[INFO] 15:50:39:018 CPU/(12021:12021): I/O 5000
+[INFO] 15:50:39:018 CPU/(12021:12021): EXIT
+[INFO] 15:50:39:018 CPU/(12021:12021): --------------
+[WARNING] 15:50:39:018 CPU/(12021:12021): Entro por interrupcion al Break
+[INFO] 15:50:39:018 CPU/(12021:12021): --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:51:36:212 CPU/(12021:12021):  -----------
+[INFO] 15:51:36:212 CPU/(12021:12021):  El kernel envio un PCB:
+[INFO] 15:51:36:212 CPU/(12021:12021): -----PCB ------
+[INFO] 15:51:36:212 CPU/(12021:12021): id: 1
+[INFO] 15:51:36:212 CPU/(12021:12021): estimacion: 10000
+[INFO] 15:51:36:212 CPU/(12021:12021): program counter: 0
+[INFO] 15:51:36:212 CPU/(12021:12021): socket: 10
+[INFO] 15:51:36:212 CPU/(12021:12021): numero de tabla: 2
+[INFO] 15:51:36:212 CPU/(12021:12021): tamanio de consola: 500
+[INFO] 15:51:36:212 CPU/(12021:12021): lista Instrucciones:
+[INFO] 15:51:36:212 CPU/(12021:12021): EXIT
+[INFO] 15:51:36:212 CPU/(12021:12021): --------------
+[INFO] 15:51:36:212 CPU/(12021:12021):   Nro de instrucion: 0
+[INFO] 15:51:36:212 CPU/(12021:12021):   instruccion/codigo op: EXIT
+[INFO] 15:51:36:212 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:51:36:212 CPU/(12021:12021):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 15:51:36:212 CPU/(12021:12021): -----PCB ------
+[INFO] 15:51:36:212 CPU/(12021:12021): id: 1
+[INFO] 15:51:36:212 CPU/(12021:12021): estimacion: 10000
+[INFO] 15:51:36:212 CPU/(12021:12021): program counter: 1
+[INFO] 15:51:36:212 CPU/(12021:12021): socket: 10
+[INFO] 15:51:36:212 CPU/(12021:12021): numero de tabla: 2
+[INFO] 15:51:36:212 CPU/(12021:12021): tamanio de consola: 500
+[INFO] 15:51:36:212 CPU/(12021:12021): lista Instrucciones:
+[INFO] 15:51:36:212 CPU/(12021:12021): EXIT
+[INFO] 15:51:36:212 CPU/(12021:12021): --------------
+[WARNING] 15:51:36:212 CPU/(12021:12021): Entro por interrupcion al Break
+[INFO] 15:51:36:212 CPU/(12021:12021): --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:51:50:779 CPU/(12021:12021):  -----------
+[INFO] 15:51:50:779 CPU/(12021:12021):  El kernel envio un PCB:
+[INFO] 15:51:50:779 CPU/(12021:12021): -----PCB ------
+[INFO] 15:51:50:779 CPU/(12021:12021): id: 2
+[INFO] 15:51:50:779 CPU/(12021:12021): estimacion: 10000
+[INFO] 15:51:50:779 CPU/(12021:12021): program counter: 0
+[INFO] 15:51:50:779 CPU/(12021:12021): socket: 11
+[INFO] 15:51:50:779 CPU/(12021:12021): numero de tabla: 3
+[INFO] 15:51:50:779 CPU/(12021:12021): tamanio de consola: 500
+[INFO] 15:51:50:779 CPU/(12021:12021): lista Instrucciones:
+[INFO] 15:51:50:779 CPU/(12021:12021): NO_OP
+[INFO] 15:51:50:779 CPU/(12021:12021): READ 9
+[INFO] 15:51:50:779 CPU/(12021:12021): EXIT
+[INFO] 15:51:50:779 CPU/(12021:12021): --------------
+[INFO] 15:51:50:779 CPU/(12021:12021):   Nro de instrucion: 0
+[INFO] 15:51:50:779 CPU/(12021:12021):   instruccion/codigo op: NO_OP
+[INFO] 15:51:50:779 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:51:50:779 CPU/(12021:12021):   Time: 1000
+[INFO] 15:51:51:780 CPU/(12021:12021):   Nro de instrucion: 1
+[INFO] 15:51:51:780 CPU/(12021:12021):   instruccion/codigo op: READ
+[INFO] 15:51:51:780 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:51:51:780 CPU/(12021:12021):   Nro de instrucion: 2
+[INFO] 15:51:51:780 CPU/(12021:12021):   instruccion/codigo op: EXIT
+[INFO] 15:51:51:780 CPU/(12021:12021):   Entro a fetch_operands
+[INFO] 15:51:51:780 CPU/(12021:12021):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 15:51:51:780 CPU/(12021:12021): -----PCB ------
+[INFO] 15:51:51:780 CPU/(12021:12021): id: 2
+[INFO] 15:51:51:780 CPU/(12021:12021): estimacion: 10000
+[INFO] 15:51:51:781 CPU/(12021:12021): program counter: 2
+[INFO] 15:51:51:781 CPU/(12021:12021): socket: 11
+[INFO] 15:51:51:781 CPU/(12021:12021): numero de tabla: 3
+[INFO] 15:51:51:781 CPU/(12021:12021): tamanio de consola: 500
+[INFO] 15:51:51:781 CPU/(12021:12021): lista Instrucciones:
+[INFO] 15:51:51:781 CPU/(12021:12021): NO_OP
+[INFO] 15:51:51:781 CPU/(12021:12021): READ 9
+[INFO] 15:51:51:781 CPU/(12021:12021): EXIT
+[INFO] 15:51:51:781 CPU/(12021:12021): --------------
+[WARNING] 15:51:51:781 CPU/(12021:12021): Entro por interrupcion al Break
+[INFO] 15:51:51:781 CPU/(12021:12021): --- A ESPERA DE UNA OPERACION
+
+[ERROR] 15:52:05:098 CPU/(12021:12021): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 15:52:05:098 CPU/(12021:12021): Entro: finalizar_cpu
+[ERROR] 15:52:05:098 CPU/(12021:12023): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[INFO] 15:52:05:098 CPU/(12021:12023):      ---- Salio: escuchaInterrup(...)
+[INFO] 15:52:05:098 CPU/(12021:12021): Finalizamos el Hilo interrupt
+[INFO] 15:52:05:098 CPU/(12021:12021): 
+###### FIN LOGGER ######
+[INFO] 15:54:49:112 CPU/(13945:13945): 
+###### INICIO DE LOGGER ######
+[INFO] 15:54:49:112 CPU/(13945:13945):    ---Leyo archivo de configuraciones
+[INFO] 15:54:49:112 CPU/(13945:13945):    ---Asigno a los semaforos con valores iniciales
+[INFO] 15:54:49:113 CPU/(13945:13945):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 15:54:49:113 CPU/(13945:13945):  Hicimos handshake_cpu_memoria
+[INFO] 15:54:49:113 CPU/(13945:13945): --- Nro de filas tabla nivel 1: 4
+[INFO] 15:54:49:113 CPU/(13945:13945): --- Tamano de pagina: 64
+[INFO] 15:54:49:113 CPU/(13945:13945): Entro: iniciar_servidor_dispatch
+[INFO] 15:54:49:113 CPU/(13945:13945): Entro: iniciar_servidor_cpu
+[INFO] 15:54:49:113 CPU/(13945:13945):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:54:49:113 CPU/(13945:13945):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 15:54:49:113 CPU/(13945:13945):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 15:54:49:113 CPU/(13945:13945): Se creo el Hilo: interrupt
+[INFO] 15:54:49:113 CPU/(13945:13945): Entro: esperar_cliente_cpu
+[INFO] 15:54:49:113 CPU/(13945:13945):  Socket server recibido: 5
+[INFO] 15:54:49:113 CPU/(13945:13945):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:54:49:113 CPU/(13945:13947):    --- Entro: escuchaInterrup(...)
+[INFO] 15:54:49:113 CPU/(13945:13947): Entro: iniciar_servidor_interrupt
+[INFO] 15:54:49:113 CPU/(13945:13947): Entro: iniciar_servidor_cpu
+[INFO] 15:54:49:113 CPU/(13945:13947):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 15:54:49:113 CPU/(13945:13947):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 15:54:49:113 CPU/(13945:13947):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 15:54:49:113 CPU/(13945:13947): Entro: esperar_cliente_cpu
+[INFO] 15:54:49:113 CPU/(13945:13947):  Socket server recibido: 8
+[INFO] 15:54:49:113 CPU/(13945:13947):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 15:55:18:065 CPU/(13945:13947):  Termino el BLOQUEO
+[INFO] 15:55:18:065 CPU/(13945:13945):  Termino el BLOQUEO
+[INFO] 15:55:18:065 CPU/(13945:13947):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 15:55:18:065 CPU/(13945:13945):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 15:55:18:065 CPU/(13945:13947):  ---- Socket kernel interrupt: 9
+[INFO] 15:55:18:065 CPU/(13945:13947):    INICIO: recibir_operacion_interrupt()
+[INFO] 15:55:18:065 CPU/(13945:13945): INICIO: recibir_operaciones()
+[INFO] 15:55:18:065 CPU/(13945:13945): --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:55:18:065 CPU/(13945:13947):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:55:22:207 CPU/(13945:13945):  -----------
+[INFO] 15:55:22:207 CPU/(13945:13945):  El kernel envio un PCB:
+[INFO] 15:55:22:207 CPU/(13945:13945): -----PCB ------
+[INFO] 15:55:22:207 CPU/(13945:13945): id: 0
+[INFO] 15:55:22:207 CPU/(13945:13945): estimacion: 10000
+[INFO] 15:55:22:207 CPU/(13945:13945): program counter: 0
+[INFO] 15:55:22:207 CPU/(13945:13945): socket: 9
+[INFO] 15:55:22:207 CPU/(13945:13945): numero de tabla: 0
+[INFO] 15:55:22:207 CPU/(13945:13945): tamanio de consola: 500
+[INFO] 15:55:22:207 CPU/(13945:13945): lista Instrucciones:
+[INFO] 15:55:22:207 CPU/(13945:13945): NO_OP
+[INFO] 15:55:22:207 CPU/(13945:13945): READ 9
+[INFO] 15:55:22:207 CPU/(13945:13945): EXIT
+[INFO] 15:55:22:207 CPU/(13945:13945): --------------
+[INFO] 15:55:22:207 CPU/(13945:13945):   Nro de instrucion: 0
+[INFO] 15:55:22:207 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:55:22:207 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:55:22:207 CPU/(13945:13945):   Time: 1000
+[INFO] 15:55:23:208 CPU/(13945:13945):   Nro de instrucion: 1
+[INFO] 15:55:23:208 CPU/(13945:13945):   instruccion/codigo op: READ
+[INFO] 15:55:23:208 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:55:23:208 CPU/(13945:13945):   Nro de instrucion: 2
+[INFO] 15:55:23:208 CPU/(13945:13945):   instruccion/codigo op: EXIT
+[INFO] 15:55:23:208 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:55:23:208 CPU/(13945:13945):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 15:55:23:208 CPU/(13945:13945): -----PCB ------
+[INFO] 15:55:23:208 CPU/(13945:13945): id: 0
+[INFO] 15:55:23:208 CPU/(13945:13945): estimacion: 10000
+[INFO] 15:55:23:208 CPU/(13945:13945): program counter: 2
+[INFO] 15:55:23:208 CPU/(13945:13945): socket: 9
+[INFO] 15:55:23:208 CPU/(13945:13945): numero de tabla: 0
+[INFO] 15:55:23:208 CPU/(13945:13945): tamanio de consola: 500
+[INFO] 15:55:23:208 CPU/(13945:13945): lista Instrucciones:
+[INFO] 15:55:23:208 CPU/(13945:13945): NO_OP
+[INFO] 15:55:23:208 CPU/(13945:13945): READ 9
+[INFO] 15:55:23:208 CPU/(13945:13945): EXIT
+[INFO] 15:55:23:208 CPU/(13945:13945): --------------
+[WARNING] 15:55:23:208 CPU/(13945:13945): Entro por interrupcion al Break
+[INFO] 15:55:23:208 CPU/(13945:13945): --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:55:23:208 CPU/(13945:13945):  -----------
+[INFO] 15:55:23:208 CPU/(13945:13945):  El kernel envio un PCB:
+[INFO] 15:55:23:208 CPU/(13945:13945): -----PCB ------
+[INFO] 15:55:23:208 CPU/(13945:13945): id: 1
+[INFO] 15:55:23:208 CPU/(13945:13945): estimacion: 10000
+[INFO] 15:55:23:208 CPU/(13945:13945): program counter: 0
+[INFO] 15:55:23:208 CPU/(13945:13945): socket: 10
+[INFO] 15:55:23:208 CPU/(13945:13945): numero de tabla: 1
+[INFO] 15:55:23:208 CPU/(13945:13945): tamanio de consola: 100
+[INFO] 15:55:23:208 CPU/(13945:13945): lista Instrucciones:
+[INFO] 15:55:23:208 CPU/(13945:13945): NO_OP
+[INFO] 15:55:23:208 CPU/(13945:13945): NO_OP
+[INFO] 15:55:23:208 CPU/(13945:13945): NO_OP
+[INFO] 15:55:23:208 CPU/(13945:13945): NO_OP
+[INFO] 15:55:23:208 CPU/(13945:13945): NO_OP
+[INFO] 15:55:23:208 CPU/(13945:13945): NO_OP
+[INFO] 15:55:23:208 CPU/(13945:13945): I/O 2500
+[INFO] 15:55:23:208 CPU/(13945:13945): EXIT
+[INFO] 15:55:23:208 CPU/(13945:13945): --------------
+[INFO] 15:55:23:208 CPU/(13945:13945):   Nro de instrucion: 0
+[INFO] 15:55:23:208 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:55:23:208 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:55:23:208 CPU/(13945:13945):   Time: 1000
+[INFO] 15:55:24:208 CPU/(13945:13945):   Nro de instrucion: 1
+[INFO] 15:55:24:209 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:55:24:209 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:55:24:209 CPU/(13945:13945):   Time: 1000
+[INFO] 15:55:25:214 CPU/(13945:13945):   Nro de instrucion: 2
+[INFO] 15:55:25:214 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:55:25:214 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:55:25:214 CPU/(13945:13945):   Time: 1000
+[INFO] 15:55:26:215 CPU/(13945:13945):   Nro de instrucion: 3
+[INFO] 15:55:26:215 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:55:26:215 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:55:26:215 CPU/(13945:13945):   Time: 1000
+[INFO] 15:55:27:215 CPU/(13945:13945):   Nro de instrucion: 4
+[INFO] 15:55:27:215 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:55:27:215 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:55:27:215 CPU/(13945:13945):   Time: 1000
+[INFO] 15:55:28:240 CPU/(13945:13945):   Nro de instrucion: 5
+[INFO] 15:55:28:240 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:55:28:240 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:55:28:241 CPU/(13945:13945):   Time: 1000
+[INFO] 15:55:29:242 CPU/(13945:13945):   Nro de instrucion: 6
+[INFO] 15:55:29:242 CPU/(13945:13945):   instruccion/codigo op: I/O
+[INFO] 15:55:29:242 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:55:29:242 CPU/(13945:13945):    Llego a i_o()
+[INFO] 15:55:29:243 CPU/(13945:13945):    Llego responsePorBloqueo()
+[INFO] 15:55:29:243 CPU/(13945:13945):    Se le asignoMemoria:
+[INFO] 15:55:29:243 CPU/(13945:13945):    Enviamos el PCB Bloqueado 
+[WARNING] 15:55:29:243 CPU/(13945:13945): Entro por interrupcion al Break
+[INFO] 15:55:29:243 CPU/(13945:13945): --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:55:31:745 CPU/(13945:13947):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 15:55:31:745 CPU/(13945:13947):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 15:55:31:745 CPU/(13945:13947):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:55:31:745 CPU/(13945:13945):  -----------
+[INFO] 15:55:31:745 CPU/(13945:13945):  El kernel envio un PCB:
+[INFO] 15:55:31:745 CPU/(13945:13945): -----PCB ------
+[INFO] 15:55:31:745 CPU/(13945:13945): id: 1
+[INFO] 15:55:31:745 CPU/(13945:13945): estimacion: 10000
+[INFO] 15:55:31:745 CPU/(13945:13945): program counter: 7
+[INFO] 15:55:31:745 CPU/(13945:13945): socket: 10
+[INFO] 15:55:31:745 CPU/(13945:13945): numero de tabla: 2
+[INFO] 15:55:31:745 CPU/(13945:13945): tamanio de consola: 100
+[INFO] 15:55:31:745 CPU/(13945:13945): lista Instrucciones:
+[INFO] 15:55:31:745 CPU/(13945:13945): NO_OP
+[INFO] 15:55:31:745 CPU/(13945:13945): NO_OP
+[INFO] 15:55:31:745 CPU/(13945:13945): NO_OP
+[INFO] 15:55:31:745 CPU/(13945:13945): NO_OP
+[INFO] 15:55:31:745 CPU/(13945:13945): NO_OP
+[INFO] 15:55:31:745 CPU/(13945:13945): NO_OP
+[INFO] 15:55:31:745 CPU/(13945:13945): I/O 2500
+[INFO] 15:55:31:745 CPU/(13945:13945): EXIT
+[INFO] 15:55:31:745 CPU/(13945:13945): --------------
+[INFO] 15:55:31:745 CPU/(13945:13945):   Nro de instrucion: 7
+[INFO] 15:55:31:745 CPU/(13945:13945):   instruccion/codigo op: EXIT
+[INFO] 15:55:31:745 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:55:31:745 CPU/(13945:13945):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 15:55:31:745 CPU/(13945:13945): -----PCB ------
+[INFO] 15:55:31:745 CPU/(13945:13945): id: 1
+[INFO] 15:55:31:746 CPU/(13945:13945): estimacion: 10000
+[INFO] 15:55:31:746 CPU/(13945:13945): program counter: 8
+[INFO] 15:55:31:746 CPU/(13945:13945): socket: 10
+[INFO] 15:55:31:746 CPU/(13945:13945): numero de tabla: 2
+[INFO] 15:55:31:746 CPU/(13945:13945): tamanio de consola: 100
+[INFO] 15:55:31:746 CPU/(13945:13945): lista Instrucciones:
+[INFO] 15:55:31:746 CPU/(13945:13945): NO_OP
+[INFO] 15:55:31:746 CPU/(13945:13945): NO_OP
+[INFO] 15:55:31:746 CPU/(13945:13945): NO_OP
+[INFO] 15:55:31:746 CPU/(13945:13945): NO_OP
+[INFO] 15:55:31:746 CPU/(13945:13945): NO_OP
+[INFO] 15:55:31:746 CPU/(13945:13945): NO_OP
+[INFO] 15:55:31:746 CPU/(13945:13945): I/O 2500
+[INFO] 15:55:31:746 CPU/(13945:13945): EXIT
+[INFO] 15:55:31:746 CPU/(13945:13945): --------------
+[WARNING] 15:55:31:746 CPU/(13945:13945): Entro por interrupcion al Break
+[INFO] 15:55:31:746 CPU/(13945:13945): --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:56:14:473 CPU/(13945:13945):  -----------
+[INFO] 15:56:14:473 CPU/(13945:13945):  El kernel envio un PCB:
+[INFO] 15:56:14:473 CPU/(13945:13945): -----PCB ------
+[INFO] 15:56:14:473 CPU/(13945:13945): id: 2
+[INFO] 15:56:14:473 CPU/(13945:13945): estimacion: 10000
+[INFO] 15:56:14:473 CPU/(13945:13945): program counter: 0
+[INFO] 15:56:14:473 CPU/(13945:13945): socket: 11
+[INFO] 15:56:14:473 CPU/(13945:13945): numero de tabla: 3
+[INFO] 15:56:14:473 CPU/(13945:13945): tamanio de consola: 500
+[INFO] 15:56:14:474 CPU/(13945:13945): lista Instrucciones:
+[INFO] 15:56:14:474 CPU/(13945:13945): NO_OP
+[INFO] 15:56:14:474 CPU/(13945:13945): READ 9
+[INFO] 15:56:14:474 CPU/(13945:13945): EXIT
+[INFO] 15:56:14:474 CPU/(13945:13945): --------------
+[INFO] 15:56:14:474 CPU/(13945:13945):   Nro de instrucion: 0
+[INFO] 15:56:14:474 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:14:474 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:14:474 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:15:475 CPU/(13945:13945):   Nro de instrucion: 1
+[INFO] 15:56:15:475 CPU/(13945:13945):   instruccion/codigo op: READ
+[INFO] 15:56:15:475 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:15:475 CPU/(13945:13945):   Nro de instrucion: 2
+[INFO] 15:56:15:475 CPU/(13945:13945):   instruccion/codigo op: EXIT
+[INFO] 15:56:15:475 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:15:475 CPU/(13945:13945):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 15:56:15:475 CPU/(13945:13945): -----PCB ------
+[INFO] 15:56:15:475 CPU/(13945:13945): id: 2
+[INFO] 15:56:15:475 CPU/(13945:13945): estimacion: 10000
+[INFO] 15:56:15:475 CPU/(13945:13945): program counter: 2
+[INFO] 15:56:15:475 CPU/(13945:13945): socket: 11
+[INFO] 15:56:15:475 CPU/(13945:13945): numero de tabla: 3
+[INFO] 15:56:15:475 CPU/(13945:13945): tamanio de consola: 500
+[INFO] 15:56:15:475 CPU/(13945:13945): lista Instrucciones:
+[INFO] 15:56:15:475 CPU/(13945:13945): NO_OP
+[INFO] 15:56:15:475 CPU/(13945:13945): READ 9
+[INFO] 15:56:15:475 CPU/(13945:13945): EXIT
+[INFO] 15:56:15:475 CPU/(13945:13945): --------------
+[WARNING] 15:56:15:475 CPU/(13945:13945): Entro por interrupcion al Break
+[INFO] 15:56:15:475 CPU/(13945:13945): --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:56:33:680 CPU/(13945:13945):  -----------
+[INFO] 15:56:33:680 CPU/(13945:13945):  El kernel envio un PCB:
+[INFO] 15:56:33:680 CPU/(13945:13945): -----PCB ------
+[INFO] 15:56:33:680 CPU/(13945:13945): id: 3
+[INFO] 15:56:33:680 CPU/(13945:13945): estimacion: 10000
+[INFO] 15:56:33:680 CPU/(13945:13945): program counter: 0
+[INFO] 15:56:33:680 CPU/(13945:13945): socket: 12
+[INFO] 15:56:33:680 CPU/(13945:13945): numero de tabla: 4
+[INFO] 15:56:33:680 CPU/(13945:13945): tamanio de consola: 500
+[INFO] 15:56:33:680 CPU/(13945:13945): lista Instrucciones:
+[INFO] 15:56:33:680 CPU/(13945:13945): NO_OP
+[INFO] 15:56:33:680 CPU/(13945:13945): NO_OP
+[INFO] 15:56:33:680 CPU/(13945:13945): NO_OP
+[INFO] 15:56:33:680 CPU/(13945:13945): NO_OP
+[INFO] 15:56:33:680 CPU/(13945:13945): NO_OP
+[INFO] 15:56:33:680 CPU/(13945:13945): NO_OP
+[INFO] 15:56:33:680 CPU/(13945:13945): NO_OP
+[INFO] 15:56:33:680 CPU/(13945:13945): NO_OP
+[INFO] 15:56:33:680 CPU/(13945:13945): NO_OP
+[INFO] 15:56:33:680 CPU/(13945:13945): NO_OP
+[INFO] 15:56:33:680 CPU/(13945:13945): NO_OP
+[INFO] 15:56:33:680 CPU/(13945:13945): NO_OP
+[INFO] 15:56:33:680 CPU/(13945:13945): NO_OP
+[INFO] 15:56:33:680 CPU/(13945:13945): NO_OP
+[INFO] 15:56:33:680 CPU/(13945:13945): NO_OP
+[INFO] 15:56:33:680 CPU/(13945:13945): I/O 5000
+[INFO] 15:56:33:680 CPU/(13945:13945): EXIT
+[INFO] 15:56:33:680 CPU/(13945:13945): --------------
+[INFO] 15:56:33:681 CPU/(13945:13945):   Nro de instrucion: 0
+[INFO] 15:56:33:681 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:33:681 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:33:681 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:34:681 CPU/(13945:13945):   Nro de instrucion: 1
+[INFO] 15:56:34:681 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:34:681 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:34:681 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:35:685 CPU/(13945:13945):   Nro de instrucion: 2
+[INFO] 15:56:35:685 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:35:685 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:35:685 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:36:694 CPU/(13945:13945):   Nro de instrucion: 3
+[INFO] 15:56:36:694 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:36:694 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:36:694 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:37:698 CPU/(13945:13945):   Nro de instrucion: 4
+[INFO] 15:56:37:698 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:37:698 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:37:698 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:38:700 CPU/(13945:13945):   Nro de instrucion: 5
+[INFO] 15:56:38:700 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:38:700 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:38:700 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:39:701 CPU/(13945:13945):   Nro de instrucion: 6
+[INFO] 15:56:39:702 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:39:702 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:39:702 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:40:707 CPU/(13945:13945):   Nro de instrucion: 7
+[INFO] 15:56:40:708 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:40:708 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:40:708 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:41:708 CPU/(13945:13945):   Nro de instrucion: 8
+[INFO] 15:56:41:709 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:41:709 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:41:709 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:42:718 CPU/(13945:13945):   Nro de instrucion: 9
+[INFO] 15:56:42:719 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:42:719 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:42:719 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:43:719 CPU/(13945:13945):   Nro de instrucion: 10
+[INFO] 15:56:43:719 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:43:719 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:43:719 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:44:720 CPU/(13945:13945):   Nro de instrucion: 11
+[INFO] 15:56:44:720 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:44:720 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:44:720 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:45:734 CPU/(13945:13945):   Nro de instrucion: 12
+[INFO] 15:56:45:734 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:45:734 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:45:734 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:46:735 CPU/(13945:13945):   Nro de instrucion: 13
+[INFO] 15:56:46:735 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:46:735 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:46:735 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:47:736 CPU/(13945:13945):   Nro de instrucion: 14
+[INFO] 15:56:47:736 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:47:736 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:47:736 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:48:744 CPU/(13945:13945):   Nro de instrucion: 15
+[INFO] 15:56:48:744 CPU/(13945:13945):   instruccion/codigo op: I/O
+[INFO] 15:56:48:744 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:48:745 CPU/(13945:13945):    Llego a i_o()
+[INFO] 15:56:48:745 CPU/(13945:13945):    Llego responsePorBloqueo()
+[INFO] 15:56:48:745 CPU/(13945:13945):    Se le asignoMemoria:
+[INFO] 15:56:48:745 CPU/(13945:13945):    Enviamos el PCB Bloqueado 
+[WARNING] 15:56:48:745 CPU/(13945:13945): Entro por interrupcion al Break
+[INFO] 15:56:48:745 CPU/(13945:13945): --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:56:48:746 CPU/(13945:13945):  -----------
+[INFO] 15:56:48:746 CPU/(13945:13945):  El kernel envio un PCB:
+[INFO] 15:56:48:746 CPU/(13945:13945): -----PCB ------
+[INFO] 15:56:48:746 CPU/(13945:13945): id: 4
+[INFO] 15:56:48:747 CPU/(13945:13945): estimacion: 10000
+[INFO] 15:56:48:747 CPU/(13945:13945): program counter: 0
+[INFO] 15:56:48:747 CPU/(13945:13945): socket: 13
+[INFO] 15:56:48:747 CPU/(13945:13945): numero de tabla: 5
+[INFO] 15:56:48:747 CPU/(13945:13945): tamanio de consola: 100
+[INFO] 15:56:48:747 CPU/(13945:13945): lista Instrucciones:
+[INFO] 15:56:48:747 CPU/(13945:13945): NO_OP
+[INFO] 15:56:48:747 CPU/(13945:13945): NO_OP
+[INFO] 15:56:48:747 CPU/(13945:13945): NO_OP
+[INFO] 15:56:48:747 CPU/(13945:13945): NO_OP
+[INFO] 15:56:48:747 CPU/(13945:13945): NO_OP
+[INFO] 15:56:48:747 CPU/(13945:13945): NO_OP
+[INFO] 15:56:48:747 CPU/(13945:13945): I/O 2500
+[INFO] 15:56:48:747 CPU/(13945:13945): EXIT
+[INFO] 15:56:48:747 CPU/(13945:13945): --------------
+[INFO] 15:56:48:747 CPU/(13945:13945):   Nro de instrucion: 0
+[INFO] 15:56:48:747 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:48:747 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:48:747 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:49:748 CPU/(13945:13945):   Nro de instrucion: 1
+[INFO] 15:56:49:748 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:49:748 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:49:748 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:50:748 CPU/(13945:13945):   Nro de instrucion: 2
+[INFO] 15:56:50:748 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:50:749 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:50:749 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:51:752 CPU/(13945:13945):   Nro de instrucion: 3
+[INFO] 15:56:51:752 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:51:752 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:51:752 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:52:756 CPU/(13945:13945):   Nro de instrucion: 4
+[INFO] 15:56:52:756 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:52:756 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:52:756 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:53:748 CPU/(13945:13947):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 15:56:53:748 CPU/(13945:13947):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 15:56:53:748 CPU/(13945:13947):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:56:53:757 CPU/(13945:13945):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 15:56:53:758 CPU/(13945:13945):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 15:56:53:758 CPU/(13945:13945): Entro por interrupcion al Break
+[INFO] 15:56:53:758 CPU/(13945:13945): --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:56:53:763 CPU/(13945:13945):  -----------
+[INFO] 15:56:53:763 CPU/(13945:13945):  El kernel envio un PCB:
+[INFO] 15:56:53:763 CPU/(13945:13945): -----PCB ------
+[INFO] 15:56:53:763 CPU/(13945:13945): id: 4
+[INFO] 15:56:53:763 CPU/(13945:13945): estimacion: 10000
+[INFO] 15:56:53:763 CPU/(13945:13945): program counter: 5
+[INFO] 15:56:53:763 CPU/(13945:13945): socket: 13
+[INFO] 15:56:53:763 CPU/(13945:13945): numero de tabla: 7
+[INFO] 15:56:53:763 CPU/(13945:13945): tamanio de consola: 100
+[INFO] 15:56:53:763 CPU/(13945:13945): lista Instrucciones:
+[INFO] 15:56:53:763 CPU/(13945:13945): NO_OP
+[INFO] 15:56:53:763 CPU/(13945:13945): NO_OP
+[INFO] 15:56:53:763 CPU/(13945:13945): NO_OP
+[INFO] 15:56:53:763 CPU/(13945:13945): NO_OP
+[INFO] 15:56:53:763 CPU/(13945:13945): NO_OP
+[INFO] 15:56:53:763 CPU/(13945:13945): NO_OP
+[INFO] 15:56:53:763 CPU/(13945:13945): I/O 2500
+[INFO] 15:56:53:763 CPU/(13945:13945): EXIT
+[INFO] 15:56:53:763 CPU/(13945:13945): --------------
+[INFO] 15:56:53:763 CPU/(13945:13945):   Nro de instrucion: 5
+[INFO] 15:56:53:763 CPU/(13945:13945):   instruccion/codigo op: NO_OP
+[INFO] 15:56:53:763 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:53:763 CPU/(13945:13945):   Time: 1000
+[INFO] 15:56:54:766 CPU/(13945:13945):   Nro de instrucion: 6
+[INFO] 15:56:54:766 CPU/(13945:13945):   instruccion/codigo op: I/O
+[INFO] 15:56:54:766 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:54:766 CPU/(13945:13945):    Llego a i_o()
+[INFO] 15:56:54:766 CPU/(13945:13945):    Llego responsePorBloqueo()
+[INFO] 15:56:54:766 CPU/(13945:13945):    Se le asignoMemoria:
+[INFO] 15:56:54:766 CPU/(13945:13945):    Enviamos el PCB Bloqueado 
+[WARNING] 15:56:54:766 CPU/(13945:13945): Entro por interrupcion al Break
+[INFO] 15:56:54:766 CPU/(13945:13945): --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:56:54:769 CPU/(13945:13945):  -----------
+[INFO] 15:56:54:769 CPU/(13945:13945):  El kernel envio un PCB:
+[INFO] 15:56:54:769 CPU/(13945:13945): -----PCB ------
+[INFO] 15:56:54:769 CPU/(13945:13945): id: 3
+[INFO] 15:56:54:769 CPU/(13945:13945): estimacion: 10000
+[INFO] 15:56:54:769 CPU/(13945:13945): program counter: 16
+[INFO] 15:56:54:769 CPU/(13945:13945): socket: 12
+[INFO] 15:56:54:769 CPU/(13945:13945): numero de tabla: 6
+[INFO] 15:56:54:769 CPU/(13945:13945): tamanio de consola: 500
+[INFO] 15:56:54:769 CPU/(13945:13945): lista Instrucciones:
+[INFO] 15:56:54:769 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:769 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:769 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:769 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:769 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:769 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:769 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:769 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:769 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:769 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:769 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:769 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:769 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:769 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:770 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:770 CPU/(13945:13945): I/O 5000
+[INFO] 15:56:54:770 CPU/(13945:13945): EXIT
+[INFO] 15:56:54:770 CPU/(13945:13945): --------------
+[INFO] 15:56:54:770 CPU/(13945:13945):   Nro de instrucion: 16
+[INFO] 15:56:54:770 CPU/(13945:13945):   instruccion/codigo op: EXIT
+[INFO] 15:56:54:770 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:54:770 CPU/(13945:13945):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 15:56:54:770 CPU/(13945:13945): -----PCB ------
+[INFO] 15:56:54:770 CPU/(13945:13945): id: 3
+[INFO] 15:56:54:770 CPU/(13945:13945): estimacion: 10000
+[INFO] 15:56:54:770 CPU/(13945:13945): program counter: 17
+[INFO] 15:56:54:770 CPU/(13945:13945): socket: 12
+[INFO] 15:56:54:770 CPU/(13945:13945): numero de tabla: 6
+[INFO] 15:56:54:770 CPU/(13945:13945): tamanio de consola: 500
+[INFO] 15:56:54:770 CPU/(13945:13945): lista Instrucciones:
+[INFO] 15:56:54:770 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:770 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:770 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:770 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:770 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:770 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:770 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:770 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:770 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:770 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:770 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:770 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:771 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:771 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:771 CPU/(13945:13945): NO_OP
+[INFO] 15:56:54:771 CPU/(13945:13945): I/O 5000
+[INFO] 15:56:54:771 CPU/(13945:13945): EXIT
+[INFO] 15:56:54:771 CPU/(13945:13945): --------------
+[WARNING] 15:56:54:771 CPU/(13945:13945): Entro por interrupcion al Break
+[INFO] 15:56:54:771 CPU/(13945:13945): --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:56:57:269 CPU/(13945:13947):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 15:56:57:269 CPU/(13945:13947):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 15:56:57:269 CPU/(13945:13947):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 15:56:57:270 CPU/(13945:13945):  -----------
+[INFO] 15:56:57:270 CPU/(13945:13945):  El kernel envio un PCB:
+[INFO] 15:56:57:270 CPU/(13945:13945): -----PCB ------
+[INFO] 15:56:57:270 CPU/(13945:13945): id: 4
+[INFO] 15:56:57:270 CPU/(13945:13945): estimacion: 10000
+[INFO] 15:56:57:270 CPU/(13945:13945): program counter: 7
+[INFO] 15:56:57:270 CPU/(13945:13945): socket: 13
+[INFO] 15:56:57:270 CPU/(13945:13945): numero de tabla: 8
+[INFO] 15:56:57:270 CPU/(13945:13945): tamanio de consola: 100
+[INFO] 15:56:57:270 CPU/(13945:13945): lista Instrucciones:
+[INFO] 15:56:57:270 CPU/(13945:13945): NO_OP
+[INFO] 15:56:57:270 CPU/(13945:13945): NO_OP
+[INFO] 15:56:57:270 CPU/(13945:13945): NO_OP
+[INFO] 15:56:57:270 CPU/(13945:13945): NO_OP
+[INFO] 15:56:57:270 CPU/(13945:13945): NO_OP
+[INFO] 15:56:57:270 CPU/(13945:13945): NO_OP
+[INFO] 15:56:57:270 CPU/(13945:13945): I/O 2500
+[INFO] 15:56:57:270 CPU/(13945:13945): EXIT
+[INFO] 15:56:57:270 CPU/(13945:13945): --------------
+[INFO] 15:56:57:270 CPU/(13945:13945):   Nro de instrucion: 7
+[INFO] 15:56:57:270 CPU/(13945:13945):   instruccion/codigo op: EXIT
+[INFO] 15:56:57:270 CPU/(13945:13945):   Entro a fetch_operands
+[INFO] 15:56:57:270 CPU/(13945:13945):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 15:56:57:270 CPU/(13945:13945): -----PCB ------
+[INFO] 15:56:57:270 CPU/(13945:13945): id: 4
+[INFO] 15:56:57:270 CPU/(13945:13945): estimacion: 10000
+[INFO] 15:56:57:270 CPU/(13945:13945): program counter: 8
+[INFO] 15:56:57:270 CPU/(13945:13945): socket: 13
+[INFO] 15:56:57:271 CPU/(13945:13945): numero de tabla: 8
+[INFO] 15:56:57:271 CPU/(13945:13945): tamanio de consola: 100
+[INFO] 15:56:57:271 CPU/(13945:13945): lista Instrucciones:
+[INFO] 15:56:57:271 CPU/(13945:13945): NO_OP
+[INFO] 15:56:57:271 CPU/(13945:13945): NO_OP
+[INFO] 15:56:57:271 CPU/(13945:13945): NO_OP
+[INFO] 15:56:57:271 CPU/(13945:13945): NO_OP
+[INFO] 15:56:57:271 CPU/(13945:13945): NO_OP
+[INFO] 15:56:57:271 CPU/(13945:13945): NO_OP
+[INFO] 15:56:57:271 CPU/(13945:13945): I/O 2500
+[INFO] 15:56:57:271 CPU/(13945:13945): EXIT
+[INFO] 15:56:57:271 CPU/(13945:13945): --------------
+[WARNING] 15:56:57:271 CPU/(13945:13945): Entro por interrupcion al Break
+[INFO] 15:56:57:271 CPU/(13945:13945): --- A ESPERA DE UNA OPERACION
+
+[ERROR] 15:57:48:922 CPU/(13945:13947): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[INFO] 15:57:48:922 CPU/(13945:13947):      ---- Salio: escuchaInterrup(...)
+[ERROR] 15:57:48:922 CPU/(13945:13945): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 15:57:48:922 CPU/(13945:13945): Entro: finalizar_cpu
+[INFO] 15:57:48:923 CPU/(13945:13945): Finalizamos el Hilo interrupt
+[INFO] 15:57:48:924 CPU/(13945:13945): 
+###### FIN LOGGER ######
+[INFO] 16:00:40:312 CPU/(16183:16183): 
+###### INICIO DE LOGGER ######
+[INFO] 16:00:40:312 CPU/(16183:16183):    ---Leyo archivo de configuraciones
+[INFO] 16:00:40:312 CPU/(16183:16183):    ---Asigno a los semaforos con valores iniciales
+[INFO] 16:00:40:312 CPU/(16183:16183):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 16:00:40:312 CPU/(16183:16183):  Hicimos handshake_cpu_memoria
+[INFO] 16:00:40:312 CPU/(16183:16183): --- Nro de filas tabla nivel 1: 4
+[INFO] 16:00:40:312 CPU/(16183:16183): --- Tamano de pagina: 64
+[INFO] 16:00:40:313 CPU/(16183:16183): Entro: iniciar_servidor_dispatch
+[INFO] 16:00:40:313 CPU/(16183:16183): Entro: iniciar_servidor_cpu
+[INFO] 16:00:40:313 CPU/(16183:16183):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 16:00:40:313 CPU/(16183:16183):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 16:00:40:313 CPU/(16183:16183):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 16:00:40:313 CPU/(16183:16183): Se creo el Hilo: interrupt
+[INFO] 16:00:40:313 CPU/(16183:16183): Entro: esperar_cliente_cpu
+[INFO] 16:00:40:313 CPU/(16183:16183):  Socket server recibido: 5
+[INFO] 16:00:40:313 CPU/(16183:16185):    --- Entro: escuchaInterrup(...)
+[INFO] 16:00:40:313 CPU/(16183:16183):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 16:00:40:313 CPU/(16183:16185): Entro: iniciar_servidor_interrupt
+[INFO] 16:00:40:313 CPU/(16183:16185): Entro: iniciar_servidor_cpu
+[INFO] 16:00:40:313 CPU/(16183:16185):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 16:00:40:313 CPU/(16183:16185):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 16:00:40:313 CPU/(16183:16185):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 16:00:40:313 CPU/(16183:16185): Entro: esperar_cliente_cpu
+[INFO] 16:00:40:313 CPU/(16183:16185):  Socket server recibido: 8
+[INFO] 16:00:40:313 CPU/(16183:16185):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 16:00:42:055 CPU/(16183:16183):  Termino el BLOQUEO
+[INFO] 16:00:42:055 CPU/(16183:16183):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 16:00:42:055 CPU/(16183:16183): INICIO: recibir_operaciones()
+[INFO] 16:00:42:056 CPU/(16183:16183): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:00:42:056 CPU/(16183:16185):  Termino el BLOQUEO
+[INFO] 16:00:42:056 CPU/(16183:16185):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 16:00:42:056 CPU/(16183:16185):  ---- Socket kernel interrupt: 9
+[INFO] 16:00:42:056 CPU/(16183:16185):    INICIO: recibir_operacion_interrupt()
+[INFO] 16:00:42:056 CPU/(16183:16185):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:00:53:946 CPU/(16183:16183):  -----------
+[INFO] 16:00:53:946 CPU/(16183:16183):  El kernel envio un PCB:
+[INFO] 16:00:53:946 CPU/(16183:16183): -----PCB ------
+[INFO] 16:00:53:946 CPU/(16183:16183): id: 0
+[INFO] 16:00:53:946 CPU/(16183:16183): estimacion: 10000
+[INFO] 16:00:53:946 CPU/(16183:16183): program counter: 0
+[INFO] 16:00:53:946 CPU/(16183:16183): socket: 9
+[INFO] 16:00:53:946 CPU/(16183:16183): numero de tabla: 0
+[INFO] 16:00:53:946 CPU/(16183:16183): tamanio de consola: 500
+[INFO] 16:00:53:946 CPU/(16183:16183): lista Instrucciones:
+[INFO] 16:00:53:946 CPU/(16183:16183): NO_OP
+[INFO] 16:00:53:946 CPU/(16183:16183): NO_OP
+[INFO] 16:00:53:946 CPU/(16183:16183): NO_OP
+[INFO] 16:00:53:946 CPU/(16183:16183): NO_OP
+[INFO] 16:00:53:946 CPU/(16183:16183): NO_OP
+[INFO] 16:00:53:946 CPU/(16183:16183): NO_OP
+[INFO] 16:00:53:946 CPU/(16183:16183): NO_OP
+[INFO] 16:00:53:946 CPU/(16183:16183): NO_OP
+[INFO] 16:00:53:946 CPU/(16183:16183): NO_OP
+[INFO] 16:00:53:946 CPU/(16183:16183): NO_OP
+[INFO] 16:00:53:946 CPU/(16183:16183): NO_OP
+[INFO] 16:00:53:946 CPU/(16183:16183): NO_OP
+[INFO] 16:00:53:946 CPU/(16183:16183): NO_OP
+[INFO] 16:00:53:946 CPU/(16183:16183): NO_OP
+[INFO] 16:00:53:946 CPU/(16183:16183): NO_OP
+[INFO] 16:00:53:946 CPU/(16183:16183): I/O 5000
+[INFO] 16:00:53:946 CPU/(16183:16183): EXIT
+[INFO] 16:00:53:946 CPU/(16183:16183): --------------
+[INFO] 16:00:53:946 CPU/(16183:16183):   Nro de instrucion: 0
+[INFO] 16:00:53:946 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:00:53:946 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:00:53:946 CPU/(16183:16183):   Time: 1000
+[INFO] 16:00:54:947 CPU/(16183:16183):   Nro de instrucion: 1
+[INFO] 16:00:54:947 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:00:54:947 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:00:54:947 CPU/(16183:16183):   Time: 1000
+[INFO] 16:00:55:949 CPU/(16183:16183):   Nro de instrucion: 2
+[INFO] 16:00:55:949 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:00:55:949 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:00:55:949 CPU/(16183:16183):   Time: 1000
+[INFO] 16:00:56:949 CPU/(16183:16183):   Nro de instrucion: 3
+[INFO] 16:00:56:949 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:00:56:949 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:00:56:949 CPU/(16183:16183):   Time: 1000
+[INFO] 16:00:57:951 CPU/(16183:16183):   Nro de instrucion: 4
+[INFO] 16:00:57:951 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:00:57:951 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:00:57:951 CPU/(16183:16183):   Time: 1000
+[INFO] 16:00:58:951 CPU/(16183:16183):   Nro de instrucion: 5
+[INFO] 16:00:58:951 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:00:58:951 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:00:58:951 CPU/(16183:16183):   Time: 1000
+[INFO] 16:00:59:952 CPU/(16183:16183):   Nro de instrucion: 6
+[INFO] 16:00:59:952 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:00:59:952 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:00:59:952 CPU/(16183:16183):   Time: 1000
+[INFO] 16:01:00:952 CPU/(16183:16183):   Nro de instrucion: 7
+[INFO] 16:01:00:952 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:01:00:952 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:00:952 CPU/(16183:16183):   Time: 1000
+[INFO] 16:01:01:953 CPU/(16183:16183):   Nro de instrucion: 8
+[INFO] 16:01:01:953 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:01:01:953 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:01:953 CPU/(16183:16183):   Time: 1000
+[INFO] 16:01:02:954 CPU/(16183:16183):   Nro de instrucion: 9
+[INFO] 16:01:02:954 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:01:02:954 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:02:954 CPU/(16183:16183):   Time: 1000
+[INFO] 16:01:03:955 CPU/(16183:16183):   Nro de instrucion: 10
+[INFO] 16:01:03:955 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:01:03:955 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:03:955 CPU/(16183:16183):   Time: 1000
+[INFO] 16:01:04:956 CPU/(16183:16183):   Nro de instrucion: 11
+[INFO] 16:01:04:956 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:01:04:956 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:04:956 CPU/(16183:16183):   Time: 1000
+[INFO] 16:01:05:956 CPU/(16183:16183):   Nro de instrucion: 12
+[INFO] 16:01:05:956 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:01:05:956 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:05:956 CPU/(16183:16183):   Time: 1000
+[INFO] 16:01:06:957 CPU/(16183:16183):   Nro de instrucion: 13
+[INFO] 16:01:06:957 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:01:06:957 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:06:957 CPU/(16183:16183):   Time: 1000
+[INFO] 16:01:07:958 CPU/(16183:16183):   Nro de instrucion: 14
+[INFO] 16:01:07:958 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:01:07:959 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:07:959 CPU/(16183:16183):   Time: 1000
+[INFO] 16:01:08:959 CPU/(16183:16183):   Nro de instrucion: 15
+[INFO] 16:01:08:959 CPU/(16183:16183):   instruccion/codigo op: I/O
+[INFO] 16:01:08:959 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:08:959 CPU/(16183:16183):    Llego a i_o()
+[INFO] 16:01:08:959 CPU/(16183:16183):    Llego responsePorBloqueo()
+[INFO] 16:01:08:959 CPU/(16183:16183):    Se le asignoMemoria:
+[INFO] 16:01:08:960 CPU/(16183:16183):    Enviamos el PCB Bloqueado 
+[WARNING] 16:01:08:960 CPU/(16183:16183): Entro por interrupcion al Break
+[INFO] 16:01:08:960 CPU/(16183:16183): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:01:08:962 CPU/(16183:16183):  -----------
+[INFO] 16:01:08:962 CPU/(16183:16183):  El kernel envio un PCB:
+[INFO] 16:01:08:962 CPU/(16183:16183): -----PCB ------
+[INFO] 16:01:08:962 CPU/(16183:16183): id: 1
+[INFO] 16:01:08:962 CPU/(16183:16183): estimacion: 10000
+[INFO] 16:01:08:962 CPU/(16183:16183): program counter: 0
+[INFO] 16:01:08:962 CPU/(16183:16183): socket: 10
+[INFO] 16:01:08:962 CPU/(16183:16183): numero de tabla: 1
+[INFO] 16:01:08:962 CPU/(16183:16183): tamanio de consola: 100
+[INFO] 16:01:08:962 CPU/(16183:16183): lista Instrucciones:
+[INFO] 16:01:08:962 CPU/(16183:16183): NO_OP
+[INFO] 16:01:08:962 CPU/(16183:16183): NO_OP
+[INFO] 16:01:08:962 CPU/(16183:16183): NO_OP
+[INFO] 16:01:08:962 CPU/(16183:16183): NO_OP
+[INFO] 16:01:08:962 CPU/(16183:16183): NO_OP
+[INFO] 16:01:08:962 CPU/(16183:16183): NO_OP
+[INFO] 16:01:08:962 CPU/(16183:16183): I/O 2500
+[INFO] 16:01:08:963 CPU/(16183:16183): EXIT
+[INFO] 16:01:08:963 CPU/(16183:16183): --------------
+[INFO] 16:01:08:963 CPU/(16183:16183):   Nro de instrucion: 0
+[INFO] 16:01:08:963 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:01:08:963 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:08:963 CPU/(16183:16183):   Time: 1000
+[INFO] 16:01:09:964 CPU/(16183:16183):   Nro de instrucion: 1
+[INFO] 16:01:09:964 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:01:09:964 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:09:964 CPU/(16183:16183):   Time: 1000
+[INFO] 16:01:10:964 CPU/(16183:16183):   Nro de instrucion: 2
+[INFO] 16:01:10:964 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:01:10:965 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:10:965 CPU/(16183:16183):   Time: 1000
+[INFO] 16:01:11:975 CPU/(16183:16183):   Nro de instrucion: 3
+[INFO] 16:01:11:975 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:01:11:975 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:11:976 CPU/(16183:16183):   Time: 1000
+[INFO] 16:01:12:977 CPU/(16183:16183):   Nro de instrucion: 4
+[INFO] 16:01:12:978 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:01:12:978 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:12:978 CPU/(16183:16183):   Time: 1000
+[INFO] 16:01:13:968 CPU/(16183:16185):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:01:13:968 CPU/(16183:16185):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:01:13:968 CPU/(16183:16185):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:01:13:978 CPU/(16183:16183):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:01:13:979 CPU/(16183:16183):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:01:13:979 CPU/(16183:16183): Entro por interrupcion al Break
+[INFO] 16:01:13:979 CPU/(16183:16183): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:01:13:980 CPU/(16183:16183):  -----------
+[INFO] 16:01:13:980 CPU/(16183:16183):  El kernel envio un PCB:
+[INFO] 16:01:13:980 CPU/(16183:16183): -----PCB ------
+[INFO] 16:01:13:980 CPU/(16183:16183): id: 1
+[INFO] 16:01:13:980 CPU/(16183:16183): estimacion: 10000
+[INFO] 16:01:13:980 CPU/(16183:16183): program counter: 5
+[INFO] 16:01:13:980 CPU/(16183:16183): socket: 10
+[INFO] 16:01:13:980 CPU/(16183:16183): numero de tabla: 1
+[INFO] 16:01:13:980 CPU/(16183:16183): tamanio de consola: 100
+[INFO] 16:01:13:980 CPU/(16183:16183): lista Instrucciones:
+[INFO] 16:01:13:980 CPU/(16183:16183): NO_OP
+[INFO] 16:01:13:980 CPU/(16183:16183): NO_OP
+[INFO] 16:01:13:980 CPU/(16183:16183): NO_OP
+[INFO] 16:01:13:980 CPU/(16183:16183): NO_OP
+[INFO] 16:01:13:980 CPU/(16183:16183): NO_OP
+[INFO] 16:01:13:980 CPU/(16183:16183): NO_OP
+[INFO] 16:01:13:980 CPU/(16183:16183): I/O 2500
+[INFO] 16:01:13:980 CPU/(16183:16183): EXIT
+[INFO] 16:01:13:980 CPU/(16183:16183): --------------
+[INFO] 16:01:13:980 CPU/(16183:16183):   Nro de instrucion: 5
+[INFO] 16:01:13:980 CPU/(16183:16183):   instruccion/codigo op: NO_OP
+[INFO] 16:01:13:980 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:13:980 CPU/(16183:16183):   Time: 1000
+[INFO] 16:01:14:981 CPU/(16183:16183):   Nro de instrucion: 6
+[INFO] 16:01:14:982 CPU/(16183:16183):   instruccion/codigo op: I/O
+[INFO] 16:01:14:982 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:14:982 CPU/(16183:16183):    Llego a i_o()
+[INFO] 16:01:14:982 CPU/(16183:16183):    Llego responsePorBloqueo()
+[INFO] 16:01:14:982 CPU/(16183:16183):    Se le asignoMemoria:
+[INFO] 16:01:14:982 CPU/(16183:16183):    Enviamos el PCB Bloqueado 
+[WARNING] 16:01:14:982 CPU/(16183:16183): Entro por interrupcion al Break
+[INFO] 16:01:14:982 CPU/(16183:16183): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:01:14:984 CPU/(16183:16183):  -----------
+[INFO] 16:01:14:984 CPU/(16183:16183):  El kernel envio un PCB:
+[INFO] 16:01:14:984 CPU/(16183:16183): -----PCB ------
+[INFO] 16:01:14:984 CPU/(16183:16183): id: 0
+[INFO] 16:01:14:984 CPU/(16183:16183): estimacion: 10000
+[INFO] 16:01:14:984 CPU/(16183:16183): program counter: 16
+[INFO] 16:01:14:984 CPU/(16183:16183): socket: 9
+[INFO] 16:01:14:984 CPU/(16183:16183): numero de tabla: 0
+[INFO] 16:01:14:984 CPU/(16183:16183): tamanio de consola: 500
+[INFO] 16:01:14:984 CPU/(16183:16183): lista Instrucciones:
+[INFO] 16:01:14:984 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:985 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:985 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:985 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:985 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:985 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:985 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:985 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:985 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:985 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:985 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:985 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:985 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:985 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:985 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:985 CPU/(16183:16183): I/O 5000
+[INFO] 16:01:14:985 CPU/(16183:16183): EXIT
+[INFO] 16:01:14:985 CPU/(16183:16183): --------------
+[INFO] 16:01:14:985 CPU/(16183:16183):   Nro de instrucion: 16
+[INFO] 16:01:14:985 CPU/(16183:16183):   instruccion/codigo op: EXIT
+[INFO] 16:01:14:985 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:14:985 CPU/(16183:16183):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 16:01:14:985 CPU/(16183:16183): -----PCB ------
+[INFO] 16:01:14:986 CPU/(16183:16183): id: 0
+[INFO] 16:01:14:986 CPU/(16183:16183): estimacion: 10000
+[INFO] 16:01:14:986 CPU/(16183:16183): program counter: 17
+[INFO] 16:01:14:986 CPU/(16183:16183): socket: 9
+[INFO] 16:01:14:986 CPU/(16183:16183): numero de tabla: 0
+[INFO] 16:01:14:986 CPU/(16183:16183): tamanio de consola: 500
+[INFO] 16:01:14:986 CPU/(16183:16183): lista Instrucciones:
+[INFO] 16:01:14:986 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:986 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:986 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:986 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:986 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:986 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:986 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:986 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:986 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:986 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:986 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:986 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:986 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:986 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:986 CPU/(16183:16183): NO_OP
+[INFO] 16:01:14:987 CPU/(16183:16183): I/O 5000
+[INFO] 16:01:14:987 CPU/(16183:16183): EXIT
+[INFO] 16:01:14:987 CPU/(16183:16183): --------------
+[WARNING] 16:01:14:987 CPU/(16183:16183): Entro por interrupcion al Break
+[INFO] 16:01:14:987 CPU/(16183:16183): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:01:17:485 CPU/(16183:16185):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:01:17:485 CPU/(16183:16185):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:01:17:486 CPU/(16183:16185):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:01:17:486 CPU/(16183:16183):  -----------
+[INFO] 16:01:17:486 CPU/(16183:16183):  El kernel envio un PCB:
+[INFO] 16:01:17:486 CPU/(16183:16183): -----PCB ------
+[INFO] 16:01:17:486 CPU/(16183:16183): id: 1
+[INFO] 16:01:17:486 CPU/(16183:16183): estimacion: 10000
+[INFO] 16:01:17:486 CPU/(16183:16183): program counter: 7
+[INFO] 16:01:17:486 CPU/(16183:16183): socket: 10
+[INFO] 16:01:17:486 CPU/(16183:16183): numero de tabla: 1
+[INFO] 16:01:17:486 CPU/(16183:16183): tamanio de consola: 100
+[INFO] 16:01:17:486 CPU/(16183:16183): lista Instrucciones:
+[INFO] 16:01:17:487 CPU/(16183:16183): NO_OP
+[INFO] 16:01:17:487 CPU/(16183:16183): NO_OP
+[INFO] 16:01:17:487 CPU/(16183:16183): NO_OP
+[INFO] 16:01:17:487 CPU/(16183:16183): NO_OP
+[INFO] 16:01:17:487 CPU/(16183:16183): NO_OP
+[INFO] 16:01:17:487 CPU/(16183:16183): NO_OP
+[INFO] 16:01:17:487 CPU/(16183:16183): I/O 2500
+[INFO] 16:01:17:487 CPU/(16183:16183): EXIT
+[INFO] 16:01:17:487 CPU/(16183:16183): --------------
+[INFO] 16:01:17:487 CPU/(16183:16183):   Nro de instrucion: 7
+[INFO] 16:01:17:487 CPU/(16183:16183):   instruccion/codigo op: EXIT
+[INFO] 16:01:17:487 CPU/(16183:16183):   Entro a fetch_operands
+[INFO] 16:01:17:487 CPU/(16183:16183):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 16:01:17:487 CPU/(16183:16183): -----PCB ------
+[INFO] 16:01:17:487 CPU/(16183:16183): id: 1
+[INFO] 16:01:17:487 CPU/(16183:16183): estimacion: 10000
+[INFO] 16:01:17:487 CPU/(16183:16183): program counter: 8
+[INFO] 16:01:17:488 CPU/(16183:16183): socket: 10
+[INFO] 16:01:17:488 CPU/(16183:16183): numero de tabla: 1
+[INFO] 16:01:17:488 CPU/(16183:16183): tamanio de consola: 100
+[INFO] 16:01:17:488 CPU/(16183:16183): lista Instrucciones:
+[INFO] 16:01:17:488 CPU/(16183:16183): NO_OP
+[INFO] 16:01:17:488 CPU/(16183:16183): NO_OP
+[INFO] 16:01:17:488 CPU/(16183:16183): NO_OP
+[INFO] 16:01:17:488 CPU/(16183:16183): NO_OP
+[INFO] 16:01:17:488 CPU/(16183:16183): NO_OP
+[INFO] 16:01:17:488 CPU/(16183:16183): NO_OP
+[INFO] 16:01:17:488 CPU/(16183:16183): I/O 2500
+[INFO] 16:01:17:488 CPU/(16183:16183): EXIT
+[INFO] 16:01:17:488 CPU/(16183:16183): --------------
+[WARNING] 16:01:17:488 CPU/(16183:16183): Entro por interrupcion al Break
+[INFO] 16:01:17:489 CPU/(16183:16183): --- A ESPERA DE UNA OPERACION
+
+[ERROR] 16:02:52:209 CPU/(16183:16183): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[ERROR] 16:02:52:209 CPU/(16183:16185): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[INFO] 16:02:52:209 CPU/(16183:16185):      ---- Salio: escuchaInterrup(...)
+[INFO] 16:02:52:209 CPU/(16183:16183): Entro: finalizar_cpu
+[INFO] 16:02:52:209 CPU/(16183:16183): Finalizamos el Hilo interrupt
+[INFO] 16:02:52:210 CPU/(16183:16183): 
+###### FIN LOGGER ######
+[INFO] 16:03:46:304 CPU/(17426:17426): 
+###### INICIO DE LOGGER ######
+[INFO] 16:03:46:305 CPU/(17426:17426):    ---Leyo archivo de configuraciones
+[INFO] 16:03:46:305 CPU/(17426:17426):    ---Asigno a los semaforos con valores iniciales
+[INFO] 16:03:46:305 CPU/(17426:17426):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 16:03:46:305 CPU/(17426:17426):  Hicimos handshake_cpu_memoria
+[INFO] 16:03:46:305 CPU/(17426:17426): --- Nro de filas tabla nivel 1: 4
+[INFO] 16:03:46:305 CPU/(17426:17426): --- Tamano de pagina: 64
+[INFO] 16:03:46:305 CPU/(17426:17426): Entro: iniciar_servidor_dispatch
+[INFO] 16:03:46:305 CPU/(17426:17426): Entro: iniciar_servidor_cpu
+[INFO] 16:03:46:305 CPU/(17426:17426):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 16:03:46:305 CPU/(17426:17426):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 16:03:46:305 CPU/(17426:17426):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 16:03:46:305 CPU/(17426:17426): Se creo el Hilo: interrupt
+[INFO] 16:03:46:305 CPU/(17426:17426): Entro: esperar_cliente_cpu
+[INFO] 16:03:46:305 CPU/(17426:17426):  Socket server recibido: 5
+[INFO] 16:03:46:305 CPU/(17426:17426):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 16:03:46:305 CPU/(17426:17428):    --- Entro: escuchaInterrup(...)
+[INFO] 16:03:46:305 CPU/(17426:17428): Entro: iniciar_servidor_interrupt
+[INFO] 16:03:46:305 CPU/(17426:17428): Entro: iniciar_servidor_cpu
+[INFO] 16:03:46:305 CPU/(17426:17428):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 16:03:46:305 CPU/(17426:17428):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 16:03:46:305 CPU/(17426:17428):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 16:03:46:305 CPU/(17426:17428): Entro: esperar_cliente_cpu
+[INFO] 16:03:46:305 CPU/(17426:17428):  Socket server recibido: 8
+[INFO] 16:03:46:305 CPU/(17426:17428):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 16:03:47:897 CPU/(17426:17426):  Termino el BLOQUEO
+[INFO] 16:03:47:897 CPU/(17426:17428):  Termino el BLOQUEO
+[INFO] 16:03:47:897 CPU/(17426:17426):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 16:03:47:897 CPU/(17426:17426): INICIO: recibir_operaciones()
+[INFO] 16:03:47:897 CPU/(17426:17428):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 16:03:47:897 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:03:47:897 CPU/(17426:17428):  ---- Socket kernel interrupt: 9
+[INFO] 16:03:47:897 CPU/(17426:17428):    INICIO: recibir_operacion_interrupt()
+[INFO] 16:03:47:897 CPU/(17426:17428):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:03:52:456 CPU/(17426:17426):  -----------
+[INFO] 16:03:52:456 CPU/(17426:17426):  El kernel envio un PCB:
+[INFO] 16:03:52:456 CPU/(17426:17426): -----PCB ------
+[INFO] 16:03:52:456 CPU/(17426:17426): id: 0
+[INFO] 16:03:52:456 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:03:52:456 CPU/(17426:17426): program counter: 0
+[INFO] 16:03:52:456 CPU/(17426:17426): socket: 9
+[INFO] 16:03:52:456 CPU/(17426:17426): numero de tabla: 0
+[INFO] 16:03:52:456 CPU/(17426:17426): tamanio de consola: 100
+[INFO] 16:03:52:456 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:03:52:456 CPU/(17426:17426): NO_OP
+[INFO] 16:03:52:456 CPU/(17426:17426): NO_OP
+[INFO] 16:03:52:456 CPU/(17426:17426): NO_OP
+[INFO] 16:03:52:457 CPU/(17426:17426): NO_OP
+[INFO] 16:03:52:457 CPU/(17426:17426): NO_OP
+[INFO] 16:03:52:457 CPU/(17426:17426): NO_OP
+[INFO] 16:03:52:457 CPU/(17426:17426): I/O 2500
+[INFO] 16:03:52:457 CPU/(17426:17426): EXIT
+[INFO] 16:03:52:457 CPU/(17426:17426): --------------
+[INFO] 16:03:52:457 CPU/(17426:17426):   Nro de instrucion: 0
+[INFO] 16:03:52:457 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:03:52:457 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:03:52:457 CPU/(17426:17426):   Time: 1000
+[INFO] 16:03:53:458 CPU/(17426:17426):   Nro de instrucion: 1
+[INFO] 16:03:53:458 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:03:53:458 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:03:53:458 CPU/(17426:17426):   Time: 1000
+[INFO] 16:03:54:459 CPU/(17426:17426):   Nro de instrucion: 2
+[INFO] 16:03:54:459 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:03:54:459 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:03:54:459 CPU/(17426:17426):   Time: 1000
+[INFO] 16:03:55:472 CPU/(17426:17426):   Nro de instrucion: 3
+[INFO] 16:03:55:472 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:03:55:472 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:03:55:472 CPU/(17426:17426):   Time: 1000
+[INFO] 16:03:56:473 CPU/(17426:17426):   Nro de instrucion: 4
+[INFO] 16:03:56:473 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:03:56:473 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:03:56:473 CPU/(17426:17426):   Time: 1000
+[INFO] 16:03:57:477 CPU/(17426:17426):   Nro de instrucion: 5
+[INFO] 16:03:57:478 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:03:57:478 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:03:57:478 CPU/(17426:17426):   Time: 1000
+[INFO] 16:03:58:502 CPU/(17426:17426):   Nro de instrucion: 6
+[INFO] 16:03:58:503 CPU/(17426:17426):   instruccion/codigo op: I/O
+[INFO] 16:03:58:503 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:03:58:503 CPU/(17426:17426):    Llego a i_o()
+[INFO] 16:03:58:503 CPU/(17426:17426):    Llego responsePorBloqueo()
+[INFO] 16:03:58:503 CPU/(17426:17426):    Se le asignoMemoria:
+[INFO] 16:03:58:503 CPU/(17426:17426):    Enviamos el PCB Bloqueado 
+[WARNING] 16:03:58:503 CPU/(17426:17426): Entro por interrupcion al Break
+[INFO] 16:03:58:503 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:03:58:506 CPU/(17426:17426):  -----------
+[INFO] 16:03:58:506 CPU/(17426:17426):  El kernel envio un PCB:
+[INFO] 16:03:58:506 CPU/(17426:17426): -----PCB ------
+[INFO] 16:03:58:506 CPU/(17426:17426): id: 1
+[INFO] 16:03:58:507 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:03:58:507 CPU/(17426:17426): program counter: 0
+[INFO] 16:03:58:507 CPU/(17426:17426): socket: 10
+[INFO] 16:03:58:507 CPU/(17426:17426): numero de tabla: 1
+[INFO] 16:03:58:507 CPU/(17426:17426): tamanio de consola: 500
+[INFO] 16:03:58:507 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:03:58:507 CPU/(17426:17426): NO_OP
+[INFO] 16:03:58:507 CPU/(17426:17426): NO_OP
+[INFO] 16:03:58:507 CPU/(17426:17426): NO_OP
+[INFO] 16:03:58:507 CPU/(17426:17426): NO_OP
+[INFO] 16:03:58:507 CPU/(17426:17426): NO_OP
+[INFO] 16:03:58:507 CPU/(17426:17426): NO_OP
+[INFO] 16:03:58:507 CPU/(17426:17426): NO_OP
+[INFO] 16:03:58:507 CPU/(17426:17426): NO_OP
+[INFO] 16:03:58:507 CPU/(17426:17426): NO_OP
+[INFO] 16:03:58:507 CPU/(17426:17426): NO_OP
+[INFO] 16:03:58:507 CPU/(17426:17426): NO_OP
+[INFO] 16:03:58:507 CPU/(17426:17426): NO_OP
+[INFO] 16:03:58:507 CPU/(17426:17426): NO_OP
+[INFO] 16:03:58:507 CPU/(17426:17426): NO_OP
+[INFO] 16:03:58:508 CPU/(17426:17426): NO_OP
+[INFO] 16:03:58:508 CPU/(17426:17426): I/O 5000
+[INFO] 16:03:58:508 CPU/(17426:17426): EXIT
+[INFO] 16:03:58:508 CPU/(17426:17426): --------------
+[INFO] 16:03:58:508 CPU/(17426:17426):   Nro de instrucion: 0
+[INFO] 16:03:58:508 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:03:58:508 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:03:58:508 CPU/(17426:17426):   Time: 1000
+[INFO] 16:03:59:509 CPU/(17426:17426):   Nro de instrucion: 1
+[INFO] 16:03:59:509 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:03:59:509 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:03:59:509 CPU/(17426:17426):   Time: 1000
+[INFO] 16:04:00:511 CPU/(17426:17426):   Nro de instrucion: 2
+[INFO] 16:04:00:511 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:04:00:511 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:04:00:511 CPU/(17426:17426):   Time: 1000
+[INFO] 16:04:01:006 CPU/(17426:17428):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:04:01:006 CPU/(17426:17428):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:04:01:006 CPU/(17426:17428):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:01:512 CPU/(17426:17426):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:04:01:512 CPU/(17426:17426):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:04:01:512 CPU/(17426:17426): Entro por interrupcion al Break
+[INFO] 16:04:01:512 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:01:513 CPU/(17426:17428):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:04:01:513 CPU/(17426:17428):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:04:01:513 CPU/(17426:17428):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:01:515 CPU/(17426:17426):  -----------
+[INFO] 16:04:01:515 CPU/(17426:17426):  El kernel envio un PCB:
+[INFO] 16:04:01:515 CPU/(17426:17426): -----PCB ------
+[INFO] 16:04:01:515 CPU/(17426:17426): id: 1
+[INFO] 16:04:01:515 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:04:01:515 CPU/(17426:17426): program counter: 3
+[INFO] 16:04:01:515 CPU/(17426:17426): socket: 10
+[INFO] 16:04:01:515 CPU/(17426:17426): numero de tabla: 1
+[INFO] 16:04:01:515 CPU/(17426:17426): tamanio de consola: 500
+[INFO] 16:04:01:516 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:04:01:516 CPU/(17426:17426): NO_OP
+[INFO] 16:04:01:516 CPU/(17426:17426): NO_OP
+[INFO] 16:04:01:516 CPU/(17426:17426): NO_OP
+[INFO] 16:04:01:516 CPU/(17426:17426): NO_OP
+[INFO] 16:04:01:516 CPU/(17426:17426): NO_OP
+[INFO] 16:04:01:516 CPU/(17426:17426): NO_OP
+[INFO] 16:04:01:516 CPU/(17426:17426): NO_OP
+[INFO] 16:04:01:516 CPU/(17426:17426): NO_OP
+[INFO] 16:04:01:516 CPU/(17426:17426): NO_OP
+[INFO] 16:04:01:516 CPU/(17426:17426): NO_OP
+[INFO] 16:04:01:516 CPU/(17426:17426): NO_OP
+[INFO] 16:04:01:516 CPU/(17426:17426): NO_OP
+[INFO] 16:04:01:516 CPU/(17426:17426): NO_OP
+[INFO] 16:04:01:516 CPU/(17426:17426): NO_OP
+[INFO] 16:04:01:516 CPU/(17426:17426): NO_OP
+[INFO] 16:04:01:516 CPU/(17426:17426): I/O 5000
+[INFO] 16:04:01:516 CPU/(17426:17426): EXIT
+[INFO] 16:04:01:517 CPU/(17426:17426): --------------
+[INFO] 16:04:01:517 CPU/(17426:17426):   Nro de instrucion: 3
+[INFO] 16:04:01:517 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:04:01:517 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:04:01:517 CPU/(17426:17426):   Time: 1000
+[INFO] 16:04:02:517 CPU/(17426:17426):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:04:02:517 CPU/(17426:17426):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:04:02:518 CPU/(17426:17426): Entro por interrupcion al Break
+[INFO] 16:04:02:519 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:02:520 CPU/(17426:17428):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:04:02:520 CPU/(17426:17428):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:04:02:520 CPU/(17426:17428):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:02:521 CPU/(17426:17426):  -----------
+[INFO] 16:04:02:521 CPU/(17426:17426):  El kernel envio un PCB:
+[INFO] 16:04:02:521 CPU/(17426:17426): -----PCB ------
+[INFO] 16:04:02:521 CPU/(17426:17426): id: 1
+[INFO] 16:04:02:521 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:04:02:522 CPU/(17426:17426): program counter: 4
+[INFO] 16:04:02:522 CPU/(17426:17426): socket: 10
+[INFO] 16:04:02:522 CPU/(17426:17426): numero de tabla: 1
+[INFO] 16:04:02:522 CPU/(17426:17426): tamanio de consola: 500
+[INFO] 16:04:02:522 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:04:02:522 CPU/(17426:17426): NO_OP
+[INFO] 16:04:02:522 CPU/(17426:17426): NO_OP
+[INFO] 16:04:02:522 CPU/(17426:17426): NO_OP
+[INFO] 16:04:02:522 CPU/(17426:17426): NO_OP
+[INFO] 16:04:02:522 CPU/(17426:17426): NO_OP
+[INFO] 16:04:02:522 CPU/(17426:17426): NO_OP
+[INFO] 16:04:02:522 CPU/(17426:17426): NO_OP
+[INFO] 16:04:02:522 CPU/(17426:17426): NO_OP
+[INFO] 16:04:02:522 CPU/(17426:17426): NO_OP
+[INFO] 16:04:02:522 CPU/(17426:17426): NO_OP
+[INFO] 16:04:02:522 CPU/(17426:17426): NO_OP
+[INFO] 16:04:02:522 CPU/(17426:17426): NO_OP
+[INFO] 16:04:02:522 CPU/(17426:17426): NO_OP
+[INFO] 16:04:02:522 CPU/(17426:17426): NO_OP
+[INFO] 16:04:02:522 CPU/(17426:17426): NO_OP
+[INFO] 16:04:02:522 CPU/(17426:17426): I/O 5000
+[INFO] 16:04:02:522 CPU/(17426:17426): EXIT
+[INFO] 16:04:02:522 CPU/(17426:17426): --------------
+[INFO] 16:04:02:522 CPU/(17426:17426):   Nro de instrucion: 4
+[INFO] 16:04:02:522 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:04:02:522 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:04:02:522 CPU/(17426:17426):   Time: 1000
+[INFO] 16:04:03:526 CPU/(17426:17426):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:04:03:526 CPU/(17426:17426):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:04:03:526 CPU/(17426:17426): Entro por interrupcion al Break
+[INFO] 16:04:03:526 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:03:527 CPU/(17426:17428):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:04:03:527 CPU/(17426:17428):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:04:03:528 CPU/(17426:17428):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:03:529 CPU/(17426:17426):  -----------
+[INFO] 16:04:03:529 CPU/(17426:17426):  El kernel envio un PCB:
+[INFO] 16:04:03:529 CPU/(17426:17426): -----PCB ------
+[INFO] 16:04:03:529 CPU/(17426:17426): id: 1
+[INFO] 16:04:03:529 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:04:03:529 CPU/(17426:17426): program counter: 5
+[INFO] 16:04:03:529 CPU/(17426:17426): socket: 10
+[INFO] 16:04:03:529 CPU/(17426:17426): numero de tabla: 1
+[INFO] 16:04:03:529 CPU/(17426:17426): tamanio de consola: 500
+[INFO] 16:04:03:529 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:04:03:529 CPU/(17426:17426): NO_OP
+[INFO] 16:04:03:529 CPU/(17426:17426): NO_OP
+[INFO] 16:04:03:529 CPU/(17426:17426): NO_OP
+[INFO] 16:04:03:529 CPU/(17426:17426): NO_OP
+[INFO] 16:04:03:529 CPU/(17426:17426): NO_OP
+[INFO] 16:04:03:529 CPU/(17426:17426): NO_OP
+[INFO] 16:04:03:529 CPU/(17426:17426): NO_OP
+[INFO] 16:04:03:530 CPU/(17426:17426): NO_OP
+[INFO] 16:04:03:530 CPU/(17426:17426): NO_OP
+[INFO] 16:04:03:530 CPU/(17426:17426): NO_OP
+[INFO] 16:04:03:530 CPU/(17426:17426): NO_OP
+[INFO] 16:04:03:530 CPU/(17426:17426): NO_OP
+[INFO] 16:04:03:530 CPU/(17426:17426): NO_OP
+[INFO] 16:04:03:530 CPU/(17426:17426): NO_OP
+[INFO] 16:04:03:530 CPU/(17426:17426): NO_OP
+[INFO] 16:04:03:530 CPU/(17426:17426): I/O 5000
+[INFO] 16:04:03:530 CPU/(17426:17426): EXIT
+[INFO] 16:04:03:530 CPU/(17426:17426): --------------
+[INFO] 16:04:03:530 CPU/(17426:17426):   Nro de instrucion: 5
+[INFO] 16:04:03:530 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:04:03:530 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:04:03:530 CPU/(17426:17426):   Time: 1000
+[INFO] 16:04:04:533 CPU/(17426:17426):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:04:04:533 CPU/(17426:17426):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:04:04:533 CPU/(17426:17426): Entro por interrupcion al Break
+[INFO] 16:04:04:533 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:04:534 CPU/(17426:17428):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:04:04:534 CPU/(17426:17428):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:04:04:534 CPU/(17426:17428):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:04:535 CPU/(17426:17426):  -----------
+[INFO] 16:04:04:535 CPU/(17426:17426):  El kernel envio un PCB:
+[INFO] 16:04:04:535 CPU/(17426:17426): -----PCB ------
+[INFO] 16:04:04:535 CPU/(17426:17426): id: 1
+[INFO] 16:04:04:535 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:04:04:535 CPU/(17426:17426): program counter: 6
+[INFO] 16:04:04:535 CPU/(17426:17426): socket: 10
+[INFO] 16:04:04:535 CPU/(17426:17426): numero de tabla: 1
+[INFO] 16:04:04:535 CPU/(17426:17426): tamanio de consola: 500
+[INFO] 16:04:04:536 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:04:04:536 CPU/(17426:17426): NO_OP
+[INFO] 16:04:04:536 CPU/(17426:17426): NO_OP
+[INFO] 16:04:04:536 CPU/(17426:17426): NO_OP
+[INFO] 16:04:04:536 CPU/(17426:17426): NO_OP
+[INFO] 16:04:04:536 CPU/(17426:17426): NO_OP
+[INFO] 16:04:04:536 CPU/(17426:17426): NO_OP
+[INFO] 16:04:04:536 CPU/(17426:17426): NO_OP
+[INFO] 16:04:04:536 CPU/(17426:17426): NO_OP
+[INFO] 16:04:04:536 CPU/(17426:17426): NO_OP
+[INFO] 16:04:04:536 CPU/(17426:17426): NO_OP
+[INFO] 16:04:04:536 CPU/(17426:17426): NO_OP
+[INFO] 16:04:04:536 CPU/(17426:17426): NO_OP
+[INFO] 16:04:04:536 CPU/(17426:17426): NO_OP
+[INFO] 16:04:04:536 CPU/(17426:17426): NO_OP
+[INFO] 16:04:04:536 CPU/(17426:17426): NO_OP
+[INFO] 16:04:04:536 CPU/(17426:17426): I/O 5000
+[INFO] 16:04:04:536 CPU/(17426:17426): EXIT
+[INFO] 16:04:04:536 CPU/(17426:17426): --------------
+[INFO] 16:04:04:536 CPU/(17426:17426):   Nro de instrucion: 6
+[INFO] 16:04:04:536 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:04:04:536 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:04:04:536 CPU/(17426:17426):   Time: 1000
+[INFO] 16:04:05:537 CPU/(17426:17426):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:04:05:537 CPU/(17426:17426):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:04:05:538 CPU/(17426:17426): Entro por interrupcion al Break
+[INFO] 16:04:05:538 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:05:538 CPU/(17426:17428):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:04:05:538 CPU/(17426:17428):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:04:05:538 CPU/(17426:17428):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:05:540 CPU/(17426:17426):  -----------
+[INFO] 16:04:05:540 CPU/(17426:17426):  El kernel envio un PCB:
+[INFO] 16:04:05:540 CPU/(17426:17426): -----PCB ------
+[INFO] 16:04:05:540 CPU/(17426:17426): id: 1
+[INFO] 16:04:05:540 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:04:05:540 CPU/(17426:17426): program counter: 7
+[INFO] 16:04:05:540 CPU/(17426:17426): socket: 10
+[INFO] 16:04:05:540 CPU/(17426:17426): numero de tabla: 1
+[INFO] 16:04:05:540 CPU/(17426:17426): tamanio de consola: 500
+[INFO] 16:04:05:540 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:04:05:540 CPU/(17426:17426): NO_OP
+[INFO] 16:04:05:540 CPU/(17426:17426): NO_OP
+[INFO] 16:04:05:541 CPU/(17426:17426): NO_OP
+[INFO] 16:04:05:541 CPU/(17426:17426): NO_OP
+[INFO] 16:04:05:541 CPU/(17426:17426): NO_OP
+[INFO] 16:04:05:541 CPU/(17426:17426): NO_OP
+[INFO] 16:04:05:541 CPU/(17426:17426): NO_OP
+[INFO] 16:04:05:541 CPU/(17426:17426): NO_OP
+[INFO] 16:04:05:541 CPU/(17426:17426): NO_OP
+[INFO] 16:04:05:541 CPU/(17426:17426): NO_OP
+[INFO] 16:04:05:541 CPU/(17426:17426): NO_OP
+[INFO] 16:04:05:541 CPU/(17426:17426): NO_OP
+[INFO] 16:04:05:541 CPU/(17426:17426): NO_OP
+[INFO] 16:04:05:541 CPU/(17426:17426): NO_OP
+[INFO] 16:04:05:541 CPU/(17426:17426): NO_OP
+[INFO] 16:04:05:541 CPU/(17426:17426): I/O 5000
+[INFO] 16:04:05:541 CPU/(17426:17426): EXIT
+[INFO] 16:04:05:541 CPU/(17426:17426): --------------
+[INFO] 16:04:05:541 CPU/(17426:17426):   Nro de instrucion: 7
+[INFO] 16:04:05:541 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:04:05:541 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:04:05:541 CPU/(17426:17426):   Time: 1000
+[INFO] 16:04:06:544 CPU/(17426:17426):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:04:06:544 CPU/(17426:17426):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:04:06:544 CPU/(17426:17426): Entro por interrupcion al Break
+[INFO] 16:04:06:545 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:06:545 CPU/(17426:17428):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:04:06:545 CPU/(17426:17428):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:04:06:545 CPU/(17426:17428):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:06:547 CPU/(17426:17426):  -----------
+[INFO] 16:04:06:547 CPU/(17426:17426):  El kernel envio un PCB:
+[INFO] 16:04:06:547 CPU/(17426:17426): -----PCB ------
+[INFO] 16:04:06:547 CPU/(17426:17426): id: 1
+[INFO] 16:04:06:547 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:04:06:547 CPU/(17426:17426): program counter: 8
+[INFO] 16:04:06:547 CPU/(17426:17426): socket: 10
+[INFO] 16:04:06:547 CPU/(17426:17426): numero de tabla: 1
+[INFO] 16:04:06:547 CPU/(17426:17426): tamanio de consola: 500
+[INFO] 16:04:06:547 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:04:06:547 CPU/(17426:17426): NO_OP
+[INFO] 16:04:06:547 CPU/(17426:17426): NO_OP
+[INFO] 16:04:06:547 CPU/(17426:17426): NO_OP
+[INFO] 16:04:06:547 CPU/(17426:17426): NO_OP
+[INFO] 16:04:06:547 CPU/(17426:17426): NO_OP
+[INFO] 16:04:06:547 CPU/(17426:17426): NO_OP
+[INFO] 16:04:06:547 CPU/(17426:17426): NO_OP
+[INFO] 16:04:06:547 CPU/(17426:17426): NO_OP
+[INFO] 16:04:06:548 CPU/(17426:17426): NO_OP
+[INFO] 16:04:06:548 CPU/(17426:17426): NO_OP
+[INFO] 16:04:06:548 CPU/(17426:17426): NO_OP
+[INFO] 16:04:06:548 CPU/(17426:17426): NO_OP
+[INFO] 16:04:06:548 CPU/(17426:17426): NO_OP
+[INFO] 16:04:06:548 CPU/(17426:17426): NO_OP
+[INFO] 16:04:06:548 CPU/(17426:17426): NO_OP
+[INFO] 16:04:06:548 CPU/(17426:17426): I/O 5000
+[INFO] 16:04:06:548 CPU/(17426:17426): EXIT
+[INFO] 16:04:06:548 CPU/(17426:17426): --------------
+[INFO] 16:04:06:548 CPU/(17426:17426):   Nro de instrucion: 8
+[INFO] 16:04:06:548 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:04:06:548 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:04:06:549 CPU/(17426:17426):   Time: 1000
+[INFO] 16:04:07:550 CPU/(17426:17426):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:04:07:551 CPU/(17426:17426):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:04:07:551 CPU/(17426:17426): Entro por interrupcion al Break
+[INFO] 16:04:07:551 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:07:552 CPU/(17426:17428):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:04:07:552 CPU/(17426:17428):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:04:07:552 CPU/(17426:17428):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:07:553 CPU/(17426:17426):  -----------
+[INFO] 16:04:07:553 CPU/(17426:17426):  El kernel envio un PCB:
+[INFO] 16:04:07:553 CPU/(17426:17426): -----PCB ------
+[INFO] 16:04:07:553 CPU/(17426:17426): id: 1
+[INFO] 16:04:07:553 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:04:07:554 CPU/(17426:17426): program counter: 9
+[INFO] 16:04:07:554 CPU/(17426:17426): socket: 10
+[INFO] 16:04:07:554 CPU/(17426:17426): numero de tabla: 1
+[INFO] 16:04:07:554 CPU/(17426:17426): tamanio de consola: 500
+[INFO] 16:04:07:554 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:04:07:554 CPU/(17426:17426): NO_OP
+[INFO] 16:04:07:554 CPU/(17426:17426): NO_OP
+[INFO] 16:04:07:554 CPU/(17426:17426): NO_OP
+[INFO] 16:04:07:554 CPU/(17426:17426): NO_OP
+[INFO] 16:04:07:554 CPU/(17426:17426): NO_OP
+[INFO] 16:04:07:554 CPU/(17426:17426): NO_OP
+[INFO] 16:04:07:554 CPU/(17426:17426): NO_OP
+[INFO] 16:04:07:554 CPU/(17426:17426): NO_OP
+[INFO] 16:04:07:554 CPU/(17426:17426): NO_OP
+[INFO] 16:04:07:554 CPU/(17426:17426): NO_OP
+[INFO] 16:04:07:554 CPU/(17426:17426): NO_OP
+[INFO] 16:04:07:555 CPU/(17426:17426): NO_OP
+[INFO] 16:04:07:555 CPU/(17426:17426): NO_OP
+[INFO] 16:04:07:555 CPU/(17426:17426): NO_OP
+[INFO] 16:04:07:555 CPU/(17426:17426): NO_OP
+[INFO] 16:04:07:555 CPU/(17426:17426): I/O 5000
+[INFO] 16:04:07:555 CPU/(17426:17426): EXIT
+[INFO] 16:04:07:555 CPU/(17426:17426): --------------
+[INFO] 16:04:07:555 CPU/(17426:17426):   Nro de instrucion: 9
+[INFO] 16:04:07:555 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:04:07:555 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:04:07:555 CPU/(17426:17426):   Time: 1000
+[INFO] 16:04:08:556 CPU/(17426:17426):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:04:08:556 CPU/(17426:17426):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:04:08:557 CPU/(17426:17426): Entro por interrupcion al Break
+[INFO] 16:04:08:557 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:08:557 CPU/(17426:17428):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:04:08:557 CPU/(17426:17428):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:04:08:557 CPU/(17426:17428):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:08:558 CPU/(17426:17426):  -----------
+[INFO] 16:04:08:558 CPU/(17426:17426):  El kernel envio un PCB:
+[INFO] 16:04:08:558 CPU/(17426:17426): -----PCB ------
+[INFO] 16:04:08:559 CPU/(17426:17426): id: 1
+[INFO] 16:04:08:559 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:04:08:559 CPU/(17426:17426): program counter: 10
+[INFO] 16:04:08:559 CPU/(17426:17426): socket: 10
+[INFO] 16:04:08:559 CPU/(17426:17426): numero de tabla: 1
+[INFO] 16:04:08:559 CPU/(17426:17426): tamanio de consola: 500
+[INFO] 16:04:08:559 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:04:08:559 CPU/(17426:17426): NO_OP
+[INFO] 16:04:08:559 CPU/(17426:17426): NO_OP
+[INFO] 16:04:08:559 CPU/(17426:17426): NO_OP
+[INFO] 16:04:08:559 CPU/(17426:17426): NO_OP
+[INFO] 16:04:08:559 CPU/(17426:17426): NO_OP
+[INFO] 16:04:08:559 CPU/(17426:17426): NO_OP
+[INFO] 16:04:08:559 CPU/(17426:17426): NO_OP
+[INFO] 16:04:08:559 CPU/(17426:17426): NO_OP
+[INFO] 16:04:08:559 CPU/(17426:17426): NO_OP
+[INFO] 16:04:08:559 CPU/(17426:17426): NO_OP
+[INFO] 16:04:08:559 CPU/(17426:17426): NO_OP
+[INFO] 16:04:08:559 CPU/(17426:17426): NO_OP
+[INFO] 16:04:08:559 CPU/(17426:17426): NO_OP
+[INFO] 16:04:08:559 CPU/(17426:17426): NO_OP
+[INFO] 16:04:08:559 CPU/(17426:17426): NO_OP
+[INFO] 16:04:08:559 CPU/(17426:17426): I/O 5000
+[INFO] 16:04:08:559 CPU/(17426:17426): EXIT
+[INFO] 16:04:08:559 CPU/(17426:17426): --------------
+[INFO] 16:04:08:559 CPU/(17426:17426):   Nro de instrucion: 10
+[INFO] 16:04:08:559 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:04:08:559 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:04:08:559 CPU/(17426:17426):   Time: 1000
+[INFO] 16:04:09:560 CPU/(17426:17426):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:04:09:560 CPU/(17426:17426):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:04:09:560 CPU/(17426:17426): Entro por interrupcion al Break
+[INFO] 16:04:09:560 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:09:561 CPU/(17426:17428):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:04:09:561 CPU/(17426:17428):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:04:09:561 CPU/(17426:17428):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:09:563 CPU/(17426:17426):  -----------
+[INFO] 16:04:09:563 CPU/(17426:17426):  El kernel envio un PCB:
+[INFO] 16:04:09:563 CPU/(17426:17426): -----PCB ------
+[INFO] 16:04:09:563 CPU/(17426:17426): id: 1
+[INFO] 16:04:09:563 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:04:09:563 CPU/(17426:17426): program counter: 11
+[INFO] 16:04:09:563 CPU/(17426:17426): socket: 10
+[INFO] 16:04:09:563 CPU/(17426:17426): numero de tabla: 1
+[INFO] 16:04:09:563 CPU/(17426:17426): tamanio de consola: 500
+[INFO] 16:04:09:563 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:04:09:563 CPU/(17426:17426): NO_OP
+[INFO] 16:04:09:563 CPU/(17426:17426): NO_OP
+[INFO] 16:04:09:563 CPU/(17426:17426): NO_OP
+[INFO] 16:04:09:563 CPU/(17426:17426): NO_OP
+[INFO] 16:04:09:563 CPU/(17426:17426): NO_OP
+[INFO] 16:04:09:564 CPU/(17426:17426): NO_OP
+[INFO] 16:04:09:564 CPU/(17426:17426): NO_OP
+[INFO] 16:04:09:564 CPU/(17426:17426): NO_OP
+[INFO] 16:04:09:564 CPU/(17426:17426): NO_OP
+[INFO] 16:04:09:564 CPU/(17426:17426): NO_OP
+[INFO] 16:04:09:564 CPU/(17426:17426): NO_OP
+[INFO] 16:04:09:564 CPU/(17426:17426): NO_OP
+[INFO] 16:04:09:564 CPU/(17426:17426): NO_OP
+[INFO] 16:04:09:564 CPU/(17426:17426): NO_OP
+[INFO] 16:04:09:564 CPU/(17426:17426): NO_OP
+[INFO] 16:04:09:564 CPU/(17426:17426): I/O 5000
+[INFO] 16:04:09:564 CPU/(17426:17426): EXIT
+[INFO] 16:04:09:564 CPU/(17426:17426): --------------
+[INFO] 16:04:09:564 CPU/(17426:17426):   Nro de instrucion: 11
+[INFO] 16:04:09:564 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:04:09:564 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:04:09:565 CPU/(17426:17426):   Time: 1000
+[INFO] 16:04:10:565 CPU/(17426:17426):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:04:10:565 CPU/(17426:17426):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:04:10:566 CPU/(17426:17426): Entro por interrupcion al Break
+[INFO] 16:04:10:566 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:10:566 CPU/(17426:17428):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:04:10:566 CPU/(17426:17428):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:04:10:566 CPU/(17426:17428):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:10:566 CPU/(17426:17426):  -----------
+[INFO] 16:04:10:566 CPU/(17426:17426):  El kernel envio un PCB:
+[INFO] 16:04:10:566 CPU/(17426:17426): -----PCB ------
+[INFO] 16:04:10:566 CPU/(17426:17426): id: 1
+[INFO] 16:04:10:566 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:04:10:566 CPU/(17426:17426): program counter: 12
+[INFO] 16:04:10:566 CPU/(17426:17426): socket: 10
+[INFO] 16:04:10:566 CPU/(17426:17426): numero de tabla: 1
+[INFO] 16:04:10:566 CPU/(17426:17426): tamanio de consola: 500
+[INFO] 16:04:10:566 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:04:10:566 CPU/(17426:17426): NO_OP
+[INFO] 16:04:10:566 CPU/(17426:17426): NO_OP
+[INFO] 16:04:10:566 CPU/(17426:17426): NO_OP
+[INFO] 16:04:10:566 CPU/(17426:17426): NO_OP
+[INFO] 16:04:10:566 CPU/(17426:17426): NO_OP
+[INFO] 16:04:10:566 CPU/(17426:17426): NO_OP
+[INFO] 16:04:10:566 CPU/(17426:17426): NO_OP
+[INFO] 16:04:10:566 CPU/(17426:17426): NO_OP
+[INFO] 16:04:10:566 CPU/(17426:17426): NO_OP
+[INFO] 16:04:10:566 CPU/(17426:17426): NO_OP
+[INFO] 16:04:10:566 CPU/(17426:17426): NO_OP
+[INFO] 16:04:10:566 CPU/(17426:17426): NO_OP
+[INFO] 16:04:10:566 CPU/(17426:17426): NO_OP
+[INFO] 16:04:10:566 CPU/(17426:17426): NO_OP
+[INFO] 16:04:10:566 CPU/(17426:17426): NO_OP
+[INFO] 16:04:10:566 CPU/(17426:17426): I/O 5000
+[INFO] 16:04:10:566 CPU/(17426:17426): EXIT
+[INFO] 16:04:10:566 CPU/(17426:17426): --------------
+[INFO] 16:04:10:566 CPU/(17426:17426):   Nro de instrucion: 12
+[INFO] 16:04:10:566 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:04:10:566 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:04:10:566 CPU/(17426:17426):   Time: 1000
+[INFO] 16:04:11:572 CPU/(17426:17426):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:04:11:572 CPU/(17426:17426):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:04:11:573 CPU/(17426:17426): Entro por interrupcion al Break
+[INFO] 16:04:11:573 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:11:573 CPU/(17426:17428):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:04:11:573 CPU/(17426:17428):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:04:11:574 CPU/(17426:17428):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:11:575 CPU/(17426:17426):  -----------
+[INFO] 16:04:11:575 CPU/(17426:17426):  El kernel envio un PCB:
+[INFO] 16:04:11:575 CPU/(17426:17426): -----PCB ------
+[INFO] 16:04:11:575 CPU/(17426:17426): id: 1
+[INFO] 16:04:11:575 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:04:11:575 CPU/(17426:17426): program counter: 13
+[INFO] 16:04:11:575 CPU/(17426:17426): socket: 10
+[INFO] 16:04:11:575 CPU/(17426:17426): numero de tabla: 1
+[INFO] 16:04:11:576 CPU/(17426:17426): tamanio de consola: 500
+[INFO] 16:04:11:576 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:04:11:576 CPU/(17426:17426): NO_OP
+[INFO] 16:04:11:576 CPU/(17426:17426): NO_OP
+[INFO] 16:04:11:576 CPU/(17426:17426): NO_OP
+[INFO] 16:04:11:576 CPU/(17426:17426): NO_OP
+[INFO] 16:04:11:576 CPU/(17426:17426): NO_OP
+[INFO] 16:04:11:576 CPU/(17426:17426): NO_OP
+[INFO] 16:04:11:576 CPU/(17426:17426): NO_OP
+[INFO] 16:04:11:576 CPU/(17426:17426): NO_OP
+[INFO] 16:04:11:576 CPU/(17426:17426): NO_OP
+[INFO] 16:04:11:576 CPU/(17426:17426): NO_OP
+[INFO] 16:04:11:576 CPU/(17426:17426): NO_OP
+[INFO] 16:04:11:576 CPU/(17426:17426): NO_OP
+[INFO] 16:04:11:577 CPU/(17426:17426): NO_OP
+[INFO] 16:04:11:577 CPU/(17426:17426): NO_OP
+[INFO] 16:04:11:577 CPU/(17426:17426): NO_OP
+[INFO] 16:04:11:577 CPU/(17426:17426): I/O 5000
+[INFO] 16:04:11:577 CPU/(17426:17426): EXIT
+[INFO] 16:04:11:577 CPU/(17426:17426): --------------
+[INFO] 16:04:11:577 CPU/(17426:17426):   Nro de instrucion: 13
+[INFO] 16:04:11:577 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:04:11:577 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:04:11:577 CPU/(17426:17426):   Time: 1000
+[INFO] 16:04:12:580 CPU/(17426:17426):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:04:12:580 CPU/(17426:17426):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:04:12:582 CPU/(17426:17426): Entro por interrupcion al Break
+[INFO] 16:04:12:582 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:12:582 CPU/(17426:17428):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:04:12:582 CPU/(17426:17428):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:04:12:582 CPU/(17426:17428):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:12:583 CPU/(17426:17426):  -----------
+[INFO] 16:04:12:583 CPU/(17426:17426):  El kernel envio un PCB:
+[INFO] 16:04:12:583 CPU/(17426:17426): -----PCB ------
+[INFO] 16:04:12:583 CPU/(17426:17426): id: 1
+[INFO] 16:04:12:583 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:04:12:583 CPU/(17426:17426): program counter: 14
+[INFO] 16:04:12:583 CPU/(17426:17426): socket: 10
+[INFO] 16:04:12:583 CPU/(17426:17426): numero de tabla: 1
+[INFO] 16:04:12:583 CPU/(17426:17426): tamanio de consola: 500
+[INFO] 16:04:12:583 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:04:12:583 CPU/(17426:17426): NO_OP
+[INFO] 16:04:12:584 CPU/(17426:17426): NO_OP
+[INFO] 16:04:12:584 CPU/(17426:17426): NO_OP
+[INFO] 16:04:12:584 CPU/(17426:17426): NO_OP
+[INFO] 16:04:12:584 CPU/(17426:17426): NO_OP
+[INFO] 16:04:12:584 CPU/(17426:17426): NO_OP
+[INFO] 16:04:12:584 CPU/(17426:17426): NO_OP
+[INFO] 16:04:12:584 CPU/(17426:17426): NO_OP
+[INFO] 16:04:12:584 CPU/(17426:17426): NO_OP
+[INFO] 16:04:12:584 CPU/(17426:17426): NO_OP
+[INFO] 16:04:12:584 CPU/(17426:17426): NO_OP
+[INFO] 16:04:12:585 CPU/(17426:17426): NO_OP
+[INFO] 16:04:12:585 CPU/(17426:17426): NO_OP
+[INFO] 16:04:12:585 CPU/(17426:17426): NO_OP
+[INFO] 16:04:12:585 CPU/(17426:17426): NO_OP
+[INFO] 16:04:12:585 CPU/(17426:17426): I/O 5000
+[INFO] 16:04:12:585 CPU/(17426:17426): EXIT
+[INFO] 16:04:12:585 CPU/(17426:17426): --------------
+[INFO] 16:04:12:585 CPU/(17426:17426):   Nro de instrucion: 14
+[INFO] 16:04:12:585 CPU/(17426:17426):   instruccion/codigo op: NO_OP
+[INFO] 16:04:12:585 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:04:12:585 CPU/(17426:17426):   Time: 1000
+[INFO] 16:04:13:592 CPU/(17426:17426):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:04:13:592 CPU/(17426:17426):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:04:13:593 CPU/(17426:17426): Entro por interrupcion al Break
+[INFO] 16:04:13:593 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:13:593 CPU/(17426:17428):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:04:13:593 CPU/(17426:17428):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:04:13:593 CPU/(17426:17428):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:13:595 CPU/(17426:17426):  -----------
+[INFO] 16:04:13:595 CPU/(17426:17426):  El kernel envio un PCB:
+[INFO] 16:04:13:595 CPU/(17426:17426): -----PCB ------
+[INFO] 16:04:13:595 CPU/(17426:17426): id: 1
+[INFO] 16:04:13:595 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:04:13:595 CPU/(17426:17426): program counter: 15
+[INFO] 16:04:13:595 CPU/(17426:17426): socket: 10
+[INFO] 16:04:13:596 CPU/(17426:17426): numero de tabla: 1
+[INFO] 16:04:13:596 CPU/(17426:17426): tamanio de consola: 500
+[INFO] 16:04:13:596 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:04:13:596 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:596 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:596 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:596 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:596 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:596 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:596 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:596 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:596 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:596 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:596 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:596 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:596 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:597 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:597 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:597 CPU/(17426:17426): I/O 5000
+[INFO] 16:04:13:597 CPU/(17426:17426): EXIT
+[INFO] 16:04:13:597 CPU/(17426:17426): --------------
+[INFO] 16:04:13:597 CPU/(17426:17426):   Nro de instrucion: 15
+[INFO] 16:04:13:597 CPU/(17426:17426):   instruccion/codigo op: I/O
+[INFO] 16:04:13:597 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:04:13:597 CPU/(17426:17426):    Llego a i_o()
+[INFO] 16:04:13:597 CPU/(17426:17426):    Llego responsePorBloqueo()
+[INFO] 16:04:13:597 CPU/(17426:17426):    Se le asignoMemoria:
+[INFO] 16:04:13:597 CPU/(17426:17426):    Enviamos el PCB Bloqueado 
+[WARNING] 16:04:13:597 CPU/(17426:17426): Entro por interrupcion al Break
+[INFO] 16:04:13:597 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:13:598 CPU/(17426:17426):  -----------
+[INFO] 16:04:13:598 CPU/(17426:17426):  El kernel envio un PCB:
+[INFO] 16:04:13:598 CPU/(17426:17426): -----PCB ------
+[INFO] 16:04:13:598 CPU/(17426:17426): id: 0
+[INFO] 16:04:13:598 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:04:13:598 CPU/(17426:17426): program counter: 7
+[INFO] 16:04:13:598 CPU/(17426:17426): socket: 9
+[INFO] 16:04:13:598 CPU/(17426:17426): numero de tabla: 0
+[INFO] 16:04:13:598 CPU/(17426:17426): tamanio de consola: 100
+[INFO] 16:04:13:598 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:04:13:598 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:598 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:598 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:598 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:598 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:598 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:598 CPU/(17426:17426): I/O 2500
+[INFO] 16:04:13:598 CPU/(17426:17426): EXIT
+[INFO] 16:04:13:598 CPU/(17426:17426): --------------
+[INFO] 16:04:13:598 CPU/(17426:17426):   Nro de instrucion: 7
+[INFO] 16:04:13:598 CPU/(17426:17426):   instruccion/codigo op: EXIT
+[INFO] 16:04:13:598 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:04:13:598 CPU/(17426:17426):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 16:04:13:598 CPU/(17426:17426): -----PCB ------
+[INFO] 16:04:13:598 CPU/(17426:17426): id: 0
+[INFO] 16:04:13:598 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:04:13:598 CPU/(17426:17426): program counter: 8
+[INFO] 16:04:13:598 CPU/(17426:17426): socket: 9
+[INFO] 16:04:13:598 CPU/(17426:17426): numero de tabla: 0
+[INFO] 16:04:13:598 CPU/(17426:17426): tamanio de consola: 100
+[INFO] 16:04:13:598 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:04:13:598 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:598 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:598 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:598 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:598 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:598 CPU/(17426:17426): NO_OP
+[INFO] 16:04:13:598 CPU/(17426:17426): I/O 2500
+[INFO] 16:04:13:598 CPU/(17426:17426): EXIT
+[INFO] 16:04:13:598 CPU/(17426:17426): --------------
+[WARNING] 16:04:13:598 CPU/(17426:17426): Entro por interrupcion al Break
+[INFO] 16:04:13:598 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:18:605 CPU/(17426:17428):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:04:18:605 CPU/(17426:17428):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:04:18:605 CPU/(17426:17428):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:04:18:605 CPU/(17426:17426):  -----------
+[INFO] 16:04:18:606 CPU/(17426:17426):  El kernel envio un PCB:
+[INFO] 16:04:18:606 CPU/(17426:17426): -----PCB ------
+[INFO] 16:04:18:606 CPU/(17426:17426): id: 1
+[INFO] 16:04:18:606 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:04:18:606 CPU/(17426:17426): program counter: 16
+[INFO] 16:04:18:606 CPU/(17426:17426): socket: 10
+[INFO] 16:04:18:606 CPU/(17426:17426): numero de tabla: 1
+[INFO] 16:04:18:606 CPU/(17426:17426): tamanio de consola: 500
+[INFO] 16:04:18:606 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:04:18:606 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:606 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:606 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:606 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:606 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:606 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:607 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:607 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:607 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:607 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:607 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:607 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:607 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:607 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:607 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:607 CPU/(17426:17426): I/O 5000
+[INFO] 16:04:18:607 CPU/(17426:17426): EXIT
+[INFO] 16:04:18:607 CPU/(17426:17426): --------------
+[INFO] 16:04:18:607 CPU/(17426:17426):   Nro de instrucion: 16
+[INFO] 16:04:18:607 CPU/(17426:17426):   instruccion/codigo op: EXIT
+[INFO] 16:04:18:607 CPU/(17426:17426):   Entro a fetch_operands
+[INFO] 16:04:18:607 CPU/(17426:17426):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 16:04:18:607 CPU/(17426:17426): -----PCB ------
+[INFO] 16:04:18:607 CPU/(17426:17426): id: 1
+[INFO] 16:04:18:607 CPU/(17426:17426): estimacion: 10000
+[INFO] 16:04:18:607 CPU/(17426:17426): program counter: 17
+[INFO] 16:04:18:608 CPU/(17426:17426): socket: 10
+[INFO] 16:04:18:608 CPU/(17426:17426): numero de tabla: 1
+[INFO] 16:04:18:608 CPU/(17426:17426): tamanio de consola: 500
+[INFO] 16:04:18:608 CPU/(17426:17426): lista Instrucciones:
+[INFO] 16:04:18:608 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:608 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:608 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:608 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:608 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:608 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:608 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:608 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:608 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:608 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:608 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:608 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:608 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:608 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:608 CPU/(17426:17426): NO_OP
+[INFO] 16:04:18:608 CPU/(17426:17426): I/O 5000
+[INFO] 16:04:18:608 CPU/(17426:17426): EXIT
+[INFO] 16:04:18:608 CPU/(17426:17426): --------------
+[WARNING] 16:04:18:609 CPU/(17426:17426): Entro por interrupcion al Break
+[INFO] 16:04:18:609 CPU/(17426:17426): --- A ESPERA DE UNA OPERACION
+
+[ERROR] 16:06:11:976 CPU/(17426:17426): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 16:06:11:976 CPU/(17426:17426): Entro: finalizar_cpu
+[ERROR] 16:06:11:976 CPU/(17426:17428): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[INFO] 16:06:11:976 CPU/(17426:17428):      ---- Salio: escuchaInterrup(...)
+[INFO] 16:06:11:976 CPU/(17426:17426): Finalizamos el Hilo interrupt
+[INFO] 16:06:11:976 CPU/(17426:17426): 
+###### FIN LOGGER ######
+[INFO] 16:06:20:352 CPU/(18435:18435): 
+###### INICIO DE LOGGER ######
+[INFO] 16:06:20:352 CPU/(18435:18435):    ---Leyo archivo de configuraciones
+[INFO] 16:06:20:352 CPU/(18435:18435):    ---Asigno a los semaforos con valores iniciales
+[INFO] 16:06:20:352 CPU/(18435:18435):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 16:06:20:352 CPU/(18435:18435):  Hicimos handshake_cpu_memoria
+[INFO] 16:06:20:352 CPU/(18435:18435): --- Nro de filas tabla nivel 1: 4
+[INFO] 16:06:20:352 CPU/(18435:18435): --- Tamano de pagina: 64
+[INFO] 16:06:20:352 CPU/(18435:18435): Entro: iniciar_servidor_dispatch
+[INFO] 16:06:20:352 CPU/(18435:18435): Entro: iniciar_servidor_cpu
+[INFO] 16:06:20:352 CPU/(18435:18435):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 16:06:20:353 CPU/(18435:18435):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 16:06:20:353 CPU/(18435:18435):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 16:06:20:353 CPU/(18435:18435): Se creo el Hilo: interrupt
+[INFO] 16:06:20:353 CPU/(18435:18435): Entro: esperar_cliente_cpu
+[INFO] 16:06:20:353 CPU/(18435:18435):  Socket server recibido: 5
+[INFO] 16:06:20:353 CPU/(18435:18435):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 16:06:20:353 CPU/(18435:18437):    --- Entro: escuchaInterrup(...)
+[INFO] 16:06:20:353 CPU/(18435:18437): Entro: iniciar_servidor_interrupt
+[INFO] 16:06:20:353 CPU/(18435:18437): Entro: iniciar_servidor_cpu
+[INFO] 16:06:20:353 CPU/(18435:18437):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 16:06:20:353 CPU/(18435:18437):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 16:06:20:353 CPU/(18435:18437):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 16:06:20:353 CPU/(18435:18437): Entro: esperar_cliente_cpu
+[INFO] 16:06:20:353 CPU/(18435:18437):  Socket server recibido: 8
+[INFO] 16:06:20:353 CPU/(18435:18437):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 16:06:21:945 CPU/(18435:18435):  Termino el BLOQUEO
+[INFO] 16:06:21:946 CPU/(18435:18435):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 16:06:21:946 CPU/(18435:18435): INICIO: recibir_operaciones()
+[INFO] 16:06:21:946 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:21:946 CPU/(18435:18437):  Termino el BLOQUEO
+[INFO] 16:06:21:946 CPU/(18435:18437):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 16:06:21:946 CPU/(18435:18437):  ---- Socket kernel interrupt: 9
+[INFO] 16:06:21:946 CPU/(18435:18437):    INICIO: recibir_operacion_interrupt()
+[INFO] 16:06:21:946 CPU/(18435:18437):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:24:999 CPU/(18435:18435):  -----------
+[INFO] 16:06:24:999 CPU/(18435:18435):  El kernel envio un PCB:
+[INFO] 16:06:24:999 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:24:999 CPU/(18435:18435): id: 0
+[INFO] 16:06:24:999 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:24:999 CPU/(18435:18435): program counter: 0
+[INFO] 16:06:24:999 CPU/(18435:18435): socket: 9
+[INFO] 16:06:24:999 CPU/(18435:18435): numero de tabla: 0
+[INFO] 16:06:24:999 CPU/(18435:18435): tamanio de consola: 100
+[INFO] 16:06:24:999 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:24:999 CPU/(18435:18435): --------------
+[INFO] 16:06:24:999 CPU/(18435:18435):   Nro de instrucion: 0
+[INFO] 16:06:24:999 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:24:999 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:24:999 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:25:999 CPU/(18435:18435):   Nro de instrucion: 1
+[INFO] 16:06:25:999 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:25:999 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:25:999 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:27:000 CPU/(18435:18435):   Nro de instrucion: 2
+[INFO] 16:06:27:000 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:27:000 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:27:000 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:28:001 CPU/(18435:18435):   Nro de instrucion: 3
+[INFO] 16:06:28:001 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:28:001 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:28:001 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:29:002 CPU/(18435:18435):   Nro de instrucion: 4
+[INFO] 16:06:29:002 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:29:002 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:29:002 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:30:002 CPU/(18435:18435):   Nro de instrucion: 5
+[INFO] 16:06:30:002 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:30:002 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:30:002 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:31:003 CPU/(18435:18435):   Nro de instrucion: 6
+[INFO] 16:06:31:003 CPU/(18435:18435):   instruccion/codigo op: I/O
+[INFO] 16:06:31:003 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:31:003 CPU/(18435:18435):    Llego a i_o()
+[INFO] 16:06:31:003 CPU/(18435:18435):    Llego responsePorBloqueo()
+[INFO] 16:06:31:003 CPU/(18435:18435):    Se le asignoMemoria:
+[INFO] 16:06:31:003 CPU/(18435:18435):    Enviamos el PCB Bloqueado 
+[WARNING] 16:06:31:003 CPU/(18435:18435): Entro por interrupcion al Break
+[INFO] 16:06:31:003 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:31:005 CPU/(18435:18435):  -----------
+[INFO] 16:06:31:005 CPU/(18435:18435):  El kernel envio un PCB:
+[INFO] 16:06:31:005 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:31:005 CPU/(18435:18435): id: 1
+[INFO] 16:06:31:005 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:31:005 CPU/(18435:18435): program counter: 0
+[INFO] 16:06:31:005 CPU/(18435:18435): socket: 10
+[INFO] 16:06:31:005 CPU/(18435:18435): numero de tabla: 1
+[INFO] 16:06:31:005 CPU/(18435:18435): tamanio de consola: 500
+[INFO] 16:06:31:005 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:31:005 CPU/(18435:18435): --------------
+[INFO] 16:06:31:005 CPU/(18435:18435):   Nro de instrucion: 0
+[INFO] 16:06:31:005 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:31:005 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:31:005 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:32:006 CPU/(18435:18435):   Nro de instrucion: 1
+[INFO] 16:06:32:006 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:32:006 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:32:006 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:33:006 CPU/(18435:18435):   Nro de instrucion: 2
+[INFO] 16:06:33:007 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:33:007 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:33:007 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:33:505 CPU/(18435:18437):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:06:33:505 CPU/(18435:18437):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:06:33:505 CPU/(18435:18437):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:34:007 CPU/(18435:18435):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:06:34:007 CPU/(18435:18435):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:06:34:008 CPU/(18435:18435): Entro por interrupcion al Break
+[INFO] 16:06:34:008 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:34:008 CPU/(18435:18437):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:06:34:008 CPU/(18435:18437):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:06:34:008 CPU/(18435:18437):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:34:009 CPU/(18435:18435):  -----------
+[INFO] 16:06:34:009 CPU/(18435:18435):  El kernel envio un PCB:
+[INFO] 16:06:34:009 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:34:009 CPU/(18435:18435): id: 1
+[INFO] 16:06:34:009 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:34:009 CPU/(18435:18435): program counter: 3
+[INFO] 16:06:34:009 CPU/(18435:18435): socket: 10
+[INFO] 16:06:34:009 CPU/(18435:18435): numero de tabla: 1
+[INFO] 16:06:34:009 CPU/(18435:18435): tamanio de consola: 500
+[INFO] 16:06:34:009 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:34:009 CPU/(18435:18435): --------------
+[INFO] 16:06:34:009 CPU/(18435:18435):   Nro de instrucion: 3
+[INFO] 16:06:34:009 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:34:009 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:34:009 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:35:010 CPU/(18435:18435):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:06:35:010 CPU/(18435:18435):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:06:35:010 CPU/(18435:18435): Entro por interrupcion al Break
+[INFO] 16:06:35:010 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:35:010 CPU/(18435:18437):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:06:35:010 CPU/(18435:18437):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:06:35:011 CPU/(18435:18437):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:35:011 CPU/(18435:18435):  -----------
+[INFO] 16:06:35:011 CPU/(18435:18435):  El kernel envio un PCB:
+[INFO] 16:06:35:011 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:35:011 CPU/(18435:18435): id: 1
+[INFO] 16:06:35:011 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:35:011 CPU/(18435:18435): program counter: 4
+[INFO] 16:06:35:011 CPU/(18435:18435): socket: 10
+[INFO] 16:06:35:011 CPU/(18435:18435): numero de tabla: 1
+[INFO] 16:06:35:011 CPU/(18435:18435): tamanio de consola: 500
+[INFO] 16:06:35:011 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:35:011 CPU/(18435:18435): --------------
+[INFO] 16:06:35:011 CPU/(18435:18435):   Nro de instrucion: 4
+[INFO] 16:06:35:012 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:35:012 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:35:012 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:36:027 CPU/(18435:18435):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:06:36:027 CPU/(18435:18435):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:06:36:027 CPU/(18435:18435): Entro por interrupcion al Break
+[INFO] 16:06:36:027 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:36:028 CPU/(18435:18437):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:06:36:028 CPU/(18435:18437):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:06:36:028 CPU/(18435:18437):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:36:029 CPU/(18435:18435):  -----------
+[INFO] 16:06:36:029 CPU/(18435:18435):  El kernel envio un PCB:
+[INFO] 16:06:36:029 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:36:029 CPU/(18435:18435): id: 1
+[INFO] 16:06:36:029 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:36:029 CPU/(18435:18435): program counter: 5
+[INFO] 16:06:36:029 CPU/(18435:18435): socket: 10
+[INFO] 16:06:36:029 CPU/(18435:18435): numero de tabla: 1
+[INFO] 16:06:36:029 CPU/(18435:18435): tamanio de consola: 500
+[INFO] 16:06:36:029 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:36:029 CPU/(18435:18435): --------------
+[INFO] 16:06:36:029 CPU/(18435:18435):   Nro de instrucion: 5
+[INFO] 16:06:36:029 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:36:029 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:36:029 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:37:029 CPU/(18435:18435):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:06:37:029 CPU/(18435:18435):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:06:37:029 CPU/(18435:18435): Entro por interrupcion al Break
+[INFO] 16:06:37:029 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:37:030 CPU/(18435:18437):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:06:37:030 CPU/(18435:18437):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:06:37:030 CPU/(18435:18437):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:37:030 CPU/(18435:18435):  -----------
+[INFO] 16:06:37:030 CPU/(18435:18435):  El kernel envio un PCB:
+[INFO] 16:06:37:030 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:37:030 CPU/(18435:18435): id: 1
+[INFO] 16:06:37:030 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:37:030 CPU/(18435:18435): program counter: 6
+[INFO] 16:06:37:030 CPU/(18435:18435): socket: 10
+[INFO] 16:06:37:030 CPU/(18435:18435): numero de tabla: 1
+[INFO] 16:06:37:030 CPU/(18435:18435): tamanio de consola: 500
+[INFO] 16:06:37:030 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:37:030 CPU/(18435:18435): --------------
+[INFO] 16:06:37:030 CPU/(18435:18435):   Nro de instrucion: 6
+[INFO] 16:06:37:030 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:37:030 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:37:030 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:38:030 CPU/(18435:18435):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:06:38:030 CPU/(18435:18435):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:06:38:030 CPU/(18435:18435): Entro por interrupcion al Break
+[INFO] 16:06:38:030 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:38:030 CPU/(18435:18437):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:06:38:031 CPU/(18435:18437):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:06:38:031 CPU/(18435:18437):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:38:031 CPU/(18435:18435):  -----------
+[INFO] 16:06:38:031 CPU/(18435:18435):  El kernel envio un PCB:
+[INFO] 16:06:38:031 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:38:031 CPU/(18435:18435): id: 1
+[INFO] 16:06:38:031 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:38:031 CPU/(18435:18435): program counter: 7
+[INFO] 16:06:38:031 CPU/(18435:18435): socket: 10
+[INFO] 16:06:38:031 CPU/(18435:18435): numero de tabla: 1
+[INFO] 16:06:38:031 CPU/(18435:18435): tamanio de consola: 500
+[INFO] 16:06:38:031 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:38:031 CPU/(18435:18435): --------------
+[INFO] 16:06:38:031 CPU/(18435:18435):   Nro de instrucion: 7
+[INFO] 16:06:38:031 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:38:031 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:38:031 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:39:035 CPU/(18435:18435):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:06:39:035 CPU/(18435:18435):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:06:39:035 CPU/(18435:18435): Entro por interrupcion al Break
+[INFO] 16:06:39:035 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:39:035 CPU/(18435:18437):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:06:39:035 CPU/(18435:18437):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:06:39:035 CPU/(18435:18437):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:39:035 CPU/(18435:18435):  -----------
+[INFO] 16:06:39:035 CPU/(18435:18435):  El kernel envio un PCB:
+[INFO] 16:06:39:035 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:39:035 CPU/(18435:18435): id: 1
+[INFO] 16:06:39:035 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:39:035 CPU/(18435:18435): program counter: 8
+[INFO] 16:06:39:035 CPU/(18435:18435): socket: 10
+[INFO] 16:06:39:035 CPU/(18435:18435): numero de tabla: 1
+[INFO] 16:06:39:035 CPU/(18435:18435): tamanio de consola: 500
+[INFO] 16:06:39:036 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:39:036 CPU/(18435:18435): --------------
+[INFO] 16:06:39:036 CPU/(18435:18435):   Nro de instrucion: 8
+[INFO] 16:06:39:036 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:39:036 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:39:036 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:40:038 CPU/(18435:18435):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:06:40:038 CPU/(18435:18435):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:06:40:039 CPU/(18435:18435): Entro por interrupcion al Break
+[INFO] 16:06:40:039 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:40:039 CPU/(18435:18437):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:06:40:039 CPU/(18435:18437):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:06:40:039 CPU/(18435:18437):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:40:039 CPU/(18435:18435):  -----------
+[INFO] 16:06:40:039 CPU/(18435:18435):  El kernel envio un PCB:
+[INFO] 16:06:40:040 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:40:040 CPU/(18435:18435): id: 1
+[INFO] 16:06:40:040 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:40:040 CPU/(18435:18435): program counter: 9
+[INFO] 16:06:40:040 CPU/(18435:18435): socket: 10
+[INFO] 16:06:40:040 CPU/(18435:18435): numero de tabla: 1
+[INFO] 16:06:40:040 CPU/(18435:18435): tamanio de consola: 500
+[INFO] 16:06:40:040 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:40:040 CPU/(18435:18435): --------------
+[INFO] 16:06:40:040 CPU/(18435:18435):   Nro de instrucion: 9
+[INFO] 16:06:40:040 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:40:040 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:40:040 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:41:041 CPU/(18435:18435):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:06:41:041 CPU/(18435:18435):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:06:41:041 CPU/(18435:18435): Entro por interrupcion al Break
+[INFO] 16:06:41:041 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:41:041 CPU/(18435:18437):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:06:41:041 CPU/(18435:18437):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:06:41:041 CPU/(18435:18437):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:41:042 CPU/(18435:18435):  -----------
+[INFO] 16:06:41:042 CPU/(18435:18435):  El kernel envio un PCB:
+[INFO] 16:06:41:042 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:41:042 CPU/(18435:18435): id: 1
+[INFO] 16:06:41:042 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:41:042 CPU/(18435:18435): program counter: 10
+[INFO] 16:06:41:042 CPU/(18435:18435): socket: 10
+[INFO] 16:06:41:042 CPU/(18435:18435): numero de tabla: 1
+[INFO] 16:06:41:042 CPU/(18435:18435): tamanio de consola: 500
+[INFO] 16:06:41:042 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:41:042 CPU/(18435:18435): --------------
+[INFO] 16:06:41:042 CPU/(18435:18435):   Nro de instrucion: 10
+[INFO] 16:06:41:042 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:41:042 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:41:042 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:42:043 CPU/(18435:18435):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:06:42:043 CPU/(18435:18435):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:06:42:043 CPU/(18435:18435): Entro por interrupcion al Break
+[INFO] 16:06:42:043 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:42:043 CPU/(18435:18437):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:06:42:043 CPU/(18435:18437):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:06:42:043 CPU/(18435:18437):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:42:044 CPU/(18435:18435):  -----------
+[INFO] 16:06:42:044 CPU/(18435:18435):  El kernel envio un PCB:
+[INFO] 16:06:42:044 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:42:044 CPU/(18435:18435): id: 1
+[INFO] 16:06:42:044 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:42:044 CPU/(18435:18435): program counter: 11
+[INFO] 16:06:42:044 CPU/(18435:18435): socket: 10
+[INFO] 16:06:42:045 CPU/(18435:18435): numero de tabla: 1
+[INFO] 16:06:42:045 CPU/(18435:18435): tamanio de consola: 500
+[INFO] 16:06:42:045 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:42:045 CPU/(18435:18435): --------------
+[INFO] 16:06:42:045 CPU/(18435:18435):   Nro de instrucion: 11
+[INFO] 16:06:42:045 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:42:045 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:42:045 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:43:045 CPU/(18435:18435):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:06:43:046 CPU/(18435:18435):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:06:43:046 CPU/(18435:18435): Entro por interrupcion al Break
+[INFO] 16:06:43:047 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:43:047 CPU/(18435:18437):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:06:43:047 CPU/(18435:18437):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:06:43:047 CPU/(18435:18437):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:43:048 CPU/(18435:18435):  -----------
+[INFO] 16:06:43:048 CPU/(18435:18435):  El kernel envio un PCB:
+[INFO] 16:06:43:048 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:43:048 CPU/(18435:18435): id: 1
+[INFO] 16:06:43:048 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:43:048 CPU/(18435:18435): program counter: 12
+[INFO] 16:06:43:048 CPU/(18435:18435): socket: 10
+[INFO] 16:06:43:048 CPU/(18435:18435): numero de tabla: 1
+[INFO] 16:06:43:048 CPU/(18435:18435): tamanio de consola: 500
+[INFO] 16:06:43:048 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:43:048 CPU/(18435:18435): --------------
+[INFO] 16:06:43:048 CPU/(18435:18435):   Nro de instrucion: 12
+[INFO] 16:06:43:048 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:43:048 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:43:048 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:44:049 CPU/(18435:18435):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:06:44:049 CPU/(18435:18435):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:06:44:049 CPU/(18435:18435): Entro por interrupcion al Break
+[INFO] 16:06:44:049 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:44:050 CPU/(18435:18437):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:06:44:050 CPU/(18435:18437):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:06:44:050 CPU/(18435:18437):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:44:051 CPU/(18435:18435):  -----------
+[INFO] 16:06:44:051 CPU/(18435:18435):  El kernel envio un PCB:
+[INFO] 16:06:44:051 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:44:051 CPU/(18435:18435): id: 1
+[INFO] 16:06:44:051 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:44:051 CPU/(18435:18435): program counter: 13
+[INFO] 16:06:44:051 CPU/(18435:18435): socket: 10
+[INFO] 16:06:44:051 CPU/(18435:18435): numero de tabla: 1
+[INFO] 16:06:44:051 CPU/(18435:18435): tamanio de consola: 500
+[INFO] 16:06:44:051 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:44:051 CPU/(18435:18435): --------------
+[INFO] 16:06:44:051 CPU/(18435:18435):   Nro de instrucion: 13
+[INFO] 16:06:44:051 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:44:051 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:44:051 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:45:051 CPU/(18435:18435):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:06:45:051 CPU/(18435:18435):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:06:45:052 CPU/(18435:18435): Entro por interrupcion al Break
+[INFO] 16:06:45:052 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:45:052 CPU/(18435:18437):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:06:45:052 CPU/(18435:18437):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:06:45:052 CPU/(18435:18437):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:45:053 CPU/(18435:18435):  -----------
+[INFO] 16:06:45:053 CPU/(18435:18435):  El kernel envio un PCB:
+[INFO] 16:06:45:053 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:45:053 CPU/(18435:18435): id: 1
+[INFO] 16:06:45:053 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:45:053 CPU/(18435:18435): program counter: 14
+[INFO] 16:06:45:053 CPU/(18435:18435): socket: 10
+[INFO] 16:06:45:053 CPU/(18435:18435): numero de tabla: 1
+[INFO] 16:06:45:053 CPU/(18435:18435): tamanio de consola: 500
+[INFO] 16:06:45:053 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:45:053 CPU/(18435:18435): --------------
+[INFO] 16:06:45:053 CPU/(18435:18435):   Nro de instrucion: 14
+[INFO] 16:06:45:053 CPU/(18435:18435):   instruccion/codigo op: NO_OP
+[INFO] 16:06:45:053 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:45:053 CPU/(18435:18435):   Time: 1000
+[INFO] 16:06:46:054 CPU/(18435:18435):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:06:46:055 CPU/(18435:18435):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:06:46:055 CPU/(18435:18435): Entro por interrupcion al Break
+[INFO] 16:06:46:055 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:46:055 CPU/(18435:18437):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:06:46:055 CPU/(18435:18437):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:06:46:055 CPU/(18435:18437):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:46:056 CPU/(18435:18435):  -----------
+[INFO] 16:06:46:056 CPU/(18435:18435):  El kernel envio un PCB:
+[INFO] 16:06:46:056 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:46:056 CPU/(18435:18435): id: 1
+[INFO] 16:06:46:056 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:46:056 CPU/(18435:18435): program counter: 15
+[INFO] 16:06:46:056 CPU/(18435:18435): socket: 10
+[INFO] 16:06:46:056 CPU/(18435:18435): numero de tabla: 1
+[INFO] 16:06:46:056 CPU/(18435:18435): tamanio de consola: 500
+[INFO] 16:06:46:056 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:46:056 CPU/(18435:18435): --------------
+[INFO] 16:06:46:056 CPU/(18435:18435):   Nro de instrucion: 15
+[INFO] 16:06:46:056 CPU/(18435:18435):   instruccion/codigo op: I/O
+[INFO] 16:06:46:057 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:46:057 CPU/(18435:18435):    Llego a i_o()
+[INFO] 16:06:46:057 CPU/(18435:18435):    Llego responsePorBloqueo()
+[INFO] 16:06:46:057 CPU/(18435:18435):    Se le asignoMemoria:
+[INFO] 16:06:46:057 CPU/(18435:18435):    Enviamos el PCB Bloqueado 
+[WARNING] 16:06:46:057 CPU/(18435:18435): Entro por interrupcion al Break
+[INFO] 16:06:46:057 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:46:058 CPU/(18435:18435):  -----------
+[INFO] 16:06:46:058 CPU/(18435:18435):  El kernel envio un PCB:
+[INFO] 16:06:46:058 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:46:058 CPU/(18435:18435): id: 0
+[INFO] 16:06:46:058 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:46:058 CPU/(18435:18435): program counter: 7
+[INFO] 16:06:46:058 CPU/(18435:18435): socket: 9
+[INFO] 16:06:46:058 CPU/(18435:18435): numero de tabla: 0
+[INFO] 16:06:46:058 CPU/(18435:18435): tamanio de consola: 100
+[INFO] 16:06:46:058 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:46:058 CPU/(18435:18435): --------------
+[INFO] 16:06:46:058 CPU/(18435:18435):   Nro de instrucion: 7
+[INFO] 16:06:46:058 CPU/(18435:18435):   instruccion/codigo op: EXIT
+[INFO] 16:06:46:058 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:46:058 CPU/(18435:18435):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 16:06:46:058 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:46:058 CPU/(18435:18435): id: 0
+[INFO] 16:06:46:058 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:46:058 CPU/(18435:18435): program counter: 8
+[INFO] 16:06:46:058 CPU/(18435:18435): socket: 9
+[INFO] 16:06:46:058 CPU/(18435:18435): numero de tabla: 0
+[INFO] 16:06:46:058 CPU/(18435:18435): tamanio de consola: 100
+[INFO] 16:06:46:058 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:46:058 CPU/(18435:18435): --------------
+[WARNING] 16:06:46:058 CPU/(18435:18435): Entro por interrupcion al Break
+[INFO] 16:06:46:058 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:51:057 CPU/(18435:18437):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:06:51:057 CPU/(18435:18437):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:06:51:057 CPU/(18435:18437):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:06:51:058 CPU/(18435:18435):  -----------
+[INFO] 16:06:51:058 CPU/(18435:18435):  El kernel envio un PCB:
+[INFO] 16:06:51:058 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:51:058 CPU/(18435:18435): id: 1
+[INFO] 16:06:51:058 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:51:058 CPU/(18435:18435): program counter: 16
+[INFO] 16:06:51:058 CPU/(18435:18435): socket: 10
+[INFO] 16:06:51:058 CPU/(18435:18435): numero de tabla: 1
+[INFO] 16:06:51:058 CPU/(18435:18435): tamanio de consola: 500
+[INFO] 16:06:51:058 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:51:058 CPU/(18435:18435): --------------
+[INFO] 16:06:51:058 CPU/(18435:18435):   Nro de instrucion: 16
+[INFO] 16:06:51:058 CPU/(18435:18435):   instruccion/codigo op: EXIT
+[INFO] 16:06:51:058 CPU/(18435:18435):   Entro a fetch_operands
+[INFO] 16:06:51:058 CPU/(18435:18435):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 16:06:51:058 CPU/(18435:18435): -----PCB ------
+[INFO] 16:06:51:058 CPU/(18435:18435): id: 1
+[INFO] 16:06:51:058 CPU/(18435:18435): estimacion: 10000
+[INFO] 16:06:51:058 CPU/(18435:18435): program counter: 17
+[INFO] 16:06:51:058 CPU/(18435:18435): socket: 10
+[INFO] 16:06:51:058 CPU/(18435:18435): numero de tabla: 1
+[INFO] 16:06:51:058 CPU/(18435:18435): tamanio de consola: 500
+[INFO] 16:06:51:058 CPU/(18435:18435): lista Instrucciones:
+[INFO] 16:06:51:058 CPU/(18435:18435): --------------
+[WARNING] 16:06:51:058 CPU/(18435:18435): Entro por interrupcion al Break
+[INFO] 16:06:51:058 CPU/(18435:18435): --- A ESPERA DE UNA OPERACION
+
+[ERROR] 16:09:43:368 CPU/(18435:18437): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[INFO] 16:09:43:368 CPU/(18435:18437):      ---- Salio: escuchaInterrup(...)
+[ERROR] 16:09:43:368 CPU/(18435:18435): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 16:09:43:368 CPU/(18435:18435): Entro: finalizar_cpu
+[INFO] 16:09:43:368 CPU/(18435:18435): Finalizamos el Hilo interrupt
+[INFO] 16:09:43:369 CPU/(18435:18435): 
+###### FIN LOGGER ######
+[INFO] 16:10:33:112 CPU/(20047:20047): 
+###### INICIO DE LOGGER ######
+[INFO] 16:10:33:112 CPU/(20047:20047):    ---Leyo archivo de configuraciones
+[INFO] 16:10:33:112 CPU/(20047:20047):    ---Asigno a los semaforos con valores iniciales
+[INFO] 16:10:33:112 CPU/(20047:20047):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 16:10:33:112 CPU/(20047:20047):  Hicimos handshake_cpu_memoria
+[INFO] 16:10:33:112 CPU/(20047:20047): --- Nro de filas tabla nivel 1: 4
+[INFO] 16:10:33:112 CPU/(20047:20047): --- Tamano de pagina: 64
+[INFO] 16:10:33:112 CPU/(20047:20047): Entro: iniciar_servidor_dispatch
+[INFO] 16:10:33:112 CPU/(20047:20047): Entro: iniciar_servidor_cpu
+[INFO] 16:10:33:112 CPU/(20047:20047):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 16:10:33:112 CPU/(20047:20047):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 16:10:33:112 CPU/(20047:20047):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 16:10:33:112 CPU/(20047:20047): Se creo el Hilo: interrupt
+[INFO] 16:10:33:112 CPU/(20047:20047): Entro: esperar_cliente_cpu
+[INFO] 16:10:33:112 CPU/(20047:20047):  Socket server recibido: 5
+[INFO] 16:10:33:112 CPU/(20047:20047):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 16:10:33:112 CPU/(20047:20049):    --- Entro: escuchaInterrup(...)
+[INFO] 16:10:33:112 CPU/(20047:20049): Entro: iniciar_servidor_interrupt
+[INFO] 16:10:33:112 CPU/(20047:20049): Entro: iniciar_servidor_cpu
+[INFO] 16:10:33:112 CPU/(20047:20049):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 16:10:33:112 CPU/(20047:20049):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 16:10:33:112 CPU/(20047:20049):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 16:10:33:112 CPU/(20047:20049): Entro: esperar_cliente_cpu
+[INFO] 16:10:33:112 CPU/(20047:20049):  Socket server recibido: 8
+[INFO] 16:10:33:112 CPU/(20047:20049):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 16:10:34:943 CPU/(20047:20047):  Termino el BLOQUEO
+[INFO] 16:10:34:943 CPU/(20047:20047):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 16:10:34:943 CPU/(20047:20047): INICIO: recibir_operaciones()
+[INFO] 16:10:34:943 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:34:943 CPU/(20047:20049):  Termino el BLOQUEO
+[INFO] 16:10:34:943 CPU/(20047:20049):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 16:10:34:943 CPU/(20047:20049):  ---- Socket kernel interrupt: 9
+[INFO] 16:10:34:943 CPU/(20047:20049):    INICIO: recibir_operacion_interrupt()
+[INFO] 16:10:34:943 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:39:584 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:39:584 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:39:584 CPU/(20047:20047):  -----------
+[INFO] 16:10:39:584 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:39:585 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:39:585 CPU/(20047:20047): id: 0
+[INFO] 16:10:39:585 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:39:585 CPU/(20047:20047): program counter: 0
+[INFO] 16:10:39:585 CPU/(20047:20047): socket: 9
+[INFO] 16:10:39:585 CPU/(20047:20047): numero de tabla: 0
+[INFO] 16:10:39:585 CPU/(20047:20047): tamanio de consola: 100
+[INFO] 16:10:39:585 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:39:585 CPU/(20047:20047): --------------
+[INFO] 16:10:39:585 CPU/(20047:20047):   Nro de instrucion: 0
+[INFO] 16:10:39:585 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:39:585 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:39:585 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:40:585 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:40:586 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:40:586 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:40:586 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:40:586 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:40:586 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:40:586 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:40:586 CPU/(20047:20047):  -----------
+[INFO] 16:10:40:586 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:40:586 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:40:586 CPU/(20047:20047): id: 0
+[INFO] 16:10:40:586 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:40:586 CPU/(20047:20047): program counter: 1
+[INFO] 16:10:40:586 CPU/(20047:20047): socket: 9
+[INFO] 16:10:40:586 CPU/(20047:20047): numero de tabla: 0
+[INFO] 16:10:40:586 CPU/(20047:20047): tamanio de consola: 100
+[INFO] 16:10:40:586 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:40:586 CPU/(20047:20047): --------------
+[INFO] 16:10:40:586 CPU/(20047:20047):   Nro de instrucion: 1
+[INFO] 16:10:40:586 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:40:586 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:40:586 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:41:587 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:41:587 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:41:587 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:41:587 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:41:587 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:41:588 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:41:588 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:41:589 CPU/(20047:20047):  -----------
+[INFO] 16:10:41:589 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:41:589 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:41:589 CPU/(20047:20047): id: 0
+[INFO] 16:10:41:589 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:41:589 CPU/(20047:20047): program counter: 2
+[INFO] 16:10:41:589 CPU/(20047:20047): socket: 9
+[INFO] 16:10:41:589 CPU/(20047:20047): numero de tabla: 0
+[INFO] 16:10:41:589 CPU/(20047:20047): tamanio de consola: 100
+[INFO] 16:10:41:589 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:41:589 CPU/(20047:20047): --------------
+[INFO] 16:10:41:589 CPU/(20047:20047):   Nro de instrucion: 2
+[INFO] 16:10:41:589 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:41:589 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:41:589 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:42:590 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:42:590 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:42:590 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:42:590 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:42:590 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:42:590 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:42:590 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:42:591 CPU/(20047:20047):  -----------
+[INFO] 16:10:42:591 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:42:591 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:42:591 CPU/(20047:20047): id: 0
+[INFO] 16:10:42:591 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:42:591 CPU/(20047:20047): program counter: 3
+[INFO] 16:10:42:591 CPU/(20047:20047): socket: 9
+[INFO] 16:10:42:591 CPU/(20047:20047): numero de tabla: 0
+[INFO] 16:10:42:591 CPU/(20047:20047): tamanio de consola: 100
+[INFO] 16:10:42:591 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:42:591 CPU/(20047:20047): --------------
+[INFO] 16:10:42:591 CPU/(20047:20047):   Nro de instrucion: 3
+[INFO] 16:10:42:591 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:42:591 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:42:591 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:43:592 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:43:592 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:43:592 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:43:592 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:43:593 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:43:593 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:43:593 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:43:593 CPU/(20047:20047):  -----------
+[INFO] 16:10:43:593 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:43:594 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:43:594 CPU/(20047:20047): id: 0
+[INFO] 16:10:43:594 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:43:594 CPU/(20047:20047): program counter: 4
+[INFO] 16:10:43:594 CPU/(20047:20047): socket: 9
+[INFO] 16:10:43:594 CPU/(20047:20047): numero de tabla: 0
+[INFO] 16:10:43:594 CPU/(20047:20047): tamanio de consola: 100
+[INFO] 16:10:43:594 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:43:594 CPU/(20047:20047): --------------
+[INFO] 16:10:43:594 CPU/(20047:20047):   Nro de instrucion: 4
+[INFO] 16:10:43:594 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:43:594 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:43:594 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:44:608 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:44:608 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:44:609 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:44:609 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:44:609 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:44:609 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:44:609 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:44:610 CPU/(20047:20047):  -----------
+[INFO] 16:10:44:610 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:44:610 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:44:610 CPU/(20047:20047): id: 0
+[INFO] 16:10:44:610 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:44:610 CPU/(20047:20047): program counter: 5
+[INFO] 16:10:44:610 CPU/(20047:20047): socket: 9
+[INFO] 16:10:44:610 CPU/(20047:20047): numero de tabla: 0
+[INFO] 16:10:44:610 CPU/(20047:20047): tamanio de consola: 100
+[INFO] 16:10:44:610 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:44:610 CPU/(20047:20047): --------------
+[INFO] 16:10:44:610 CPU/(20047:20047):   Nro de instrucion: 5
+[INFO] 16:10:44:610 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:44:610 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:44:610 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:45:617 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:45:618 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:45:618 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:45:618 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:45:618 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:45:618 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:45:618 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:45:619 CPU/(20047:20047):  -----------
+[INFO] 16:10:45:619 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:45:619 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:45:619 CPU/(20047:20047): id: 0
+[INFO] 16:10:45:619 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:45:619 CPU/(20047:20047): program counter: 6
+[INFO] 16:10:45:619 CPU/(20047:20047): socket: 9
+[INFO] 16:10:45:619 CPU/(20047:20047): numero de tabla: 0
+[INFO] 16:10:45:619 CPU/(20047:20047): tamanio de consola: 100
+[INFO] 16:10:45:619 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:45:619 CPU/(20047:20047): --------------
+[INFO] 16:10:45:619 CPU/(20047:20047):   Nro de instrucion: 6
+[INFO] 16:10:45:619 CPU/(20047:20047):   instruccion/codigo op: I/O
+[INFO] 16:10:45:619 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:45:619 CPU/(20047:20047):    Llego a i_o()
+[INFO] 16:10:45:619 CPU/(20047:20047):    Llego responsePorBloqueo()
+[INFO] 16:10:45:619 CPU/(20047:20047):    Se le asignoMemoria:
+[INFO] 16:10:45:619 CPU/(20047:20047):    Enviamos el PCB Bloqueado 
+[WARNING] 16:10:45:619 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:45:619 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:45:619 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:45:619 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:45:619 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:45:620 CPU/(20047:20047):  -----------
+[INFO] 16:10:45:620 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:45:621 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:45:621 CPU/(20047:20047): id: 1
+[INFO] 16:10:45:621 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:45:621 CPU/(20047:20047): program counter: 0
+[INFO] 16:10:45:621 CPU/(20047:20047): socket: 10
+[INFO] 16:10:45:621 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:10:45:621 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:10:45:621 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:45:621 CPU/(20047:20047): --------------
+[INFO] 16:10:45:621 CPU/(20047:20047):   Nro de instrucion: 0
+[INFO] 16:10:45:621 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:45:621 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:45:621 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:46:623 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:46:623 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:46:624 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:46:624 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:46:624 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:46:624 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:46:624 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:46:625 CPU/(20047:20047):  -----------
+[INFO] 16:10:46:625 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:46:625 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:46:625 CPU/(20047:20047): id: 1
+[INFO] 16:10:46:625 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:46:625 CPU/(20047:20047): program counter: 1
+[INFO] 16:10:46:625 CPU/(20047:20047): socket: 10
+[INFO] 16:10:46:625 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:10:46:625 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:10:46:625 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:46:625 CPU/(20047:20047): --------------
+[INFO] 16:10:46:625 CPU/(20047:20047):   Nro de instrucion: 1
+[INFO] 16:10:46:625 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:46:625 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:46:625 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:47:638 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:47:638 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:47:638 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:47:638 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:47:638 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:47:639 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:47:639 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:47:640 CPU/(20047:20047):  -----------
+[INFO] 16:10:47:640 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:47:640 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:47:640 CPU/(20047:20047): id: 1
+[INFO] 16:10:47:640 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:47:640 CPU/(20047:20047): program counter: 2
+[INFO] 16:10:47:640 CPU/(20047:20047): socket: 10
+[INFO] 16:10:47:640 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:10:47:640 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:10:47:640 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:47:640 CPU/(20047:20047): --------------
+[INFO] 16:10:47:640 CPU/(20047:20047):   Nro de instrucion: 2
+[INFO] 16:10:47:640 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:47:640 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:47:640 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:48:641 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:48:641 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:48:641 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:48:641 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:48:642 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:48:642 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:48:642 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:48:643 CPU/(20047:20047):  -----------
+[INFO] 16:10:48:643 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:48:643 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:48:643 CPU/(20047:20047): id: 1
+[INFO] 16:10:48:643 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:48:643 CPU/(20047:20047): program counter: 3
+[INFO] 16:10:48:643 CPU/(20047:20047): socket: 10
+[INFO] 16:10:48:643 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:10:48:643 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:10:48:643 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:48:643 CPU/(20047:20047): --------------
+[INFO] 16:10:48:643 CPU/(20047:20047):   Nro de instrucion: 3
+[INFO] 16:10:48:643 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:48:643 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:48:643 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:49:673 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:49:673 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:49:673 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:49:673 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:49:673 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:49:673 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:49:673 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:49:674 CPU/(20047:20047):  -----------
+[INFO] 16:10:49:674 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:49:674 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:49:674 CPU/(20047:20047): id: 1
+[INFO] 16:10:49:674 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:49:674 CPU/(20047:20047): program counter: 4
+[INFO] 16:10:49:674 CPU/(20047:20047): socket: 10
+[INFO] 16:10:49:674 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:10:49:674 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:10:49:674 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:49:674 CPU/(20047:20047): --------------
+[INFO] 16:10:49:674 CPU/(20047:20047):   Nro de instrucion: 4
+[INFO] 16:10:49:674 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:49:674 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:49:674 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:50:675 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:50:675 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:50:675 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:50:675 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:50:675 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:50:675 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:50:675 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:50:676 CPU/(20047:20047):  -----------
+[INFO] 16:10:50:677 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:50:677 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:50:677 CPU/(20047:20047): id: 1
+[INFO] 16:10:50:677 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:50:677 CPU/(20047:20047): program counter: 5
+[INFO] 16:10:50:677 CPU/(20047:20047): socket: 10
+[INFO] 16:10:50:677 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:10:50:677 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:10:50:677 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:50:677 CPU/(20047:20047): --------------
+[INFO] 16:10:50:677 CPU/(20047:20047):   Nro de instrucion: 5
+[INFO] 16:10:50:677 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:50:677 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:50:677 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:51:686 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:51:686 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:51:686 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:51:686 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:51:686 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:51:686 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:51:686 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:51:687 CPU/(20047:20047):  -----------
+[INFO] 16:10:51:687 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:51:687 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:51:687 CPU/(20047:20047): id: 1
+[INFO] 16:10:51:687 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:51:687 CPU/(20047:20047): program counter: 6
+[INFO] 16:10:51:687 CPU/(20047:20047): socket: 10
+[INFO] 16:10:51:687 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:10:51:687 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:10:51:687 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:51:687 CPU/(20047:20047): --------------
+[INFO] 16:10:51:687 CPU/(20047:20047):   Nro de instrucion: 6
+[INFO] 16:10:51:687 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:51:687 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:51:687 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:52:687 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:52:687 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:52:688 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:52:688 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:52:688 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:52:688 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:52:688 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:52:688 CPU/(20047:20047):  -----------
+[INFO] 16:10:52:688 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:52:688 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:52:688 CPU/(20047:20047): id: 1
+[INFO] 16:10:52:688 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:52:688 CPU/(20047:20047): program counter: 7
+[INFO] 16:10:52:688 CPU/(20047:20047): socket: 10
+[INFO] 16:10:52:688 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:10:52:688 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:10:52:688 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:52:688 CPU/(20047:20047): --------------
+[INFO] 16:10:52:688 CPU/(20047:20047):   Nro de instrucion: 7
+[INFO] 16:10:52:688 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:52:688 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:52:688 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:53:691 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:53:692 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:53:692 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:53:692 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:53:692 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:53:692 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:53:692 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:53:693 CPU/(20047:20047):  -----------
+[INFO] 16:10:53:693 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:53:693 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:53:693 CPU/(20047:20047): id: 1
+[INFO] 16:10:53:693 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:53:693 CPU/(20047:20047): program counter: 8
+[INFO] 16:10:53:693 CPU/(20047:20047): socket: 10
+[INFO] 16:10:53:693 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:10:53:693 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:10:53:693 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:53:693 CPU/(20047:20047): --------------
+[INFO] 16:10:53:693 CPU/(20047:20047):   Nro de instrucion: 8
+[INFO] 16:10:53:693 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:53:693 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:53:693 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:54:694 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:54:695 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:54:695 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:54:695 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:54:695 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:54:695 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:54:695 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:54:696 CPU/(20047:20047):  -----------
+[INFO] 16:10:54:696 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:54:696 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:54:696 CPU/(20047:20047): id: 1
+[INFO] 16:10:54:696 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:54:696 CPU/(20047:20047): program counter: 9
+[INFO] 16:10:54:696 CPU/(20047:20047): socket: 10
+[INFO] 16:10:54:696 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:10:54:696 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:10:54:696 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:54:696 CPU/(20047:20047): --------------
+[INFO] 16:10:54:696 CPU/(20047:20047):   Nro de instrucion: 9
+[INFO] 16:10:54:697 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:54:697 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:54:697 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:55:697 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:55:697 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:55:697 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:55:697 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:55:697 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:55:697 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:55:697 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:55:698 CPU/(20047:20047):  -----------
+[INFO] 16:10:55:698 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:55:698 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:55:699 CPU/(20047:20047): id: 1
+[INFO] 16:10:55:699 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:55:699 CPU/(20047:20047): program counter: 10
+[INFO] 16:10:55:699 CPU/(20047:20047): socket: 10
+[INFO] 16:10:55:699 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:10:55:699 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:10:55:699 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:55:699 CPU/(20047:20047): --------------
+[INFO] 16:10:55:699 CPU/(20047:20047):   Nro de instrucion: 10
+[INFO] 16:10:55:699 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:55:699 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:55:699 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:56:703 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:56:703 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:56:703 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:56:703 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:56:703 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:56:703 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:56:703 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:56:704 CPU/(20047:20047):  -----------
+[INFO] 16:10:56:704 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:56:705 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:56:705 CPU/(20047:20047): id: 1
+[INFO] 16:10:56:705 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:56:705 CPU/(20047:20047): program counter: 11
+[INFO] 16:10:56:705 CPU/(20047:20047): socket: 10
+[INFO] 16:10:56:705 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:10:56:705 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:10:56:705 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:56:705 CPU/(20047:20047): --------------
+[INFO] 16:10:56:705 CPU/(20047:20047):   Nro de instrucion: 11
+[INFO] 16:10:56:705 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:56:705 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:56:705 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:57:707 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:57:708 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:57:708 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:57:708 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:57:708 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:57:708 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:57:708 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:57:710 CPU/(20047:20047):  -----------
+[INFO] 16:10:57:710 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:57:710 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:57:710 CPU/(20047:20047): id: 1
+[INFO] 16:10:57:710 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:57:710 CPU/(20047:20047): program counter: 12
+[INFO] 16:10:57:710 CPU/(20047:20047): socket: 10
+[INFO] 16:10:57:710 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:10:57:710 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:10:57:710 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:57:710 CPU/(20047:20047): --------------
+[INFO] 16:10:57:710 CPU/(20047:20047):   Nro de instrucion: 12
+[INFO] 16:10:57:710 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:57:710 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:57:710 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:58:711 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:58:711 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:58:711 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:58:711 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:58:711 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:58:711 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:58:711 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:58:711 CPU/(20047:20047):  -----------
+[INFO] 16:10:58:711 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:58:711 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:58:711 CPU/(20047:20047): id: 1
+[INFO] 16:10:58:711 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:58:711 CPU/(20047:20047): program counter: 13
+[INFO] 16:10:58:711 CPU/(20047:20047): socket: 10
+[INFO] 16:10:58:711 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:10:58:711 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:10:58:711 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:58:711 CPU/(20047:20047): --------------
+[INFO] 16:10:58:711 CPU/(20047:20047):   Nro de instrucion: 13
+[INFO] 16:10:58:711 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:58:711 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:58:711 CPU/(20047:20047):   Time: 1000
+[INFO] 16:10:59:712 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:10:59:713 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:10:59:713 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:10:59:713 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:59:713 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:10:59:713 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:10:59:713 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:10:59:714 CPU/(20047:20047):  -----------
+[INFO] 16:10:59:714 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:10:59:714 CPU/(20047:20047): -----PCB ------
+[INFO] 16:10:59:714 CPU/(20047:20047): id: 1
+[INFO] 16:10:59:714 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:10:59:714 CPU/(20047:20047): program counter: 14
+[INFO] 16:10:59:714 CPU/(20047:20047): socket: 10
+[INFO] 16:10:59:714 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:10:59:714 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:10:59:714 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:10:59:714 CPU/(20047:20047): --------------
+[INFO] 16:10:59:714 CPU/(20047:20047):   Nro de instrucion: 14
+[INFO] 16:10:59:714 CPU/(20047:20047):   instruccion/codigo op: NO_OP
+[INFO] 16:10:59:714 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:10:59:714 CPU/(20047:20047):   Time: 1000
+[INFO] 16:11:00:723 CPU/(20047:20047):    Ocurrio la interrupcion por puerto Interrup: 8005
+[INFO] 16:11:00:724 CPU/(20047:20047):    responseInterrupcion/Enviamos este PCB: 
+[WARNING] 16:11:00:724 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:11:00:724 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:11:00:724 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:11:00:724 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:11:00:724 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:11:00:725 CPU/(20047:20047):  -----------
+[INFO] 16:11:00:725 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:11:00:725 CPU/(20047:20047): -----PCB ------
+[INFO] 16:11:00:725 CPU/(20047:20047): id: 1
+[INFO] 16:11:00:725 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:11:00:725 CPU/(20047:20047): program counter: 15
+[INFO] 16:11:00:725 CPU/(20047:20047): socket: 10
+[INFO] 16:11:00:725 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:11:00:725 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:11:00:725 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:11:00:725 CPU/(20047:20047): --------------
+[INFO] 16:11:00:725 CPU/(20047:20047):   Nro de instrucion: 15
+[INFO] 16:11:00:725 CPU/(20047:20047):   instruccion/codigo op: I/O
+[INFO] 16:11:00:725 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:11:00:726 CPU/(20047:20047):    Llego a i_o()
+[INFO] 16:11:00:726 CPU/(20047:20047):    Llego responsePorBloqueo()
+[INFO] 16:11:00:726 CPU/(20047:20047):    Se le asignoMemoria:
+[INFO] 16:11:00:726 CPU/(20047:20047):    Enviamos el PCB Bloqueado 
+[WARNING] 16:11:00:726 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:11:00:726 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:11:00:726 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:11:00:726 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:11:00:726 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:11:00:726 CPU/(20047:20047):  -----------
+[INFO] 16:11:00:727 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:11:00:727 CPU/(20047:20047): -----PCB ------
+[INFO] 16:11:00:727 CPU/(20047:20047): id: 0
+[INFO] 16:11:00:727 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:11:00:727 CPU/(20047:20047): program counter: 7
+[INFO] 16:11:00:727 CPU/(20047:20047): socket: 9
+[INFO] 16:11:00:727 CPU/(20047:20047): numero de tabla: 0
+[INFO] 16:11:00:727 CPU/(20047:20047): tamanio de consola: 100
+[INFO] 16:11:00:727 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:11:00:727 CPU/(20047:20047): --------------
+[INFO] 16:11:00:727 CPU/(20047:20047):   Nro de instrucion: 7
+[INFO] 16:11:00:727 CPU/(20047:20047):   instruccion/codigo op: EXIT
+[INFO] 16:11:00:727 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:11:00:727 CPU/(20047:20047):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 16:11:00:727 CPU/(20047:20047): -----PCB ------
+[INFO] 16:11:00:727 CPU/(20047:20047): id: 0
+[INFO] 16:11:00:727 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:11:00:727 CPU/(20047:20047): program counter: 8
+[INFO] 16:11:00:727 CPU/(20047:20047): socket: 9
+[INFO] 16:11:00:727 CPU/(20047:20047): numero de tabla: 0
+[INFO] 16:11:00:727 CPU/(20047:20047): tamanio de consola: 100
+[INFO] 16:11:00:727 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:11:00:727 CPU/(20047:20047): --------------
+[WARNING] 16:11:00:727 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:11:00:727 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:11:00:727 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:11:00:727 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 16:11:00:728 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:11:05:727 CPU/(20047:20047):  -----------
+[INFO] 16:11:05:728 CPU/(20047:20047):  El kernel envio un PCB:
+[INFO] 16:11:05:728 CPU/(20047:20047): -----PCB ------
+[INFO] 16:11:05:728 CPU/(20047:20047): id: 1
+[INFO] 16:11:05:728 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:11:05:728 CPU/(20047:20047): program counter: 16
+[INFO] 16:11:05:728 CPU/(20047:20047): socket: 10
+[INFO] 16:11:05:728 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:11:05:728 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:11:05:728 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:11:05:728 CPU/(20047:20047): --------------
+[INFO] 16:11:05:728 CPU/(20047:20047):   Nro de instrucion: 16
+[INFO] 16:11:05:728 CPU/(20047:20047):   instruccion/codigo op: EXIT
+[INFO] 16:11:05:728 CPU/(20047:20047):   Entro a fetch_operands
+[INFO] 16:11:05:728 CPU/(20047:20047):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 16:11:05:728 CPU/(20047:20047): -----PCB ------
+[INFO] 16:11:05:728 CPU/(20047:20047): id: 1
+[INFO] 16:11:05:728 CPU/(20047:20047): estimacion: 10000
+[INFO] 16:11:05:728 CPU/(20047:20047): program counter: 17
+[INFO] 16:11:05:728 CPU/(20047:20047): socket: 10
+[INFO] 16:11:05:728 CPU/(20047:20047): numero de tabla: 1
+[INFO] 16:11:05:728 CPU/(20047:20047): tamanio de consola: 500
+[INFO] 16:11:05:728 CPU/(20047:20047): lista Instrucciones:
+[INFO] 16:11:05:728 CPU/(20047:20047): --------------
+[WARNING] 16:11:05:728 CPU/(20047:20047): Entro por interrupcion al Break
+[INFO] 16:11:05:728 CPU/(20047:20047): --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:11:05:728 CPU/(20047:20049):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 16:11:05:729 CPU/(20047:20049):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 16:11:05:729 CPU/(20047:20049):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[ERROR] 16:11:36:286 CPU/(20047:20047): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 16:11:36:286 CPU/(20047:20047): Entro: finalizar_cpu

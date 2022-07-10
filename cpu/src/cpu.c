@@ -182,7 +182,7 @@ void mostrarPCB(){
 	log_info(logger, "numero de tabla: %d", pcb->tablas_paginas);
 	log_info(logger, "tamanio de consola: %d", pcb->tamanio_proceso);
 	log_info(logger, "lista Instrucciones:");
-	list_iterate(pcb->instrucciones, (void*) iterator);
+	//list_iterate(pcb->instrucciones, (void*) iterator);
 	log_info(logger, "--------------");
 }
 

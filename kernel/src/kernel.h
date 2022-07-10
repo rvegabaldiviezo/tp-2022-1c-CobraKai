@@ -36,7 +36,7 @@ typedef struct {
 	pid_t id;
 	unsigned int tamanio_proceso;
 	unsigned int program_counter;
-	unsigned int tablas_paginas;
+	int tablas_paginas;
 	unsigned int estimacion_rafaga;
 	unsigned int socket;
 	t_list* instrucciones;
@@ -120,6 +120,7 @@ t_pcb_bloqueado* recibir_pcb_bloqueado(int conexion);
 void solicitar_numero_de_tabla(t_pcb*, int);
 int recibir_numero_de_tabla(t_pcb*, int);
 void escuchar_cpu_dispatch();
+void pasar_a_ready(t_pcb*);
 
 
 #endif /* KERNEL_H_ */

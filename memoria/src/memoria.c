@@ -310,8 +310,9 @@ void atender_kernel() {
 			case SUSPENCION_PROCESO:
 				log_info(logger, "Kernel solicita SUSPENCION PROCESO");
 				swapear_paginas_modificadas(proceso);
+
 				//liberar_espacio_de_usuario(proceso->espacio_utilizable);
-				//enviar_confirmacion(conexion_kernel)
+				enviar_confirmacion(conexion_kernel);
 
 				break;
 			case FINALIZACION_PROCESO:

@@ -679,3 +679,156 @@
 [INFO] 23:43:25:889 MEMORIA/(484:505): /home/utnso/swap/0.swap
 [INFO] 23:43:25:889 MEMORIA/(484:505): Id a finalizar: 0
 [ERROR] 23:43:36:125 MEMORIA/(484:505): Se desconecto el kernel
+[INFO] 15:47:12:771 MEMORIA/(10762:10762): Memoria lista para recibir clientes
+[INFO] 15:47:12:772 MEMORIA/(10762:10763): Entro Atender CPU
+[INFO] 15:47:22:829 MEMORIA/(10762:10763): Se conecto CPU: 5
+[INFO] 15:47:22:829 MEMORIA/(10762:10763): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 15:47:22:829 MEMORIA/(10762:10871): Entro Atender KERNEL
+[ERROR] 15:47:55:313 MEMORIA/(10762:10871): Se desconecto el kernel
+[INFO] 15:50:13:240 MEMORIA/(12010:12010): Memoria lista para recibir clientes
+[INFO] 15:50:13:240 MEMORIA/(12010:12011): Entro Atender CPU
+[INFO] 15:50:14:648 MEMORIA/(12010:12011): Se conecto CPU: 5
+[INFO] 15:50:14:648 MEMORIA/(12010:12011): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 15:50:14:648 MEMORIA/(12010:12022): Entro Atender KERNEL
+[INFO] 15:50:18:969 MEMORIA/(12010:12022): Kernel solicita INICIO PROCESO
+[INFO] 15:50:18:969 MEMORIA/(12010:12022): Se creo la tabla de primer nivel: 0
+[INFO] 15:50:18:969 MEMORIA/(12010:12022): /home/utnso/swap/0.swap
+[INFO] 15:50:39:013 MEMORIA/(12010:12022): Kernel solicita INICIO PROCESO
+[INFO] 15:50:39:014 MEMORIA/(12010:12022): Se creo la tabla de primer nivel: 1
+[INFO] 15:50:39:014 MEMORIA/(12010:12022): /home/utnso/swap/0.swap
+[INFO] 15:50:39:019 MEMORIA/(12010:12022): Kernel solicita FINALIZACION PROCESO
+[INFO] 15:50:39:019 MEMORIA/(12010:12022): /home/utnso/swap/0.swap
+[INFO] 15:50:39:019 MEMORIA/(12010:12022): Id a finalizar: 0
+[INFO] 15:51:36:212 MEMORIA/(12010:12022): Kernel solicita INICIO PROCESO
+[INFO] 15:51:36:212 MEMORIA/(12010:12022): Se creo la tabla de primer nivel: 2
+[INFO] 15:51:36:212 MEMORIA/(12010:12022): /home/utnso/swap/1.swap
+[INFO] 15:51:36:212 MEMORIA/(12010:12022): Kernel solicita FINALIZACION PROCESO
+[INFO] 15:51:36:212 MEMORIA/(12010:12022): /home/utnso/swap/1.swap
+[INFO] 15:51:36:213 MEMORIA/(12010:12022): Id a finalizar: 1
+[INFO] 15:51:50:778 MEMORIA/(12010:12022): Kernel solicita INICIO PROCESO
+[INFO] 15:51:50:778 MEMORIA/(12010:12022): Se creo la tabla de primer nivel: 3
+[INFO] 15:51:50:779 MEMORIA/(12010:12022): /home/utnso/swap/2.swap
+[INFO] 15:51:51:781 MEMORIA/(12010:12022): Kernel solicita FINALIZACION PROCESO
+[INFO] 15:51:51:782 MEMORIA/(12010:12022): /home/utnso/swap/2.swap
+[INFO] 15:51:51:782 MEMORIA/(12010:12022): Id a finalizar: 2
+[ERROR] 15:52:05:098 MEMORIA/(12010:12022): Se desconecto el kernel
+[INFO] 15:54:47:744 MEMORIA/(13935:13935): Memoria lista para recibir clientes
+[INFO] 15:54:47:745 MEMORIA/(13935:13936): Entro Atender CPU
+[INFO] 15:54:49:113 MEMORIA/(13935:13936): Se conecto CPU: 5
+[INFO] 15:54:49:113 MEMORIA/(13935:13936): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 15:54:49:113 MEMORIA/(13935:13946): Entro Atender KERNEL
+[INFO] 15:55:22:207 MEMORIA/(13935:13946): Kernel solicita INICIO PROCESO
+[INFO] 15:55:22:207 MEMORIA/(13935:13946): Se creo la tabla de primer nivel: 0
+[INFO] 15:55:22:207 MEMORIA/(13935:13946): /home/utnso/swap/0.swap
+[INFO] 15:55:22:681 MEMORIA/(13935:13946): Kernel solicita INICIO PROCESO
+[INFO] 15:55:22:681 MEMORIA/(13935:13946): Se creo la tabla de primer nivel: 1
+[INFO] 15:55:22:681 MEMORIA/(13935:13946): /home/utnso/swap/1.swap
+[INFO] 15:55:23:208 MEMORIA/(13935:13946): Kernel solicita FINALIZACION PROCESO
+[INFO] 15:55:23:208 MEMORIA/(13935:13946): /home/utnso/swap/1.swap
+[INFO] 15:55:23:208 MEMORIA/(13935:13946): Id a finalizar: 1
+[INFO] 15:55:31:745 MEMORIA/(13935:13946): Kernel solicita INICIO PROCESO
+[INFO] 15:55:31:745 MEMORIA/(13935:13946): Se creo la tabla de primer nivel: 2
+[INFO] 15:55:31:745 MEMORIA/(13935:13946): /home/utnso/swap/1.swap
+[INFO] 15:55:31:746 MEMORIA/(13935:13946): Kernel solicita FINALIZACION PROCESO
+[INFO] 15:55:31:746 MEMORIA/(13935:13946): /home/utnso/swap/1.swap
+[INFO] 15:55:31:746 MEMORIA/(13935:13946): Id a finalizar: 1
+[INFO] 15:56:14:473 MEMORIA/(13935:13946): Kernel solicita INICIO PROCESO
+[INFO] 15:56:14:473 MEMORIA/(13935:13946): Se creo la tabla de primer nivel: 3
+[INFO] 15:56:14:473 MEMORIA/(13935:13946): /home/utnso/swap/2.swap
+[INFO] 15:56:15:475 MEMORIA/(13935:13946): Kernel solicita FINALIZACION PROCESO
+[INFO] 15:56:15:475 MEMORIA/(13935:13946): /home/utnso/swap/2.swap
+[INFO] 15:56:15:475 MEMORIA/(13935:13946): Id a finalizar: 2
+[INFO] 15:56:33:680 MEMORIA/(13935:13946): Kernel solicita INICIO PROCESO
+[INFO] 15:56:33:680 MEMORIA/(13935:13946): Se creo la tabla de primer nivel: 4
+[INFO] 15:56:33:680 MEMORIA/(13935:13946): /home/utnso/swap/3.swap
+[INFO] 15:56:34:425 MEMORIA/(13935:13946): Kernel solicita INICIO PROCESO
+[INFO] 15:56:34:425 MEMORIA/(13935:13946): Se creo la tabla de primer nivel: 5
+[INFO] 15:56:34:425 MEMORIA/(13935:13946): /home/utnso/swap/4.swap
+[INFO] 15:56:53:747 MEMORIA/(13935:13946): Kernel solicita INICIO PROCESO
+[INFO] 15:56:53:747 MEMORIA/(13935:13946): Se creo la tabla de primer nivel: 6
+[INFO] 15:56:53:747 MEMORIA/(13935:13946): /home/utnso/swap/3.swap
+[INFO] 15:56:53:758 MEMORIA/(13935:13946): Kernel solicita INICIO PROCESO
+[INFO] 15:56:53:758 MEMORIA/(13935:13946): Se creo la tabla de primer nivel: 7
+[INFO] 15:56:53:758 MEMORIA/(13935:13946): /home/utnso/swap/4.swap
+[INFO] 15:56:54:771 MEMORIA/(13935:13946): Kernel solicita FINALIZACION PROCESO
+[INFO] 15:56:54:771 MEMORIA/(13935:13946): /home/utnso/swap/4.swap
+[INFO] 15:56:54:771 MEMORIA/(13935:13946): Id a finalizar: 4
+[INFO] 15:56:57:268 MEMORIA/(13935:13946): Kernel solicita INICIO PROCESO
+[INFO] 15:56:57:269 MEMORIA/(13935:13946): Se creo la tabla de primer nivel: 8
+[INFO] 15:56:57:269 MEMORIA/(13935:13946): /home/utnso/swap/4.swap
+[INFO] 15:56:57:271 MEMORIA/(13935:13946): Kernel solicita FINALIZACION PROCESO
+[INFO] 15:56:57:272 MEMORIA/(13935:13946): /home/utnso/swap/4.swap
+[INFO] 15:56:57:272 MEMORIA/(13935:13946): Id a finalizar: 4
+[ERROR] 15:57:48:923 MEMORIA/(13935:13946): Se desconecto el kernel
+[INFO] 16:00:38:840 MEMORIA/(16171:16171): Memoria lista para recibir clientes
+[INFO] 16:00:38:841 MEMORIA/(16171:16172): Entro Atender CPU
+[INFO] 16:00:40:312 MEMORIA/(16171:16172): Se conecto CPU: 5
+[INFO] 16:00:40:312 MEMORIA/(16171:16172): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 16:00:40:312 MEMORIA/(16171:16184): Entro Atender KERNEL
+[INFO] 16:00:53:945 MEMORIA/(16171:16184): Kernel solicita INICIO PROCESO
+[INFO] 16:00:53:945 MEMORIA/(16171:16184): Se creo la tabla de primer nivel: 0
+[INFO] 16:00:53:945 MEMORIA/(16171:16184): /home/utnso/swap/0.swap
+[INFO] 16:00:56:520 MEMORIA/(16171:16184): Kernel solicita INICIO PROCESO
+[INFO] 16:00:56:520 MEMORIA/(16171:16184): Se creo la tabla de primer nivel: 1
+[INFO] 16:00:56:520 MEMORIA/(16171:16184): /home/utnso/swap/1.swap
+[INFO] 16:01:14:987 MEMORIA/(16171:16184): Kernel solicita FINALIZACION PROCESO
+[INFO] 16:01:14:987 MEMORIA/(16171:16184): /home/utnso/swap/1.swap
+[INFO] 16:01:14:987 MEMORIA/(16171:16184): Id a finalizar: 1
+[INFO] 16:01:17:489 MEMORIA/(16171:16184): Kernel solicita FINALIZACION PROCESO
+[INFO] 16:01:17:489 MEMORIA/(16171:16184): /home/utnso/swap/1.swap
+[INFO] 16:01:17:489 MEMORIA/(16171:16184): Id a finalizar: 1
+[ERROR] 16:02:52:209 MEMORIA/(16171:16184): Se desconecto el kernel
+[INFO] 16:03:44:928 MEMORIA/(17413:17413): Memoria lista para recibir clientes
+[INFO] 16:03:44:929 MEMORIA/(17413:17414): Entro Atender CPU
+[INFO] 16:03:46:305 MEMORIA/(17413:17414): Se conecto CPU: 5
+[INFO] 16:03:46:305 MEMORIA/(17413:17414): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 16:03:46:305 MEMORIA/(17413:17427): Entro Atender KERNEL
+[INFO] 16:03:52:456 MEMORIA/(17413:17427): Kernel solicita INICIO PROCESO
+[INFO] 16:03:52:456 MEMORIA/(17413:17427): Se creo la tabla de primer nivel: 0
+[INFO] 16:03:52:456 MEMORIA/(17413:17427): /home/utnso/swap/0.swap
+[INFO] 16:03:53:681 MEMORIA/(17413:17427): Kernel solicita INICIO PROCESO
+[INFO] 16:03:53:681 MEMORIA/(17413:17427): Se creo la tabla de primer nivel: 1
+[INFO] 16:03:53:681 MEMORIA/(17413:17427): /home/utnso/swap/1.swap
+[INFO] 16:04:13:598 MEMORIA/(17413:17427): Kernel solicita FINALIZACION PROCESO
+[INFO] 16:04:13:598 MEMORIA/(17413:17427): /home/utnso/swap/1.swap
+[INFO] 16:04:13:598 MEMORIA/(17413:17427): Id a finalizar: 1
+[INFO] 16:04:18:609 MEMORIA/(17413:17427): Kernel solicita FINALIZACION PROCESO
+[INFO] 16:04:18:609 MEMORIA/(17413:17427): /home/utnso/swap/1.swap
+[INFO] 16:04:18:609 MEMORIA/(17413:17427): Id a finalizar: 1
+[ERROR] 16:06:11:976 MEMORIA/(17413:17427): Se desconecto el kernel
+[INFO] 16:06:19:247 MEMORIA/(18425:18425): Memoria lista para recibir clientes
+[INFO] 16:06:19:247 MEMORIA/(18425:18426): Entro Atender CPU
+[INFO] 16:06:20:352 MEMORIA/(18425:18426): Se conecto CPU: 5
+[INFO] 16:06:20:352 MEMORIA/(18425:18426): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 16:06:20:352 MEMORIA/(18425:18436): Entro Atender KERNEL
+[INFO] 16:06:24:999 MEMORIA/(18425:18436): Kernel solicita INICIO PROCESO
+[INFO] 16:06:24:999 MEMORIA/(18425:18436): Se creo la tabla de primer nivel: 0
+[INFO] 16:06:24:999 MEMORIA/(18425:18436): /home/utnso/swap/0.swap
+[INFO] 16:06:25:648 MEMORIA/(18425:18436): Kernel solicita INICIO PROCESO
+[INFO] 16:06:25:648 MEMORIA/(18425:18436): Se creo la tabla de primer nivel: 1
+[INFO] 16:06:25:648 MEMORIA/(18425:18436): /home/utnso/swap/1.swap
+[INFO] 16:06:46:059 MEMORIA/(18425:18436): Kernel solicita FINALIZACION PROCESO
+[INFO] 16:06:46:059 MEMORIA/(18425:18436): /home/utnso/swap/1.swap
+[INFO] 16:06:46:059 MEMORIA/(18425:18436): Id a finalizar: 1
+[INFO] 16:06:51:058 MEMORIA/(18425:18436): Kernel solicita FINALIZACION PROCESO
+[INFO] 16:06:51:058 MEMORIA/(18425:18436): /home/utnso/swap/1.swap
+[INFO] 16:06:51:058 MEMORIA/(18425:18436): Id a finalizar: 1
+[ERROR] 16:09:43:368 MEMORIA/(18425:18436): Se desconecto el kernel
+[INFO] 16:10:31:664 MEMORIA/(20036:20036): Memoria lista para recibir clientes
+[INFO] 16:10:31:664 MEMORIA/(20036:20037): Entro Atender CPU
+[INFO] 16:10:33:112 MEMORIA/(20036:20037): Se conecto CPU: 5
+[INFO] 16:10:33:112 MEMORIA/(20036:20037): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 16:10:33:112 MEMORIA/(20036:20048): Entro Atender KERNEL
+[INFO] 16:10:39:584 MEMORIA/(20036:20048): Kernel solicita INICIO PROCESO
+[INFO] 16:10:39:584 MEMORIA/(20036:20048): Se creo la tabla de primer nivel: 0
+[INFO] 16:10:39:584 MEMORIA/(20036:20048): /home/utnso/swap/0.swap
+[INFO] 16:10:40:553 MEMORIA/(20036:20048): Kernel solicita INICIO PROCESO
+[INFO] 16:10:40:553 MEMORIA/(20036:20048): Se creo la tabla de primer nivel: 1
+[INFO] 16:10:40:553 MEMORIA/(20036:20048): /home/utnso/swap/1.swap
+[INFO] 16:11:00:727 MEMORIA/(20036:20048): Kernel solicita FINALIZACION PROCESO
+[INFO] 16:11:00:728 MEMORIA/(20036:20048): /home/utnso/swap/1.swap
+[INFO] 16:11:00:728 MEMORIA/(20036:20048): Id a finalizar: 1
+[INFO] 16:11:05:729 MEMORIA/(20036:20048): Kernel solicita FINALIZACION PROCESO
+[INFO] 16:11:05:729 MEMORIA/(20036:20048): /home/utnso/swap/1.swap
+[INFO] 16:11:05:729 MEMORIA/(20036:20048): Id a finalizar: 1
+[ERROR] 16:11:36:286 MEMORIA/(20036:20048): Se desconecto el kernel
