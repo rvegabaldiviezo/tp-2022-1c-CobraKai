@@ -126,6 +126,16 @@ int recibir_entero(int socket_cliente) {
 	}
 }
 
+uint32_t recibir_uint32_t(int socket_cliente) {
+	int cod_op;
+	if(recv(socket_cliente, &cod_op, sizeof(uint32_t), MSG_WAITALL) > 0) {
+		return cod_op;
+	} else {
+		close(socket_cliente);
+		return -1;
+	}
+}
+
 t_pcb* recibir_pcb(int conexion) {
 	// orden en el que vienen: operacion, id, socket, tamanio, program_counter, estimacion_rafaga, numero_tabla, tamanio_instrucciones, instrucciones
 	t_pcb* pcb = malloc(sizeof(t_pcb));
@@ -160,14 +170,71 @@ t_list* recibir_instrucciones(int socket_cliente) {
 	return instrucciones;
 }
 
+// Comunicacion Kernel: enviar PCB
 void enviar_pcb(t_pcb* pcb, int conexion, operacion op) {
+
 	t_buffer* buffer = cargar_buffer(pcb->instrucciones);
 	int bytes = sizeof(pid_t) + 7 * sizeof(int) + buffer->size;
 
 	void* pcb_serializado = serializar_pcb(pcb, buffer, bytes,op);
 	send(conexion, pcb_serializado, bytes, 0);
+
+	//free(buffer);
 	//free(pcb_serializado);
 }
+
+// Comunicacion Memoria
+void enviar_codigo_operacion(int conexion,int operacion) {
+	send(conexion, &operacion, sizeof(int), MSG_NOSIGNAL);
+	//free(pcb_serializado);
+}
+
+
+//##################33333
+void enviar_primer_acceso_memoria(int conexion,uint32_t nro_entrada_tabla,uint32_t entrada_tabla_1er_nivel) {
+
+	operacion cod_op = NUMERO_DE_TABLA_PRIMER_NIVEL;
+	uint32_t bytes = sizeof(operacion) + 2 *sizeof(uint32_t);
+	void* a_enviar = malloc(bytes);
+	uint32_t desplazamiento = 0;
+
+	memcpy(a_enviar + desplazamiento, &cod_op, sizeof(operacion));
+	desplazamiento += sizeof(operacion);
+
+	memcpy(a_enviar + desplazamiento, &nro_entrada_tabla, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+
+	memcpy(a_enviar + desplazamiento, &entrada_tabla_1er_nivel, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+
+	send(conexion, a_enviar, bytes, MSG_NOSIGNAL);
+
+	free(a_enviar);
+}
+
+
+void enviar_segundo_acceso_memoria(int conexion,uint32_t nro_entrada_tabla,uint32_t entrada_tabla_1er_nivel) {
+
+	operacion cod_op = NUMERO_DE_TABLA_SEGUNDO_NIVEL;
+	uint32_t bytes = sizeof(operacion) + 2 *sizeof(uint32_t);
+	void* a_enviar = malloc(bytes);
+	uint32_t desplazamiento = 0;
+
+	memcpy(a_enviar + desplazamiento, &cod_op, sizeof(operacion));
+	desplazamiento += sizeof(operacion);
+
+	memcpy(a_enviar + desplazamiento, &nro_entrada_tabla, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+
+	memcpy(a_enviar + desplazamiento, &entrada_tabla_1er_nivel, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+
+	send(conexion, a_enviar, bytes, MSG_NOSIGNAL);
+
+	free(a_enviar);
+}
+
+
 
 void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes,operacion op) {
 	void* a_enviar = malloc(bytes);
@@ -212,6 +279,8 @@ void enviar_pcb_bloqueado(int socketKernel,t_pcb_bloqueado* bloqueado){
 	memcpy(pcb_serializado + bytes, &(bloqueado->tiempo_bloqueo), sizeof(int));
 	bytes += sizeof(int);
 	send(socketKernel, pcb_serializado, bytes, 0);
+
+	//free(buffer);
 	//free(pcb_serializado);
 }
 
