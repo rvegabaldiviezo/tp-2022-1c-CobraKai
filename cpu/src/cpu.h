@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/socket.h>
+#include <math.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <netdb.h>
 #include <assert.h>
@@ -78,9 +80,9 @@ typedef struct {
 
 
 typedef struct{
-	int nro_filas_tabla_nivel1;
-	int tamano_pagina;
-}t_handshake;
+	uint32_t nro_filas_tabla_nivel1;
+	uint32_t tamano_pagina;
+}t_datos_memoria;
 
 
 enum {
@@ -195,7 +197,10 @@ void iniciar_logger_cpu();
 void iniciar_config_cpu();
 void iniciar_config_semaforos();
 
-t_handshake*  handshake_cpu_memoria(void);
-t_handshake* recibir_handshake_memoria(int conexion);
+t_datos_memoria*  handshake_cpu_memoria(void);
+t_datos_memoria* recibir_handshake_memoria(int conexion);
+uint32_t primer_acceso_memoria(int direccion_logica);
+void liberar_pcb(t_pcb* pcb);
+
 
 #endif /* CPU_H_ */

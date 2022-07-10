@@ -11,18 +11,21 @@ sem_t sem_interrupt;
 sem_t dispatch;
 
 //Variables Globales del Proceso
-t_config* config;
-t_log* logger;
+t_config* config;// free(config);
+t_log* logger;// free(logger);
 t_proceso* process;
 
 //Var principal del proceso
-proceso_cpu* cpu;
+proceso_cpu* cpu;// free(cpu);
 
 //KERNEL-CPU
-t_pcb* pcb;
+t_pcb* pcb;//free(pcb);
 
 //Memoria-CPU
-t_handshake* handshake;
+t_datos_memoria* datos_memoria;// free(datos_memoria);
+uint32_t numero_pagina;
+uint32_t entrada_tabla_segundo_nivel;
+uint32_t marco;
 
 int main(void) {
 
@@ -51,7 +54,7 @@ int iniciar_conexion_cpu_memoria(){
 	return conexion_memoria;
 }
 
-t_handshake*  handshake_cpu_memoria(){
+t_datos_memoria*  handshake_cpu_memoria(){
 	enviar_codigo_operacion(cpu->memoria,300);
 	log_info(logger, " Hicimos handshake_cpu_memoria");
 	return recibir_handshake_memoria(cpu->memoria);
@@ -91,13 +94,13 @@ int recibir_operacion_dispatch(){
 
 					log_info(logger, " -----------");
 					log_info(logger, " El kernel envio un PCB:");
-					t_pcb* pcb = recibir_pcb(cpu->kernel_dispatch);
+					pcb = recibir_pcb(cpu->kernel_dispatch);
 
-					mostrarPCB(cpu,pcb);
+					mostrarPCB();
 
 					int nro_intrucciones = list_size(pcb->instrucciones);
 
-					int nro_instrucion = fetch(pcb);
+					int nro_instrucion = fetch();
 
 					for(int i = nro_instrucion; i< nro_intrucciones ;i++){
 
@@ -115,8 +118,11 @@ int recibir_operacion_dispatch(){
 						check_interrupt(operacion);
 
 						if((check_interrupcion(cpu)) || (checkInstruccionInterrupcion(operacion))){
+							log_warning(logger,"Entro por interrupcion al Break");
 							cpu->interrupcion=false;
 							sem_post(&sem_interrupt);
+							liberar_pcb(pcb);
+
 							break;
 						}
 					}
@@ -139,10 +145,10 @@ int recibir_operacion_dispatch(){
 
 int recibir_operacion_interrupt(){
 
-	log_info(logger, "INICIO: recibir_operaciones()");
+	log_info(logger, "   INICIO: recibir_operacion_interrupt()");
 
 	while (1) {
-			log_info(logger, "--- A ESPERA DE UNA OPERACION\n");
+			log_info(logger, "  --- A ESPERA DE UNA OPERACION\n");
 			operacion cod_op = recibir_operacion(cpu->kernel_interrupt);//Recibe cada peticion que envie el kernel en el puerto interrup
 
 			switch (cod_op) {
@@ -151,7 +157,7 @@ int recibir_operacion_interrupt(){
 					cpu->interrupcion=true;//true q pidieron una interrupcion
 
 					//Hago un bloqueo por interrupcion
-					log_info(logger, "    --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo de desbloquee");
+					log_info(logger, "    --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee");
 					sem_wait(&sem_interrupt);
 
 					break;
@@ -163,23 +169,21 @@ int recibir_operacion_interrupt(){
 					break;
 			}
 		}
-
-	log_info(logger, "FIN: recibir_operaciones()");
 	return EXIT_SUCCESS;
 }
 
 
 void mostrarPCB(){
-	//log_info(cpu_process->logger, "-----PCB ------");
-	//log_info(cpu_process->logger, "id: %d", pcb->id);
-	//log_info(cpu_process->logger, "estimacion: %d", pcb->estimacion_rafaga);
-	//log_info(cpu_process->logger, "program counter: %d", pcb->program_counter);
-	//log_info(cpu_process->logger, "socket: %d", pcb->socket_cliente);
-	//log_info(cpu_process->logger, "numero de tabla: %d", pcb->tablas_paginas);
-//	log_info(cpu_process->logger, "tamanio de consola: %d", pcb->tamanio_proceso);
-	//log_info(cpu_process->logger, "lista Instrucciones:");
-	//list_iterate(pcb->instrucciones, (void*) iterator);
-//	log_info(cpu_process->logger, "--------------");
+	log_info(logger, "-----PCB ------");
+	log_info(logger, "id: %d", pcb->id);
+	log_info(logger, "estimacion: %d", pcb->estimacion_rafaga);
+	log_info(logger, "program counter: %d", pcb->program_counter);
+	log_info(logger, "socket: %d", pcb->socket_cliente);
+	log_info(logger, "numero de tabla: %d", pcb->tablas_paginas);
+	log_info(logger, "tamanio de consola: %d", pcb->tamanio_proceso);
+	log_info(logger, "lista Instrucciones:");
+	list_iterate(pcb->instrucciones, (void*) iterator);
+	log_info(logger, "--------------");
 }
 
 void mostrar_PCB_Bloqueado(t_pcb_bloqueado* bloqueado){
@@ -215,13 +219,10 @@ void execute(char** instruccion){
 	}else if(strcmp("I/O",instrucc)==0){
 
 		i_o(atoi(instruccion[1]));
-		t_log* nuevo_logger = log_create("./cpu2.log",NAME_LOG,true,LOG_LEVEL_INFO);
-		log_info(nuevo_logger, "    Ocurrio la interrupcion por instruccion: %s", instrucc);
-		log_destroy(nuevo_logger);
 
 	}else if(strcmp("EXIT",instrucc)==0){
 
-		instruccion_exit(cpu,pcb);
+		instruccion_exit();
 
 	}else if(strcmp("COPY",instrucc)==0){
 
@@ -234,7 +235,7 @@ void execute(char** instruccion){
 	}
 }
 
-int fetch(t_pcb* pcb){
+int fetch(){
 	return pcb->program_counter;
 }
 void fetch_operands(char** instruccion){
@@ -242,16 +243,16 @@ void fetch_operands(char** instruccion){
 }
 void no_op(int tiempo){
 	usleep(1000*tiempo);
-	incrementarProgramCounter(pcb);
+	incrementarProgramCounter();
 }
 void i_o(int tiempo){
 	log_info(logger, "   Llego a i_o()");
-	incrementarProgramCounter(pcb);
+	incrementarProgramCounter();
 	responsePorBloqueo(tiempo);
 }
 void instruccion_exit(){
-	incrementarProgramCounter(pcb);
-	responsePorFinDeProceso(pcb,cpu);
+	incrementarProgramCounter();
+	responsePorFinDeProceso();
 }
 
 void incrementarProgramCounter(){
@@ -261,16 +262,25 @@ void incrementarProgramCounter(){
 void responsePorBloqueo(int tiempo){
 	log_info(logger, "   Llego responsePorBloqueo()");
 	t_pcb_bloqueado* bloqueado = malloc(sizeof(t_pcb_bloqueado));
+	log_info(logger, "   Se le asignoMemoria:");
 	bloqueado->pcb = pcb;
 	bloqueado->tiempo_bloqueo = tiempo;
 	enviar_pcb_bloqueado(cpu->kernel_dispatch,bloqueado);
-	//log_info(cpu->logger, "   responsePorBloqueo-Enviamos este PCB: ");
+	log_info(logger, "   Enviamos el PCB Bloqueado ");
 	//mostrar_PCB_Bloqueado(cpu,bloqueado);
+
+	free(bloqueado);
 }
 void responsePorFinDeProceso(){
 	log_info(logger, "   responsePorFinDeProceso-Enviamos este PCB: ");
 	mostrarPCB(cpu,pcb);
 	enviar_pcb(pcb,cpu->kernel_dispatch,FINALIZACION_PROCESO);
+}
+
+void liberar_pcb(t_pcb* pcb){
+
+	list_destroy(pcb->instrucciones);
+	free(pcb);
 }
 
 void  check_interrupt(char* operacion){
@@ -307,7 +317,12 @@ void iniciar_cpu(){
 
 	// Crear conexiones
 	cpu->memoria = iniciar_conexion_cpu_memoria();
-	handshake = handshake_cpu_memoria();
+	datos_memoria = handshake_cpu_memoria();
+
+	log_info(logger,"--- Nro de filas tabla nivel 1: %d",datos_memoria->nro_filas_tabla_nivel1);//Entrada = 1 Fila : Nro de filas tabla nivel 1 Nros de filas = Cantidad de entradas
+	log_info(logger,"--- Tamano de pagina: %d",datos_memoria->tamano_pagina);
+
+	primer_acceso_memoria(8);
 
 	iniciar_servidor_dispatch();
 
@@ -452,16 +467,98 @@ int iniciar_servidor_cpu(char* key_puerto){
 }
 
 void iterator(char* value) {
-	t_log* logger = log_create(PATH_LOG, "CPU", true, LOG_LEVEL_INFO);
 	log_info(logger,"%s", value);
 }
 
 
-t_handshake* recibir_handshake_memoria(int conexion) {
+t_datos_memoria* recibir_handshake_memoria(int conexion) {
 	// orden en el que vienen: operacion, id, socket, tamanio, program_counter, estimacion_rafaga, numero_tabla, tamanio_instrucciones, instrucciones
-	t_handshake* handshake = malloc(sizeof(t_handshake));
+	t_datos_memoria* datos_memoria = malloc(sizeof(t_datos_memoria));
 	//int operacion = recibir_entero(conexion);
-	handshake->nro_filas_tabla_nivel1 = recibir_entero(conexion);
-	handshake->tamano_pagina = recibir_entero(conexion);
-	return handshake;
+	datos_memoria->tamano_pagina = recibir_entero(conexion);
+	datos_memoria->nro_filas_tabla_nivel1 = recibir_entero(conexion);
+	return datos_memoria;
 }
+
+
+void accesos_memoria(){
+
+	//
+
+	//
+
+	//
+}
+
+/*
+ * CALCULOS
+número_página = floor(dirección_lógica / tamaño_página)
+entrada_tabla_1er_nivel = floor(número_página / cant_entradas_por_tabla)
+entrada_tabla_2do_nivel = número_página mod (cant_entradas_por_tabla)
+desplazamiento = dirección_lógica - número_página * tamaño_página
+ * */
+
+
+/*. Un primer acceso para conocer en qué tabla de páginas de 2do nivel está direccionado el
+marco en que se encuentra la página a la que queremos acceder
+PRIMER ACCESO
+CPU --> MEMORIA
+CPU ENVIA NUMERO DE TABLA (PCB) Y ENTRADA_TABLA_PRIMER_NIVEL (CALCULA VER ENUNCIADO)
+//Entrada = 1 Fila : Nro de filas tabla nivel 1 Nros de filas = Cantidad de entradas
+// Procesos Cantidad de paginas(proceso)  = (Nros de filas) al  cuadrado
+ * */
+
+uint32_t primer_acceso_memoria(int direccion_logica){
+
+	float calculo1 = direccion_logica/datos_memoria->tamano_pagina;
+
+	numero_pagina = floor(calculo1);//=tamano de marco
+
+	float calculo2 = numero_pagina*12/datos_memoria->nro_filas_tabla_nivel1;
+
+	uint32_t entrada_tabla_1er_nivel = floor(calculo2);
+
+	uint32_t nro_entrada_tabla = 5;//pcb->tablas_paginas;
+
+	enviar_primer_acceso_memoria(cpu->memoria,nro_entrada_tabla, entrada_tabla_1er_nivel);
+	log_info(logger, " ------ Envie a MEMORIA nro_entrada_tabla: %d y entrada_tabla_1er_nivel: %i",nro_entrada_tabla,entrada_tabla_1er_nivel);
+
+	entrada_tabla_segundo_nivel = recibir_uint32_t(cpu->memoria);
+	log_info(logger, " ------ Recibi de MEMORIA entrada_tabla_segundo_nivel: %i",entrada_tabla_segundo_nivel);
+
+
+	return entrada_tabla_segundo_nivel;
+}
+
+
+
+/* Un segundo acceso para conocer en qué marco está la misma
+ * SEGUNDO ACCESO
+CPU --> MEMORIA
+NUMERO DE TABLA SEGUNDO NIVEL (EL MISMO QUE SE RESPONDIO) Y  ENTRADA_TABLA_SEGUNDO_NIVEL  (CALCULA VER ENUNCIADO)
+
+entrada_tabla_2do_nivel = número_página mod (cant_entradas_por_tabla)
+desplazamiento = dirección_lógica - número_página * tamaño_página
+ *
+	 * */
+void segundo_acceso_memoria(){
+
+	int entrada_tabla_2do_nivel = numero_pagina % datos_memoria->nro_filas_tabla_nivel1;
+
+	enviar_segundo_acceso_memoria(cpu->memoria,entrada_tabla_segundo_nivel, entrada_tabla_2do_nivel);
+
+	marco = recibir_uint32_t(cpu->memoria);
+}
+
+void tercer_acceso_memoria(){
+	/*Finalmente acceder a la porción de memoria correspondiente (la dirección física)
+		 * */
+}
+
+
+
+
+
+
+
+

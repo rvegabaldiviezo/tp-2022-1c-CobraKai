@@ -40,7 +40,7 @@ int main(void) {
 	log_info(logger, "Memoria lista para recibir clientes");
 
 	pthread_create(&hilo_cpu, NULL, (void *) atender_cpu, NULL);
-	//pthread_create(&hilo_kernel, NULL, (void *) atender_kernel, NULL);
+
 
 	terminar_programa();
 	return EXIT_SUCCESS;
@@ -190,6 +190,7 @@ void atender_cpu() {
 				log_info(logger, "CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina");
 				enviar_numero_de_tabla(conexion_cpu,tamanio_pagina);
 				enviar_numero_de_tabla(conexion_cpu,entradas_por_tabla);
+				pthread_create(&hilo_kernel, NULL, (void *) atender_kernel, NULL);
 				//unsigned int numero_tabla = recibir_numero_tabla(conexion_kernel);
 				//char* tabla_segundo_nivel = dictionary_get(tablas_primer_nivel, string_itoa(numero_tabla));
 				break;
@@ -197,6 +198,17 @@ void atender_cpu() {
 				log_info(logger, "CPU solicita acceso a tabla pagina de primer nivel");
 				//unsigned int numero_tabla = recibir_numero_tabla(conexion_kernel);
 				//char* tabla_segundo_nivel = dictionary_get(tablas_primer_nivel, string_itoa(numero_tabla));
+				int  nro_entrada_tabla = recibir_entero(conexion_cpu);
+				log_info(logger, "CPU envio: %d",nro_entrada_tabla);
+
+				int entrada_tabla_1er_nivel = recibir_entero(conexion_cpu);
+				log_info(logger, "CPU envio: %d",entrada_tabla_1er_nivel);
+
+				int entrada_tabla_segundo_nivel = 2;
+
+				enviar_numero_de_tabla(conexion_cpu,entrada_tabla_segundo_nivel);
+				log_info(logger, "Le envie a CPU entrada_tabla_segundo_nivel: %d", entrada_tabla_segundo_nivel);
+
 				break;
 			case ACCESO_TABLA_SEGUNDO_NIVEL:
 				log_info(logger, "CPU solicita acceso a tabla pagina de segundo nivel");
@@ -269,6 +281,17 @@ void atender_kernel() {
 				log_info(logger, "Operacion desconocida");
 				break;
 		}
+	}
+}
+
+
+int recibir_entero(int socket_cliente) {
+	int cod_op;
+	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) > 0) {
+		return cod_op;
+	} else {
+		close(socket_cliente);
+		return -1;
 	}
 }
 

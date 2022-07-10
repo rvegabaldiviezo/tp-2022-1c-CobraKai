@@ -1,0 +1,248 @@
+==7756== Memcheck, a memory error detector
+==7756== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==7756== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==7756== Command: ./Debug/cpu
+==7756== Parent PID: 3898
+==7756== 
+--7756-- 
+--7756-- Valgrind options:
+--7756--    --leak-check=full
+--7756--    --show-leak-kinds=all
+--7756--    --track-origins=yes
+--7756--    --verbose
+--7756--    --log-file=valgrind-out.txt
+--7756-- Contents of /proc/version:
+--7756--   Linux version 4.4.0-210-generic (buildd@lgw01-amd64-037) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.12) ) #242-Ubuntu SMP Fri Apr 16 09:57:00 UTC 2021
+--7756-- 
+--7756-- Arch and hwcaps: X86, LittleEndian, x86-mmxext-sse1-sse2-sse3-lzcnt
+--7756-- Page sizes: currently 4096, max supported 4096
+--7756-- Valgrind library directory: /usr/lib/valgrind
+--7756-- Reading syms from /lib/i386-linux-gnu/ld-2.23.so
+--7756--   Considering /lib/i386-linux-gnu/ld-2.23.so ..
+--7756--   .. CRC mismatch (computed fe524f15 wanted dd32455a)
+--7756--   Considering /usr/lib/debug/lib/i386-linux-gnu/ld-2.23.so ..
+--7756--   .. CRC is valid
+--7756-- Reading syms from /home/utnso/Escritorio/tp-2022-1c-CobraKai/cpu/Debug/cpu
+--7756-- Reading syms from /usr/lib/valgrind/memcheck-x86-linux
+--7756--   Considering /usr/lib/valgrind/memcheck-x86-linux ..
+--7756--   .. CRC mismatch (computed 6036da3f wanted 652e483f)
+--7756--    object doesn't have a symbol table
+--7756--    object doesn't have a dynamic symbol table
+--7756-- Scheduler: using generic scheduler lock implementation.
+--7756-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==7756== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-7756-by-utnso-on-???
+==7756== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-7756-by-utnso-on-???
+==7756== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-7756-by-utnso-on-???
+==7756== 
+==7756== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==7756== don't want to do, unless you know exactly what you're doing,
+==7756== or are doing some strange experiment):
+==7756==   /usr/lib/valgrind/../../bin/vgdb --pid=7756 ...command...
+==7756== 
+==7756== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==7756==   /path/to/gdb ./Debug/cpu
+==7756== and then give GDB the following command
+==7756==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=7756
+==7756== --pid is optional if only one valgrind process is running
+==7756== 
+--7756-- REDIR: 0x4019030 (ld-linux.so.2:strlen) redirected to 0x380490f2 (???)
+--7756-- REDIR: 0x4018df0 (ld-linux.so.2:index) redirected to 0x380490cd (???)
+--7756-- Reading syms from /usr/lib/valgrind/vgpreload_core-x86-linux.so
+--7756--   Considering /usr/lib/valgrind/vgpreload_core-x86-linux.so ..
+--7756--   .. CRC mismatch (computed 5b95c0c4 wanted 39e79efa)
+--7756--    object doesn't have a symbol table
+--7756-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so
+--7756--   Considering /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so ..
+--7756--   .. CRC mismatch (computed 4d5a1526 wanted 33571d5b)
+--7756--    object doesn't have a symbol table
+==7756== WARNING: new redirection conflicts with existing -- ignoring it
+--7756--     old: 0x04019030 (strlen              ) R-> (0000.0) 0x380490f2 ???
+--7756--     new: 0x04019030 (strlen              ) R-> (2007.0) 0x0402f410 strlen
+--7756-- Reading syms from /usr/lib/libcommons.so
+--7756-- Reading syms from /lib/i386-linux-gnu/libm-2.23.so
+--7756--   Considering /lib/i386-linux-gnu/libm-2.23.so ..
+--7756--   .. CRC mismatch (computed 9c07115d wanted e2f91011)
+--7756--   Considering /usr/lib/debug/lib/i386-linux-gnu/libm-2.23.so ..
+--7756--   .. CRC is valid
+--7756-- Reading syms from /lib/i386-linux-gnu/libpthread-2.23.so
+--7756--   Considering /usr/lib/debug/.build-id/ee/56ef18e0cff372bd8c78c1f8084acd600d98a2.debug ..
+--7756--   .. build-id is valid
+--7756-- Reading syms from /lib/i386-linux-gnu/libc-2.23.so
+--7756--   Considering /lib/i386-linux-gnu/libc-2.23.so ..
+--7756--   .. CRC mismatch (computed ec440dd2 wanted cfe469e8)
+--7756--   Considering /usr/lib/debug/lib/i386-linux-gnu/libc-2.23.so ..
+--7756--   .. CRC is valid
+--7756-- REDIR: 0x4145590 (libc.so.6:strncasecmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--7756-- REDIR: 0x414c220 (libc.so.6:memrchr) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--7756-- REDIR: 0x415ec00 (libc.so.6:wcslen) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--7756-- REDIR: 0x4144430 (libc.so.6:strstr) redirected to 0x4033700 (strstr)
+--7756-- REDIR: 0x41438c0 (libc.so.6:__GI_strrchr) redirected to 0x402ee00 (__GI_strrchr)
+--7756-- REDIR: 0x413efc0 (libc.so.6:malloc) redirected to 0x402c110 (malloc)
+--7756-- REDIR: 0x41436a0 (libc.so.6:__GI_strlen) redirected to 0x402f390 (__GI_strlen)
+--7756-- REDIR: 0x4145760 (libc.so.6:__GI_memcpy) redirected to 0x4030fb0 (__GI_memcpy)
+--7756-- REDIR: 0x4147360 (libc.so.6:strchrnul) redirected to 0x40330b0 (strchrnul)
+--7756-- REDIR: 0x41451b0 (libc.so.6:__GI_mempcpy) redirected to 0x40332c0 (__GI_mempcpy)
+--7756-- REDIR: 0x4143660 (libc.so.6:strlen) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--7756-- REDIR: 0x414c520 (libc.so.6:__strlen_sse2_bsf) redirected to 0x402f370 (strlen)
+--7756-- REDIR: 0x413f5e0 (libc.so.6:realloc) redirected to 0x402e250 (realloc)
+--7756-- REDIR: 0x4142bc0 (libc.so.6:strcat) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--7756-- REDIR: 0x4157c10 (libc.so.6:__strcat_ssse3) redirected to 0x402f030 (strcat)
+--7756-- REDIR: 0x413f530 (libc.so.6:free) redirected to 0x402d2f0 (free)
+--7756-- REDIR: 0x41456f0 (libc.so.6:memcpy) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--7756-- REDIR: 0x41f5ca0 (libc.so.6:__memcpy_ssse3) redirected to 0x4030cc0 (memcpy)
+--7756-- REDIR: 0x4144cf0 (libc.so.6:__GI_memcmp) redirected to 0x4031ef0 (__GI_memcmp)
+--7756-- REDIR: 0x4147290 (libc.so.6:__GI___rawmemchr) redirected to 0x4033110 (__GI___rawmemchr)
+--7756-- REDIR: 0x413f8f0 (libc.so.6:calloc) redirected to 0x402e010 (calloc)
+--7756-- REDIR: 0x4143830 (libc.so.6:strncpy) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--7756-- REDIR: 0x414dea0 (libc.so.6:__strncpy_ssse3) redirected to 0x402f5f0 (strncpy)
+--7756-- REDIR: 0x41437e0 (libc.so.6:strncmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--7756-- REDIR: 0x42036f0 (libc.so.6:__strncmp_ssse3) redirected to 0x402fab0 (strncmp)
+--7756-- REDIR: 0x41450a0 (libc.so.6:memset) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--7756-- REDIR: 0x41f3600 (libc.so.6:__memset_sse2) redirected to 0x40327d0 (memset)
+==7756== 
+==7756== Process terminating with default action of signal 2 (SIGINT)
+==7756==    at 0x40C0264: accept (accept.c:35)
+==7756==    by 0x8048F31: esperar_cliente (clientServ.c:55)
+==7756==    by 0x804A4BB: esperar_cliente_dispatch (cpu.c:397)
+==7756==    by 0x8049883: main (cpu.c:35)
+==7756== 
+==7756== HEAP SUMMARY:
+==7756==     in use at exit: 949 bytes in 34 blocks
+==7756==   total heap usage: 508 allocs, 474 frees, 29,605 bytes allocated
+==7756== 
+==7756== Searching for pointers to 34 not-freed blocks
+==7756== Checked 8,462,108 bytes
+==7756== 
+==7756== 4 bytes in 1 blocks are still reachable in loss record 1 of 13
+==7756==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==7756==    by 0x41433A5: strdup (strdup.c:42)
+==7756==    by 0x40544A7: string_duplicate (in /usr/lib/libcommons.so)
+==7756==    by 0x4054049: log_create (in /usr/lib/libcommons.so)
+==7756==    by 0x8049765: iniciar_logger (clientServ.c:324)
+==7756==    by 0x804A2C6: iniciar_logger_cpu (cpu.c:340)
+==7756==    by 0x804A1F5: iniciar_cpu (cpu.c:312)
+==7756==    by 0x8049878: main (cpu.c:33)
+==7756== 
+==7756== 8 bytes in 1 blocks are still reachable in loss record 2 of 13
+==7756==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==7756==    by 0x40572AE: config_create (in /usr/lib/libcommons.so)
+==7756==    by 0x8049783: iniciar_config (clientServ.c:331)
+==7756==    by 0x804A2EF: iniciar_config_cpu (cpu.c:345)
+==7756==    by 0x804A1FA: iniciar_cpu (cpu.c:314)
+==7756==    by 0x8049878: main (cpu.c:33)
+==7756== 
+==7756== 8 bytes in 1 blocks are still reachable in loss record 3 of 13
+==7756==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==7756==    by 0x804A78D: recibir_handshake_memoria (cpu.c:476)
+==7756==    by 0x804994A: handshake_cpu_memoria (cpu.c:60)
+==7756==    by 0x804A211: iniciar_cpu (cpu.c:320)
+==7756==    by 0x8049878: main (cpu.c:33)
+==7756== 
+==7756== 13 bytes in 1 blocks are still reachable in loss record 4 of 13
+==7756==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==7756==    by 0x41433A5: strdup (strdup.c:42)
+==7756==    by 0x40572C2: config_create (in /usr/lib/libcommons.so)
+==7756==    by 0x8049783: iniciar_config (clientServ.c:331)
+==7756==    by 0x804A2EF: iniciar_config_cpu (cpu.c:345)
+==7756==    by 0x804A1FA: iniciar_cpu (cpu.c:314)
+==7756==    by 0x8049878: main (cpu.c:33)
+==7756== 
+==7756== 16 bytes in 1 blocks are still reachable in loss record 5 of 13
+==7756==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==7756==    by 0x40568FD: dictionary_create (in /usr/lib/libcommons.so)
+==7756==    by 0x40572D1: config_create (in /usr/lib/libcommons.so)
+==7756==    by 0x8049783: iniciar_config (clientServ.c:331)
+==7756==    by 0x804A2EF: iniciar_config_cpu (cpu.c:345)
+==7756==    by 0x804A1FA: iniciar_cpu (cpu.c:314)
+==7756==    by 0x8049878: main (cpu.c:33)
+==7756== 
+==7756== 20 bytes in 1 blocks are still reachable in loss record 6 of 13
+==7756==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==7756==    by 0x4053FA3: log_create (in /usr/lib/libcommons.so)
+==7756==    by 0x8049765: iniciar_logger (clientServ.c:324)
+==7756==    by 0x804A2C6: iniciar_logger_cpu (cpu.c:340)
+==7756==    by 0x804A1F5: iniciar_cpu (cpu.c:312)
+==7756==    by 0x8049878: main (cpu.c:33)
+==7756== 
+==7756== 24 bytes in 1 blocks are still reachable in loss record 7 of 13
+==7756==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==7756==    by 0x804A350: cpu_create (cpu.c:355)
+==7756==    by 0x804A1E2: iniciar_cpu (cpu.c:309)
+==7756==    by 0x8049878: main (cpu.c:33)
+==7756== 
+==7756== 46 bytes in 8 blocks are still reachable in loss record 8 of 13
+==7756==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==7756==    by 0x41433A5: strdup (strdup.c:42)
+==7756==    by 0x40544A7: string_duplicate (in /usr/lib/libcommons.so)
+==7756==    by 0x4055172: _string_split (in /usr/lib/libcommons.so)
+==7756==    by 0x4054A9E: string_n_split (in /usr/lib/libcommons.so)
+==7756==    by 0x40571CB: add_cofiguration.2925 (in /usr/lib/libcommons.so)
+==7756==    by 0x4054C4C: string_iterate_lines (in /usr/lib/libcommons.so)
+==7756==    by 0x405735F: config_create (in /usr/lib/libcommons.so)
+==7756==    by 0x8049783: iniciar_config (clientServ.c:331)
+==7756==    by 0x804A2EF: iniciar_config_cpu (cpu.c:345)
+==7756==    by 0x804A1FA: iniciar_cpu (cpu.c:314)
+==7756==    by 0x8049878: main (cpu.c:33)
+==7756== 
+==7756== 80 bytes in 1 blocks are still reachable in loss record 9 of 13
+==7756==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==7756==    by 0x405691E: dictionary_create (in /usr/lib/libcommons.so)
+==7756==    by 0x40572D1: config_create (in /usr/lib/libcommons.so)
+==7756==    by 0x8049783: iniciar_config (clientServ.c:331)
+==7756==    by 0x804A2EF: iniciar_config_cpu (cpu.c:345)
+==7756==    by 0x804A1FA: iniciar_cpu (cpu.c:314)
+==7756==    by 0x8049878: main (cpu.c:33)
+==7756== 
+==7756== 122 bytes in 8 blocks are still reachable in loss record 10 of 13
+==7756==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==7756==    by 0x41433A5: strdup (strdup.c:42)
+==7756==    by 0x4056A33: dictionary_put (in /usr/lib/libcommons.so)
+==7756==    by 0x40571EE: add_cofiguration.2925 (in /usr/lib/libcommons.so)
+==7756==    by 0x4054C4C: string_iterate_lines (in /usr/lib/libcommons.so)
+==7756==    by 0x405735F: config_create (in /usr/lib/libcommons.so)
+==7756==    by 0x8049783: iniciar_config (clientServ.c:331)
+==7756==    by 0x804A2EF: iniciar_config_cpu (cpu.c:345)
+==7756==    by 0x804A1FA: iniciar_cpu (cpu.c:314)
+==7756==    by 0x8049878: main (cpu.c:33)
+==7756== 
+==7756== 128 bytes in 8 blocks are still reachable in loss record 11 of 13
+==7756==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==7756==    by 0x4056F0A: dictionary_create_element (in /usr/lib/libcommons.so)
+==7756==    by 0x4056A45: dictionary_put (in /usr/lib/libcommons.so)
+==7756==    by 0x40571EE: add_cofiguration.2925 (in /usr/lib/libcommons.so)
+==7756==    by 0x4054C4C: string_iterate_lines (in /usr/lib/libcommons.so)
+==7756==    by 0x405735F: config_create (in /usr/lib/libcommons.so)
+==7756==    by 0x8049783: iniciar_config (clientServ.c:331)
+==7756==    by 0x804A2EF: iniciar_config_cpu (cpu.c:345)
+==7756==    by 0x804A1FA: iniciar_cpu (cpu.c:314)
+==7756==    by 0x8049878: main (cpu.c:33)
+==7756== 
+==7756== 136 bytes in 1 blocks are possibly lost in loss record 12 of 13
+==7756==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==7756==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==7756==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==7756==    by 0x40B7CC3: allocate_stack (allocatestack.c:588)
+==7756==    by 0x40B7CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==7756==    by 0x804A278: iniciar_cpu (cpu.c:331)
+==7756==    by 0x8049878: main (cpu.c:33)
+==7756== 
+==7756== 344 bytes in 1 blocks are still reachable in loss record 13 of 13
+==7756==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==7756==    by 0x412C369: __fopen_internal (iofopen.c:69)
+==7756==    by 0x412C42D: fopen@@GLIBC_2.1 (iofopen.c:97)
+==7756==    by 0x4053EDA: txt_open_for_append (in /usr/lib/libcommons.so)
+==7756==    by 0x4053FE3: log_create (in /usr/lib/libcommons.so)
+==7756==    by 0x8049765: iniciar_logger (clientServ.c:324)
+==7756==    by 0x804A2C6: iniciar_logger_cpu (cpu.c:340)
+==7756==    by 0x804A1F5: iniciar_cpu (cpu.c:312)
+==7756==    by 0x8049878: main (cpu.c:33)
+==7756== 
+==7756== LEAK SUMMARY:
+==7756==    definitely lost: 0 bytes in 0 blocks
+==7756==    indirectly lost: 0 bytes in 0 blocks
+==7756==      possibly lost: 136 bytes in 1 blocks
+==7756==    still reachable: 813 bytes in 33 blocks
+==7756==         suppressed: 0 bytes in 0 blocks
+==7756== 
+==7756== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==7756== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
