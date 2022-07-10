@@ -35,8 +35,9 @@ void liberar_conexion(int socket_cliente)
 }
 
 void enviar_numero_de_tabla(int destino, int numero_de_tabla) {
-	send(destino, &numero_de_tabla, sizeof(int), MSG_NOSIGNAL);
+	send(destino, &numero_de_tabla, sizeof(int), 0);
 }
+
 
 
 /******************** SERVER *****************/
@@ -56,10 +57,15 @@ int iniciar_servidor(void) {
 
 	getaddrinfo(IP, config_get_string_value(config_memoria, "PUERTO_ESCUCHA"), &hints, &servinfo);
 
+	config_destroy(config_memoria);
+
 	// Creamos el socket de escucha del servidor
 	socket_servidor = socket(servinfo->ai_family,
 	                    servinfo->ai_socktype,
 	                    servinfo->ai_protocol);
+
+	int activado = 1;
+	setsockopt(socket_servidor, SOL_SOCKET, SO_REUSEADDR, &activado, sizeof(activado));
 
 	// Asociamos el socket a un puerto
 	bind(socket_servidor, servinfo->ai_addr, servinfo->ai_addrlen);

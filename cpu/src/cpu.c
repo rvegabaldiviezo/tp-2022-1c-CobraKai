@@ -322,7 +322,7 @@ void iniciar_cpu(){
 	log_info(logger,"--- Nro de filas tabla nivel 1: %d",datos_memoria->nro_filas_tabla_nivel1);//Entrada = 1 Fila : Nro de filas tabla nivel 1 Nros de filas = Cantidad de entradas
 	log_info(logger,"--- Tamano de pagina: %d",datos_memoria->tamano_pagina);
 
-	primer_acceso_memoria(8);
+	//primer_acceso_memoria(8);
 
 	iniciar_servidor_dispatch();
 

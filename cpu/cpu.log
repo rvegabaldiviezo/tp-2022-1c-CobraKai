@@ -4782,3 +4782,2396 @@
 [INFO] 22:07:47:055 CPU/(8126:8126): I/O 5000
 [INFO] 22:07:47:055 CPU/(8126:8126): EXIT
 [INFO] 22:07:47:055 CPU/(8126:8126): --------------
+[INFO] 22:47:39:807 CPU/(10484:10484): 
+###### INICIO DE LOGGER ######
+[INFO] 22:47:39:807 CPU/(10484:10484):    ---Leyo archivo de configuraciones
+[INFO] 22:47:39:807 CPU/(10484:10484):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:47:39:807 CPU/(10484:10484):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:47:39:807 CPU/(10484:10484):  Hicimos handshake_cpu_memoria
+[INFO] 22:47:39:807 CPU/(10484:10484): --- Nro de filas tabla nivel 1: 4
+[INFO] 22:47:39:807 CPU/(10484:10484): --- Tamano de pagina: 64
+[INFO] 22:47:39:807 CPU/(10484:10484):  ------ Envie a MEMORIA nro_entrada_tabla: 5 y entrada_tabla_1er_nivel: 0
+[INFO] 22:48:01:400 CPU/(10484:10484):  ------ Recibi de MEMORIA entrada_tabla_segundo_nivel: -1
+[INFO] 22:48:01:400 CPU/(10484:10484): Entro: iniciar_servidor_dispatch
+[INFO] 22:48:01:400 CPU/(10484:10484): Entro: iniciar_servidor_cpu
+[INFO] 22:48:01:400 CPU/(10484:10484):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:48:01:400 CPU/(10484:10484):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 22:48:01:400 CPU/(10484:10484):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 22:48:01:400 CPU/(10484:10484): Se creo el Hilo: interrupt
+[INFO] 22:48:01:400 CPU/(10484:10484): Entro: esperar_cliente_cpu
+[INFO] 22:48:01:400 CPU/(10484:10484):  Socket server recibido: 4
+[INFO] 22:48:01:400 CPU/(10484:10484):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:48:01:401 CPU/(10484:10626):    --- Entro: escuchaInterrup(...)
+[INFO] 22:48:01:401 CPU/(10484:10626): Entro: iniciar_servidor_interrupt
+[INFO] 22:48:01:401 CPU/(10484:10626): Entro: iniciar_servidor_cpu
+[INFO] 22:48:01:401 CPU/(10484:10626):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:48:01:401 CPU/(10484:10626):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 22:48:01:401 CPU/(10484:10626):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 22:48:01:401 CPU/(10484:10626): Entro: esperar_cliente_cpu
+[INFO] 22:48:01:401 CPU/(10484:10626):  Socket server recibido: 7
+[INFO] 22:48:01:401 CPU/(10484:10626):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:48:05:567 CPU/(10658:10658): 
+###### INICIO DE LOGGER ######
+[INFO] 22:48:05:567 CPU/(10658:10658):    ---Leyo archivo de configuraciones
+[INFO] 22:48:05:567 CPU/(10658:10658):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:48:05:568 CPU/(10658:10658):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:48:05:568 CPU/(10658:10658):  Hicimos handshake_cpu_memoria
+[INFO] 22:48:05:568 CPU/(10658:10658): --- Nro de filas tabla nivel 1: -1
+[INFO] 22:48:05:568 CPU/(10658:10658): --- Tamano de pagina: -1
+[INFO] 22:48:05:568 CPU/(10658:10658):  ------ Envie a MEMORIA nro_entrada_tabla: 5 y entrada_tabla_1er_nivel: 0
+[INFO] 22:48:05:568 CPU/(10658:10658):  ------ Recibi de MEMORIA entrada_tabla_segundo_nivel: -1
+[INFO] 22:48:05:568 CPU/(10658:10658): Entro: iniciar_servidor_dispatch
+[INFO] 22:48:05:568 CPU/(10658:10658): Entro: iniciar_servidor_cpu
+[INFO] 22:48:05:568 CPU/(10658:10658):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:48:05:568 CPU/(10658:10658):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 22:48:05:568 CPU/(10658:10658):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 22:48:05:568 CPU/(10658:10658): Se creo el Hilo: interrupt
+[INFO] 22:48:05:568 CPU/(10658:10658): Entro: esperar_cliente_cpu
+[INFO] 22:48:05:568 CPU/(10658:10658):  Socket server recibido: 4
+[INFO] 22:48:05:568 CPU/(10658:10658):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:48:05:568 CPU/(10658:10659):    --- Entro: escuchaInterrup(...)
+[INFO] 22:48:05:568 CPU/(10658:10659): Entro: iniciar_servidor_interrupt
+[INFO] 22:48:05:568 CPU/(10658:10659): Entro: iniciar_servidor_cpu
+[INFO] 22:48:05:568 CPU/(10658:10659):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:48:05:568 CPU/(10658:10659):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 22:48:05:568 CPU/(10658:10659):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 22:48:05:568 CPU/(10658:10659): Entro: esperar_cliente_cpu
+[INFO] 22:48:05:568 CPU/(10658:10659):  Socket server recibido: 7
+[INFO] 22:48:05:568 CPU/(10658:10659):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:48:07:815 CPU/(10658:10659):  Termino el BLOQUEO
+[INFO] 22:48:07:815 CPU/(10658:10658):  Termino el BLOQUEO
+[INFO] 22:48:07:815 CPU/(10658:10659):  Se conecto un cliente y se creo el socket_cliente: 8. Puerto tipo:  interrupt
+[INFO] 22:48:07:815 CPU/(10658:10658):  Se conecto un cliente y se creo el socket_cliente: 5. Puerto tipo:  dispatch
+[INFO] 22:48:07:815 CPU/(10658:10658): INICIO: recibir_operaciones()
+[INFO] 22:48:07:815 CPU/(10658:10658): --- A ESPERA DE UNA OPERACION
+
+[INFO] 22:48:07:815 CPU/(10658:10659):  ---- Socket kernel interrupt: 8
+[INFO] 22:48:07:815 CPU/(10658:10659):    INICIO: recibir_operacion_interrupt()
+[INFO] 22:48:07:815 CPU/(10658:10659):   --- A ESPERA DE UNA OPERACION
+
+[ERROR] 22:48:25:066 CPU/(10658:10659): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 8
+[ERROR] 22:48:25:066 CPU/(10658:10658): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 5
+[INFO] 22:48:25:066 CPU/(10658:10658): Entro: finalizar_cpu
+[INFO] 22:48:25:066 CPU/(10658:10659):      ---- Salio: escuchaInterrup(...)
+[INFO] 22:48:25:066 CPU/(10658:10658): Finalizamos el Hilo interrupt
+[INFO] 22:48:25:066 CPU/(10658:10658): 
+###### FIN LOGGER ######
+[INFO] 22:48:33:992 CPU/(10858:10858): 
+###### INICIO DE LOGGER ######
+[INFO] 22:48:33:992 CPU/(10858:10858):    ---Leyo archivo de configuraciones
+[INFO] 22:48:33:992 CPU/(10858:10858):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:48:33:992 CPU/(10858:10858):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:48:33:992 CPU/(10858:10858):  Hicimos handshake_cpu_memoria
+[INFO] 22:48:33:992 CPU/(10858:10858): --- Nro de filas tabla nivel 1: -1
+[INFO] 22:48:33:992 CPU/(10858:10858): --- Tamano de pagina: -1
+[INFO] 22:48:33:992 CPU/(10858:10858):  ------ Envie a MEMORIA nro_entrada_tabla: 5 y entrada_tabla_1er_nivel: 0
+[INFO] 22:48:33:992 CPU/(10858:10858):  ------ Recibi de MEMORIA entrada_tabla_segundo_nivel: -1
+[INFO] 22:48:33:992 CPU/(10858:10858): Entro: iniciar_servidor_dispatch
+[INFO] 22:48:33:992 CPU/(10858:10858): Entro: iniciar_servidor_cpu
+[INFO] 22:48:33:992 CPU/(10858:10858):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:48:33:992 CPU/(10858:10858):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 22:48:33:992 CPU/(10858:10858):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 22:48:33:992 CPU/(10858:10858): Se creo el Hilo: interrupt
+[INFO] 22:48:33:992 CPU/(10858:10858): Entro: esperar_cliente_cpu
+[INFO] 22:48:33:992 CPU/(10858:10858):  Socket server recibido: 4
+[INFO] 22:48:33:992 CPU/(10858:10858):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:48:33:992 CPU/(10858:10859):    --- Entro: escuchaInterrup(...)
+[INFO] 22:48:33:992 CPU/(10858:10859): Entro: iniciar_servidor_interrupt
+[INFO] 22:48:33:992 CPU/(10858:10859): Entro: iniciar_servidor_cpu
+[INFO] 22:48:33:992 CPU/(10858:10859):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:48:33:992 CPU/(10858:10859):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 22:48:33:992 CPU/(10858:10859):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 22:48:33:992 CPU/(10858:10859): Entro: esperar_cliente_cpu
+[INFO] 22:48:33:992 CPU/(10858:10859):  Socket server recibido: 7
+[INFO] 22:48:33:992 CPU/(10858:10859):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:48:35:312 CPU/(10858:10858):  Termino el BLOQUEO
+[INFO] 22:48:35:312 CPU/(10858:10859):  Termino el BLOQUEO
+[INFO] 22:48:35:312 CPU/(10858:10858):  Se conecto un cliente y se creo el socket_cliente: 5. Puerto tipo:  dispatch
+[INFO] 22:48:35:312 CPU/(10858:10858): INICIO: recibir_operaciones()
+[INFO] 22:48:35:312 CPU/(10858:10859):  Se conecto un cliente y se creo el socket_cliente: 8. Puerto tipo:  interrupt
+[INFO] 22:48:35:312 CPU/(10858:10858): --- A ESPERA DE UNA OPERACION
+
+[INFO] 22:48:35:312 CPU/(10858:10859):  ---- Socket kernel interrupt: 8
+[INFO] 22:48:35:312 CPU/(10858:10859):    INICIO: recibir_operacion_interrupt()
+[INFO] 22:48:35:312 CPU/(10858:10859):   --- A ESPERA DE UNA OPERACION
+
+[ERROR] 22:48:37:280 CPU/(10858:10858): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 5
+[INFO] 22:48:37:280 CPU/(10858:10858): Entro: finalizar_cpu
+[ERROR] 22:48:37:280 CPU/(10858:10859): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 8
+[INFO] 22:48:37:280 CPU/(10858:10859):      ---- Salio: escuchaInterrup(...)
+[INFO] 22:48:37:281 CPU/(10858:10858): Finalizamos el Hilo interrupt
+[INFO] 22:48:37:281 CPU/(10858:10858): 
+###### FIN LOGGER ######
+[INFO] 22:49:32:712 CPU/(11249:11249): 
+###### INICIO DE LOGGER ######
+[INFO] 22:49:32:712 CPU/(11249:11249):    ---Leyo archivo de configuraciones
+[INFO] 22:49:32:712 CPU/(11249:11249):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:49:32:713 CPU/(11249:11249):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:49:32:713 CPU/(11249:11249):  Hicimos handshake_cpu_memoria
+[INFO] 22:49:32:713 CPU/(11249:11249): --- Nro de filas tabla nivel 1: 4
+[INFO] 22:49:32:713 CPU/(11249:11249): --- Tamano de pagina: 64
+[INFO] 22:49:32:713 CPU/(11249:11249):  ------ Envie a MEMORIA nro_entrada_tabla: 5 y entrada_tabla_1er_nivel: 0
+[INFO] 22:49:44:879 CPU/(11249:11249):  ------ Recibi de MEMORIA entrada_tabla_segundo_nivel: -1
+[INFO] 22:49:44:879 CPU/(11249:11249): Entro: iniciar_servidor_dispatch
+[INFO] 22:49:44:879 CPU/(11249:11249): Entro: iniciar_servidor_cpu
+[INFO] 22:49:44:879 CPU/(11249:11249):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:49:44:879 CPU/(11249:11249):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 22:49:44:879 CPU/(11249:11249):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 22:49:44:879 CPU/(11249:11249): Se creo el Hilo: interrupt
+[INFO] 22:49:44:879 CPU/(11249:11249): Entro: esperar_cliente_cpu
+[INFO] 22:49:44:879 CPU/(11249:11249):  Socket server recibido: 4
+[INFO] 22:49:44:879 CPU/(11249:11249):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:49:44:879 CPU/(11249:11326):    --- Entro: escuchaInterrup(...)
+[INFO] 22:49:44:879 CPU/(11249:11326): Entro: iniciar_servidor_interrupt
+[INFO] 22:49:44:879 CPU/(11249:11326): Entro: iniciar_servidor_cpu
+[INFO] 22:49:44:879 CPU/(11249:11326):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:49:44:879 CPU/(11249:11326):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 22:49:44:879 CPU/(11249:11326):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 22:49:44:879 CPU/(11249:11326): Entro: esperar_cliente_cpu
+[INFO] 22:49:44:879 CPU/(11249:11326):  Socket server recibido: 7
+[INFO] 22:49:44:879 CPU/(11249:11326):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:50:12:999 CPU/(11551:11551): 
+###### INICIO DE LOGGER ######
+[INFO] 22:50:12:999 CPU/(11551:11551):    ---Leyo archivo de configuraciones
+[INFO] 22:50:12:999 CPU/(11551:11551):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:50:12:999 CPU/(11551:11551):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:50:12:999 CPU/(11551:11551):  Hicimos handshake_cpu_memoria
+[INFO] 22:50:12:999 CPU/(11551:11551): --- Nro de filas tabla nivel 1: -1
+[INFO] 22:50:12:999 CPU/(11551:11551): --- Tamano de pagina: -1
+[INFO] 22:50:12:999 CPU/(11551:11551):  ------ Envie a MEMORIA nro_entrada_tabla: 5 y entrada_tabla_1er_nivel: 0
+[INFO] 22:50:12:999 CPU/(11551:11551):  ------ Recibi de MEMORIA entrada_tabla_segundo_nivel: -1
+[INFO] 22:50:13:000 CPU/(11551:11551): Entro: iniciar_servidor_dispatch
+[INFO] 22:50:13:000 CPU/(11551:11551): Entro: iniciar_servidor_cpu
+[INFO] 22:50:13:000 CPU/(11551:11551):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:50:13:000 CPU/(11551:11551):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 22:50:13:000 CPU/(11551:11551):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 22:50:13:000 CPU/(11551:11551): Se creo el Hilo: interrupt
+[INFO] 22:50:13:000 CPU/(11551:11551): Entro: esperar_cliente_cpu
+[INFO] 22:50:13:000 CPU/(11551:11551):  Socket server recibido: 4
+[INFO] 22:50:13:000 CPU/(11551:11551):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:50:13:000 CPU/(11551:11552):    --- Entro: escuchaInterrup(...)
+[INFO] 22:50:13:000 CPU/(11551:11552): Entro: iniciar_servidor_interrupt
+[INFO] 22:50:13:000 CPU/(11551:11552): Entro: iniciar_servidor_cpu
+[INFO] 22:50:13:000 CPU/(11551:11552):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:50:13:000 CPU/(11551:11552):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 22:50:13:000 CPU/(11551:11552):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 22:50:13:000 CPU/(11551:11552): Entro: esperar_cliente_cpu
+[INFO] 22:50:13:000 CPU/(11551:11552):  Socket server recibido: 7
+[INFO] 22:50:13:000 CPU/(11551:11552):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:50:15:936 CPU/(11551:11551):  Termino el BLOQUEO
+[INFO] 22:50:15:936 CPU/(11551:11552):  Termino el BLOQUEO
+[INFO] 22:50:15:936 CPU/(11551:11551):  Se conecto un cliente y se creo el socket_cliente: 5. Puerto tipo:  dispatch
+[INFO] 22:50:15:936 CPU/(11551:11552):  Se conecto un cliente y se creo el socket_cliente: 8. Puerto tipo:  interrupt
+[INFO] 22:50:15:936 CPU/(11551:11551): INICIO: recibir_operaciones()
+[INFO] 22:50:15:936 CPU/(11551:11552):  ---- Socket kernel interrupt: 8
+[INFO] 22:50:15:936 CPU/(11551:11551): --- A ESPERA DE UNA OPERACION
+
+[INFO] 22:50:15:936 CPU/(11551:11552):    INICIO: recibir_operacion_interrupt()
+[INFO] 22:50:15:936 CPU/(11551:11552):   --- A ESPERA DE UNA OPERACION
+
+[ERROR] 22:50:19:569 CPU/(11551:11551): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 5
+[INFO] 22:50:19:569 CPU/(11551:11551): Entro: finalizar_cpu
+[ERROR] 22:50:19:569 CPU/(11551:11552): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 8
+[INFO] 22:50:19:569 CPU/(11551:11552):      ---- Salio: escuchaInterrup(...)
+[INFO] 22:50:19:569 CPU/(11551:11551): Finalizamos el Hilo interrupt
+[INFO] 22:50:19:569 CPU/(11551:11551): 
+###### FIN LOGGER ######
+[INFO] 22:52:18:624 CPU/(12335:12335): 
+###### INICIO DE LOGGER ######
+[INFO] 22:52:18:624 CPU/(12335:12335):    ---Leyo archivo de configuraciones
+[INFO] 22:52:18:624 CPU/(12335:12335):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:52:18:624 CPU/(12335:12335):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:52:18:624 CPU/(12335:12335):  Hicimos handshake_cpu_memoria
+[INFO] 22:52:18:624 CPU/(12335:12335): --- Nro de filas tabla nivel 1: 4
+[INFO] 22:52:18:624 CPU/(12335:12335): --- Tamano de pagina: 64
+[INFO] 22:52:18:624 CPU/(12335:12335):  ------ Envie a MEMORIA nro_entrada_tabla: 5 y entrada_tabla_1er_nivel: 0
+[INFO] 22:52:22:688 CPU/(12335:12335):  ------ Recibi de MEMORIA entrada_tabla_segundo_nivel: -1
+[INFO] 22:52:22:688 CPU/(12335:12335): Entro: iniciar_servidor_dispatch
+[INFO] 22:52:22:688 CPU/(12335:12335): Entro: iniciar_servidor_cpu
+[INFO] 22:52:22:688 CPU/(12335:12335):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:52:22:688 CPU/(12335:12335):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 22:52:22:688 CPU/(12335:12335):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 22:52:22:688 CPU/(12335:12335): Se creo el Hilo: interrupt
+[INFO] 22:52:22:688 CPU/(12335:12335): Entro: esperar_cliente_cpu
+[INFO] 22:52:22:688 CPU/(12335:12335):  Socket server recibido: 4
+[INFO] 22:52:22:688 CPU/(12335:12335):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:52:22:688 CPU/(12335:12365):    --- Entro: escuchaInterrup(...)
+[INFO] 22:52:22:688 CPU/(12335:12365): Entro: iniciar_servidor_interrupt
+[INFO] 22:52:22:688 CPU/(12335:12365): Entro: iniciar_servidor_cpu
+[INFO] 22:52:22:688 CPU/(12335:12365):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:52:22:688 CPU/(12335:12365):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 22:52:22:688 CPU/(12335:12365):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 22:52:22:688 CPU/(12335:12365): Entro: esperar_cliente_cpu
+[INFO] 22:52:22:688 CPU/(12335:12365):  Socket server recibido: 7
+[INFO] 22:52:22:688 CPU/(12335:12365):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:52:40:024 CPU/(12468:12468): 
+###### INICIO DE LOGGER ######
+[INFO] 22:52:40:024 CPU/(12468:12468):    ---Leyo archivo de configuraciones
+[INFO] 22:52:40:024 CPU/(12468:12468):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:52:40:024 CPU/(12468:12468):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:52:40:024 CPU/(12468:12468):  Hicimos handshake_cpu_memoria
+[INFO] 22:52:40:024 CPU/(12468:12468): --- Nro de filas tabla nivel 1: -1
+[INFO] 22:52:40:024 CPU/(12468:12468): --- Tamano de pagina: -1
+[INFO] 22:52:40:024 CPU/(12468:12468):  ------ Envie a MEMORIA nro_entrada_tabla: 5 y entrada_tabla_1er_nivel: 0
+[INFO] 22:52:40:024 CPU/(12468:12468):  ------ Recibi de MEMORIA entrada_tabla_segundo_nivel: -1
+[INFO] 22:52:40:024 CPU/(12468:12468): Entro: iniciar_servidor_dispatch
+[INFO] 22:52:40:024 CPU/(12468:12468): Entro: iniciar_servidor_cpu
+[INFO] 22:52:40:024 CPU/(12468:12468):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:52:40:024 CPU/(12468:12468):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 22:52:40:024 CPU/(12468:12468):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 22:52:40:024 CPU/(12468:12468): Se creo el Hilo: interrupt
+[INFO] 22:52:40:024 CPU/(12468:12468): Entro: esperar_cliente_cpu
+[INFO] 22:52:40:024 CPU/(12468:12468):  Socket server recibido: 4
+[INFO] 22:52:40:024 CPU/(12468:12469):    --- Entro: escuchaInterrup(...)
+[INFO] 22:52:40:024 CPU/(12468:12469): Entro: iniciar_servidor_interrupt
+[INFO] 22:52:40:024 CPU/(12468:12468):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:52:40:024 CPU/(12468:12469): Entro: iniciar_servidor_cpu
+[INFO] 22:52:40:024 CPU/(12468:12469):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:52:40:024 CPU/(12468:12469):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 22:52:40:024 CPU/(12468:12469):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 22:52:40:024 CPU/(12468:12469): Entro: esperar_cliente_cpu
+[INFO] 22:52:40:024 CPU/(12468:12469):  Socket server recibido: 5
+[INFO] 22:52:40:024 CPU/(12468:12469):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:53:29:304 CPU/(12810:12810): 
+###### INICIO DE LOGGER ######
+[INFO] 22:53:29:304 CPU/(12810:12810):    ---Leyo archivo de configuraciones
+[INFO] 22:53:29:304 CPU/(12810:12810):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:53:29:304 CPU/(12810:12810):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:53:29:304 CPU/(12810:12810):  Hicimos handshake_cpu_memoria
+[INFO] 22:53:29:304 CPU/(12810:12810): --- Nro de filas tabla nivel 1: 4
+[INFO] 22:53:29:304 CPU/(12810:12810): --- Tamano de pagina: 64
+[INFO] 22:53:29:304 CPU/(12810:12810):  ------ Envie a MEMORIA nro_entrada_tabla: 5 y entrada_tabla_1er_nivel: 0
+[INFO] 22:55:03:121 CPU/(13425:13425): 
+###### INICIO DE LOGGER ######
+[INFO] 22:55:03:121 CPU/(13425:13425):    ---Leyo archivo de configuraciones
+[INFO] 22:55:03:121 CPU/(13425:13425):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:55:03:121 CPU/(13425:13425):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:55:03:121 CPU/(13425:13425):  Hicimos handshake_cpu_memoria
+[INFO] 22:55:03:121 CPU/(13425:13425): --- Nro de filas tabla nivel 1: 4
+[INFO] 22:55:03:121 CPU/(13425:13425): --- Tamano de pagina: 64
+[INFO] 22:55:03:121 CPU/(13425:13425): Entro: iniciar_servidor_dispatch
+[INFO] 22:55:03:121 CPU/(13425:13425): Entro: iniciar_servidor_cpu
+[INFO] 22:55:03:121 CPU/(13425:13425):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:55:03:121 CPU/(13425:13425):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 22:55:03:121 CPU/(13425:13425):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 22:55:03:121 CPU/(13425:13425): Se creo el Hilo: interrupt
+[INFO] 22:55:03:121 CPU/(13425:13425): Entro: esperar_cliente_cpu
+[INFO] 22:55:03:121 CPU/(13425:13425):  Socket server recibido: 5
+[INFO] 22:55:03:121 CPU/(13425:13425):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:55:03:121 CPU/(13425:13427):    --- Entro: escuchaInterrup(...)
+[INFO] 22:55:03:121 CPU/(13425:13427): Entro: iniciar_servidor_interrupt
+[INFO] 22:55:03:122 CPU/(13425:13427): Entro: iniciar_servidor_cpu
+[INFO] 22:55:03:122 CPU/(13425:13427):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:55:03:122 CPU/(13425:13427):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 22:55:03:122 CPU/(13425:13427):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 22:55:03:122 CPU/(13425:13427): Entro: esperar_cliente_cpu
+[INFO] 22:55:03:122 CPU/(13425:13427):  Socket server recibido: 8
+[INFO] 22:55:03:122 CPU/(13425:13427):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:55:05:185 CPU/(13425:13425):  Termino el BLOQUEO
+[INFO] 22:55:05:185 CPU/(13425:13427):  Termino el BLOQUEO
+[INFO] 22:55:05:185 CPU/(13425:13427):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 22:55:05:185 CPU/(13425:13427):  ---- Socket kernel interrupt: 9
+[INFO] 22:55:05:185 CPU/(13425:13427):    INICIO: recibir_operacion_interrupt()
+[INFO] 22:55:05:185 CPU/(13425:13425):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 22:55:05:185 CPU/(13425:13425): INICIO: recibir_operaciones()
+[INFO] 22:55:05:185 CPU/(13425:13425): --- A ESPERA DE UNA OPERACION
+
+[INFO] 22:55:05:185 CPU/(13425:13427):   --- A ESPERA DE UNA OPERACION
+
+[ERROR] 22:55:14:144 CPU/(13425:13425): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 22:55:14:144 CPU/(13425:13425): Entro: finalizar_cpu
+[ERROR] 22:55:14:144 CPU/(13425:13427): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[INFO] 22:55:14:144 CPU/(13425:13427):      ---- Salio: escuchaInterrup(...)
+[INFO] 22:55:14:144 CPU/(13425:13425): Finalizamos el Hilo interrupt
+[INFO] 22:55:14:144 CPU/(13425:13425): 
+###### FIN LOGGER ######
+[INFO] 22:56:02:456 CPU/(13838:13838): 
+###### INICIO DE LOGGER ######
+[INFO] 22:56:02:456 CPU/(13838:13838):    ---Leyo archivo de configuraciones
+[INFO] 22:56:02:456 CPU/(13838:13838):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:56:02:456 CPU/(13838:13838):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:56:02:456 CPU/(13838:13838):  Hicimos handshake_cpu_memoria
+[INFO] 22:56:02:456 CPU/(13838:13838): --- Nro de filas tabla nivel 1: -1
+[INFO] 22:56:02:457 CPU/(13838:13838): --- Tamano de pagina: -1
+[INFO] 22:56:02:457 CPU/(13838:13838): Entro: iniciar_servidor_dispatch
+[INFO] 22:56:02:457 CPU/(13838:13838): Entro: iniciar_servidor_cpu
+[INFO] 22:56:02:457 CPU/(13838:13838):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:56:02:457 CPU/(13838:13838):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 22:56:02:457 CPU/(13838:13838):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 22:56:02:457 CPU/(13838:13838): Se creo el Hilo: interrupt
+[INFO] 22:56:02:457 CPU/(13838:13838): Entro: esperar_cliente_cpu
+[INFO] 22:56:02:457 CPU/(13838:13839):    --- Entro: escuchaInterrup(...)
+[INFO] 22:56:02:457 CPU/(13838:13838):  Socket server recibido: 4
+[INFO] 22:56:02:457 CPU/(13838:13838):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:56:02:457 CPU/(13838:13839): Entro: iniciar_servidor_interrupt
+[INFO] 22:56:02:457 CPU/(13838:13839): Entro: iniciar_servidor_cpu
+[INFO] 22:56:02:457 CPU/(13838:13839):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:56:02:457 CPU/(13838:13839):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 22:56:02:457 CPU/(13838:13839):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 22:56:02:457 CPU/(13838:13839): Entro: esperar_cliente_cpu
+[INFO] 22:56:02:457 CPU/(13838:13839):  Socket server recibido: 7
+[INFO] 22:56:02:457 CPU/(13838:13839):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:56:25:610 CPU/(14031:14031): 
+###### INICIO DE LOGGER ######
+[INFO] 22:56:25:610 CPU/(14031:14031):    ---Leyo archivo de configuraciones
+[INFO] 22:56:25:610 CPU/(14031:14031):    ---Asigno a los semaforos con valores iniciales
+[INFO] 22:56:25:610 CPU/(14031:14031):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 22:56:25:610 CPU/(14031:14031):  Hicimos handshake_cpu_memoria
+[INFO] 22:56:25:610 CPU/(14031:14031): --- Nro de filas tabla nivel 1: 4
+[INFO] 22:56:25:610 CPU/(14031:14031): --- Tamano de pagina: 64
+[INFO] 22:56:25:610 CPU/(14031:14031): Entro: iniciar_servidor_dispatch
+[INFO] 22:56:25:610 CPU/(14031:14031): Entro: iniciar_servidor_cpu
+[INFO] 22:56:25:610 CPU/(14031:14031):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:56:25:610 CPU/(14031:14031):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 22:56:25:610 CPU/(14031:14031):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 22:56:25:610 CPU/(14031:14031): Se creo el Hilo: interrupt
+[INFO] 22:56:25:610 CPU/(14031:14031): Entro: esperar_cliente_cpu
+[INFO] 22:56:25:610 CPU/(14031:14031):  Socket server recibido: 5
+[INFO] 22:56:25:610 CPU/(14031:14031):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:56:25:610 CPU/(14031:14033):    --- Entro: escuchaInterrup(...)
+[INFO] 22:56:25:610 CPU/(14031:14033): Entro: iniciar_servidor_interrupt
+[INFO] 22:56:25:610 CPU/(14031:14033): Entro: iniciar_servidor_cpu
+[INFO] 22:56:25:610 CPU/(14031:14033):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 22:56:25:610 CPU/(14031:14033):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 22:56:25:610 CPU/(14031:14033):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 22:56:25:610 CPU/(14031:14033): Entro: esperar_cliente_cpu
+[INFO] 22:56:25:610 CPU/(14031:14033):  Socket server recibido: 8
+[INFO] 22:56:25:611 CPU/(14031:14033):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 22:56:27:410 CPU/(14031:14031):  Termino el BLOQUEO
+[INFO] 22:56:27:410 CPU/(14031:14031):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 22:56:27:410 CPU/(14031:14031): INICIO: recibir_operaciones()
+[INFO] 22:56:27:410 CPU/(14031:14031): --- A ESPERA DE UNA OPERACION
+
+[INFO] 22:56:27:410 CPU/(14031:14033):  Termino el BLOQUEO
+[INFO] 22:56:27:410 CPU/(14031:14033):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 22:56:27:410 CPU/(14031:14033):  ---- Socket kernel interrupt: 9
+[INFO] 22:56:27:410 CPU/(14031:14033):    INICIO: recibir_operacion_interrupt()
+[INFO] 22:56:27:410 CPU/(14031:14033):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 22:56:36:642 CPU/(14031:14031):  -----------
+[INFO] 22:56:36:642 CPU/(14031:14031):  El kernel envio un PCB:
+[INFO] 22:56:36:642 CPU/(14031:14031): -----PCB ------
+[INFO] 22:56:36:642 CPU/(14031:14031): id: 0
+[INFO] 22:56:36:642 CPU/(14031:14031): estimacion: 10000
+[INFO] 22:56:36:642 CPU/(14031:14031): program counter: 0
+[INFO] 22:56:36:642 CPU/(14031:14031): socket: 9
+[INFO] 22:56:36:642 CPU/(14031:14031): numero de tabla: 0
+[INFO] 22:56:36:642 CPU/(14031:14031): tamanio de consola: 100
+[INFO] 22:56:36:642 CPU/(14031:14031): lista Instrucciones:
+[INFO] 22:56:36:642 CPU/(14031:14031): NO_OP
+[INFO] 22:56:36:642 CPU/(14031:14031): NO_OP
+[INFO] 22:56:36:642 CPU/(14031:14031): NO_OP
+[INFO] 22:56:36:642 CPU/(14031:14031): NO_OP
+[INFO] 22:56:36:642 CPU/(14031:14031): NO_OP
+[INFO] 22:56:36:643 CPU/(14031:14031): NO_OP
+[INFO] 22:56:36:643 CPU/(14031:14031): NO_OP
+[INFO] 22:56:36:643 CPU/(14031:14031): NO_OP
+[INFO] 22:56:36:643 CPU/(14031:14031): NO_OP
+[INFO] 22:56:36:643 CPU/(14031:14031): NO_OP
+[INFO] 22:56:36:643 CPU/(14031:14031): NO_OP
+[INFO] 22:56:36:643 CPU/(14031:14031): NO_OP
+[INFO] 22:56:36:643 CPU/(14031:14031): NO_OP
+[INFO] 22:56:36:643 CPU/(14031:14031): NO_OP
+[INFO] 22:56:36:643 CPU/(14031:14031): NO_OP
+[INFO] 22:56:36:643 CPU/(14031:14031): I/O 5000
+[INFO] 22:56:36:643 CPU/(14031:14031): EXIT
+[INFO] 22:56:36:643 CPU/(14031:14031): --------------
+[INFO] 22:56:36:643 CPU/(14031:14031):   Nro de instrucion: 0
+[INFO] 22:56:36:643 CPU/(14031:14031):   instruccion/codigo op: NO_OP
+[INFO] 22:56:36:643 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:56:36:643 CPU/(14031:14031):   Time: 1000
+[INFO] 22:56:37:647 CPU/(14031:14031):   Nro de instrucion: 1
+[INFO] 22:56:37:648 CPU/(14031:14031):   instruccion/codigo op: NO_OP
+[INFO] 22:56:37:648 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:56:37:648 CPU/(14031:14031):   Time: 1000
+[INFO] 22:56:38:649 CPU/(14031:14031):   Nro de instrucion: 2
+[INFO] 22:56:38:649 CPU/(14031:14031):   instruccion/codigo op: NO_OP
+[INFO] 22:56:38:649 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:56:38:649 CPU/(14031:14031):   Time: 1000
+[INFO] 22:56:39:654 CPU/(14031:14031):   Nro de instrucion: 3
+[INFO] 22:56:39:654 CPU/(14031:14031):   instruccion/codigo op: NO_OP
+[INFO] 22:56:39:654 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:56:39:654 CPU/(14031:14031):   Time: 1000
+[INFO] 22:56:40:657 CPU/(14031:14031):   Nro de instrucion: 4
+[INFO] 22:56:40:657 CPU/(14031:14031):   instruccion/codigo op: NO_OP
+[INFO] 22:56:40:657 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:56:40:657 CPU/(14031:14031):   Time: 1000
+[INFO] 22:56:41:657 CPU/(14031:14031):   Nro de instrucion: 5
+[INFO] 22:56:41:657 CPU/(14031:14031):   instruccion/codigo op: NO_OP
+[INFO] 22:56:41:657 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:56:41:657 CPU/(14031:14031):   Time: 1000
+[INFO] 22:56:42:658 CPU/(14031:14031):   Nro de instrucion: 6
+[INFO] 22:56:42:658 CPU/(14031:14031):   instruccion/codigo op: NO_OP
+[INFO] 22:56:42:658 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:56:42:658 CPU/(14031:14031):   Time: 1000
+[INFO] 22:56:43:660 CPU/(14031:14031):   Nro de instrucion: 7
+[INFO] 22:56:43:660 CPU/(14031:14031):   instruccion/codigo op: NO_OP
+[INFO] 22:56:43:660 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:56:43:660 CPU/(14031:14031):   Time: 1000
+[INFO] 22:56:44:666 CPU/(14031:14031):   Nro de instrucion: 8
+[INFO] 22:56:44:667 CPU/(14031:14031):   instruccion/codigo op: NO_OP
+[INFO] 22:56:44:667 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:56:44:667 CPU/(14031:14031):   Time: 1000
+[INFO] 22:56:45:678 CPU/(14031:14031):   Nro de instrucion: 9
+[INFO] 22:56:45:678 CPU/(14031:14031):   instruccion/codigo op: NO_OP
+[INFO] 22:56:45:678 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:56:45:678 CPU/(14031:14031):   Time: 1000
+[INFO] 22:56:46:681 CPU/(14031:14031):   Nro de instrucion: 10
+[INFO] 22:56:46:681 CPU/(14031:14031):   instruccion/codigo op: NO_OP
+[INFO] 22:56:46:681 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:56:46:681 CPU/(14031:14031):   Time: 1000
+[INFO] 22:56:47:682 CPU/(14031:14031):   Nro de instrucion: 11
+[INFO] 22:56:47:682 CPU/(14031:14031):   instruccion/codigo op: NO_OP
+[INFO] 22:56:47:682 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:56:47:682 CPU/(14031:14031):   Time: 1000
+[INFO] 22:56:48:683 CPU/(14031:14031):   Nro de instrucion: 12
+[INFO] 22:56:48:683 CPU/(14031:14031):   instruccion/codigo op: NO_OP
+[INFO] 22:56:48:683 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:56:48:683 CPU/(14031:14031):   Time: 1000
+[INFO] 22:56:49:683 CPU/(14031:14031):   Nro de instrucion: 13
+[INFO] 22:56:49:683 CPU/(14031:14031):   instruccion/codigo op: NO_OP
+[INFO] 22:56:49:683 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:56:49:683 CPU/(14031:14031):   Time: 1000
+[INFO] 22:56:50:684 CPU/(14031:14031):   Nro de instrucion: 14
+[INFO] 22:56:50:684 CPU/(14031:14031):   instruccion/codigo op: NO_OP
+[INFO] 22:56:50:684 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:56:50:684 CPU/(14031:14031):   Time: 1000
+[INFO] 22:56:51:705 CPU/(14031:14031):   Nro de instrucion: 15
+[INFO] 22:56:51:705 CPU/(14031:14031):   instruccion/codigo op: I/O
+[INFO] 22:56:51:705 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:56:51:705 CPU/(14031:14031):    Llego a i_o()
+[INFO] 22:56:51:705 CPU/(14031:14031):    Llego responsePorBloqueo()
+[INFO] 22:56:51:705 CPU/(14031:14031):    Se le asignoMemoria:
+[INFO] 22:56:51:705 CPU/(14031:14031):    Enviamos el PCB Bloqueado 
+[WARNING] 22:56:51:705 CPU/(14031:14031): Entro por interrupcion al Break
+[INFO] 22:56:51:705 CPU/(14031:14031): --- A ESPERA DE UNA OPERACION
+
+[INFO] 22:56:56:709 CPU/(14031:14033):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 22:56:56:709 CPU/(14031:14033):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 22:56:56:709 CPU/(14031:14033):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 22:57:01:709 CPU/(14031:14031):  -----------
+[INFO] 22:57:01:710 CPU/(14031:14031):  El kernel envio un PCB:
+[INFO] 22:57:01:710 CPU/(14031:14031): -----PCB ------
+[INFO] 22:57:01:710 CPU/(14031:14031): id: 0
+[INFO] 22:57:01:710 CPU/(14031:14031): estimacion: 10000
+[INFO] 22:57:01:710 CPU/(14031:14031): program counter: 16
+[INFO] 22:57:01:710 CPU/(14031:14031): socket: 9
+[INFO] 22:57:01:710 CPU/(14031:14031): numero de tabla: 0
+[INFO] 22:57:01:710 CPU/(14031:14031): tamanio de consola: 100
+[INFO] 22:57:01:710 CPU/(14031:14031): lista Instrucciones:
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): I/O 5000
+[INFO] 22:57:01:710 CPU/(14031:14031): EXIT
+[INFO] 22:57:01:710 CPU/(14031:14031): --------------
+[INFO] 22:57:01:710 CPU/(14031:14031):   Nro de instrucion: 16
+[INFO] 22:57:01:710 CPU/(14031:14031):   instruccion/codigo op: EXIT
+[INFO] 22:57:01:710 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:57:01:710 CPU/(14031:14031):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 22:57:01:710 CPU/(14031:14031): -----PCB ------
+[INFO] 22:57:01:710 CPU/(14031:14031): id: 0
+[INFO] 22:57:01:710 CPU/(14031:14031): estimacion: 10000
+[INFO] 22:57:01:710 CPU/(14031:14031): program counter: 17
+[INFO] 22:57:01:710 CPU/(14031:14031): socket: 9
+[INFO] 22:57:01:710 CPU/(14031:14031): numero de tabla: 0
+[INFO] 22:57:01:710 CPU/(14031:14031): tamanio de consola: 100
+[INFO] 22:57:01:710 CPU/(14031:14031): lista Instrucciones:
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): NO_OP
+[INFO] 22:57:01:710 CPU/(14031:14031): I/O 5000
+[INFO] 22:57:01:710 CPU/(14031:14031): EXIT
+[INFO] 22:57:01:710 CPU/(14031:14031): --------------
+[WARNING] 22:57:01:710 CPU/(14031:14031): Entro por interrupcion al Break
+[INFO] 22:57:01:710 CPU/(14031:14031): --- A ESPERA DE UNA OPERACION
+
+[INFO] 22:58:11:374 CPU/(14031:14031):  -----------
+[INFO] 22:58:11:374 CPU/(14031:14031):  El kernel envio un PCB:
+[INFO] 22:58:11:374 CPU/(14031:14031): -----PCB ------
+[INFO] 22:58:11:374 CPU/(14031:14031): id: 1
+[INFO] 22:58:11:374 CPU/(14031:14031): estimacion: 10000
+[INFO] 22:58:11:374 CPU/(14031:14031): program counter: 0
+[INFO] 22:58:11:374 CPU/(14031:14031): socket: 10
+[INFO] 22:58:11:374 CPU/(14031:14031): numero de tabla: 1
+[INFO] 22:58:11:374 CPU/(14031:14031): tamanio de consola: 100
+[INFO] 22:58:11:374 CPU/(14031:14031): lista Instrucciones:
+[INFO] 22:58:11:374 CPU/(14031:14031): EXIT
+[INFO] 22:58:11:374 CPU/(14031:14031): --------------
+[INFO] 22:58:11:374 CPU/(14031:14031):   Nro de instrucion: 0
+[INFO] 22:58:11:374 CPU/(14031:14031):   instruccion/codigo op: EXIT
+[INFO] 22:58:11:374 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:58:11:374 CPU/(14031:14031):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 22:58:11:374 CPU/(14031:14031): -----PCB ------
+[INFO] 22:58:11:374 CPU/(14031:14031): id: 1
+[INFO] 22:58:11:374 CPU/(14031:14031): estimacion: 10000
+[INFO] 22:58:11:374 CPU/(14031:14031): program counter: 1
+[INFO] 22:58:11:374 CPU/(14031:14031): socket: 10
+[INFO] 22:58:11:374 CPU/(14031:14031): numero de tabla: 1
+[INFO] 22:58:11:374 CPU/(14031:14031): tamanio de consola: 100
+[INFO] 22:58:11:374 CPU/(14031:14031): lista Instrucciones:
+[INFO] 22:58:11:374 CPU/(14031:14031): EXIT
+[INFO] 22:58:11:374 CPU/(14031:14031): --------------
+[WARNING] 22:58:11:375 CPU/(14031:14031): Entro por interrupcion al Break
+[INFO] 22:58:11:375 CPU/(14031:14031): --- A ESPERA DE UNA OPERACION
+
+[INFO] 22:58:40:628 CPU/(14031:14031):  -----------
+[INFO] 22:58:40:628 CPU/(14031:14031):  El kernel envio un PCB:
+[INFO] 22:58:40:628 CPU/(14031:14031): -----PCB ------
+[INFO] 22:58:40:628 CPU/(14031:14031): id: 2
+[INFO] 22:58:40:628 CPU/(14031:14031): estimacion: 10000
+[INFO] 22:58:40:628 CPU/(14031:14031): program counter: 0
+[INFO] 22:58:40:628 CPU/(14031:14031): socket: 11
+[INFO] 22:58:40:628 CPU/(14031:14031): numero de tabla: 2
+[INFO] 22:58:40:628 CPU/(14031:14031): tamanio de consola: 100
+[INFO] 22:58:40:628 CPU/(14031:14031): lista Instrucciones:
+[INFO] 22:58:40:628 CPU/(14031:14031): NO_OP
+[INFO] 22:58:40:628 CPU/(14031:14031): READ 9
+[INFO] 22:58:40:628 CPU/(14031:14031): EXIT
+[INFO] 22:58:40:628 CPU/(14031:14031): --------------
+[INFO] 22:58:40:628 CPU/(14031:14031):   Nro de instrucion: 0
+[INFO] 22:58:40:628 CPU/(14031:14031):   instruccion/codigo op: NO_OP
+[INFO] 22:58:40:628 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:58:40:628 CPU/(14031:14031):   Time: 1000
+[INFO] 22:58:41:628 CPU/(14031:14031):   Nro de instrucion: 1
+[INFO] 22:58:41:628 CPU/(14031:14031):   instruccion/codigo op: READ
+[INFO] 22:58:41:628 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:58:41:628 CPU/(14031:14031):   Nro de instrucion: 2
+[INFO] 22:58:41:628 CPU/(14031:14031):   instruccion/codigo op: EXIT
+[INFO] 22:58:41:628 CPU/(14031:14031):   Entro a fetch_operands
+[INFO] 22:58:41:628 CPU/(14031:14031):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 22:58:41:628 CPU/(14031:14031): -----PCB ------
+[INFO] 22:58:41:628 CPU/(14031:14031): id: 2
+[INFO] 22:58:41:628 CPU/(14031:14031): estimacion: 10000
+[INFO] 22:58:41:628 CPU/(14031:14031): program counter: 2
+[INFO] 22:58:41:628 CPU/(14031:14031): socket: 11
+[INFO] 22:58:41:628 CPU/(14031:14031): numero de tabla: 2
+[INFO] 22:58:41:628 CPU/(14031:14031): tamanio de consola: 100
+[INFO] 22:58:41:628 CPU/(14031:14031): lista Instrucciones:
+[INFO] 22:58:41:628 CPU/(14031:14031): NO_OP
+[INFO] 22:58:41:628 CPU/(14031:14031): READ 9
+[INFO] 22:58:41:628 CPU/(14031:14031): EXIT
+[INFO] 22:58:41:628 CPU/(14031:14031): --------------
+[WARNING] 22:58:41:629 CPU/(14031:14031): Entro por interrupcion al Break
+[INFO] 22:58:41:629 CPU/(14031:14031): --- A ESPERA DE UNA OPERACION
+
+[ERROR] 22:59:12:536 CPU/(14031:14033): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[ERROR] 22:59:12:536 CPU/(14031:14031): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 22:59:12:536 CPU/(14031:14033):      ---- Salio: escuchaInterrup(...)
+[INFO] 22:59:12:536 CPU/(14031:14031): Entro: finalizar_cpu
+[INFO] 22:59:12:537 CPU/(14031:14031): Finalizamos el Hilo interrupt
+[INFO] 22:59:12:537 CPU/(14031:14031): 
+###### FIN LOGGER ######
+[INFO] 23:01:24:993 CPU/(15890:15890): 
+###### INICIO DE LOGGER ######
+[INFO] 23:01:24:993 CPU/(15890:15890):    ---Leyo archivo de configuraciones
+[INFO] 23:01:24:993 CPU/(15890:15890):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:01:24:993 CPU/(15890:15890):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:01:24:993 CPU/(15890:15890):  Hicimos handshake_cpu_memoria
+[INFO] 23:01:24:993 CPU/(15890:15890): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:01:24:993 CPU/(15890:15890): --- Tamano de pagina: 64
+[INFO] 23:01:24:993 CPU/(15890:15890): Entro: iniciar_servidor_dispatch
+[INFO] 23:01:24:993 CPU/(15890:15890): Entro: iniciar_servidor_cpu
+[INFO] 23:01:24:993 CPU/(15890:15890):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:01:24:993 CPU/(15890:15890):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:01:24:993 CPU/(15890:15890):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 23:01:24:994 CPU/(15890:15890): Se creo el Hilo: interrupt
+[INFO] 23:01:24:994 CPU/(15890:15890): Entro: esperar_cliente_cpu
+[INFO] 23:01:24:994 CPU/(15890:15892):    --- Entro: escuchaInterrup(...)
+[INFO] 23:01:24:994 CPU/(15890:15890):  Socket server recibido: 5
+[INFO] 23:01:24:994 CPU/(15890:15892): Entro: iniciar_servidor_interrupt
+[INFO] 23:01:24:994 CPU/(15890:15892): Entro: iniciar_servidor_cpu
+[INFO] 23:01:24:994 CPU/(15890:15892):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:01:24:994 CPU/(15890:15890):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:01:24:994 CPU/(15890:15892):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:01:24:994 CPU/(15890:15892):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 23:01:24:994 CPU/(15890:15892): Entro: esperar_cliente_cpu
+[INFO] 23:01:24:994 CPU/(15890:15892):  Socket server recibido: 8
+[INFO] 23:01:24:994 CPU/(15890:15892):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:01:26:290 CPU/(15890:15890):  Termino el BLOQUEO
+[INFO] 23:01:26:290 CPU/(15890:15892):  Termino el BLOQUEO
+[INFO] 23:01:26:290 CPU/(15890:15892):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 23:01:26:291 CPU/(15890:15892):  ---- Socket kernel interrupt: 9
+[INFO] 23:01:26:291 CPU/(15890:15892):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:01:26:291 CPU/(15890:15890):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 23:01:26:291 CPU/(15890:15890): INICIO: recibir_operaciones()
+[INFO] 23:01:26:291 CPU/(15890:15890): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:01:26:291 CPU/(15890:15892):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:01:32:903 CPU/(15890:15890):  -----------
+[INFO] 23:01:32:903 CPU/(15890:15890):  El kernel envio un PCB:
+[INFO] 23:01:32:903 CPU/(15890:15890): -----PCB ------
+[INFO] 23:01:32:903 CPU/(15890:15890): id: 0
+[INFO] 23:01:32:903 CPU/(15890:15890): estimacion: 10000
+[INFO] 23:01:32:903 CPU/(15890:15890): program counter: 0
+[INFO] 23:01:32:903 CPU/(15890:15890): socket: 9
+[INFO] 23:01:32:903 CPU/(15890:15890): numero de tabla: 0
+[INFO] 23:01:32:903 CPU/(15890:15890): tamanio de consola: 100
+[INFO] 23:01:32:903 CPU/(15890:15890): lista Instrucciones:
+[INFO] 23:01:32:903 CPU/(15890:15890): NO_OP
+[INFO] 23:01:32:903 CPU/(15890:15890): READ 9
+[INFO] 23:01:32:903 CPU/(15890:15890): EXIT
+[INFO] 23:01:32:903 CPU/(15890:15890): --------------
+[INFO] 23:01:32:904 CPU/(15890:15890):   Nro de instrucion: 0
+[INFO] 23:01:32:904 CPU/(15890:15890):   instruccion/codigo op: NO_OP
+[INFO] 23:01:32:904 CPU/(15890:15890):   Entro a fetch_operands
+[INFO] 23:01:32:904 CPU/(15890:15890):   Time: 1000
+[INFO] 23:01:33:913 CPU/(15890:15890):   Nro de instrucion: 1
+[INFO] 23:01:33:913 CPU/(15890:15890):   instruccion/codigo op: READ
+[INFO] 23:01:33:913 CPU/(15890:15890):   Entro a fetch_operands
+[INFO] 23:01:33:913 CPU/(15890:15890):   Nro de instrucion: 2
+[INFO] 23:01:33:913 CPU/(15890:15890):   instruccion/codigo op: EXIT
+[INFO] 23:01:33:913 CPU/(15890:15890):   Entro a fetch_operands
+[INFO] 23:01:33:913 CPU/(15890:15890):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 23:01:33:913 CPU/(15890:15890): -----PCB ------
+[INFO] 23:01:33:913 CPU/(15890:15890): id: 0
+[INFO] 23:01:33:913 CPU/(15890:15890): estimacion: 10000
+[INFO] 23:01:33:913 CPU/(15890:15890): program counter: 2
+[INFO] 23:01:33:913 CPU/(15890:15890): socket: 9
+[INFO] 23:01:33:913 CPU/(15890:15890): numero de tabla: 0
+[INFO] 23:01:33:913 CPU/(15890:15890): tamanio de consola: 100
+[INFO] 23:01:33:913 CPU/(15890:15890): lista Instrucciones:
+[INFO] 23:01:33:913 CPU/(15890:15890): NO_OP
+[INFO] 23:01:33:913 CPU/(15890:15890): READ 9
+[INFO] 23:01:33:913 CPU/(15890:15890): EXIT
+[INFO] 23:01:33:913 CPU/(15890:15890): --------------
+[WARNING] 23:01:33:913 CPU/(15890:15890): Entro por interrupcion al Break
+[INFO] 23:01:33:913 CPU/(15890:15890): --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:03:29:513 CPU/(15890:15890): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:03:29:513 CPU/(15890:15890): Entro: finalizar_cpu
+[ERROR] 23:03:29:513 CPU/(15890:15892): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[INFO] 23:03:29:513 CPU/(15890:15892):      ---- Salio: escuchaInterrup(...)
+[INFO] 23:03:29:513 CPU/(15890:15890): Finalizamos el Hilo interrupt
+[INFO] 23:03:29:513 CPU/(15890:15890): 
+###### FIN LOGGER ######
+[INFO] 23:03:32:826 CPU/(16745:16745): 
+###### INICIO DE LOGGER ######
+[INFO] 23:03:32:826 CPU/(16745:16745):    ---Leyo archivo de configuraciones
+[INFO] 23:03:32:826 CPU/(16745:16745):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:03:32:826 CPU/(16745:16745):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:03:32:826 CPU/(16745:16745):  Hicimos handshake_cpu_memoria
+[INFO] 23:03:32:826 CPU/(16745:16745): --- Nro de filas tabla nivel 1: -1
+[INFO] 23:03:32:826 CPU/(16745:16745): --- Tamano de pagina: -1
+[INFO] 23:03:32:826 CPU/(16745:16745): Entro: iniciar_servidor_dispatch
+[INFO] 23:03:32:826 CPU/(16745:16745): Entro: iniciar_servidor_cpu
+[INFO] 23:03:32:826 CPU/(16745:16745):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:03:32:826 CPU/(16745:16745):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:03:32:826 CPU/(16745:16745):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 23:03:32:827 CPU/(16745:16745): Se creo el Hilo: interrupt
+[INFO] 23:03:32:827 CPU/(16745:16745): Entro: esperar_cliente_cpu
+[INFO] 23:03:32:827 CPU/(16745:16745):  Socket server recibido: 4
+[INFO] 23:03:32:827 CPU/(16745:16745):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:03:32:827 CPU/(16745:16746):    --- Entro: escuchaInterrup(...)
+[INFO] 23:03:32:827 CPU/(16745:16746): Entro: iniciar_servidor_interrupt
+[INFO] 23:03:32:827 CPU/(16745:16746): Entro: iniciar_servidor_cpu
+[INFO] 23:03:32:827 CPU/(16745:16746):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:03:32:827 CPU/(16745:16746):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:03:32:827 CPU/(16745:16746):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 23:03:32:827 CPU/(16745:16746): Entro: esperar_cliente_cpu
+[INFO] 23:03:32:827 CPU/(16745:16746):  Socket server recibido: 7
+[INFO] 23:03:32:827 CPU/(16745:16746):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:03:34:514 CPU/(16745:16746):  Termino el BLOQUEO
+[INFO] 23:03:34:514 CPU/(16745:16745):  Termino el BLOQUEO
+[INFO] 23:03:34:514 CPU/(16745:16745):  Se conecto un cliente y se creo el socket_cliente: 5. Puerto tipo:  dispatch
+[INFO] 23:03:34:514 CPU/(16745:16745): INICIO: recibir_operaciones()
+[INFO] 23:03:34:514 CPU/(16745:16746):  Se conecto un cliente y se creo el socket_cliente: 8. Puerto tipo:  interrupt
+[INFO] 23:03:34:514 CPU/(16745:16745): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:03:34:514 CPU/(16745:16746):  ---- Socket kernel interrupt: 8
+[INFO] 23:03:34:514 CPU/(16745:16746):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:03:34:514 CPU/(16745:16746):   --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:03:36:170 CPU/(16745:16746): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 8
+[INFO] 23:03:36:170 CPU/(16745:16746):      ---- Salio: escuchaInterrup(...)
+[ERROR] 23:03:36:170 CPU/(16745:16745): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 5
+[INFO] 23:03:36:170 CPU/(16745:16745): Entro: finalizar_cpu
+[INFO] 23:03:36:170 CPU/(16745:16745): Finalizamos el Hilo interrupt
+[INFO] 23:03:36:170 CPU/(16745:16745): 
+###### FIN LOGGER ######
+[INFO] 23:03:49:025 CPU/(16878:16878): 
+###### INICIO DE LOGGER ######
+[INFO] 23:03:49:025 CPU/(16878:16878):    ---Leyo archivo de configuraciones
+[INFO] 23:03:49:025 CPU/(16878:16878):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:03:49:025 CPU/(16878:16878):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:03:49:025 CPU/(16878:16878):  Hicimos handshake_cpu_memoria
+[INFO] 23:03:49:025 CPU/(16878:16878): --- Nro de filas tabla nivel 1: -1
+[INFO] 23:03:49:025 CPU/(16878:16878): --- Tamano de pagina: -1
+[INFO] 23:03:49:025 CPU/(16878:16878): Entro: iniciar_servidor_dispatch
+[INFO] 23:03:49:025 CPU/(16878:16878): Entro: iniciar_servidor_cpu
+[INFO] 23:03:49:025 CPU/(16878:16878):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:03:49:025 CPU/(16878:16878):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:03:49:025 CPU/(16878:16878):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 23:03:49:025 CPU/(16878:16878): Se creo el Hilo: interrupt
+[INFO] 23:03:49:026 CPU/(16878:16878): Entro: esperar_cliente_cpu
+[INFO] 23:03:49:026 CPU/(16878:16878):  Socket server recibido: 4
+[INFO] 23:03:49:026 CPU/(16878:16878):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:03:49:026 CPU/(16878:16879):    --- Entro: escuchaInterrup(...)
+[INFO] 23:03:49:026 CPU/(16878:16879): Entro: iniciar_servidor_interrupt
+[INFO] 23:03:49:026 CPU/(16878:16879): Entro: iniciar_servidor_cpu
+[INFO] 23:03:49:026 CPU/(16878:16879):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:03:49:026 CPU/(16878:16879):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:03:49:026 CPU/(16878:16879):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 23:03:49:026 CPU/(16878:16879): Entro: esperar_cliente_cpu
+[INFO] 23:03:49:026 CPU/(16878:16879):  Socket server recibido: 7
+[INFO] 23:03:49:026 CPU/(16878:16879):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:03:50:834 CPU/(16878:16878):  Termino el BLOQUEO
+[INFO] 23:03:50:834 CPU/(16878:16878):  Se conecto un cliente y se creo el socket_cliente: 5. Puerto tipo:  dispatch
+[INFO] 23:03:50:834 CPU/(16878:16878): INICIO: recibir_operaciones()
+[INFO] 23:03:50:834 CPU/(16878:16878): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:03:50:835 CPU/(16878:16879):  Termino el BLOQUEO
+[INFO] 23:03:50:835 CPU/(16878:16879):  Se conecto un cliente y se creo el socket_cliente: 8. Puerto tipo:  interrupt
+[INFO] 23:03:50:835 CPU/(16878:16879):  ---- Socket kernel interrupt: 8
+[INFO] 23:03:50:835 CPU/(16878:16879):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:03:50:835 CPU/(16878:16879):   --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:03:53:353 CPU/(16878:16879): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 8
+[ERROR] 23:03:53:353 CPU/(16878:16878): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 5
+[INFO] 23:03:53:353 CPU/(16878:16879):      ---- Salio: escuchaInterrup(...)
+[INFO] 23:03:53:353 CPU/(16878:16878): Entro: finalizar_cpu
+[INFO] 23:03:53:353 CPU/(16878:16878): Finalizamos el Hilo interrupt
+[INFO] 23:03:53:353 CPU/(16878:16878): 
+###### FIN LOGGER ######
+[INFO] 23:04:07:979 CPU/(17011:17011): 
+###### INICIO DE LOGGER ######
+[INFO] 23:04:07:979 CPU/(17011:17011):    ---Leyo archivo de configuraciones
+[INFO] 23:04:07:979 CPU/(17011:17011):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:04:07:979 CPU/(17011:17011):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:04:07:979 CPU/(17011:17011):  Hicimos handshake_cpu_memoria
+[INFO] 23:04:07:979 CPU/(17011:17011): --- Nro de filas tabla nivel 1: -1
+[INFO] 23:04:07:979 CPU/(17011:17011): --- Tamano de pagina: -1
+[INFO] 23:04:07:979 CPU/(17011:17011): Entro: iniciar_servidor_dispatch
+[INFO] 23:04:07:979 CPU/(17011:17011): Entro: iniciar_servidor_cpu
+[INFO] 23:04:07:979 CPU/(17011:17011):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:04:07:979 CPU/(17011:17011):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:04:07:979 CPU/(17011:17011):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 23:04:07:979 CPU/(17011:17011): Se creo el Hilo: interrupt
+[INFO] 23:04:07:979 CPU/(17011:17011): Entro: esperar_cliente_cpu
+[INFO] 23:04:07:979 CPU/(17011:17011):  Socket server recibido: 4
+[INFO] 23:04:07:979 CPU/(17011:17011):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:04:07:979 CPU/(17011:17012):    --- Entro: escuchaInterrup(...)
+[INFO] 23:04:07:979 CPU/(17011:17012): Entro: iniciar_servidor_interrupt
+[INFO] 23:04:07:979 CPU/(17011:17012): Entro: iniciar_servidor_cpu
+[INFO] 23:04:07:979 CPU/(17011:17012):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:04:07:979 CPU/(17011:17012):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:04:07:979 CPU/(17011:17012):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 23:04:07:979 CPU/(17011:17012): Entro: esperar_cliente_cpu
+[INFO] 23:04:07:979 CPU/(17011:17012):  Socket server recibido: 7
+[INFO] 23:04:07:979 CPU/(17011:17012):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:04:34:329 CPU/(17181:17181): 
+###### INICIO DE LOGGER ######
+[INFO] 23:04:34:330 CPU/(17181:17181):    ---Leyo archivo de configuraciones
+[INFO] 23:04:34:330 CPU/(17181:17181):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:04:34:330 CPU/(17181:17181):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:04:34:330 CPU/(17181:17181):  Hicimos handshake_cpu_memoria
+[INFO] 23:04:34:330 CPU/(17181:17181): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:04:34:330 CPU/(17181:17181): --- Tamano de pagina: 64
+[INFO] 23:04:34:330 CPU/(17181:17181): Entro: iniciar_servidor_dispatch
+[INFO] 23:04:34:330 CPU/(17181:17181): Entro: iniciar_servidor_cpu
+[INFO] 23:04:34:330 CPU/(17181:17181):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:04:34:330 CPU/(17181:17181):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:04:34:330 CPU/(17181:17181):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 23:04:34:330 CPU/(17181:17181): Se creo el Hilo: interrupt
+[INFO] 23:04:34:330 CPU/(17181:17181): Entro: esperar_cliente_cpu
+[INFO] 23:04:34:330 CPU/(17181:17181):  Socket server recibido: 5
+[INFO] 23:04:34:330 CPU/(17181:17181):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:04:34:330 CPU/(17181:17183):    --- Entro: escuchaInterrup(...)
+[INFO] 23:04:34:330 CPU/(17181:17183): Entro: iniciar_servidor_interrupt
+[INFO] 23:04:34:330 CPU/(17181:17183): Entro: iniciar_servidor_cpu
+[INFO] 23:04:34:330 CPU/(17181:17183):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:04:34:330 CPU/(17181:17183):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:04:34:330 CPU/(17181:17183):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 23:04:34:330 CPU/(17181:17183): Entro: esperar_cliente_cpu
+[INFO] 23:04:34:330 CPU/(17181:17183):  Socket server recibido: 8
+[INFO] 23:04:34:330 CPU/(17181:17183):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:04:36:275 CPU/(17181:17181):  Termino el BLOQUEO
+[INFO] 23:04:36:275 CPU/(17181:17181):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 23:04:36:275 CPU/(17181:17181): INICIO: recibir_operaciones()
+[INFO] 23:04:36:275 CPU/(17181:17181): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:04:36:275 CPU/(17181:17183):  Termino el BLOQUEO
+[INFO] 23:04:36:275 CPU/(17181:17183):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 23:04:36:275 CPU/(17181:17183):  ---- Socket kernel interrupt: 9
+[INFO] 23:04:36:275 CPU/(17181:17183):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:04:36:275 CPU/(17181:17183):   --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:04:44:745 CPU/(17181:17183): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[ERROR] 23:04:44:745 CPU/(17181:17181): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:04:44:745 CPU/(17181:17183):      ---- Salio: escuchaInterrup(...)
+[INFO] 23:04:44:745 CPU/(17181:17181): Entro: finalizar_cpu
+[INFO] 23:04:44:745 CPU/(17181:17181): Finalizamos el Hilo interrupt
+[INFO] 23:04:44:745 CPU/(17181:17181): 
+###### FIN LOGGER ######
+[INFO] 23:05:07:497 CPU/(17404:17404): 
+###### INICIO DE LOGGER ######
+[INFO] 23:05:07:497 CPU/(17404:17404):    ---Leyo archivo de configuraciones
+[INFO] 23:05:07:497 CPU/(17404:17404):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:05:07:497 CPU/(17404:17404):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:05:07:498 CPU/(17404:17404):  Hicimos handshake_cpu_memoria
+[INFO] 23:05:07:498 CPU/(17404:17404): --- Nro de filas tabla nivel 1: -1
+[INFO] 23:05:07:498 CPU/(17404:17404): --- Tamano de pagina: -1
+[INFO] 23:05:07:498 CPU/(17404:17404): Entro: iniciar_servidor_dispatch
+[INFO] 23:05:07:498 CPU/(17404:17404): Entro: iniciar_servidor_cpu
+[INFO] 23:05:07:498 CPU/(17404:17404):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:05:07:498 CPU/(17404:17404):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:05:07:498 CPU/(17404:17404):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 23:05:07:498 CPU/(17404:17404): Se creo el Hilo: interrupt
+[INFO] 23:05:07:498 CPU/(17404:17404): Entro: esperar_cliente_cpu
+[INFO] 23:05:07:498 CPU/(17404:17404):  Socket server recibido: 4
+[INFO] 23:05:07:498 CPU/(17404:17404):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:05:07:498 CPU/(17404:17405):    --- Entro: escuchaInterrup(...)
+[INFO] 23:05:07:498 CPU/(17404:17405): Entro: iniciar_servidor_interrupt
+[INFO] 23:05:07:498 CPU/(17404:17405): Entro: iniciar_servidor_cpu
+[INFO] 23:05:07:498 CPU/(17404:17405):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:05:07:498 CPU/(17404:17405):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:05:07:498 CPU/(17404:17405):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 23:05:07:498 CPU/(17404:17405): Entro: esperar_cliente_cpu
+[INFO] 23:05:07:498 CPU/(17404:17405):  Socket server recibido: 7
+[INFO] 23:05:07:498 CPU/(17404:17405):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:05:09:122 CPU/(17404:17404):  Termino el BLOQUEO
+[INFO] 23:05:09:122 CPU/(17404:17404):  Se conecto un cliente y se creo el socket_cliente: 5. Puerto tipo:  dispatch
+[INFO] 23:05:09:122 CPU/(17404:17404): INICIO: recibir_operaciones()
+[INFO] 23:05:09:122 CPU/(17404:17404): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:05:09:122 CPU/(17404:17405):  Termino el BLOQUEO
+[INFO] 23:05:09:122 CPU/(17404:17405):  Se conecto un cliente y se creo el socket_cliente: 8. Puerto tipo:  interrupt
+[INFO] 23:05:09:122 CPU/(17404:17405):  ---- Socket kernel interrupt: 8
+[INFO] 23:05:09:122 CPU/(17404:17405):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:05:09:122 CPU/(17404:17405):   --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:05:12:273 CPU/(17404:17405): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 8
+[ERROR] 23:05:12:273 CPU/(17404:17404): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 5
+[INFO] 23:05:12:273 CPU/(17404:17405):      ---- Salio: escuchaInterrup(...)
+[INFO] 23:05:12:273 CPU/(17404:17404): Entro: finalizar_cpu
+[INFO] 23:05:12:273 CPU/(17404:17404): Finalizamos el Hilo interrupt
+[INFO] 23:05:12:273 CPU/(17404:17404): 
+###### FIN LOGGER ######
+[INFO] 23:05:55:938 CPU/(17717:17717): 
+###### INICIO DE LOGGER ######
+[INFO] 23:05:55:938 CPU/(17717:17717):    ---Leyo archivo de configuraciones
+[INFO] 23:05:55:938 CPU/(17717:17717):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:05:55:939 CPU/(17717:17717):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:05:55:939 CPU/(17717:17717):  Hicimos handshake_cpu_memoria
+[INFO] 23:05:55:939 CPU/(17717:17717): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:05:55:939 CPU/(17717:17717): --- Tamano de pagina: 64
+[INFO] 23:05:55:939 CPU/(17717:17717): Entro: iniciar_servidor_dispatch
+[INFO] 23:05:55:939 CPU/(17717:17717): Entro: iniciar_servidor_cpu
+[INFO] 23:05:55:939 CPU/(17717:17717):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:05:55:939 CPU/(17717:17717):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:05:55:939 CPU/(17717:17717):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 23:05:55:939 CPU/(17717:17717): Se creo el Hilo: interrupt
+[INFO] 23:05:55:939 CPU/(17717:17717): Entro: esperar_cliente_cpu
+[INFO] 23:05:55:939 CPU/(17717:17717):  Socket server recibido: 5
+[INFO] 23:05:55:939 CPU/(17717:17717):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:05:55:939 CPU/(17717:17719):    --- Entro: escuchaInterrup(...)
+[INFO] 23:05:55:939 CPU/(17717:17719): Entro: iniciar_servidor_interrupt
+[INFO] 23:05:55:939 CPU/(17717:17719): Entro: iniciar_servidor_cpu
+[INFO] 23:05:55:939 CPU/(17717:17719):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:05:55:939 CPU/(17717:17719):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:05:55:939 CPU/(17717:17719):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 23:05:55:939 CPU/(17717:17719): Entro: esperar_cliente_cpu
+[INFO] 23:05:55:939 CPU/(17717:17719):  Socket server recibido: 8
+[INFO] 23:05:55:939 CPU/(17717:17719):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:05:58:403 CPU/(17717:17717):  Termino el BLOQUEO
+[INFO] 23:05:58:403 CPU/(17717:17717):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 23:05:58:403 CPU/(17717:17719):  Termino el BLOQUEO
+[INFO] 23:05:58:403 CPU/(17717:17717): INICIO: recibir_operaciones()
+[INFO] 23:05:58:403 CPU/(17717:17719):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 23:05:58:403 CPU/(17717:17717): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:05:58:403 CPU/(17717:17719):  ---- Socket kernel interrupt: 9
+[INFO] 23:05:58:403 CPU/(17717:17719):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:05:58:403 CPU/(17717:17719):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:06:05:570 CPU/(17717:17717):  -----------
+[INFO] 23:06:05:570 CPU/(17717:17717):  El kernel envio un PCB:
+[INFO] 23:06:05:570 CPU/(17717:17717): -----PCB ------
+[INFO] 23:06:05:570 CPU/(17717:17717): id: 0
+[INFO] 23:06:05:570 CPU/(17717:17717): estimacion: 10000
+[INFO] 23:06:05:570 CPU/(17717:17717): program counter: 0
+[INFO] 23:06:05:570 CPU/(17717:17717): socket: 9
+[INFO] 23:06:05:570 CPU/(17717:17717): numero de tabla: 0
+[INFO] 23:06:05:570 CPU/(17717:17717): tamanio de consola: 100
+[INFO] 23:06:05:570 CPU/(17717:17717): lista Instrucciones:
+[INFO] 23:06:05:570 CPU/(17717:17717): NO_OP
+[INFO] 23:06:05:570 CPU/(17717:17717): READ 9
+[INFO] 23:06:05:570 CPU/(17717:17717): EXIT
+[INFO] 23:06:05:570 CPU/(17717:17717): --------------
+[INFO] 23:06:05:570 CPU/(17717:17717):   Nro de instrucion: 0
+[INFO] 23:06:05:570 CPU/(17717:17717):   instruccion/codigo op: NO_OP
+[INFO] 23:06:05:570 CPU/(17717:17717):   Entro a fetch_operands
+[INFO] 23:06:05:570 CPU/(17717:17717):   Time: 1000
+[INFO] 23:06:06:571 CPU/(17717:17717):   Nro de instrucion: 1
+[INFO] 23:06:06:571 CPU/(17717:17717):   instruccion/codigo op: READ
+[INFO] 23:06:06:571 CPU/(17717:17717):   Entro a fetch_operands
+[INFO] 23:06:06:571 CPU/(17717:17717):   Nro de instrucion: 2
+[INFO] 23:06:06:571 CPU/(17717:17717):   instruccion/codigo op: EXIT
+[INFO] 23:06:06:571 CPU/(17717:17717):   Entro a fetch_operands
+[INFO] 23:06:06:571 CPU/(17717:17717):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 23:06:06:571 CPU/(17717:17717): -----PCB ------
+[INFO] 23:06:06:571 CPU/(17717:17717): id: 0
+[INFO] 23:06:06:571 CPU/(17717:17717): estimacion: 10000
+[INFO] 23:06:06:571 CPU/(17717:17717): program counter: 2
+[INFO] 23:06:06:571 CPU/(17717:17717): socket: 9
+[INFO] 23:06:06:571 CPU/(17717:17717): numero de tabla: 0
+[INFO] 23:06:06:571 CPU/(17717:17717): tamanio de consola: 100
+[INFO] 23:06:06:571 CPU/(17717:17717): lista Instrucciones:
+[INFO] 23:06:06:571 CPU/(17717:17717): NO_OP
+[INFO] 23:06:06:571 CPU/(17717:17717): READ 9
+[INFO] 23:06:06:571 CPU/(17717:17717): EXIT
+[INFO] 23:06:06:571 CPU/(17717:17717): --------------
+[WARNING] 23:06:06:571 CPU/(17717:17717): Entro por interrupcion al Break
+[INFO] 23:06:06:571 CPU/(17717:17717): --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:06:25:417 CPU/(17717:17719): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[INFO] 23:06:25:417 CPU/(17717:17719):      ---- Salio: escuchaInterrup(...)
+[ERROR] 23:06:25:417 CPU/(17717:17717): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:06:25:417 CPU/(17717:17717): Entro: finalizar_cpu
+[INFO] 23:06:25:417 CPU/(17717:17717): Finalizamos el Hilo interrupt
+[INFO] 23:06:25:417 CPU/(17717:17717): 
+###### FIN LOGGER ######
+[INFO] 23:06:41:274 CPU/(18055:18055): 
+###### INICIO DE LOGGER ######
+[INFO] 23:06:41:274 CPU/(18055:18055):    ---Leyo archivo de configuraciones
+[INFO] 23:06:41:274 CPU/(18055:18055):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:06:41:274 CPU/(18055:18055):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:06:41:274 CPU/(18055:18055):  Hicimos handshake_cpu_memoria
+[INFO] 23:06:41:275 CPU/(18055:18055): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:06:41:275 CPU/(18055:18055): --- Tamano de pagina: 64
+[INFO] 23:06:41:275 CPU/(18055:18055): Entro: iniciar_servidor_dispatch
+[INFO] 23:06:41:275 CPU/(18055:18055): Entro: iniciar_servidor_cpu
+[INFO] 23:06:41:275 CPU/(18055:18055):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:06:41:275 CPU/(18055:18055):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:06:41:275 CPU/(18055:18055):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 23:06:41:275 CPU/(18055:18055): Se creo el Hilo: interrupt
+[INFO] 23:06:41:275 CPU/(18055:18055): Entro: esperar_cliente_cpu
+[INFO] 23:06:41:275 CPU/(18055:18055):  Socket server recibido: 5
+[INFO] 23:06:41:275 CPU/(18055:18057):    --- Entro: escuchaInterrup(...)
+[INFO] 23:06:41:275 CPU/(18055:18055):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:06:41:275 CPU/(18055:18057): Entro: iniciar_servidor_interrupt
+[INFO] 23:06:41:275 CPU/(18055:18057): Entro: iniciar_servidor_cpu
+[INFO] 23:06:41:275 CPU/(18055:18057):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:06:41:275 CPU/(18055:18057):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:06:41:275 CPU/(18055:18057):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 23:06:41:275 CPU/(18055:18057): Entro: esperar_cliente_cpu
+[INFO] 23:06:41:275 CPU/(18055:18057):  Socket server recibido: 8
+[INFO] 23:06:41:275 CPU/(18055:18057):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:06:43:578 CPU/(18055:18055):  Termino el BLOQUEO
+[INFO] 23:06:43:578 CPU/(18055:18055):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 23:06:43:578 CPU/(18055:18055): INICIO: recibir_operaciones()
+[INFO] 23:06:43:578 CPU/(18055:18057):  Termino el BLOQUEO
+[INFO] 23:06:43:578 CPU/(18055:18057):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 23:06:43:578 CPU/(18055:18055): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:06:43:578 CPU/(18055:18057):  ---- Socket kernel interrupt: 9
+[INFO] 23:06:43:578 CPU/(18055:18057):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:06:43:578 CPU/(18055:18057):   --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:06:56:681 CPU/(18055:18057): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[INFO] 23:06:56:681 CPU/(18055:18057):      ---- Salio: escuchaInterrup(...)
+[ERROR] 23:06:56:681 CPU/(18055:18055): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:06:56:681 CPU/(18055:18055): Entro: finalizar_cpu
+[INFO] 23:06:56:681 CPU/(18055:18055): Finalizamos el Hilo interrupt
+[INFO] 23:06:56:681 CPU/(18055:18055): 
+###### FIN LOGGER ######
+[INFO] 23:07:01:954 CPU/(18212:18212): 
+###### INICIO DE LOGGER ######
+[INFO] 23:07:01:955 CPU/(18212:18212):    ---Leyo archivo de configuraciones
+[INFO] 23:07:01:955 CPU/(18212:18212):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:07:01:955 CPU/(18212:18212):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:07:01:955 CPU/(18212:18212):  Hicimos handshake_cpu_memoria
+[INFO] 23:07:01:955 CPU/(18212:18212): --- Nro de filas tabla nivel 1: -1
+[INFO] 23:07:01:955 CPU/(18212:18212): --- Tamano de pagina: -1
+[INFO] 23:07:01:955 CPU/(18212:18212): Entro: iniciar_servidor_dispatch
+[INFO] 23:07:01:955 CPU/(18212:18212): Entro: iniciar_servidor_cpu
+[INFO] 23:07:01:955 CPU/(18212:18212):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:07:01:955 CPU/(18212:18212):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:07:01:955 CPU/(18212:18212):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 23:07:01:955 CPU/(18212:18212): Se creo el Hilo: interrupt
+[INFO] 23:07:01:955 CPU/(18212:18212): Entro: esperar_cliente_cpu
+[INFO] 23:07:01:955 CPU/(18212:18212):  Socket server recibido: 4
+[INFO] 23:07:01:955 CPU/(18212:18212):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:07:01:955 CPU/(18212:18213):    --- Entro: escuchaInterrup(...)
+[INFO] 23:07:01:955 CPU/(18212:18213): Entro: iniciar_servidor_interrupt
+[INFO] 23:07:01:955 CPU/(18212:18213): Entro: iniciar_servidor_cpu
+[INFO] 23:07:01:955 CPU/(18212:18213):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:07:01:955 CPU/(18212:18213):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:07:01:955 CPU/(18212:18213):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 23:07:01:955 CPU/(18212:18213): Entro: esperar_cliente_cpu
+[INFO] 23:07:01:955 CPU/(18212:18213):  Socket server recibido: 7
+[INFO] 23:07:01:955 CPU/(18212:18213):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:07:43:242 CPU/(18482:18482): 
+###### INICIO DE LOGGER ######
+[INFO] 23:07:43:242 CPU/(18482:18482):    ---Leyo archivo de configuraciones
+[INFO] 23:07:43:242 CPU/(18482:18482):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:07:43:242 CPU/(18482:18482):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:07:43:242 CPU/(18482:18482):  Hicimos handshake_cpu_memoria
+[INFO] 23:07:43:242 CPU/(18482:18482): --- Nro de filas tabla nivel 1: -1
+[INFO] 23:07:43:242 CPU/(18482:18482): --- Tamano de pagina: -1
+[INFO] 23:07:43:242 CPU/(18482:18482): Entro: iniciar_servidor_dispatch
+[INFO] 23:07:43:242 CPU/(18482:18482): Entro: iniciar_servidor_cpu
+[INFO] 23:07:43:242 CPU/(18482:18482):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:07:43:242 CPU/(18482:18482):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:07:43:242 CPU/(18482:18482):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 23:07:43:242 CPU/(18482:18482): Se creo el Hilo: interrupt
+[INFO] 23:07:43:242 CPU/(18482:18482): Entro: esperar_cliente_cpu
+[INFO] 23:07:43:242 CPU/(18482:18482):  Socket server recibido: 4
+[INFO] 23:07:43:242 CPU/(18482:18482):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:07:43:243 CPU/(18482:18488):    --- Entro: escuchaInterrup(...)
+[INFO] 23:07:43:243 CPU/(18482:18488): Entro: iniciar_servidor_interrupt
+[INFO] 23:07:43:243 CPU/(18482:18488): Entro: iniciar_servidor_cpu
+[INFO] 23:07:43:243 CPU/(18482:18488):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:07:43:243 CPU/(18482:18488):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:07:43:243 CPU/(18482:18488):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 23:07:43:243 CPU/(18482:18488): Entro: esperar_cliente_cpu
+[INFO] 23:07:43:243 CPU/(18482:18488):  Socket server recibido: 7
+[INFO] 23:07:43:243 CPU/(18482:18488):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:08:03:395 CPU/(18628:18628): 
+###### INICIO DE LOGGER ######
+[INFO] 23:08:03:395 CPU/(18628:18628):    ---Leyo archivo de configuraciones
+[INFO] 23:08:03:395 CPU/(18628:18628):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:08:03:395 CPU/(18628:18628):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:08:03:395 CPU/(18628:18628):  Hicimos handshake_cpu_memoria
+[INFO] 23:08:03:395 CPU/(18628:18628): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:08:03:395 CPU/(18628:18628): --- Tamano de pagina: 64
+[INFO] 23:08:03:395 CPU/(18628:18628): Entro: iniciar_servidor_dispatch
+[INFO] 23:08:03:395 CPU/(18628:18628): Entro: iniciar_servidor_cpu
+[INFO] 23:08:03:395 CPU/(18628:18628):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:08:03:395 CPU/(18628:18628):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:08:03:395 CPU/(18628:18628):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 23:08:03:395 CPU/(18628:18628): Se creo el Hilo: interrupt
+[INFO] 23:08:03:395 CPU/(18628:18628): Entro: esperar_cliente_cpu
+[INFO] 23:08:03:395 CPU/(18628:18628):  Socket server recibido: 5
+[INFO] 23:08:03:395 CPU/(18628:18628):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:08:03:395 CPU/(18628:18630):    --- Entro: escuchaInterrup(...)
+[INFO] 23:08:03:395 CPU/(18628:18630): Entro: iniciar_servidor_interrupt
+[INFO] 23:08:03:395 CPU/(18628:18630): Entro: iniciar_servidor_cpu
+[INFO] 23:08:03:396 CPU/(18628:18630):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:08:03:396 CPU/(18628:18630):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:08:03:396 CPU/(18628:18630):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 23:08:03:396 CPU/(18628:18630): Entro: esperar_cliente_cpu
+[INFO] 23:08:03:396 CPU/(18628:18630):  Socket server recibido: 8
+[INFO] 23:08:03:396 CPU/(18628:18630):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:08:09:554 CPU/(18628:18630):  Termino el BLOQUEO
+[INFO] 23:08:09:554 CPU/(18628:18628):  Termino el BLOQUEO
+[INFO] 23:08:09:554 CPU/(18628:18630):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 23:08:09:554 CPU/(18628:18628):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 23:08:09:555 CPU/(18628:18630):  ---- Socket kernel interrupt: 9
+[INFO] 23:08:09:555 CPU/(18628:18628): INICIO: recibir_operaciones()
+[INFO] 23:08:09:555 CPU/(18628:18630):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:08:09:555 CPU/(18628:18630):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:08:09:555 CPU/(18628:18628): --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:08:15:898 CPU/(18628:18630): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[INFO] 23:08:15:898 CPU/(18628:18630):      ---- Salio: escuchaInterrup(...)
+[ERROR] 23:08:15:898 CPU/(18628:18628): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:08:15:898 CPU/(18628:18628): Entro: finalizar_cpu
+[INFO] 23:08:15:898 CPU/(18628:18628): Finalizamos el Hilo interrupt
+[INFO] 23:08:15:898 CPU/(18628:18628): 
+###### FIN LOGGER ######
+[INFO] 23:09:10:226 CPU/(19057:19057): 
+###### INICIO DE LOGGER ######
+[INFO] 23:09:10:226 CPU/(19057:19057):    ---Leyo archivo de configuraciones
+[INFO] 23:09:10:226 CPU/(19057:19057):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:09:10:226 CPU/(19057:19057):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:09:10:226 CPU/(19057:19057):  Hicimos handshake_cpu_memoria
+[INFO] 23:09:10:226 CPU/(19057:19057): --- Nro de filas tabla nivel 1: -1
+[INFO] 23:09:10:226 CPU/(19057:19057): --- Tamano de pagina: -1
+[INFO] 23:09:10:226 CPU/(19057:19057): Entro: iniciar_servidor_dispatch
+[INFO] 23:09:10:226 CPU/(19057:19057): Entro: iniciar_servidor_cpu
+[INFO] 23:09:10:226 CPU/(19057:19057):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:09:10:226 CPU/(19057:19057):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:09:10:226 CPU/(19057:19057):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 23:09:10:226 CPU/(19057:19057): Se creo el Hilo: interrupt
+[INFO] 23:09:10:226 CPU/(19057:19057): Entro: esperar_cliente_cpu
+[INFO] 23:09:10:226 CPU/(19057:19057):  Socket server recibido: 4
+[INFO] 23:09:10:226 CPU/(19057:19057):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:09:10:226 CPU/(19057:19058):    --- Entro: escuchaInterrup(...)
+[INFO] 23:09:10:226 CPU/(19057:19058): Entro: iniciar_servidor_interrupt
+[INFO] 23:09:10:226 CPU/(19057:19058): Entro: iniciar_servidor_cpu
+[INFO] 23:09:10:226 CPU/(19057:19058):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:09:10:226 CPU/(19057:19058):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:09:10:226 CPU/(19057:19058):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 23:09:10:226 CPU/(19057:19058): Entro: esperar_cliente_cpu
+[INFO] 23:09:10:226 CPU/(19057:19058):  Socket server recibido: 7
+[INFO] 23:09:10:226 CPU/(19057:19058):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:10:22:154 CPU/(19494:19494): 
+###### INICIO DE LOGGER ######
+[INFO] 23:10:22:154 CPU/(19494:19494):    ---Leyo archivo de configuraciones
+[INFO] 23:10:22:154 CPU/(19494:19494):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:10:22:154 CPU/(19494:19494):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:10:22:154 CPU/(19494:19494):  Hicimos handshake_cpu_memoria
+[INFO] 23:10:22:154 CPU/(19494:19494): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:10:22:154 CPU/(19494:19494): --- Tamano de pagina: 64
+[INFO] 23:10:22:154 CPU/(19494:19494): Entro: iniciar_servidor_dispatch
+[INFO] 23:10:22:154 CPU/(19494:19494): Entro: iniciar_servidor_cpu
+[INFO] 23:10:22:154 CPU/(19494:19494):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:10:22:154 CPU/(19494:19494):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:10:22:154 CPU/(19494:19494):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 23:10:22:154 CPU/(19494:19494): Se creo el Hilo: interrupt
+[INFO] 23:10:22:154 CPU/(19494:19494): Entro: esperar_cliente_cpu
+[INFO] 23:10:22:154 CPU/(19494:19494):  Socket server recibido: 5
+[INFO] 23:10:22:154 CPU/(19494:19494):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:10:22:154 CPU/(19494:19496):    --- Entro: escuchaInterrup(...)
+[INFO] 23:10:22:154 CPU/(19494:19496): Entro: iniciar_servidor_interrupt
+[INFO] 23:10:22:154 CPU/(19494:19496): Entro: iniciar_servidor_cpu
+[INFO] 23:10:22:154 CPU/(19494:19496):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:10:22:154 CPU/(19494:19496):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:10:22:154 CPU/(19494:19496):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 23:10:22:154 CPU/(19494:19496): Entro: esperar_cliente_cpu
+[INFO] 23:10:22:154 CPU/(19494:19496):  Socket server recibido: 8
+[INFO] 23:10:22:154 CPU/(19494:19496):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:10:23:803 CPU/(19494:19494):  Termino el BLOQUEO
+[INFO] 23:10:23:803 CPU/(19494:19494):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 23:10:23:803 CPU/(19494:19494): INICIO: recibir_operaciones()
+[INFO] 23:10:23:803 CPU/(19494:19494): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:10:23:803 CPU/(19494:19496):  Termino el BLOQUEO
+[INFO] 23:10:23:803 CPU/(19494:19496):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 23:10:23:803 CPU/(19494:19496):  ---- Socket kernel interrupt: 9
+[INFO] 23:10:23:803 CPU/(19494:19496):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:10:23:803 CPU/(19494:19496):   --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:10:28:457 CPU/(19494:19496): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[ERROR] 23:10:28:457 CPU/(19494:19494): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:10:28:457 CPU/(19494:19494): Entro: finalizar_cpu
+[INFO] 23:10:28:457 CPU/(19494:19496):      ---- Salio: escuchaInterrup(...)
+[INFO] 23:10:28:457 CPU/(19494:19494): Finalizamos el Hilo interrupt
+[INFO] 23:10:28:458 CPU/(19494:19494): 
+###### FIN LOGGER ######
+[INFO] 23:11:00:923 CPU/(19784:19784): 
+###### INICIO DE LOGGER ######
+[INFO] 23:11:00:923 CPU/(19784:19784):    ---Leyo archivo de configuraciones
+[INFO] 23:11:00:923 CPU/(19784:19784):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:11:00:923 CPU/(19784:19784):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:11:00:923 CPU/(19784:19784):  Hicimos handshake_cpu_memoria
+[INFO] 23:11:00:923 CPU/(19784:19784): --- Nro de filas tabla nivel 1: -1
+[INFO] 23:11:00:923 CPU/(19784:19784): --- Tamano de pagina: -1
+[INFO] 23:11:00:923 CPU/(19784:19784): Entro: iniciar_servidor_dispatch
+[INFO] 23:11:00:923 CPU/(19784:19784): Entro: iniciar_servidor_cpu
+[INFO] 23:11:00:923 CPU/(19784:19784):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:11:00:923 CPU/(19784:19784):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:11:00:923 CPU/(19784:19784):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 23:11:00:923 CPU/(19784:19784): Se creo el Hilo: interrupt
+[INFO] 23:11:00:923 CPU/(19784:19784): Entro: esperar_cliente_cpu
+[INFO] 23:11:00:923 CPU/(19784:19784):  Socket server recibido: 4
+[INFO] 23:11:00:923 CPU/(19784:19784):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:11:00:923 CPU/(19784:19785):    --- Entro: escuchaInterrup(...)
+[INFO] 23:11:00:923 CPU/(19784:19785): Entro: iniciar_servidor_interrupt
+[INFO] 23:11:00:923 CPU/(19784:19785): Entro: iniciar_servidor_cpu
+[INFO] 23:11:00:923 CPU/(19784:19785):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:11:00:923 CPU/(19784:19785):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:11:00:923 CPU/(19784:19785):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 23:11:00:923 CPU/(19784:19785): Entro: esperar_cliente_cpu
+[INFO] 23:11:00:923 CPU/(19784:19785):  Socket server recibido: 7
+[INFO] 23:11:00:923 CPU/(19784:19785):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:11:09:154 CPU/(19784:19784):  Termino el BLOQUEO
+[INFO] 23:11:09:154 CPU/(19784:19784):  Se conecto un cliente y se creo el socket_cliente: 5. Puerto tipo:  dispatch
+[INFO] 23:11:09:154 CPU/(19784:19784): INICIO: recibir_operaciones()
+[INFO] 23:11:09:154 CPU/(19784:19784): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:11:09:154 CPU/(19784:19785):  Termino el BLOQUEO
+[INFO] 23:11:09:154 CPU/(19784:19785):  Se conecto un cliente y se creo el socket_cliente: 8. Puerto tipo:  interrupt
+[INFO] 23:11:09:154 CPU/(19784:19785):  ---- Socket kernel interrupt: 8
+[INFO] 23:11:09:154 CPU/(19784:19785):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:11:09:154 CPU/(19784:19785):   --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:11:11:377 CPU/(19784:19784): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 5
+[ERROR] 23:11:11:377 CPU/(19784:19785): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 8
+[INFO] 23:11:11:377 CPU/(19784:19785):      ---- Salio: escuchaInterrup(...)
+[INFO] 23:11:11:377 CPU/(19784:19784): Entro: finalizar_cpu
+[INFO] 23:11:11:378 CPU/(19784:19784): Finalizamos el Hilo interrupt
+[INFO] 23:11:11:378 CPU/(19784:19784): 
+###### FIN LOGGER ######
+[INFO] 23:14:35:738 CPU/(21287:21287): 
+###### INICIO DE LOGGER ######
+[INFO] 23:14:35:738 CPU/(21287:21287):    ---Leyo archivo de configuraciones
+[INFO] 23:14:35:738 CPU/(21287:21287):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:14:35:738 CPU/(21287:21287):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:14:35:738 CPU/(21287:21287):  Hicimos handshake_cpu_memoria
+[INFO] 23:14:39:268 CPU/(21287:21287): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:14:39:268 CPU/(21287:21287): --- Tamano de pagina: 64
+[INFO] 23:14:39:268 CPU/(21287:21287): Entro: iniciar_servidor_dispatch
+[INFO] 23:14:39:268 CPU/(21287:21287): Entro: iniciar_servidor_cpu
+[INFO] 23:14:39:268 CPU/(21287:21287):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:14:39:268 CPU/(21287:21287):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:14:39:268 CPU/(21287:21287):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 23:14:39:268 CPU/(21287:21287): Se creo el Hilo: interrupt
+[INFO] 23:14:39:268 CPU/(21287:21287): Entro: esperar_cliente_cpu
+[INFO] 23:14:39:268 CPU/(21287:21287):  Socket server recibido: 5
+[INFO] 23:14:39:268 CPU/(21287:21287):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:14:39:268 CPU/(21287:21317):    --- Entro: escuchaInterrup(...)
+[INFO] 23:14:39:269 CPU/(21287:21317): Entro: iniciar_servidor_interrupt
+[INFO] 23:14:39:269 CPU/(21287:21317): Entro: iniciar_servidor_cpu
+[INFO] 23:14:39:269 CPU/(21287:21317):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:14:39:269 CPU/(21287:21317):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:14:39:269 CPU/(21287:21317):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 23:14:39:269 CPU/(21287:21317): Entro: esperar_cliente_cpu
+[INFO] 23:14:39:269 CPU/(21287:21317):  Socket server recibido: 8
+[INFO] 23:14:39:269 CPU/(21287:21317):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:14:46:162 CPU/(21287:21287):  Termino el BLOQUEO
+[INFO] 23:14:46:162 CPU/(21287:21287):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 23:14:46:162 CPU/(21287:21287): INICIO: recibir_operaciones()
+[INFO] 23:14:46:162 CPU/(21287:21287): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:14:46:163 CPU/(21287:21317):  Termino el BLOQUEO
+[INFO] 23:14:46:163 CPU/(21287:21317):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 23:14:46:163 CPU/(21287:21317):  ---- Socket kernel interrupt: 9
+[INFO] 23:14:46:163 CPU/(21287:21317):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:14:46:163 CPU/(21287:21317):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:15:20:084 CPU/(21287:21287):  -----------
+[INFO] 23:15:20:084 CPU/(21287:21287):  El kernel envio un PCB:
+[INFO] 23:15:20:084 CPU/(21287:21287): -----PCB ------
+[INFO] 23:15:20:084 CPU/(21287:21287): id: 0
+[INFO] 23:15:20:084 CPU/(21287:21287): estimacion: 10000
+[INFO] 23:15:20:084 CPU/(21287:21287): program counter: 0
+[INFO] 23:15:20:084 CPU/(21287:21287): socket: 9
+[INFO] 23:15:20:084 CPU/(21287:21287): numero de tabla: 0
+[INFO] 23:15:20:084 CPU/(21287:21287): tamanio de consola: 100
+[INFO] 23:15:20:084 CPU/(21287:21287): lista Instrucciones:
+[INFO] 23:15:20:084 CPU/(21287:21287): NO_OP
+[INFO] 23:15:20:084 CPU/(21287:21287): READ 9
+[INFO] 23:15:20:084 CPU/(21287:21287): EXIT
+[INFO] 23:15:20:084 CPU/(21287:21287): --------------
+[INFO] 23:15:20:084 CPU/(21287:21287):   Nro de instrucion: 0
+[INFO] 23:15:20:084 CPU/(21287:21287):   instruccion/codigo op: NO_OP
+[INFO] 23:15:20:084 CPU/(21287:21287):   Entro a fetch_operands
+[INFO] 23:15:20:084 CPU/(21287:21287):   Time: 1000
+[INFO] 23:15:21:086 CPU/(21287:21287):   Nro de instrucion: 1
+[INFO] 23:15:21:086 CPU/(21287:21287):   instruccion/codigo op: READ
+[INFO] 23:15:21:086 CPU/(21287:21287):   Entro a fetch_operands
+[INFO] 23:15:21:086 CPU/(21287:21287):   Nro de instrucion: 2
+[INFO] 23:15:21:086 CPU/(21287:21287):   instruccion/codigo op: EXIT
+[INFO] 23:15:21:086 CPU/(21287:21287):   Entro a fetch_operands
+[INFO] 23:15:21:086 CPU/(21287:21287):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 23:15:21:086 CPU/(21287:21287): -----PCB ------
+[INFO] 23:15:21:086 CPU/(21287:21287): id: 0
+[INFO] 23:15:21:086 CPU/(21287:21287): estimacion: 10000
+[INFO] 23:15:21:086 CPU/(21287:21287): program counter: 2
+[INFO] 23:15:21:086 CPU/(21287:21287): socket: 9
+[INFO] 23:15:21:086 CPU/(21287:21287): numero de tabla: 0
+[INFO] 23:15:21:086 CPU/(21287:21287): tamanio de consola: 100
+[INFO] 23:15:21:086 CPU/(21287:21287): lista Instrucciones:
+[INFO] 23:15:21:086 CPU/(21287:21287): NO_OP
+[INFO] 23:15:21:086 CPU/(21287:21287): READ 9
+[INFO] 23:15:21:086 CPU/(21287:21287): EXIT
+[INFO] 23:15:21:086 CPU/(21287:21287): --------------
+[WARNING] 23:15:21:086 CPU/(21287:21287): Entro por interrupcion al Break
+[INFO] 23:15:21:086 CPU/(21287:21287): --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:15:49:658 CPU/(21287:21317): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[ERROR] 23:15:49:658 CPU/(21287:21287): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:15:49:658 CPU/(21287:21317):      ---- Salio: escuchaInterrup(...)
+[INFO] 23:15:49:658 CPU/(21287:21287): Entro: finalizar_cpu
+[INFO] 23:15:49:658 CPU/(21287:21287): Finalizamos el Hilo interrupt
+[INFO] 23:15:49:658 CPU/(21287:21287): 
+###### FIN LOGGER ######
+[INFO] 23:15:59:211 CPU/(21870:21870): 
+###### INICIO DE LOGGER ######
+[INFO] 23:15:59:211 CPU/(21870:21870):    ---Leyo archivo de configuraciones
+[INFO] 23:15:59:211 CPU/(21870:21870):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:15:59:212 CPU/(21870:21870):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:15:59:212 CPU/(21870:21870):  Hicimos handshake_cpu_memoria
+[INFO] 23:15:59:212 CPU/(21870:21870): --- Nro de filas tabla nivel 1: -1
+[INFO] 23:15:59:212 CPU/(21870:21870): --- Tamano de pagina: -1
+[INFO] 23:15:59:212 CPU/(21870:21870): Entro: iniciar_servidor_dispatch
+[INFO] 23:15:59:212 CPU/(21870:21870): Entro: iniciar_servidor_cpu
+[INFO] 23:15:59:212 CPU/(21870:21870):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:15:59:212 CPU/(21870:21870):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:15:59:212 CPU/(21870:21870):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 23:15:59:212 CPU/(21870:21870): Se creo el Hilo: interrupt
+[INFO] 23:15:59:212 CPU/(21870:21870): Entro: esperar_cliente_cpu
+[INFO] 23:15:59:212 CPU/(21870:21870):  Socket server recibido: 4
+[INFO] 23:15:59:212 CPU/(21870:21870):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:15:59:212 CPU/(21870:21871):    --- Entro: escuchaInterrup(...)
+[INFO] 23:15:59:212 CPU/(21870:21871): Entro: iniciar_servidor_interrupt
+[INFO] 23:15:59:212 CPU/(21870:21871): Entro: iniciar_servidor_cpu
+[INFO] 23:15:59:212 CPU/(21870:21871):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:15:59:212 CPU/(21870:21871):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:15:59:212 CPU/(21870:21871):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 23:15:59:212 CPU/(21870:21871): Entro: esperar_cliente_cpu
+[INFO] 23:15:59:212 CPU/(21870:21871):  Socket server recibido: 7
+[INFO] 23:15:59:212 CPU/(21870:21871):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:16:01:035 CPU/(21870:21870):  Termino el BLOQUEO
+[INFO] 23:16:01:035 CPU/(21870:21871):  Termino el BLOQUEO
+[INFO] 23:16:01:035 CPU/(21870:21870):  Se conecto un cliente y se creo el socket_cliente: 5. Puerto tipo:  dispatch
+[INFO] 23:16:01:035 CPU/(21870:21870): INICIO: recibir_operaciones()
+[INFO] 23:16:01:035 CPU/(21870:21871):  Se conecto un cliente y se creo el socket_cliente: 8. Puerto tipo:  interrupt
+[INFO] 23:16:01:035 CPU/(21870:21870): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:16:01:035 CPU/(21870:21871):  ---- Socket kernel interrupt: 8
+[INFO] 23:16:01:035 CPU/(21870:21871):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:16:01:035 CPU/(21870:21871):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:16:12:122 CPU/(21971:21971): 
+###### INICIO DE LOGGER ######
+[INFO] 23:16:12:122 CPU/(21971:21971):    ---Leyo archivo de configuraciones
+[INFO] 23:16:12:122 CPU/(21971:21971):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:16:12:122 CPU/(21971:21971):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:16:12:122 CPU/(21971:21971):  Hicimos handshake_cpu_memoria
+[INFO] 23:16:12:122 CPU/(21971:21971): --- Nro de filas tabla nivel 1: -1
+[INFO] 23:16:12:122 CPU/(21971:21971): --- Tamano de pagina: -1
+[INFO] 23:16:12:122 CPU/(21971:21971): Entro: iniciar_servidor_dispatch
+[INFO] 23:16:12:122 CPU/(21971:21971): Entro: iniciar_servidor_cpu
+[INFO] 23:16:12:122 CPU/(21971:21971):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:16:12:122 CPU/(21971:21971):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:16:12:123 CPU/(21971:21971):  Se creo el socket_servidor:  4, listo para escuchar al cliente
+[INFO] 23:16:12:123 CPU/(21971:21971): Se creo el Hilo: interrupt
+[INFO] 23:16:12:123 CPU/(21971:21971): Entro: esperar_cliente_cpu
+[INFO] 23:16:12:123 CPU/(21971:21971):  Socket server recibido: 4
+[INFO] 23:16:12:123 CPU/(21971:21971):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:16:12:123 CPU/(21971:21972):    --- Entro: escuchaInterrup(...)
+[INFO] 23:16:12:123 CPU/(21971:21972): Entro: iniciar_servidor_interrupt
+[INFO] 23:16:12:123 CPU/(21971:21972): Entro: iniciar_servidor_cpu
+[INFO] 23:16:12:123 CPU/(21971:21972):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:16:12:123 CPU/(21971:21972):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:16:12:123 CPU/(21971:21972):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 23:16:12:123 CPU/(21971:21972): Entro: esperar_cliente_cpu
+[INFO] 23:16:12:123 CPU/(21971:21972):  Socket server recibido: 7
+[INFO] 23:16:12:123 CPU/(21971:21972):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:17:17:618 CPU/(22416:22416): 
+###### INICIO DE LOGGER ######
+[INFO] 23:17:17:618 CPU/(22416:22416):    ---Leyo archivo de configuraciones
+[INFO] 23:17:17:618 CPU/(22416:22416):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:17:17:618 CPU/(22416:22416):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:17:17:618 CPU/(22416:22416):  Hicimos handshake_cpu_memoria
+[INFO] 23:17:17:618 CPU/(22416:22416): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:17:17:618 CPU/(22416:22416): --- Tamano de pagina: 64
+[INFO] 23:17:17:618 CPU/(22416:22416): Entro: iniciar_servidor_dispatch
+[INFO] 23:17:17:618 CPU/(22416:22416): Entro: iniciar_servidor_cpu
+[INFO] 23:17:17:618 CPU/(22416:22416):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:17:17:618 CPU/(22416:22416):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:17:17:618 CPU/(22416:22416):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 23:17:17:618 CPU/(22416:22416): Se creo el Hilo: interrupt
+[INFO] 23:17:17:618 CPU/(22416:22416): Entro: esperar_cliente_cpu
+[INFO] 23:17:17:618 CPU/(22416:22416):  Socket server recibido: 5
+[INFO] 23:17:17:618 CPU/(22416:22416):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:17:17:618 CPU/(22416:22418):    --- Entro: escuchaInterrup(...)
+[INFO] 23:17:17:618 CPU/(22416:22418): Entro: iniciar_servidor_interrupt
+[INFO] 23:17:17:618 CPU/(22416:22418): Entro: iniciar_servidor_cpu
+[INFO] 23:17:17:619 CPU/(22416:22418):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:17:17:619 CPU/(22416:22418):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:17:17:619 CPU/(22416:22418):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 23:17:17:619 CPU/(22416:22418): Entro: esperar_cliente_cpu
+[INFO] 23:17:17:619 CPU/(22416:22418):  Socket server recibido: 8
+[INFO] 23:17:17:619 CPU/(22416:22418):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:17:19:275 CPU/(22416:22416):  Termino el BLOQUEO
+[INFO] 23:17:19:275 CPU/(22416:22416):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 23:17:19:275 CPU/(22416:22416): INICIO: recibir_operaciones()
+[INFO] 23:17:19:275 CPU/(22416:22416): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:17:19:275 CPU/(22416:22418):  Termino el BLOQUEO
+[INFO] 23:17:19:275 CPU/(22416:22418):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 23:17:19:275 CPU/(22416:22418):  ---- Socket kernel interrupt: 9
+[INFO] 23:17:19:275 CPU/(22416:22418):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:17:19:275 CPU/(22416:22418):   --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:17:24:242 CPU/(22416:22418): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[ERROR] 23:17:24:242 CPU/(22416:22416): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:17:24:242 CPU/(22416:22418):      ---- Salio: escuchaInterrup(...)
+[INFO] 23:17:24:242 CPU/(22416:22416): Entro: finalizar_cpu
+[INFO] 23:17:24:242 CPU/(22416:22416): Finalizamos el Hilo interrupt
+[INFO] 23:17:24:243 CPU/(22416:22416): 
+###### FIN LOGGER ######
+[INFO] 23:17:33:843 CPU/(22540:22540): 
+###### INICIO DE LOGGER ######
+[INFO] 23:17:33:843 CPU/(22540:22540):    ---Leyo archivo de configuraciones
+[INFO] 23:17:33:843 CPU/(22540:22540):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:17:33:843 CPU/(22540:22540):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:17:33:843 CPU/(22540:22540):  Hicimos handshake_cpu_memoria
+[INFO] 23:17:33:843 CPU/(22540:22540): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:17:33:843 CPU/(22540:22540): --- Tamano de pagina: 64
+[INFO] 23:17:33:843 CPU/(22540:22540): Entro: iniciar_servidor_dispatch
+[INFO] 23:17:33:843 CPU/(22540:22540): Entro: iniciar_servidor_cpu
+[INFO] 23:17:33:843 CPU/(22540:22540):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:17:33:843 CPU/(22540:22540):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:17:33:843 CPU/(22540:22540):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 23:17:33:843 CPU/(22540:22540): Se creo el Hilo: interrupt
+[INFO] 23:17:33:843 CPU/(22540:22540): Entro: esperar_cliente_cpu
+[INFO] 23:17:33:843 CPU/(22540:22540):  Socket server recibido: 5
+[INFO] 23:17:33:843 CPU/(22540:22540):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:17:33:843 CPU/(22540:22542):    --- Entro: escuchaInterrup(...)
+[INFO] 23:17:33:843 CPU/(22540:22542): Entro: iniciar_servidor_interrupt
+[INFO] 23:17:33:843 CPU/(22540:22542): Entro: iniciar_servidor_cpu
+[INFO] 23:17:33:843 CPU/(22540:22542):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:17:33:843 CPU/(22540:22542):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:17:33:843 CPU/(22540:22542):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 23:17:33:843 CPU/(22540:22542): Entro: esperar_cliente_cpu
+[INFO] 23:17:33:843 CPU/(22540:22542):  Socket server recibido: 8
+[INFO] 23:17:33:843 CPU/(22540:22542):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:17:37:914 CPU/(22540:22540):  Termino el BLOQUEO
+[INFO] 23:17:37:914 CPU/(22540:22540):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 23:17:37:914 CPU/(22540:22540): INICIO: recibir_operaciones()
+[INFO] 23:17:37:914 CPU/(22540:22540): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:17:37:915 CPU/(22540:22542):  Termino el BLOQUEO
+[INFO] 23:17:37:915 CPU/(22540:22542):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 23:17:37:915 CPU/(22540:22542):  ---- Socket kernel interrupt: 9
+[INFO] 23:17:37:915 CPU/(22540:22542):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:17:37:915 CPU/(22540:22542):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:17:45:469 CPU/(22540:22540):  -----------
+[INFO] 23:17:45:469 CPU/(22540:22540):  El kernel envio un PCB:
+[INFO] 23:17:45:470 CPU/(22540:22540): -----PCB ------
+[INFO] 23:17:45:470 CPU/(22540:22540): id: 0
+[INFO] 23:17:45:470 CPU/(22540:22540): estimacion: 10000
+[INFO] 23:17:45:470 CPU/(22540:22540): program counter: 0
+[INFO] 23:17:45:470 CPU/(22540:22540): socket: 9
+[INFO] 23:17:45:470 CPU/(22540:22540): numero de tabla: 0
+[INFO] 23:17:45:470 CPU/(22540:22540): tamanio de consola: 100
+[INFO] 23:17:45:470 CPU/(22540:22540): lista Instrucciones:
+[INFO] 23:17:45:470 CPU/(22540:22540): NO_OP
+[INFO] 23:17:45:470 CPU/(22540:22540): READ 9
+[INFO] 23:17:45:470 CPU/(22540:22540): EXIT
+[INFO] 23:17:45:470 CPU/(22540:22540): --------------
+[INFO] 23:17:45:470 CPU/(22540:22540):   Nro de instrucion: 0
+[INFO] 23:17:45:470 CPU/(22540:22540):   instruccion/codigo op: NO_OP
+[INFO] 23:17:45:470 CPU/(22540:22540):   Entro a fetch_operands
+[INFO] 23:17:45:470 CPU/(22540:22540):   Time: 1000
+[INFO] 23:17:46:470 CPU/(22540:22540):   Nro de instrucion: 1
+[INFO] 23:17:46:470 CPU/(22540:22540):   instruccion/codigo op: READ
+[INFO] 23:17:46:470 CPU/(22540:22540):   Entro a fetch_operands
+[INFO] 23:17:46:470 CPU/(22540:22540):   Nro de instrucion: 2
+[INFO] 23:17:46:470 CPU/(22540:22540):   instruccion/codigo op: EXIT
+[INFO] 23:17:46:470 CPU/(22540:22540):   Entro a fetch_operands
+[INFO] 23:17:46:470 CPU/(22540:22540):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 23:17:46:470 CPU/(22540:22540): -----PCB ------
+[INFO] 23:17:46:470 CPU/(22540:22540): id: 0
+[INFO] 23:17:46:470 CPU/(22540:22540): estimacion: 10000
+[INFO] 23:17:46:470 CPU/(22540:22540): program counter: 2
+[INFO] 23:17:46:470 CPU/(22540:22540): socket: 9
+[INFO] 23:17:46:470 CPU/(22540:22540): numero de tabla: 0
+[INFO] 23:17:46:470 CPU/(22540:22540): tamanio de consola: 100
+[INFO] 23:17:46:470 CPU/(22540:22540): lista Instrucciones:
+[INFO] 23:17:46:470 CPU/(22540:22540): NO_OP
+[INFO] 23:17:46:470 CPU/(22540:22540): READ 9
+[INFO] 23:17:46:471 CPU/(22540:22540): EXIT
+[INFO] 23:17:46:471 CPU/(22540:22540): --------------
+[WARNING] 23:17:46:471 CPU/(22540:22540): Entro por interrupcion al Break
+[INFO] 23:17:46:471 CPU/(22540:22540): --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:18:12:473 CPU/(22540:22542): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[ERROR] 23:18:12:473 CPU/(22540:22540): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:18:12:473 CPU/(22540:22542):      ---- Salio: escuchaInterrup(...)
+[INFO] 23:18:12:473 CPU/(22540:22540): Entro: finalizar_cpu
+[INFO] 23:18:12:473 CPU/(22540:22540): Finalizamos el Hilo interrupt
+[INFO] 23:18:12:474 CPU/(22540:22540): 
+###### FIN LOGGER ######
+[INFO] 23:19:31:666 CPU/(23326:23326): 
+###### INICIO DE LOGGER ######
+[INFO] 23:19:31:666 CPU/(23326:23326):    ---Leyo archivo de configuraciones
+[INFO] 23:19:31:666 CPU/(23326:23326):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:19:31:666 CPU/(23326:23326):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:19:31:666 CPU/(23326:23326):  Hicimos handshake_cpu_memoria
+[INFO] 23:19:31:666 CPU/(23326:23326): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:19:31:666 CPU/(23326:23326): --- Tamano de pagina: 64
+[INFO] 23:19:31:666 CPU/(23326:23326): Entro: iniciar_servidor_dispatch
+[INFO] 23:19:31:666 CPU/(23326:23326): Entro: iniciar_servidor_cpu
+[INFO] 23:19:31:666 CPU/(23326:23326):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:19:31:666 CPU/(23326:23326):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:19:31:666 CPU/(23326:23326):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 23:19:31:666 CPU/(23326:23326): Se creo el Hilo: interrupt
+[INFO] 23:19:31:666 CPU/(23326:23326): Entro: esperar_cliente_cpu
+[INFO] 23:19:31:666 CPU/(23326:23326):  Socket server recibido: 5
+[INFO] 23:19:31:666 CPU/(23326:23326):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:19:31:666 CPU/(23326:23328):    --- Entro: escuchaInterrup(...)
+[INFO] 23:19:31:667 CPU/(23326:23328): Entro: iniciar_servidor_interrupt
+[INFO] 23:19:31:667 CPU/(23326:23328): Entro: iniciar_servidor_cpu
+[INFO] 23:19:31:667 CPU/(23326:23328):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:19:31:667 CPU/(23326:23328):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:19:31:667 CPU/(23326:23328):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 23:19:31:667 CPU/(23326:23328): Entro: esperar_cliente_cpu
+[INFO] 23:19:31:667 CPU/(23326:23328):  Socket server recibido: 8
+[INFO] 23:19:31:667 CPU/(23326:23328):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:19:33:674 CPU/(23326:23326):  Termino el BLOQUEO
+[INFO] 23:19:33:674 CPU/(23326:23326):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 23:19:33:674 CPU/(23326:23326): INICIO: recibir_operaciones()
+[INFO] 23:19:33:674 CPU/(23326:23328):  Termino el BLOQUEO
+[INFO] 23:19:33:674 CPU/(23326:23326): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:19:33:674 CPU/(23326:23328):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 23:19:33:674 CPU/(23326:23328):  ---- Socket kernel interrupt: 9
+[INFO] 23:19:33:674 CPU/(23326:23328):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:19:33:674 CPU/(23326:23328):   --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:19:40:969 CPU/(23326:23328): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[ERROR] 23:19:40:969 CPU/(23326:23326): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:19:40:969 CPU/(23326:23328):      ---- Salio: escuchaInterrup(...)
+[INFO] 23:19:40:969 CPU/(23326:23326): Entro: finalizar_cpu
+[INFO] 23:19:40:969 CPU/(23326:23326): Finalizamos el Hilo interrupt
+[INFO] 23:19:40:969 CPU/(23326:23326): 
+###### FIN LOGGER ######
+[INFO] 23:20:01:602 CPU/(23570:23570): 
+###### INICIO DE LOGGER ######
+[INFO] 23:20:01:602 CPU/(23570:23570):    ---Leyo archivo de configuraciones
+[INFO] 23:20:01:602 CPU/(23570:23570):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:20:01:602 CPU/(23570:23570):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:20:01:602 CPU/(23570:23570):  Hicimos handshake_cpu_memoria
+[INFO] 23:20:03:940 CPU/(23570:23570): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:20:03:940 CPU/(23570:23570): --- Tamano de pagina: 64
+[INFO] 23:20:03:940 CPU/(23570:23570): Entro: iniciar_servidor_dispatch
+[INFO] 23:20:03:940 CPU/(23570:23570): Entro: iniciar_servidor_cpu
+[INFO] 23:20:03:940 CPU/(23570:23570):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:20:03:940 CPU/(23570:23570):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:20:03:940 CPU/(23570:23570):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 23:20:03:940 CPU/(23570:23570): Se creo el Hilo: interrupt
+[INFO] 23:20:03:940 CPU/(23570:23570): Entro: esperar_cliente_cpu
+[INFO] 23:20:03:940 CPU/(23570:23570):  Socket server recibido: 5
+[INFO] 23:20:03:940 CPU/(23570:23570):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:20:03:940 CPU/(23570:23594):    --- Entro: escuchaInterrup(...)
+[INFO] 23:20:03:940 CPU/(23570:23594): Entro: iniciar_servidor_interrupt
+[INFO] 23:20:03:940 CPU/(23570:23594): Entro: iniciar_servidor_cpu
+[INFO] 23:20:03:940 CPU/(23570:23594):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:20:03:940 CPU/(23570:23594):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:20:03:940 CPU/(23570:23594):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 23:20:03:940 CPU/(23570:23594): Entro: esperar_cliente_cpu
+[INFO] 23:20:03:940 CPU/(23570:23594):  Socket server recibido: 8
+[INFO] 23:20:03:940 CPU/(23570:23594):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:20:08:345 CPU/(23570:23570):  Termino el BLOQUEO
+[INFO] 23:20:08:345 CPU/(23570:23570):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 23:20:08:345 CPU/(23570:23570): INICIO: recibir_operaciones()
+[INFO] 23:20:08:345 CPU/(23570:23570): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:20:08:345 CPU/(23570:23594):  Termino el BLOQUEO
+[INFO] 23:20:08:345 CPU/(23570:23594):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 23:20:08:345 CPU/(23570:23594):  ---- Socket kernel interrupt: 9
+[INFO] 23:20:08:345 CPU/(23570:23594):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:20:08:345 CPU/(23570:23594):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:20:30:770 CPU/(23570:23570):  -----------
+[INFO] 23:20:30:770 CPU/(23570:23570):  El kernel envio un PCB:
+[INFO] 23:20:30:770 CPU/(23570:23570): -----PCB ------
+[INFO] 23:20:30:770 CPU/(23570:23570): id: 0
+[INFO] 23:20:30:770 CPU/(23570:23570): estimacion: 10000
+[INFO] 23:20:30:770 CPU/(23570:23570): program counter: 0
+[INFO] 23:20:30:770 CPU/(23570:23570): socket: 9
+[INFO] 23:20:30:770 CPU/(23570:23570): numero de tabla: 0
+[INFO] 23:20:30:770 CPU/(23570:23570): tamanio de consola: 100
+[INFO] 23:20:30:770 CPU/(23570:23570): lista Instrucciones:
+[INFO] 23:20:30:770 CPU/(23570:23570): NO_OP
+[INFO] 23:20:30:770 CPU/(23570:23570): READ 9
+[INFO] 23:20:30:770 CPU/(23570:23570): EXIT
+[INFO] 23:20:30:770 CPU/(23570:23570): --------------
+[INFO] 23:20:30:770 CPU/(23570:23570):   Nro de instrucion: 0
+[INFO] 23:20:30:770 CPU/(23570:23570):   instruccion/codigo op: NO_OP
+[INFO] 23:20:30:770 CPU/(23570:23570):   Entro a fetch_operands
+[INFO] 23:20:30:770 CPU/(23570:23570):   Time: 1000
+[INFO] 23:20:31:771 CPU/(23570:23570):   Nro de instrucion: 1
+[INFO] 23:20:31:771 CPU/(23570:23570):   instruccion/codigo op: READ
+[INFO] 23:20:31:771 CPU/(23570:23570):   Entro a fetch_operands
+[INFO] 23:20:31:771 CPU/(23570:23570):   Nro de instrucion: 2
+[INFO] 23:20:31:771 CPU/(23570:23570):   instruccion/codigo op: EXIT
+[INFO] 23:20:31:771 CPU/(23570:23570):   Entro a fetch_operands
+[INFO] 23:20:31:771 CPU/(23570:23570):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 23:20:31:771 CPU/(23570:23570): -----PCB ------
+[INFO] 23:20:31:771 CPU/(23570:23570): id: 0
+[INFO] 23:20:31:771 CPU/(23570:23570): estimacion: 10000
+[INFO] 23:20:31:772 CPU/(23570:23570): program counter: 2
+[INFO] 23:20:31:772 CPU/(23570:23570): socket: 9
+[INFO] 23:20:31:772 CPU/(23570:23570): numero de tabla: 0
+[INFO] 23:20:31:772 CPU/(23570:23570): tamanio de consola: 100
+[INFO] 23:20:31:772 CPU/(23570:23570): lista Instrucciones:
+[INFO] 23:20:31:772 CPU/(23570:23570): NO_OP
+[INFO] 23:20:31:772 CPU/(23570:23570): READ 9
+[INFO] 23:20:31:772 CPU/(23570:23570): EXIT
+[INFO] 23:20:31:772 CPU/(23570:23570): --------------
+[WARNING] 23:20:31:772 CPU/(23570:23570): Entro por interrupcion al Break
+[INFO] 23:20:31:772 CPU/(23570:23570): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:21:00:158 CPU/(23570:23570):  -----------
+[INFO] 23:21:00:158 CPU/(23570:23570):  El kernel envio un PCB:
+[INFO] 23:21:00:158 CPU/(23570:23570): -----PCB ------
+[INFO] 23:21:00:158 CPU/(23570:23570): id: 1
+[INFO] 23:21:00:158 CPU/(23570:23570): estimacion: 10000
+[INFO] 23:21:00:158 CPU/(23570:23570): program counter: 0
+[INFO] 23:21:00:158 CPU/(23570:23570): socket: 10
+[INFO] 23:21:00:158 CPU/(23570:23570): numero de tabla: 1
+[INFO] 23:21:00:158 CPU/(23570:23570): tamanio de consola: 100
+[INFO] 23:21:00:158 CPU/(23570:23570): lista Instrucciones:
+[INFO] 23:21:00:158 CPU/(23570:23570): NO_OP
+[INFO] 23:21:00:158 CPU/(23570:23570): READ 9
+[INFO] 23:21:00:158 CPU/(23570:23570): EXIT
+[INFO] 23:21:00:158 CPU/(23570:23570): --------------
+[INFO] 23:21:00:158 CPU/(23570:23570):   Nro de instrucion: 0
+[INFO] 23:21:00:158 CPU/(23570:23570):   instruccion/codigo op: NO_OP
+[INFO] 23:21:00:158 CPU/(23570:23570):   Entro a fetch_operands
+[INFO] 23:21:00:158 CPU/(23570:23570):   Time: 1000
+[INFO] 23:21:01:158 CPU/(23570:23570):   Nro de instrucion: 1
+[INFO] 23:21:01:158 CPU/(23570:23570):   instruccion/codigo op: READ
+[INFO] 23:21:01:158 CPU/(23570:23570):   Entro a fetch_operands
+[INFO] 23:21:01:158 CPU/(23570:23570):   Nro de instrucion: 2
+[INFO] 23:21:01:158 CPU/(23570:23570):   instruccion/codigo op: EXIT
+[INFO] 23:21:01:158 CPU/(23570:23570):   Entro a fetch_operands
+[INFO] 23:21:01:158 CPU/(23570:23570):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 23:21:01:158 CPU/(23570:23570): -----PCB ------
+[INFO] 23:21:01:158 CPU/(23570:23570): id: 1
+[INFO] 23:21:01:158 CPU/(23570:23570): estimacion: 10000
+[INFO] 23:21:01:158 CPU/(23570:23570): program counter: 2
+[INFO] 23:21:01:158 CPU/(23570:23570): socket: 10
+[INFO] 23:21:01:159 CPU/(23570:23570): numero de tabla: 1
+[INFO] 23:21:01:159 CPU/(23570:23570): tamanio de consola: 100
+[INFO] 23:21:01:159 CPU/(23570:23570): lista Instrucciones:
+[INFO] 23:21:01:159 CPU/(23570:23570): NO_OP
+[INFO] 23:21:01:159 CPU/(23570:23570): READ 9
+[INFO] 23:21:01:159 CPU/(23570:23570): EXIT
+[INFO] 23:21:01:159 CPU/(23570:23570): --------------
+[WARNING] 23:21:01:159 CPU/(23570:23570): Entro por interrupcion al Break
+[INFO] 23:21:01:159 CPU/(23570:23570): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:22:37:924 CPU/(23570:23570):  -----------
+[INFO] 23:22:37:924 CPU/(23570:23570):  El kernel envio un PCB:
+[INFO] 23:22:37:924 CPU/(23570:23570): -----PCB ------
+[INFO] 23:22:37:924 CPU/(23570:23570): id: 2
+[INFO] 23:22:37:924 CPU/(23570:23570): estimacion: 10000
+[INFO] 23:22:37:924 CPU/(23570:23570): program counter: 0
+[INFO] 23:22:37:924 CPU/(23570:23570): socket: 11
+[INFO] 23:22:37:924 CPU/(23570:23570): numero de tabla: 2
+[INFO] 23:22:37:924 CPU/(23570:23570): tamanio de consola: 100
+[INFO] 23:22:37:924 CPU/(23570:23570): lista Instrucciones:
+[INFO] 23:22:37:924 CPU/(23570:23570): EXIT
+[INFO] 23:22:37:924 CPU/(23570:23570): --------------
+[INFO] 23:22:37:924 CPU/(23570:23570):   Nro de instrucion: 0
+[INFO] 23:22:37:924 CPU/(23570:23570):   instruccion/codigo op: EXIT
+[INFO] 23:22:37:924 CPU/(23570:23570):   Entro a fetch_operands
+[INFO] 23:22:37:924 CPU/(23570:23570):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 23:22:37:924 CPU/(23570:23570): -----PCB ------
+[INFO] 23:22:37:924 CPU/(23570:23570): id: 2
+[INFO] 23:22:37:924 CPU/(23570:23570): estimacion: 10000
+[INFO] 23:22:37:924 CPU/(23570:23570): program counter: 1
+[INFO] 23:22:37:924 CPU/(23570:23570): socket: 11
+[INFO] 23:22:37:924 CPU/(23570:23570): numero de tabla: 2
+[INFO] 23:22:37:924 CPU/(23570:23570): tamanio de consola: 100
+[INFO] 23:22:37:924 CPU/(23570:23570): lista Instrucciones:
+[INFO] 23:22:37:924 CPU/(23570:23570): EXIT
+[INFO] 23:22:37:924 CPU/(23570:23570): --------------
+[WARNING] 23:22:37:924 CPU/(23570:23570): Entro por interrupcion al Break
+[INFO] 23:22:37:924 CPU/(23570:23570): --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:22:44:727 CPU/(23570:23594): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[ERROR] 23:22:44:727 CPU/(23570:23570): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:22:44:727 CPU/(23570:23594):      ---- Salio: escuchaInterrup(...)
+[INFO] 23:22:44:727 CPU/(23570:23570): Entro: finalizar_cpu
+[INFO] 23:22:44:727 CPU/(23570:23570): Finalizamos el Hilo interrupt
+[INFO] 23:22:44:727 CPU/(23570:23570): 
+###### FIN LOGGER ######
+[INFO] 23:22:56:216 CPU/(24801:24801): 
+###### INICIO DE LOGGER ######
+[INFO] 23:22:56:216 CPU/(24801:24801):    ---Leyo archivo de configuraciones
+[INFO] 23:22:56:216 CPU/(24801:24801):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:22:56:216 CPU/(24801:24801):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:22:56:216 CPU/(24801:24801):  Hicimos handshake_cpu_memoria
+[INFO] 23:22:56:216 CPU/(24801:24801): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:22:56:216 CPU/(24801:24801): --- Tamano de pagina: 64
+[INFO] 23:22:56:216 CPU/(24801:24801): Entro: iniciar_servidor_dispatch
+[INFO] 23:22:56:216 CPU/(24801:24801): Entro: iniciar_servidor_cpu
+[INFO] 23:22:56:216 CPU/(24801:24801):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:22:56:216 CPU/(24801:24801):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:22:56:216 CPU/(24801:24801):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 23:22:56:216 CPU/(24801:24801): Se creo el Hilo: interrupt
+[INFO] 23:22:56:217 CPU/(24801:24801): Entro: esperar_cliente_cpu
+[INFO] 23:22:56:217 CPU/(24801:24801):  Socket server recibido: 5
+[INFO] 23:22:56:217 CPU/(24801:24801):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:22:56:217 CPU/(24801:24803):    --- Entro: escuchaInterrup(...)
+[INFO] 23:22:56:217 CPU/(24801:24803): Entro: iniciar_servidor_interrupt
+[INFO] 23:22:56:217 CPU/(24801:24803): Entro: iniciar_servidor_cpu
+[INFO] 23:22:56:217 CPU/(24801:24803):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:22:56:217 CPU/(24801:24803):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:22:56:217 CPU/(24801:24803):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 23:22:56:217 CPU/(24801:24803): Entro: esperar_cliente_cpu
+[INFO] 23:22:56:217 CPU/(24801:24803):  Socket server recibido: 8
+[INFO] 23:22:56:217 CPU/(24801:24803):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:22:57:833 CPU/(24801:24801):  Termino el BLOQUEO
+[INFO] 23:22:57:833 CPU/(24801:24801):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 23:22:57:833 CPU/(24801:24801): INICIO: recibir_operaciones()
+[INFO] 23:22:57:833 CPU/(24801:24801): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:22:57:833 CPU/(24801:24803):  Termino el BLOQUEO
+[INFO] 23:22:57:833 CPU/(24801:24803):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 23:22:57:834 CPU/(24801:24803):  ---- Socket kernel interrupt: 9
+[INFO] 23:22:57:834 CPU/(24801:24803):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:22:57:834 CPU/(24801:24803):   --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:23:22:032 CPU/(24801:24803): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[ERROR] 23:23:22:032 CPU/(24801:24801): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:23:22:032 CPU/(24801:24803):      ---- Salio: escuchaInterrup(...)
+[INFO] 23:23:22:032 CPU/(24801:24801): Entro: finalizar_cpu
+[INFO] 23:23:22:032 CPU/(24801:24801): Finalizamos el Hilo interrupt
+[INFO] 23:23:22:032 CPU/(24801:24801): 
+###### FIN LOGGER ######
+[INFO] 23:23:25:248 CPU/(25000:25000): 
+###### INICIO DE LOGGER ######
+[INFO] 23:23:25:248 CPU/(25000:25000):    ---Leyo archivo de configuraciones
+[INFO] 23:23:25:248 CPU/(25000:25000):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:23:25:248 CPU/(25000:25000):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:23:25:248 CPU/(25000:25000):  Hicimos handshake_cpu_memoria
+[INFO] 23:23:25:248 CPU/(25000:25000): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:23:25:248 CPU/(25000:25000): --- Tamano de pagina: 64
+[INFO] 23:23:25:248 CPU/(25000:25000): Entro: iniciar_servidor_dispatch
+[INFO] 23:23:25:248 CPU/(25000:25000): Entro: iniciar_servidor_cpu
+[INFO] 23:23:25:248 CPU/(25000:25000):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:23:25:248 CPU/(25000:25000):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:23:25:248 CPU/(25000:25000):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 23:23:25:248 CPU/(25000:25000): Se creo el Hilo: interrupt
+[INFO] 23:23:25:248 CPU/(25000:25000): Entro: esperar_cliente_cpu
+[INFO] 23:23:25:248 CPU/(25000:25000):  Socket server recibido: 5
+[INFO] 23:23:25:248 CPU/(25000:25000):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:23:25:248 CPU/(25000:25002):    --- Entro: escuchaInterrup(...)
+[INFO] 23:23:25:248 CPU/(25000:25002): Entro: iniciar_servidor_interrupt
+[INFO] 23:23:25:248 CPU/(25000:25002): Entro: iniciar_servidor_cpu
+[INFO] 23:23:25:248 CPU/(25000:25002):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:23:25:248 CPU/(25000:25002):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:23:25:248 CPU/(25000:25002):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 23:23:25:248 CPU/(25000:25002): Entro: esperar_cliente_cpu
+[INFO] 23:23:25:248 CPU/(25000:25002):  Socket server recibido: 8
+[INFO] 23:23:25:248 CPU/(25000:25002):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:23:26:472 CPU/(25000:25000):  Termino el BLOQUEO
+[INFO] 23:23:26:472 CPU/(25000:25000):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 23:23:26:472 CPU/(25000:25000): INICIO: recibir_operaciones()
+[INFO] 23:23:26:472 CPU/(25000:25000): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:23:26:472 CPU/(25000:25002):  Termino el BLOQUEO
+[INFO] 23:23:26:472 CPU/(25000:25002):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 23:23:26:472 CPU/(25000:25002):  ---- Socket kernel interrupt: 9
+[INFO] 23:23:26:472 CPU/(25000:25002):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:23:26:472 CPU/(25000:25002):   --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:23:34:455 CPU/(25000:25002): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[ERROR] 23:23:34:455 CPU/(25000:25000): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:23:34:455 CPU/(25000:25002):      ---- Salio: escuchaInterrup(...)
+[INFO] 23:23:34:455 CPU/(25000:25000): Entro: finalizar_cpu
+[INFO] 23:23:34:455 CPU/(25000:25000): Finalizamos el Hilo interrupt
+[INFO] 23:23:34:455 CPU/(25000:25000): 
+###### FIN LOGGER ######
+[INFO] 23:23:38:033 CPU/(25092:25092): 
+###### INICIO DE LOGGER ######
+[INFO] 23:23:38:033 CPU/(25092:25092):    ---Leyo archivo de configuraciones
+[INFO] 23:23:38:033 CPU/(25092:25092):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:23:38:033 CPU/(25092:25092):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:23:38:033 CPU/(25092:25092):  Hicimos handshake_cpu_memoria
+[INFO] 23:23:38:033 CPU/(25092:25092): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:23:38:033 CPU/(25092:25092): --- Tamano de pagina: 64
+[INFO] 23:23:38:033 CPU/(25092:25092): Entro: iniciar_servidor_dispatch
+[INFO] 23:23:38:033 CPU/(25092:25092): Entro: iniciar_servidor_cpu
+[INFO] 23:23:38:033 CPU/(25092:25092):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:23:38:033 CPU/(25092:25092):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:23:38:033 CPU/(25092:25092):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 23:23:38:033 CPU/(25092:25092): Se creo el Hilo: interrupt
+[INFO] 23:23:38:033 CPU/(25092:25092): Entro: esperar_cliente_cpu
+[INFO] 23:23:38:033 CPU/(25092:25092):  Socket server recibido: 5
+[INFO] 23:23:38:033 CPU/(25092:25092):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:23:38:033 CPU/(25092:25094):    --- Entro: escuchaInterrup(...)
+[INFO] 23:23:38:033 CPU/(25092:25094): Entro: iniciar_servidor_interrupt
+[INFO] 23:23:38:033 CPU/(25092:25094): Entro: iniciar_servidor_cpu
+[INFO] 23:23:38:033 CPU/(25092:25094):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:23:38:033 CPU/(25092:25094):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:23:38:033 CPU/(25092:25094):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 23:23:38:033 CPU/(25092:25094): Entro: esperar_cliente_cpu
+[INFO] 23:23:38:033 CPU/(25092:25094):  Socket server recibido: 8
+[INFO] 23:23:38:033 CPU/(25092:25094):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:23:40:435 CPU/(25092:25092):  Termino el BLOQUEO
+[INFO] 23:23:40:435 CPU/(25092:25092):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 23:23:40:435 CPU/(25092:25092): INICIO: recibir_operaciones()
+[INFO] 23:23:40:435 CPU/(25092:25094):  Termino el BLOQUEO
+[INFO] 23:23:40:435 CPU/(25092:25092): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:23:40:435 CPU/(25092:25094):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 23:23:40:435 CPU/(25092:25094):  ---- Socket kernel interrupt: 9
+[INFO] 23:23:40:435 CPU/(25092:25094):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:23:40:435 CPU/(25092:25094):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:23:46:688 CPU/(25092:25092):  -----------
+[INFO] 23:23:46:688 CPU/(25092:25092):  El kernel envio un PCB:
+[INFO] 23:23:46:688 CPU/(25092:25092): -----PCB ------
+[INFO] 23:23:46:688 CPU/(25092:25092): id: 0
+[INFO] 23:23:46:688 CPU/(25092:25092): estimacion: 10000
+[INFO] 23:23:46:688 CPU/(25092:25092): program counter: 0
+[INFO] 23:23:46:688 CPU/(25092:25092): socket: 9
+[INFO] 23:23:46:688 CPU/(25092:25092): numero de tabla: 0
+[INFO] 23:23:46:688 CPU/(25092:25092): tamanio de consola: 100
+[INFO] 23:23:46:688 CPU/(25092:25092): lista Instrucciones:
+[INFO] 23:23:46:688 CPU/(25092:25092): EXIT
+[INFO] 23:23:46:688 CPU/(25092:25092): --------------
+[INFO] 23:23:46:688 CPU/(25092:25092):   Nro de instrucion: 0
+[INFO] 23:23:46:688 CPU/(25092:25092):   instruccion/codigo op: EXIT
+[INFO] 23:23:46:688 CPU/(25092:25092):   Entro a fetch_operands
+[INFO] 23:23:46:688 CPU/(25092:25092):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 23:23:46:688 CPU/(25092:25092): -----PCB ------
+[INFO] 23:23:46:688 CPU/(25092:25092): id: 0
+[INFO] 23:23:46:688 CPU/(25092:25092): estimacion: 10000
+[INFO] 23:23:46:688 CPU/(25092:25092): program counter: 1
+[INFO] 23:23:46:688 CPU/(25092:25092): socket: 9
+[INFO] 23:23:46:688 CPU/(25092:25092): numero de tabla: 0
+[INFO] 23:23:46:688 CPU/(25092:25092): tamanio de consola: 100
+[INFO] 23:23:46:688 CPU/(25092:25092): lista Instrucciones:
+[INFO] 23:23:46:688 CPU/(25092:25092): EXIT
+[INFO] 23:23:46:688 CPU/(25092:25092): --------------
+[WARNING] 23:23:46:688 CPU/(25092:25092): Entro por interrupcion al Break
+[INFO] 23:23:46:688 CPU/(25092:25092): --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:23:52:728 CPU/(25092:25094): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[ERROR] 23:23:52:728 CPU/(25092:25092): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:23:52:728 CPU/(25092:25094):      ---- Salio: escuchaInterrup(...)
+[INFO] 23:23:52:728 CPU/(25092:25092): Entro: finalizar_cpu
+[INFO] 23:23:52:728 CPU/(25092:25092): Finalizamos el Hilo interrupt
+[INFO] 23:23:52:728 CPU/(25092:25092): 
+###### FIN LOGGER ######
+[INFO] 23:24:00:831 CPU/(25289:25289): 
+###### INICIO DE LOGGER ######
+[INFO] 23:24:00:831 CPU/(25289:25289):    ---Leyo archivo de configuraciones
+[INFO] 23:24:00:831 CPU/(25289:25289):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:24:00:832 CPU/(25289:25289):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:24:00:832 CPU/(25289:25289):  Hicimos handshake_cpu_memoria
+[INFO] 23:24:00:832 CPU/(25289:25289): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:24:00:832 CPU/(25289:25289): --- Tamano de pagina: 64
+[INFO] 23:24:00:832 CPU/(25289:25289): Entro: iniciar_servidor_dispatch
+[INFO] 23:24:00:832 CPU/(25289:25289): Entro: iniciar_servidor_cpu
+[INFO] 23:24:00:832 CPU/(25289:25289):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:24:00:832 CPU/(25289:25289):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:24:00:832 CPU/(25289:25289):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 23:24:00:832 CPU/(25289:25289): Se creo el Hilo: interrupt
+[INFO] 23:24:00:832 CPU/(25289:25289): Entro: esperar_cliente_cpu
+[INFO] 23:24:00:832 CPU/(25289:25289):  Socket server recibido: 5
+[INFO] 23:24:00:832 CPU/(25289:25289):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:24:00:832 CPU/(25289:25291):    --- Entro: escuchaInterrup(...)
+[INFO] 23:24:00:832 CPU/(25289:25291): Entro: iniciar_servidor_interrupt
+[INFO] 23:24:00:832 CPU/(25289:25291): Entro: iniciar_servidor_cpu
+[INFO] 23:24:00:832 CPU/(25289:25291):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:24:00:832 CPU/(25289:25291):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:24:00:832 CPU/(25289:25291):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 23:24:00:832 CPU/(25289:25291): Entro: esperar_cliente_cpu
+[INFO] 23:24:00:832 CPU/(25289:25291):  Socket server recibido: 8
+[INFO] 23:24:00:832 CPU/(25289:25291):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:24:02:232 CPU/(25289:25289):  Termino el BLOQUEO
+[INFO] 23:24:02:232 CPU/(25289:25289):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 23:24:02:232 CPU/(25289:25289): INICIO: recibir_operaciones()
+[INFO] 23:24:02:232 CPU/(25289:25289): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:24:02:232 CPU/(25289:25291):  Termino el BLOQUEO
+[INFO] 23:24:02:232 CPU/(25289:25291):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 23:24:02:232 CPU/(25289:25291):  ---- Socket kernel interrupt: 9
+[INFO] 23:24:02:232 CPU/(25289:25291):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:24:02:232 CPU/(25289:25291):   --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:25:57:454 CPU/(25289:25289): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:25:57:454 CPU/(25289:25289): Entro: finalizar_cpu
+[ERROR] 23:25:57:454 CPU/(25289:25291): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[INFO] 23:25:57:454 CPU/(25289:25291):      ---- Salio: escuchaInterrup(...)
+[INFO] 23:25:57:455 CPU/(25289:25289): Finalizamos el Hilo interrupt
+[INFO] 23:25:57:455 CPU/(25289:25289): 
+###### FIN LOGGER ######
+[INFO] 23:25:59:559 CPU/(26125:26125): 
+###### INICIO DE LOGGER ######
+[INFO] 23:25:59:559 CPU/(26125:26125):    ---Leyo archivo de configuraciones
+[INFO] 23:25:59:559 CPU/(26125:26125):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:25:59:559 CPU/(26125:26125):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:25:59:559 CPU/(26125:26125):  Hicimos handshake_cpu_memoria
+[INFO] 23:25:59:559 CPU/(26125:26125): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:25:59:559 CPU/(26125:26125): --- Tamano de pagina: 64
+[INFO] 23:25:59:559 CPU/(26125:26125): Entro: iniciar_servidor_dispatch
+[INFO] 23:25:59:559 CPU/(26125:26125): Entro: iniciar_servidor_cpu
+[INFO] 23:25:59:559 CPU/(26125:26125):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:25:59:559 CPU/(26125:26125):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:25:59:559 CPU/(26125:26125):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 23:25:59:559 CPU/(26125:26125): Se creo el Hilo: interrupt
+[INFO] 23:25:59:559 CPU/(26125:26125): Entro: esperar_cliente_cpu
+[INFO] 23:25:59:559 CPU/(26125:26125):  Socket server recibido: 5
+[INFO] 23:25:59:559 CPU/(26125:26125):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:25:59:559 CPU/(26125:26127):    --- Entro: escuchaInterrup(...)
+[INFO] 23:25:59:559 CPU/(26125:26127): Entro: iniciar_servidor_interrupt
+[INFO] 23:25:59:559 CPU/(26125:26127): Entro: iniciar_servidor_cpu
+[INFO] 23:25:59:560 CPU/(26125:26127):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:25:59:560 CPU/(26125:26127):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:25:59:560 CPU/(26125:26127):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 23:25:59:560 CPU/(26125:26127): Entro: esperar_cliente_cpu
+[INFO] 23:25:59:560 CPU/(26125:26127):  Socket server recibido: 8
+[INFO] 23:25:59:560 CPU/(26125:26127):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:26:01:199 CPU/(26125:26125):  Termino el BLOQUEO
+[INFO] 23:26:01:199 CPU/(26125:26125):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 23:26:01:199 CPU/(26125:26125): INICIO: recibir_operaciones()
+[INFO] 23:26:01:199 CPU/(26125:26125): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:26:01:199 CPU/(26125:26127):  Termino el BLOQUEO
+[INFO] 23:26:01:199 CPU/(26125:26127):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 23:26:01:199 CPU/(26125:26127):  ---- Socket kernel interrupt: 9
+[INFO] 23:26:01:199 CPU/(26125:26127):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:26:01:199 CPU/(26125:26127):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:26:08:336 CPU/(26125:26125):  -----------
+[INFO] 23:26:08:336 CPU/(26125:26125):  El kernel envio un PCB:
+[INFO] 23:26:08:336 CPU/(26125:26125): -----PCB ------
+[INFO] 23:26:08:336 CPU/(26125:26125): id: 0
+[INFO] 23:26:08:336 CPU/(26125:26125): estimacion: 10000
+[INFO] 23:26:08:337 CPU/(26125:26125): program counter: 0
+[INFO] 23:26:08:337 CPU/(26125:26125): socket: 9
+[INFO] 23:26:08:337 CPU/(26125:26125): numero de tabla: 0
+[INFO] 23:26:08:337 CPU/(26125:26125): tamanio de consola: 100
+[INFO] 23:26:08:337 CPU/(26125:26125): lista Instrucciones:
+[INFO] 23:26:08:337 CPU/(26125:26125): EXIT
+[INFO] 23:26:08:337 CPU/(26125:26125): --------------
+[INFO] 23:26:08:337 CPU/(26125:26125):   Nro de instrucion: 0
+[INFO] 23:26:08:337 CPU/(26125:26125):   instruccion/codigo op: EXIT
+[INFO] 23:26:08:337 CPU/(26125:26125):   Entro a fetch_operands
+[INFO] 23:26:08:337 CPU/(26125:26125):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 23:26:08:337 CPU/(26125:26125): -----PCB ------
+[INFO] 23:26:08:337 CPU/(26125:26125): id: 0
+[INFO] 23:26:08:337 CPU/(26125:26125): estimacion: 10000
+[INFO] 23:26:08:337 CPU/(26125:26125): program counter: 1
+[INFO] 23:26:08:337 CPU/(26125:26125): socket: 9
+[INFO] 23:26:08:337 CPU/(26125:26125): numero de tabla: 0
+[INFO] 23:26:08:337 CPU/(26125:26125): tamanio de consola: 100
+[INFO] 23:26:08:337 CPU/(26125:26125): lista Instrucciones:
+[INFO] 23:26:08:337 CPU/(26125:26125): EXIT
+[INFO] 23:26:08:337 CPU/(26125:26125): --------------
+[WARNING] 23:26:08:337 CPU/(26125:26125): Entro por interrupcion al Break
+[INFO] 23:26:08:337 CPU/(26125:26125): --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:26:59:311 CPU/(26125:26127): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[ERROR] 23:26:59:311 CPU/(26125:26125): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:26:59:311 CPU/(26125:26125): Entro: finalizar_cpu
+[INFO] 23:26:59:311 CPU/(26125:26127):      ---- Salio: escuchaInterrup(...)
+[INFO] 23:26:59:313 CPU/(26125:26125): Finalizamos el Hilo interrupt
+[INFO] 23:26:59:313 CPU/(26125:26125): 
+###### FIN LOGGER ######
+[INFO] 23:40:47:917 CPU/(32157:32157): 
+###### INICIO DE LOGGER ######
+[INFO] 23:40:47:918 CPU/(32157:32157):    ---Leyo archivo de configuraciones
+[INFO] 23:40:47:918 CPU/(32157:32157):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:40:47:918 CPU/(32157:32157):  Conectado con Memoria, Socket cliente Memoria: 4
+[INFO] 23:40:47:918 CPU/(32157:32157):  Hicimos handshake_cpu_memoria
+[INFO] 23:40:47:918 CPU/(32157:32157): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:40:47:918 CPU/(32157:32157): --- Tamano de pagina: 64
+[INFO] 23:40:47:918 CPU/(32157:32157): Entro: iniciar_servidor_dispatch
+[INFO] 23:40:47:918 CPU/(32157:32157): Entro: iniciar_servidor_cpu
+[INFO] 23:40:47:918 CPU/(32157:32157):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:40:47:918 CPU/(32157:32157):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:40:47:918 CPU/(32157:32157):  Se creo el socket_servidor:  5, listo para escuchar al cliente
+[INFO] 23:40:47:918 CPU/(32157:32157): Se creo el Hilo: interrupt
+[INFO] 23:40:47:918 CPU/(32157:32157): Entro: esperar_cliente_cpu
+[INFO] 23:40:47:918 CPU/(32157:32157):  Socket server recibido: 5
+[INFO] 23:40:47:918 CPU/(32157:32157):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:40:47:918 CPU/(32157:32159):    --- Entro: escuchaInterrup(...)
+[INFO] 23:40:47:918 CPU/(32157:32159): Entro: iniciar_servidor_interrupt
+[INFO] 23:40:47:918 CPU/(32157:32159): Entro: iniciar_servidor_cpu
+[INFO] 23:40:47:918 CPU/(32157:32159):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:40:47:918 CPU/(32157:32159):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:40:47:918 CPU/(32157:32159):  Se creo el socket_servidor:  8, listo para escuchar al cliente
+[INFO] 23:40:47:918 CPU/(32157:32159): Entro: esperar_cliente_cpu
+[INFO] 23:40:47:918 CPU/(32157:32159):  Socket server recibido: 8
+[INFO] 23:40:47:918 CPU/(32157:32159):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:40:53:278 CPU/(32157:32157):  Termino el BLOQUEO
+[INFO] 23:40:53:278 CPU/(32157:32157):  Se conecto un cliente y se creo el socket_cliente: 7. Puerto tipo:  dispatch
+[INFO] 23:40:53:278 CPU/(32157:32157): INICIO: recibir_operaciones()
+[INFO] 23:40:53:278 CPU/(32157:32157): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:40:53:278 CPU/(32157:32159):  Termino el BLOQUEO
+[INFO] 23:40:53:278 CPU/(32157:32159):  Se conecto un cliente y se creo el socket_cliente: 9. Puerto tipo:  interrupt
+[INFO] 23:40:53:278 CPU/(32157:32159):  ---- Socket kernel interrupt: 9
+[INFO] 23:40:53:278 CPU/(32157:32159):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:40:53:279 CPU/(32157:32159):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:41:07:611 CPU/(32157:32157):  -----------
+[INFO] 23:41:07:611 CPU/(32157:32157):  El kernel envio un PCB:
+[INFO] 23:41:07:611 CPU/(32157:32157): -----PCB ------
+[INFO] 23:41:07:611 CPU/(32157:32157): id: 0
+[INFO] 23:41:07:611 CPU/(32157:32157): estimacion: 10000
+[INFO] 23:41:07:611 CPU/(32157:32157): program counter: 0
+[INFO] 23:41:07:611 CPU/(32157:32157): socket: 9
+[INFO] 23:41:07:611 CPU/(32157:32157): numero de tabla: 0
+[INFO] 23:41:07:611 CPU/(32157:32157): tamanio de consola: 100
+[INFO] 23:41:07:611 CPU/(32157:32157): lista Instrucciones:
+[INFO] 23:41:07:611 CPU/(32157:32157): NO_OP
+[INFO] 23:41:07:611 CPU/(32157:32157): NO_OP
+[INFO] 23:41:07:611 CPU/(32157:32157): NO_OP
+[INFO] 23:41:07:611 CPU/(32157:32157): NO_OP
+[INFO] 23:41:07:611 CPU/(32157:32157): NO_OP
+[INFO] 23:41:07:611 CPU/(32157:32157): NO_OP
+[INFO] 23:41:07:611 CPU/(32157:32157): NO_OP
+[INFO] 23:41:07:611 CPU/(32157:32157): NO_OP
+[INFO] 23:41:07:611 CPU/(32157:32157): NO_OP
+[INFO] 23:41:07:611 CPU/(32157:32157): NO_OP
+[INFO] 23:41:07:611 CPU/(32157:32157): NO_OP
+[INFO] 23:41:07:611 CPU/(32157:32157): NO_OP
+[INFO] 23:41:07:611 CPU/(32157:32157): NO_OP
+[INFO] 23:41:07:611 CPU/(32157:32157): NO_OP
+[INFO] 23:41:07:611 CPU/(32157:32157): NO_OP
+[INFO] 23:41:07:611 CPU/(32157:32157): I/O 5000
+[INFO] 23:41:07:611 CPU/(32157:32157): EXIT
+[INFO] 23:41:07:611 CPU/(32157:32157): --------------
+[INFO] 23:41:07:611 CPU/(32157:32157):   Nro de instrucion: 0
+[INFO] 23:41:07:611 CPU/(32157:32157):   instruccion/codigo op: NO_OP
+[INFO] 23:41:07:611 CPU/(32157:32157):   Entro a fetch_operands
+[INFO] 23:41:07:611 CPU/(32157:32157):   Time: 1000
+[INFO] 23:41:08:611 CPU/(32157:32157):   Nro de instrucion: 1
+[INFO] 23:41:08:611 CPU/(32157:32157):   instruccion/codigo op: NO_OP
+[INFO] 23:41:08:611 CPU/(32157:32157):   Entro a fetch_operands
+[INFO] 23:41:08:611 CPU/(32157:32157):   Time: 1000
+[INFO] 23:41:09:612 CPU/(32157:32157):   Nro de instrucion: 2
+[INFO] 23:41:09:612 CPU/(32157:32157):   instruccion/codigo op: NO_OP
+[INFO] 23:41:09:612 CPU/(32157:32157):   Entro a fetch_operands
+[INFO] 23:41:09:612 CPU/(32157:32157):   Time: 1000
+[INFO] 23:41:10:624 CPU/(32157:32157):   Nro de instrucion: 3
+[INFO] 23:41:10:624 CPU/(32157:32157):   instruccion/codigo op: NO_OP
+[INFO] 23:41:10:624 CPU/(32157:32157):   Entro a fetch_operands
+[INFO] 23:41:10:624 CPU/(32157:32157):   Time: 1000
+[INFO] 23:41:11:624 CPU/(32157:32157):   Nro de instrucion: 4
+[INFO] 23:41:11:625 CPU/(32157:32157):   instruccion/codigo op: NO_OP
+[INFO] 23:41:11:625 CPU/(32157:32157):   Entro a fetch_operands
+[INFO] 23:41:11:625 CPU/(32157:32157):   Time: 1000
+[INFO] 23:41:12:626 CPU/(32157:32157):   Nro de instrucion: 5
+[INFO] 23:41:12:626 CPU/(32157:32157):   instruccion/codigo op: NO_OP
+[INFO] 23:41:12:626 CPU/(32157:32157):   Entro a fetch_operands
+[INFO] 23:41:12:626 CPU/(32157:32157):   Time: 1000
+[INFO] 23:41:13:627 CPU/(32157:32157):   Nro de instrucion: 6
+[INFO] 23:41:13:627 CPU/(32157:32157):   instruccion/codigo op: NO_OP
+[INFO] 23:41:13:627 CPU/(32157:32157):   Entro a fetch_operands
+[INFO] 23:41:13:627 CPU/(32157:32157):   Time: 1000
+[INFO] 23:41:14:627 CPU/(32157:32157):   Nro de instrucion: 7
+[INFO] 23:41:14:627 CPU/(32157:32157):   instruccion/codigo op: NO_OP
+[INFO] 23:41:14:627 CPU/(32157:32157):   Entro a fetch_operands
+[INFO] 23:41:14:627 CPU/(32157:32157):   Time: 1000
+[INFO] 23:41:15:627 CPU/(32157:32157):   Nro de instrucion: 8
+[INFO] 23:41:15:627 CPU/(32157:32157):   instruccion/codigo op: NO_OP
+[INFO] 23:41:15:627 CPU/(32157:32157):   Entro a fetch_operands
+[INFO] 23:41:15:627 CPU/(32157:32157):   Time: 1000
+[INFO] 23:41:16:630 CPU/(32157:32157):   Nro de instrucion: 9
+[INFO] 23:41:16:630 CPU/(32157:32157):   instruccion/codigo op: NO_OP
+[INFO] 23:41:16:630 CPU/(32157:32157):   Entro a fetch_operands
+[INFO] 23:41:16:630 CPU/(32157:32157):   Time: 1000
+[INFO] 23:41:17:630 CPU/(32157:32157):   Nro de instrucion: 10
+[INFO] 23:41:17:630 CPU/(32157:32157):   instruccion/codigo op: NO_OP
+[INFO] 23:41:17:630 CPU/(32157:32157):   Entro a fetch_operands
+[INFO] 23:41:17:630 CPU/(32157:32157):   Time: 1000
+[INFO] 23:41:18:631 CPU/(32157:32157):   Nro de instrucion: 11
+[INFO] 23:41:18:631 CPU/(32157:32157):   instruccion/codigo op: NO_OP
+[INFO] 23:41:18:631 CPU/(32157:32157):   Entro a fetch_operands
+[INFO] 23:41:18:631 CPU/(32157:32157):   Time: 1000
+[INFO] 23:41:19:644 CPU/(32157:32157):   Nro de instrucion: 12
+[INFO] 23:41:19:644 CPU/(32157:32157):   instruccion/codigo op: NO_OP
+[INFO] 23:41:19:644 CPU/(32157:32157):   Entro a fetch_operands
+[INFO] 23:41:19:644 CPU/(32157:32157):   Time: 1000
+[INFO] 23:41:20:644 CPU/(32157:32157):   Nro de instrucion: 13
+[INFO] 23:41:20:644 CPU/(32157:32157):   instruccion/codigo op: NO_OP
+[INFO] 23:41:20:644 CPU/(32157:32157):   Entro a fetch_operands
+[INFO] 23:41:20:644 CPU/(32157:32157):   Time: 1000
+[INFO] 23:41:21:653 CPU/(32157:32157):   Nro de instrucion: 14
+[INFO] 23:41:21:653 CPU/(32157:32157):   instruccion/codigo op: NO_OP
+[INFO] 23:41:21:653 CPU/(32157:32157):   Entro a fetch_operands
+[INFO] 23:41:21:653 CPU/(32157:32157):   Time: 1000
+[INFO] 23:41:22:657 CPU/(32157:32157):   Nro de instrucion: 15
+[INFO] 23:41:22:658 CPU/(32157:32157):   instruccion/codigo op: I/O
+[INFO] 23:41:22:658 CPU/(32157:32157):   Entro a fetch_operands
+[INFO] 23:41:22:658 CPU/(32157:32157):    Llego a i_o()
+[INFO] 23:41:22:658 CPU/(32157:32157):    Llego responsePorBloqueo()
+[INFO] 23:41:22:658 CPU/(32157:32157):    Se le asignoMemoria:
+[INFO] 23:41:22:658 CPU/(32157:32157):    Enviamos el PCB Bloqueado 
+[WARNING] 23:41:22:658 CPU/(32157:32157): Entro por interrupcion al Break
+[INFO] 23:41:22:658 CPU/(32157:32157): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:41:27:662 CPU/(32157:32159):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 23:41:27:662 CPU/(32157:32159):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 23:41:27:662 CPU/(32157:32159):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:41:32:664 CPU/(32157:32157):  -----------
+[INFO] 23:41:32:664 CPU/(32157:32157):  El kernel envio un PCB:
+[INFO] 23:41:32:664 CPU/(32157:32157): -----PCB ------
+[INFO] 23:41:32:664 CPU/(32157:32157): id: 0
+[INFO] 23:41:32:664 CPU/(32157:32157): estimacion: 10000
+[INFO] 23:41:32:664 CPU/(32157:32157): program counter: 16
+[INFO] 23:41:32:664 CPU/(32157:32157): socket: 9
+[INFO] 23:41:32:664 CPU/(32157:32157): numero de tabla: 0
+[INFO] 23:41:32:664 CPU/(32157:32157): tamanio de consola: 100
+[INFO] 23:41:32:664 CPU/(32157:32157): lista Instrucciones:
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): I/O 5000
+[INFO] 23:41:32:664 CPU/(32157:32157): EXIT
+[INFO] 23:41:32:664 CPU/(32157:32157): --------------
+[INFO] 23:41:32:664 CPU/(32157:32157):   Nro de instrucion: 16
+[INFO] 23:41:32:664 CPU/(32157:32157):   instruccion/codigo op: EXIT
+[INFO] 23:41:32:664 CPU/(32157:32157):   Entro a fetch_operands
+[INFO] 23:41:32:664 CPU/(32157:32157):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 23:41:32:664 CPU/(32157:32157): -----PCB ------
+[INFO] 23:41:32:664 CPU/(32157:32157): id: 0
+[INFO] 23:41:32:664 CPU/(32157:32157): estimacion: 10000
+[INFO] 23:41:32:664 CPU/(32157:32157): program counter: 17
+[INFO] 23:41:32:664 CPU/(32157:32157): socket: 9
+[INFO] 23:41:32:664 CPU/(32157:32157): numero de tabla: 0
+[INFO] 23:41:32:664 CPU/(32157:32157): tamanio de consola: 100
+[INFO] 23:41:32:664 CPU/(32157:32157): lista Instrucciones:
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): NO_OP
+[INFO] 23:41:32:664 CPU/(32157:32157): I/O 5000
+[INFO] 23:41:32:664 CPU/(32157:32157): EXIT
+[INFO] 23:41:32:664 CPU/(32157:32157): --------------
+[WARNING] 23:41:32:664 CPU/(32157:32157): Entro por interrupcion al Break
+[INFO] 23:41:32:664 CPU/(32157:32157): --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:41:47:894 CPU/(32157:32157): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 7
+[INFO] 23:41:47:894 CPU/(32157:32157): Entro: finalizar_cpu
+[ERROR] 23:41:47:894 CPU/(32157:32159): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 9
+[INFO] 23:41:47:895 CPU/(32157:32159):      ---- Salio: escuchaInterrup(...)
+[INFO] 23:41:47:895 CPU/(32157:32157): Finalizamos el Hilo interrupt
+[INFO] 23:41:47:895 CPU/(32157:32157): 
+###### FIN LOGGER ######
+[INFO] 23:42:50:799 CPU/(495:495): 
+###### INICIO DE LOGGER ######
+[INFO] 23:42:50:857 CPU/(495:495):    ---Leyo archivo de configuraciones
+[INFO] 23:42:50:859 CPU/(495:495):    ---Asigno a los semaforos con valores iniciales
+[INFO] 23:42:50:869 CPU/(495:495):  Conectado con Memoria, Socket cliente Memoria: 5
+[INFO] 23:42:50:871 CPU/(495:495):  Hicimos handshake_cpu_memoria
+[INFO] 23:42:50:872 CPU/(495:495): --- Nro de filas tabla nivel 1: 4
+[INFO] 23:42:50:873 CPU/(495:495): --- Tamano de pagina: 64
+[INFO] 23:42:50:873 CPU/(495:495): Entro: iniciar_servidor_dispatch
+[INFO] 23:42:50:873 CPU/(495:495): Entro: iniciar_servidor_cpu
+[INFO] 23:42:50:874 CPU/(495:495):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:42:50:874 CPU/(495:495):  Se creara un socket_servidor en el PUERTO: 8001
+[INFO] 23:42:50:876 CPU/(495:495):  Se creo el socket_servidor:  7, listo para escuchar al cliente
+[INFO] 23:42:50:924 CPU/(495:495): Se creo el Hilo: interrupt
+[INFO] 23:42:50:925 CPU/(495:495): Entro: esperar_cliente_cpu
+[INFO] 23:42:50:927 CPU/(495:506):    --- Entro: escuchaInterrup(...)
+[INFO] 23:42:50:928 CPU/(495:495):  Socket server recibido: 7
+[INFO] 23:42:50:929 CPU/(495:495):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:42:50:930 CPU/(495:506): Entro: iniciar_servidor_interrupt
+[INFO] 23:42:50:930 CPU/(495:506): Entro: iniciar_servidor_cpu
+[INFO] 23:42:50:930 CPU/(495:506):  Se creara un socket_servidor para la IP: 127.0.0.1
+[INFO] 23:42:50:931 CPU/(495:506):  Se creara un socket_servidor en el PUERTO: 8005
+[INFO] 23:42:50:931 CPU/(495:506):  Se creo el socket_servidor:  9, listo para escuchar al cliente
+[INFO] 23:42:50:931 CPU/(495:506): Entro: esperar_cliente_cpu
+[INFO] 23:42:50:932 CPU/(495:506):  Socket server recibido: 9
+[INFO] 23:42:50:932 CPU/(495:506):  Queda BLOQUEADO este hilo hasta que se conecte un cliente
+[INFO] 23:42:53:886 CPU/(495:495):  Termino el BLOQUEO
+[INFO] 23:42:53:887 CPU/(495:495):  Se conecto un cliente y se creo el socket_cliente: 8. Puerto tipo:  dispatch
+[INFO] 23:42:53:887 CPU/(495:506):  Termino el BLOQUEO
+[INFO] 23:42:53:888 CPU/(495:495): INICIO: recibir_operaciones()
+[INFO] 23:42:53:889 CPU/(495:495): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:42:53:891 CPU/(495:506):  Se conecto un cliente y se creo el socket_cliente: 10. Puerto tipo:  interrupt
+[INFO] 23:42:53:891 CPU/(495:506):  ---- Socket kernel interrupt: 10
+[INFO] 23:42:53:892 CPU/(495:506):    INICIO: recibir_operacion_interrupt()
+[INFO] 23:42:53:893 CPU/(495:506):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:43:00:769 CPU/(495:495):  -----------
+[INFO] 23:43:00:771 CPU/(495:495):  El kernel envio un PCB:
+[INFO] 23:43:00:776 CPU/(495:495): -----PCB ------
+[INFO] 23:43:00:776 CPU/(495:495): id: 0
+[INFO] 23:43:00:776 CPU/(495:495): estimacion: 10000
+[INFO] 23:43:00:777 CPU/(495:495): program counter: 0
+[INFO] 23:43:00:777 CPU/(495:495): socket: 9
+[INFO] 23:43:00:777 CPU/(495:495): numero de tabla: 0
+[INFO] 23:43:00:778 CPU/(495:495): tamanio de consola: 100
+[INFO] 23:43:00:778 CPU/(495:495): lista Instrucciones:
+[INFO] 23:43:00:779 CPU/(495:495): NO_OP
+[INFO] 23:43:00:779 CPU/(495:495): NO_OP
+[INFO] 23:43:00:779 CPU/(495:495): NO_OP
+[INFO] 23:43:00:779 CPU/(495:495): NO_OP
+[INFO] 23:43:00:780 CPU/(495:495): NO_OP
+[INFO] 23:43:00:780 CPU/(495:495): NO_OP
+[INFO] 23:43:00:780 CPU/(495:495): NO_OP
+[INFO] 23:43:00:780 CPU/(495:495): NO_OP
+[INFO] 23:43:00:781 CPU/(495:495): NO_OP
+[INFO] 23:43:00:781 CPU/(495:495): NO_OP
+[INFO] 23:43:00:781 CPU/(495:495): NO_OP
+[INFO] 23:43:00:781 CPU/(495:495): NO_OP
+[INFO] 23:43:00:781 CPU/(495:495): NO_OP
+[INFO] 23:43:00:782 CPU/(495:495): NO_OP
+[INFO] 23:43:00:782 CPU/(495:495): NO_OP
+[INFO] 23:43:00:782 CPU/(495:495): I/O 5000
+[INFO] 23:43:00:782 CPU/(495:495): EXIT
+[INFO] 23:43:00:783 CPU/(495:495): --------------
+[INFO] 23:43:00:783 CPU/(495:495):   Nro de instrucion: 0
+[INFO] 23:43:00:785 CPU/(495:495):   instruccion/codigo op: NO_OP
+[INFO] 23:43:00:785 CPU/(495:495):   Entro a fetch_operands
+[INFO] 23:43:00:788 CPU/(495:495):   Time: 1000
+[INFO] 23:43:01:791 CPU/(495:495):   Nro de instrucion: 1
+[INFO] 23:43:01:792 CPU/(495:495):   instruccion/codigo op: NO_OP
+[INFO] 23:43:01:792 CPU/(495:495):   Entro a fetch_operands
+[INFO] 23:43:01:792 CPU/(495:495):   Time: 1000
+[INFO] 23:43:02:793 CPU/(495:495):   Nro de instrucion: 2
+[INFO] 23:43:02:793 CPU/(495:495):   instruccion/codigo op: NO_OP
+[INFO] 23:43:02:793 CPU/(495:495):   Entro a fetch_operands
+[INFO] 23:43:02:794 CPU/(495:495):   Time: 1000
+[INFO] 23:43:03:795 CPU/(495:495):   Nro de instrucion: 3
+[INFO] 23:43:03:796 CPU/(495:495):   instruccion/codigo op: NO_OP
+[INFO] 23:43:03:797 CPU/(495:495):   Entro a fetch_operands
+[INFO] 23:43:03:797 CPU/(495:495):   Time: 1000
+[INFO] 23:43:04:799 CPU/(495:495):   Nro de instrucion: 4
+[INFO] 23:43:04:799 CPU/(495:495):   instruccion/codigo op: NO_OP
+[INFO] 23:43:04:800 CPU/(495:495):   Entro a fetch_operands
+[INFO] 23:43:04:801 CPU/(495:495):   Time: 1000
+[INFO] 23:43:05:802 CPU/(495:495):   Nro de instrucion: 5
+[INFO] 23:43:05:802 CPU/(495:495):   instruccion/codigo op: NO_OP
+[INFO] 23:43:05:803 CPU/(495:495):   Entro a fetch_operands
+[INFO] 23:43:05:803 CPU/(495:495):   Time: 1000
+[INFO] 23:43:06:807 CPU/(495:495):   Nro de instrucion: 6
+[INFO] 23:43:06:807 CPU/(495:495):   instruccion/codigo op: NO_OP
+[INFO] 23:43:06:808 CPU/(495:495):   Entro a fetch_operands
+[INFO] 23:43:06:809 CPU/(495:495):   Time: 1000
+[INFO] 23:43:07:812 CPU/(495:495):   Nro de instrucion: 7
+[INFO] 23:43:07:813 CPU/(495:495):   instruccion/codigo op: NO_OP
+[INFO] 23:43:07:813 CPU/(495:495):   Entro a fetch_operands
+[INFO] 23:43:07:814 CPU/(495:495):   Time: 1000
+[INFO] 23:43:08:822 CPU/(495:495):   Nro de instrucion: 8
+[INFO] 23:43:08:822 CPU/(495:495):   instruccion/codigo op: NO_OP
+[INFO] 23:43:08:823 CPU/(495:495):   Entro a fetch_operands
+[INFO] 23:43:08:823 CPU/(495:495):   Time: 1000
+[INFO] 23:43:09:833 CPU/(495:495):   Nro de instrucion: 9
+[INFO] 23:43:09:834 CPU/(495:495):   instruccion/codigo op: NO_OP
+[INFO] 23:43:09:834 CPU/(495:495):   Entro a fetch_operands
+[INFO] 23:43:09:835 CPU/(495:495):   Time: 1000
+[INFO] 23:43:10:839 CPU/(495:495):   Nro de instrucion: 10
+[INFO] 23:43:10:840 CPU/(495:495):   instruccion/codigo op: NO_OP
+[INFO] 23:43:10:841 CPU/(495:495):   Entro a fetch_operands
+[INFO] 23:43:10:841 CPU/(495:495):   Time: 1000
+[INFO] 23:43:11:842 CPU/(495:495):   Nro de instrucion: 11
+[INFO] 23:43:11:842 CPU/(495:495):   instruccion/codigo op: NO_OP
+[INFO] 23:43:11:843 CPU/(495:495):   Entro a fetch_operands
+[INFO] 23:43:11:843 CPU/(495:495):   Time: 1000
+[INFO] 23:43:12:845 CPU/(495:495):   Nro de instrucion: 12
+[INFO] 23:43:12:845 CPU/(495:495):   instruccion/codigo op: NO_OP
+[INFO] 23:43:12:845 CPU/(495:495):   Entro a fetch_operands
+[INFO] 23:43:12:845 CPU/(495:495):   Time: 1000
+[INFO] 23:43:13:846 CPU/(495:495):   Nro de instrucion: 13
+[INFO] 23:43:13:846 CPU/(495:495):   instruccion/codigo op: NO_OP
+[INFO] 23:43:13:847 CPU/(495:495):   Entro a fetch_operands
+[INFO] 23:43:13:847 CPU/(495:495):   Time: 1000
+[INFO] 23:43:14:849 CPU/(495:495):   Nro de instrucion: 14
+[INFO] 23:43:14:850 CPU/(495:495):   instruccion/codigo op: NO_OP
+[INFO] 23:43:14:850 CPU/(495:495):   Entro a fetch_operands
+[INFO] 23:43:14:851 CPU/(495:495):   Time: 1000
+[INFO] 23:43:15:852 CPU/(495:495):   Nro de instrucion: 15
+[INFO] 23:43:15:852 CPU/(495:495):   instruccion/codigo op: I/O
+[INFO] 23:43:15:853 CPU/(495:495):   Entro a fetch_operands
+[INFO] 23:43:15:853 CPU/(495:495):    Llego a i_o()
+[INFO] 23:43:15:854 CPU/(495:495):    Llego responsePorBloqueo()
+[INFO] 23:43:15:855 CPU/(495:495):    Se le asignoMemoria:
+[INFO] 23:43:15:858 CPU/(495:495):    Enviamos el PCB Bloqueado 
+[WARNING] 23:43:15:859 CPU/(495:495): Entro por interrupcion al Break
+[INFO] 23:43:15:861 CPU/(495:495): --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:43:20:870 CPU/(495:506):       --- El kernel envio la operacion: INTERRUPCION
+[INFO] 23:43:20:870 CPU/(495:506):     --- Este hilo interrupt queda bloqueado hasta que Check Interrupt lo desbloquee
+[INFO] 23:43:20:871 CPU/(495:506):   --- A ESPERA DE UNA OPERACION
+
+[INFO] 23:43:25:874 CPU/(495:495):  -----------
+[INFO] 23:43:25:875 CPU/(495:495):  El kernel envio un PCB:
+[INFO] 23:43:25:876 CPU/(495:495): -----PCB ------
+[INFO] 23:43:25:876 CPU/(495:495): id: 0
+[INFO] 23:43:25:876 CPU/(495:495): estimacion: 10000
+[INFO] 23:43:25:876 CPU/(495:495): program counter: 16
+[INFO] 23:43:25:876 CPU/(495:495): socket: 9
+[INFO] 23:43:25:877 CPU/(495:495): numero de tabla: 0
+[INFO] 23:43:25:877 CPU/(495:495): tamanio de consola: 100
+[INFO] 23:43:25:877 CPU/(495:495): lista Instrucciones:
+[INFO] 23:43:25:877 CPU/(495:495): NO_OP
+[INFO] 23:43:25:878 CPU/(495:495): NO_OP
+[INFO] 23:43:25:878 CPU/(495:495): NO_OP
+[INFO] 23:43:25:878 CPU/(495:495): NO_OP
+[INFO] 23:43:25:878 CPU/(495:495): NO_OP
+[INFO] 23:43:25:878 CPU/(495:495): NO_OP
+[INFO] 23:43:25:879 CPU/(495:495): NO_OP
+[INFO] 23:43:25:879 CPU/(495:495): NO_OP
+[INFO] 23:43:25:879 CPU/(495:495): NO_OP
+[INFO] 23:43:25:879 CPU/(495:495): NO_OP
+[INFO] 23:43:25:879 CPU/(495:495): NO_OP
+[INFO] 23:43:25:880 CPU/(495:495): NO_OP
+[INFO] 23:43:25:880 CPU/(495:495): NO_OP
+[INFO] 23:43:25:880 CPU/(495:495): NO_OP
+[INFO] 23:43:25:880 CPU/(495:495): NO_OP
+[INFO] 23:43:25:880 CPU/(495:495): I/O 5000
+[INFO] 23:43:25:881 CPU/(495:495): EXIT
+[INFO] 23:43:25:881 CPU/(495:495): --------------
+[INFO] 23:43:25:881 CPU/(495:495):   Nro de instrucion: 16
+[INFO] 23:43:25:881 CPU/(495:495):   instruccion/codigo op: EXIT
+[INFO] 23:43:25:882 CPU/(495:495):   Entro a fetch_operands
+[INFO] 23:43:25:882 CPU/(495:495):    responsePorFinDeProceso-Enviamos este PCB: 
+[INFO] 23:43:25:882 CPU/(495:495): -----PCB ------
+[INFO] 23:43:25:883 CPU/(495:495): id: 0
+[INFO] 23:43:25:883 CPU/(495:495): estimacion: 10000
+[INFO] 23:43:25:883 CPU/(495:495): program counter: 17
+[INFO] 23:43:25:883 CPU/(495:495): socket: 9
+[INFO] 23:43:25:884 CPU/(495:495): numero de tabla: 0
+[INFO] 23:43:25:884 CPU/(495:495): tamanio de consola: 100
+[INFO] 23:43:25:884 CPU/(495:495): lista Instrucciones:
+[INFO] 23:43:25:884 CPU/(495:495): NO_OP
+[INFO] 23:43:25:884 CPU/(495:495): NO_OP
+[INFO] 23:43:25:884 CPU/(495:495): NO_OP
+[INFO] 23:43:25:885 CPU/(495:495): NO_OP
+[INFO] 23:43:25:885 CPU/(495:495): NO_OP
+[INFO] 23:43:25:885 CPU/(495:495): NO_OP
+[INFO] 23:43:25:885 CPU/(495:495): NO_OP
+[INFO] 23:43:25:885 CPU/(495:495): NO_OP
+[INFO] 23:43:25:886 CPU/(495:495): NO_OP
+[INFO] 23:43:25:886 CPU/(495:495): NO_OP
+[INFO] 23:43:25:886 CPU/(495:495): NO_OP
+[INFO] 23:43:25:886 CPU/(495:495): NO_OP
+[INFO] 23:43:25:886 CPU/(495:495): NO_OP
+[INFO] 23:43:25:887 CPU/(495:495): NO_OP
+[INFO] 23:43:25:887 CPU/(495:495): NO_OP
+[INFO] 23:43:25:887 CPU/(495:495): I/O 5000
+[INFO] 23:43:25:887 CPU/(495:495): EXIT
+[INFO] 23:43:25:888 CPU/(495:495): --------------
+[WARNING] 23:43:25:889 CPU/(495:495): Entro por interrupcion al Break
+[INFO] 23:43:25:889 CPU/(495:495): --- A ESPERA DE UNA OPERACION
+
+[ERROR] 23:43:36:126 CPU/(495:506): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 10
+[INFO] 23:43:36:127 CPU/(495:506):      ---- Salio: escuchaInterrup(...)
+[ERROR] 23:43:36:126 CPU/(495:495): el cliente se desconecto. Terminando servidor para el socket kernel Nro: 8
+[INFO] 23:43:36:131 CPU/(495:495): Entro: finalizar_cpu
+[INFO] 23:43:36:133 CPU/(495:495): Finalizamos el Hilo interrupt
+[INFO] 23:43:36:136 CPU/(495:495): 
+###### FIN LOGGER ######

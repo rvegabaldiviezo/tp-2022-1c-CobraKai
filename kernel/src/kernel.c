@@ -287,7 +287,7 @@ void comunicacion_con_cpu() {
 				case EXIT:
 					log_info(logger, "La CPU envio un pcb con estado finalizado");
 					t_pcb* proceso = recibir_pcb(conexion_con_cpu_dispatch);
-				  //  enviar_finalizacion_a_memoria(proceso->id, conexion_con_memoria);
+				    enviar_finalizacion_a_memoria(proceso->id, conexion_con_memoria);
 					sem_post(&multiprogramacion);
 					log_info(logger, "El socket que recibi es %i", proceso->socket);
 					enviar_respuesta_exitosa(proceso->socket);

@@ -341,3 +341,341 @@
 [INFO] 22:05:21:191 MEMORIA/(8094:8095): CPU envio: 0
 [INFO] 22:05:21:191 MEMORIA/(8094:8095): Le envie a CPU entrada_tabla_segundo_nivel: 2
 [ERROR] 22:12:54:977 MEMORIA/(8094:8095): Se desconecto la cpu
+[INFO] 22:47:34:762 MEMORIA/(10455:10455): Memoria lista para recibir clientes
+[INFO] 22:47:34:762 MEMORIA/(10455:10456): Entro Atender CPU
+[INFO] 22:47:39:807 MEMORIA/(10455:10456): Se conecto CPU: 5
+[INFO] 22:47:39:807 MEMORIA/(10455:10456): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 22:47:39:807 MEMORIA/(10455:10456): CPU solicita acceso a tabla pagina de primer nivel
+[INFO] 22:47:39:807 MEMORIA/(10455:10456): Operacion desconocida
+[INFO] 22:47:39:808 MEMORIA/(10455:10456): Operacion desconocida
+[INFO] 22:47:39:807 MEMORIA/(10455:10485): Entro Atender KERNEL
+[ERROR] 22:48:01:399 MEMORIA/(10455:10485): Se desconecto el kernel
+[INFO] 22:48:04:439 MEMORIA/(10656:10656): Memoria lista para recibir clientes
+[INFO] 22:48:04:439 MEMORIA/(10656:10657): Entro Atender CPU
+[INFO] 22:48:32:743 MEMORIA/(10856:10856): Memoria lista para recibir clientes
+[INFO] 22:48:32:743 MEMORIA/(10856:10857): Entro Atender CPU
+[INFO] 22:49:31:304 MEMORIA/(11237:11237): Memoria lista para recibir clientes
+[INFO] 22:49:31:304 MEMORIA/(11237:11238): Entro Atender CPU
+[INFO] 22:49:32:713 MEMORIA/(11237:11238): Se conecto CPU: 5
+[INFO] 22:49:32:713 MEMORIA/(11237:11238): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 22:49:32:713 MEMORIA/(11237:11250): Entro Atender KERNEL
+[INFO] 22:49:32:713 MEMORIA/(11237:11238): CPU solicita acceso a tabla pagina de primer nivel
+[INFO] 22:49:32:713 MEMORIA/(11237:11238): Operacion desconocida
+[INFO] 22:49:32:713 MEMORIA/(11237:11238): Operacion desconocida
+[ERROR] 22:49:44:879 MEMORIA/(11237:11250): Se desconecto el kernel
+[INFO] 22:50:11:112 MEMORIA/(11540:11540): Memoria lista para recibir clientes
+[INFO] 22:50:11:112 MEMORIA/(11540:11541): Entro Atender CPU
+[INFO] 22:52:17:256 MEMORIA/(12325:12325): Memoria lista para recibir clientes
+[INFO] 22:52:17:256 MEMORIA/(12325:12326): Entro Atender CPU
+[INFO] 22:52:18:624 MEMORIA/(12325:12326): Se conecto CPU: 5
+[INFO] 22:52:18:624 MEMORIA/(12325:12326): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 22:52:18:624 MEMORIA/(12325:12326): CPU solicita acceso a tabla pagina de primer nivel
+[INFO] 22:52:18:624 MEMORIA/(12325:12336): Entro Atender KERNEL
+[INFO] 22:52:18:624 MEMORIA/(12325:12326): Operacion desconocida
+[INFO] 22:52:18:624 MEMORIA/(12325:12326): Operacion desconocida
+[INFO] 22:52:38:696 MEMORIA/(12466:12466): Memoria lista para recibir clientes
+[INFO] 22:52:38:696 MEMORIA/(12466:12467): Entro Atender CPU
+[INFO] 22:53:25:581 MEMORIA/(12752:12752): Memoria lista para recibir clientes
+[INFO] 22:53:25:769 MEMORIA/(12752:12790): Entro Atender CPU
+[INFO] 22:53:29:304 MEMORIA/(12752:12790): Se conecto CPU: 5
+[INFO] 22:53:29:304 MEMORIA/(12752:12790): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 22:53:29:305 MEMORIA/(12752:12790): CPU solicita acceso a tabla pagina de primer nivel
+[INFO] 22:53:29:305 MEMORIA/(12752:12811): Entro Atender KERNEL
+[INFO] 22:53:29:305 MEMORIA/(12752:12790): Operacion desconocida
+[INFO] 22:53:29:305 MEMORIA/(12752:12790): Operacion desconocida
+[ERROR] 22:54:53:720 MEMORIA/(12752:12790): Se desconecto la cpu
+[INFO] 22:55:01:577 MEMORIA/(13415:13415): Memoria lista para recibir clientes
+[INFO] 22:55:01:577 MEMORIA/(13415:13416): Entro Atender CPU
+[INFO] 22:55:03:121 MEMORIA/(13415:13416): Se conecto CPU: 5
+[INFO] 22:55:03:121 MEMORIA/(13415:13416): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 22:55:03:121 MEMORIA/(13415:13426): Entro Atender KERNEL
+[INFO] 22:55:07:649 MEMORIA/(13415:13426): Kernel solicita INICIO PROCESO
+[INFO] 22:55:07:649 MEMORIA/(13415:13426): Se creo la tabla de primer nivel: 0
+[INFO] 22:56:00:600 MEMORIA/(13827:13827): Memoria lista para recibir clientes
+[INFO] 22:56:00:600 MEMORIA/(13827:13828): Entro Atender CPU
+[INFO] 22:56:22:737 MEMORIA/(14010:14010): Memoria lista para recibir clientes
+[INFO] 22:56:22:738 MEMORIA/(14010:14011): Entro Atender CPU
+[INFO] 22:56:25:610 MEMORIA/(14010:14011): Se conecto CPU: 5
+[INFO] 22:56:25:610 MEMORIA/(14010:14011): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 22:56:25:610 MEMORIA/(14010:14032): Entro Atender KERNEL
+[INFO] 22:56:31:625 MEMORIA/(14010:14032): Kernel solicita INICIO PROCESO
+[INFO] 22:56:31:625 MEMORIA/(14010:14032): Se creo la tabla de primer nivel: 0
+[INFO] 22:58:06:371 MEMORIA/(14010:14032): Kernel solicita INICIO PROCESO
+[INFO] 22:58:06:371 MEMORIA/(14010:14032): Se creo la tabla de primer nivel: 1
+[INFO] 22:58:35:626 MEMORIA/(14010:14032): Kernel solicita INICIO PROCESO
+[INFO] 22:58:35:626 MEMORIA/(14010:14032): Se creo la tabla de primer nivel: 2
+[ERROR] 22:59:12:536 MEMORIA/(14010:14032): Se desconecto el kernel
+[INFO] 23:01:23:523 MEMORIA/(15879:15879): Memoria lista para recibir clientes
+[INFO] 23:01:23:523 MEMORIA/(15879:15880): Entro Atender CPU
+[INFO] 23:01:24:993 MEMORIA/(15879:15880): Se conecto CPU: 5
+[INFO] 23:01:24:993 MEMORIA/(15879:15880): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:01:24:993 MEMORIA/(15879:15891): Entro Atender KERNEL
+[INFO] 23:01:27:898 MEMORIA/(15879:15891): Kernel solicita INICIO PROCESO
+[INFO] 23:01:27:898 MEMORIA/(15879:15891): Se creo la tabla de primer nivel: 0
+[INFO] 23:01:33:913 MEMORIA/(15879:15891): Kernel solicita FINALIZACION PROCESO
+[INFO] 23:01:33:913 MEMORIA/(15879:15891): Id a finalizar: 0
+[INFO] 23:01:33:913 MEMORIA/(15879:15891): Operacion desconocida
+[ERROR] 23:03:29:513 MEMORIA/(15879:15891): Se desconecto el kernel
+[INFO] 23:03:31:217 MEMORIA/(16734:16734): Memoria lista para recibir clientes
+[INFO] 23:03:31:217 MEMORIA/(16734:16735): Entro Atender CPU
+[INFO] 23:03:47:410 MEMORIA/(16867:16867): Memoria lista para recibir clientes
+[INFO] 23:03:47:410 MEMORIA/(16867:16868): Entro Atender CPU
+[INFO] 23:04:06:297 MEMORIA/(17001:17001): Memoria lista para recibir clientes
+[INFO] 23:04:06:298 MEMORIA/(17001:17002): Entro Atender CPU
+[INFO] 23:04:32:137 MEMORIA/(17161:17161): Memoria lista para recibir clientes
+[INFO] 23:04:32:137 MEMORIA/(17161:17162): Entro Atender CPU
+[INFO] 23:04:34:330 MEMORIA/(17161:17162): Se conecto CPU: 5
+[INFO] 23:04:34:330 MEMORIA/(17161:17162): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:04:34:330 MEMORIA/(17161:17182): Entro Atender KERNEL
+[INFO] 23:04:38:307 MEMORIA/(17161:17182): Kernel solicita INICIO PROCESO
+[INFO] 23:04:38:307 MEMORIA/(17161:17182): Se creo la tabla de primer nivel: 0
+[INFO] 23:05:05:730 MEMORIA/(17393:17393): Memoria lista para recibir clientes
+[INFO] 23:05:05:730 MEMORIA/(17393:17394): Entro Atender CPU
+[INFO] 23:05:54:098 MEMORIA/(17708:17708): Memoria lista para recibir clientes
+[INFO] 23:05:54:099 MEMORIA/(17708:17709): Entro Atender CPU
+[INFO] 23:05:55:939 MEMORIA/(17708:17709): Se conecto CPU: 5
+[INFO] 23:05:55:939 MEMORIA/(17708:17709): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:05:55:939 MEMORIA/(17708:17718): Entro Atender KERNEL
+[INFO] 23:06:00:570 MEMORIA/(17708:17718): Kernel solicita INICIO PROCESO
+[INFO] 23:06:00:570 MEMORIA/(17708:17718): Se creo la tabla de primer nivel: 0
+[INFO] 23:06:06:572 MEMORIA/(17708:17718): Kernel solicita FINALIZACION PROCESO
+[INFO] 23:06:06:572 MEMORIA/(17708:17718): Id a finalizar: 0
+[INFO] 23:06:06:572 MEMORIA/(17708:17718): Operacion desconocida
+[ERROR] 23:06:25:417 MEMORIA/(17708:17718): Se desconecto el kernel
+[INFO] 23:06:39:522 MEMORIA/(18044:18044): Memoria lista para recibir clientes
+[INFO] 23:06:39:522 MEMORIA/(18044:18045): Entro Atender CPU
+[INFO] 23:06:41:274 MEMORIA/(18044:18045): Se conecto CPU: 5
+[INFO] 23:06:41:274 MEMORIA/(18044:18045): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:06:41:275 MEMORIA/(18044:18056): Entro Atender KERNEL
+[INFO] 23:06:45:147 MEMORIA/(18044:18056): Kernel solicita INICIO PROCESO
+[INFO] 23:06:45:147 MEMORIA/(18044:18056): Se creo la tabla de primer nivel: 0
+[INFO] 23:07:00:674 MEMORIA/(18201:18201): Memoria lista para recibir clientes
+[INFO] 23:07:00:674 MEMORIA/(18201:18202): Entro Atender CPU
+[INFO] 23:07:42:002 MEMORIA/(18466:18466): Memoria lista para recibir clientes
+[INFO] 23:07:42:002 MEMORIA/(18466:18467): Entro Atender CPU
+[INFO] 23:08:00:930 MEMORIA/(18607:18607): Memoria lista para recibir clientes
+[INFO] 23:08:00:930 MEMORIA/(18607:18608): Entro Atender CPU
+[INFO] 23:08:03:395 MEMORIA/(18607:18608): Se conecto CPU: 5
+[INFO] 23:08:03:395 MEMORIA/(18607:18608): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:08:03:395 MEMORIA/(18607:18629): Entro Atender KERNEL
+[INFO] 23:08:11:250 MEMORIA/(18607:18629): Kernel solicita INICIO PROCESO
+[INFO] 23:08:11:250 MEMORIA/(18607:18629): Se creo la tabla de primer nivel: 0
+[INFO] 23:09:08:530 MEMORIA/(19037:19037): Memoria lista para recibir clientes
+[INFO] 23:09:08:530 MEMORIA/(19037:19038): Entro Atender CPU
+[INFO] 23:10:20:458 MEMORIA/(19476:19476): Memoria lista para recibir clientes
+[INFO] 23:10:20:458 MEMORIA/(19476:19477): Entro Atender CPU
+[INFO] 23:10:22:154 MEMORIA/(19476:19477): Se conecto CPU: 5
+[INFO] 23:10:22:154 MEMORIA/(19476:19477): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:10:22:154 MEMORIA/(19476:19495): Entro Atender KERNEL
+[INFO] 23:10:25:418 MEMORIA/(19476:19495): Kernel solicita INICIO PROCESO
+[INFO] 23:10:25:418 MEMORIA/(19476:19495): Se creo la tabla de primer nivel: 0
+[INFO] 23:10:53:365 MEMORIA/(19607:19607): Memoria lista para recibir clientes
+[INFO] 23:10:53:523 MEMORIA/(19607:19734): Entro Atender CPU
+[INFO] 23:14:16:491 MEMORIA/(21117:21117): Memoria lista para recibir clientes
+[INFO] 23:14:16:491 MEMORIA/(21117:21118): Entro Atender CPU
+[INFO] 23:14:32:133 MEMORIA/(21188:21188): Memoria lista para recibir clientes
+[INFO] 23:14:32:268 MEMORIA/(21188:21257): Entro Atender CPU
+[INFO] 23:14:36:747 MEMORIA/(21188:21257): Se conecto CPU: 5
+[INFO] 23:14:38:876 MEMORIA/(21188:21257): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:14:39:557 MEMORIA/(21188:21319): Entro Atender KERNEL
+[INFO] 23:14:57:131 MEMORIA/(21188:21319): Kernel solicita INICIO PROCESO
+[INFO] 23:15:04:414 MEMORIA/(21188:21319): Se creo la tabla de primer nivel: 0
+[INFO] 23:15:33:424 MEMORIA/(21188:21319): Kernel solicita FINALIZACION PROCESO
+[INFO] 23:15:38:699 MEMORIA/(21188:21319): Id a finalizar: 0
+[INFO] 23:15:56:875 MEMORIA/(21860:21860): Memoria lista para recibir clientes
+[INFO] 23:15:56:876 MEMORIA/(21860:21861): Entro Atender CPU
+[INFO] 23:16:10:635 MEMORIA/(21961:21961): Memoria lista para recibir clientes
+[INFO] 23:16:10:636 MEMORIA/(21961:21962): Entro Atender CPU
+[INFO] 23:17:15:955 MEMORIA/(22401:22401): Memoria lista para recibir clientes
+[INFO] 23:17:15:955 MEMORIA/(22401:22402): Entro Atender CPU
+[INFO] 23:17:17:618 MEMORIA/(22401:22402): Se conecto CPU: 5
+[INFO] 23:17:17:618 MEMORIA/(22401:22402): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:17:17:618 MEMORIA/(22401:22417): Entro Atender KERNEL
+[INFO] 23:17:22:034 MEMORIA/(22401:22417): Kernel solicita INICIO PROCESO
+[INFO] 23:17:22:034 MEMORIA/(22401:22417): Se creo la tabla de primer nivel: 0
+[INFO] 23:17:32:018 MEMORIA/(22531:22531): Memoria lista para recibir clientes
+[INFO] 23:17:32:018 MEMORIA/(22531:22532): Entro Atender CPU
+[INFO] 23:17:33:843 MEMORIA/(22531:22532): Se conecto CPU: 5
+[INFO] 23:17:33:843 MEMORIA/(22531:22532): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:17:33:843 MEMORIA/(22531:22541): Entro Atender KERNEL
+[INFO] 23:17:40:467 MEMORIA/(22531:22541): Kernel solicita INICIO PROCESO
+[INFO] 23:17:40:467 MEMORIA/(22531:22541): Se creo la tabla de primer nivel: 0
+[INFO] 23:17:46:471 MEMORIA/(22531:22541): Kernel solicita FINALIZACION PROCESO
+[INFO] 23:17:46:471 MEMORIA/(22531:22541): Id a finalizar: 0
+[ERROR] 23:18:12:473 MEMORIA/(22531:22541): Se desconecto el kernel
+[INFO] 23:19:30:145 MEMORIA/(23316:23316): Memoria lista para recibir clientes
+[INFO] 23:19:30:145 MEMORIA/(23316:23317): Entro Atender CPU
+[INFO] 23:19:31:666 MEMORIA/(23316:23317): Se conecto CPU: 5
+[INFO] 23:19:31:666 MEMORIA/(23316:23317): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:19:31:666 MEMORIA/(23316:23327): Entro Atender KERNEL
+[INFO] 23:19:35:378 MEMORIA/(23316:23327): Kernel solicita INICIO PROCESO
+[INFO] 23:19:35:378 MEMORIA/(23316:23327): Se creo la tabla de primer nivel: 0
+[INFO] 23:19:55:713 MEMORIA/(23491:23491): Memoria lista para recibir clientes
+[INFO] 23:19:55:875 MEMORIA/(23491:23530): Entro Atender CPU
+[INFO] 23:20:02:477 MEMORIA/(23491:23530): Se conecto CPU: 5
+[INFO] 23:20:03:548 MEMORIA/(23491:23530): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:20:04:118 MEMORIA/(23491:23597): Entro Atender KERNEL
+[INFO] 23:20:16:572 MEMORIA/(23491:23597): Kernel solicita INICIO PROCESO
+[INFO] 23:20:20:115 MEMORIA/(23491:23597): Se creo la tabla de primer nivel: 0
+[INFO] 23:20:32:062 MEMORIA/(23491:23597): Kernel solicita FINALIZACION PROCESO
+[INFO] 23:20:41:329 MEMORIA/(23491:23597): Id a finalizar: 0
+[INFO] 23:20:51:400 MEMORIA/(23491:23597): Kernel solicita INICIO PROCESO
+[INFO] 23:20:54:154 MEMORIA/(23491:23597): Se creo la tabla de primer nivel: 1
+[INFO] 23:21:10:928 MEMORIA/(23491:23597): Kernel solicita FINALIZACION PROCESO
+[INFO] 23:21:11:378 MEMORIA/(23491:23597): Id a finalizar: 1
+[INFO] 23:21:24:486 MEMORIA/(23491:23597): Kernel solicita INICIO PROCESO
+[INFO] 23:21:26:604 MEMORIA/(23491:23597): Se creo la tabla de primer nivel: 2
+[INFO] 23:22:38:116 MEMORIA/(23491:23597): Kernel solicita FINALIZACION PROCESO
+[INFO] 23:22:38:872 MEMORIA/(23491:23597): Id a finalizar: 2
+[ERROR] 23:22:44:727 MEMORIA/(23491:23530): Se desconecto la cpu
+[INFO] 23:22:54:479 MEMORIA/(24791:24791): Memoria lista para recibir clientes
+[INFO] 23:22:54:480 MEMORIA/(24791:24792): Entro Atender CPU
+[INFO] 23:22:56:216 MEMORIA/(24791:24792): Se conecto CPU: 5
+[INFO] 23:22:56:216 MEMORIA/(24791:24792): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:22:56:216 MEMORIA/(24791:24802): Entro Atender KERNEL
+[INFO] 23:23:05:152 MEMORIA/(24791:24802): Kernel solicita INICIO PROCESO
+[INFO] 23:23:05:152 MEMORIA/(24791:24802): Se creo la tabla de primer nivel: 0
+[INFO] 23:23:23:344 MEMORIA/(24981:24981): Memoria lista para recibir clientes
+[INFO] 23:23:23:344 MEMORIA/(24981:24982): Entro Atender CPU
+[INFO] 23:23:25:248 MEMORIA/(24981:24982): Se conecto CPU: 5
+[INFO] 23:23:25:248 MEMORIA/(24981:24982): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:23:25:248 MEMORIA/(24981:25001): Entro Atender KERNEL
+[INFO] 23:23:27:920 MEMORIA/(24981:25001): Kernel solicita INICIO PROCESO
+[INFO] 23:23:27:920 MEMORIA/(24981:25001): Se creo la tabla de primer nivel: 0
+[INFO] 23:23:35:928 MEMORIA/(25080:25080): Memoria lista para recibir clientes
+[INFO] 23:23:35:928 MEMORIA/(25080:25081): Entro Atender CPU
+[INFO] 23:23:38:033 MEMORIA/(25080:25081): Se conecto CPU: 5
+[INFO] 23:23:38:033 MEMORIA/(25080:25081): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:23:38:033 MEMORIA/(25080:25093): Entro Atender KERNEL
+[INFO] 23:23:41:688 MEMORIA/(25080:25093): Kernel solicita INICIO PROCESO
+[INFO] 23:23:41:688 MEMORIA/(25080:25093): Se creo la tabla de primer nivel: 0
+[INFO] 23:23:46:688 MEMORIA/(25080:25093): Kernel solicita FINALIZACION PROCESO
+[INFO] 23:23:46:688 MEMORIA/(25080:25093): Id a finalizar: 0
+[ERROR] 23:23:52:728 MEMORIA/(25080:25093): Se desconecto el kernel
+[INFO] 23:23:59:488 MEMORIA/(25277:25277): Memoria lista para recibir clientes
+[INFO] 23:23:59:488 MEMORIA/(25277:25278): Entro Atender CPU
+[INFO] 23:24:00:832 MEMORIA/(25277:25278): Se conecto CPU: 5
+[INFO] 23:24:00:832 MEMORIA/(25277:25278): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:24:00:832 MEMORIA/(25277:25290): Entro Atender KERNEL
+[INFO] 23:24:03:727 MEMORIA/(25277:25290): Kernel solicita INICIO PROCESO
+[INFO] 23:24:03:728 MEMORIA/(25277:25290): Se creo la tabla de primer nivel: 0
+[INFO] 23:24:03:728 MEMORIA/(25277:25290): H–('–nso/swap/0.swap
+[INFO] 23:25:51:719 MEMORIA/(26066:26066): /home/utnso/swap/
+[INFO] 23:25:51:719 MEMORIA/(26066:26066): Memoria lista para recibir clientes
+[INFO] 23:25:51:719 MEMORIA/(26066:26067): Entro Atender CPU
+[INFO] 23:25:59:559 MEMORIA/(26066:26067): Se conecto CPU: 5
+[INFO] 23:25:59:559 MEMORIA/(26066:26067): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:25:59:559 MEMORIA/(26066:26126): Entro Atender KERNEL
+[INFO] 23:26:03:335 MEMORIA/(26066:26126): Kernel solicita INICIO PROCESO
+[INFO] 23:26:03:335 MEMORIA/(26066:26126): Se creo la tabla de primer nivel: 0
+[INFO] 23:26:03:335 MEMORIA/(26066:26126): ¸Ù½0.swap
+[INFO] 23:26:08:337 MEMORIA/(26066:26126): Kernel solicita FINALIZACION PROCESO
+[INFO] 23:26:08:337 MEMORIA/(26066:26126): ¸Ù½0.swap
+[INFO] 23:26:08:337 MEMORIA/(26066:26126): Id a finalizar: 0
+[ERROR] 23:26:59:311 MEMORIA/(26066:26126): Se desconecto el kernel
+[INFO] 23:27:01:735 MEMORIA/(26550:26550): /home/utnso/swap
+[INFO] 23:30:46:943 MEMORIA/(28003:28003): 4
+[INFO] 23:30:46:943 MEMORIA/(28003:28003): H´÷
+[INFO] 23:30:46:943 MEMORIA/(28003:28003): 2000
+[INFO] 23:30:46:943 MEMORIA/(28003:28003): 1000
+[INFO] 23:30:46:943 MEMORIA/(28003:28003): 
+[INFO] 23:30:46:943 MEMORIA/(28003:28003): ÐÅ÷
+[INFO] 23:30:46:943 MEMORIA/(28003:28003): 4096
+[INFO] 23:30:46:943 MEMORIA/(28003:28003): 64
+[INFO] 23:30:46:943 MEMORIA/(28003:28003): Memoria lista para recibir clientes
+[INFO] 23:30:46:944 MEMORIA/(28003:28004): Entro Atender CPU
+[INFO] 23:35:06:598 MEMORIA/(29767:29767): 4
+[INFO] 23:35:06:598 MEMORIA/(29767:29767): H”š(§šnso/swap/
+[INFO] 23:35:06:598 MEMORIA/(29767:29767): 2000
+[INFO] 23:35:06:598 MEMORIA/(29767:29767): 1000
+[INFO] 23:35:06:598 MEMORIA/(29767:29767): 
+[INFO] 23:35:17:766 MEMORIA/(29884:29884): 4
+[INFO] 23:35:17:766 MEMORIA/(29884:29884): HTX
+[INFO] 23:35:17:766 MEMORIA/(29884:29884): 2000
+[INFO] 23:35:17:766 MEMORIA/(29884:29884): 1000
+[INFO] 23:35:17:766 MEMORIA/(29884:29884): 
+[INFO] 23:35:17:766 MEMORIA/(29884:29884): 4
+[INFO] 23:35:17:766 MEMORIA/(29884:29884): 4096
+[INFO] 23:35:17:766 MEMORIA/(29884:29884): 64
+[INFO] 23:35:17:766 MEMORIA/(29884:29884): Memoria lista para recibir clientes
+[INFO] 23:35:17:766 MEMORIA/(29884:29885): Entro Atender CPU
+[INFO] 23:37:05:190 MEMORIA/(30611:30611): 0
+[INFO] 23:37:05:190 MEMORIA/(30611:30611): /home/utnso/swap/
+[INFO] 23:37:05:190 MEMORIA/(30611:30611): 0
+[INFO] 23:37:05:190 MEMORIA/(30611:30611): 0
+[INFO] 23:37:05:190 MEMORIA/(30611:30611): (null)
+[INFO] 23:37:05:190 MEMORIA/(30611:30611): 0
+[INFO] 23:37:05:190 MEMORIA/(30611:30611): 0
+[INFO] 23:37:05:190 MEMORIA/(30611:30611): 0
+[INFO] 23:38:12:470 MEMORIA/(31059:31059): 4
+[INFO] 23:38:12:470 MEMORIA/(31059:31059): H”n(§nnso/swap/
+[INFO] 23:38:12:470 MEMORIA/(31059:31059): 2000
+[INFO] 23:38:12:470 MEMORIA/(31059:31059): 1000
+[INFO] 23:38:12:470 MEMORIA/(31059:31059): 
+[INFO] 23:38:12:470 MEMORIA/(31059:31059): 4
+[INFO] 23:38:12:470 MEMORIA/(31059:31059): 4096
+[INFO] 23:38:12:470 MEMORIA/(31059:31059): 64
+[INFO] 23:38:12:470 MEMORIA/(31059:31059): Memoria lista para recibir clientes
+[INFO] 23:38:12:470 MEMORIA/(31059:31060): Entro Atender CPU
+[INFO] 23:38:32:485 MEMORIA/(31218:31218): 4
+[INFO] 23:38:32:485 MEMORIA/(31218:31218): /home/utnso/swap/
+[INFO] 23:38:32:486 MEMORIA/(31218:31218): 2000
+[INFO] 23:38:32:486 MEMORIA/(31218:31218): 1000
+[INFO] 23:38:32:486 MEMORIA/(31218:31218): CLOCK-M
+[INFO] 23:38:32:486 MEMORIA/(31218:31218): 4
+[INFO] 23:38:32:486 MEMORIA/(31218:31218): 4096
+[INFO] 23:38:32:486 MEMORIA/(31218:31218): 64
+[INFO] 23:38:32:486 MEMORIA/(31218:31218): Memoria lista para recibir clientes
+[INFO] 23:38:32:486 MEMORIA/(31218:31219): Entro Atender CPU
+[INFO] 23:39:59:790 MEMORIA/(31815:31815): 4
+[INFO] 23:39:59:790 MEMORIA/(31815:31815): /home/utnso/swap/
+[INFO] 23:39:59:790 MEMORIA/(31815:31815): 2000
+[INFO] 23:39:59:790 MEMORIA/(31815:31815): 1000
+[INFO] 23:39:59:790 MEMORIA/(31815:31815): 
+[INFO] 23:39:59:790 MEMORIA/(31815:31815): 4
+[INFO] 23:39:59:790 MEMORIA/(31815:31815): 4096
+[INFO] 23:39:59:790 MEMORIA/(31815:31815): 64
+[INFO] 23:39:59:790 MEMORIA/(31815:31815): Memoria lista para recibir clientes
+[INFO] 23:39:59:790 MEMORIA/(31815:31816): Entro Atender CPU
+[INFO] 23:40:39:539 MEMORIA/(32097:32097): 4
+[INFO] 23:40:39:539 MEMORIA/(32097:32097): /home/utnso/swap/
+[INFO] 23:40:39:539 MEMORIA/(32097:32097): 2000
+[INFO] 23:40:39:539 MEMORIA/(32097:32097): 1000
+[INFO] 23:40:39:539 MEMORIA/(32097:32097): CLOCK-M
+[INFO] 23:40:39:539 MEMORIA/(32097:32097): 4
+[INFO] 23:40:39:539 MEMORIA/(32097:32097): 4096
+[INFO] 23:40:39:539 MEMORIA/(32097:32097): 64
+[INFO] 23:40:39:539 MEMORIA/(32097:32097): Memoria lista para recibir clientes
+[INFO] 23:40:39:540 MEMORIA/(32097:32098): Entro Atender CPU
+[INFO] 23:40:47:918 MEMORIA/(32097:32098): Se conecto CPU: 5
+[INFO] 23:40:47:918 MEMORIA/(32097:32098): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:40:47:918 MEMORIA/(32097:32158): Entro Atender KERNEL
+[INFO] 23:41:02:607 MEMORIA/(32097:32158): Kernel solicita INICIO PROCESO
+[INFO] 23:41:02:607 MEMORIA/(32097:32158): Se creo la tabla de primer nivel: 0
+[INFO] 23:41:02:607 MEMORIA/(32097:32158): /home/utnso/swap/0.swap
+[INFO] 23:41:32:664 MEMORIA/(32097:32158): Kernel solicita FINALIZACION PROCESO
+[INFO] 23:41:32:664 MEMORIA/(32097:32158): /home/utnso/swap/0.swap
+[INFO] 23:41:32:665 MEMORIA/(32097:32158): Id a finalizar: 0
+[ERROR] 23:41:47:894 MEMORIA/(32097:32158): Se desconecto el kernel
+[INFO] 23:42:39:758 MEMORIA/(382:382): 4
+[INFO] 23:42:39:758 MEMORIA/(382:382): /home/utnso/swap/
+[INFO] 23:42:39:758 MEMORIA/(382:382): 2000
+[INFO] 23:42:39:758 MEMORIA/(382:382): 1000
+[INFO] 23:42:39:758 MEMORIA/(382:382): CLOCK-M
+[INFO] 23:42:39:758 MEMORIA/(382:382): 4
+[INFO] 23:42:39:758 MEMORIA/(382:382): 4096
+[INFO] 23:42:39:758 MEMORIA/(382:382): 64
+[INFO] 23:42:39:758 MEMORIA/(382:382): Memoria lista para recibir clientes
+[INFO] 23:42:39:758 MEMORIA/(382:383): Entro Atender CPU
+[INFO] 23:42:48:597 MEMORIA/(484:484): Memoria lista para recibir clientes
+[INFO] 23:42:48:598 MEMORIA/(484:485): Entro Atender CPU
+[INFO] 23:42:50:868 MEMORIA/(484:485): Se conecto CPU: 5
+[INFO] 23:42:50:870 MEMORIA/(484:485): CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina
+[INFO] 23:42:50:870 MEMORIA/(484:505): Entro Atender KERNEL
+[INFO] 23:42:55:766 MEMORIA/(484:505): Kernel solicita INICIO PROCESO
+[INFO] 23:42:55:766 MEMORIA/(484:505): Se creo la tabla de primer nivel: 0
+[INFO] 23:42:55:766 MEMORIA/(484:505): /home/utnso/swap/0.swap
+[INFO] 23:43:25:889 MEMORIA/(484:505): Kernel solicita FINALIZACION PROCESO
+[INFO] 23:43:25:889 MEMORIA/(484:505): /home/utnso/swap/0.swap
+[INFO] 23:43:25:889 MEMORIA/(484:505): Id a finalizar: 0
+[ERROR] 23:43:36:125 MEMORIA/(484:505): Se desconecto el kernel

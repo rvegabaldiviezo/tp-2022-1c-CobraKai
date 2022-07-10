@@ -4247,3 +4247,508 @@
 [INFO] 22:07:46:104 KERNEL/(8144:8145): I/O 5000
 [INFO] 22:07:46:104 KERNEL/(8144:8145): EXIT
 [ERROR] 22:12:54:977 KERNEL/(8144:8146): Se desconecto el cliente
+[INFO] 22:47:55:953 KERNEL/(10586:10586): Kernel listo para recibir al cliente
+[INFO] 22:47:55:954 KERNEL/(10586:10586): conectado a memoria
+[ERROR] 22:47:55:954 KERNEL/(10586:10588): Se desconecto el cliente
+[INFO] 22:47:55:954 KERNEL/(10586:10587): Se inicio la planificacion SRT
+[INFO] 22:47:55:954 KERNEL/(10586:10587): Inicio la planificacion IO
+[INFO] 22:47:55:954 KERNEL/(10586:10587): Planificacion despausada
+[INFO] 22:48:07:815 KERNEL/(10678:10678): Kernel listo para recibir al cliente
+[INFO] 22:48:07:815 KERNEL/(10678:10678): conectado a memoria
+[INFO] 22:48:07:816 KERNEL/(10678:10679): Se inicio la planificacion SRT
+[INFO] 22:48:07:816 KERNEL/(10678:10679): Inicio la planificacion IO
+[INFO] 22:48:07:816 KERNEL/(10678:10679): Planificacion despausada
+[INFO] 22:48:25:065 KERNEL/(10678:10678): Conexion consola: 9
+[INFO] 22:48:25:066 KERNEL/(10678:10789): Tamaño recibido: 100
+[INFO] 22:48:35:312 KERNEL/(10869:10869): Kernel listo para recibir al cliente
+[INFO] 22:48:35:312 KERNEL/(10869:10869): conectado a memoria
+[INFO] 22:48:35:312 KERNEL/(10869:10870): Se inicio la planificacion SRT
+[INFO] 22:48:35:312 KERNEL/(10869:10870): Inicio la planificacion IO
+[INFO] 22:48:35:312 KERNEL/(10869:10870): Planificacion despausada
+[INFO] 22:48:37:280 KERNEL/(10869:10869): Conexion consola: 9
+[INFO] 22:48:37:280 KERNEL/(10869:10891): Tamaño recibido: 100
+[INFO] 22:49:34:128 KERNEL/(11255:11255): Kernel listo para recibir al cliente
+[INFO] 22:49:34:128 KERNEL/(11255:11255): conectado a memoria
+[INFO] 22:49:34:128 KERNEL/(11255:11257): Se inicio la planificacion SRT
+[INFO] 22:49:34:128 KERNEL/(11255:11257): Inicio la planificacion IO
+[INFO] 22:49:34:128 KERNEL/(11255:11257): Planificacion despausada
+[ERROR] 22:49:34:128 KERNEL/(11255:11258): Se desconecto el cliente
+[INFO] 22:50:15:936 KERNEL/(11571:11571): Kernel listo para recibir al cliente
+[INFO] 22:50:15:936 KERNEL/(11571:11571): conectado a memoria
+[INFO] 22:50:15:936 KERNEL/(11571:11572): Se inicio la planificacion SRT
+[INFO] 22:50:15:936 KERNEL/(11571:11572): Inicio la planificacion IO
+[INFO] 22:50:15:936 KERNEL/(11571:11572): Planificacion despausada
+[INFO] 22:50:19:568 KERNEL/(11571:11571): Conexion consola: 9
+[INFO] 22:50:19:568 KERNEL/(11571:11602): Tamaño recibido: 100
+[INFO] 22:55:05:185 KERNEL/(13437:13437): Kernel listo para recibir al cliente
+[INFO] 22:55:05:185 KERNEL/(13437:13437): conectado a memoria
+[INFO] 22:55:05:185 KERNEL/(13437:13438): Se inicio la planificacion SRT
+[INFO] 22:55:05:185 KERNEL/(13437:13438): Inicio la planificacion IO
+[INFO] 22:55:05:185 KERNEL/(13437:13438): Planificacion despausada
+[INFO] 22:55:07:648 KERNEL/(13437:13437): Conexion consola: 9
+[INFO] 22:55:07:648 KERNEL/(13437:13458): Tamaño recibido: 100
+[ERROR] 22:55:07:755 KERNEL/(13437:13458): El número de tabla no es valido
+[INFO] 22:56:27:410 KERNEL/(14042:14042): Kernel listo para recibir al cliente
+[INFO] 22:56:27:410 KERNEL/(14042:14042): conectado a memoria
+[INFO] 22:56:27:410 KERNEL/(14042:14043): Se inicio la planificacion SRT
+[INFO] 22:56:27:410 KERNEL/(14042:14043): Inicio la planificacion IO
+[INFO] 22:56:27:410 KERNEL/(14042:14043): Planificacion despausada
+[INFO] 22:56:31:625 KERNEL/(14042:14042): Conexion consola: 9
+[INFO] 22:56:31:625 KERNEL/(14042:14073): Tamaño recibido: 100
+[INFO] 22:56:31:626 KERNEL/(14042:14073): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 22:56:31:626 KERNEL/(14042:14073): Proceso 0 asignado a la cola NEW
+[INFO] 22:56:31:626 KERNEL/(14042:14073): El proceso 0 fue asignado a la cola READY
+[INFO] 22:56:36:641 KERNEL/(14042:14043): Me llegaron los siguientes valores:
+[INFO] 22:56:36:642 KERNEL/(14042:14043): NO_OP
+[INFO] 22:56:36:642 KERNEL/(14042:14043): NO_OP
+[INFO] 22:56:36:642 KERNEL/(14042:14043): NO_OP
+[INFO] 22:56:36:642 KERNEL/(14042:14043): NO_OP
+[INFO] 22:56:36:642 KERNEL/(14042:14043): NO_OP
+[INFO] 22:56:36:642 KERNEL/(14042:14043): NO_OP
+[INFO] 22:56:36:642 KERNEL/(14042:14043): NO_OP
+[INFO] 22:56:36:642 KERNEL/(14042:14043): NO_OP
+[INFO] 22:56:36:642 KERNEL/(14042:14043): NO_OP
+[INFO] 22:56:36:642 KERNEL/(14042:14043): NO_OP
+[INFO] 22:56:36:642 KERNEL/(14042:14043): NO_OP
+[INFO] 22:56:36:642 KERNEL/(14042:14043): NO_OP
+[INFO] 22:56:36:642 KERNEL/(14042:14043): NO_OP
+[INFO] 22:56:36:642 KERNEL/(14042:14043): NO_OP
+[INFO] 22:56:36:642 KERNEL/(14042:14043): NO_OP
+[INFO] 22:56:36:642 KERNEL/(14042:14043): I/O 5000
+[INFO] 22:56:36:642 KERNEL/(14042:14043): EXIT
+[INFO] 22:56:51:706 KERNEL/(14042:14044): Codigo BLOQUEO_IO recibido
+[INFO] 22:56:51:706 KERNEL/(14042:14044): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 22:56:51:706 KERNEL/(14042:14044): Tiempo de bloqueo: 5000
+[INFO] 22:56:51:706 KERNEL/(14042:14044): Inicio de bloqueo: 1657418211
+[INFO] 22:56:51:706 KERNEL/(14042:14044): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 22:56:51:706 KERNEL/(14042:14043): Planificacion despausada
+[INFO] 22:56:51:706 KERNEL/(14042:14045): El proceso 0 inicio su I/0
+[INFO] 22:56:56:709 KERNEL/(14042:14045): El proceso 0 finalizo su I/0
+[INFO] 22:56:56:709 KERNEL/(14042:14045):    Se solicito interrupcion
+[INFO] 22:56:56:709 KERNEL/(14042:14045): Se paso el proceso 0 de bloqueado a ready
+[INFO] 22:57:01:709 KERNEL/(14042:14043): Me llegaron los siguientes valores:
+[INFO] 22:57:01:709 KERNEL/(14042:14043): NO_OP
+[INFO] 22:57:01:709 KERNEL/(14042:14043): NO_OP
+[INFO] 22:57:01:709 KERNEL/(14042:14043): NO_OP
+[INFO] 22:57:01:709 KERNEL/(14042:14043): NO_OP
+[INFO] 22:57:01:709 KERNEL/(14042:14043): NO_OP
+[INFO] 22:57:01:709 KERNEL/(14042:14043): NO_OP
+[INFO] 22:57:01:709 KERNEL/(14042:14043): NO_OP
+[INFO] 22:57:01:709 KERNEL/(14042:14043): NO_OP
+[INFO] 22:57:01:709 KERNEL/(14042:14043): NO_OP
+[INFO] 22:57:01:709 KERNEL/(14042:14043): NO_OP
+[INFO] 22:57:01:709 KERNEL/(14042:14043): NO_OP
+[INFO] 22:57:01:709 KERNEL/(14042:14043): NO_OP
+[INFO] 22:57:01:709 KERNEL/(14042:14043): NO_OP
+[INFO] 22:57:01:709 KERNEL/(14042:14043): NO_OP
+[INFO] 22:57:01:709 KERNEL/(14042:14043): NO_OP
+[INFO] 22:57:01:709 KERNEL/(14042:14043): I/O 5000
+[INFO] 22:57:01:709 KERNEL/(14042:14043): EXIT
+[INFO] 22:57:01:710 KERNEL/(14042:14044): La CPU envio un pcb con estado finalizado
+[INFO] 22:57:01:710 KERNEL/(14042:14044): El socket que recibi es 9
+[INFO] 22:57:01:710 KERNEL/(14042:14044): El proceso 0 finalizo correctamente
+[INFO] 22:57:01:710 KERNEL/(14042:14043): Planificacion despausada
+[INFO] 22:58:06:361 KERNEL/(14042:14042): Conexion consola: 10
+[INFO] 22:58:06:363 KERNEL/(14042:14652): Tamaño recibido: 100
+[INFO] 22:58:06:372 KERNEL/(14042:14652): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 22:58:06:372 KERNEL/(14042:14652): Proceso 1 asignado a la cola NEW
+[INFO] 22:58:06:372 KERNEL/(14042:14652): El proceso 1 fue asignado a la cola READY
+[INFO] 22:58:11:373 KERNEL/(14042:14043): Me llegaron los siguientes valores:
+[INFO] 22:58:11:374 KERNEL/(14042:14043): EXIT
+[INFO] 22:58:11:375 KERNEL/(14042:14044): La CPU envio un pcb con estado finalizado
+[INFO] 22:58:11:375 KERNEL/(14042:14044): El socket que recibi es 10
+[INFO] 22:58:11:375 KERNEL/(14042:14044): El proceso 1 finalizo correctamente
+[INFO] 22:58:11:375 KERNEL/(14042:14043): Planificacion despausada
+[INFO] 22:58:35:626 KERNEL/(14042:14042): Conexion consola: 11
+[INFO] 22:58:35:626 KERNEL/(14042:14825): Tamaño recibido: 100
+[INFO] 22:58:35:626 KERNEL/(14042:14825): Se asignó el numero de tabla: 2 al proceso de id: 2
+
+[INFO] 22:58:35:626 KERNEL/(14042:14825): Proceso 2 asignado a la cola NEW
+[INFO] 22:58:35:626 KERNEL/(14042:14825): El proceso 2 fue asignado a la cola READY
+[INFO] 22:58:40:628 KERNEL/(14042:14043): Me llegaron los siguientes valores:
+[INFO] 22:58:40:628 KERNEL/(14042:14043): NO_OP
+[INFO] 22:58:40:628 KERNEL/(14042:14043): READ 9
+[INFO] 22:58:40:628 KERNEL/(14042:14043): EXIT
+[INFO] 22:58:41:632 KERNEL/(14042:14044): La CPU envio un pcb con estado finalizado
+[INFO] 22:58:41:632 KERNEL/(14042:14044): El socket que recibi es 11
+[INFO] 22:58:41:632 KERNEL/(14042:14044): El proceso 2 finalizo correctamente
+[INFO] 22:58:41:632 KERNEL/(14042:14043): Planificacion despausada
+[INFO] 23:01:26:290 KERNEL/(15901:15901): Kernel listo para recibir al cliente
+[INFO] 23:01:26:290 KERNEL/(15901:15901): conectado a memoria
+[INFO] 23:01:26:291 KERNEL/(15901:15902): Se inicio la planificacion SRT
+[INFO] 23:01:26:291 KERNEL/(15901:15902): Inicio la planificacion IO
+[INFO] 23:01:26:291 KERNEL/(15901:15902): Planificacion despausada
+[INFO] 23:01:27:898 KERNEL/(15901:15901): Conexion consola: 9
+[INFO] 23:01:27:898 KERNEL/(15901:15915): Tamaño recibido: 100
+[INFO] 23:01:27:899 KERNEL/(15901:15915): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 23:01:27:899 KERNEL/(15901:15915): Proceso 0 asignado a la cola NEW
+[INFO] 23:01:27:899 KERNEL/(15901:15915): El proceso 0 fue asignado a la cola READY
+[INFO] 23:01:32:903 KERNEL/(15901:15902): Me llegaron los siguientes valores:
+[INFO] 23:01:32:903 KERNEL/(15901:15902): NO_OP
+[INFO] 23:01:32:903 KERNEL/(15901:15902): READ 9
+[INFO] 23:01:32:903 KERNEL/(15901:15902): EXIT
+[INFO] 23:01:33:913 KERNEL/(15901:15903): La CPU envio un pcb con estado finalizado
+[INFO] 23:01:33:913 KERNEL/(15901:15903): El socket que recibi es 9
+[INFO] 23:01:33:913 KERNEL/(15901:15903): El proceso 0 finalizo correctamente
+[INFO] 23:01:33:913 KERNEL/(15901:15902): Planificacion despausada
+[INFO] 23:03:34:514 KERNEL/(16755:16755): Kernel listo para recibir al cliente
+[INFO] 23:03:34:514 KERNEL/(16755:16755): conectado a memoria
+[INFO] 23:03:34:514 KERNEL/(16755:16756): Se inicio la planificacion SRT
+[INFO] 23:03:34:514 KERNEL/(16755:16756): Inicio la planificacion IO
+[INFO] 23:03:34:514 KERNEL/(16755:16756): Planificacion despausada
+[INFO] 23:03:36:169 KERNEL/(16755:16755): Conexion consola: 9
+[INFO] 23:03:36:169 KERNEL/(16755:16792): Tamaño recibido: 100
+[INFO] 23:03:50:834 KERNEL/(16897:16897): Kernel listo para recibir al cliente
+[INFO] 23:03:50:834 KERNEL/(16897:16897): conectado a memoria
+[INFO] 23:03:50:835 KERNEL/(16897:16898): Se inicio la planificacion SRT
+[INFO] 23:03:50:835 KERNEL/(16897:16898): Inicio la planificacion IO
+[INFO] 23:03:50:835 KERNEL/(16897:16898): Planificacion despausada
+[INFO] 23:04:36:274 KERNEL/(17194:17194): Kernel listo para recibir al cliente
+[INFO] 23:04:36:275 KERNEL/(17194:17194): conectado a memoria
+[INFO] 23:04:36:275 KERNEL/(17194:17195): Se inicio la planificacion SRT
+[INFO] 23:04:36:275 KERNEL/(17194:17195): Inicio la planificacion IO
+[INFO] 23:04:36:275 KERNEL/(17194:17195): Planificacion despausada
+[INFO] 23:04:38:307 KERNEL/(17194:17194): Conexion consola: 9
+[INFO] 23:04:38:307 KERNEL/(17194:17208): Tamaño recibido: 100
+[ERROR] 23:04:38:398 KERNEL/(17194:17208): El número de tabla no es valido
+[INFO] 23:05:09:122 KERNEL/(17416:17416): Kernel listo para recibir al cliente
+[INFO] 23:05:09:122 KERNEL/(17416:17416): conectado a memoria
+[INFO] 23:05:09:122 KERNEL/(17416:17417): Se inicio la planificacion SRT
+[INFO] 23:05:09:122 KERNEL/(17416:17417): Inicio la planificacion IO
+[INFO] 23:05:09:122 KERNEL/(17416:17417): Planificacion despausada
+[INFO] 23:05:58:402 KERNEL/(17738:17738): Kernel listo para recibir al cliente
+[INFO] 23:05:58:403 KERNEL/(17738:17738): conectado a memoria
+[INFO] 23:05:58:403 KERNEL/(17738:17739): Se inicio la planificacion SRT
+[INFO] 23:05:58:403 KERNEL/(17738:17739): Inicio la planificacion IO
+[INFO] 23:05:58:403 KERNEL/(17738:17739): Planificacion despausada
+[INFO] 23:06:00:570 KERNEL/(17738:17738): Conexion consola: 9
+[INFO] 23:06:00:570 KERNEL/(17738:17753): Tamaño recibido: 100
+[INFO] 23:06:00:570 KERNEL/(17738:17753): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 23:06:00:570 KERNEL/(17738:17753): Proceso 0 asignado a la cola NEW
+[INFO] 23:06:00:570 KERNEL/(17738:17753): El proceso 0 fue asignado a la cola READY
+[INFO] 23:06:05:570 KERNEL/(17738:17739): Me llegaron los siguientes valores:
+[INFO] 23:06:05:570 KERNEL/(17738:17739): NO_OP
+[INFO] 23:06:05:570 KERNEL/(17738:17739): READ 9
+[INFO] 23:06:05:570 KERNEL/(17738:17739): EXIT
+[INFO] 23:06:06:572 KERNEL/(17738:17740): La CPU envio un pcb con estado finalizado
+[INFO] 23:06:06:572 KERNEL/(17738:17740): El socket que recibi es 9
+[INFO] 23:06:06:572 KERNEL/(17738:17740): El proceso 0 finalizo correctamente
+[INFO] 23:06:06:572 KERNEL/(17738:17739): Planificacion despausada
+[INFO] 23:06:43:578 KERNEL/(18076:18076): Kernel listo para recibir al cliente
+[INFO] 23:06:43:578 KERNEL/(18076:18076): conectado a memoria
+[INFO] 23:06:43:578 KERNEL/(18076:18077): Se inicio la planificacion SRT
+[INFO] 23:06:43:578 KERNEL/(18076:18077): Inicio la planificacion IO
+[INFO] 23:06:43:578 KERNEL/(18076:18077): Planificacion despausada
+[INFO] 23:06:45:146 KERNEL/(18076:18076): Conexion consola: 9
+[INFO] 23:06:45:147 KERNEL/(18076:18090): Tamaño recibido: 100
+[ERROR] 23:06:45:221 KERNEL/(18076:18090): El número de tabla no es valido
+[INFO] 23:08:09:554 KERNEL/(18667:18667): Kernel listo para recibir al cliente
+[INFO] 23:08:09:554 KERNEL/(18667:18667): conectado a memoria
+[INFO] 23:08:09:555 KERNEL/(18667:18668): Se inicio la planificacion SRT
+[INFO] 23:08:09:555 KERNEL/(18667:18668): Inicio la planificacion IO
+[INFO] 23:08:09:555 KERNEL/(18667:18668): Planificacion despausada
+[INFO] 23:08:11:250 KERNEL/(18667:18667): Conexion consola: 9
+[INFO] 23:08:11:250 KERNEL/(18667:18680): Tamaño recibido: 100
+[ERROR] 23:08:11:322 KERNEL/(18667:18680): El número de tabla no es valido
+[INFO] 23:10:23:803 KERNEL/(19505:19505): Kernel listo para recibir al cliente
+[INFO] 23:10:23:803 KERNEL/(19505:19505): conectado a memoria
+[INFO] 23:10:23:803 KERNEL/(19505:19506): Se inicio la planificacion SRT
+[INFO] 23:10:23:803 KERNEL/(19505:19506): Inicio la planificacion IO
+[INFO] 23:10:23:803 KERNEL/(19505:19506): Planificacion despausada
+[INFO] 23:10:25:418 KERNEL/(19505:19505): Conexion consola: 9
+[INFO] 23:10:25:418 KERNEL/(19505:19518): Tamaño recibido: 100
+[ERROR] 23:10:25:493 KERNEL/(19505:19518): El número de tabla no es valido
+[INFO] 23:11:09:154 KERNEL/(19844:19844): Kernel listo para recibir al cliente
+[INFO] 23:11:09:154 KERNEL/(19844:19844): conectado a memoria
+[INFO] 23:11:09:154 KERNEL/(19844:19845): Se inicio la planificacion SRT
+[INFO] 23:11:09:154 KERNEL/(19844:19845): Inicio la planificacion IO
+[INFO] 23:11:09:154 KERNEL/(19844:19845): Planificacion despausada
+[INFO] 23:14:46:162 KERNEL/(21370:21370): Kernel listo para recibir al cliente
+[INFO] 23:14:46:162 KERNEL/(21370:21370): conectado a memoria
+[INFO] 23:14:46:163 KERNEL/(21370:21371): Se inicio la planificacion SRT
+[INFO] 23:14:46:163 KERNEL/(21370:21371): Inicio la planificacion IO
+[INFO] 23:14:46:163 KERNEL/(21370:21371): Planificacion despausada
+[INFO] 23:14:54:531 KERNEL/(21370:21370): Conexion consola: 9
+[INFO] 23:14:54:531 KERNEL/(21370:21423): Tamaño recibido: 100
+[INFO] 23:15:15:083 KERNEL/(21370:21423): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 23:15:15:083 KERNEL/(21370:21423): Proceso 0 asignado a la cola NEW
+[INFO] 23:15:15:083 KERNEL/(21370:21423): El proceso 0 fue asignado a la cola READY
+[INFO] 23:15:20:084 KERNEL/(21370:21371): Me llegaron los siguientes valores:
+[INFO] 23:15:20:084 KERNEL/(21370:21371): NO_OP
+[INFO] 23:15:20:084 KERNEL/(21370:21371): READ 9
+[INFO] 23:15:20:084 KERNEL/(21370:21371): EXIT
+[INFO] 23:15:21:086 KERNEL/(21370:21372): La CPU envio un pcb con estado finalizado
+[INFO] 23:15:21:086 KERNEL/(21370:21372): El socket que recibi es 9
+[INFO] 23:15:21:086 KERNEL/(21370:21372): El proceso 0 finalizo correctamente
+[INFO] 23:15:21:086 KERNEL/(21370:21371): Planificacion despausada
+[INFO] 23:16:01:035 KERNEL/(21881:21881): Kernel listo para recibir al cliente
+[INFO] 23:16:01:035 KERNEL/(21881:21881): conectado a memoria
+[INFO] 23:16:01:035 KERNEL/(21881:21882): Se inicio la planificacion SRT
+[INFO] 23:16:01:035 KERNEL/(21881:21882): Inicio la planificacion IO
+[INFO] 23:16:01:035 KERNEL/(21881:21882): Planificacion despausada
+[ERROR] 23:16:06:019 KERNEL/(21881:21883): Se desconecto el cliente
+[INFO] 23:17:19:275 KERNEL/(22437:22437): Kernel listo para recibir al cliente
+[INFO] 23:17:19:275 KERNEL/(22437:22437): conectado a memoria
+[INFO] 23:17:19:275 KERNEL/(22437:22438): Se inicio la planificacion SRT
+[INFO] 23:17:19:275 KERNEL/(22437:22438): Inicio la planificacion IO
+[INFO] 23:17:19:275 KERNEL/(22437:22438): Planificacion despausada
+[INFO] 23:17:22:034 KERNEL/(22437:22437): Conexion consola: 9
+[INFO] 23:17:22:034 KERNEL/(22437:22450): Tamaño recibido: 100
+[ERROR] 23:17:22:106 KERNEL/(22437:22450): El número de tabla no es valido
+[INFO] 23:17:37:914 KERNEL/(22569:22569): Kernel listo para recibir al cliente
+[INFO] 23:17:37:914 KERNEL/(22569:22569): conectado a memoria
+[INFO] 23:17:37:915 KERNEL/(22569:22570): Se inicio la planificacion SRT
+[INFO] 23:17:37:915 KERNEL/(22569:22570): Inicio la planificacion IO
+[INFO] 23:17:37:915 KERNEL/(22569:22570): Planificacion despausada
+[INFO] 23:17:40:466 KERNEL/(22569:22569): Conexion consola: 9
+[INFO] 23:17:40:467 KERNEL/(22569:22590): Tamaño recibido: 100
+[INFO] 23:17:40:467 KERNEL/(22569:22590): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 23:17:40:467 KERNEL/(22569:22590): Proceso 0 asignado a la cola NEW
+[INFO] 23:17:40:467 KERNEL/(22569:22590): El proceso 0 fue asignado a la cola READY
+[INFO] 23:17:45:469 KERNEL/(22569:22570): Me llegaron los siguientes valores:
+[INFO] 23:17:45:469 KERNEL/(22569:22570): NO_OP
+[INFO] 23:17:45:469 KERNEL/(22569:22570): READ 9
+[INFO] 23:17:45:469 KERNEL/(22569:22570): EXIT
+[INFO] 23:17:46:471 KERNEL/(22569:22571): La CPU envio un pcb con estado finalizado
+[INFO] 23:17:46:471 KERNEL/(22569:22571): El socket que recibi es 9
+[INFO] 23:17:46:471 KERNEL/(22569:22571): El proceso 0 finalizo correctamente
+[INFO] 23:17:46:471 KERNEL/(22569:22570): Planificacion despausada
+[INFO] 23:19:33:674 KERNEL/(23338:23338): Kernel listo para recibir al cliente
+[INFO] 23:19:33:674 KERNEL/(23338:23338): conectado a memoria
+[INFO] 23:19:33:674 KERNEL/(23338:23339): Se inicio la planificacion SRT
+[INFO] 23:19:33:674 KERNEL/(23338:23339): Inicio la planificacion IO
+[INFO] 23:19:33:674 KERNEL/(23338:23339): Planificacion despausada
+[INFO] 23:19:35:377 KERNEL/(23338:23338): Conexion consola: 9
+[INFO] 23:19:35:377 KERNEL/(23338:23351): Tamaño recibido: 100
+[ERROR] 23:19:35:448 KERNEL/(23338:23351): El número de tabla no es valido
+[INFO] 23:20:08:344 KERNEL/(23626:23626): Kernel listo para recibir al cliente
+[INFO] 23:20:08:345 KERNEL/(23626:23626): conectado a memoria
+[INFO] 23:20:08:346 KERNEL/(23626:23627): Se inicio la planificacion SRT
+[INFO] 23:20:08:346 KERNEL/(23626:23627): Inicio la planificacion IO
+[INFO] 23:20:08:346 KERNEL/(23626:23627): Planificacion despausada
+[INFO] 23:20:14:616 KERNEL/(23626:23626): Conexion consola: 9
+[INFO] 23:20:14:617 KERNEL/(23626:23668): Tamaño recibido: 100
+[INFO] 23:20:25:769 KERNEL/(23626:23668): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 23:20:25:769 KERNEL/(23626:23668): Proceso 0 asignado a la cola NEW
+[INFO] 23:20:25:769 KERNEL/(23626:23668): El proceso 0 fue asignado a la cola READY
+[INFO] 23:20:30:769 KERNEL/(23626:23627): Me llegaron los siguientes valores:
+[INFO] 23:20:30:769 KERNEL/(23626:23627): NO_OP
+[INFO] 23:20:30:769 KERNEL/(23626:23627): READ 9
+[INFO] 23:20:30:769 KERNEL/(23626:23627): EXIT
+[INFO] 23:20:31:772 KERNEL/(23626:23628): La CPU envio un pcb con estado finalizado
+[INFO] 23:20:31:772 KERNEL/(23626:23628): El socket que recibi es 9
+[INFO] 23:20:31:772 KERNEL/(23626:23628): El proceso 0 finalizo correctamente
+[INFO] 23:20:31:772 KERNEL/(23626:23627): Planificacion despausada
+[INFO] 23:20:50:065 KERNEL/(23626:23626): Conexion consola: 10
+[INFO] 23:20:50:065 KERNEL/(23626:23929): Tamaño recibido: 100
+[INFO] 23:20:55:157 KERNEL/(23626:23929): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 23:20:55:157 KERNEL/(23626:23929): Proceso 1 asignado a la cola NEW
+[INFO] 23:20:55:157 KERNEL/(23626:23929): El proceso 1 fue asignado a la cola READY
+[INFO] 23:21:00:158 KERNEL/(23626:23627): Me llegaron los siguientes valores:
+[INFO] 23:21:00:158 KERNEL/(23626:23627): NO_OP
+[INFO] 23:21:00:158 KERNEL/(23626:23627): READ 9
+[INFO] 23:21:00:158 KERNEL/(23626:23627): EXIT
+[INFO] 23:21:01:159 KERNEL/(23626:23628): La CPU envio un pcb con estado finalizado
+[INFO] 23:21:01:159 KERNEL/(23626:23628): El socket que recibi es 10
+[INFO] 23:21:01:159 KERNEL/(23626:23628): El proceso 1 finalizo correctamente
+[INFO] 23:21:01:159 KERNEL/(23626:23627): Planificacion despausada
+[INFO] 23:21:22:009 KERNEL/(23626:23626): Conexion consola: 11
+[INFO] 23:21:22:010 KERNEL/(23626:24162): Tamaño recibido: 100
+[INFO] 23:22:32:920 KERNEL/(23626:24162): Se asignó el numero de tabla: 2 al proceso de id: 2
+
+[INFO] 23:22:32:920 KERNEL/(23626:24162): Proceso 2 asignado a la cola NEW
+[INFO] 23:22:32:920 KERNEL/(23626:24162): El proceso 2 fue asignado a la cola READY
+[INFO] 23:22:37:923 KERNEL/(23626:23627): Me llegaron los siguientes valores:
+[INFO] 23:22:37:924 KERNEL/(23626:23627): EXIT
+[INFO] 23:22:37:924 KERNEL/(23626:23628): La CPU envio un pcb con estado finalizado
+[INFO] 23:22:37:924 KERNEL/(23626:23628): El socket que recibi es 11
+[INFO] 23:22:37:924 KERNEL/(23626:23628): El proceso 2 finalizo correctamente
+[INFO] 23:22:37:925 KERNEL/(23626:23627): Planificacion despausada
+[INFO] 23:22:57:833 KERNEL/(24813:24813): Kernel listo para recibir al cliente
+[INFO] 23:22:57:833 KERNEL/(24813:24813): conectado a memoria
+[INFO] 23:22:57:834 KERNEL/(24813:24814): Se inicio la planificacion SRT
+[INFO] 23:22:57:834 KERNEL/(24813:24814): Inicio la planificacion IO
+[INFO] 23:22:57:834 KERNEL/(24813:24814): Planificacion despausada
+[INFO] 23:23:05:152 KERNEL/(24813:24813): Conexion consola: 9
+[INFO] 23:23:05:152 KERNEL/(24813:24862): Tamaño recibido: 100
+[ERROR] 23:23:05:224 KERNEL/(24813:24862): El número de tabla no es valido
+[INFO] 23:23:26:472 KERNEL/(25003:25003): Kernel listo para recibir al cliente
+[INFO] 23:23:26:472 KERNEL/(25003:25003): conectado a memoria
+[INFO] 23:23:26:472 KERNEL/(25003:25004): Se inicio la planificacion SRT
+[INFO] 23:23:26:472 KERNEL/(25003:25004): Inicio la planificacion IO
+[INFO] 23:23:26:472 KERNEL/(25003:25004): Planificacion despausada
+[INFO] 23:23:27:920 KERNEL/(25003:25003): Conexion consola: 9
+[INFO] 23:23:27:920 KERNEL/(25003:25017): Tamaño recibido: 100
+[ERROR] 23:23:27:994 KERNEL/(25003:25017): El número de tabla no es valido
+[INFO] 23:23:40:435 KERNEL/(25112:25112): Kernel listo para recibir al cliente
+[INFO] 23:23:40:435 KERNEL/(25112:25112): conectado a memoria
+[INFO] 23:23:40:435 KERNEL/(25112:25113): Se inicio la planificacion SRT
+[INFO] 23:23:40:435 KERNEL/(25112:25113): Inicio la planificacion IO
+[INFO] 23:23:40:435 KERNEL/(25112:25113): Planificacion despausada
+[INFO] 23:23:41:687 KERNEL/(25112:25112): Conexion consola: 9
+[INFO] 23:23:41:688 KERNEL/(25112:25126): Tamaño recibido: 100
+[INFO] 23:23:41:688 KERNEL/(25112:25126): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 23:23:41:688 KERNEL/(25112:25126): Proceso 0 asignado a la cola NEW
+[INFO] 23:23:41:688 KERNEL/(25112:25126): El proceso 0 fue asignado a la cola READY
+[INFO] 23:23:46:688 KERNEL/(25112:25113): Me llegaron los siguientes valores:
+[INFO] 23:23:46:688 KERNEL/(25112:25113): EXIT
+[INFO] 23:23:46:688 KERNEL/(25112:25114): La CPU envio un pcb con estado finalizado
+[INFO] 23:23:46:688 KERNEL/(25112:25114): El socket que recibi es 9
+[INFO] 23:23:46:688 KERNEL/(25112:25114): El proceso 0 finalizo correctamente
+[INFO] 23:23:46:688 KERNEL/(25112:25113): Planificacion despausada
+[INFO] 23:24:02:232 KERNEL/(25301:25301): Kernel listo para recibir al cliente
+[INFO] 23:24:02:232 KERNEL/(25301:25301): conectado a memoria
+[INFO] 23:24:02:233 KERNEL/(25301:25302): Se inicio la planificacion SRT
+[INFO] 23:24:02:233 KERNEL/(25301:25302): Inicio la planificacion IO
+[INFO] 23:24:02:233 KERNEL/(25301:25302): Planificacion despausada
+[INFO] 23:24:03:727 KERNEL/(25301:25301): Conexion consola: 9
+[INFO] 23:24:03:727 KERNEL/(25301:25316): Tamaño recibido: 100
+[ERROR] 23:24:03:800 KERNEL/(25301:25316): El número de tabla no es valido
+[INFO] 23:26:01:199 KERNEL/(26145:26145): Kernel listo para recibir al cliente
+[INFO] 23:26:01:199 KERNEL/(26145:26145): conectado a memoria
+[INFO] 23:26:01:199 KERNEL/(26145:26146): Se inicio la planificacion SRT
+[INFO] 23:26:01:199 KERNEL/(26145:26146): Inicio la planificacion IO
+[INFO] 23:26:01:199 KERNEL/(26145:26146): Planificacion despausada
+[INFO] 23:26:03:335 KERNEL/(26145:26145): Conexion consola: 9
+[INFO] 23:26:03:335 KERNEL/(26145:26158): Tamaño recibido: 100
+[INFO] 23:26:03:335 KERNEL/(26145:26158): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 23:26:03:335 KERNEL/(26145:26158): Proceso 0 asignado a la cola NEW
+[INFO] 23:26:03:336 KERNEL/(26145:26158): El proceso 0 fue asignado a la cola READY
+[INFO] 23:26:08:336 KERNEL/(26145:26146): Me llegaron los siguientes valores:
+[INFO] 23:26:08:336 KERNEL/(26145:26146): EXIT
+[INFO] 23:26:08:337 KERNEL/(26145:26147): La CPU envio un pcb con estado finalizado
+[INFO] 23:26:08:337 KERNEL/(26145:26147): El socket que recibi es 9
+[INFO] 23:26:08:337 KERNEL/(26145:26147): El proceso 0 finalizo correctamente
+[INFO] 23:26:08:337 KERNEL/(26145:26146): Planificacion despausada
+[INFO] 23:40:53:278 KERNEL/(32185:32185): Kernel listo para recibir al cliente
+[INFO] 23:40:53:278 KERNEL/(32185:32185): conectado a memoria
+[INFO] 23:40:53:278 KERNEL/(32185:32186): Se inicio la planificacion SRT
+[INFO] 23:40:53:279 KERNEL/(32185:32186): Inicio la planificacion IO
+[INFO] 23:40:53:279 KERNEL/(32185:32186): Planificacion despausada
+[INFO] 23:41:02:598 KERNEL/(32185:32185): Conexion consola: 9
+[INFO] 23:41:02:598 KERNEL/(32185:32252): Tamaño recibido: 100
+[INFO] 23:41:02:610 KERNEL/(32185:32252): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 23:41:02:610 KERNEL/(32185:32252): Proceso 0 asignado a la cola NEW
+[INFO] 23:41:02:610 KERNEL/(32185:32252): El proceso 0 fue asignado a la cola READY
+[INFO] 23:41:07:610 KERNEL/(32185:32186): Me llegaron los siguientes valores:
+[INFO] 23:41:07:610 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:07:610 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:07:610 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:07:611 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:07:611 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:07:611 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:07:611 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:07:611 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:07:611 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:07:611 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:07:611 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:07:611 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:07:611 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:07:611 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:07:611 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:07:611 KERNEL/(32185:32186): I/O 5000
+[INFO] 23:41:07:611 KERNEL/(32185:32186): EXIT
+[INFO] 23:41:22:658 KERNEL/(32185:32187): Codigo BLOQUEO_IO recibido
+[INFO] 23:41:22:658 KERNEL/(32185:32187): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 23:41:22:658 KERNEL/(32185:32187): Tiempo de bloqueo: 5000
+[INFO] 23:41:22:658 KERNEL/(32185:32187): Inicio de bloqueo: 1657420882
+[INFO] 23:41:22:658 KERNEL/(32185:32187): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 23:41:22:658 KERNEL/(32185:32186): Planificacion despausada
+[INFO] 23:41:22:658 KERNEL/(32185:32188): El proceso 0 inicio su I/0
+[INFO] 23:41:27:661 KERNEL/(32185:32188): El proceso 0 finalizo su I/0
+[INFO] 23:41:27:661 KERNEL/(32185:32188):    Se solicito interrupcion
+[INFO] 23:41:27:661 KERNEL/(32185:32188): Se paso el proceso 0 de bloqueado a ready
+[INFO] 23:41:32:664 KERNEL/(32185:32186): Me llegaron los siguientes valores:
+[INFO] 23:41:32:664 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:32:664 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:32:664 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:32:664 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:32:664 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:32:664 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:32:664 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:32:664 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:32:664 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:32:664 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:32:664 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:32:664 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:32:664 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:32:664 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:32:664 KERNEL/(32185:32186): NO_OP
+[INFO] 23:41:32:664 KERNEL/(32185:32186): I/O 5000
+[INFO] 23:41:32:664 KERNEL/(32185:32186): EXIT
+[INFO] 23:41:32:664 KERNEL/(32185:32187): La CPU envio un pcb con estado finalizado
+[INFO] 23:41:32:664 KERNEL/(32185:32187): El socket que recibi es 9
+[INFO] 23:41:32:664 KERNEL/(32185:32187): El proceso 0 finalizo correctamente
+[INFO] 23:41:32:665 KERNEL/(32185:32186): Planificacion despausada
+[INFO] 23:42:53:886 KERNEL/(526:526): Kernel listo para recibir al cliente
+[INFO] 23:42:53:887 KERNEL/(526:526): conectado a memoria
+[INFO] 23:42:53:887 KERNEL/(526:527): Se inicio la planificacion SRT
+[INFO] 23:42:53:887 KERNEL/(526:527): Inicio la planificacion IO
+[INFO] 23:42:53:887 KERNEL/(526:527): Planificacion despausada
+[INFO] 23:42:55:766 KERNEL/(526:526): Conexion consola: 9
+[INFO] 23:42:55:766 KERNEL/(526:540): Tamaño recibido: 100
+[INFO] 23:42:55:766 KERNEL/(526:540): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 23:42:55:766 KERNEL/(526:540): Proceso 0 asignado a la cola NEW
+[INFO] 23:42:55:766 KERNEL/(526:540): El proceso 0 fue asignado a la cola READY
+[INFO] 23:43:00:767 KERNEL/(526:527): Me llegaron los siguientes valores:
+[INFO] 23:43:00:767 KERNEL/(526:527): NO_OP
+[INFO] 23:43:00:767 KERNEL/(526:527): NO_OP
+[INFO] 23:43:00:767 KERNEL/(526:527): NO_OP
+[INFO] 23:43:00:767 KERNEL/(526:527): NO_OP
+[INFO] 23:43:00:767 KERNEL/(526:527): NO_OP
+[INFO] 23:43:00:767 KERNEL/(526:527): NO_OP
+[INFO] 23:43:00:767 KERNEL/(526:527): NO_OP
+[INFO] 23:43:00:767 KERNEL/(526:527): NO_OP
+[INFO] 23:43:00:767 KERNEL/(526:527): NO_OP
+[INFO] 23:43:00:767 KERNEL/(526:527): NO_OP
+[INFO] 23:43:00:767 KERNEL/(526:527): NO_OP
+[INFO] 23:43:00:767 KERNEL/(526:527): NO_OP
+[INFO] 23:43:00:767 KERNEL/(526:527): NO_OP
+[INFO] 23:43:00:767 KERNEL/(526:527): NO_OP
+[INFO] 23:43:00:767 KERNEL/(526:527): NO_OP
+[INFO] 23:43:00:767 KERNEL/(526:527): I/O 5000
+[INFO] 23:43:00:767 KERNEL/(526:527): EXIT
+[INFO] 23:43:15:858 KERNEL/(526:528): Codigo BLOQUEO_IO recibido
+[INFO] 23:43:15:858 KERNEL/(526:528): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 23:43:15:858 KERNEL/(526:528): Tiempo de bloqueo: 5000
+[INFO] 23:43:15:858 KERNEL/(526:528): Inicio de bloqueo: 1657420995
+[INFO] 23:43:15:858 KERNEL/(526:528): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 23:43:15:858 KERNEL/(526:527): Planificacion despausada
+[INFO] 23:43:15:858 KERNEL/(526:529): El proceso 0 inicio su I/0
+[INFO] 23:43:20:869 KERNEL/(526:529): El proceso 0 finalizo su I/0
+[INFO] 23:43:20:869 KERNEL/(526:529):    Se solicito interrupcion
+[INFO] 23:43:20:869 KERNEL/(526:529): Se paso el proceso 0 de bloqueado a ready
+[INFO] 23:43:25:874 KERNEL/(526:527): Me llegaron los siguientes valores:
+[INFO] 23:43:25:874 KERNEL/(526:527): NO_OP
+[INFO] 23:43:25:874 KERNEL/(526:527): NO_OP
+[INFO] 23:43:25:874 KERNEL/(526:527): NO_OP
+[INFO] 23:43:25:874 KERNEL/(526:527): NO_OP
+[INFO] 23:43:25:874 KERNEL/(526:527): NO_OP
+[INFO] 23:43:25:874 KERNEL/(526:527): NO_OP
+[INFO] 23:43:25:874 KERNEL/(526:527): NO_OP
+[INFO] 23:43:25:874 KERNEL/(526:527): NO_OP
+[INFO] 23:43:25:874 KERNEL/(526:527): NO_OP
+[INFO] 23:43:25:874 KERNEL/(526:527): NO_OP
+[INFO] 23:43:25:874 KERNEL/(526:527): NO_OP
+[INFO] 23:43:25:874 KERNEL/(526:527): NO_OP
+[INFO] 23:43:25:874 KERNEL/(526:527): NO_OP
+[INFO] 23:43:25:874 KERNEL/(526:527): NO_OP
+[INFO] 23:43:25:874 KERNEL/(526:527): NO_OP
+[INFO] 23:43:25:874 KERNEL/(526:527): I/O 5000
+[INFO] 23:43:25:874 KERNEL/(526:527): EXIT
+[INFO] 23:43:25:889 KERNEL/(526:528): La CPU envio un pcb con estado finalizado
+[INFO] 23:43:25:889 KERNEL/(526:528): El socket que recibi es 9
+[INFO] 23:43:25:889 KERNEL/(526:528): El proceso 0 finalizo correctamente
+[INFO] 23:43:25:889 KERNEL/(526:527): Planificacion despausada
