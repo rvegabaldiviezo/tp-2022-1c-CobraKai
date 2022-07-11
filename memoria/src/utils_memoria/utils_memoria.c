@@ -34,16 +34,27 @@ void liberar_conexion(int socket_cliente)
 	close(socket_cliente);
 }
 
-void enviar_numero_de_tabla(int destino, int numero_de_tabla) {
-	send(destino, &numero_de_tabla, sizeof(int), 0);
-}
 
 void enviar_confirmacion(int destino) {
 	int ok = 0;
 	send(destino, &ok, sizeof(int), 0);
 }
 
+void enviar_entero(int destino, int a_enviar) {
+	send(destino, &a_enviar, sizeof(int), 0);
+}
 
+void enviar_numero_de_tabla(int destino, int numero_de_tabla) {
+	enviar_entero(destino, numero_de_tabla);
+}
+
+void enviar_numero_de_pagina(int destino, int numero_de_pagina) {
+	enviar_entero(destino, numero_de_pagina);
+}
+
+void enviar_respuesta(int destino, int respuesta) {
+	enviar_entero(destino, respuesta);
+}
 
 /******************** SERVER *****************/
 
@@ -112,32 +123,43 @@ void recibir_mensaje(int socket_cliente)
 }
 
 operacion recibir_operacion(int socket_cliente) {
-	int cod_op;
-	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) > 0) {
-		return cod_op;
-	} else {
-		close(socket_cliente);
-		return -1;
-	}
+	return recibir_entero(socket_cliente);
 }
 
 int recibir_id_proceso(int conexion) {
-	int id;
-	if(recv(conexion, &id, sizeof(int), MSG_WAITALL) > 0) {
-		return id;
-	} else {
-		close(conexion);
-		return -1;
-	}
+	return recibir_entero(conexion);
 }
 
 int recibir_tamanio(int socket_cliente) {
-	int tamanio;
-	if(recv(socket_cliente, &tamanio, sizeof(int), MSG_WAITALL) > 0) {
-		return tamanio;
+	return recibir_entero(socket_cliente);
+}
+
+int recibir_numero_tabla(int conexion_cpu) {
+	return recibir_entero(conexion_cpu);
+}
+
+int recibir_numero_entrada(int conexion_cpu) {
+	return recibir_entero(conexion_cpu);
+}
+
+uint32_t recibir_uint32(int socket_cliente) {
+	uint32_t entero;
+	if(recv(socket_cliente, &entero, sizeof(uint32_t), MSG_WAITALL) > 0) {
+		return entero;
 	} else {
 		close(socket_cliente);
 		return -1;
 	}
 }
+
+int recibir_entero(int socket_cliente) {
+	int entero;
+	if(recv(socket_cliente, &entero, sizeof(int), MSG_WAITALL) > 0) {
+		return entero;
+	} else {
+		close(socket_cliente);
+		return -1;
+	}
+}
+
 

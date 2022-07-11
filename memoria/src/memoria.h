@@ -87,9 +87,16 @@ void escribir_en_archivo(int, FILE*);
 
 // Funciones de conexiones
 bool conexion_exitosa(int);
-pid_t recibir_id_proceso(int conexion_kernel);
+int recibir_entero(int);
+int recibir_id_proceso(int conexion_kernel);
 int recibir_tamanio(int conexion_kernel);
+int recibir_numero_tabla_primer_nivel(int);
+int recibir_numero_tabla(int);
+int recibir_numero_entrada(int);
+uint32_t recibir_uint32(int);
+void enviar_numero_de_pagina(int, int);
 void enviar_confirmacion(int);
+void enviar_respuesta(int, int);
 void liberar_conexion(int);
 
 void iterador_tablas_segundo_nivel(t_tabla_paginas_segundo_nivel* tabla);
@@ -112,6 +119,8 @@ void terminar_programa();
 //Otras
 bool igual_numero(t_tabla_paginas_segundo_nivel*, int);
 void leer_config();
+uint32_t leer_contenido_marco(int, int);
+int escribir_en_marco(int, int, uint32_t);
 
 
 #endif /* MEMORIA_H_ */

@@ -5,11 +5,9 @@ pthread_t hilo_kernel;
 
 t_log* logger;
 t_config* config;
-//t_proceso* proceso;
 int server_memoria;
 int conexion_kernel;
 int conexion_cpu;
-//t_dictionary* tablas_primer_nivel;
 t_list* tablas_primer_nivel;
 t_list* tablas_segundo_nivel;
 t_bitarray* marcos_libres;
@@ -23,6 +21,7 @@ unsigned int retardo_swap;
 unsigned int retardo_memoria;
 char* algoritmo_reemplazo;
 int marcos_por_proceso;
+int contador_tablas_segundo_nivel;
 
 int main(void) {
 
@@ -34,6 +33,7 @@ int main(void) {
 	marcos_libres = inicializar_bitarray();
 
 	tablas_primer_nivel = list_create();
+	contador_tablas_segundo_nivel = 0;
 
 	espacio_de_usuario = malloc(sizeof(tamanio_memoria));
 
@@ -71,7 +71,8 @@ int crear_tabla_paginas() {
 
 	for(int i = 0; i < entradas_por_tabla; i++) {
 		t_tabla_paginas_segundo_nivel* tabla = inicializar_tabla_segundo_nivel();
-		tabla->numero = list_size(tablas_segundo_nivel);
+		tabla->numero =	contador_tablas_segundo_nivel;
+		contador_tablas_segundo_nivel++;
 		list_add(tablas_segundo_nivel, tabla);
 	}
 
@@ -141,7 +142,6 @@ char* get_path_archivo(pid_t id) {
 	string_append(&aux, path_swap);
 	string_append(&nombre, extension);
 	string_append(&aux, nombre);
-	log_info(logger, "%s",aux);
 	return aux;
 }
 
@@ -182,7 +182,41 @@ bool igual_numero(t_tabla_paginas_segundo_nivel* tabla, int numero_a_comparar) {
 	return tabla->numero == numero_a_comparar;
 }
 
+t_tabla_paginas_segundo_nivel* buscar_tabla_segundo_nivel(int tabla_primer_nivel, int entrada) {
+	t_list* tablas_segundo_nivel = list_get(tablas_primer_nivel, tabla_primer_nivel);
+	return list_get(tablas_segundo_nivel, entrada);
+}
 
+t_pagina* buscar_pagina(int numero_tabla_segundo_nivel, int entrada) {
+	int tabla_primer_nivel = floor(numero_tabla_segundo_nivel / entradas_por_tabla);
+	t_list* tablas_segundo_nivel = list_get(tablas_primer_nivel, tabla_primer_nivel);
+	bool mismo_numero_tabla(t_tabla_paginas_segundo_nivel* tabla) {
+		return tabla->numero == numero_tabla_segundo_nivel;
+	}
+	t_tabla_paginas_segundo_nivel* tabla_segundo_nivel = list_find(tablas_segundo_nivel, (void *) mismo_numero_tabla);
+	return list_get(tabla_segundo_nivel->paginas, entrada);
+}
+
+uint32_t leer_contenido_marco(int numero_de_marco, int desplazamiento) {
+	if((numero_de_marco * tamanio_pagina) + desplazamiento > tamanio_memoria - 1) {
+		return -1;
+	} else {
+		uint32_t* contenido = malloc(sizeof(uint32_t));
+		memcpy(contenido, espacio_de_usuario + (numero_de_marco * tamanio_pagina) + desplazamiento, sizeof(uint32_t));
+		return *contenido;
+	}
+
+}
+
+int escribir_en_marco(int numero_de_marco, int desplazamiento, uint32_t valor) {
+	if((numero_de_marco * tamanio_pagina) + desplazamiento > tamanio_memoria - 1) {
+		return -1;
+	} else {
+		memcpy(espacio_de_usuario + (numero_de_marco * tamanio_pagina) + desplazamiento, &valor, sizeof(uint32_t));
+		return 1;
+	}
+
+}
 
 void liberar_tabla_primer_nivel(int numero) {
 	//t_list* tablas_a_remover = (t_list*) dictionary_remove(tablas_primer_nivel, string_itoa(numero));
@@ -247,23 +281,38 @@ void atender_cpu() {
 		switch(operacion) {
 			case HANDSHAKE_CPU:
 				log_info(logger, "CPU solicita acceso a info nro_filas_tabla_nivel1 y tamano_pagina");
-				enviar_numero_de_tabla(conexion_cpu,tamanio_pagina);
-				enviar_numero_de_tabla(conexion_cpu,entradas_por_tabla);
+				enviar_numero_de_tabla(conexion_cpu, tamanio_pagina);
+				enviar_numero_de_tabla(conexion_cpu, entradas_por_tabla);
 				pthread_create(&hilo_kernel, NULL, (void *) atender_kernel, NULL);
 				break;
 			case ACCESO_TABLA_PRIMER_NIVEL:
 				log_info(logger, "CPU solicita acceso a tabla pagina de primer nivel");
-				//unsigned int numero_tabla = recibir_numero_tabla(conexion_kernel);
-				//char* tabla_segundo_nivel = dictionary_get(tablas_primer_nivel, string_itoa(numero_tabla));
+				int numero_de_tabla_primer_nivel = recibir_numero_tabla(conexion_cpu);
+				int entrada_tabla_primer_nivel = recibir_numero_entrada(conexion_cpu);
+				t_tabla_paginas_segundo_nivel* tabla = buscar_tabla_segundo_nivel(numero_de_tabla_primer_nivel, entrada_tabla_primer_nivel);
+				enviar_numero_de_tabla(conexion_cpu, tabla->numero);
+
 				break;
 			case ACCESO_TABLA_SEGUNDO_NIVEL:
 				log_info(logger, "CPU solicita acceso a tabla pagina de segundo nivel");
+				int numero_de_tabla_segundo_nivel = recibir_numero_tabla(conexion_cpu);
+				int entrada_tabla_segundo_nivel = recibir_numero_entrada(conexion_cpu);
+				t_pagina* pagina = buscar_pagina(numero_de_tabla_segundo_nivel, entrada_tabla_segundo_nivel);
+				enviar_numero_de_pagina(conexion_cpu, pagina->marco);
 				break;
 			case LECTURA_MEMORIA_USUARIO:
 				log_info(logger, "CPU solicita lectura a memoria de usuario");
+				int marco_lectura = recibir_entero(conexion_cpu);
+				int desplazamiento_lectura = recibir_entero(conexion_cpu);
+				uint32_t contenido = leer_contenido_marco(marco_lectura, desplazamiento_lectura);
 				break;
 			case ESCRITURA_MEMORIA_USUARIO:
 				log_info(logger, "CPU solicita escritura a memoria de usuario");
+				int marco_escritura = recibir_entero(conexion_cpu);
+				int desplazamiento_escritura = recibir_entero(conexion_cpu);
+				uint32_t valor = recibir_uint32(conexion_cpu);
+				int respuesta = escribir_en_marco(marco_escritura, desplazamiento_escritura, valor);
+				enviar_respuesta(conexion_cpu, respuesta);
 				break;
 			case ERROR:
 				log_error(logger, "Se desconecto la cpu");
@@ -295,17 +344,8 @@ void atender_kernel() {
 				proceso->id= recibir_id_proceso(conexion_kernel);
 				proceso->tamanio = recibir_tamanio(conexion_kernel);
 				proceso->numero_tabla_primer_nivel = crear_tabla_paginas();
-				//proceso->espacio_utilizable = reservar_espacio_de_usuario(proceso->tamanio);
-				//log_info(logger, "Se reservo un espacio de %d bytes para el proceso %d", proceso->espacio_utilizable.fin, proceso->id);
 
 				log_info(logger, "Se creo la tabla de primer nivel: %d", proceso->numero_tabla_primer_nivel);
-				//t_list* tablas_seg = list_get(tablas_primer_nivel, proceso->numero_tabla_primer_nivel);
-				//list_iterate(tablas_seg, (void *) iterador_tablas_segundo_nivel);
-
-				// Itero la tabla de nivel 1 y las de nivel 2 para ver que se asignen bien
-				//char* numero = string_itoa(proceso->numero_tabla_primer_nivel);
-				//list_iterate((t_list*) dictionary_get(tablas_primer_nivel, numero), (void*) iterador_tablas_segundo_nivel);
-
 
 				crear_archivo_swap(get_path_archivo(proceso->id));
 
@@ -316,15 +356,14 @@ void atender_kernel() {
 				log_info(logger, "Kernel solicita SUSPENCION PROCESO");
 				swapear_paginas_modificadas(proceso);
 
-				//liberar_espacio_de_usuario(proceso->espacio_utilizable);
+				// todo: liberar marcos swapeados
 				enviar_confirmacion(conexion_kernel);
 
 				break;
 			case FINALIZACION_PROCESO:
 				log_info(logger, "Kernel solicita FINALIZACION PROCESO");
-				// No hace falta recibir nada ya que se libera el proceso que actualmente está en memoria
-				//liberar_tabla_primer_nivel(proceso->numero_tabla_primer_nivel);
-				//liberar_espacio_de_usuario(proceso->espacio_utilizable);
+
+				// todo: liberar espacio de usuario de proceso
 				remove(get_path_archivo(proceso->id));
 				log_info(logger, "Id a finalizar: %d", proceso->id);
 
