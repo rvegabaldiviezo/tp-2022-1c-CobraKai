@@ -124,3 +124,12 @@
 [INFO] 23:26:08:337 CONSOLA/(26157:26157): El proceso finalizó correctamente
 [INFO] 23:41:32:664 CONSOLA/(32251:32251): El proceso finalizó correctamente
 [INFO] 23:43:25:889 CONSOLA/(539:539): El proceso finalizó correctamente
+[ERROR] 23:57:08:292 CONSOLA/(11424:11424): Cantidad de parametros incorrecta, abortando...
+[ERROR] 23:57:28:087 CONSOLA/(11425:11425): Ocurrió un error durante la ejecucion del proceso
+[ERROR] 23:57:44:239 CONSOLA/(11442:11442): Ocurrió un error durante la ejecucion del proceso
+[ERROR] 23:57:57:834 CONSOLA/(11457:11457): Ocurrió un error durante la ejecucion del proceso
+[ERROR] 00:04:07:464 CONSOLA/(11658:11658): Ocurrió un error durante la ejecucion del proceso
+[ERROR] 00:07:34:984 CONSOLA/(11793:11793): Ocurrió un error durante la ejecucion del proceso
+[ERROR] 22:43:15:766 CONSOLA/(3651:3651): Ocurrió un error durante la ejecucion del proceso
+[INFO] 22:45:02:898 CONSOLA/(4163:4163): El proceso finalizó correctamente
+[INFO] 22:48:28:360 CONSOLA/(4252:4252): El proceso finalizó correctamente
