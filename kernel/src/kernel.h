@@ -40,6 +40,7 @@ typedef struct {
 	unsigned int estimacion_rafaga;
 	unsigned int socket;
 	t_list* instrucciones;
+	int inicio_rafaga;
 } t_pcb;
 
 typedef struct {

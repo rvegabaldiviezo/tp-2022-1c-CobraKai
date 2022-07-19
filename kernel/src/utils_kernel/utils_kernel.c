@@ -221,6 +221,7 @@ t_pcb* recibir_pcb(int conexion) {
 	pcb->estimacion_rafaga = recibir_entero(conexion);
 	pcb->tablas_paginas = recibir_entero(conexion);
 	pcb->instrucciones = recibir_instrucciones(conexion);
+	pcb->inicio_rafaga = recibir_entero(conexion);
 	return pcb;
 }
 

@@ -259,8 +259,9 @@ void comunicacion_con_cpu() {
 					log_info(logger, "Un proceso fue interrumpido");
 					t_pcb* pcb_interrumpido = recibir_pcb(conexion_con_cpu_dispatch);
 
-					//TODO: actualizar estimacion, no se si se actualiza acá pero hay que actualizarla
-
+					// prox_rafaga = alfa * tiempo_ultima_rafaga + (1 - alfa) * pcb.estimacion_rafaga
+					int tiempo_real = (int)time(NULL) - pcb_interrumpido->inicio_rafaga;
+					pcb_interrumpido->estimacion_rafaga = alfa *  tiempo_real + (1 - alfa) * pcb_interrumpido->estimacion_rafaga;
 					pasar_a_ready(pcb_interrumpido);
 					sem_post(&sem_planificacion);
 
@@ -453,7 +454,7 @@ void pasar_a_ready(t_pcb* proceso) {
 
 	sem_post(&elementos_en_cola_ready);
 	log_info(logger, "El proceso %d fue asignado a la cola READY", proceso->id);
-	//creo que hay que chequear si la planificacion ya fue iniciada
+
 	if((strcmp(planificador, "SRT") == 0) && (list_size(ready)>1)) {
 			solicitar_interrupcion();
 	}
