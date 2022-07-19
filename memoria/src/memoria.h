@@ -52,6 +52,7 @@ typedef struct {
 	int id;
 	unsigned int tamanio;
 	unsigned int numero_tabla_primer_nivel;
+	t_pagina* puntero;
 	//espacio_de_usuario espacio_utilizable;
 } t_proceso;
 
@@ -60,6 +61,7 @@ typedef struct {
 	bool presencia;
 	bool usada;
 	bool modificada;
+	time_t tiempo_carga;
 } t_pagina;
 
 typedef struct {
@@ -83,7 +85,7 @@ void atender_cpu();
 // Funciones de archivos
 void crear_archivo_swap(char* path);
 char* get_path_archivo(int);
-void escribir_en_archivo(int, FILE*);
+void escribir_en_archivo(int);
 
 // Funciones de conexiones
 bool conexion_exitosa(int);

@@ -22,6 +22,7 @@ unsigned int retardo_memoria;
 char* algoritmo_reemplazo;
 int marcos_por_proceso;
 int contador_tablas_segundo_nivel;
+t_proceso* proceso;
 
 int main(void) {
 
@@ -92,15 +93,18 @@ t_tabla_paginas_segundo_nivel* inicializar_tabla_segundo_nivel() {
 		list_add(tabla->paginas, pagina);
 	}
 
+	proceso->puntero = list_get(tabla->paginas, 0);
+
 	return tabla;
 }
 
 t_pagina* inicializar_pagina() {
 	t_pagina* pagina = malloc(sizeof(t_pagina));
-	pagina->marco = proximo_marco_libre();
-	pagina->modificada = true;
-	pagina->presencia = true;
+	pagina->marco = -1;
+	pagina->modificada = false;
+	pagina->presencia = false;
 	pagina->usada = true;
+	pagina->tiempo_carga = time(NULL);
 	return pagina;
 }
 
@@ -194,7 +198,118 @@ t_pagina* buscar_pagina(int numero_tabla_segundo_nivel, int entrada) {
 		return tabla->numero == numero_tabla_segundo_nivel;
 	}
 	t_tabla_paginas_segundo_nivel* tabla_segundo_nivel = list_find(tablas_segundo_nivel, (void *) mismo_numero_tabla);
-	return list_get(tabla_segundo_nivel->paginas, entrada);
+
+	t_pagina* pagina_encontrada = list_get(tabla_segundo_nivel->paginas, entrada);
+
+	if(!pagina_encontrada->presencia){
+		page_fault(pagina_encontrada);
+	}//TODO: modificar bit de uso si está en presencia
+
+	return pagina_encontrada;
+}
+
+
+void page_fault(t_pagina* pagina){
+
+	if(cantidad_marcos_proceso() < marcos_por_proceso){
+		asignar_marco(pagina);
+	} else {
+		reemplazar_pagina(pagina);
+	}
+}
+
+void reemplazar_pagina(t_pagina* pagina){
+	if(strcmp(algoritmo_reemplazo, "CLOCK") == 0){
+
+		t_list* paginas = encontrar_paginas_en_memoria();
+		list_sort(paginas, (void*)mayor_tiempo_espera);
+		int indice_puntero = encontrar_indice_puntero(paginas);
+
+		int i = 0;
+		bool reemplazada = false;
+
+		while(i < marcos_por_proceso + 1 && !reemplazada){
+
+			t_pagina* pagina_en_memoria = list_get(paginas, indice_puntero);
+
+			if(!pagina_en_memoria->usada){
+
+				if(pagina_en_memoria->modificada){
+					uint32_t contenido = leer_contenido_marco(pagina->marco, 0);
+					escribir_en_archivo(contenido);
+				}
+
+				pagina->marco = pagina_en_memoria->marco;
+				pagina_en_memoria->presencia = false;
+				reemplazada = true;
+
+			} else {
+				pagina_en_memoria->usada = false;
+			}
+
+			if(indice_puntero == marcos_por_proceso){
+				indice_puntero = 0;
+			} else {
+				indice_puntero++;
+			}
+
+			i++;
+		}
+
+		proceso->puntero = list_get(paginas, indice_puntero);
+
+	} else {
+
+	}
+}
+
+void escribir_en_archivo(uint32_t contenido){
+	//TODO
+}
+
+int encontrar_indice_puntero(t_list* paginas){
+	for(int i = 0; i < list_size(paginas); i++){
+		t_pagina* pagina = list_get(paginas, i);
+		if(pagina->marco == proceso->puntero->marco){
+			return i;
+		}
+	}
+
+	return -1;
+}
+
+
+t_pagina* mayor_tiempo_espera(t_pagina* p1, t_pagina* p2) {
+	if(p1->tiempo_carga > p2->tiempo_carga) {
+		return p2;
+	} else {
+		return p1;
+	}
+}
+
+t_list* encontrar_paginas_en_memoria(){
+	//TODO
+	return NULL;
+}
+
+void asignar_marco(t_pagina* pagina){
+	pagina->marco = proximo_marco_libre();
+	pagina->presencia = true;
+	uint32_t contenido = leer_pagina_disco(pagina);
+	escribir_en_marco(contenido);
+}
+
+void reemplazar_pagina(t_pagina* pagina){
+
+}
+
+int cantidad_marcos_proceso(){
+	//TODO
+	return 1;
+}
+
+uint32_t leer_pagina_disco(t_pagina* pagina){
+
 }
 
 uint32_t leer_contenido_marco(int numero_de_marco, int desplazamiento) {
@@ -339,7 +454,7 @@ void atender_kernel() {
 			case INICIO_PROCESO:
 				// TODO: el kernel debería solicitar esto solo si el proceso no tiene ya asignado un numero de tabla
 				log_info(logger, "Kernel solicita INICIO PROCESO");
-				t_proceso* proceso = malloc(sizeof(t_proceso));
+				proceso = malloc(sizeof(t_proceso));
 
 				proceso->id= recibir_id_proceso(conexion_kernel);
 				proceso->tamanio = recibir_tamanio(conexion_kernel);
