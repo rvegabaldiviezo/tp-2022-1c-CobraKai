@@ -23,6 +23,7 @@ char* algoritmo_reemplazo;
 int marcos_por_proceso;
 int contador_tablas_segundo_nivel;
 t_proceso* proceso;
+int numero_de_tabla_primer_nivel;
 
 int main(void) {
 
@@ -191,7 +192,7 @@ t_tabla_paginas_segundo_nivel* buscar_tabla_segundo_nivel(int tabla_primer_nivel
 	return list_get(tablas_segundo_nivel, entrada);
 }
 
-t_pagina* buscar_pagina(int numero_tabla_segundo_nivel, int entrada) {
+t_pagina* buscar_pagina(int numero_tabla_segundo_nivel, int entrada, int *puntero) {
 	int tabla_primer_nivel = floor(numero_tabla_segundo_nivel / entradas_por_tabla);
 	t_list* tablas_segundo_nivel = list_get(tablas_primer_nivel, tabla_primer_nivel);
 	bool mismo_numero_tabla(t_tabla_paginas_segundo_nivel* tabla) {
@@ -202,7 +203,7 @@ t_pagina* buscar_pagina(int numero_tabla_segundo_nivel, int entrada) {
 	t_pagina* pagina_encontrada = list_get(tabla_segundo_nivel->paginas, entrada);
 
 	if(!pagina_encontrada->presencia){
-		page_fault(pagina_encontrada);
+		page_fault(pagina_encontrada, puntero);
 	} else {
 		modificar_bit_uso(pagina_encontrada);
 	}
@@ -216,35 +217,34 @@ void modificar_bit_uso(t_pagina* pagina){
 	}
 }
 
-void page_fault(t_pagina* pagina){
+void page_fault(t_pagina* pagina, int *puntero){
 
 	if(cantidad_marcos_proceso() < marcos_por_proceso){
 		asignar_marco(pagina);
 	} else {
-		reemplazar_pagina(pagina);
+		reemplazar_pagina(pagina, puntero);
 	}
 }
 
-void reemplazar_pagina(t_pagina* pagina){
+void reemplazar_pagina(t_pagina* pagina, int *puntero){
 	if(strcmp(algoritmo_reemplazo, "CLOCK") == 0){
-		algoritmo_clock(pagina);
+		algoritmo_clock(pagina, puntero);
 	} else {
-		algoritmo_clock_modificado(pagina);
+		algoritmo_clock_modificado(pagina, puntero);
 	}
 }
 
-void algoritmo_clock(t_pagina* pagina){
+void algoritmo_clock(t_pagina* pagina, int *indice_puntero){
 
 	t_list* paginas = encontrar_paginas_en_memoria();
 	list_sort(paginas, (void*)mayor_tiempo_espera);
-	int indice_puntero = encontrar_indice_puntero(paginas);
 
 	bool reemplazada = false;
 	t_pagina* pagina_en_memoria;
 
 	while(!reemplazada){
 
-		pagina_en_memoria = list_get(paginas, indice_puntero);
+		pagina_en_memoria = list_get(paginas, *indice_puntero);
 
 		if(!pagina_en_memoria->usada){
 
@@ -269,33 +269,28 @@ void algoritmo_clock(t_pagina* pagina){
 			pagina_en_memoria->usada = false;
 		}
 
-		if(indice_puntero == marcos_por_proceso){
-			indice_puntero = 0;
+		if(*indice_puntero == marcos_por_proceso){
+			*indice_puntero = 0;
 		} else {
-			indice_puntero++;
+			(*indice_puntero)++;
 		}
 	}
 
-	proceso->puntero = list_get(paginas, indice_puntero);
-
 }
 
-void algoritmo_clock_modificado(t_pagina* pagina){
+void algoritmo_clock_modificado(t_pagina* pagina, int *indice_puntero){
 	t_list* paginas = encontrar_paginas_en_memoria();
 	list_sort(paginas, (void*)mayor_tiempo_espera);
-	int indice_puntero = encontrar_indice_puntero(paginas);
 
 	bool reemplazada = false;
 
 	while(!reemplazada){
-		clock_m_paso_1(paginas, pagina, indice_puntero, reemplazada);
+		clock_m_paso_1(paginas, pagina, indice_puntero, &reemplazada);
 
 		if(!reemplazada){
-			clock_m_paso_2(paginas, pagina, indice_puntero, reemplazada);
+			clock_m_paso_2(paginas, pagina, indice_puntero, &reemplazada);
 		}
 	}
-
-	proceso->puntero = list_get(paginas, indice_puntero);
 
 }
 
@@ -304,9 +299,9 @@ void clock_m_paso_1(t_list* paginas,t_pagina* pagina, int *indice_puntero, bool 
 	int i = 0;
 	t_pagina* pagina_en_memoria;
 
-	while(i < marcos_por_proceso && !reemplazada){
+	while(i < marcos_por_proceso && !(*reemplazada)){
 
-			pagina_en_memoria = list_get(paginas, indice_puntero);
+			pagina_en_memoria = list_get(paginas, *indice_puntero);
 
 			if(!pagina_en_memoria->usada && !pagina_en_memoria->modificada){
 
@@ -320,14 +315,14 @@ void clock_m_paso_1(t_list* paginas,t_pagina* pagina, int *indice_puntero, bool 
 				pagina->usada = true;
 				pagina->presencia = true;
 				pagina_en_memoria->presencia = false;
-				reemplazada = true;
+				*reemplazada = true;
 
 			}
 
-			if(indice_puntero == marcos_por_proceso){
-				indice_puntero = 0;
+			if(*indice_puntero == marcos_por_proceso){
+				*indice_puntero = 0;
 			} else {
-				indice_puntero++;
+				(*indice_puntero)++;
 			}
 
 			i++;
@@ -339,9 +334,9 @@ void clock_m_paso_2(t_list* paginas,t_pagina* pagina, int *indice_puntero, bool 
 	int i = 0;
 	t_pagina* pagina_en_memoria;
 
-	while(i < marcos_por_proceso && !reemplazada){
+	while(i < marcos_por_proceso && !(*reemplazada)){
 
-		pagina_en_memoria = list_get(paginas, indice_puntero);
+		pagina_en_memoria = list_get(paginas, *indice_puntero);
 
 		if(!pagina_en_memoria->usada && pagina_en_memoria->modificada){
 
@@ -358,16 +353,16 @@ void clock_m_paso_2(t_list* paginas,t_pagina* pagina, int *indice_puntero, bool 
 			pagina->usada = true;
 			pagina->presencia = true;
 			pagina_en_memoria->presencia = false;
-			reemplazada = true;
+			*reemplazada = true;
 
 		} else {
 			pagina_en_memoria->usada = false;
 		}
 
-		if(indice_puntero == marcos_por_proceso){
-			indice_puntero = 0;
+		if(*indice_puntero == marcos_por_proceso){
+			*indice_puntero = 0;
 		} else {
-			indice_puntero++;
+			(*indice_puntero)++;
 		}
 
 		i++;
@@ -404,8 +399,18 @@ t_pagina* mayor_tiempo_espera(t_pagina* p1, t_pagina* p2) {
 }
 
 t_list* encontrar_paginas_en_memoria(){
-	//TODO
-	return NULL;
+	t_list* paginas_en_memoria;
+	t_list* tablas_segundo_nivel = list_get(tablas_primer_nivel, numero_de_tabla_primer_nivel);
+	for(int i = 0; i < list_size(tablas_segundo_nivel); i++){
+		t_list* tabla_segundo_nivel = list_get(tablas_segundo_nivel, i);
+		for(int j = 0; j < list_size(tabla_segundo_nivel); j++){
+			t_pagina* pagina = list_get(tabla_segundo_nivel, j);
+			if(pagina->presencia){
+				list_add(paginas_en_memoria, pagina);
+			}
+		}
+	}
+	return paginas_en_memoria;
 }
 
 void asignar_marco(t_pagina* pagina){
@@ -426,7 +431,8 @@ int cantidad_marcos_proceso(){
 }
 
 uint32_t leer_pagina_disco(t_pagina* pagina){
-
+	//TODO
+	return 1;
 }
 
 uint32_t leer_contenido_marco(int numero_de_marco, int desplazamiento) {
@@ -445,9 +451,20 @@ int escribir_en_marco(int numero_de_marco, int desplazamiento, uint32_t valor) {
 		return -1;
 	} else {
 		memcpy(espacio_de_usuario + (numero_de_marco * tamanio_pagina) + desplazamiento, &valor, sizeof(uint32_t));
+		cambiar_bit_modificado(numero_de_marco);
 		return 1;
 	}
+}
 
+void cambiar_bit_modificado(int numero_de_marco){
+	t_pagina* pagina = encontrar_pagina_por_marco(numero_de_marco);
+	pagina->modificada = true;
+}
+
+t_pagina* encontrar_pagina_por_marco(int numero_de_marco){
+	//TODO: suponiendo que tengo guardado el pid
+	t_list* paginas = encontrar_paginas_en_memoria();
+	return NULL;
 }
 
 void liberar_tabla_primer_nivel(int numero) {
@@ -519,7 +536,7 @@ void atender_cpu() {
 				break;
 			case ACCESO_TABLA_PRIMER_NIVEL:
 				log_info(logger, "CPU solicita acceso a tabla pagina de primer nivel");
-				int numero_de_tabla_primer_nivel = recibir_numero_tabla(conexion_cpu);
+				numero_de_tabla_primer_nivel = recibir_numero_tabla(conexion_cpu);
 				int entrada_tabla_primer_nivel = recibir_numero_entrada(conexion_cpu);
 				t_tabla_paginas_segundo_nivel* tabla = buscar_tabla_segundo_nivel(numero_de_tabla_primer_nivel, entrada_tabla_primer_nivel);
 				enviar_numero_de_tabla(conexion_cpu, tabla->numero);
@@ -529,8 +546,11 @@ void atender_cpu() {
 				log_info(logger, "CPU solicita acceso a tabla pagina de segundo nivel");
 				int numero_de_tabla_segundo_nivel = recibir_numero_tabla(conexion_cpu);
 				int entrada_tabla_segundo_nivel = recibir_numero_entrada(conexion_cpu);
-				t_pagina* pagina = buscar_pagina(numero_de_tabla_segundo_nivel, entrada_tabla_segundo_nivel);
+				int puntero = recibir_entero(conexion_cpu);
+				t_pagina* pagina = buscar_pagina(numero_de_tabla_segundo_nivel, entrada_tabla_segundo_nivel, &puntero);
 				enviar_numero_de_pagina(conexion_cpu, pagina->marco);
+				//TODO: enviar puntero actualizado
+
 				break;
 			case LECTURA_MEMORIA_USUARIO:
 				log_info(logger, "CPU solicita lectura a memoria de usuario");
