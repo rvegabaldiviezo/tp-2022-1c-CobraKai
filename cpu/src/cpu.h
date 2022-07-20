@@ -1,6 +1,8 @@
 #ifndef CPU_H_
 #define CPU_H_
 
+// Include de utils
+#include "./utils/clientServ.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -21,8 +23,8 @@
 #include <commons/string.h>
 #include <commons/config.h>
 #include <commons/collections/list.h>
-// Include de utils
-#include "./utils/clientServ.h"
+#include <commons/collections/queue.h>
+
 
 //###### Rutas de Archivos ######
 #define PATH_CONFIG "./cpu.config"
@@ -85,6 +87,12 @@ typedef struct{
 }t_datos_memoria;
 
 
+typedef struct{
+	uint32_t nro_pagina;
+	uint32_t nro_marco;
+	time_t timestamps;
+}t_tlb;
+
 enum {
 	NO_OP = 1,
 	I_O,
@@ -126,7 +134,7 @@ typedef struct
 
 //###### INTERFAZ FUNCIONES ######
 
-int iniciar_conexion_cpu_memoria(void);
+void iniciar_conexion_cpu_memoria(void);
 void escuchaInterrup(void);
 proceso_cpu* cpu_create(void);
 t_proceso* process_create(void);
@@ -169,24 +177,24 @@ void iniciar_servidor_dispatch();
 void iniciar_servidor_interrupt();
 int iniciar_servidor_cpu(char* key_puerto);
 int esperar_cliente_cpu(char* tipo_puerto);
-int esperar_cliente_dispatch();
-int esperar_cliente_interrupt();
+void esperar_cliente_dispatch();
+void esperar_cliente_interrupt();
 char** getParametrosInstruccion(t_list* instrucciones,int nro_inst);
 
 
 
 char** decode(t_list* instrucciones,int nro_inst);
-void execute(char** instruccion);
+void execute();
 int fetch();
-void fetch_operands(char** instruccion);
+void fetch_operands();
 void no_op(int tiempo);
 void i_o(int tiempo);
 void instruccion_exit();
 void incrementarProgramCounter();
 void responsePorBloqueo(int tiempo);
 void responsePorFinDeProceso();
-bool checkInstruccionInterrupcion(char* instruccion);
-void check_interrupt(char* operacion);
+bool checkInstruccionInterrupcion();
+void check_interrupt();
 bool check_interrupcion();
 void responseInterrupcion();
 void mostrarPCB();
@@ -197,10 +205,29 @@ void iniciar_logger_cpu();
 void iniciar_config_cpu();
 void iniciar_config_semaforos();
 
-t_datos_memoria*  handshake_cpu_memoria(void);
+void handshake_cpu_memoria(void);
 t_datos_memoria* recibir_handshake_memoria(int conexion);
-uint32_t primer_acceso_memoria(int direccion_logica);
+uint32_t segundo_acceso_memoria();
 void liberar_pcb(t_pcb* pcb);
+uint32_t nro_pagina(int direccion_logica);
+bool existeEnTLB(uint32_t numero_pagina);
+uint32_t  obtener_marco();
 
+
+
+//##################
+void iniciar_memoria(void);
+void iniciar_comunicacion_cpu_memoria(void);
+void iniciar_tlb(void);
+void iniciar_interrupt(void);
+void iniciar_dispatch(void);
+
+
+uint32_t leer_valor_en_memoria();
+bool esta_completa_cola_TLB();
+int obtener_marco_TLB(uint32_t numero_pagina_buscada);
+void primer_acceso_memoria();
+void guardar_en_TLB(uint32_t numero_pagina,uint32_t nro_marco);
+int tercer_acceso_memoria_lectura();
 
 #endif /* CPU_H_ */
