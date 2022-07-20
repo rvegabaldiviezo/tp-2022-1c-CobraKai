@@ -213,8 +213,26 @@ void execute(){
 		usleep(1000*tiempo_retardo);
 
 	}else if(strcmp("READ",instruccion)==0){
-
+		int nro_pag = nro_pagina(*instruccion_con_parametros[1]);
+		if(obtener_marco_TLB(nro_pag) != -1){
+			tercer_acceso_memoria_lectura();
+		} else {
+			primer_acceso_memoria();
+			uint32_t marco_a_leer = segundo_acceso_memoria();
+			guardar_en_TLB(nro_pag, marco_a_leer);
+			tercer_acceso_memoria_lectura();
+		}
 	}else if(strcmp("WRITE",instruccion)==0){
+		int nro_pag = nro_pagina(*instruccion_con_parametros[1]);
+		uint32_t valor_a_escribir = *instruccion_con_parametros[2];
+		if(obtener_marco_TLB(nro_pag) != -1){
+			tercer_acceso_memoria_escritura(valor_a_escribir);
+		} else {
+			primer_acceso_memoria();
+			uint32_t marco_a_leer = segundo_acceso_memoria();
+			guardar_en_TLB(nro_pag, marco_a_leer);
+			tercer_acceso_memoria_escritura(valor_a_escribir);
+		}
 
 	}else if(strcmp("COPY",instruccion)==0){
 
@@ -312,7 +330,7 @@ uint32_t segundo_acceso_memoria(){
 uint32_t leer_valor_en_memoria(){
 	return tercer_acceso_memoria_lectura();
 }
-int tercer_acceso_memoria_lectura(){
+uint32_t tercer_acceso_memoria_lectura(){
 
 	desplazamiento = direccion_logica - numero_pagina * datos_memoria->tamano_pagina;
 
@@ -351,7 +369,7 @@ bool esta_completa_cola_TLB(){
 	return queue_size(cola_tlb)>3;
 }
 
-void tercer_acceso_memoria_escritura(int valor_escribir){
+void tercer_acceso_memoria_escritura(uint32_t valor_escribir){
 
 	desplazamiento = direccion_logica - numero_pagina * datos_memoria->tamano_pagina;
 
