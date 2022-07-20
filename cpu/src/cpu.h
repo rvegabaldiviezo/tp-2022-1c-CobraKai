@@ -229,5 +229,6 @@ int obtener_marco_TLB(uint32_t numero_pagina_buscada);
 void primer_acceso_memoria();
 void guardar_en_TLB(uint32_t numero_pagina,uint32_t nro_marco);
 int tercer_acceso_memoria_lectura();
+void asignar_marco_tlb_memoria(uint32_t direccion_logica_origen);
 
 #endif /* CPU_H_ */

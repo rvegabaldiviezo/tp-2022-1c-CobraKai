@@ -180,18 +180,27 @@ void fetch_operands(){
 
 		int direccion_logica_origen = atoi(instruccion_con_parametros[2]);//Accedemos al segundo parametro
 
-		numero_pagina = nro_pagina(direccion_logica_origen);
-
-		marco =  obtener_marco_TLB(numero_pagina);//-1 si no lo encuentra
-
-		if(marco<0){
-			marco = obtener_marco();
-			guardar_en_TLB(numero_pagina,marco);
-		}
+		asignar_marco_tlb_memoria(direccion_logica_origen);
 
 		valor_lectura_origen =  leer_valor_en_memoria();//lectura direccion fisica del valor de Origen a COPIAR
 	}
 }
+
+// Le asigna a la variable global marco, su valor.
+void asignar_marco_tlb_memoria(uint32_t direccion_logica_origen){
+
+	numero_pagina = nro_pagina(direccion_logica_origen);
+
+	//Primero buscamos el marco en la tlb, a partir del nro pagina
+	marco =  obtener_marco_TLB(numero_pagina);//-1 si no lo encuentra
+
+	if(marco<0){
+		//No lo encontro, lo obtiene de memoria y lo agrega a la tlb
+		marco = obtener_marco();
+		guardar_en_TLB(numero_pagina,marco);
+	}
+}
+
 // 3) execute
 void execute(){
 
