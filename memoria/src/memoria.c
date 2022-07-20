@@ -203,11 +203,18 @@ t_pagina* buscar_pagina(int numero_tabla_segundo_nivel, int entrada) {
 
 	if(!pagina_encontrada->presencia){
 		page_fault(pagina_encontrada);
-	}//TODO: modificar bit de uso si está en presencia
+	} else {
+		modificar_bit_uso(pagina_encontrada);
+	}
 
 	return pagina_encontrada;
 }
 
+void modificar_bit_uso(t_pagina* pagina){
+	if(!pagina->usada){
+		pagina->usada = true;
+	}
+}
 
 void page_fault(t_pagina* pagina){
 
@@ -220,31 +227,101 @@ void page_fault(t_pagina* pagina){
 
 void reemplazar_pagina(t_pagina* pagina){
 	if(strcmp(algoritmo_reemplazo, "CLOCK") == 0){
+		algoritmo_clock(pagina);
+	} else {
+		algoritmo_clock_modificado(pagina);
+	}
+}
 
-		t_list* paginas = encontrar_paginas_en_memoria();
-		list_sort(paginas, (void*)mayor_tiempo_espera);
-		int indice_puntero = encontrar_indice_puntero(paginas);
+void algoritmo_clock(t_pagina* pagina){
 
-		int i = 0;
-		bool reemplazada = false;
+	t_list* paginas = encontrar_paginas_en_memoria();
+	list_sort(paginas, (void*)mayor_tiempo_espera);
+	int indice_puntero = encontrar_indice_puntero(paginas);
 
-		while(i < marcos_por_proceso + 1 && !reemplazada){
+	bool reemplazada = false;
+	t_pagina* pagina_en_memoria;
 
-			t_pagina* pagina_en_memoria = list_get(paginas, indice_puntero);
+	while(!reemplazada){
 
-			if(!pagina_en_memoria->usada){
+		pagina_en_memoria = list_get(paginas, indice_puntero);
 
-				if(pagina_en_memoria->modificada){
-					uint32_t contenido = leer_contenido_marco(pagina->marco, 0);
-					escribir_en_archivo(contenido);
+		if(!pagina_en_memoria->usada){
+
+			if(pagina_en_memoria->modificada){
+				uint32_t contenido_pagina_en_memoria = leer_contenido_marco(pagina_en_memoria->marco, 0);
+				escribir_en_archivo(contenido_pagina_en_memoria);
+			}
+
+			uint32_t contenido_archivo = leer_pagina_archivo(pagina);
+
+			if(contenido_archivo != NULL){
+				escribir_en_marco(pagina_en_memoria->marco, 0, contenido_archivo);
+			}
+
+			pagina->marco = pagina_en_memoria->marco;
+			pagina->usada = true;
+			pagina->presencia = true;
+			pagina_en_memoria->presencia = false;
+			reemplazada = true;
+
+		} else {
+			pagina_en_memoria->usada = false;
+		}
+
+		if(indice_puntero == marcos_por_proceso){
+			indice_puntero = 0;
+		} else {
+			indice_puntero++;
+		}
+	}
+
+	proceso->puntero = list_get(paginas, indice_puntero);
+
+}
+
+void algoritmo_clock_modificado(t_pagina* pagina){
+	t_list* paginas = encontrar_paginas_en_memoria();
+	list_sort(paginas, (void*)mayor_tiempo_espera);
+	int indice_puntero = encontrar_indice_puntero(paginas);
+
+	bool reemplazada = false;
+
+	while(!reemplazada){
+		clock_m_paso_1(paginas, pagina, indice_puntero, reemplazada);
+
+		if(!reemplazada){
+			clock_m_paso_2(paginas, pagina, indice_puntero, reemplazada);
+		}
+	}
+
+	proceso->puntero = list_get(paginas, indice_puntero);
+
+}
+
+void clock_m_paso_1(t_list* paginas,t_pagina* pagina, int *indice_puntero, bool *reemplazada){
+
+	int i = 0;
+	t_pagina* pagina_en_memoria;
+
+	while(i < marcos_por_proceso && !reemplazada){
+
+			pagina_en_memoria = list_get(paginas, indice_puntero);
+
+			if(!pagina_en_memoria->usada && !pagina_en_memoria->modificada){
+
+				uint32_t contenido_archivo = leer_pagina_archivo(pagina);
+
+				if(contenido_archivo != NULL){
+					escribir_en_marco(pagina_en_memoria->marco, 0, contenido_archivo);
 				}
 
 				pagina->marco = pagina_en_memoria->marco;
+				pagina->usada = true;
+				pagina->presencia = true;
 				pagina_en_memoria->presencia = false;
 				reemplazada = true;
 
-			} else {
-				pagina_en_memoria->usada = false;
 			}
 
 			if(indice_puntero == marcos_por_proceso){
@@ -255,12 +332,51 @@ void reemplazar_pagina(t_pagina* pagina){
 
 			i++;
 		}
+}
 
-		proceso->puntero = list_get(paginas, indice_puntero);
+void clock_m_paso_2(t_list* paginas,t_pagina* pagina, int *indice_puntero, bool *reemplazada){
 
-	} else {
+	int i = 0;
+	t_pagina* pagina_en_memoria;
 
+	while(i < marcos_por_proceso && !reemplazada){
+
+		pagina_en_memoria = list_get(paginas, indice_puntero);
+
+		if(!pagina_en_memoria->usada && pagina_en_memoria->modificada){
+
+			uint32_t contenido_pagina_en_memoria = leer_contenido_marco(pagina_en_memoria->marco, 0);
+			escribir_en_archivo(contenido_pagina_en_memoria);
+
+			uint32_t contenido_archivo = leer_pagina_archivo(pagina);
+
+			if(contenido_archivo != NULL){
+				escribir_en_marco(pagina_en_memoria->marco, 0, contenido_archivo);
+			}
+
+			pagina->marco = pagina_en_memoria->marco;
+			pagina->usada = true;
+			pagina->presencia = true;
+			pagina_en_memoria->presencia = false;
+			reemplazada = true;
+
+		} else {
+			pagina_en_memoria->usada = false;
+		}
+
+		if(indice_puntero == marcos_por_proceso){
+			indice_puntero = 0;
+		} else {
+			indice_puntero++;
+		}
+
+		i++;
 	}
+}
+
+uint32_t leer_pagina_archivo(t_pagina* pagina){
+	//TODO
+	return 1;
 }
 
 void escribir_en_archivo(uint32_t contenido){
@@ -295,13 +411,14 @@ t_list* encontrar_paginas_en_memoria(){
 void asignar_marco(t_pagina* pagina){
 	pagina->marco = proximo_marco_libre();
 	pagina->presencia = true;
+	pagina->usada = true;
 	uint32_t contenido = leer_pagina_disco(pagina);
-	escribir_en_marco(contenido);
+
+	if(contenido != NULL){
+		escribir_en_marco(pagina->marco, 0, contenido);
+	}
 }
 
-void reemplazar_pagina(t_pagina* pagina){
-
-}
 
 int cantidad_marcos_proceso(){
 	//TODO
