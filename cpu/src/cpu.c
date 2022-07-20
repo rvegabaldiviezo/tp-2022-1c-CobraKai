@@ -192,12 +192,15 @@ void asignar_marco_tlb_memoria(uint32_t direccion_logica_origen){
 	numero_pagina = nro_pagina(direccion_logica_origen);
 
 	//Primero buscamos el marco en la tlb, a partir del nro pagina
-	marco =  obtener_marco_TLB(numero_pagina);//-1 si no lo encuentra
+	t_tlb* tlb_encontrada =  obtener_TLB(numero_pagina);//-1 si no lo encuentra
 
-	if(marco<0){
+	if(tlb_encontrada==NULL){
 		//No lo encontro, lo obtiene de memoria y lo agrega a la tlb
 		marco = obtener_marco();
 		guardar_en_TLB(numero_pagina,marco);
+	}else{//Como lo encontro, se tiene q actualizar el timestap y asignar el marco
+		tlb_encontrada->timestamps = time(NULL);//Pisamos el valor anterior
+		marco = tlb_encontrada->nro_marco;//Asignamos el marco encontrado
 	}
 }
 
@@ -264,7 +267,7 @@ uint32_t nro_pagina(int direccion_logica_instruccion){
 
 	return nro_pagina_resultante;
 }
-int obtener_marco_TLB(uint32_t numero_pagina_buscada){
+t_tlb* obtener_TLB(uint32_t numero_pagina_buscada){
 
 	t_tlb* tlb_buscada = NULL;
 
@@ -275,12 +278,7 @@ int obtener_marco_TLB(uint32_t numero_pagina_buscada){
 		}
 		tlb_buscada = list_find(cola_tlb->elements,(void*) _tlb_buscada);
 	}
-
-	if(tlb_buscada==NULL){
-		return -1;
-	}
-
-	return tlb_buscada->nro_marco;
+	return tlb_buscada;
 }
 uint32_t  obtener_marco(){
 	primer_acceso_memoria();
@@ -342,7 +340,7 @@ void guardar_en_TLB(uint32_t numero_pagina,uint32_t nro_marco){
 			}
 			 list_sort(cola_tlb->elements, (void*) _tlb_menor);
 		}
-		//Quitamos el primer elemento de la cola
+		//Quitamos el primer elemento de la cola, SUPONGO Q TAMB LIBERA SU MEMORIA ALOCADA
 		queue_pop(cola_tlb);
 	}
 	//Agregamos un nuevo elemento a la TLB, al final de cola

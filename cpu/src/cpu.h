@@ -225,7 +225,7 @@ void iniciar_dispatch(void);
 
 uint32_t leer_valor_en_memoria();
 bool esta_completa_cola_TLB();
-int obtener_marco_TLB(uint32_t numero_pagina_buscada);
+t_tlb* obtener_TLB(uint32_t numero_pagina_buscada);
 void primer_acceso_memoria();
 void guardar_en_TLB(uint32_t numero_pagina,uint32_t nro_marco);
 int tercer_acceso_memoria_lectura();
