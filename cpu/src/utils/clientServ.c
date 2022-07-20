@@ -11,7 +11,8 @@
 
 // Crear el socket del servidor, para poder recibir peticiones del cliente que se conecte al servidor.
 int iniciar_servidor(char* ip, char* puerto)
-{	//Guarda el File Descriptor(IDs)
+{
+	//Guarda el File Descriptor(IDs)
 	int socket_servidor;
 
 	//Estruc q Contendra información sobre la dirección de un proveedor de servicios.

@@ -182,7 +182,7 @@ void fetch_operands(){
 
 		numero_pagina = nro_pagina(direccion_logica_origen);
 
-		marco =  obtener_marco_TLB();//-1 si no lo encuentra
+		marco =  obtener_marco_TLB(numero_pagina);//-1 si no lo encuentra
 
 		if(marco<0){
 			marco = obtener_marco();
