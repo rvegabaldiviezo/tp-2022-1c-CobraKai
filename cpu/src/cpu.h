@@ -207,7 +207,6 @@ void iniciar_config_semaforos();
 
 void handshake_cpu_memoria(void);
 t_datos_memoria* recibir_handshake_memoria(int conexion);
-uint32_t segundo_acceso_memoria();
 void liberar_pcb(t_pcb* pcb);
 uint32_t nro_pagina(int direccion_logica);
 bool existeEnTLB(uint32_t numero_pagina);
@@ -226,10 +225,11 @@ void iniciar_dispatch(void);
 uint32_t leer_valor_en_memoria();
 bool esta_completa_cola_TLB();
 t_tlb* obtener_TLB(uint32_t numero_pagina_buscada);
-void primer_acceso_memoria();
+void primer_acceso_memoria(int direccion_logica);
+uint32_t segundo_acceso_memoria(int numero_pagina);
 void guardar_en_TLB(uint32_t numero_pagina,uint32_t nro_marco);
 void asignar_marco_tlb_memoria(uint32_t direccion_logica_origen);
-uint32_t tercer_acceso_memoria_lectura();
-void tercer_acceso_memoria_escritura(uint32_t);
+uint32_t tercer_acceso_memoria_lectura(int direccion_logica, int numero_pagina, int marco);
+void tercer_acceso_memoria_escritura(int direccion_logica, int numero_pagina, int marco, uint32_t valor_escribir);
 
 #endif /* CPU_H_ */

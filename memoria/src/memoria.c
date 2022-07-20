@@ -694,6 +694,7 @@ void atender_cpu() {
 				log_info(logger, "CPU solicita acceso a tabla pagina de primer nivel");
 				numero_de_tabla_primer_nivel = recibir_numero_tabla(conexion_cpu);
 				int entrada_tabla_primer_nivel = recibir_numero_entrada(conexion_cpu);
+				log_info(logger, "entrada tabña: %d ; numero tabla: %d", entrada_tabla_primer_nivel, numero_de_tabla_primer_nivel);
 				t_tabla_paginas_segundo_nivel* tabla = buscar_tabla_segundo_nivel(numero_de_tabla_primer_nivel, entrada_tabla_primer_nivel);
 				enviar_numero_de_tabla(conexion_cpu, tabla->numero);
 
