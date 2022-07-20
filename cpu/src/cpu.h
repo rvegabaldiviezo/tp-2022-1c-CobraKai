@@ -21,6 +21,7 @@
 #include <commons/string.h>
 #include <commons/config.h>
 #include <commons/collections/list.h>
+#include <commons/collections/queue.h>
 // Include de utils
 #include "./utils/clientServ.h"
 
@@ -84,6 +85,12 @@ typedef struct{
 	uint32_t tamano_pagina;
 }t_datos_memoria;
 
+
+typedef struct{
+	uint32_t nro_pagina;
+	uint32_t nro_marco;
+	time_t timestamps;
+}t_tlb;
 
 enum {
 	NO_OP = 1,
@@ -199,8 +206,19 @@ void iniciar_config_semaforos();
 
 t_datos_memoria*  handshake_cpu_memoria(void);
 t_datos_memoria* recibir_handshake_memoria(int conexion);
-uint32_t primer_acceso_memoria(int direccion_logica);
+uint32_t segundo_acceso_memoria();
 void liberar_pcb(t_pcb* pcb);
+uint32_t nro_pagina(int direccion_logica);
+bool existeEnTLB(uint32_t numero_pagina);
+uint32_t  obtener_marco();
 
+
+
+//##################
+void iniciar_memoria(void);
+void iniciar_comunicacion_cpu_memoria(void);
+void iniciar_tlb(void);
+void iniciar_interrupt(void);
+void iniciar_dispatch(void;
 
 #endif /* CPU_H_ */

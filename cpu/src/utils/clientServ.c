@@ -180,7 +180,18 @@ void enviar_pcb(t_pcb* pcb, int conexion, operacion op) {
 	send(conexion, pcb_serializado, bytes, 0);
 
 	//free(buffer);
-	//free(pcb_serializado);
+	free(pcb_serializado);
+
+	liberar_pcb(pcb);
+}
+
+void liberar_pcb(t_pcb* pcb){
+	void _destroy_element(char* str){
+		free(str);
+	}
+	list_destroy_and_destroy_elements(pcb->instrucciones, (void*) _destroy_element);
+
+	free(pcb);
 }
 
 // Comunicacion Memoria
@@ -236,6 +247,52 @@ void enviar_segundo_acceso_memoria(int conexion,uint32_t nro_entrada_tabla,uint3
 
 
 
+void enviar_tercer_acceso_memoria_lectura(int conexion,uint32_t nro_marco,uint32_t desplazamiento) {
+
+	operacion cod_op = LECTURA_MEMORIA_USUARIO;
+	uint32_t bytes = sizeof(operacion) + 2 *sizeof(uint32_t);
+	void* a_enviar = malloc(bytes);
+	uint32_t desplazamiento_bytes = 0;
+
+	memcpy(a_enviar + desplazamiento_bytes, &cod_op, sizeof(operacion));
+	desplazamiento_bytes += sizeof(operacion);
+
+	memcpy(a_enviar + desplazamiento_bytes, &nro_marco, sizeof(uint32_t));
+	desplazamiento_bytes += sizeof(uint32_t);
+
+	memcpy(a_enviar + desplazamiento_bytes, &desplazamiento, sizeof(uint32_t));
+	desplazamiento_bytes += sizeof(uint32_t);
+
+	send(conexion, a_enviar, bytes, MSG_NOSIGNAL);
+
+	free(a_enviar);
+}
+
+void enviar_tercer_acceso_memoria_escritura(int conexion,uint32_t nro_marco,uint32_t desplazamiento,uint32_t valor) {
+
+	operacion cod_op = ESCRITURA_MEMORIA_USUARIO;
+	uint32_t bytes = sizeof(operacion) + 3 *sizeof(uint32_t);
+	void* a_enviar = malloc(bytes);
+	uint32_t desplazamiento_bytes = 0;
+
+	memcpy(a_enviar + desplazamiento_bytes, &cod_op, sizeof(operacion));
+	desplazamiento_bytes += sizeof(operacion);
+
+	memcpy(a_enviar + desplazamiento_bytes, &nro_marco, sizeof(uint32_t));
+	desplazamiento_bytes += sizeof(uint32_t);
+
+	memcpy(a_enviar + desplazamiento_bytes, &desplazamiento, sizeof(uint32_t));
+	desplazamiento_bytes += sizeof(uint32_t);
+
+	memcpy(a_enviar + desplazamiento_bytes, &valor, sizeof(uint32_t));
+	desplazamiento_bytes += sizeof(uint32_t);
+
+	send(conexion, a_enviar, bytes, MSG_NOSIGNAL);
+
+	free(a_enviar);
+}
+
+
 void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes,operacion op) {
 	void* a_enviar = malloc(bytes);
 	int desplazamiento = 0;
@@ -270,18 +327,19 @@ void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes,operacion op) {
 }
 
 
-void enviar_pcb_bloqueado(int socketKernel,t_pcb_bloqueado* bloqueado){
+void enviar_pcb_bloqueado(int socketKernel,t_pcb_bloqueado* pcb_bloqueado){
 
-	t_buffer* buffer = cargar_buffer(bloqueado->pcb->instrucciones);
+	t_buffer* buffer = cargar_buffer(pcb_bloqueado->pcb->instrucciones);
 	int bytes = sizeof(pid_t) + 7 * sizeof(int) + buffer->size;
 
-	void* pcb_serializado = serializar_pcb(bloqueado->pcb, buffer, bytes,BLOQUEO_IO);
-	memcpy(pcb_serializado + bytes, &(bloqueado->tiempo_bloqueo), sizeof(int));
+	void* pcb_serializado = serializar_pcb(pcb_bloqueado->pcb, buffer, bytes,BLOQUEO_IO);
+	memcpy(pcb_serializado + bytes, &(pcb_bloqueado->tiempo_bloqueo), sizeof(int));
 	bytes += sizeof(int);
 	send(socketKernel, pcb_serializado, bytes, 0);
 
 	//free(buffer);
-	//free(pcb_serializado);
+	free(pcb_serializado);
+	free(pcb_bloqueado);
 }
 
 
