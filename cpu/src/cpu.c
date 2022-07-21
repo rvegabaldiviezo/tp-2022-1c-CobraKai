@@ -14,7 +14,7 @@ t_config* config; // free(config);
 
 // CPU
 proceso_cpu* cpu;// free(cpu);
-t_proceso* process;
+//t_proceso* process;
 
 // KERNEL
 t_pcb* pcb;//free(pcb);
@@ -118,6 +118,7 @@ int recibir_operacion_dispatch(){
 			case PCB:
 				log_info(logger, " DISPATCH, RECIBIO UN PCB");
 				pcb = recibir_pcb(cpu->kernel_dispatch);
+				pcb->inicio_rafaga = time(NULL);
 
 				mostrarPCB();
 
@@ -381,7 +382,7 @@ void tercer_acceso_memoria_escritura(int direccion_logica, int numero_pagina, in
 
 	int desplazamiento = direccion_logica - numero_pagina * datos_memoria->tamano_pagina;
 
-	enviar_tercer_acceso_memoria_escritura(cpu->memoria,marco,desplazamiento,valor_escribir);
+	enviar_tercer_acceso_memoria_escritura(cpu->memoria,marco,desplazamiento,valor_escribir, pcb->id);
 }
 //##############################################################
 

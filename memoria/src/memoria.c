@@ -141,14 +141,14 @@ char* get_path_archivo(pid_t id) {
 	return aux;
 }
 
-void swapear_paginas_modificadas(t_proceso* proceso) {
-	t_list* paginas_modificadas = get_paginas_modificadas(proceso);
+void swapear_paginas_modificadas(int id) {
+	t_list* paginas_modificadas = get_paginas_modificadas(id);
 	//FILE* archivo_swap = txt_open_for_append(get_path_archivo(proceso->id));
 	usleep(retardo_swap * 1000);
 	t_list* contenido_pagina = list_create();
 	for(int i = 0; i < list_size(paginas_modificadas); i++) {
 		t_pagina* pagina = list_get(paginas_modificadas, i);
-		escribir_en_archivo(get_path_archivo(proceso->id), pagina);
+		escribir_en_archivo(get_path_archivo(id), pagina);
 	}
 	//txt_close_file(archivo_swap);
 	list_destroy_and_destroy_elements(contenido_pagina, (void *) liberar_elementos);
@@ -175,8 +175,8 @@ char* list_split(t_list* lista, char* separador) {
 	return lista_string;
 }
 
-t_list* get_paginas_modificadas(t_proceso* proceso) {
-	t_list* tablas_segundo_nivel = list_get(tablas_primer_nivel, proceso->numero_tabla_primer_nivel);
+t_list* get_paginas_modificadas(int id) {
+	t_list* tablas_segundo_nivel = list_get(tablas_primer_nivel, id);
 	t_list* paginas_modificadas = list_create();
 	for(int i = 0; i < list_size(tablas_segundo_nivel); i++) {
 		t_tabla_paginas_segundo_nivel* tabla_segundo_nivel = list_get(tablas_segundo_nivel, i);
@@ -552,8 +552,8 @@ int cantidad_marcos_ocupados_proceso(){
 }
 
 
-void liberar_marcos_proceso() {
-	//TODO t_list* tablas_segundo_nivel = list_get(tablas_primer_nivel, proceso->numero_tabla_primer_nivel);
+void liberar_marcos_proceso(int id) {
+	t_list* tablas_segundo_nivel = list_get(tablas_primer_nivel, id);
 
 	for(int i = 0; i < list_size(tablas_segundo_nivel); i++) {
 		t_tabla_paginas_segundo_nivel* tabla = list_get(tablas_segundo_nivel, i);
@@ -712,6 +712,7 @@ void atender_cpu() {
 				int marco_lectura = recibir_entero(conexion_cpu);
 				int desplazamiento_lectura = recibir_entero(conexion_cpu);
 				uint32_t contenido = leer_contenido_marco(marco_lectura, desplazamiento_lectura);
+				log_info(logger, "Se leyó el contenido: %d del marco: %d", contenido, marco_lectura);
 				usleep(retardo_memoria*1000);
 				enviar_uint32(conexion_cpu, contenido);
 				break;
@@ -719,9 +720,10 @@ void atender_cpu() {
 				log_info(logger, "CPU solicita escritura a memoria de usuario");
 				int marco_escritura = recibir_entero(conexion_cpu);
 				int desplazamiento_escritura = recibir_entero(conexion_cpu);
-				numero_de_tabla_primer_nivel = recibir_numero_tabla(conexion_cpu);
 				uint32_t valor = recibir_uint32(conexion_cpu);
+				numero_de_tabla_primer_nivel = recibir_numero_tabla(conexion_cpu);
 				int respuesta = escribir_en_marco(marco_escritura, desplazamiento_escritura, valor);
+				log_info(logger, "Se escribio el contenido: %d en el marco: %d", valor, marco_escritura);
 				usleep(retardo_memoria*1000);
 				enviar_respuesta(conexion_cpu, respuesta);
 				break;
@@ -770,16 +772,17 @@ void atender_kernel() {
 				break;
 			case SUSPENCION_PROCESO:
 				log_info(logger, "Kernel solicita SUSPENCION PROCESO");
-				swapear_paginas_modificadas(proceso);
-				liberar_marcos_proceso();
+				int id = recibir_entero(conexion_kernel);
+				swapear_paginas_modificadas(id);
+				liberar_marcos_proceso(id);
 
 				enviar_confirmacion(conexion_kernel);
 
 				break;
 			case FINALIZACION_PROCESO:
 				log_info(logger, "Kernel solicita FINALIZACION PROCESO");
-
-				liberar_marcos_proceso();
+				int id_a_finalizar = recibir_entero(conexion_kernel);
+				liberar_marcos_proceso(id_a_finalizar);
 				remove(get_path_archivo(proceso->id));
 				log_info(logger, "Id a finalizar: %d", proceso->id);
 

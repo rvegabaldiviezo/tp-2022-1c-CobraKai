@@ -109,8 +109,8 @@ void iterador_tablas_segundo_nivel(t_tabla_paginas_segundo_nivel* tabla);
 void iterador_paginas(t_pagina* pag);
 
 //Funciones de swap
-void swapear_paginas_modificadas(t_proceso*);
-t_list* get_paginas_modificadas(t_proceso* proceso);
+void swapear_paginas_modificadas(int id);
+t_list* get_paginas_modificadas(int id);
 t_list* get_contenido_pagina(t_pagina*);
 char* leer_hasta(char, FILE*);
 void reemplazar_pagina(t_pagina* pagina);
@@ -122,7 +122,7 @@ void liberar_tablas_segundo_nivel(t_list*);
 void liberar_tabla_segundo_nivel(t_tabla_paginas_segundo_nivel* tabla);
 void liberar_pagina(t_pagina* pagina);
 void liberar_elementos(void* elemento);
-void liberar_marcos_proceso();
+void liberar_marcos_proceso(int id);
 void liberar_marco(int marco);
 void terminar_programa();
 

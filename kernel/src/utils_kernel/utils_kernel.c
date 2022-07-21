@@ -137,7 +137,7 @@ t_list* parsear_instrucciones(t_list* instrucciones) {
 
 void enviar_pcb(t_pcb* pcb, int conexion) {
 	t_buffer* buffer = cargar_buffer(pcb->instrucciones);
-	int bytes = sizeof(pid_t) + 7 * sizeof(int) + buffer->size;
+	int bytes = 8 * sizeof(int) + sizeof(time_t) + buffer->size;
 
 	void* pcb_serializado = serializar_pcb(pcb, buffer, bytes);
 	send(conexion, pcb_serializado, bytes, 0);
@@ -152,8 +152,8 @@ void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes) {
 	memcpy(a_enviar + desplazamiento, &operacion, sizeof(int));
 	desplazamiento += sizeof(int);
 
-	memcpy(a_enviar + desplazamiento, &(pcb->id), sizeof(pid_t));
-	desplazamiento += sizeof(pid_t);
+	memcpy(a_enviar + desplazamiento, &(pcb->id), sizeof(int));
+	desplazamiento += sizeof(int);
 
 	memcpy(a_enviar + desplazamiento, &(pcb->socket), sizeof(int));
 	desplazamiento += sizeof(int);
@@ -169,6 +169,9 @@ void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes) {
 
 	memcpy(a_enviar + desplazamiento, &(pcb->tablas_paginas), sizeof(int));
 	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->inicio_rafaga), sizeof(time_t));
+	desplazamiento += sizeof(time_t);
 
 	memcpy(a_enviar + desplazamiento, &(buffer->size), sizeof(int));
 	desplazamiento += sizeof(int);
@@ -220,8 +223,8 @@ t_pcb* recibir_pcb(int conexion) {
 	pcb->program_counter = recibir_entero(conexion);
 	pcb->estimacion_rafaga = recibir_entero(conexion);
 	pcb->tablas_paginas = recibir_entero(conexion);
-	pcb->instrucciones = recibir_instrucciones(conexion);
 	pcb->inicio_rafaga = recibir_entero(conexion);
+	pcb->instrucciones = recibir_instrucciones(conexion);
 	return pcb;
 }
 

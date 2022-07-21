@@ -59,7 +59,7 @@ void enviar_codigo_operacion(int conexion,int operacion);
 void enviar_primer_acceso_memoria(int conexion,uint32_t nro_entrada_tabla, uint32_t entrada_tabla_1er_nivel);
 void enviar_segundo_acceso_memoria(int conexion,uint32_t nro_entrada_tabla,uint32_t entrada_tabla_1er_nivel);
 uint32_t recibir_uint32_t(int socket_cliente);
-void enviar_tercer_acceso_memoria_escritura(int conexion,uint32_t nro_marco,uint32_t desplazamiento,uint32_t valor);
+void enviar_tercer_acceso_memoria_escritura(int conexion,uint32_t nro_marco,uint32_t desplazamiento,uint32_t valor, int id);
 void enviar_tercer_acceso_memoria_lectura(int conexion,uint32_t nro_marco,uint32_t desplazamiento);
 
 

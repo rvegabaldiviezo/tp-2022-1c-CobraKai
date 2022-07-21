@@ -506,9 +506,10 @@ void pasar_de_new_a_ready(){
 	t_pcb* proceso;
 
 	while(1){
+
 		sem_wait(&elementos_en_cola_new);
 		sem_wait(&multiprogramacion);
-
+		log_info(logger, "paso post");
 		pthread_mutex_lock(&mutex_susp_ready_queue);
 		tamanio_cola_susp_ready = queue_size(susp_ready);
 		pthread_mutex_unlock(&mutex_susp_ready_queue);
@@ -516,7 +517,7 @@ void pasar_de_new_a_ready(){
 		if(tamanio_cola_susp_ready == 0){
 			pthread_mutex_lock(&mutex_new_queue);
 			proceso = queue_pop(new);
-			pthread_mutex_lock(&mutex_new_queue);
+			pthread_mutex_unlock(&mutex_new_queue);
 
 			pasar_a_ready(proceso);
 

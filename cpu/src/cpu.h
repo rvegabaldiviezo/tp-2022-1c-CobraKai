@@ -50,6 +50,7 @@ typedef struct {
 	unsigned int tablas_paginas;
 	unsigned int estimacion_rafaga;
 	int socket_cliente;
+	time_t inicio_rafaga;
 	t_list* instrucciones;
 } t_pcb;
 
