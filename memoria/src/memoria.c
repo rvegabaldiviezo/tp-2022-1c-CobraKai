@@ -453,7 +453,7 @@ void escribir_en_archivo(char* path, t_pagina* pagina) {
 
 int encontrar_indice_puntero(t_list* paginas){
 	t_puntero* puntero = encontrar_puntero_proceso();
-	return encontrar_indice_puntero_segun_marco(puntero->puntero_marco);
+	return encontrar_indice_puntero_segun_marco(paginas, puntero->puntero_marco);
 }
 
 t_puntero* encontrar_puntero_proceso(){
@@ -711,6 +711,7 @@ void atender_cpu() {
 				int marco_lectura = recibir_entero(conexion_cpu);
 				int desplazamiento_lectura = recibir_entero(conexion_cpu);
 				uint32_t contenido = leer_contenido_marco(marco_lectura, desplazamiento_lectura);
+				usleep(retardo_memoria*1000);
 				enviar_uint32(conexion_cpu, contenido);
 				break;
 			case ESCRITURA_MEMORIA_USUARIO:
@@ -720,6 +721,7 @@ void atender_cpu() {
 				numero_de_tabla_primer_nivel = recibir_numero_tabla(conexion_cpu);
 				uint32_t valor = recibir_uint32(conexion_cpu);
 				int respuesta = escribir_en_marco(marco_escritura, desplazamiento_escritura, valor);
+				usleep(retardo_memoria*1000);
 				enviar_respuesta(conexion_cpu, respuesta);
 				break;
 			case ERROR:
