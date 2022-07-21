@@ -337,18 +337,18 @@ paquete cargar_id(operacion op, pid_t id) {
 	return p;
 }
 
-void enviar_finalizacion_a_memoria(pid_t id, int conexion_con_memoria) {
+void enviar_finalizacion_a_memoria(int id, int conexion_con_memoria) {
 	operacion op = FINALIZACION_PROCESO;
-	paquete paquete = cargar_id(op, id);
 
-	void* a_enviar = malloc(sizeof(paquete));
+	unsigned int bytes = sizeof(int) + sizeof(operacion);
+	void* a_enviar = malloc(bytes);
 	int desp = 0;
-	memcpy(a_enviar + desp, &(paquete.cod_op), sizeof(operacion));
+	memcpy(a_enviar + desp, &op, sizeof(operacion));
 	desp += sizeof(operacion);
 
-	memcpy(a_enviar + desp, &(paquete.elemento), sizeof(paquete.elemento));
-	desp += sizeof(paquete.elemento);
+	memcpy(a_enviar + desp, &id, sizeof(int));
+	desp += sizeof(int);
 
-	send(conexion_con_memoria, &op, sizeof(operacion), 0);
+	send(conexion_con_memoria, a_enviar, bytes, 0);
 }
 

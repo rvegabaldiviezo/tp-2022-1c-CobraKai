@@ -48,6 +48,7 @@ int conexion_con_memoria;
 int tiempo_max_bloqueo;
 int conexion_con_cpu_dispatch;
 int conexion_con_cpu_interrupt;
+bool ejecutando;
 
 float alfa;
 int grado_multiprogramacion;
@@ -85,6 +86,7 @@ int main(void) {
 	inicializar_colas();
 	iniciar_planificacion(planificador);
 	escuchar_cpu_dispatch();
+	ejecutando = false;
 
 	while(1) {
 		conexion_consola = esperar_cliente(socket_servidor);
@@ -238,6 +240,7 @@ void comunicacion_con_cpu() {
 		operacion operacion = recibir_operacion(conexion_con_cpu_dispatch);
 			switch(operacion) {
 				case BLOQUEO_IO:
+					ejecutando = false;
 					log_info(logger, "Codigo BLOQUEO_IO recibido");
 					t_pcb_bloqueado* proceso_bloqueado = recibir_pcb_bloqueado(conexion_con_cpu_dispatch);
 					log_info(logger, "La cpu envio el proceso %d con estado Bloqueado por IO", proceso_bloqueado->proceso->id);
@@ -253,6 +256,7 @@ void comunicacion_con_cpu() {
 					break;
 
 				case INTERRUPCION:
+					ejecutando = false;
 					log_info(logger, "Un proceso fue interrumpido");
 					t_pcb* pcb_interrumpido = recibir_pcb(conexion_con_cpu_dispatch);
 
@@ -264,6 +268,7 @@ void comunicacion_con_cpu() {
 
 					break;
 				case EXIT:
+					ejecutando = false;
 					log_info(logger, "La CPU envio un pcb con estado finalizado");
 					t_pcb* proceso = recibir_pcb(conexion_con_cpu_dispatch);
 				    enviar_finalizacion_a_memoria(proceso->id, conexion_con_memoria);
@@ -315,7 +320,8 @@ void planificacion_io(){
 
 			pasar_a_ready(primer_proceso->proceso);
 
-			if(strcmp(planificador, "SRT") == 0) {
+
+			if(strcmp(planificador, "SRT") == 0 && ejecutando) {
 				solicitar_interrupcion();
 			}
 
@@ -392,7 +398,7 @@ void desuspendidor(){
 
 		pasar_a_ready(proceso);
 
-		if(strcmp(planificador, "SRT") == 0) {
+		if(strcmp(planificador, "SRT") == 0 && ejecutando) {
 				solicitar_interrupcion();
 		}
 	}
@@ -447,12 +453,9 @@ void planificar_srt() {
 		t_pcb* proceso_mas_corto = list_pop(ready);
 		pthread_mutex_unlock(&mutex_ready_list);
 
-
-		// solo para ver si ordena bien
-		log_info(logger, "Me llegaron los siguientes valores:");
-		list_iterate(proceso_mas_corto->instrucciones, (void*) iterator);
 		enviar_pcb(proceso_mas_corto, conexion_con_cpu_dispatch);
-		//log_info(logger,"Se paso el proceso %lu de Ready a Ejecutando", proceso_mas_corto->id);
+		ejecutando = true;
+		log_info(logger,"Se paso el proceso %i de Ready a Ejecutando", proceso_mas_corto->id);
 
 		// esto va en el EXIT, lo pongo aca para probar
 		//enviar_finalizacion_a_memoria(proceso_mas_corto->id, conexion_con_memoria);
@@ -475,12 +478,12 @@ void pasar_a_ready(t_pcb* proceso) {
 		log_info(logger, "Se asignó el numero de tabla: %d al proceso de id: %d\n", proceso->tablas_paginas, proceso->id);
 	}
 
-	sem_post(&elementos_en_cola_ready);
-	log_info(logger, "El proceso %d fue asignado a la cola READY", proceso->id);
-
-	if((strcmp(planificador, "SRT") == 0) && (list_size(ready)>1)) {
+	if((strcmp(planificador, "SRT") == 0) && ejecutando) {
 			solicitar_interrupcion();
 	}
+
+	sem_post(&elementos_en_cola_ready);
+	log_info(logger, "El proceso %d fue asignado a la cola READY", proceso->id);
 }
 
 void* list_pop(t_list* lista) {

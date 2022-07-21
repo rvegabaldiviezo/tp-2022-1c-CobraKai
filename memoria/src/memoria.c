@@ -330,7 +330,6 @@ void algoritmo_clock_modificado(t_pagina* pagina){
 		}
 	}
 
-	t_list* paginas_en_memoria = encontrar_paginas_en_memoria();
 	t_pagina* siguiente_pagina_en_memoria = list_get(paginas, indice_puntero);
 	actualizar_puntero_proceso(siguiente_pagina_en_memoria->marco);
 
@@ -413,8 +412,6 @@ void clock_m_paso_2(t_list* paginas,t_pagina* pagina, int *indice_puntero, bool 
 
 t_list* leer_contenido_pagina_archivo(char* path_archivo, t_pagina* pagina){
 	FILE* archivo = fopen(path_archivo, "rt");
-	char* tabla_proceso = leer_hasta(',', archivo);
-	char* marco_pagina = leer_hasta(',', archivo);
 
 	t_list* contenido_pagina = list_create();
 	while(!feof(archivo)) {
@@ -784,7 +781,7 @@ void atender_kernel() {
 				int id_a_finalizar = recibir_entero(conexion_kernel);
 				liberar_marcos_proceso(id_a_finalizar);
 				remove(get_path_archivo(proceso->id));
-				log_info(logger, "Id a finalizar: %d", proceso->id);
+				log_info(logger, "FInalizo el proceso: %d", proceso->id);
 
 				break;
 			case ERROR:

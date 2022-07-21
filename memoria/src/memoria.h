@@ -148,5 +148,8 @@ int encontrar_indice_puntero();
 void escribir_marco_completo(int marco, t_list* contenido);
 t_puntero* encontrar_puntero_proceso();
 t_pagina* encontrar_pagina_por_marco(int numero_de_marco);
+void actualizar_puntero_proceso(int);
+int encontrar_indice_puntero_segun_marco(t_list*, int);
+void cambiar_bit_modificado(int numero_de_marco);
 
 #endif /* MEMORIA_H_ */
