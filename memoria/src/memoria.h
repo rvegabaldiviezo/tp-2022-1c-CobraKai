@@ -42,11 +42,14 @@ typedef enum {
 	ERROR = -1
 } operacion;
 
-//typedef struct {
-//	//void* buffer;
-//	unsigned int inicio;
-//	unsigned int fin;
-//} espacio_de_usuario;
+
+typedef struct {
+	unsigned int marco;
+	bool presencia;
+	bool usada;
+	bool modificada;
+	time_t tiempo_carga;
+} t_pagina;
 
 typedef struct {
 	int id;
@@ -57,12 +60,9 @@ typedef struct {
 } t_proceso;
 
 typedef struct {
-	unsigned int marco;
-	bool presencia;
-	bool usada;
-	bool modificada;
-	time_t tiempo_carga;
-} t_pagina;
+	int numero_tabla_primer_nivel;
+	int puntero_marco;
+} t_puntero;
 
 typedef struct {
 	unsigned int numero;
@@ -78,6 +78,7 @@ t_pagina* inicializar_pagina();
 t_bitarray* inicializar_bitarray();
 int proximo_marco_libre();
 
+
 // Funciones de hilos
 void atender_kernel();
 void atender_cpu();
@@ -85,7 +86,7 @@ void atender_cpu();
 // Funciones de archivos
 void crear_archivo_swap(char* path);
 char* get_path_archivo(int);
-void escribir_en_archivo(int);
+void escribir_en_archivo(char*, t_pagina*);
 
 // Funciones de conexiones
 bool conexion_exitosa(int);
@@ -99,6 +100,9 @@ uint32_t recibir_uint32(int);
 void enviar_numero_de_pagina(int, int);
 void enviar_confirmacion(int);
 void enviar_respuesta(int, int);
+void enviar_uint32(int, uint32_t);
+void enviar_entero(int destino, int a_enviar);
+void enviar_numero_de_tabla(int destino, int numero_de_tabla);
 void liberar_conexion(int);
 
 void iterador_tablas_segundo_nivel(t_tabla_paginas_segundo_nivel* tabla);
@@ -107,7 +111,9 @@ void iterador_paginas(t_pagina* pag);
 //Funciones de swap
 void swapear_paginas_modificadas(t_proceso*);
 t_list* get_paginas_modificadas(t_proceso* proceso);
-int get_contenido_pagina(t_pagina*);
+t_list* get_contenido_pagina(t_pagina*);
+char* leer_hasta(char, FILE*);
+void reemplazar_pagina(t_pagina* pagina);
 
 // Funciones para liberar memroia
 void liberar_tablas();
@@ -115,7 +121,9 @@ void liberar_tabla_primer_nivel(int);
 void liberar_tablas_segundo_nivel(t_list*);
 void liberar_tabla_segundo_nivel(t_tabla_paginas_segundo_nivel* tabla);
 void liberar_pagina(t_pagina* pagina);
-//void liberar_espacio_de_usuario(espacio_de_usuario espacio);
+void liberar_elementos(void* elemento);
+void liberar_marcos_proceso();
+void liberar_marco(int marco);
 void terminar_programa();
 
 //Otras
@@ -123,6 +131,22 @@ bool igual_numero(t_tabla_paginas_segundo_nivel*, int);
 void leer_config();
 uint32_t leer_contenido_marco(int, int);
 int escribir_en_marco(int, int, uint32_t);
+t_pagina* mayor_tiempo_espera(t_pagina* p1, t_pagina* p2);
 
+void algoritmo_clock(t_pagina* pagina);
+void modificar_bit_uso(t_pagina* pagina);
+void page_fault(t_pagina* pagina);
+t_list* encontrar_paginas_en_memoria();
+int cantidad_marcos_ocupados_proceso();
+void algoritmo_clock_modificado(t_pagina* pagina);
+void clock_m_paso_1(t_list* paginas,t_pagina* pagina, int *indice_puntero, bool *reemplazada);
+void clock_m_paso_2(t_list* paginas,t_pagina* pagina, int *indice_puntero, bool *reemplazada);
+t_list* leer_contenido_pagina_archivo(char* path_archivo, t_pagina* pagina);
+uint32_t leer_pagina_disco(t_pagina*);
+void asignar_marco(t_pagina* pagina);
+int encontrar_indice_puntero();
+void escribir_marco_completo(int marco, t_list* contenido);
+t_puntero* encontrar_puntero_proceso();
+t_pagina* encontrar_pagina_por_marco(int numero_de_marco);
 
 #endif /* MEMORIA_H_ */

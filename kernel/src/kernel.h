@@ -122,6 +122,12 @@ void solicitar_numero_de_tabla(t_pcb*, int);
 int recibir_numero_de_tabla(t_pcb*, int);
 void escuchar_cpu_dispatch();
 void pasar_a_ready(t_pcb*);
+void esperar_y_suspender(t_pcb_bloqueado*);
+void desuspendidor();
+bool esta_en_lista_bloqueados(t_pcb_bloqueado*);
+void iniciar_hilo_desuspendidor();
+void iniciar_planificador_largo_plazo();
+void pasar_de_new_a_ready();
 
 
 #endif /* KERNEL_H_ */

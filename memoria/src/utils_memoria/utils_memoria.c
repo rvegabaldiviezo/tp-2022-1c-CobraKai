@@ -56,6 +56,10 @@ void enviar_respuesta(int destino, int respuesta) {
 	enviar_entero(destino, respuesta);
 }
 
+void enviar_uint32(int destino, uint32_t valor) {
+	send(destino, &valor, sizeof(uint32_t), 0);
+}
+
 /******************** SERVER *****************/
 
 int iniciar_servidor(void) {

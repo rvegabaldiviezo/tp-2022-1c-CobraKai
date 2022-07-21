@@ -14,6 +14,9 @@ pthread_t planificador_io;
 pthread_t hilo_consola;
 pthread_t interrumpir_ejecucion;
 pthread_t hilo_cpu_dispatch;
+pthread_t hilo_suspender;
+pthread_t hilo_desuspender;
+pthread_t planificador_largo_plazo;
 
 // Semaforos
 pthread_mutex_t mutex_new_queue;
@@ -21,11 +24,11 @@ pthread_mutex_t mutex_ready_list;
 pthread_mutex_t i_o;
 pthread_mutex_t mutex_blocked_list;
 pthread_mutex_t mutex_susp_ready_queue;
+sem_t elementos_en_cola_new;
 sem_t elementos_en_cola_bloqueados;
 sem_t elementos_en_cola_ready;
 sem_t multiprogramacion;
 sem_t elementos_en_cola_susp_ready;
-sem_t cola_susp_ready_vacia;//todo, como se hace este semaforoo?
 sem_t sem_planificacion;
 
 
@@ -130,24 +133,14 @@ pid_t atender_consola() {
 
 		log_info(logger, "Tamaño recibido: %d", proceso->tamanio_proceso);
 
-		// TODO: AGREGAR MUTEX
+		pthread_mutex_unlock(&mutex_new_queue);
 		queue_push(new, proceso);
+		pthread_mutex_unlock(&mutex_new_queue);
+
 		log_info(logger, "Proceso %d asignado a la cola NEW", proceso->id);
 
-		//TODO: aplicar semaforo para la cola de suspendido ready? Los suspendidos ready tienen mas prioridad
-		sem_wait(&multiprogramacion);
-		if(queue_size(susp_ready) <= 0) {
-			pthread_mutex_unlock(&mutex_new_queue);
-			t_pcb* procesoNuevo = queue_pop(new);
-			pthread_mutex_unlock(&mutex_new_queue);
+		sem_post(&elementos_en_cola_new);
 
-			pasar_a_ready(procesoNuevo);
-
-
-		} else {
-			//TODO: creo que no deberia pasar esto
-			log_info(logger, "Se alcanzó el maximo grado de multiprogramacion, el proceso %d permanece en la cola de NEW", proceso->id);
-		}
 		break;
 
 	case ERROR:
@@ -190,6 +183,8 @@ void terminar_programa() {
 		pthread_join(planificador_fifo, NULL);
 	}
 	pthread_join(planificador_io, NULL);
+	pthread_join(hilo_desuspender, NULL);
+	pthread_join(planificador_largo_plazo, NULL);
 	pthread_join(hilo_consola, NULL);
 
 	log_destroy(logger);
@@ -251,6 +246,8 @@ void comunicacion_con_cpu() {
 					proceso_bloqueado->inicio_bloqueo = (int)time(NULL);
 					proceso_bloqueado->suspendido = 0;
 					agregar_a_bloqueados(proceso_bloqueado);
+					pthread_create(&hilo_suspender, NULL, (void*) esperar_y_suspender, proceso_bloqueado);
+					pthread_detach(hilo_suspender);
 					sem_post(&elementos_en_cola_bloqueados);
 					sem_post(&sem_planificacion);
 					break;
@@ -301,6 +298,9 @@ void agregar_a_bloqueados(t_pcb_bloqueado* proceso){
 }
 
 void planificacion_io(){
+	iniciar_hilo_desuspendidor();
+	iniciar_planificador_largo_plazo();
+
 	while(1){
 
 		sem_wait(&elementos_en_cola_bloqueados);
@@ -333,38 +333,59 @@ void planificacion_io(){
 	}
 }
 
+void iniciar_planificador_largo_plazo(){
+	pthread_create(&planificador_largo_plazo, NULL, (void*) pasar_de_new_a_ready, NULL);
+}
+
 void iniciar_planificacion_io(){
 	pthread_create(&planificador_io, NULL, (void*) planificacion_io, NULL);
 	log_info(logger, "Inicio la planificacion IO");
 }
 
-void mandar_a_suspendido(){
-	//TODO: esto no se llama nunca, por lo tanto nunca se le avisa a memoria que debe suspender
-	int tamanio_cola_bloqueados;
+void iniciar_hilo_desuspendidor(){
+	pthread_create(&hilo_desuspender, NULL, (void*) desuspendidor, NULL);
+}
 
-	while(1){
-		sem_wait(&elementos_en_cola_bloqueados);
+void esperar_y_suspender(t_pcb_bloqueado* proceso){
+	 usleep(tiempo_max_bloqueo*1000);
+
+	 if(esta_en_lista_bloqueados(proceso)){
+		 notificar_suspencion_proceso(proceso->proceso->id, conexion_con_memoria);
+		 proceso->suspendido = 1;
+		 sem_post(&multiprogramacion);
+	 }
+
+}
+
+bool esta_en_lista_bloqueados(t_pcb_bloqueado* pcb){
+	bool esta_en_lista = false;
+	int i = 0;
+	pthread_mutex_lock(&mutex_blocked_list);
+	int tamanio_cola_bloqueados = list_size(blocked);
+	pthread_mutex_unlock(&mutex_blocked_list);
+	t_pcb_bloqueado* pcb_aux;
+
+	while(!esta_en_lista && i < tamanio_cola_bloqueados){
 
 		pthread_mutex_lock(&mutex_blocked_list);
-		tamanio_cola_bloqueados = list_size(blocked);
+		pcb_aux = list_get(blocked, i);
 		pthread_mutex_unlock(&mutex_blocked_list);
 
-		for(int i = 0; i < tamanio_cola_bloqueados; i++){
-
-			t_pcb_bloqueado* proceso = list_get(blocked,i);
-			if(proceso->suspendido == 0 && ((int)(time(NULL) - proceso->inicio_bloqueo) > tiempo_max_bloqueo)){
-				notificar_suspencion_proceso(proceso->proceso->id, conexion_con_memoria);
-				proceso->suspendido = 1;
-				sem_post(&multiprogramacion);
-			}
+		if(pcb_aux->proceso->id == pcb->proceso->id){
+			esta_en_lista = true;
 		}
+
+		i++;
 	}
+
+	return esta_en_lista;
 }
 
 void desuspendidor(){
 	while(1){
 		sem_wait(&elementos_en_cola_susp_ready);
 		sem_wait(&multiprogramacion);
+
 		pthread_mutex_lock(&mutex_susp_ready_queue);
 		t_pcb* proceso = queue_pop(susp_ready);
 		pthread_mutex_unlock(&mutex_susp_ready_queue);
@@ -403,11 +424,13 @@ void inicializar_semaforos() {
 	pthread_mutex_init(&mutex_ready_list, NULL);
 	pthread_mutex_init(&mutex_blocked_list, NULL);
 	pthread_mutex_init(&i_o, NULL);
+	pthread_mutex_init(&mutex_new_queue, NULL);
 	sem_init(&elementos_en_cola_bloqueados, 0, 0);
 	sem_init(&elementos_en_cola_ready, 0, 0);
 	sem_init(&multiprogramacion, 0, grado_multiprogramacion);
 	sem_init(&elementos_en_cola_susp_ready, 0, 0);
 	sem_init(&sem_planificacion, 0, 1);
+	sem_init(&elementos_en_cola_new, 0, 0);
 }
 
 void planificar_srt() {
@@ -475,6 +498,32 @@ t_pcb* menor_tiempo_restante(t_pcb* p1, t_pcb* p2) {
 		return p2;
 	} else {
 		return p1;
+	}
+}
+
+void pasar_de_new_a_ready(){
+	int tamanio_cola_susp_ready;
+	t_pcb* proceso;
+
+	while(1){
+		sem_wait(&elementos_en_cola_new);
+		sem_wait(&multiprogramacion);
+
+		pthread_mutex_lock(&mutex_susp_ready_queue);
+		tamanio_cola_susp_ready = queue_size(susp_ready);
+		pthread_mutex_unlock(&mutex_susp_ready_queue);
+
+		if(tamanio_cola_susp_ready == 0){
+			pthread_mutex_lock(&mutex_new_queue);
+			proceso = queue_pop(new);
+			pthread_mutex_lock(&mutex_new_queue);
+
+			pasar_a_ready(proceso);
+
+		} else {
+			sem_post(&multiprogramacion);
+			sem_post(&elementos_en_cola_new);
+		}
 	}
 }
 
