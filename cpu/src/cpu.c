@@ -180,18 +180,30 @@ void fetch_operands(){
 
 		int direccion_logica_origen = atoi(instruccion_con_parametros[2]);//Accedemos al segundo parametro
 
-		numero_pagina = nro_pagina(direccion_logica_origen);
-
-		marco =  obtener_marco_TLB(numero_pagina);//-1 si no lo encuentra
-
-		if(marco<0){
-			marco = obtener_marco();
-			guardar_en_TLB(numero_pagina,marco);
-		}
+		asignar_marco_tlb_memoria(direccion_logica_origen);
 
 		valor_lectura_origen =  leer_valor_en_memoria();//lectura direccion fisica del valor de Origen a COPIAR
 	}
 }
+
+// Le asigna a la variable global marco, su valor.
+void asignar_marco_tlb_memoria(uint32_t direccion_logica_origen){
+
+	numero_pagina = nro_pagina(direccion_logica_origen);
+
+	//Primero buscamos el marco en la tlb, a partir del nro pagina
+	t_tlb* tlb_encontrada =  obtener_TLB(numero_pagina);//-1 si no lo encuentra
+
+	if(tlb_encontrada==NULL){
+		//No lo encontro, lo obtiene de memoria y lo agrega a la tlb
+		marco = obtener_marco();
+		guardar_en_TLB(numero_pagina,marco);
+	}else{//Como lo encontro, se tiene q actualizar el timestap y asignar el marco
+		tlb_encontrada->timestamps = time(NULL);//Pisamos el valor anterior
+		marco = tlb_encontrada->nro_marco;//Asignamos el marco encontrado
+	}
+}
+
 // 3) execute
 void execute(){
 
@@ -201,8 +213,26 @@ void execute(){
 		usleep(1000*tiempo_retardo);
 
 	}else if(strcmp("READ",instruccion)==0){
-
+		int nro_pag = nro_pagina(*instruccion_con_parametros[1]);
+		if(obtener_marco_TLB(nro_pag) != -1){
+			tercer_acceso_memoria_lectura();
+		} else {
+			primer_acceso_memoria();
+			uint32_t marco_a_leer = segundo_acceso_memoria();
+			guardar_en_TLB(nro_pag, marco_a_leer);
+			tercer_acceso_memoria_lectura();
+		}
 	}else if(strcmp("WRITE",instruccion)==0){
+		int nro_pag = nro_pagina(*instruccion_con_parametros[1]);
+		uint32_t valor_a_escribir = *instruccion_con_parametros[2];
+		if(obtener_marco_TLB(nro_pag) != -1){
+			tercer_acceso_memoria_escritura(valor_a_escribir);
+		} else {
+			primer_acceso_memoria();
+			uint32_t marco_a_leer = segundo_acceso_memoria();
+			guardar_en_TLB(nro_pag, marco_a_leer);
+			tercer_acceso_memoria_escritura(valor_a_escribir);
+		}
 
 	}else if(strcmp("COPY",instruccion)==0){
 
@@ -255,7 +285,7 @@ uint32_t nro_pagina(int direccion_logica_instruccion){
 
 	return nro_pagina_resultante;
 }
-int obtener_marco_TLB(uint32_t numero_pagina_buscada){
+t_tlb* obtener_TLB(uint32_t numero_pagina_buscada){
 
 	t_tlb* tlb_buscada = NULL;
 
@@ -266,12 +296,7 @@ int obtener_marco_TLB(uint32_t numero_pagina_buscada){
 		}
 		tlb_buscada = list_find(cola_tlb->elements,(void*) _tlb_buscada);
 	}
-
-	if(tlb_buscada==NULL){
-		return -1;
-	}
-
-	return tlb_buscada->nro_marco;
+	return tlb_buscada;
 }
 uint32_t  obtener_marco(){
 	primer_acceso_memoria();
@@ -305,7 +330,7 @@ uint32_t segundo_acceso_memoria(){
 uint32_t leer_valor_en_memoria(){
 	return tercer_acceso_memoria_lectura();
 }
-int tercer_acceso_memoria_lectura(){
+uint32_t tercer_acceso_memoria_lectura(){
 
 	desplazamiento = direccion_logica - numero_pagina * datos_memoria->tamano_pagina;
 
@@ -333,7 +358,7 @@ void guardar_en_TLB(uint32_t numero_pagina,uint32_t nro_marco){
 			}
 			 list_sort(cola_tlb->elements, (void*) _tlb_menor);
 		}
-		//Quitamos el primer elemento de la cola
+		//Quitamos el primer elemento de la cola, SUPONGO Q TAMB LIBERA SU MEMORIA ALOCADA
 		queue_pop(cola_tlb);
 	}
 	//Agregamos un nuevo elemento a la TLB, al final de cola
@@ -344,7 +369,7 @@ bool esta_completa_cola_TLB(){
 	return queue_size(cola_tlb)>3;
 }
 
-void tercer_acceso_memoria_escritura(int valor_escribir){
+void tercer_acceso_memoria_escritura(uint32_t valor_escribir){
 
 	desplazamiento = direccion_logica - numero_pagina * datos_memoria->tamano_pagina;
 
