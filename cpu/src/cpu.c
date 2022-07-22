@@ -145,6 +145,7 @@ int recibir_operacion_dispatch(){
 						log_warning(logger," DISPATCH, RETORNAMOS EL PCB AL KERNEL");
 						cpu->interrupcion=false;
 						sem_post(&sem_interrupt);
+						reiniciar_tlb();
 						break;
 					}
 				}
@@ -163,6 +164,12 @@ int recibir_operacion_dispatch(){
 char** decode(t_list* instrucciones,int nro_inst){
 	return string_split(list_get(instrucciones,nro_inst)," ");
 }
+void reiniciar_tlb(){
+	queue_destroy_and_destroy_elements(cola_tlb,(void*)free);
+	log_info(logger, " DISPATCH, REINICIAMOS LA COLA DE LA TLB");
+	iniciar_tlb();
+}
+
 //##################################################################
 
 
@@ -175,74 +182,41 @@ int fetch(){
 // 2) fetch_operands
 void fetch_operands(){
 
-//	if(strcmp("COPY",instruccion)==0){
-//
-//		int direccion_logica_origen = atoi(instruccion_con_parametros[2]);//Accedemos al segundo parametro
-//
-//		asignar_marco_tlb_memoria(direccion_logica_origen);
-//
-//		valor_lectura_origen =  leer_valor_en_memoria();//lectura direccion fisica del valor de Origen a COPIAR
-//	}
+	if(strcmp("COPY",instruccion)==0){
+
+		int direccion_logica_origen = atoi(instruccion_con_parametros[2]);//Accedemos al segundo parametro
+
+		valor_lectura_origen =  ejecutar_instruccion_read(direccion_logica_origen);//lectura direccion fisica del valor de Origen a COPIAR
+	}
 }
 
-// Le asigna a la variable global marco, su valor.
-void asignar_marco_tlb_memoria(uint32_t direccion_logica_origen){
-
-//	numero_pagina = nro_pagina(direccion_logica_origen);
-//
-//	//Primero buscamos el marco en la tlb, a partir del nro pagina
-//	t_tlb* tlb_encontrada =  obtener_TLB(numero_pagina);//-1 si no lo encuentra
-//
-//	if(tlb_encontrada==NULL){
-//		//No lo encontro, lo obtiene de memoria y lo agrega a la tlb
-//		marco = obtener_marco();
-//		guardar_en_TLB(numero_pagina,marco);
-//	}else{//Como lo encontro, se tiene q actualizar el timestap y asignar el marco
-//		tlb_encontrada->timestamps = time(NULL);//Pisamos el valor anterior
-//		marco = tlb_encontrada->nro_marco;//Asignamos el marco encontrado
-//	}
-}
 
 // 3) execute
 void execute(){
 
+	incrementarProgramCounter();
+
 	if(strcmp("NO_OP",instruccion) == 0){
-		incrementarProgramCounter();
 		int tiempo_retardo = config_get_int_value(config, "RETARDO_NOOP");
 		usleep(1000*tiempo_retardo);
 
 	}else if(strcmp("READ",instruccion)==0){
 		int direccion_logica = atoi(instruccion_con_parametros[1]);
-		int nro_pag = nro_pagina(direccion_logica);
-		t_tlb* entrada_tlb = obtener_TLB(nro_pag);
-		if(entrada_tlb != NULL){
-			log_info(logger, "se encontró la pag: %d y el marco: %d en la TLB", entrada_tlb->nro_pagina, entrada_tlb->nro_marco);
-			tercer_acceso_memoria_lectura(direccion_logica, entrada_tlb->nro_pagina, entrada_tlb->nro_marco);
-		} else {
-			primer_acceso_memoria(nro_pag);
-			uint32_t marco_a_leer = segundo_acceso_memoria(nro_pag);
-			guardar_en_TLB(nro_pag, marco_a_leer);
-			tercer_acceso_memoria_lectura(direccion_logica, nro_pag, marco_a_leer);
-		}
+		uint32_t valor_leido_memoria = ejecutar_instruccion_read(direccion_logica);
+		log_info(logger, " READ, Leyo de memoria: %d", valor_leido_memoria);
+
 	}else if(strcmp("WRITE",instruccion)==0){
 		int direccion_logica = atoi(instruccion_con_parametros[1]);
-		int nro_pag = nro_pagina(direccion_logica);
 		uint32_t valor_a_escribir = atoi(instruccion_con_parametros[2]);
-		t_tlb* entrada_tlb = obtener_TLB(nro_pag);
-		if(entrada_tlb != NULL) {
-			tercer_acceso_memoria_escritura(direccion_logica, entrada_tlb->nro_pagina, entrada_tlb->nro_marco, valor_a_escribir);
-		} else {
-			primer_acceso_memoria(nro_pag);
-			uint32_t marco_a_escribir = segundo_acceso_memoria(nro_pag);
-			log_info(logger, "marco a escribir: %d; valor a escribir: %d", marco_a_escribir, valor_a_escribir);
-			guardar_en_TLB(nro_pag, marco_a_escribir);
-			tercer_acceso_memoria_escritura(direccion_logica, nro_pag, marco_a_escribir, valor_a_escribir);
-		}
+
+		ejecutar_instruccion_write(direccion_logica,valor_a_escribir);
 
 	}else if(strcmp("COPY",instruccion)==0){
+		int direccion_logica_destino = atoi(instruccion_con_parametros[1]);
+
+		ejecutar_instruccion_write(direccion_logica_destino,valor_lectura_origen);
 
 	}else if(strcmp("I/O",instruccion)==0){
-		incrementarProgramCounter();
 		int tiempo_bloqueado = atoi(instruccion_con_parametros[1]);
 		t_pcb_bloqueado* pcb_bloqueado = malloc(sizeof(t_pcb_bloqueado));
 			pcb_bloqueado->pcb = pcb;
@@ -250,12 +224,53 @@ void execute(){
 		enviar_pcb_bloqueado(cpu->kernel_dispatch,pcb_bloqueado);
 
 	}else if(strcmp("EXIT",instruccion)==0){
-		incrementarProgramCounter();
 		enviar_pcb(pcb,cpu->kernel_dispatch,FINALIZACION_PROCESO);
 	}else{
 
 	}
 }
+
+uint32_t ejecutar_instruccion_read(int direccion_logica){
+	//Buscamos la instruccion logica
+	int nro_pag = nro_pagina(direccion_logica);
+
+	//Buscamos si existe en la TLB
+	t_tlb* entrada_tlb = obtener_TLB(nro_pag);
+
+	if(entrada_tlb != NULL){//Existe en la TLB
+		entrada_tlb->timestamps = time(NULL);//ACTUALIZAMOS SU TIMESTUP.
+		log_info(logger, " READ, EN TLB: se encontró la pag: %d y el marco: %d en la TLB", entrada_tlb->nro_pagina, entrada_tlb->nro_marco);
+		return tercer_acceso_memoria_lectura(direccion_logica, entrada_tlb->nro_pagina, entrada_tlb->nro_marco);
+	} else {//NO EXISTE, BUscamos en memoria
+		primer_acceso_memoria(nro_pag);
+		uint32_t marco_a_leer = segundo_acceso_memoria(nro_pag);
+		guardar_en_TLB(nro_pag, marco_a_leer);
+		return tercer_acceso_memoria_lectura(direccion_logica, nro_pag, marco_a_leer);
+	}
+}
+
+void ejecutar_instruccion_write(int direccion_logica,uint32_t valor_a_escribir){
+
+	int nro_pag = nro_pagina(direccion_logica);
+
+	t_tlb* entrada_tlb = obtener_TLB(nro_pag);
+
+
+	if(entrada_tlb != NULL) {
+		entrada_tlb->timestamps = time(NULL);//ACTUALIZAMOS SU TIMESTUP.
+		log_info(logger, " WRITE, EN TLB: se encontró la pag: %d y el marco: %d en la TLB", entrada_tlb->nro_pagina, entrada_tlb->nro_marco);
+		log_info(logger, " WRITE: se va a grabar en memoria: %d", valor_a_escribir);
+		tercer_acceso_memoria_escritura(direccion_logica, entrada_tlb->nro_pagina, entrada_tlb->nro_marco, valor_a_escribir);
+	} else {
+		primer_acceso_memoria(nro_pag);
+		uint32_t marco_a_escribir = segundo_acceso_memoria(nro_pag);
+		log_info(logger, " WRITE: marco a escribir: %d; valor a escribir: %d", marco_a_escribir, valor_a_escribir);
+		guardar_en_TLB(nro_pag, marco_a_escribir);
+		tercer_acceso_memoria_escritura(direccion_logica, nro_pag, marco_a_escribir, valor_a_escribir);
+	}
+}
+
+
 // 4) check_interrupt
 void  check_interrupt(){
 
@@ -303,11 +318,6 @@ t_tlb* obtener_TLB(uint32_t numero_pagina_buscada){
 	}
 	return tlb_buscada;
 }
-
-//uint32_t  obtener_marco(){
-//	primer_acceso_memoria();
-//	return segundo_acceso_memoria();
-//}
 
 void primer_acceso_memoria(int numero_pagina){
 
@@ -406,24 +416,12 @@ void mostrarPCB(){
 	log_info(logger, "socket: %d", pcb->socket_cliente);
 	log_info(logger, "numero de tabla: %d", pcb->tablas_paginas);
 	log_info(logger, "tamanio de consola: %d", pcb->tamanio_proceso);
-	//log_info(logger, "lista Instrucciones:");
-	//list_iterate(pcb->instrucciones, (void*) iterator);
+	log_info(logger, "lista Instrucciones:");
+	list_iterate(pcb->instrucciones, (void*) iterator);
 	log_info(logger, "--------------");
 }
 void iterator(char* value) {
 	log_info(logger,"%s", value);
-}
-void mostrar_PCB_Bloqueado(t_pcb_bloqueado* bloqueado){
-//	log_info(cpu_process->logger, "-----PCB ------");
-//	log_info(cpu_process->logger, "  estimacion: %d", bloqueado->pcb->estimacion_rafaga);
-//	log_info(cpu_process->logger, "  program counter: %d", bloqueado->pcb->program_counter);
-//	log_info(cpu_process->logger, "  socket: %d", bloqueado->pcb->socket_cliente);
-//	log_info(cpu_process->logger, "  numero de tabla: %d", bloqueado->pcb->tablas_paginas);
-//	log_info(cpu_process->logger, "  tamanio de consola: %d", bloqueado->pcb->tamanio_proceso);
-	//log_info(cpu_process->logger, "  lista Instrucciones:");
-	//list_iterate(pcb->instrucciones, (void*) iterator);
-//	log_info(cpu_process->logger, "  tiempo de bloqueo: %d", bloqueado->tiempo_bloqueo);
-//	log_info(cpu_process->logger, "--------------");
 }
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++

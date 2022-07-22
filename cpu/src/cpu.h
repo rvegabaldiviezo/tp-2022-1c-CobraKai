@@ -221,6 +221,7 @@ void iniciar_comunicacion_cpu_memoria(void);
 void iniciar_tlb(void);
 void iniciar_interrupt(void);
 void iniciar_dispatch(void);
+void reiniciar_tlb(void);
 
 
 uint32_t leer_valor_en_memoria();
@@ -232,5 +233,7 @@ void guardar_en_TLB(uint32_t numero_pagina,uint32_t nro_marco);
 void asignar_marco_tlb_memoria(uint32_t direccion_logica_origen);
 uint32_t tercer_acceso_memoria_lectura(int direccion_logica, int numero_pagina, int marco);
 void tercer_acceso_memoria_escritura(int direccion_logica, int numero_pagina, int marco, uint32_t valor_escribir);
+uint32_t ejecutar_instruccion_read(int direccion_logica);
+void ejecutar_instruccion_write(int direccion_logica,uint32_t valor_a_escribir);
 
 #endif /* CPU_H_ */
