@@ -40,6 +40,7 @@ int main(void) {
 	//contador_tablas_segundo_nivel = 0;
 
 	espacio_de_usuario = malloc(sizeof(tamanio_memoria));
+
 	punteros_procesos = list_create();
 	file_descriptors = list_create();
 
@@ -171,6 +172,7 @@ void swapear_paginas_modificadas(int id) {
 	//t_list* contenido_pagina = list_create();
 	for(int i = 0; i < list_size(paginas_modificadas); i++) {
 		t_pagina* pagina = list_get(paginas_modificadas, i);
+		log_info(logger, "Marco pagina modificada: %d", pagina->marco);
 		escribir_en_archivo(pagina, numero_de_tabla_primer_nivel);
 	}
 	//list_destroy_and_destroy_elements(contenido_pagina, (void *) liberar_elementos);
@@ -204,7 +206,7 @@ t_list* get_paginas_modificadas(int id) {
 		t_tabla_paginas_segundo_nivel* tabla_segundo_nivel = list_get(tablas_segundo_nivel, i);
 		for(int j = 0; j < list_size(tabla_segundo_nivel->paginas); j++){
 			t_pagina* pagina = list_get(tabla_segundo_nivel->paginas, j);
-			if(pagina->modificada) {
+			if(pagina->modificada && pagina->presencia) {
 				list_add(paginas_modificadas, pagina);
 			}
 		}
@@ -292,11 +294,11 @@ void algoritmo_clock(t_pagina* pagina){
 				escribir_en_archivo(pagina_en_memoria, numero_de_tabla_primer_nivel);
 			}
 
-			t_list* contenido_archivo = leer_contenido_pagina_archivo(get_path_archivo(numero_de_tabla_primer_nivel), pagina);
+			void* contenido_archivo = leer_contenido_pagina_archivo(pagina);
 
-			if(contenido_archivo != NULL){
-				escribir_marco_completo(pagina_en_memoria->marco, contenido_archivo);
-			}
+
+			escribir_marco_completo(pagina_en_memoria->marco, contenido_archivo);
+
 
 			pagina->marco = pagina_en_memoria->marco;
 			pagina->usada = true;
@@ -326,11 +328,8 @@ void actualizar_puntero_proceso(int marco){
 }
 
 
-void escribir_marco_completo(int marco, t_list* contenido) {
-	for(int i = 0; i < list_size(contenido); i++) {
-		uint32_t* elemento = list_get(contenido, i);
-		escribir_en_marco(marco, i * sizeof(uint32_t), *elemento);
-	}
+void escribir_marco_completo(int marco, void* contenido) {
+	memcpy(espacio_de_usuario + (marco * tamanio_pagina), contenido, tamanio_pagina);
 }
 
 void algoritmo_clock_modificado(t_pagina* pagina){
@@ -364,11 +363,9 @@ void clock_m_paso_1(t_list* paginas,t_pagina* pagina, int *indice_puntero, bool 
 
 			if(!pagina_en_memoria->usada && !pagina_en_memoria->modificada){
 
-				t_list* contenido_archivo = leer_contenido_pagina_archivo(get_path_archivo(numero_de_tabla_primer_nivel), pagina);
+				void* contenido_archivo = leer_contenido_pagina_archivo(pagina);
 
-				if(contenido_archivo != NULL){
-					escribir_marco_completo(pagina_en_memoria->marco, contenido_archivo);
-				}
+				escribir_marco_completo(pagina_en_memoria->marco, contenido_archivo);
 
 				pagina->marco = pagina_en_memoria->marco;
 				pagina->usada = true;
@@ -402,11 +399,10 @@ void clock_m_paso_2(t_list* paginas,t_pagina* pagina, int *indice_puntero, bool 
 			//uint32_t contenido_pagina_en_memoria = leer_contenido_marco(pagina_en_memoria->marco, 0);
 			escribir_en_archivo(pagina_en_memoria, numero_de_tabla_primer_nivel);
 
-			t_list* contenido_archivo = leer_contenido_pagina_archivo(get_path_archivo(numero_de_tabla_primer_nivel), pagina);
+			void* contenido_archivo = leer_contenido_pagina_archivo(pagina);
 
-			if(contenido_archivo != NULL){
-				escribir_marco_completo(pagina_en_memoria->marco, contenido_archivo);
-			}
+			escribir_marco_completo(pagina_en_memoria->marco, contenido_archivo);
+			free(contenido_archivo);
 
 			pagina->marco = pagina_en_memoria->marco;
 			pagina->usada = true;
@@ -428,17 +424,12 @@ void clock_m_paso_2(t_list* paginas,t_pagina* pagina, int *indice_puntero, bool 
 	}
 }
 
-t_list* leer_contenido_pagina_archivo(char* path_archivo, t_pagina* pagina){
-	FILE* archivo = fopen(path_archivo, "rt");
-
-	t_list* contenido_pagina = list_create();
-	while(!feof(archivo)) {
-		char* elemento = leer_hasta(',', archivo);
-		list_add(contenido_pagina, elemento);
-	}
-
-	fclose(archivo);
-	return contenido_pagina;
+void* leer_contenido_pagina_archivo(t_pagina* pagina){
+	int* fd = list_get(file_descriptors, numero_de_tabla_primer_nivel);
+	lseek(*fd, tamanio_pagina * pagina->numero, SEEK_SET);
+	void* buffer = malloc(tamanio_pagina);
+	read(*fd, buffer, tamanio_pagina);
+	return buffer;
 }
 
 char* leer_hasta(char caracter_de_paro, FILE* file) {
@@ -459,25 +450,18 @@ void escribir_en_archivo(t_pagina* pagina, int id) {
 	log_info(logger, "Numero de pagina: %d", pagina->numero);
 	lseek(*fd, tamanio_pagina * pagina->numero, SEEK_SET);
 	void* buffer = malloc(tamanio_pagina);
-	memcpy(buffer, espacio_de_usuario + pagina->marco * tamanio_pagina, tamanio_pagina);
+	memcpy(buffer, espacio_de_usuario + (pagina->marco * tamanio_pagina), tamanio_pagina);
+
+	for(int i = 0; i < tamanio_pagina / 4; i++) {
+		uint32_t* cont = malloc(sizeof(uint32_t));
+		memcpy(cont, buffer + i * sizeof(uint32_t), sizeof(uint32_t));
+		log_info(logger, "contenido buffer: %d", *cont);
+		free(cont);
+	}
 	int bytes = write(*fd, buffer, tamanio_pagina);
-
-	// (numero de tabla * paginas_por_tabla) + numero_entrada + 1
-
-
-	lseek(*fd, tamanio_pagina * pagina->numero, SEEK_SET);
-	void* buf = malloc(tamanio_pagina);
-	read(*fd, buf, tamanio_pagina);
-	uint32_t* cont = malloc(sizeof(uint32_t));
-	memcpy(cont, buf, sizeof(uint32_t));
-	log_info(logger, "contenido leido: %d", *cont);
-	memcpy(cont, buf + sizeof(uint32_t), sizeof(uint32_t));
-	log_info(logger, "contenido leido: %d", *cont);
-	//close(*fd);
+	log_info(logger, "bytes escritos: %d", bytes);
+	pagina->modificada = false;
 	free(buffer);
-	free(buf);
-
-
 }
 
 int encontrar_indice_puntero(t_list* paginas){
@@ -545,11 +529,9 @@ void asignar_marco(t_pagina* pagina){
 	pagina->marco = proximo_marco_libre();
 	pagina->presencia = true;
 	pagina->usada = true;
-	t_list* contenido = leer_contenido_pagina_archivo(get_path_archivo(numero_de_tabla_primer_nivel), pagina);
+	void* contenido = leer_contenido_pagina_archivo(pagina);
 
-	if(contenido != NULL){
-		escribir_marco_completo(pagina->marco, contenido);
-	}
+	escribir_marco_completo(pagina->marco, contenido);
 
 	if(cantidad_marcos_ocupados_proceso() == marcos_por_proceso){
 		t_list* paginas = encontrar_paginas_en_memoria();
@@ -646,7 +628,7 @@ t_pagina* encontrar_pagina_por_marco(int numero_de_marco){
 
 		i++;
 	}
-
+	liberar_pagina(pagina_aux);
 	return pagina_encontrada;
 
 }
@@ -666,7 +648,7 @@ void liberar_tabla_segundo_nivel(t_tabla_paginas_segundo_nivel* tabla) {
 }
 
 void liberar_pagina(t_pagina* pagina) {
-	bitarray_clean_bit(marcos_memoria, pagina->marco);
+	//bitarray_clean_bit(marcos_memoria, pagina->marco);
 	free(pagina);
 }
 
@@ -722,7 +704,7 @@ void atender_cpu() {
 				log_info(logger, "CPU solicita acceso a tabla pagina de primer nivel");
 				numero_de_tabla_primer_nivel = recibir_numero_tabla(conexion_cpu);
 				int entrada_tabla_primer_nivel = recibir_numero_entrada(conexion_cpu);
-				log_info(logger, "entrada tabña: %d ; numero tabla: %d", entrada_tabla_primer_nivel, numero_de_tabla_primer_nivel);
+				log_info(logger, "entrada tabla: %d ; numero tabla: %d", entrada_tabla_primer_nivel, numero_de_tabla_primer_nivel);
 				t_tabla_paginas_segundo_nivel* tabla = buscar_tabla_segundo_nivel(numero_de_tabla_primer_nivel, entrada_tabla_primer_nivel);
 				enviar_numero_de_tabla(conexion_cpu, tabla->numero);
 
@@ -750,11 +732,9 @@ void atender_cpu() {
 				int desplazamiento_escritura = recibir_entero(conexion_cpu);
 				uint32_t valor = recibir_uint32(conexion_cpu);
 				numero_de_tabla_primer_nivel = recibir_numero_tabla(conexion_cpu);
+				log_info(logger, "Cpu solicita escribir el valor %d en el marco %d", valor, marco_escritura);
 				int respuesta = escribir_en_marco(marco_escritura, desplazamiento_escritura, valor);
 
-				//t_tabla_paginas_segundo_nivel* tabla_prueba = buscar_tabla_segundo_nivel(numero_de_tabla_primer_nivel, 0);
-				//t_pagina* pagina_prueba = buscar_pagina(tabla_prueba->numero, 0);
-				//escribir_en_archivo(pagina_prueba, numero_de_tabla_primer_nivel);
 
 				log_info(logger, "Se escribio el contenido: %d en el marco: %d", valor, marco_escritura);
 				usleep(retardo_memoria*1000);
@@ -797,10 +777,9 @@ void atender_kernel() {
 				log_info(logger, "Se creo la tabla de primer nivel: %d", numero_tabla_primer_nivel);
 
 				int fd = crear_archivo_swap(id_proceso, tamanio);
-				log_info(logger, "se creo el fd: %d", fd);
+				//log_info(logger, "se creo el fd: %d", fd);
 
 				list_add(file_descriptors, &fd);
-
 
 				list_add(punteros_procesos, puntero_proceso);
 
