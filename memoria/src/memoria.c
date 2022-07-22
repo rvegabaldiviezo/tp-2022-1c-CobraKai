@@ -38,10 +38,9 @@ int main(void) {
 
 	tablas_primer_nivel = list_create();
 
-	espacio_de_usuario = malloc(sizeof(tamanio_memoria));
+	espacio_de_usuario = malloc(tamanio_memoria);
 
 	punteros_procesos = list_create();
-
 
 	server_memoria = iniciar_servidor();
 	log_info(logger, "Memoria lista para recibir clientes");
@@ -330,7 +329,6 @@ void actualizar_puntero_proceso(int marco){
 	puntero_proceso->puntero_marco = marco;
 }
 
-
 void escribir_marco_completo(int marco, void* contenido) {
 	memcpy(espacio_de_usuario + (marco * tamanio_pagina), contenido, tamanio_pagina);
 }
@@ -449,15 +447,15 @@ void* leer_contenido_pagina_archivo(t_pagina* pagina){
 	return buffer;
 }
 
-char* leer_hasta(char caracter_de_paro, FILE* file) {
-	char caracter = fgetc(file);
-	char* cadena_guardada = string_new();
-	while (caracter != caracter_de_paro && caracter != EOF) {
-		string_append_with_format(&cadena_guardada, "%c", caracter);
-		caracter = fgetc(file);
-	}
-	return cadena_guardada;
-}
+//char* leer_hasta(char caracter_de_paro, FILE* file) {
+	//char caracter = fgetc(file);
+	//char* cadena_guardada = string_new();
+	//while (caracter != caracter_de_paro && caracter != EOF) {
+		//string_append_with_format(&cadena_guardada, "%c", caracter);
+		//caracter = fgetc(file);
+	//}
+	//return cadena_guardada;
+//}
 
 void escribir_en_archivo(t_pagina* pagina, int id) {
 	usleep(retardo_swap * 1000);
