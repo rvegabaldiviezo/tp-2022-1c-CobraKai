@@ -334,7 +334,7 @@ void notificar_suspencion_proceso(int id, int conexion) {
 void enviar_finalizacion_a_memoria(int id, int conexion_con_memoria) {
 	operacion op = FINALIZACION_PROCESO;
 
-	int bytes = sizeof(operacion) + sizeof(int);
+	unsigned int bytes = sizeof(int) + sizeof(operacion);
 	void* a_enviar = malloc(bytes);
 	int desp = 0;
 	memcpy(a_enviar + desp, &op, sizeof(operacion));
