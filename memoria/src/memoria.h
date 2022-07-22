@@ -118,8 +118,8 @@ void iterador_paginas(t_pagina* pag);
 //Funciones de swap
 void swapear_paginas_modificadas(int id);
 t_list* get_paginas_modificadas(int id);
-t_list* get_contenido_pagina(t_pagina*);
-char* leer_hasta(char, FILE*);
+//t_list* get_contenido_pagina(t_pagina*);
+//char* leer_hasta(char, FILE*);
 void reemplazar_pagina(t_pagina* pagina);
 
 // Funciones para liberar memroia
