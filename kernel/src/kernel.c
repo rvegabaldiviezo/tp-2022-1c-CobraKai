@@ -247,9 +247,10 @@ void comunicacion_con_cpu() {
 					proceso_bloqueado->suspendido = 0;
 					agregar_a_bloqueados(proceso_bloqueado);
 					pthread_create(&hilo_suspender, NULL, (void*) esperar_y_suspender, proceso_bloqueado);
-					pthread_detach(hilo_suspender);
+
 					sem_post(&elementos_en_cola_bloqueados);
 					sem_post(&sem_planificacion);
+					pthread_join(hilo_suspender, NULL);
 					break;
 
 				case INTERRUPCION:
@@ -373,6 +374,7 @@ bool esta_en_lista_bloqueados(t_pcb_bloqueado* pcb){
 
 		if(pcb_aux->proceso->id == pcb->proceso->id){
 			esta_en_lista = true;
+			break;
 		}
 
 		i++;
@@ -527,17 +529,4 @@ void pasar_de_new_a_ready(){
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 

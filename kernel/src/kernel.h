@@ -77,11 +77,6 @@ typedef enum {
 	ERROR = -1
 } operacion;
 
-typedef struct {
-	operacion cod_op;
-	pid_t elemento;
-} paquete;
-
 void iterator(char* value);
 bool conexion_exitosa(int);
 void terminar_programa();
@@ -112,9 +107,8 @@ void enviar_pcb(t_pcb*, int);
 void* serializar_pcb(t_pcb*, t_buffer*, int);
 void agregar_instruccion(t_buffer* buffer, char* valor, int tamanio);
 t_buffer* cargar_buffer(t_list* lista);
-paquete cargar_id(operacion, pid_t);
-void notificar_suspencion_proceso(pid_t, int);
-void enviar_finalizacion_a_memoria(pid_t id, int conexion_con_memoria);
+void notificar_suspencion_proceso(int, int);
+void enviar_finalizacion_a_memoria(int id, int conexion_con_memoria);
 int recibir_entero(int socket_cliente);
 t_pcb* recibir_pcb(int conexion);
 t_pcb_bloqueado* recibir_pcb_bloqueado(int conexion);

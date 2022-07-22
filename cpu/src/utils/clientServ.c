@@ -338,7 +338,7 @@ void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes,operacion op) {
 void enviar_pcb_bloqueado(int socketKernel,t_pcb_bloqueado* pcb_bloqueado){
 
 	t_buffer* buffer = cargar_buffer(pcb_bloqueado->pcb->instrucciones);
-	int bytes = 9 * sizeof(int) + sizeof(time_t) + buffer->size;
+	int bytes = 8 * sizeof(int) + sizeof(time_t) + buffer->size;
 
 	void* pcb_serializado = serializar_pcb(pcb_bloqueado->pcb, buffer, bytes,BLOQUEO_IO);
 	memcpy(pcb_serializado + bytes, &(pcb_bloqueado->tiempo_bloqueo), sizeof(int));

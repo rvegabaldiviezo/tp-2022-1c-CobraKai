@@ -352,26 +352,32 @@ uint32_t tercer_acceso_memoria_lectura(int direccion_logica, int numero_pagina, 
 
 void guardar_en_TLB(uint32_t numero_pagina,uint32_t nro_marco){
 
-	//Instanciamos el elemento de la TLB a guardar
-	t_tlb* element_tlb = malloc(sizeof(t_tlb));
-	element_tlb->nro_pagina = numero_pagina;
-	element_tlb->nro_marco = nro_marco;
-	element_tlb->timestamps = time(NULL);//lo usamos principalmente para LRU
+    if(esta_completa_cola_TLB()){//APLICAR ALGORITMOS DE REEMPLAZO DE TLB
 
-	if(esta_completa_cola_TLB()){//APLICAR ALGORITMOS DE REEMPLAZO DE TLB
+        if(strcmp(reemplazo_tlb,"LRU") == 0){//ALGORITMO FIFO
+            //Ordenamos de menor tiempo a mayor (Asi queda primero. El de menor uso tiene menor tiempo, los de mayor uso tienen un tiempo mayor, mas actual)
+            bool _tlb_menor(t_tlb* tlb1, t_tlb* tlb2) {
+                return tlb1->timestamps <= tlb2->timestamps;
+            }
+             list_sort(cola_tlb->elements, (void*)_tlb_menor);
+        }
 
-		if(strcmp(reemplazo_tlb,"LRU") == 0){//ALGORITMO FIFO
-			//Ordenamos de menor tiempo a mayor (Asi queda primero. El de menor uso tiene menor tiempo, los de mayor uso tienen un tiempo mayor, mas actual)
-			bool _tlb_menor(t_tlb* tlb1, t_tlb* tlb2) {
-			    return tlb1->timestamps <= tlb2->timestamps;
-			}
-			 list_sort(cola_tlb->elements, (void*) _tlb_menor);
-		}
-		//Quitamos el primer elemento de la cola, SUPONGO Q TAMB LIBERA SU MEMORIA ALOCADA
-		queue_pop(cola_tlb);
-	}
-	//Agregamos un nuevo elemento a la TLB, al final de cola
-	queue_push(cola_tlb,element_tlb);
+         t_tlb* primer_tlb = queue_peek(cola_tlb);
+         primer_tlb->nro_pagina = numero_pagina;
+         primer_tlb->nro_marco = nro_marco;
+         primer_tlb->timestamps = time(NULL);//lo usamos principalmente para LRU
+
+    }else{//La cola esta incompleta, agregamos un elemnto
+
+        //Instanciamos el elemento de la TLB a guardar
+        t_tlb* element_tlb = malloc(sizeof(t_tlb));
+        element_tlb->nro_pagina = numero_pagina;
+        element_tlb->nro_marco = nro_marco;
+        element_tlb->timestamps = time(NULL);//lo usamos principalmente para LRU
+
+        //Agregamos un nuevo elemento a la TLB, al final de cola
+        queue_push(cola_tlb,element_tlb);
+    }
 }
 
 bool esta_completa_cola_TLB(){
@@ -383,6 +389,12 @@ void tercer_acceso_memoria_escritura(int direccion_logica, int numero_pagina, in
 	int desplazamiento = direccion_logica - numero_pagina * datos_memoria->tamano_pagina;
 
 	enviar_tercer_acceso_memoria_escritura(cpu->memoria,marco,desplazamiento,valor_escribir, pcb->id);
+
+	int respuesta = recibir_entero(cpu->memoria);
+
+	if(respuesta == -1) {
+		log_error(logger, "No se pudo escribir");
+	}
 }
 //##############################################################
 

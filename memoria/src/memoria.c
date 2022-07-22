@@ -21,9 +21,11 @@ unsigned int retardo_swap;
 unsigned int retardo_memoria;
 char* algoritmo_reemplazo;
 int marcos_por_proceso;
-int contador_tablas_segundo_nivel;
+int contador_paginas;
+//int contador_tablas_segundo_nivel;
 int numero_de_tabla_primer_nivel;
 t_list* punteros_procesos;
+t_list* file_descriptors;
 
 int main(void) {
 
@@ -35,13 +37,16 @@ int main(void) {
 	marcos_memoria = inicializar_bitarray();
 
 	tablas_primer_nivel = list_create();
-	contador_tablas_segundo_nivel = 0;
+	//contador_tablas_segundo_nivel = 0;
 
 	espacio_de_usuario = malloc(sizeof(tamanio_memoria));
 	punteros_procesos = list_create();
+	file_descriptors = list_create();
 
 	server_memoria = iniciar_servidor();
 	log_info(logger, "Memoria lista para recibir clientes");
+
+	crear_carpeta_swap();
 
 	pthread_create(&hilo_cpu, NULL, (void *) atender_cpu, NULL);
 
@@ -71,11 +76,11 @@ bool conexion_exitosa(int cliente) {
 
 int crear_tabla_paginas() {
 	tablas_segundo_nivel = list_create();
-
+	contador_paginas = 0;
 	for(int i = 0; i < entradas_por_tabla; i++) {
 		t_tabla_paginas_segundo_nivel* tabla = inicializar_tabla_segundo_nivel();
-		tabla->numero =	contador_tablas_segundo_nivel;
-		contador_tablas_segundo_nivel++;
+		tabla->numero =	i;//contador_tablas_segundo_nivel;
+		//contador_tablas_segundo_nivel++;
 		list_add(tablas_segundo_nivel, tabla);
 	}
 
@@ -91,20 +96,23 @@ t_tabla_paginas_segundo_nivel* inicializar_tabla_segundo_nivel() {
 	t_tabla_paginas_segundo_nivel* tabla = malloc(sizeof(t_tabla_paginas_segundo_nivel));
 	tabla->paginas = list_create();
 	for(int i = 0; i < entradas_por_tabla; i++) {
-		t_pagina* pagina = inicializar_pagina();
+		t_pagina* pagina = inicializar_pagina(i, tabla->numero);
 		list_add(tabla->paginas, pagina);
 	}
 
 	return tabla;
 }
 
-t_pagina* inicializar_pagina() {
+t_pagina* inicializar_pagina(int numero, int tabla) {
 	t_pagina* pagina = malloc(sizeof(t_pagina));
 	pagina->marco = -1;
 	pagina->modificada = false;
 	pagina->presencia = false;
 	pagina->usada = true;
 	pagina->tiempo_carga = time(NULL);
+	pagina->tabla_segundo_nivel = tabla;
+	pagina->numero = contador_paginas;
+	contador_paginas++;
 	return pagina;
 }
 
@@ -126,9 +134,25 @@ int proximo_marco_libre() {
 	return -1;
 }
 
-void crear_archivo_swap(char* path) {
-	FILE* f = fopen(path, "w");
-	fclose(f);
+void crear_carpeta_swap() {
+	DIR* dir = opendir(path_swap);
+	if(dir) {
+		closedir(dir);
+	} else {
+		mkdir(path_swap, 0777);
+	}
+}
+
+int crear_archivo_swap(int id, int tamanio) {
+	int fd = open(get_path_archivo(id), O_CREAT | O_RDWR, S_IRUSR | S_IWUSR);
+	if(fd != -1) {
+		ftruncate(fd, tamanio);
+		return fd;
+	} else {
+		log_info(logger, "Ocurrio un error al cread el archivo");
+		return -1;
+	}
+
 }
 
 char* get_path_archivo(pid_t id) {
@@ -143,15 +167,13 @@ char* get_path_archivo(pid_t id) {
 
 void swapear_paginas_modificadas(int id) {
 	t_list* paginas_modificadas = get_paginas_modificadas(id);
-	//FILE* archivo_swap = txt_open_for_append(get_path_archivo(proceso->id));
-	usleep(retardo_swap * 1000);
-	t_list* contenido_pagina = list_create();
+
+	//t_list* contenido_pagina = list_create();
 	for(int i = 0; i < list_size(paginas_modificadas); i++) {
 		t_pagina* pagina = list_get(paginas_modificadas, i);
-		escribir_en_archivo(get_path_archivo(id), pagina);
+		escribir_en_archivo(pagina, numero_de_tabla_primer_nivel);
 	}
-	//txt_close_file(archivo_swap);
-	list_destroy_and_destroy_elements(contenido_pagina, (void *) liberar_elementos);
+	//list_destroy_and_destroy_elements(contenido_pagina, (void *) liberar_elementos);
 }
 
 void liberar_elementos(void* elemento) {
@@ -201,10 +223,6 @@ t_list* get_contenido_pagina(t_pagina* pagina) {
 		}
 	}
 	return contenido_pagina;
-}
-
-bool igual_numero(t_tabla_paginas_segundo_nivel* tabla, int numero_a_comparar) {
-	return tabla->numero == numero_a_comparar;
 }
 
 t_tabla_paginas_segundo_nivel* buscar_tabla_segundo_nivel(int tabla_primer_nivel, int entrada) {
@@ -271,7 +289,7 @@ void algoritmo_clock(t_pagina* pagina){
 
 			if(pagina_en_memoria->modificada){
 				//t_list* contenido_pagina_en_memoria = get_contenido_pagina(pagina_en_memoria->marco);
-				escribir_en_archivo(get_path_archivo(numero_de_tabla_primer_nivel), pagina_en_memoria);
+				escribir_en_archivo(pagina_en_memoria, numero_de_tabla_primer_nivel);
 			}
 
 			t_list* contenido_archivo = leer_contenido_pagina_archivo(get_path_archivo(numero_de_tabla_primer_nivel), pagina);
@@ -383,7 +401,7 @@ void clock_m_paso_2(t_list* paginas,t_pagina* pagina, int *indice_puntero, bool 
 		if(!pagina_en_memoria->usada && pagina_en_memoria->modificada){
 
 			//uint32_t contenido_pagina_en_memoria = leer_contenido_marco(pagina_en_memoria->marco, 0);
-			escribir_en_archivo(get_path_archivo(numero_de_tabla_primer_nivel), pagina_en_memoria);
+			escribir_en_archivo(pagina_en_memoria, numero_de_tabla_primer_nivel);
 
 			t_list* contenido_archivo = leer_contenido_pagina_archivo(get_path_archivo(numero_de_tabla_primer_nivel), pagina);
 
@@ -436,19 +454,33 @@ char* leer_hasta(char caracter_de_paro, FILE* file) {
 	return cadena_guardada;
 }
 
-void escribir_en_archivo(char* path, t_pagina* pagina) {
-	FILE* archivo = fopen(path, "a");
-	char* tabla_proceso = string_itoa(numero_de_tabla_primer_nivel);
-	string_append(&tabla_proceso, ",");
-	txt_write_in_file(archivo, tabla_proceso);
+void escribir_en_archivo(t_pagina* pagina, int id) {
+	usleep(retardo_swap * 1000);
+	int* fd = list_get(file_descriptors, id);
+	log_info(logger, "File descriptor a escribir/leer: %d", *fd);
+	log_info(logger, "Tabla segundo nivel: %d", pagina->tabla_segundo_nivel);
+	log_info(logger, "Numero de pagina: %d", pagina->numero);
+	lseek(*fd, tamanio_pagina * pagina->numero, SEEK_SET);
+	void* buffer = malloc(tamanio_pagina);
+	memcpy(buffer, espacio_de_usuario + pagina->marco * tamanio_pagina, tamanio_pagina);
+	int bytes = write(*fd, buffer, tamanio_pagina);
 
-	char* marco_string = string_itoa(pagina->marco);
-	string_append(&marco_string, ",");
-	txt_write_in_file(archivo, marco_string);
+	// (numero de tabla * paginas_por_tabla) + numero_entrada + 1
 
-	t_list* contenido_pagina = get_contenido_pagina(pagina);
-	txt_write_in_file(archivo, list_split(contenido_pagina, ","));
-	fclose(archivo);
+
+	lseek(*fd, tamanio_pagina * pagina->numero, SEEK_SET);
+	void* buf = malloc(tamanio_pagina);
+	read(*fd, buf, tamanio_pagina);
+	uint32_t* cont = malloc(sizeof(uint32_t));
+	memcpy(cont, buf, sizeof(uint32_t));
+	log_info(logger, "contenido leido: %d", *cont);
+	memcpy(cont, buf + sizeof(uint32_t), sizeof(uint32_t));
+	log_info(logger, "contenido leido: %d", *cont);
+	//close(*fd);
+	free(buffer);
+	free(buf);
+
+
 }
 
 int encontrar_indice_puntero(t_list* paginas){
@@ -579,7 +611,6 @@ uint32_t leer_contenido_marco(int numero_de_marco, int desplazamiento) {
 		} else {
 			return -1;
 		}
-
 	}
 
 }
@@ -723,6 +754,11 @@ void atender_cpu() {
 				uint32_t valor = recibir_uint32(conexion_cpu);
 				numero_de_tabla_primer_nivel = recibir_numero_tabla(conexion_cpu);
 				int respuesta = escribir_en_marco(marco_escritura, desplazamiento_escritura, valor);
+
+				//t_tabla_paginas_segundo_nivel* tabla_prueba = buscar_tabla_segundo_nivel(numero_de_tabla_primer_nivel, 0);
+				//t_pagina* pagina_prueba = buscar_pagina(tabla_prueba->numero, 0);
+				//escribir_en_archivo(pagina_prueba, numero_de_tabla_primer_nivel);
+
 				log_info(logger, "Se escribio el contenido: %d en el marco: %d", valor, marco_escritura);
 				usleep(retardo_memoria*1000);
 				enviar_respuesta(conexion_cpu, respuesta);
@@ -751,30 +787,34 @@ void atender_kernel() {
 		switch(operacion) {
 			case INICIO_PROCESO:
 				log_info(logger, "Kernel solicita INICIO PROCESO");
-				t_proceso* proceso = malloc(sizeof(t_proceso));
+				//t_proceso* proceso = malloc(sizeof(t_proceso));
 				t_puntero* puntero_proceso = malloc(sizeof(t_puntero));
 
-				proceso->id= recibir_id_proceso(conexion_kernel);
-				proceso->tamanio = recibir_tamanio(conexion_kernel);
-				proceso->numero_tabla_primer_nivel = crear_tabla_paginas();
+				int id_proceso = recibir_id_proceso(conexion_kernel);
+				int tamanio = recibir_tamanio(conexion_kernel);
+				int numero_tabla_primer_nivel = crear_tabla_paginas();
 
-				puntero_proceso->numero_tabla_primer_nivel = proceso->numero_tabla_primer_nivel;
+				puntero_proceso->numero_tabla_primer_nivel = numero_tabla_primer_nivel;
 				puntero_proceso->puntero_marco = -1;
 
-				log_info(logger, "Se creo la tabla de primer nivel: %d", proceso->numero_tabla_primer_nivel);
+				log_info(logger, "Se creo la tabla de primer nivel: %d", numero_tabla_primer_nivel);
 
-				crear_archivo_swap(get_path_archivo(proceso->id));
+				int fd = crear_archivo_swap(id_proceso, tamanio);
+				log_info(logger, "se creo el fd: %d", fd);
+
+				list_add(file_descriptors, &fd);
+
 
 				list_add(punteros_procesos, puntero_proceso);
 
-				enviar_numero_de_tabla(conexion_kernel, proceso->numero_tabla_primer_nivel);
+				enviar_numero_de_tabla(conexion_kernel, numero_tabla_primer_nivel);
 
 				break;
 			case SUSPENCION_PROCESO:
 				log_info(logger, "Kernel solicita SUSPENCION PROCESO");
-				int id = recibir_entero(conexion_kernel);
-				swapear_paginas_modificadas(id);
-				liberar_marcos_proceso(id);
+				int id_a_suspender = recibir_entero(conexion_kernel);
+				swapear_paginas_modificadas(id_a_suspender);
+				liberar_marcos_proceso(id_a_suspender);
 
 				enviar_confirmacion(conexion_kernel);
 
@@ -783,8 +823,10 @@ void atender_kernel() {
 				log_info(logger, "Kernel solicita FINALIZACION PROCESO");
 				int id_a_finalizar = recibir_entero(conexion_kernel);
 				liberar_marcos_proceso(id_a_finalizar);
-				remove(get_path_archivo(proceso->id));
-				log_info(logger, "Id a finalizar: %d", proceso->id);
+				int* fd_a_finalizar = list_get(file_descriptors, id_a_finalizar);
+				close(*fd_a_finalizar);
+				remove(get_path_archivo(id_a_finalizar));
+				log_info(logger, "Id a finalizar: %d", id_a_finalizar);
 
 				break;
 			case ERROR:

@@ -11,7 +11,12 @@
 #include <math.h>
 #include "utils_memoria/utils_memoria.h"
 #include <commons/txt.h>
-#include <math.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <sys/mman.h>
+#include <fcntl.h>
+#include <unistd.h>
 
 #define PATH_CONFIG "src/memoria.config"
 #define PATH_LOG "./memoria.log"
@@ -49,6 +54,8 @@ typedef struct {
 	bool usada;
 	bool modificada;
 	time_t tiempo_carga;
+	int tabla_segundo_nivel;
+	int numero;
 } t_pagina;
 
 typedef struct {
@@ -56,7 +63,6 @@ typedef struct {
 	unsigned int tamanio;
 	unsigned int numero_tabla_primer_nivel;
 	t_pagina* puntero;
-	//espacio_de_usuario espacio_utilizable;
 } t_proceso;
 
 typedef struct {
@@ -74,7 +80,7 @@ typedef struct {
 void inicializar_tabla_paginas();
 int crear_tabla_paginas();
 t_tabla_paginas_segundo_nivel* inicializar_tabla_segundo_nivel();
-t_pagina* inicializar_pagina();
+t_pagina* inicializar_pagina(int numero, int tabla);
 t_bitarray* inicializar_bitarray();
 int proximo_marco_libre();
 
@@ -84,9 +90,10 @@ void atender_kernel();
 void atender_cpu();
 
 // Funciones de archivos
-void crear_archivo_swap(char* path);
+void crear_carpeta_swap();
+int crear_archivo_swap(int id, int tamanio);
 char* get_path_archivo(int);
-void escribir_en_archivo(char*, t_pagina*);
+void escribir_en_archivo(t_pagina*, int);
 
 // Funciones de conexiones
 bool conexion_exitosa(int);
@@ -148,5 +155,10 @@ int encontrar_indice_puntero();
 void escribir_marco_completo(int marco, t_list* contenido);
 t_puntero* encontrar_puntero_proceso();
 t_pagina* encontrar_pagina_por_marco(int numero_de_marco);
+
+void cambiar_bit_modificado(int numero_de_marco);
+void actualizar_puntero_proceso(int marco);
+void cambiar_bit_modificado(int numero_de_marco);
+int encontrar_indice_puntero_segun_marco(t_list* paginas,int marco);
 
 #endif /* MEMORIA_H_ */
