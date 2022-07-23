@@ -1,5 +1,5 @@
-#ifndef CLIENT_SERV_H_
-#define CLIENT_SERV_H_
+#ifndef UTILS_CLIENT_SERV_H_
+#define UTILS_CLIENT_SERV_H_
 
 #include <string.h>
 #include <stdlib.h>
@@ -90,4 +90,4 @@ int crear_conexion(char *ip, char* puerto);
 
 
 
-#endif /* CLIENT_SERV_H_ */
+#endif /* UTILS_CLIENT_SERV_H_ */

@@ -1,5 +1,5 @@
-#ifndef UTILS_H_
-#define UTILS_H_
+#ifndef UTILS_UTILS_KERNEL_H_
+#define UTILS_UTILS_KERNEL_H_
 
 #include "../kernel.h"
 #include <stdio.h>
@@ -35,4 +35,4 @@ int recibir_tiempo_bloqueado(int);
 
 void liberar_conexion(int socket_cliente);
 
-#endif /* UTILS_H_ */
+#endif /* UTILS_UTILS_KERNEL_H_ */
