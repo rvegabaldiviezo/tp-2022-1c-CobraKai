@@ -16,7 +16,7 @@
 
 
 #define IP "0.0.0.0"
-#define PUERTO "4444"
+#define PUERTO "8000"
 
 int crear_conexion(char*, char*);
 void* recibir_buffer(int*, int);

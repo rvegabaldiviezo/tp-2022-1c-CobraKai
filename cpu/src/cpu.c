@@ -554,7 +554,7 @@ void iniciar_servidor_interrupt(){
 }
 int iniciar_servidor_cpu(char* key_puerto){
 
-	char* ip = config_get_string_value(config, KEY_IP_CPU);
+	char* ip = config_get_string_value(config, "0.0.0.0");
 	char* puerto = config_get_string_value(config, key_puerto);
 
 	int socket_servidor = iniciar_servidor(ip,puerto);
