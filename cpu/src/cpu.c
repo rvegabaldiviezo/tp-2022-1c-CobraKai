@@ -1,5 +1,5 @@
 #include "cpu.h"
-#include "./utils/clientServ.h"
+//#include "./utils/clientServ.h"
 
 // HILOS
 pthread_t interrupt;
