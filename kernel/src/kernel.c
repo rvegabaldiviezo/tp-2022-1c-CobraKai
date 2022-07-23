@@ -465,6 +465,11 @@ void planificar_srt() {
 		pthread_mutex_lock(&mutex_ready_list);
 		if(list_size(ready) > 1) {
 			list_sort(ready, (void *) menor_tiempo_restante);
+			log_info(logger "lista ordenada: ");
+			void iterador(t_pcb* pcb) {
+				log_info(logger, "estimacion: %d inicio rafaga: %d" pcb->estimacion_rafaga, pcb->inicio_rafaga);
+			}
+			list_iterate(ready, (void*) iterador);
 		}
 		t_pcb* proceso_mas_corto = list_pop(ready);
 		pthread_mutex_unlock(&mutex_ready_list);
