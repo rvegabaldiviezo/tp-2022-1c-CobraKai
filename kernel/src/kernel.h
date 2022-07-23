@@ -48,7 +48,13 @@ typedef struct {
 	int tiempo_de_bloqueo;
 	time_t inicio_bloqueo;
 	int suspendido;
+	int id_block;
 } t_pcb_bloqueado;
+
+typedef struct {
+	t_pcb_bloqueado* pcb_bloqueado;
+	int id;
+} t_pcb_bloqueado_con_id;
 
 typedef struct {
 	char* cadena;
@@ -91,7 +97,7 @@ void inicializar_colas();
 int atender_consola();
 void planificar_srt();
 void planificar_fifo();
-void agregar_a_bloqueados(t_pcb_bloqueado* proceso);
+void agregar_a_bloqueados(t_pcb_bloqueado_con_id* proceso);
 void iniciar_planificacion_io();
 int recibir_tiempo_bloqueo();
 void iniciar_planificacion(char* planificacion);
@@ -116,9 +122,9 @@ void solicitar_numero_de_tabla(t_pcb*, int);
 int recibir_numero_de_tabla(t_pcb*, int);
 void escuchar_cpu_dispatch();
 void pasar_a_ready(t_pcb*);
-void esperar_y_suspender(t_pcb_bloqueado*);
+void esperar_y_suspender(t_pcb_bloqueado_con_id*);
 void desuspendidor();
-bool esta_en_lista_bloqueados(t_pcb_bloqueado*);
+bool esta_en_lista_bloqueados(t_pcb_bloqueado_con_id*);
 void iniciar_hilo_desuspendidor();
 void iniciar_planificador_largo_plazo();
 void pasar_de_new_a_ready();

@@ -177,7 +177,7 @@ void swapear_paginas_modificadas(int id) {
 	for(int i = 0; i < list_size(paginas_modificadas); i++) {
 		t_pagina* pagina = list_get(paginas_modificadas, i);
 		log_info(logger, "Marco pagina modificada: %d", pagina->marco);
-		escribir_en_archivo(pagina, numero_de_tabla_primer_nivel);
+		escribir_en_archivo(pagina, id);
 		pagina->modificada = false;
 		pagina->presencia = false;
 		//liberar_pagina(pagina);
@@ -247,7 +247,7 @@ t_tabla_paginas_segundo_nivel* buscar_tabla_segundo_nivel(int tabla_primer_nivel
 
 t_pagina* buscar_pagina(int numero_tabla_segundo_nivel, int entrada) {
 	int tabla_primer_nivel = floor(numero_tabla_segundo_nivel / entradas_por_tabla);
-	t_list* tablas_segundo_nivel = list_get(tablas_primer_nivel, tabla_primer_nivel);
+	t_list* tablas_segundo_nivel = list_get(tablas_primer_nivel, numero_de_tabla_primer_nivel);
 	bool mismo_numero_tabla(t_tabla_paginas_segundo_nivel* tabla) {
 		return tabla->numero == numero_tabla_segundo_nivel;
 	}
@@ -548,14 +548,17 @@ t_list* encontrar_paginas_en_memoria(){
 	t_list* tablas_segundo_nivel = list_get(tablas_primer_nivel, numero_de_tabla_primer_nivel);
 
 	for(int i = 0; i < list_size(tablas_segundo_nivel); i++) {
+
 		t_tabla_paginas_segundo_nivel* tabla = list_get(tablas_segundo_nivel, i);
 		for(int j = 0; j < list_size(tabla->paginas); j++) {
 			t_pagina* pagina = list_get(tabla->paginas, j);
+
 			if(pagina->presencia) {
 				list_add(paginas_en_memoria, pagina);
 			}
 		}
 	}
+
 	return paginas_en_memoria;
 }
 
@@ -630,6 +633,7 @@ uint32_t leer_contenido_marco(int numero_de_marco, int desplazamiento) {
 
 int escribir_en_marco(int numero_de_marco, int desplazamiento, uint32_t valor) {
 	if((numero_de_marco * tamanio_pagina) + desplazamiento > tamanio_memoria - 1) {
+		log_warning(logger, "Error intentando escribir en el marco, supera limite memoria");
 		return -1;
 	} else {
 		memcpy(espacio_de_usuario + (numero_de_marco * tamanio_pagina) + desplazamiento, &valor, sizeof(uint32_t));
@@ -641,12 +645,13 @@ int escribir_en_marco(int numero_de_marco, int desplazamiento, uint32_t valor) {
 void cambiar_bit_modificado(int numero_de_marco){
 	t_pagina* pagina = encontrar_pagina_por_marco(numero_de_marco);
 	pagina->modificada = true;
+
 }
 
 t_pagina* encontrar_pagina_por_marco(int numero_de_marco){
 	//suponiendo que tengo guardado el pid
 	t_list* paginas = encontrar_paginas_en_memoria();
-	t_pagina* pagina_encontrada;
+	t_pagina* pagina_encontrada = NULL;
 
 	int i = 0;
 	bool encontrada = false;

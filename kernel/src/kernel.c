@@ -49,6 +49,7 @@ int tiempo_max_bloqueo;
 int conexion_con_cpu_dispatch;
 int conexion_con_cpu_interrupt;
 bool ejecutando;
+int contador_bloqueo;
 
 float alfa;
 int grado_multiprogramacion;
@@ -68,6 +69,7 @@ int main(void) {
 	tiempo_max_bloqueo = config_get_int_value(config, TIEMPO_MAXIMO_BLOQUEADO);
 
 	socket_servidor = iniciar_servidor();
+	contador_bloqueo = 0;
 
 	log_info(logger, "Kernel listo para recibir al cliente");
 
@@ -249,9 +251,17 @@ void comunicacion_con_cpu() {
 					log_info(logger, "Inicio de bloqueo: %li", proceso_bloqueado->inicio_bloqueo);
 					proceso_bloqueado->inicio_bloqueo = (int)time(NULL);
 					proceso_bloqueado->suspendido = 0;
-					agregar_a_bloqueados(proceso_bloqueado);
-					pthread_create(&hilo_suspender, NULL, (void*) esperar_y_suspender, proceso_bloqueado);
+					proceso_bloqueado->id_block = contador_bloqueo;
+					t_pcb_bloqueado_con_id* proceso_bloqueado_con_id = malloc(sizeof(t_pcb_bloqueado_con_id));
+					proceso_bloqueado_con_id->id = contador_bloqueo;
+					proceso_bloqueado_con_id->pcb_bloqueado = proceso_bloqueado;
+
+					agregar_a_bloqueados(proceso_bloqueado_con_id);
+
+
+					pthread_create(&hilo_suspender, NULL, (void*) esperar_y_suspender, proceso_bloqueado_con_id);
 					pthread_detach(hilo_suspender);
+					contador_bloqueo++;
 					sem_post(&elementos_en_cola_bloqueados);
 					sem_post(&sem_planificacion);
 
@@ -297,11 +307,11 @@ void solicitar_interrupcion() {
 }
 
 
-void agregar_a_bloqueados(t_pcb_bloqueado* proceso){
+void agregar_a_bloqueados(t_pcb_bloqueado_con_id* proceso){
 	pthread_mutex_lock(&mutex_blocked_list);
 	list_add(blocked, proceso);
 	pthread_mutex_unlock(&mutex_blocked_list);
-	log_info(logger, "Se agrego el proceso %d a la cola de bloqueados por I/O", proceso->proceso->id);
+	log_info(logger, "Se agrego el proceso %d a la cola de bloqueados por I/O", proceso->pcb_bloqueado->proceso->id);
 }
 
 void planificacion_io(){
@@ -312,7 +322,8 @@ void planificacion_io(){
 
 		sem_wait(&elementos_en_cola_bloqueados);
 		pthread_mutex_lock(&mutex_blocked_list);
-		t_pcb_bloqueado* primer_proceso = list_get(blocked, 0);
+		t_pcb_bloqueado_con_id* pcb_bllll = list_get(blocked, 0);;
+		t_pcb_bloqueado* primer_proceso = pcb_bllll->pcb_bloqueado;
 		pthread_mutex_unlock(&mutex_blocked_list);
 		log_info(logger, "El proceso %d inicio su I/0", primer_proceso->proceso->id);
 		usleep(primer_proceso->tiempo_de_bloqueo*1000);
@@ -355,23 +366,23 @@ void iniciar_hilo_desuspendidor(){
 	pthread_create(&hilo_desuspender, NULL, (void*) desuspendidor, NULL);
 }
 
-void esperar_y_suspender(t_pcb_bloqueado* proceso){
+void esperar_y_suspender(t_pcb_bloqueado_con_id* proceso){
 	 usleep(tiempo_max_bloqueo*1000);
 	 if(esta_en_lista_bloqueados(proceso)){
-		 notificar_suspencion_proceso(proceso->proceso->id, conexion_con_memoria);
-		 proceso->suspendido = 1;
+		 notificar_suspencion_proceso(proceso->pcb_bloqueado->proceso->id, conexion_con_memoria);
+		 proceso->pcb_bloqueado->suspendido = 1;
 		 sem_post(&multiprogramacion);
 	 }
 
 }
 
-bool esta_en_lista_bloqueados(t_pcb_bloqueado* pcb){
+bool esta_en_lista_bloqueados(t_pcb_bloqueado_con_id* pcb){
 	bool esta_en_lista = false;
 	int i = 0;
 	//pthread_mutex_lock(&mutex_blocked_list);
 	int tamanio_cola_bloqueados = list_size(blocked);
 	//pthread_mutex_unlock(&mutex_blocked_list);
-	t_pcb_bloqueado* pcb_aux;
+	t_pcb_bloqueado_con_id* pcb_aux;
 
 	while(!esta_en_lista && i < tamanio_cola_bloqueados){
 
@@ -379,7 +390,7 @@ bool esta_en_lista_bloqueados(t_pcb_bloqueado* pcb){
 		pcb_aux = list_get(blocked, i);
 		pthread_mutex_unlock(&mutex_blocked_list);
 
-		if(pcb_aux->proceso->id == pcb->proceso->id){
+		if(pcb_aux->pcb_bloqueado->proceso->id == pcb->pcb_bloqueado->proceso->id && pcb_aux->id == pcb->id){
 			esta_en_lista = true;
 			break;
 		}
