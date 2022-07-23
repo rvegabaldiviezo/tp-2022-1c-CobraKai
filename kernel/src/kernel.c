@@ -512,9 +512,9 @@ void list_push(t_list* lista, void* elemento){
 
 t_pcb* menor_tiempo_restante(t_pcb* p1, t_pcb* p2) {
 	if(p1->estimacion_rafaga > p2->estimacion_rafaga) {
-		return p2;
-	} else {
 		return p1;
+	} else {
+		return p2;
 	}
 }
 
