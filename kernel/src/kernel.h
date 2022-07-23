@@ -103,7 +103,7 @@ int recibir_tiempo_bloqueo();
 void iniciar_planificacion(char* planificacion);
 void comunicacion_con_cpu();
 void* list_pop(t_list*);
-t_pcb* menor_tiempo_restante(t_pcb*, t_pcb*);
+bool menor_tiempo_restante(t_pcb*, t_pcb*);
 t_list* recibir_instrucciones(int socket_cliente);
 bool repetido(t_pcb* p1, t_pcb* p2);
 void inicializar_semaforos();
