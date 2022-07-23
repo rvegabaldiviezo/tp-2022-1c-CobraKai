@@ -51,7 +51,6 @@ int conexion_con_cpu_dispatch;
 int conexion_con_cpu_interrupt;
 bool ejecutando;
 int contador_bloqueo;
-time_t inicio_rafaga;
 
 
 double alfa;
@@ -250,7 +249,7 @@ void comunicacion_con_cpu() {
 					ejecutando = false;
 					log_info(logger, "Codigo BLOQUEO_IO recibido");
 					t_pcb_bloqueado* proceso_bloqueado = recibir_pcb_bloqueado(conexion_con_cpu_dispatch);
-					double tiempo_real_b = difftime(time(NULL), inicio_rafaga);
+					double tiempo_real_b = difftime(time(NULL), proceso_bloqueado->proceso->inicio_rafaga);
 					proceso_bloqueado->proceso->estimacion_rafaga = alfa *  tiempo_real_b + (1 - alfa) * proceso_bloqueado->proceso->estimacion_rafaga;
 					log_warning(logger, "program counter: %d", proceso_bloqueado->proceso->program_counter);
 					log_info(logger, "La cpu envio el proceso %d con estado Bloqueado por IO", proceso_bloqueado->proceso->id);
@@ -280,8 +279,8 @@ void comunicacion_con_cpu() {
 					t_pcb* pcb_interrumpido = recibir_pcb(conexion_con_cpu_dispatch);
 
 					// prox_rafaga = alfa * tiempo_ultima_rafaga + (1 - alfa) * pcb.estimacion_rafaga
-					double tiempo_real = difftime(time(NULL), inicio_rafaga);
-					pcb_interrumpido->estimacion_rafaga = alfa *  tiempo_real + (1 - alfa) * pcb_interrumpido->estimacion_rafaga;
+					double tiempo_real = difftime(time(NULL), pcb_interrumpido->inicio_rafaga);
+					pcb_interrumpido->estimacion_rafaga -= tiempo_real; //= alfa *  tiempo_real + (1 - alfa) * pcb_interrumpido->estimacion_rafaga;
 					pasar_a_ready(pcb_interrumpido);
 					sem_post(&sem_planificacion);
 
@@ -474,13 +473,12 @@ void planificar_srt() {
 			log_info(logger, "lista ordenada: ");
 			void iterador(t_pcb* pcb) {
 
-				log_info(logger, "id: %d estimacion: %d inicio rafaga: %d",pcb->id, pcb->estimacion_rafaga, inicio_rafaga);
+				log_info(logger, "id: %d estimacion: %d inicio rafaga: %d",pcb->id, pcb->estimacion_rafaga, pcb->inicio_rafaga);
 			}
 			list_iterate(ready, (void*) iterador);
 		}
 		t_pcb* proceso_mas_corto = list_pop(ready);
 		pthread_mutex_unlock(&mutex_ready_list);
-		inicio_rafaga = time(NULL);
 		enviar_pcb(proceso_mas_corto, conexion_con_cpu_dispatch);
 		ejecutando = true;
 		log_info(logger,"Se paso el proceso %i de Ready a Ejecutando", proceso_mas_corto->id);
