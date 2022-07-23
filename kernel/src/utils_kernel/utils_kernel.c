@@ -230,9 +230,20 @@ t_pcb* recibir_pcb(int conexion) {
 
 t_pcb_bloqueado* recibir_pcb_bloqueado(int conexion) {
 	t_pcb_bloqueado* bloqueado = malloc(sizeof(t_pcb_bloqueado));
-	bloqueado->proceso = recibir_pcb(conexion);
+	t_pcb* proceso = malloc(sizeof(t_pcb));
 	bloqueado->tiempo_de_bloqueo = recibir_tiempo_bloqueo(conexion);
+	proceso->id = recibir_entero(conexion);
+	proceso->socket = recibir_entero(conexion);
+	proceso->tamanio_proceso = recibir_entero(conexion);
+	proceso->program_counter = recibir_entero(conexion);
+	proceso->estimacion_rafaga = recibir_entero(conexion);
+	proceso->tablas_paginas = recibir_entero(conexion);
+	proceso->inicio_rafaga = recibir_entero(conexion);
+	proceso->instrucciones = recibir_instrucciones(conexion);
 	bloqueado->inicio_bloqueo = time(NULL);
+
+	bloqueado->proceso = proceso;
+
 	return bloqueado;
 }
 
