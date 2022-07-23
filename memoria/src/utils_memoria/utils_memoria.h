@@ -17,7 +17,7 @@
 #include <commons/config.h>
 #include "../memoria.h"
 
-#define IP "127.0.0.1"
+#define IP "0.0.0.0"
 
 int crear_conexion(char* ip, char* puerto);
 void enviar_mensaje(char* mensaje, int socket_cliente);
