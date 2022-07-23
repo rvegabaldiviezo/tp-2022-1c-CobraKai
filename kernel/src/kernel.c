@@ -56,9 +56,9 @@ int grado_multiprogramacion;
 char* planificador;
 int numero_proceso = 0;
 
-int main(void) {
+int main(int argc, char** argv) {
 
-	config = config_create(PATH_CONFIG);
+	config = config_create(argv[1]);
 
 	grado_multiprogramacion = config_get_int_value(config, GRADO_MULTIPROGRAMACION);
 

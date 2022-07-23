@@ -4,17 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/utils/utils_server.c 
+../src/utils_kernel/utils_kernel.c 
 
 OBJS += \
-./src/utils/utils_server.o 
+./src/utils_kernel/utils_kernel.o 
 
 C_DEPS += \
-./src/utils/utils_server.d 
+./src/utils_kernel/utils_kernel.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-src/utils/%.o: ../src/utils/%.c
+src/utils_kernel/%.o: ../src/utils_kernel/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C Compiler'
 	gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"

@@ -1,5 +1,5 @@
-#ifndef CLIENT_SERV_H_
-#define CLIENT_SERV_H_
+#ifndef UTILS_CLIENT_SERV_H_
+#define UTILS_CLIENT_SERV_H_
 
 #include <string.h>
 #include <stdlib.h>
@@ -50,7 +50,7 @@ void liberar_conexion(int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);*/
 //---------------------------
 t_log* iniciar_logger(void);
-t_config* iniciar_config(void);
+t_config* iniciar_config(char*);
 void liberar_conexion(int socket_cliente);
 
 
@@ -90,4 +90,4 @@ int crear_conexion(char *ip, char* puerto);
 
 
 
-#endif /* CLIENT_SERV_H_ */
+#endif /* UTILS_CLIENT_SERV_H_ */

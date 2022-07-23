@@ -34,8 +34,12 @@ int valor_lectura_destino;
 //TLB
 t_queue* cola_tlb;//free(cola_tlb)
 
+char* path_config;
 
-int main(void) {
+
+int main(int argc, char** argv) {
+	path_config = string_new();
+	string_append(&path_config, argv[1]);
 
 	iniciar_cpu();
 
@@ -446,7 +450,7 @@ void iniciar_logger_cpu(){
 	log_info(logger,"\n###### INICIO DE LOGGER ######");
 }
 void iniciar_config_cpu(){
-	config = iniciar_config();
+	config = iniciar_config(path_config);
 
 	reemplazo_tlb = config_get_string_value(config, "REEMPLAZO_TLB");
 	log_info(logger, "  REEMPLAZO_TLB: %s", reemplazo_tlb);
