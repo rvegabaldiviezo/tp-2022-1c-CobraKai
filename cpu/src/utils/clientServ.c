@@ -184,7 +184,7 @@ void enviar_pcb(t_pcb* pcb, int conexion, operacion op) {
 	//free(buffer);
 	free(pcb_serializado);
 
-	liberar_pcb(pcb);
+	free(pcb);
 }
 
 void liberar_pcb(t_pcb* pcb){
@@ -336,17 +336,54 @@ void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes,operacion op) {
 
 
 void enviar_pcb_bloqueado(int socketKernel,t_pcb_bloqueado* pcb_bloqueado){
+	t_pcb* pcb = pcb_bloqueado->pcb;
 
-	t_buffer* buffer = cargar_buffer(pcb_bloqueado->pcb->instrucciones);
-	int bytes = 8 * sizeof(int) + sizeof(time_t) + buffer->size;
+	t_buffer* buffer = cargar_buffer(pcb->instrucciones);
 
-	void* pcb_serializado = serializar_pcb(pcb_bloqueado->pcb, buffer, bytes,BLOQUEO_IO);
-	memcpy(pcb_serializado + bytes, &(pcb_bloqueado->tiempo_bloqueo), sizeof(int));
-	bytes += sizeof(int);
-	send(socketKernel, pcb_serializado, bytes, 0);
+	int bytes = 9 * sizeof(int) + sizeof(time_t) + buffer->size;
+
+	operacion op = BLOQUEO_IO;
+
+	void* a_enviar = malloc(bytes);
+	int desplazamiento = 0;
+
+	memcpy(a_enviar + desplazamiento, &op, sizeof(operacion));
+	desplazamiento += sizeof(operacion);
+
+	memcpy(a_enviar + desplazamiento, &(pcb_bloqueado->tiempo_bloqueo), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->id), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->socket_cliente), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->tamanio_proceso), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->program_counter), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->estimacion_rafaga), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->tablas_paginas), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->inicio_rafaga), sizeof(time_t));
+	desplazamiento += sizeof(time_t);
+
+	memcpy(a_enviar + desplazamiento, &(buffer->size), sizeof(int));
+	desplazamiento += sizeof(int);
+
+	memcpy(a_enviar + desplazamiento, buffer->stream, buffer->size);
+
+
+
+	send(socketKernel, a_enviar, bytes, MSG_NOSIGNAL);
 
 	//free(buffer);
-	free(pcb_serializado);
 	free(pcb_bloqueado);
 }
 
