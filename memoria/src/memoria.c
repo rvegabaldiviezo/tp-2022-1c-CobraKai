@@ -2,6 +2,8 @@
 
 pthread_t hilo_cpu;
 pthread_t hilo_kernel;
+pthread_t hilo_swap;
+sem_t swap;
 
 t_log* logger;
 t_config* config;
@@ -24,6 +26,7 @@ int marcos_por_proceso;
 int contador_paginas;
 int numero_de_tabla_primer_nivel;
 t_list* punteros_procesos;
+int id_a_suspender;
 
 
 int main(void) {
@@ -46,8 +49,11 @@ int main(void) {
 	log_info(logger, "Memoria lista para recibir clientes");
 
 	crear_carpeta_swap();
+	sem_init(&swap, 0, 0);
+	id_a_suspender = -1;
 
 	pthread_create(&hilo_cpu, NULL, (void *) atender_cpu, NULL);
+	//pthread_create(&hilo_swap, NULL, (void *) solicitudes_swap, NULL);
 
 	terminar_programa();
 	return EXIT_SUCCESS;
@@ -172,6 +178,16 @@ void swapear_paginas_modificadas(int id) {
 		t_pagina* pagina = list_get(paginas_modificadas, i);
 		log_info(logger, "Marco pagina modificada: %d", pagina->marco);
 		escribir_en_archivo(pagina, numero_de_tabla_primer_nivel);
+		pagina->modificada = false;
+		pagina->presencia = false;
+		//liberar_pagina(pagina);
+	}
+
+	t_list* paginas_en_memoria = encontrar_paginas_en_memoria();
+	for(int i = 0; i < list_size(paginas_en_memoria); i++) {
+		t_pagina* pagina = list_get(paginas_en_memoria, i);
+		pagina->presencia = false;
+		//liberar_pagina(pagina);
 	}
 }
 
@@ -271,6 +287,7 @@ void reemplazar_pagina(t_pagina* pagina){
 	} else {
 		algoritmo_clock_modificado(pagina);
 	}
+	log_warning(logger, "Se reemplazó la pagina %d", pagina->numero);
 }
 
 void algoritmo_clock(t_pagina* pagina){
@@ -305,6 +322,7 @@ void algoritmo_clock(t_pagina* pagina){
 			pagina->marco = pagina_en_memoria->marco;
 			pagina->usada = true;
 			pagina->presencia = true;
+			pagina->modificada = false;
 			pagina_en_memoria->presencia = false;
 			reemplazada = true;
 
@@ -408,13 +426,14 @@ void clock_m_paso_2(t_list* paginas,t_pagina* pagina, int *indice_puntero, bool 
 			void* contenido_archivo = leer_contenido_pagina_archivo(pagina);
 
 			escribir_marco_completo(pagina_en_memoria->marco, contenido_archivo);
-			log_info(logger, "Se reemplazó la página %d", pagina->numero);
+			//log_info(logger, "Se reemplazó la página %d", pagina->numero);
 
 			free(contenido_archivo);
 
 			pagina->marco = pagina_en_memoria->marco;
 			pagina->usada = true;
 			pagina->presencia = true;
+			pagina->modificada = false;
 			pagina_en_memoria->presencia = false;
 			*reemplazada = true;
 
@@ -476,7 +495,6 @@ void escribir_en_archivo(t_pagina* pagina, int id) {
 	int bytes = write(fd, buffer, tamanio_pagina);
 	close(fd);
 	log_info(logger, "bytes escritos: %d", bytes);
-	pagina->modificada = false;
 	free(buffer);
 }
 
@@ -557,6 +575,7 @@ void asignar_marco(t_pagina* pagina){
 		t_puntero* puntero_proceso = encontrar_puntero_proceso();
 		puntero_proceso->puntero_marco = primer_pagina->marco;
 	}
+	log_warning(logger, "No hizo falta reemplazar, se asignó el marco %d a la página %d", pagina->marco, pagina->numero);
 }
 
 
@@ -723,7 +742,12 @@ void atender_cpu() {
 
 				break;
 			case ACCESO_TABLA_SEGUNDO_NIVEL:
+				if(numero_de_tabla_primer_nivel == id_a_suspender) {
+					log_info(logger, "El proceso esta ejecutando swap, se espera a que termine");
+					sem_wait(&swap);
+				}
 				log_info(logger, "CPU solicita acceso a tabla pagina de segundo nivel");
+
 				int numero_de_tabla_segundo_nivel = recibir_numero_tabla(conexion_cpu);
 				int entrada_tabla_segundo_nivel = recibir_numero_entrada(conexion_cpu);
 				t_pagina* pagina = buscar_pagina(numero_de_tabla_segundo_nivel, entrada_tabla_segundo_nivel);
@@ -731,7 +755,13 @@ void atender_cpu() {
 
 				break;
 			case LECTURA_MEMORIA_USUARIO:
+				if(numero_de_tabla_primer_nivel == id_a_suspender) {
+					log_info(logger, "El proceso esta ejecutando swap, se espera a que termine");
+					sem_wait(&swap);
+				}
 				log_info(logger, "CPU solicita lectura a memoria de usuario");
+				//verificar_swap();
+
 				int marco_lectura = recibir_entero(conexion_cpu);
 				int desplazamiento_lectura = recibir_entero(conexion_cpu);
 				uint32_t contenido = leer_contenido_marco(marco_lectura, desplazamiento_lectura);
@@ -740,7 +770,13 @@ void atender_cpu() {
 				enviar_uint32(conexion_cpu, contenido);
 				break;
 			case ESCRITURA_MEMORIA_USUARIO:
+				if(numero_de_tabla_primer_nivel == id_a_suspender) {
+					log_info(logger, "El proceso esta ejecutando swap, se espera a que termine");
+					sem_wait(&swap);
+				}
 				log_info(logger, "CPU solicita escritura a memoria de usuario");
+				//verificar_swap();
+
 				int marco_escritura = recibir_entero(conexion_cpu);
 				int desplazamiento_escritura = recibir_entero(conexion_cpu);
 				uint32_t valor = recibir_uint32(conexion_cpu);
@@ -796,10 +832,17 @@ void atender_kernel() {
 				break;
 			case SUSPENCION_PROCESO:
 				log_info(logger, "Kernel solicita SUSPENCION PROCESO");
-				int id_a_suspender = recibir_entero(conexion_kernel);
+				id_a_suspender = recibir_entero(conexion_kernel);
 				log_info(logger, "id: %d", id_a_suspender);
+
 				swapear_paginas_modificadas(id_a_suspender);
+
+				if(numero_de_tabla_primer_nivel == id_a_suspender) {
+					sem_post(&swap);
+				}
+
 				liberar_marcos_proceso(id_a_suspender);
+				id_a_suspender = -1;
 
 				enviar_confirmacion(conexion_kernel);
 
@@ -823,5 +866,3 @@ void atender_kernel() {
 		}
 	}
 }
-
-

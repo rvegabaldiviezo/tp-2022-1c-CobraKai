@@ -17,6 +17,7 @@
 #include <sys/mman.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <semaphore.h>
 
 #define PATH_CONFIG "src/memoria.config"
 #define PATH_LOG "./memoria.log"

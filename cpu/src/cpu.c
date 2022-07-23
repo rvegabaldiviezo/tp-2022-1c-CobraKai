@@ -391,7 +391,7 @@ void guardar_en_TLB(uint32_t numero_pagina,uint32_t nro_marco){
 }
 
 bool esta_completa_cola_TLB(){
-	return queue_size(cola_tlb)>3;
+	return queue_size(cola_tlb)>entradas_tlb - 1;
 }
 
 void tercer_acceso_memoria_escritura(int direccion_logica, int numero_pagina, int marco, uint32_t valor_escribir){
