@@ -18,7 +18,7 @@
 #define IP "127.0.0.1"
 #define PUERTO "4444"
 
-
+int crear_conexion(char*, char*);
 void* recibir_buffer(int*, int);
 int recibir_operacion(int);
 int iniciar_servidor(void);

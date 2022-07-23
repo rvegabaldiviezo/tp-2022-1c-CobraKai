@@ -429,9 +429,9 @@ t_log* iniciar_logger(void)
 }
 
 // Lee del archivo config
-t_config* iniciar_config(void)
+t_config* iniciar_config(char* path)
 {
-	t_config* nuevo_config = config_create(PATH_CONFIG);
+	t_config* nuevo_config = config_create(path);
 	return nuevo_config;
 }
 

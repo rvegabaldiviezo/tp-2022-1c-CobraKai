@@ -2,7 +2,6 @@
 
 pthread_t hilo_cpu;
 pthread_t hilo_kernel;
-pthread_t hilo_swap;
 sem_t swap;
 
 t_log* logger;
@@ -29,11 +28,11 @@ t_list* punteros_procesos;
 int id_a_suspender;
 
 
-int main(void) {
+int main(int argc, char** argv) {
 
 	logger = log_create(PATH_LOG, "MEMORIA", true, LOG_LEVEL_DEBUG);
 
-	leer_config();
+	leer_config(argv[1]);
 
 	cantidad_paginas = tamanio_memoria / tamanio_pagina;
 	marcos_memoria = inicializar_bitarray();
@@ -53,14 +52,13 @@ int main(void) {
 	id_a_suspender = -1;
 
 	pthread_create(&hilo_cpu, NULL, (void *) atender_cpu, NULL);
-	//pthread_create(&hilo_swap, NULL, (void *) solicitudes_swap, NULL);
 
 	terminar_programa();
 	return EXIT_SUCCESS;
 }
 
-void leer_config() {
-	config = config_create(PATH_CONFIG);
+void leer_config(char* path) {
+	config = config_create(path);
 	entradas_por_tabla = config_get_int_value(config, KEY_ENTRADAS_TABLA);
 	char* aux_path = config_get_string_value(config, KEY_PATH_SWAP);
 	string_append(&aux_path, "/");
@@ -644,7 +642,6 @@ void cambiar_bit_modificado(int numero_de_marco){
 }
 
 t_pagina* encontrar_pagina_por_marco(int numero_de_marco){
-	//suponiendo que tengo guardado el pid
 	t_list* paginas = encontrar_paginas_en_memoria();
 	t_pagina* pagina_encontrada;
 
@@ -665,53 +662,19 @@ t_pagina* encontrar_pagina_por_marco(int numero_de_marco){
 	return pagina_encontrada;
 }
 
-void liberar_tabla_primer_nivel(int numero) {
-	//t_list* tablas_a_remover = (t_list*) dictionary_remove(tablas_primer_nivel, string_itoa(numero));
-	//liberar_tablas_segundo_nivel(tablas_a_remover);
-}
-
-void liberar_tablas_segundo_nivel(t_list* tablas) {
-	list_destroy_and_destroy_elements(tablas, (void *) liberar_tabla_segundo_nivel);
-}
-
-void liberar_tabla_segundo_nivel(t_tabla_paginas_segundo_nivel* tabla) {
-	list_destroy_and_destroy_elements(tabla->paginas, (void *) liberar_pagina);
-	free(tabla);
-}
-
 void liberar_pagina(t_pagina* pagina) {
-	//bitarray_clean_bit(marcos_memoria, pagina->marco);
 	free(pagina);
 }
-
-//void liberar_espacio_de_usuario(espacio_de_usuario espacio) {
-//	free(espacio.buffer);
-//}
 
 void terminar_programa() {
 	pthread_join(hilo_kernel, NULL);
 	pthread_join(hilo_cpu, NULL);
 	liberar_conexion(conexion_cpu);
 	liberar_conexion(conexion_kernel);
-	liberar_tablas();
 	bitarray_destroy(marcos_memoria);
 	log_destroy(logger);
 }
 
-void liberar_tablas() {
-	//dictionary_destroy_and_destroy_elements(tablas_primer_nivel, (void *) liberar_tablas_segundo_nivel);
-}
-
-void iterador_tablas_segundo_nivel(t_tabla_paginas_segundo_nivel* tabla) {
-	log_info(logger, "Tablas segundo nivel:");
-	log_info(logger, "%d", tabla->numero);
-	log_info(logger, "Marcos: ");
-	list_iterate(tabla->paginas, (void*) iterador_paginas);
-}
-
-void iterador_paginas(t_pagina* pag) {
-	log_info(logger, "%d", pag->marco);
-}
 
 void atender_cpu() {
 	log_info(logger, "Entro Atender CPU");
@@ -760,7 +723,6 @@ void atender_cpu() {
 					sem_wait(&swap);
 				}
 				log_info(logger, "CPU solicita lectura a memoria de usuario");
-				//verificar_swap();
 
 				int marco_lectura = recibir_entero(conexion_cpu);
 				int desplazamiento_lectura = recibir_entero(conexion_cpu);
@@ -775,7 +737,6 @@ void atender_cpu() {
 					sem_wait(&swap);
 				}
 				log_info(logger, "CPU solicita escritura a memoria de usuario");
-				//verificar_swap();
 
 				int marco_escritura = recibir_entero(conexion_cpu);
 				int desplazamiento_escritura = recibir_entero(conexion_cpu);
