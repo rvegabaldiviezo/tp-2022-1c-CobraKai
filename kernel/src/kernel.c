@@ -245,6 +245,8 @@ void comunicacion_con_cpu() {
 					ejecutando = false;
 					log_info(logger, "Codigo BLOQUEO_IO recibido");
 					t_pcb_bloqueado* proceso_bloqueado = recibir_pcb_bloqueado(conexion_con_cpu_dispatch);
+					int tiempo_real = (int)time(NULL) - pcb_bloqueado->inicio_rafaga;
+					pcb_bloqueado->estimacion_rafaga = alfa *  tiempo_real + (1 - alfa) * pcb_bloqueado->estimacion_rafaga;
 					log_warning(logger, "program counter: %d", proceso_bloqueado->proceso->program_counter);
 					log_info(logger, "La cpu envio el proceso %d con estado Bloqueado por IO", proceso_bloqueado->proceso->id);
 					log_info(logger, "Tiempo de bloqueo: %d", proceso_bloqueado->tiempo_de_bloqueo);
