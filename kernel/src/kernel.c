@@ -73,7 +73,7 @@ int main(int argc, char** argv) {
 
 	log_info(logger, "Kernel listo para recibir al cliente");
 
-	config = config_create(PATH_CONFIG);
+	//config = config_create(PATH_CONFIG);
 	char* ip_memoria = config_get_string_value(config, IP_MEMORIA);
 	char* puerto_memoria = config_get_string_value(config, PUERTO_MEMORIA);
 	conexion_con_memoria = crear_conexion(ip_memoria, puerto_memoria);
