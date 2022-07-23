@@ -465,9 +465,9 @@ void planificar_srt() {
 		pthread_mutex_lock(&mutex_ready_list);
 		if(list_size(ready) > 1) {
 			list_sort(ready, (void *) menor_tiempo_restante);
-			log_info(logger "lista ordenada: ");
+			log_info(logger, "lista ordenada: ");
 			void iterador(t_pcb* pcb) {
-				log_info(logger, "estimacion: %d inicio rafaga: %d" pcb->estimacion_rafaga, pcb->inicio_rafaga);
+				log_info(logger, "estimacion: %d inicio rafaga: %d", pcb->estimacion_rafaga, pcb->inicio_rafaga);
 			}
 			list_iterate(ready, (void*) iterador);
 		}
