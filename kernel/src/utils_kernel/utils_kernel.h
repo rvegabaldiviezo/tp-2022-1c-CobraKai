@@ -15,7 +15,7 @@
 #include <netdb.h>
 
 
-#define IP "127.0.0.1"
+#define IP "0.0.0.0"
 #define PUERTO "4444"
 
 int crear_conexion(char*, char*);
