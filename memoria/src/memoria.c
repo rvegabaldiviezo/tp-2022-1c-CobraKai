@@ -175,7 +175,7 @@ void swapear_paginas_modificadas(int id) {
 	for(int i = 0; i < list_size(paginas_modificadas); i++) {
 		t_pagina* pagina = list_get(paginas_modificadas, i);
 		log_info(logger, "Marco pagina modificada: %d", pagina->marco);
-		escribir_en_archivo(pagina, numero_de_tabla_primer_nivel);
+		escribir_en_archivo(pagina, id);
 		pagina->modificada = false;
 		pagina->presencia = false;
 		//liberar_pagina(pagina);
