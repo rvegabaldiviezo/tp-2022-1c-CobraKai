@@ -511,7 +511,7 @@ void list_push(t_list* lista, void* elemento){
 }
 
 bool menor_tiempo_restante(t_pcb* p1, t_pcb* p2) {
-	return p1->estimacion_rafaga > p2->estimacion_rafaga;
+	return p1->estimacion_rafaga < p2->estimacion_rafaga;
 }
 
 void pasar_de_new_a_ready(){
