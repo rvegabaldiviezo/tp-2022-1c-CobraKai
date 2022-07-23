@@ -1,3 +1,4 @@
+
 /*
  * Para correr desde terminal:
  * 1. Compilo kernel.c
@@ -50,8 +51,10 @@ int conexion_con_cpu_dispatch;
 int conexion_con_cpu_interrupt;
 bool ejecutando;
 int contador_bloqueo;
+time_t inicio_rafaga;
 
-float alfa;
+
+double alfa;
 int grado_multiprogramacion;
 char* planificador;
 int numero_proceso = 0;
@@ -64,7 +67,9 @@ int main(int argc, char** argv) {
 
 	logger = log_create(PATH_LOG, "KERNEL", true, LOG_LEVEL_DEBUG);
 
-	alfa = config_get_int_value(config, ALFA);
+	alfa = config_get_double_value(config, ALFA);
+	
+	log_info(logger, "alfa: %f", alfa);
 	planificador = config_get_string_value(config, ALGORITMO_PLANIFICACION);
 	tiempo_max_bloqueo = config_get_int_value(config, TIEMPO_MAXIMO_BLOQUEADO);
 
@@ -245,13 +250,13 @@ void comunicacion_con_cpu() {
 					ejecutando = false;
 					log_info(logger, "Codigo BLOQUEO_IO recibido");
 					t_pcb_bloqueado* proceso_bloqueado = recibir_pcb_bloqueado(conexion_con_cpu_dispatch);
-					int tiempo_real_b = (int)time(NULL) - proceso_bloqueado->proceso->inicio_rafaga;
+					double tiempo_real_b = difftime(time(NULL), inicio_rafaga);
 					proceso_bloqueado->proceso->estimacion_rafaga = alfa *  tiempo_real_b + (1 - alfa) * proceso_bloqueado->proceso->estimacion_rafaga;
 					log_warning(logger, "program counter: %d", proceso_bloqueado->proceso->program_counter);
 					log_info(logger, "La cpu envio el proceso %d con estado Bloqueado por IO", proceso_bloqueado->proceso->id);
 					log_info(logger, "Tiempo de bloqueo: %d", proceso_bloqueado->tiempo_de_bloqueo);
 					log_info(logger, "Inicio de bloqueo: %li", proceso_bloqueado->inicio_bloqueo);
-					proceso_bloqueado->inicio_bloqueo = (int)time(NULL);
+					proceso_bloqueado->inicio_bloqueo = time(NULL);
 					proceso_bloqueado->suspendido = 0;
 					proceso_bloqueado->id_block = contador_bloqueo;
 					t_pcb_bloqueado_con_id* proceso_bloqueado_con_id = malloc(sizeof(t_pcb_bloqueado_con_id));
@@ -275,7 +280,7 @@ void comunicacion_con_cpu() {
 					t_pcb* pcb_interrumpido = recibir_pcb(conexion_con_cpu_dispatch);
 
 					// prox_rafaga = alfa * tiempo_ultima_rafaga + (1 - alfa) * pcb.estimacion_rafaga
-					int tiempo_real = (int)time(NULL) - pcb_interrumpido->inicio_rafaga;
+					double tiempo_real = difftime(time(NULL), inicio_rafaga);
 					pcb_interrumpido->estimacion_rafaga = alfa *  tiempo_real + (1 - alfa) * pcb_interrumpido->estimacion_rafaga;
 					pasar_a_ready(pcb_interrumpido);
 					sem_post(&sem_planificacion);
@@ -373,6 +378,7 @@ void esperar_y_suspender(t_pcb_bloqueado_con_id* proceso){
 	 if(esta_en_lista_bloqueados(proceso)){
 		 notificar_suspencion_proceso(proceso->pcb_bloqueado->proceso->id, conexion_con_memoria);
 		 proceso->pcb_bloqueado->suspendido = 1;
+		log_warning(logger, "EL PROCESO %d SE SUSPENDIO POR MAX TIEMPO BLOQUEO", proceso->pcb_bloqueado->proceso->id); 
 		 sem_post(&multiprogramacion);
 	 }
 
@@ -467,13 +473,14 @@ void planificar_srt() {
 			list_sort(ready, (void *) menor_tiempo_restante);
 			log_info(logger, "lista ordenada: ");
 			void iterador(t_pcb* pcb) {
-				log_info(logger, "estimacion: %d inicio rafaga: %d", pcb->estimacion_rafaga, pcb->inicio_rafaga);
+
+				log_info(logger, "id: %d estimacion: %d inicio rafaga: %d",pcb->id, pcb->estimacion_rafaga, inicio_rafaga);
 			}
 			list_iterate(ready, (void*) iterador);
 		}
 		t_pcb* proceso_mas_corto = list_pop(ready);
 		pthread_mutex_unlock(&mutex_ready_list);
-
+		inicio_rafaga = time(NULL);
 		enviar_pcb(proceso_mas_corto, conexion_con_cpu_dispatch);
 		ejecutando = true;
 		log_info(logger,"Se paso el proceso %i de Ready a Ejecutando", proceso_mas_corto->id);
@@ -518,7 +525,7 @@ void list_push(t_list* lista, void* elemento){
 }
 
 bool menor_tiempo_restante(t_pcb* p1, t_pcb* p2) {
-	return p1->estimacion_rafaga > p2->estimacion_rafaga;
+	return p1->estimacion_rafaga < p2->estimacion_rafaga;
 }
 
 void pasar_de_new_a_ready(){

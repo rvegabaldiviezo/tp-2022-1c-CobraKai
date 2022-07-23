@@ -1,0 +1,2028 @@
+[INFO] 10:26:29:811 KERNEL/(3056:3056): Kernel listo para recibir al cliente
+[INFO] 10:26:29:812 KERNEL/(3056:3056): conectado a memoria
+[ERROR] 10:26:29:812 KERNEL/(3056:3058): Se desconecto el cliente
+[INFO] 10:26:29:813 KERNEL/(3056:3057): se inicio la planificacion FIFO
+[INFO] 10:26:29:813 KERNEL/(3056:3057): Inicio la planificacion IO
+[INFO] 10:26:29:814 KERNEL/(3056:3057): Planificacion despausada
+[INFO] 10:31:08:335 KERNEL/(3155:3155): Kernel listo para recibir al cliente
+[INFO] 10:31:08:336 KERNEL/(3155:3155): conectado a memoria
+[ERROR] 10:31:08:337 KERNEL/(3155:3157): Se desconecto el cliente
+[INFO] 10:31:08:337 KERNEL/(3155:3156): se inicio la planificacion FIFO
+[INFO] 10:31:08:337 KERNEL/(3155:3156): Inicio la planificacion IO
+[INFO] 10:31:08:338 KERNEL/(3155:3156): Planificacion despausada
+[INFO] 10:44:40:855 KERNEL/(3265:3265): Kernel listo para recibir al cliente
+[INFO] 10:44:40:859 KERNEL/(3265:3265): conectado a memoria
+[INFO] 10:44:40:860 KERNEL/(3265:3266): se inicio la planificacion FIFO
+[INFO] 10:44:40:860 KERNEL/(3265:3266): Inicio la planificacion IO
+[INFO] 10:44:40:861 KERNEL/(3265:3266): Planificacion despausada
+[ERROR] 10:49:48:321 KERNEL/(3265:3267): Se desconecto el cliente
+[INFO] 10:50:15:635 KERNEL/(3293:3293): Kernel listo para recibir al cliente
+[INFO] 10:50:15:637 KERNEL/(3293:3293): conectado a memoria
+[ERROR] 10:50:15:638 KERNEL/(3293:3295): Se desconecto el cliente
+[INFO] 10:50:15:638 KERNEL/(3293:3294): se inicio la planificacion FIFO
+[INFO] 10:50:15:639 KERNEL/(3293:3294): Inicio la planificacion IO
+[INFO] 10:50:15:639 KERNEL/(3293:3294): Planificacion despausada
+[INFO] 10:55:49:719 KERNEL/(3370:3370): Kernel listo para recibir al cliente
+[INFO] 10:55:49:721 KERNEL/(3370:3370): conectado a memoria
+[INFO] 10:55:49:722 KERNEL/(3370:3371): se inicio la planificacion FIFO
+[INFO] 10:55:49:722 KERNEL/(3370:3371): Inicio la planificacion IO
+[INFO] 10:55:49:723 KERNEL/(3370:3371): Planificacion despausada
+[INFO] 10:55:53:317 KERNEL/(3370:3370): Conexion consola: 8
+[INFO] 10:55:53:318 KERNEL/(3370:3376): Tamaño recibido: 100
+[INFO] 10:55:53:318 KERNEL/(3370:3376): Proceso 0 asignado a la cola NEW
+[INFO] 10:55:53:318 KERNEL/(3370:3375): paso post
+[INFO] 10:55:53:320 KERNEL/(3370:3375): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 10:55:53:320 KERNEL/(3370:3375): El proceso 0 fue asignado a la cola READY
+[INFO] 10:55:53:320 KERNEL/(3370:3371): NO_OP
+[INFO] 10:55:53:320 KERNEL/(3370:3371): NO_OP
+[INFO] 10:55:53:320 KERNEL/(3370:3371): NO_OP
+[INFO] 10:55:53:320 KERNEL/(3370:3371): NO_OP
+[INFO] 10:55:53:320 KERNEL/(3370:3371): NO_OP
+[INFO] 10:55:53:320 KERNEL/(3370:3371): I/O 3000
+[INFO] 10:55:53:320 KERNEL/(3370:3371): NO_OP
+[INFO] 10:55:53:320 KERNEL/(3370:3371): NO_OP
+[INFO] 10:55:53:320 KERNEL/(3370:3371): NO_OP
+[INFO] 10:55:53:320 KERNEL/(3370:3371): EXIT
+[INFO] 10:55:53:320 KERNEL/(3370:3371): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 10:55:58:325 KERNEL/(3370:3372): Codigo BLOQUEO_IO recibido
+[WARNING] 10:55:58:325 KERNEL/(3370:3372): program counter: 6
+[INFO] 10:55:58:325 KERNEL/(3370:3372): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 10:55:58:325 KERNEL/(3370:3372): Tiempo de bloqueo: 3000
+[INFO] 10:55:58:325 KERNEL/(3370:3372): Inicio de bloqueo: 1658584558
+[INFO] 10:55:58:325 KERNEL/(3370:3372): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 10:55:58:325 KERNEL/(3370:3373): El proceso 0 inicio su I/0
+[INFO] 10:55:58:325 KERNEL/(3370:3371): Planificacion despausada
+[INFO] 10:56:01:325 KERNEL/(3370:3373): El proceso 0 finalizo su I/0
+[INFO] 10:56:01:325 KERNEL/(3370:3373): El proceso 0 fue asignado a la cola READY
+[INFO] 10:56:01:325 KERNEL/(3370:3373): Se paso el proceso 0 de bloqueado a ready
+[INFO] 10:56:01:325 KERNEL/(3370:3371): NO_OP
+[INFO] 10:56:01:325 KERNEL/(3370:3371): NO_OP
+[INFO] 10:56:01:325 KERNEL/(3370:3371): NO_OP
+[INFO] 10:56:01:325 KERNEL/(3370:3371): NO_OP
+[INFO] 10:56:01:325 KERNEL/(3370:3371): NO_OP
+[INFO] 10:56:01:325 KERNEL/(3370:3371): I/O 3000
+[INFO] 10:56:01:325 KERNEL/(3370:3371): NO_OP
+[INFO] 10:56:01:325 KERNEL/(3370:3371): NO_OP
+[INFO] 10:56:01:325 KERNEL/(3370:3371): NO_OP
+[INFO] 10:56:01:325 KERNEL/(3370:3371): EXIT
+[INFO] 10:56:01:326 KERNEL/(3370:3371): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 10:56:04:329 KERNEL/(3370:3372): La CPU envio un pcb con estado finalizado
+[INFO] 10:56:04:329 KERNEL/(3370:3372): El socket que recibi es 8
+[INFO] 10:56:04:329 KERNEL/(3370:3372): El proceso 0 finalizo correctamente
+[INFO] 10:56:04:330 KERNEL/(3370:3371): Planificacion despausada
+[INFO] 10:58:05:837 KERNEL/(3378:3378): Kernel listo para recibir al cliente
+[INFO] 10:58:05:839 KERNEL/(3378:3378): conectado a memoria
+[INFO] 10:58:05:840 KERNEL/(3378:3379): se inicio la planificacion FIFO
+[INFO] 10:58:05:841 KERNEL/(3378:3379): Inicio la planificacion IO
+[INFO] 10:58:05:841 KERNEL/(3378:3379): Planificacion despausada
+[INFO] 10:58:50:355 KERNEL/(3378:3378): Conexion consola: 8
+[INFO] 10:58:50:355 KERNEL/(3378:3384): Tamaño recibido: 100
+[INFO] 10:58:50:355 KERNEL/(3378:3384): Proceso 0 asignado a la cola NEW
+[INFO] 10:58:50:355 KERNEL/(3378:3383): paso post
+[INFO] 10:58:50:357 KERNEL/(3378:3383): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 10:58:50:357 KERNEL/(3378:3383): El proceso 0 fue asignado a la cola READY
+[INFO] 10:58:50:357 KERNEL/(3378:3379): NO_OP
+[INFO] 10:58:50:357 KERNEL/(3378:3379): NO_OP
+[INFO] 10:58:50:357 KERNEL/(3378:3379): NO_OP
+[INFO] 10:58:50:357 KERNEL/(3378:3379): NO_OP
+[INFO] 10:58:50:357 KERNEL/(3378:3379): NO_OP
+[INFO] 10:58:50:357 KERNEL/(3378:3379): I/O 3000
+[INFO] 10:58:50:357 KERNEL/(3378:3379): NO_OP
+[INFO] 10:58:50:357 KERNEL/(3378:3379): NO_OP
+[INFO] 10:58:50:357 KERNEL/(3378:3379): NO_OP
+[INFO] 10:58:50:357 KERNEL/(3378:3379): EXIT
+[INFO] 10:58:50:357 KERNEL/(3378:3379): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 10:58:50:731 KERNEL/(3378:3378): Conexion consola: 9
+[INFO] 10:58:50:732 KERNEL/(3378:3385): Tamaño recibido: 150
+[INFO] 10:58:50:732 KERNEL/(3378:3385): Proceso 1 asignado a la cola NEW
+[INFO] 10:58:50:733 KERNEL/(3378:3383): paso post
+[INFO] 10:58:50:734 KERNEL/(3378:3383): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 10:58:50:734 KERNEL/(3378:3383): El proceso 1 fue asignado a la cola READY
+[INFO] 10:58:51:098 KERNEL/(3378:3378): Conexion consola: 10
+[INFO] 10:58:51:099 KERNEL/(3378:3386): Tamaño recibido: 1000
+[INFO] 10:58:51:099 KERNEL/(3378:3386): Proceso 2 asignado a la cola NEW
+[INFO] 10:58:51:100 KERNEL/(3378:3383): paso post
+[INFO] 10:58:51:101 KERNEL/(3378:3383): Se asignó el numero de tabla: 2 al proceso de id: 2
+
+[INFO] 10:58:51:101 KERNEL/(3378:3383): El proceso 2 fue asignado a la cola READY
+[INFO] 10:58:55:363 KERNEL/(3378:3380): Codigo BLOQUEO_IO recibido
+[WARNING] 10:58:55:363 KERNEL/(3378:3380): program counter: 6
+[INFO] 10:58:55:363 KERNEL/(3378:3380): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 10:58:55:363 KERNEL/(3378:3380): Tiempo de bloqueo: 3000
+[INFO] 10:58:55:363 KERNEL/(3378:3380): Inicio de bloqueo: 1658584735
+[INFO] 10:58:55:363 KERNEL/(3378:3380): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 10:58:55:363 KERNEL/(3378:3381): El proceso 0 inicio su I/0
+[INFO] 10:58:55:363 KERNEL/(3378:3379): Planificacion despausada
+[INFO] 10:58:55:363 KERNEL/(3378:3379): NO_OP
+[INFO] 10:58:55:364 KERNEL/(3378:3379): NO_OP
+[INFO] 10:58:55:364 KERNEL/(3378:3379): NO_OP
+[INFO] 10:58:55:364 KERNEL/(3378:3379): NO_OP
+[INFO] 10:58:55:364 KERNEL/(3378:3379): NO_OP
+[INFO] 10:58:55:364 KERNEL/(3378:3379): EXIT
+[INFO] 10:58:55:364 KERNEL/(3378:3379): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 10:58:58:364 KERNEL/(3378:3381): El proceso 0 finalizo su I/0
+[INFO] 10:58:58:364 KERNEL/(3378:3381): El proceso 0 fue asignado a la cola READY
+[INFO] 10:58:58:364 KERNEL/(3378:3381): Se paso el proceso 0 de bloqueado a ready
+[INFO] 10:59:00:370 KERNEL/(3378:3380): La CPU envio un pcb con estado finalizado
+[INFO] 10:59:00:370 KERNEL/(3378:3380): El socket que recibi es 9
+[INFO] 10:59:00:370 KERNEL/(3378:3380): El proceso 1 finalizo correctamente
+[INFO] 10:59:00:370 KERNEL/(3378:3379): Planificacion despausada
+[INFO] 10:59:00:370 KERNEL/(3378:3379): NO_OP
+[INFO] 10:59:00:370 KERNEL/(3378:3379): NO_OP
+[INFO] 10:59:00:370 KERNEL/(3378:3379): NO_OP
+[INFO] 10:59:00:370 KERNEL/(3378:3379): NO_OP
+[INFO] 10:59:00:370 KERNEL/(3378:3379): NO_OP
+[INFO] 10:59:00:370 KERNEL/(3378:3379): EXIT
+[INFO] 10:59:00:371 KERNEL/(3378:3379): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 10:59:05:373 KERNEL/(3378:3380): La CPU envio un pcb con estado finalizado
+[INFO] 10:59:05:374 KERNEL/(3378:3380): El socket que recibi es 10
+[INFO] 10:59:05:374 KERNEL/(3378:3380): El proceso 2 finalizo correctamente
+[INFO] 10:59:05:374 KERNEL/(3378:3379): Planificacion despausada
+[INFO] 10:59:05:374 KERNEL/(3378:3379): NO_OP
+[INFO] 10:59:05:374 KERNEL/(3378:3379): NO_OP
+[INFO] 10:59:05:374 KERNEL/(3378:3379): NO_OP
+[INFO] 10:59:05:374 KERNEL/(3378:3379): NO_OP
+[INFO] 10:59:05:374 KERNEL/(3378:3379): NO_OP
+[INFO] 10:59:05:374 KERNEL/(3378:3379): I/O 3000
+[INFO] 10:59:05:374 KERNEL/(3378:3379): NO_OP
+[INFO] 10:59:05:374 KERNEL/(3378:3379): NO_OP
+[INFO] 10:59:05:374 KERNEL/(3378:3379): NO_OP
+[INFO] 10:59:05:374 KERNEL/(3378:3379): EXIT
+[INFO] 10:59:05:374 KERNEL/(3378:3379): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 10:59:08:381 KERNEL/(3378:3380): La CPU envio un pcb con estado finalizado
+[INFO] 10:59:08:381 KERNEL/(3378:3380): El socket que recibi es 8
+[INFO] 10:59:08:381 KERNEL/(3378:3380): El proceso 0 finalizo correctamente
+[INFO] 10:59:08:381 KERNEL/(3378:3379): Planificacion despausada
+[INFO] 11:04:58:559 KERNEL/(3402:3402): Kernel listo para recibir al cliente
+[INFO] 11:04:58:561 KERNEL/(3402:3402): conectado a memoria
+[INFO] 11:04:58:562 KERNEL/(3402:3403): se inicio la planificacion FIFO
+[INFO] 11:04:58:562 KERNEL/(3402:3403): Inicio la planificacion IO
+[INFO] 11:04:58:563 KERNEL/(3402:3403): Planificacion despausada
+[INFO] 11:05:21:967 KERNEL/(3402:3402): Conexion consola: 8
+[INFO] 11:05:21:968 KERNEL/(3402:3408): Tamaño recibido: 100
+[INFO] 11:05:21:968 KERNEL/(3402:3408): Proceso 0 asignado a la cola NEW
+[INFO] 11:05:21:969 KERNEL/(3402:3407): paso post
+[INFO] 11:05:21:970 KERNEL/(3402:3407): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 11:05:21:970 KERNEL/(3402:3407): El proceso 0 fue asignado a la cola READY
+[INFO] 11:05:21:970 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:21:970 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:21:970 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:21:970 KERNEL/(3402:3403): I/O 5000
+[INFO] 11:05:21:970 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:21:970 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:21:970 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:21:970 KERNEL/(3402:3403): EXIT
+[INFO] 11:05:21:970 KERNEL/(3402:3403): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:05:22:407 KERNEL/(3402:3402): Conexion consola: 9
+[INFO] 11:05:22:408 KERNEL/(3402:3409): Tamaño recibido: 100
+[INFO] 11:05:22:408 KERNEL/(3402:3409): Proceso 1 asignado a la cola NEW
+[INFO] 11:05:22:408 KERNEL/(3402:3407): paso post
+[INFO] 11:05:22:409 KERNEL/(3402:3407): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 11:05:22:410 KERNEL/(3402:3407): El proceso 1 fue asignado a la cola READY
+[INFO] 11:05:24:978 KERNEL/(3402:3404): Codigo BLOQUEO_IO recibido
+[WARNING] 11:05:24:979 KERNEL/(3402:3404): program counter: 4
+[INFO] 11:05:24:979 KERNEL/(3402:3404): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 11:05:24:979 KERNEL/(3402:3404): Tiempo de bloqueo: 5000
+[INFO] 11:05:24:979 KERNEL/(3402:3404): Inicio de bloqueo: 1658585124
+[INFO] 11:05:24:979 KERNEL/(3402:3404): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 11:05:24:979 KERNEL/(3402:3405): El proceso 0 inicio su I/0
+[INFO] 11:05:24:979 KERNEL/(3402:3403): Planificacion despausada
+[INFO] 11:05:24:979 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:24:979 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:24:979 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:24:979 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:24:979 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:24:979 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:24:979 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:24:979 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:24:979 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:24:979 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:24:979 KERNEL/(3402:3403): EXIT
+[INFO] 11:05:24:979 KERNEL/(3402:3403): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 11:05:29:979 KERNEL/(3402:3405): El proceso 0 finalizo su I/0
+[INFO] 11:05:29:980 KERNEL/(3402:3405): El proceso 0 fue asignado a la cola READY
+[INFO] 11:05:29:980 KERNEL/(3402:3405): Se paso el proceso 0 de bloqueado a ready
+[INFO] 11:05:34:992 KERNEL/(3402:3404): La CPU envio un pcb con estado finalizado
+[INFO] 11:05:34:993 KERNEL/(3402:3404): El socket que recibi es 9
+[INFO] 11:05:34:993 KERNEL/(3402:3404): El proceso 1 finalizo correctamente
+[INFO] 11:05:34:993 KERNEL/(3402:3403): Planificacion despausada
+[INFO] 11:05:34:993 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:34:993 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:34:993 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:34:993 KERNEL/(3402:3403): I/O 5000
+[INFO] 11:05:34:993 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:34:993 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:34:993 KERNEL/(3402:3403): NO_OP
+[INFO] 11:05:34:993 KERNEL/(3402:3403): EXIT
+[INFO] 11:05:34:994 KERNEL/(3402:3403): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:05:38:001 KERNEL/(3402:3404): La CPU envio un pcb con estado finalizado
+[INFO] 11:05:38:002 KERNEL/(3402:3404): El socket que recibi es 8
+[INFO] 11:05:38:002 KERNEL/(3402:3404): El proceso 0 finalizo correctamente
+[INFO] 11:05:38:002 KERNEL/(3402:3403): Planificacion despausada
+[INFO] 11:09:34:755 KERNEL/(3412:3412): Kernel listo para recibir al cliente
+[INFO] 11:09:34:758 KERNEL/(3412:3412): conectado a memoria
+[INFO] 11:09:34:759 KERNEL/(3412:3413): se inicio la planificacion FIFO
+[INFO] 11:09:34:759 KERNEL/(3412:3413): Inicio la planificacion IO
+[INFO] 11:09:34:760 KERNEL/(3412:3413): Planificacion despausada
+[INFO] 11:10:28:186 KERNEL/(3418:3418): Kernel listo para recibir al cliente
+[INFO] 11:10:28:189 KERNEL/(3418:3418): conectado a memoria
+[ERROR] 11:10:28:190 KERNEL/(3418:3420): Se desconecto el cliente
+[INFO] 11:10:28:190 KERNEL/(3418:3419): se inicio la planificacion FIFO
+[INFO] 11:10:28:191 KERNEL/(3418:3419): Inicio la planificacion IO
+[INFO] 11:10:28:191 KERNEL/(3418:3419): Planificacion despausada
+[INFO] 11:10:45:962 KERNEL/(3424:3424): Kernel listo para recibir al cliente
+[INFO] 11:10:45:965 KERNEL/(3424:3424): conectado a memoria
+[INFO] 11:10:45:965 KERNEL/(3424:3425): se inicio la planificacion FIFO
+[INFO] 11:10:45:966 KERNEL/(3424:3425): Inicio la planificacion IO
+[INFO] 11:10:45:966 KERNEL/(3424:3425): Planificacion despausada
+[INFO] 11:10:52:189 KERNEL/(3424:3424): Conexion consola: 8
+[INFO] 11:10:52:190 KERNEL/(3424:3430): Tamaño recibido: 100
+[INFO] 11:10:52:190 KERNEL/(3424:3430): Proceso 0 asignado a la cola NEW
+[INFO] 11:10:52:190 KERNEL/(3424:3429): paso post
+[INFO] 11:10:52:192 KERNEL/(3424:3429): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 11:10:52:192 KERNEL/(3424:3429): El proceso 0 fue asignado a la cola READY
+[INFO] 11:10:52:192 KERNEL/(3424:3425): NO_OP
+[INFO] 11:10:52:192 KERNEL/(3424:3425): NO_OP
+[INFO] 11:10:52:192 KERNEL/(3424:3425): NO_OP
+[INFO] 11:10:52:192 KERNEL/(3424:3425): I/O 13000
+[INFO] 11:10:52:192 KERNEL/(3424:3425): NO_OP
+[INFO] 11:10:52:192 KERNEL/(3424:3425): NO_OP
+[INFO] 11:10:52:192 KERNEL/(3424:3425): NO_OP
+[INFO] 11:10:52:192 KERNEL/(3424:3425): EXIT
+[INFO] 11:10:52:192 KERNEL/(3424:3425): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:10:52:517 KERNEL/(3424:3424): Conexion consola: 9
+[INFO] 11:10:52:518 KERNEL/(3424:3431): Tamaño recibido: 100
+[INFO] 11:10:52:518 KERNEL/(3424:3431): Proceso 1 asignado a la cola NEW
+[INFO] 11:10:52:518 KERNEL/(3424:3429): paso post
+[INFO] 11:10:52:519 KERNEL/(3424:3429): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 11:10:52:519 KERNEL/(3424:3429): El proceso 1 fue asignado a la cola READY
+[INFO] 11:10:52:949 KERNEL/(3424:3424): Conexion consola: 10
+[INFO] 11:10:52:949 KERNEL/(3424:3432): Tamaño recibido: 100
+[INFO] 11:10:52:950 KERNEL/(3424:3432): Proceso 2 asignado a la cola NEW
+[INFO] 11:10:55:200 KERNEL/(3424:3426): Codigo BLOQUEO_IO recibido
+[WARNING] 11:10:55:200 KERNEL/(3424:3426): program counter: 4
+[INFO] 11:10:55:201 KERNEL/(3424:3426): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 11:10:55:201 KERNEL/(3424:3426): Tiempo de bloqueo: 13000
+[INFO] 11:10:55:201 KERNEL/(3424:3426): Inicio de bloqueo: 1658585455
+[INFO] 11:10:55:201 KERNEL/(3424:3426): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 11:10:55:201 KERNEL/(3424:3427): El proceso 0 inicio su I/0
+[INFO] 11:10:55:201 KERNEL/(3424:3425): Planificacion despausada
+[INFO] 11:10:55:201 KERNEL/(3424:3425): NO_OP
+[INFO] 11:10:55:201 KERNEL/(3424:3425): NO_OP
+[INFO] 11:10:55:201 KERNEL/(3424:3425): NO_OP
+[INFO] 11:10:55:201 KERNEL/(3424:3425): I/O 5000
+[INFO] 11:10:55:201 KERNEL/(3424:3425): NO_OP
+[INFO] 11:10:55:201 KERNEL/(3424:3425): NO_OP
+[INFO] 11:10:55:201 KERNEL/(3424:3425): NO_OP
+[INFO] 11:10:55:201 KERNEL/(3424:3425): EXIT
+[INFO] 11:10:55:201 KERNEL/(3424:3425): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 11:10:58:207 KERNEL/(3424:3426): Codigo BLOQUEO_IO recibido
+[WARNING] 11:10:58:207 KERNEL/(3424:3426): program counter: 4
+[INFO] 11:10:58:207 KERNEL/(3424:3426): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 11:10:58:207 KERNEL/(3424:3426): Tiempo de bloqueo: 5000
+[INFO] 11:10:58:207 KERNEL/(3424:3426): Inicio de bloqueo: 1658585458
+[INFO] 11:10:58:207 KERNEL/(3424:3426): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 11:10:58:208 KERNEL/(3424:3425): Planificacion despausada
+[INFO] 11:11:03:201 KERNEL/(3424:3429): paso post
+[INFO] 11:11:03:204 KERNEL/(3424:3429): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 11:11:03:204 KERNEL/(3424:3429): El proceso 2 fue asignado a la cola READY
+[INFO] 11:11:03:204 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:03:204 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:03:204 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:03:204 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:03:204 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:03:204 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:03:204 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:03:204 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:03:204 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:03:204 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:03:204 KERNEL/(3424:3425): EXIT
+[INFO] 11:11:03:204 KERNEL/(3424:3425): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 11:11:08:201 KERNEL/(3424:3427): El proceso 0 finalizo su I/0
+[INFO] 11:11:08:201 KERNEL/(3424:3427): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 11:11:08:201 KERNEL/(3424:3428): El proceso 0 fue asignado a la cola READY
+[INFO] 11:11:08:201 KERNEL/(3424:3427): El proceso 1 inicio su I/0
+[INFO] 11:11:13:201 KERNEL/(3424:3427): El proceso 1 finalizo su I/0
+[INFO] 11:11:13:202 KERNEL/(3424:3427): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 11:11:13:221 KERNEL/(3424:3426): La CPU envio un pcb con estado finalizado
+[INFO] 11:11:13:222 KERNEL/(3424:3426): El socket que recibi es 10
+[INFO] 11:11:13:222 KERNEL/(3424:3428): El proceso 1 fue asignado a la cola READY
+[INFO] 11:11:13:222 KERNEL/(3424:3426): El proceso 2 finalizo correctamente
+[INFO] 11:11:13:222 KERNEL/(3424:3425): Planificacion despausada
+[INFO] 11:11:13:222 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:13:222 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:13:222 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:13:222 KERNEL/(3424:3425): I/O 13000
+[INFO] 11:11:13:222 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:13:222 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:13:222 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:13:222 KERNEL/(3424:3425): EXIT
+[INFO] 11:11:13:222 KERNEL/(3424:3425): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:11:16:230 KERNEL/(3424:3426): La CPU envio un pcb con estado finalizado
+[INFO] 11:11:16:230 KERNEL/(3424:3426): El socket que recibi es 8
+[INFO] 11:11:16:231 KERNEL/(3424:3426): El proceso 0 finalizo correctamente
+[INFO] 11:11:16:231 KERNEL/(3424:3425): Planificacion despausada
+[INFO] 11:11:16:231 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:16:231 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:16:231 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:16:231 KERNEL/(3424:3425): I/O 5000
+[INFO] 11:11:16:231 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:16:231 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:16:231 KERNEL/(3424:3425): NO_OP
+[INFO] 11:11:16:231 KERNEL/(3424:3425): EXIT
+[INFO] 11:11:16:231 KERNEL/(3424:3425): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 11:11:19:238 KERNEL/(3424:3426): La CPU envio un pcb con estado finalizado
+[INFO] 11:11:19:239 KERNEL/(3424:3426): El socket que recibi es 9
+[INFO] 11:11:19:239 KERNEL/(3424:3426): El proceso 1 finalizo correctamente
+[INFO] 11:11:19:239 KERNEL/(3424:3425): Planificacion despausada
+[INFO] 11:18:33:893 KERNEL/(3463:3463): Kernel listo para recibir al cliente
+[INFO] 11:18:33:895 KERNEL/(3463:3463): conectado a memoria
+[INFO] 11:18:33:897 KERNEL/(3463:3464): Se inicio la planificacion SRT
+[INFO] 11:18:33:898 KERNEL/(3463:3464): Inicio la planificacion IO
+[INFO] 11:18:33:898 KERNEL/(3463:3464): Planificacion despausada
+[INFO] 11:18:44:482 KERNEL/(3463:3463): Conexion consola: 9
+[INFO] 11:18:44:483 KERNEL/(3463:3469): Tamaño recibido: 100
+[INFO] 11:18:44:483 KERNEL/(3463:3469): Proceso 0 asignado a la cola NEW
+[INFO] 11:18:44:483 KERNEL/(3463:3468): paso post
+[INFO] 11:18:44:485 KERNEL/(3463:3468): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 11:18:44:485 KERNEL/(3463:3468): El proceso 0 fue asignado a la cola READY
+[INFO] 11:18:44:485 KERNEL/(3463:3464): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:18:44:842 KERNEL/(3463:3463): Conexion consola: 10
+[INFO] 11:18:44:842 KERNEL/(3463:3470): Tamaño recibido: 100
+[INFO] 11:18:44:842 KERNEL/(3463:3470): Proceso 1 asignado a la cola NEW
+[INFO] 11:18:44:843 KERNEL/(3463:3468): paso post
+[INFO] 11:18:44:844 KERNEL/(3463:3468): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 11:18:44:844 KERNEL/(3463:3468):    Se solicito interrupcion
+[INFO] 11:18:44:844 KERNEL/(3463:3468): El proceso 1 fue asignado a la cola READY
+[INFO] 11:18:45:273 KERNEL/(3463:3463): Conexion consola: 11
+[INFO] 11:18:45:274 KERNEL/(3463:3471): Tamaño recibido: 100
+[INFO] 11:18:45:274 KERNEL/(3463:3471): Proceso 2 asignado a la cola NEW
+[INFO] 11:18:45:491 KERNEL/(3463:3465): Un proceso fue interrumpido
+[INFO] 11:18:45:491 KERNEL/(3463:3465): El proceso 0 fue asignado a la cola READY
+[INFO] 11:18:45:491 KERNEL/(3463:3464): Planificacion despausada
+[INFO] 11:18:45:491 KERNEL/(3463:3464): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:18:47:498 KERNEL/(3463:3465): Codigo BLOQUEO_IO recibido
+[WARNING] 11:18:47:498 KERNEL/(3463:3465): program counter: 4
+[INFO] 11:18:47:498 KERNEL/(3463:3465): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 11:18:47:498 KERNEL/(3463:3465): Tiempo de bloqueo: 13000
+[INFO] 11:18:47:498 KERNEL/(3463:3465): Inicio de bloqueo: 1658585927
+[INFO] 11:18:47:499 KERNEL/(3463:3465): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 11:18:47:499 KERNEL/(3463:3466): El proceso 0 inicio su I/0
+[INFO] 11:18:47:499 KERNEL/(3463:3464): Planificacion despausada
+[INFO] 11:18:47:499 KERNEL/(3463:3464): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 11:18:50:506 KERNEL/(3463:3465): Codigo BLOQUEO_IO recibido
+[WARNING] 11:18:50:506 KERNEL/(3463:3465): program counter: 4
+[INFO] 11:18:50:506 KERNEL/(3463:3465): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 11:18:50:507 KERNEL/(3463:3465): Tiempo de bloqueo: 5000
+[INFO] 11:18:50:507 KERNEL/(3463:3465): Inicio de bloqueo: 1658585930
+[INFO] 11:18:50:507 KERNEL/(3463:3465): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 11:18:50:507 KERNEL/(3463:3464): Planificacion despausada
+[INFO] 11:18:55:499 KERNEL/(3463:3468): paso post
+[INFO] 11:18:55:502 KERNEL/(3463:3468): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 11:18:55:502 KERNEL/(3463:3468): El proceso 2 fue asignado a la cola READY
+[INFO] 11:18:55:502 KERNEL/(3463:3464): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 11:19:00:499 KERNEL/(3463:3466): El proceso 0 finalizo su I/0
+[INFO] 11:19:00:499 KERNEL/(3463:3466): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 11:19:00:499 KERNEL/(3463:3467):    Se solicito interrupcion
+[INFO] 11:19:00:499 KERNEL/(3463:3466): El proceso 1 inicio su I/0
+[INFO] 11:19:00:500 KERNEL/(3463:3467): El proceso 0 fue asignado a la cola READY
+[INFO] 11:19:00:500 KERNEL/(3463:3467):    Se solicito interrupcion
+[INFO] 11:19:00:511 KERNEL/(3463:3465): Un proceso fue interrumpido
+[INFO] 11:19:00:511 KERNEL/(3463:3465): El proceso 2 fue asignado a la cola READY
+[INFO] 11:19:00:511 KERNEL/(3463:3464): Planificacion despausada
+[INFO] 11:19:00:511 KERNEL/(3463:3464): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 11:19:05:500 KERNEL/(3463:3466): El proceso 1 finalizo su I/0
+[INFO] 11:19:05:501 KERNEL/(3463:3466): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 11:19:05:521 KERNEL/(3463:3465): La CPU envio un pcb con estado finalizado
+[INFO] 11:19:05:521 KERNEL/(3463:3465): El socket que recibi es 11
+[INFO] 11:19:05:521 KERNEL/(3463:3467): El proceso 1 fue asignado a la cola READY
+[INFO] 11:19:05:521 KERNEL/(3463:3465): El proceso 2 finalizo correctamente
+[INFO] 11:19:05:521 KERNEL/(3463:3464): Planificacion despausada
+[INFO] 11:19:05:521 KERNEL/(3463:3464): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 11:19:05:521 KERNEL/(3463:3467):    Se solicito interrupcion
+[INFO] 11:19:08:529 KERNEL/(3463:3465): La CPU envio un pcb con estado finalizado
+[INFO] 11:19:08:529 KERNEL/(3463:3465): El socket que recibi es 10
+[INFO] 11:19:08:530 KERNEL/(3463:3465): El proceso 1 finalizo correctamente
+[INFO] 11:19:08:530 KERNEL/(3463:3464): Planificacion despausada
+[INFO] 11:19:08:530 KERNEL/(3463:3464): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:19:11:536 KERNEL/(3463:3465): La CPU envio un pcb con estado finalizado
+[INFO] 11:19:11:537 KERNEL/(3463:3465): El socket que recibi es 9
+[INFO] 11:19:11:537 KERNEL/(3463:3465): El proceso 0 finalizo correctamente
+[INFO] 11:19:11:537 KERNEL/(3463:3464): Planificacion despausada
+[INFO] 11:25:13:552 KERNEL/(3522:3522): Kernel listo para recibir al cliente
+[INFO] 11:25:13:554 KERNEL/(3522:3522): conectado a memoria
+[INFO] 11:25:13:556 KERNEL/(3522:3523): Se inicio la planificacion SRT
+[INFO] 11:25:13:557 KERNEL/(3522:3523): Inicio la planificacion IO
+[INFO] 11:25:13:558 KERNEL/(3522:3523): Planificacion despausada
+[INFO] 11:25:16:808 KERNEL/(3522:3522): Conexion consola: 9
+[INFO] 11:25:16:808 KERNEL/(3522:3528): Tamaño recibido: 100
+[INFO] 11:25:16:809 KERNEL/(3522:3528): Proceso 0 asignado a la cola NEW
+[INFO] 11:25:16:809 KERNEL/(3522:3527): paso post
+[INFO] 11:25:16:811 KERNEL/(3522:3527): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 11:25:16:811 KERNEL/(3522:3527): El proceso 0 fue asignado a la cola READY
+[INFO] 11:25:16:811 KERNEL/(3522:3523): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:25:17:183 KERNEL/(3522:3522): Conexion consola: 10
+[INFO] 11:25:17:184 KERNEL/(3522:3529): Tamaño recibido: 100
+[INFO] 11:25:17:184 KERNEL/(3522:3529): Proceso 1 asignado a la cola NEW
+[INFO] 11:25:17:185 KERNEL/(3522:3527): paso post
+[INFO] 11:25:17:186 KERNEL/(3522:3527): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 11:25:17:186 KERNEL/(3522:3527):    Se solicito interrupcion
+[INFO] 11:25:17:186 KERNEL/(3522:3527): El proceso 1 fue asignado a la cola READY
+[INFO] 11:25:17:760 KERNEL/(3522:3522): Conexion consola: 11
+[INFO] 11:25:17:760 KERNEL/(3522:3530): Tamaño recibido: 100
+[INFO] 11:25:17:760 KERNEL/(3522:3530): Proceso 2 asignado a la cola NEW
+[INFO] 11:25:17:817 KERNEL/(3522:3524): Un proceso fue interrumpido
+[INFO] 11:25:17:817 KERNEL/(3522:3524): El proceso 0 fue asignado a la cola READY
+[INFO] 11:25:17:817 KERNEL/(3522:3523): Planificacion despausada
+[INFO] 11:25:17:817 KERNEL/(3522:3523): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:25:19:822 KERNEL/(3522:3524): Codigo BLOQUEO_IO recibido
+[WARNING] 11:25:19:822 KERNEL/(3522:3524): program counter: 4
+[INFO] 11:25:19:822 KERNEL/(3522:3524): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 11:25:19:822 KERNEL/(3522:3524): Tiempo de bloqueo: 13000
+[INFO] 11:25:19:822 KERNEL/(3522:3524): Inicio de bloqueo: 1658586319
+[INFO] 11:25:19:822 KERNEL/(3522:3524): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 11:25:19:823 KERNEL/(3522:3525): El proceso 0 inicio su I/0
+[INFO] 11:25:19:823 KERNEL/(3522:3523): Planificacion despausada
+[INFO] 11:25:19:823 KERNEL/(3522:3523): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 11:25:22:830 KERNEL/(3522:3524): Codigo BLOQUEO_IO recibido
+[WARNING] 11:25:22:830 KERNEL/(3522:3524): program counter: 4
+[INFO] 11:25:22:830 KERNEL/(3522:3524): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 11:25:22:830 KERNEL/(3522:3524): Tiempo de bloqueo: 5000
+[INFO] 11:25:22:831 KERNEL/(3522:3524): Inicio de bloqueo: 1658586322
+[INFO] 11:25:22:831 KERNEL/(3522:3524): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 11:25:22:831 KERNEL/(3522:3523): Planificacion despausada
+[INFO] 11:25:27:824 KERNEL/(3522:3527): paso post
+[INFO] 11:25:27:827 KERNEL/(3522:3527): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 11:25:27:827 KERNEL/(3522:3527): El proceso 2 fue asignado a la cola READY
+[INFO] 11:25:27:827 KERNEL/(3522:3523): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 11:25:32:823 KERNEL/(3522:3525): El proceso 0 finalizo su I/0
+[INFO] 11:25:32:823 KERNEL/(3522:3525): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 11:25:32:823 KERNEL/(3522:3526):    Se solicito interrupcion
+[INFO] 11:25:32:823 KERNEL/(3522:3525): El proceso 1 inicio su I/0
+[INFO] 11:25:32:823 KERNEL/(3522:3526): El proceso 0 fue asignado a la cola READY
+[INFO] 11:25:32:823 KERNEL/(3522:3526):    Se solicito interrupcion
+[INFO] 11:25:32:836 KERNEL/(3522:3524): Un proceso fue interrumpido
+[INFO] 11:25:32:836 KERNEL/(3522:3524): El proceso 2 fue asignado a la cola READY
+[INFO] 11:25:32:836 KERNEL/(3522:3523): Planificacion despausada
+[INFO] 11:25:32:836 KERNEL/(3522:3523): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 11:25:37:823 KERNEL/(3522:3525): El proceso 1 finalizo su I/0
+[INFO] 11:25:37:824 KERNEL/(3522:3525): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 11:25:37:846 KERNEL/(3522:3524): La CPU envio un pcb con estado finalizado
+[INFO] 11:25:37:846 KERNEL/(3522:3524): El socket que recibi es 11
+[INFO] 11:25:37:846 KERNEL/(3522:3526): El proceso 1 fue asignado a la cola READY
+[INFO] 11:25:37:847 KERNEL/(3522:3524): El proceso 2 finalizo correctamente
+[INFO] 11:25:37:847 KERNEL/(3522:3523): Planificacion despausada
+[INFO] 11:25:37:847 KERNEL/(3522:3523): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 11:25:37:847 KERNEL/(3522:3526):    Se solicito interrupcion
+[INFO] 11:25:40:855 KERNEL/(3522:3524): La CPU envio un pcb con estado finalizado
+[INFO] 11:25:40:856 KERNEL/(3522:3524): El socket que recibi es 10
+[INFO] 11:25:40:856 KERNEL/(3522:3524): El proceso 1 finalizo correctamente
+[INFO] 11:25:40:856 KERNEL/(3522:3523): Planificacion despausada
+[INFO] 11:25:40:856 KERNEL/(3522:3523): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:25:43:863 KERNEL/(3522:3524): La CPU envio un pcb con estado finalizado
+[INFO] 11:25:43:863 KERNEL/(3522:3524): El socket que recibi es 9
+[INFO] 11:25:43:863 KERNEL/(3522:3524): El proceso 0 finalizo correctamente
+[INFO] 11:25:43:863 KERNEL/(3522:3523): Planificacion despausada
+[INFO] 11:30:12:556 KERNEL/(3533:3533): Kernel listo para recibir al cliente
+[INFO] 11:30:12:559 KERNEL/(3533:3533): conectado a memoria
+[INFO] 11:30:12:561 KERNEL/(3533:3534): Se inicio la planificacion SRT
+[INFO] 11:30:12:562 KERNEL/(3533:3534): Inicio la planificacion IO
+[INFO] 11:30:12:562 KERNEL/(3533:3534): Planificacion despausada
+[INFO] 11:30:16:433 KERNEL/(3533:3533): Conexion consola: 9
+[INFO] 11:30:16:434 KERNEL/(3533:3539): Tamaño recibido: 100
+[INFO] 11:30:16:434 KERNEL/(3533:3539): Proceso 0 asignado a la cola NEW
+[INFO] 11:30:16:434 KERNEL/(3533:3538): paso post
+[INFO] 11:30:16:436 KERNEL/(3533:3538): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 11:30:16:436 KERNEL/(3533:3538): El proceso 0 fue asignado a la cola READY
+[INFO] 11:30:16:436 KERNEL/(3533:3534): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:30:16:726 KERNEL/(3533:3533): Conexion consola: 10
+[INFO] 11:30:16:726 KERNEL/(3533:3540): Tamaño recibido: 100
+[INFO] 11:30:16:727 KERNEL/(3533:3540): Proceso 1 asignado a la cola NEW
+[INFO] 11:30:16:727 KERNEL/(3533:3538): paso post
+[INFO] 11:30:16:728 KERNEL/(3533:3538): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 11:30:16:728 KERNEL/(3533:3538):    Se solicito interrupcion
+[INFO] 11:30:16:728 KERNEL/(3533:3538): El proceso 1 fue asignado a la cola READY
+[INFO] 11:30:17:293 KERNEL/(3533:3533): Conexion consola: 11
+[INFO] 11:30:17:294 KERNEL/(3533:3541): Tamaño recibido: 100
+[INFO] 11:30:17:294 KERNEL/(3533:3541): Proceso 2 asignado a la cola NEW
+[INFO] 11:30:17:444 KERNEL/(3533:3535): Un proceso fue interrumpido
+[INFO] 11:30:17:444 KERNEL/(3533:3535): El proceso 0 fue asignado a la cola READY
+[INFO] 11:30:17:444 KERNEL/(3533:3534): Planificacion despausada
+[INFO] 11:30:17:444 KERNEL/(3533:3534): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:30:19:451 KERNEL/(3533:3535): Codigo BLOQUEO_IO recibido
+[WARNING] 11:30:19:452 KERNEL/(3533:3535): program counter: 4
+[INFO] 11:30:19:452 KERNEL/(3533:3535): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 11:30:19:452 KERNEL/(3533:3535): Tiempo de bloqueo: 13000
+[INFO] 11:30:19:452 KERNEL/(3533:3535): Inicio de bloqueo: 1658586619
+[INFO] 11:30:19:452 KERNEL/(3533:3535): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 11:30:19:452 KERNEL/(3533:3536): El proceso 0 inicio su I/0
+[INFO] 11:30:19:452 KERNEL/(3533:3534): Planificacion despausada
+[INFO] 11:30:19:452 KERNEL/(3533:3534): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 11:30:22:461 KERNEL/(3533:3535): Codigo BLOQUEO_IO recibido
+[WARNING] 11:30:22:461 KERNEL/(3533:3535): program counter: 4
+[INFO] 11:30:22:461 KERNEL/(3533:3535): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 11:30:22:462 KERNEL/(3533:3535): Tiempo de bloqueo: 5000
+[INFO] 11:30:22:462 KERNEL/(3533:3535): Inicio de bloqueo: 1658586622
+[INFO] 11:30:22:462 KERNEL/(3533:3535): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 11:30:22:462 KERNEL/(3533:3534): Planificacion despausada
+[INFO] 11:30:27:453 KERNEL/(3533:3538): paso post
+[INFO] 11:30:27:455 KERNEL/(3533:3538): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 11:30:27:455 KERNEL/(3533:3538): El proceso 2 fue asignado a la cola READY
+[INFO] 11:30:27:455 KERNEL/(3533:3534): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 11:30:32:452 KERNEL/(3533:3536): El proceso 0 finalizo su I/0
+[INFO] 11:30:32:453 KERNEL/(3533:3536): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 11:30:32:453 KERNEL/(3533:3537):    Se solicito interrupcion
+[INFO] 11:30:32:453 KERNEL/(3533:3536): El proceso 1 inicio su I/0
+[INFO] 11:30:32:453 KERNEL/(3533:3537): El proceso 0 fue asignado a la cola READY
+[INFO] 11:30:32:453 KERNEL/(3533:3537):    Se solicito interrupcion
+[INFO] 11:30:32:464 KERNEL/(3533:3535): Un proceso fue interrumpido
+[INFO] 11:30:32:465 KERNEL/(3533:3535): El proceso 2 fue asignado a la cola READY
+[INFO] 11:30:32:465 KERNEL/(3533:3534): Planificacion despausada
+[INFO] 11:30:32:465 KERNEL/(3533:3534): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 11:30:37:453 KERNEL/(3533:3536): El proceso 1 finalizo su I/0
+[INFO] 11:30:37:454 KERNEL/(3533:3536): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 11:30:37:472 KERNEL/(3533:3535): La CPU envio un pcb con estado finalizado
+[INFO] 11:30:37:472 KERNEL/(3533:3535): El socket que recibi es 11
+[INFO] 11:30:37:472 KERNEL/(3533:3537): El proceso 1 fue asignado a la cola READY
+[INFO] 11:30:37:472 KERNEL/(3533:3535): El proceso 2 finalizo correctamente
+[INFO] 11:30:37:473 KERNEL/(3533:3534): Planificacion despausada
+[INFO] 11:30:37:473 KERNEL/(3533:3534): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 11:30:37:473 KERNEL/(3533:3537):    Se solicito interrupcion
+[INFO] 11:30:38:475 KERNEL/(3533:3535): Un proceso fue interrumpido
+[INFO] 11:30:38:476 KERNEL/(3533:3535): El proceso 1 fue asignado a la cola READY
+[INFO] 11:30:38:476 KERNEL/(3533:3534): Planificacion despausada
+[INFO] 11:30:38:476 KERNEL/(3533:3534): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 11:30:40:481 KERNEL/(3533:3535): La CPU envio un pcb con estado finalizado
+[INFO] 11:30:40:481 KERNEL/(3533:3535): El socket que recibi es 10
+[INFO] 11:30:40:482 KERNEL/(3533:3535): El proceso 1 finalizo correctamente
+[INFO] 11:30:40:482 KERNEL/(3533:3534): Planificacion despausada
+[INFO] 11:30:40:482 KERNEL/(3533:3534): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:30:43:487 KERNEL/(3533:3535): La CPU envio un pcb con estado finalizado
+[INFO] 11:30:43:487 KERNEL/(3533:3535): El socket que recibi es 9
+[INFO] 11:30:43:487 KERNEL/(3533:3535): El proceso 0 finalizo correctamente
+[INFO] 11:30:43:487 KERNEL/(3533:3534): Planificacion despausada
+[INFO] 11:41:08:061 KERNEL/(3658:3658): Kernel listo para recibir al cliente
+[INFO] 11:41:08:063 KERNEL/(3658:3658): conectado a memoria
+[INFO] 11:41:08:066 KERNEL/(3658:3659): Se inicio la planificacion SRT
+[INFO] 11:41:08:066 KERNEL/(3658:3659): Inicio la planificacion IO
+[INFO] 11:41:08:067 KERNEL/(3658:3659): Planificacion despausada
+[INFO] 11:41:12:546 KERNEL/(3658:3658): Conexion consola: 9
+[INFO] 11:41:12:546 KERNEL/(3658:3664): Tamaño recibido: 100
+[INFO] 11:41:12:547 KERNEL/(3658:3664): Proceso 0 asignado a la cola NEW
+[INFO] 11:41:12:547 KERNEL/(3658:3663): paso post
+[INFO] 11:41:12:549 KERNEL/(3658:3663): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 11:41:12:549 KERNEL/(3658:3663): El proceso 0 fue asignado a la cola READY
+[INFO] 11:41:12:549 KERNEL/(3658:3659): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:41:12:890 KERNEL/(3658:3658): Conexion consola: 10
+[INFO] 11:41:12:890 KERNEL/(3658:3665): Tamaño recibido: 100
+[INFO] 11:41:12:891 KERNEL/(3658:3665): Proceso 1 asignado a la cola NEW
+[INFO] 11:41:12:891 KERNEL/(3658:3663): paso post
+[INFO] 11:41:12:892 KERNEL/(3658:3663): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 11:41:12:892 KERNEL/(3658:3663):    Se solicito interrupcion
+[INFO] 11:41:12:892 KERNEL/(3658:3663): El proceso 1 fue asignado a la cola READY
+[INFO] 11:41:13:249 KERNEL/(3658:3658): Conexion consola: 11
+[INFO] 11:41:13:250 KERNEL/(3658:3666): Tamaño recibido: 100
+[INFO] 11:41:13:251 KERNEL/(3658:3666): Proceso 2 asignado a la cola NEW
+[INFO] 11:41:13:555 KERNEL/(3658:3660): Un proceso fue interrumpido
+[INFO] 11:41:13:555 KERNEL/(3658:3660): El proceso 0 fue asignado a la cola READY
+[INFO] 11:41:13:555 KERNEL/(3658:3659): Planificacion despausada
+[INFO] 11:41:13:555 KERNEL/(3658:3659): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:41:15:562 KERNEL/(3658:3660): Codigo BLOQUEO_IO recibido
+[WARNING] 11:41:15:562 KERNEL/(3658:3660): program counter: 4
+[INFO] 11:41:15:562 KERNEL/(3658:3660): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 11:41:15:562 KERNEL/(3658:3660): Tiempo de bloqueo: 13000
+[INFO] 11:41:15:562 KERNEL/(3658:3660): Inicio de bloqueo: 1658587275
+[INFO] 11:41:15:562 KERNEL/(3658:3660): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 11:41:15:562 KERNEL/(3658:3661): El proceso 0 inicio su I/0
+[INFO] 11:41:15:562 KERNEL/(3658:3659): Planificacion despausada
+[INFO] 11:41:15:562 KERNEL/(3658:3659): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 11:41:18:571 KERNEL/(3658:3660): Codigo BLOQUEO_IO recibido
+[WARNING] 11:41:18:571 KERNEL/(3658:3660): program counter: 4
+[INFO] 11:41:18:571 KERNEL/(3658:3660): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 11:41:18:571 KERNEL/(3658:3660): Tiempo de bloqueo: 5000
+[INFO] 11:41:18:571 KERNEL/(3658:3660): Inicio de bloqueo: 1658587278
+[INFO] 11:41:18:571 KERNEL/(3658:3660): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 11:41:18:571 KERNEL/(3658:3659): Planificacion despausada
+[INFO] 11:41:23:563 KERNEL/(3658:3663): paso post
+[INFO] 11:41:23:566 KERNEL/(3658:3663): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 11:41:23:566 KERNEL/(3658:3663): El proceso 2 fue asignado a la cola READY
+[INFO] 11:41:23:566 KERNEL/(3658:3659): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 11:41:28:562 KERNEL/(3658:3661): El proceso 0 finalizo su I/0
+[INFO] 11:41:28:563 KERNEL/(3658:3661): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 11:41:28:563 KERNEL/(3658:3662):    Se solicito interrupcion
+[INFO] 11:41:28:563 KERNEL/(3658:3661): El proceso 1 inicio su I/0
+[INFO] 11:41:28:563 KERNEL/(3658:3662): El proceso 0 fue asignado a la cola READY
+[INFO] 11:41:28:563 KERNEL/(3658:3662):    Se solicito interrupcion
+[INFO] 11:41:28:577 KERNEL/(3658:3660): Un proceso fue interrumpido
+[INFO] 11:41:28:577 KERNEL/(3658:3660): El proceso 2 fue asignado a la cola READY
+[INFO] 11:41:28:577 KERNEL/(3658:3659): Planificacion despausada
+[INFO] 11:41:28:577 KERNEL/(3658:3659): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 11:41:33:563 KERNEL/(3658:3661): El proceso 1 finalizo su I/0
+[INFO] 11:41:33:564 KERNEL/(3658:3661): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 11:41:33:587 KERNEL/(3658:3660): La CPU envio un pcb con estado finalizado
+[INFO] 11:41:33:587 KERNEL/(3658:3660): El socket que recibi es 11
+[INFO] 11:41:33:587 KERNEL/(3658:3662): El proceso 1 fue asignado a la cola READY
+[INFO] 11:41:33:588 KERNEL/(3658:3660): El proceso 2 finalizo correctamente
+[INFO] 11:41:33:588 KERNEL/(3658:3659): Planificacion despausada
+[INFO] 11:41:33:588 KERNEL/(3658:3659): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 11:41:33:588 KERNEL/(3658:3662):    Se solicito interrupcion
+[INFO] 11:41:34:594 KERNEL/(3658:3660): Un proceso fue interrumpido
+[INFO] 11:41:34:594 KERNEL/(3658:3660): El proceso 1 fue asignado a la cola READY
+[INFO] 11:41:34:594 KERNEL/(3658:3659): Planificacion despausada
+[INFO] 11:41:34:594 KERNEL/(3658:3659): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 11:41:36:600 KERNEL/(3658:3660): La CPU envio un pcb con estado finalizado
+[INFO] 11:41:36:600 KERNEL/(3658:3660): El socket que recibi es 10
+[INFO] 11:41:36:600 KERNEL/(3658:3660): El proceso 1 finalizo correctamente
+[INFO] 11:41:36:601 KERNEL/(3658:3659): Planificacion despausada
+[INFO] 11:41:36:601 KERNEL/(3658:3659): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:41:39:609 KERNEL/(3658:3660): La CPU envio un pcb con estado finalizado
+[INFO] 11:41:39:609 KERNEL/(3658:3660): El socket que recibi es 9
+[INFO] 11:41:39:609 KERNEL/(3658:3660): El proceso 0 finalizo correctamente
+[INFO] 11:41:39:610 KERNEL/(3658:3659): Planificacion despausada
+[INFO] 11:44:41:394 KERNEL/(3720:3720): Kernel listo para recibir al cliente
+[INFO] 11:44:41:397 KERNEL/(3720:3720): conectado a memoria
+[INFO] 11:44:41:399 KERNEL/(3720:3721): Se inicio la planificacion SRT
+[INFO] 11:44:41:400 KERNEL/(3720:3721): Inicio la planificacion IO
+[INFO] 11:44:41:400 KERNEL/(3720:3721): Planificacion despausada
+[INFO] 11:44:43:492 KERNEL/(3720:3720): Conexion consola: 9
+[INFO] 11:44:43:492 KERNEL/(3720:3726): Tamaño recibido: 100
+[INFO] 11:44:43:493 KERNEL/(3720:3726): Proceso 0 asignado a la cola NEW
+[INFO] 11:44:43:493 KERNEL/(3720:3725): paso post
+[INFO] 11:44:43:495 KERNEL/(3720:3725): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 11:44:43:495 KERNEL/(3720:3725): El proceso 0 fue asignado a la cola READY
+[INFO] 11:44:43:495 KERNEL/(3720:3721): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:44:43:792 KERNEL/(3720:3720): Conexion consola: 10
+[INFO] 11:44:43:793 KERNEL/(3720:3727): Tamaño recibido: 100
+[INFO] 11:44:43:793 KERNEL/(3720:3727): Proceso 1 asignado a la cola NEW
+[INFO] 11:44:43:794 KERNEL/(3720:3725): paso post
+[INFO] 11:44:43:795 KERNEL/(3720:3725): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 11:44:43:795 KERNEL/(3720:3725):    Se solicito interrupcion
+[INFO] 11:44:43:795 KERNEL/(3720:3725): El proceso 1 fue asignado a la cola READY
+[INFO] 11:44:44:128 KERNEL/(3720:3720): Conexion consola: 11
+[INFO] 11:44:44:129 KERNEL/(3720:3728): Tamaño recibido: 100
+[INFO] 11:44:44:129 KERNEL/(3720:3728): Proceso 2 asignado a la cola NEW
+[INFO] 11:44:44:500 KERNEL/(3720:3722): Un proceso fue interrumpido
+[INFO] 11:44:44:500 KERNEL/(3720:3722): El proceso 0 fue asignado a la cola READY
+[INFO] 11:44:44:500 KERNEL/(3720:3721): Planificacion despausada
+[INFO] 11:44:44:500 KERNEL/(3720:3721): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:44:46:508 KERNEL/(3720:3722): Codigo BLOQUEO_IO recibido
+[WARNING] 11:44:46:508 KERNEL/(3720:3722): program counter: 4
+[INFO] 11:44:46:508 KERNEL/(3720:3722): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 11:44:46:508 KERNEL/(3720:3722): Tiempo de bloqueo: 13000
+[INFO] 11:44:46:508 KERNEL/(3720:3722): Inicio de bloqueo: 1658587486
+[INFO] 11:44:46:508 KERNEL/(3720:3722): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 11:44:46:508 KERNEL/(3720:3723): El proceso 0 inicio su I/0
+[INFO] 11:44:46:508 KERNEL/(3720:3721): Planificacion despausada
+[INFO] 11:44:46:508 KERNEL/(3720:3721): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 11:44:49:514 KERNEL/(3720:3722): Codigo BLOQUEO_IO recibido
+[WARNING] 11:44:49:514 KERNEL/(3720:3722): program counter: 4
+[INFO] 11:44:49:514 KERNEL/(3720:3722): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 11:44:49:514 KERNEL/(3720:3722): Tiempo de bloqueo: 5000
+[INFO] 11:44:49:514 KERNEL/(3720:3722): Inicio de bloqueo: 1658587489
+[INFO] 11:44:49:514 KERNEL/(3720:3722): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 11:44:49:515 KERNEL/(3720:3721): Planificacion despausada
+[INFO] 11:44:54:509 KERNEL/(3720:3725): paso post
+[INFO] 11:44:54:511 KERNEL/(3720:3725): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 11:44:54:511 KERNEL/(3720:3725): El proceso 2 fue asignado a la cola READY
+[INFO] 11:44:54:511 KERNEL/(3720:3721): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 11:44:59:508 KERNEL/(3720:3723): El proceso 0 finalizo su I/0
+[INFO] 11:44:59:509 KERNEL/(3720:3723): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 11:44:59:509 KERNEL/(3720:3724):    Se solicito interrupcion
+[INFO] 11:44:59:509 KERNEL/(3720:3723): El proceso 1 inicio su I/0
+[INFO] 11:44:59:509 KERNEL/(3720:3724): El proceso 0 fue asignado a la cola READY
+[INFO] 11:44:59:509 KERNEL/(3720:3724):    Se solicito interrupcion
+[INFO] 11:44:59:520 KERNEL/(3720:3722): Un proceso fue interrumpido
+[INFO] 11:44:59:521 KERNEL/(3720:3722): El proceso 2 fue asignado a la cola READY
+[INFO] 11:44:59:521 KERNEL/(3720:3721): Planificacion despausada
+[INFO] 11:44:59:521 KERNEL/(3720:3721): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 11:45:04:509 KERNEL/(3720:3723): El proceso 1 finalizo su I/0
+[INFO] 11:45:04:509 KERNEL/(3720:3723): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 11:45:04:531 KERNEL/(3720:3722): La CPU envio un pcb con estado finalizado
+[INFO] 11:45:04:531 KERNEL/(3720:3722): El socket que recibi es 11
+[INFO] 11:45:04:531 KERNEL/(3720:3724): El proceso 1 fue asignado a la cola READY
+[INFO] 11:45:04:531 KERNEL/(3720:3722): El proceso 2 finalizo correctamente
+[INFO] 11:45:04:531 KERNEL/(3720:3721): Planificacion despausada
+[INFO] 11:45:04:531 KERNEL/(3720:3721): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 11:45:04:531 KERNEL/(3720:3724):    Se solicito interrupcion
+[INFO] 11:45:07:540 KERNEL/(3720:3722): La CPU envio un pcb con estado finalizado
+[INFO] 11:45:07:540 KERNEL/(3720:3722): El socket que recibi es 10
+[INFO] 11:45:07:540 KERNEL/(3720:3722): El proceso 1 finalizo correctamente
+[INFO] 11:45:07:541 KERNEL/(3720:3721): Planificacion despausada
+[INFO] 11:45:07:541 KERNEL/(3720:3721): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 11:45:10:546 KERNEL/(3720:3722): La CPU envio un pcb con estado finalizado
+[INFO] 11:45:10:546 KERNEL/(3720:3722): El socket que recibi es 9
+[INFO] 11:45:10:546 KERNEL/(3720:3722): El proceso 0 finalizo correctamente
+[INFO] 11:45:10:547 KERNEL/(3720:3721): Planificacion despausada
+[INFO] 12:00:26:344 KERNEL/(3834:3834): Kernel listo para recibir al cliente
+[INFO] 12:00:26:346 KERNEL/(3834:3834): conectado a memoria
+[INFO] 12:00:26:348 KERNEL/(3834:3835): Se inicio la planificacion SRT
+[INFO] 12:00:26:349 KERNEL/(3834:3835): Inicio la planificacion IO
+[INFO] 12:00:26:349 KERNEL/(3834:3835): Planificacion despausada
+[INFO] 12:00:27:963 KERNEL/(3834:3834): Conexion consola: 9
+[INFO] 12:00:27:964 KERNEL/(3834:3840): Tamaño recibido: 100
+[INFO] 12:00:27:964 KERNEL/(3834:3840): Proceso 0 asignado a la cola NEW
+[INFO] 12:00:27:964 KERNEL/(3834:3839): paso post
+[INFO] 12:00:27:966 KERNEL/(3834:3839): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 12:00:27:966 KERNEL/(3834:3839): El proceso 0 fue asignado a la cola READY
+[INFO] 12:00:27:966 KERNEL/(3834:3835): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:00:28:243 KERNEL/(3834:3834): Conexion consola: 10
+[INFO] 12:00:28:244 KERNEL/(3834:3841): Tamaño recibido: 100
+[INFO] 12:00:28:244 KERNEL/(3834:3841): Proceso 1 asignado a la cola NEW
+[INFO] 12:00:28:245 KERNEL/(3834:3839): paso post
+[INFO] 12:00:28:246 KERNEL/(3834:3839): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 12:00:28:246 KERNEL/(3834:3839):    Se solicito interrupcion
+[INFO] 12:00:28:246 KERNEL/(3834:3839): El proceso 1 fue asignado a la cola READY
+[INFO] 12:00:28:546 KERNEL/(3834:3834): Conexion consola: 11
+[INFO] 12:00:28:546 KERNEL/(3834:3842): Tamaño recibido: 100
+[INFO] 12:00:28:547 KERNEL/(3834:3842): Proceso 2 asignado a la cola NEW
+[INFO] 12:00:28:972 KERNEL/(3834:3836): Un proceso fue interrumpido
+[INFO] 12:00:28:972 KERNEL/(3834:3836): El proceso 0 fue asignado a la cola READY
+[INFO] 12:00:28:972 KERNEL/(3834:3835): Planificacion despausada
+[INFO] 12:00:28:972 KERNEL/(3834:3835): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:00:30:980 KERNEL/(3834:3836): Codigo BLOQUEO_IO recibido
+[WARNING] 12:00:30:980 KERNEL/(3834:3836): program counter: 4
+[INFO] 12:00:30:980 KERNEL/(3834:3836): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 12:00:30:980 KERNEL/(3834:3836): Tiempo de bloqueo: 13000
+[INFO] 12:00:30:980 KERNEL/(3834:3836): Inicio de bloqueo: 1658588430
+[INFO] 12:00:30:980 KERNEL/(3834:3836): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 12:00:30:980 KERNEL/(3834:3837): El proceso 0 inicio su I/0
+[INFO] 12:00:30:980 KERNEL/(3834:3835): Planificacion despausada
+[INFO] 12:00:30:980 KERNEL/(3834:3835): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:00:33:987 KERNEL/(3834:3836): Codigo BLOQUEO_IO recibido
+[WARNING] 12:00:33:988 KERNEL/(3834:3836): program counter: 4
+[INFO] 12:00:33:988 KERNEL/(3834:3836): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 12:00:33:988 KERNEL/(3834:3836): Tiempo de bloqueo: 5000
+[INFO] 12:00:33:988 KERNEL/(3834:3836): Inicio de bloqueo: 1658588433
+[INFO] 12:00:33:988 KERNEL/(3834:3836): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 12:00:33:988 KERNEL/(3834:3835): Planificacion despausada
+[INFO] 12:00:38:980 KERNEL/(3834:3839): paso post
+[INFO] 12:00:38:983 KERNEL/(3834:3839): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 12:00:38:984 KERNEL/(3834:3839): El proceso 2 fue asignado a la cola READY
+[INFO] 12:00:38:984 KERNEL/(3834:3835): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:00:43:980 KERNEL/(3834:3837): El proceso 0 finalizo su I/0
+[INFO] 12:00:43:980 KERNEL/(3834:3837): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 12:00:43:980 KERNEL/(3834:3838):    Se solicito interrupcion
+[INFO] 12:00:43:980 KERNEL/(3834:3837): El proceso 1 inicio su I/0
+[INFO] 12:00:43:980 KERNEL/(3834:3838): El proceso 0 fue asignado a la cola READY
+[INFO] 12:00:43:980 KERNEL/(3834:3838):    Se solicito interrupcion
+[INFO] 12:00:43:995 KERNEL/(3834:3836): Un proceso fue interrumpido
+[INFO] 12:00:43:995 KERNEL/(3834:3836): El proceso 2 fue asignado a la cola READY
+[INFO] 12:00:43:995 KERNEL/(3834:3835): Planificacion despausada
+[INFO] 12:00:43:995 KERNEL/(3834:3835): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:00:48:980 KERNEL/(3834:3837): El proceso 1 finalizo su I/0
+[INFO] 12:00:48:981 KERNEL/(3834:3837): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 12:00:49:004 KERNEL/(3834:3836): La CPU envio un pcb con estado finalizado
+[INFO] 12:00:49:004 KERNEL/(3834:3836): El socket que recibi es 11
+[INFO] 12:00:49:004 KERNEL/(3834:3838): El proceso 1 fue asignado a la cola READY
+[INFO] 12:00:49:004 KERNEL/(3834:3836): El proceso 2 finalizo correctamente
+[INFO] 12:00:49:004 KERNEL/(3834:3835): Planificacion despausada
+[INFO] 12:00:49:005 KERNEL/(3834:3835): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:00:49:005 KERNEL/(3834:3838):    Se solicito interrupcion
+[INFO] 12:00:52:013 KERNEL/(3834:3836): La CPU envio un pcb con estado finalizado
+[INFO] 12:00:52:013 KERNEL/(3834:3836): El socket que recibi es 10
+[INFO] 12:00:52:014 KERNEL/(3834:3836): El proceso 1 finalizo correctamente
+[INFO] 12:00:52:014 KERNEL/(3834:3835): Planificacion despausada
+[INFO] 12:00:52:014 KERNEL/(3834:3835): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:00:55:021 KERNEL/(3834:3836): La CPU envio un pcb con estado finalizado
+[INFO] 12:00:55:022 KERNEL/(3834:3836): El socket que recibi es 9
+[INFO] 12:00:55:022 KERNEL/(3834:3836): El proceso 0 finalizo correctamente
+[INFO] 12:00:55:022 KERNEL/(3834:3835): Planificacion despausada
+[INFO] 12:03:44:213 KERNEL/(3913:3913): Kernel listo para recibir al cliente
+[INFO] 12:03:44:216 KERNEL/(3913:3913): conectado a memoria
+[INFO] 12:03:44:218 KERNEL/(3913:3914): Se inicio la planificacion SRT
+[INFO] 12:03:44:218 KERNEL/(3913:3914): Inicio la planificacion IO
+[INFO] 12:03:44:219 KERNEL/(3913:3914): Planificacion despausada
+[INFO] 12:03:47:036 KERNEL/(3913:3913): Conexion consola: 9
+[INFO] 12:03:47:037 KERNEL/(3913:3919): Tamaño recibido: 100
+[INFO] 12:03:47:037 KERNEL/(3913:3919): Proceso 0 asignado a la cola NEW
+[INFO] 12:03:47:038 KERNEL/(3913:3918): paso post
+[INFO] 12:03:47:039 KERNEL/(3913:3918): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 12:03:47:039 KERNEL/(3913:3918): El proceso 0 fue asignado a la cola READY
+[INFO] 12:03:47:040 KERNEL/(3913:3914): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:03:47:305 KERNEL/(3913:3913): Conexion consola: 10
+[INFO] 12:03:47:306 KERNEL/(3913:3920): Tamaño recibido: 100
+[INFO] 12:03:47:306 KERNEL/(3913:3920): Proceso 1 asignado a la cola NEW
+[INFO] 12:03:47:306 KERNEL/(3913:3918): paso post
+[INFO] 12:03:47:307 KERNEL/(3913:3918): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 12:03:47:307 KERNEL/(3913:3918):    Se solicito interrupcion
+[INFO] 12:03:47:308 KERNEL/(3913:3918): El proceso 1 fue asignado a la cola READY
+[INFO] 12:03:47:609 KERNEL/(3913:3913): Conexion consola: 11
+[INFO] 12:03:47:610 KERNEL/(3913:3921): Tamaño recibido: 100
+[INFO] 12:03:47:610 KERNEL/(3913:3921): Proceso 2 asignado a la cola NEW
+[INFO] 12:03:48:047 KERNEL/(3913:3915): Un proceso fue interrumpido
+[INFO] 12:03:48:047 KERNEL/(3913:3915): El proceso 0 fue asignado a la cola READY
+[INFO] 12:03:48:047 KERNEL/(3913:3914): Planificacion despausada
+[INFO] 12:03:48:047 KERNEL/(3913:3914): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:03:50:053 KERNEL/(3913:3915): Codigo BLOQUEO_IO recibido
+[WARNING] 12:03:50:054 KERNEL/(3913:3915): program counter: 4
+[INFO] 12:03:50:054 KERNEL/(3913:3915): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 12:03:50:054 KERNEL/(3913:3915): Tiempo de bloqueo: 13000
+[INFO] 12:03:50:054 KERNEL/(3913:3915): Inicio de bloqueo: 1658588630
+[INFO] 12:03:50:054 KERNEL/(3913:3915): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 12:03:50:054 KERNEL/(3913:3916): El proceso 0 inicio su I/0
+[INFO] 12:03:50:054 KERNEL/(3913:3914): Planificacion despausada
+[INFO] 12:03:50:054 KERNEL/(3913:3914): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:03:53:062 KERNEL/(3913:3915): Codigo BLOQUEO_IO recibido
+[WARNING] 12:03:53:062 KERNEL/(3913:3915): program counter: 4
+[INFO] 12:03:53:062 KERNEL/(3913:3915): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 12:03:53:062 KERNEL/(3913:3915): Tiempo de bloqueo: 5000
+[INFO] 12:03:53:062 KERNEL/(3913:3915): Inicio de bloqueo: 1658588633
+[INFO] 12:03:53:062 KERNEL/(3913:3915): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 12:03:53:062 KERNEL/(3913:3914): Planificacion despausada
+[INFO] 12:03:58:055 KERNEL/(3913:3918): paso post
+[INFO] 12:03:58:057 KERNEL/(3913:3918): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 12:03:58:057 KERNEL/(3913:3918): El proceso 2 fue asignado a la cola READY
+[INFO] 12:03:58:057 KERNEL/(3913:3914): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:04:03:054 KERNEL/(3913:3916): El proceso 0 finalizo su I/0
+[INFO] 12:04:03:055 KERNEL/(3913:3916): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 12:04:03:055 KERNEL/(3913:3917):    Se solicito interrupcion
+[INFO] 12:04:03:055 KERNEL/(3913:3916): El proceso 1 inicio su I/0
+[INFO] 12:04:03:055 KERNEL/(3913:3917): El proceso 0 fue asignado a la cola READY
+[INFO] 12:04:03:055 KERNEL/(3913:3917):    Se solicito interrupcion
+[INFO] 12:04:03:068 KERNEL/(3913:3915): Un proceso fue interrumpido
+[INFO] 12:04:03:068 KERNEL/(3913:3915): El proceso 2 fue asignado a la cola READY
+[INFO] 12:04:03:068 KERNEL/(3913:3914): Planificacion despausada
+[INFO] 12:04:03:068 KERNEL/(3913:3914): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:04:08:055 KERNEL/(3913:3916): El proceso 1 finalizo su I/0
+[INFO] 12:04:08:055 KERNEL/(3913:3916): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 12:04:08:079 KERNEL/(3913:3915): La CPU envio un pcb con estado finalizado
+[INFO] 12:04:08:079 KERNEL/(3913:3915): El socket que recibi es 11
+[INFO] 12:04:08:079 KERNEL/(3913:3917): El proceso 1 fue asignado a la cola READY
+[INFO] 12:04:08:080 KERNEL/(3913:3915): El proceso 2 finalizo correctamente
+[INFO] 12:04:08:080 KERNEL/(3913:3914): Planificacion despausada
+[INFO] 12:04:08:080 KERNEL/(3913:3914): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:04:08:080 KERNEL/(3913:3917):    Se solicito interrupcion
+[INFO] 12:04:09:084 KERNEL/(3913:3915): Un proceso fue interrumpido
+[INFO] 12:04:09:084 KERNEL/(3913:3915): El proceso 1 fue asignado a la cola READY
+[INFO] 12:04:09:084 KERNEL/(3913:3914): Planificacion despausada
+[INFO] 12:04:09:084 KERNEL/(3913:3914): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:04:11:090 KERNEL/(3913:3915): La CPU envio un pcb con estado finalizado
+[INFO] 12:04:11:090 KERNEL/(3913:3915): El socket que recibi es 10
+[INFO] 12:04:11:091 KERNEL/(3913:3915): El proceso 1 finalizo correctamente
+[INFO] 12:04:11:091 KERNEL/(3913:3914): Planificacion despausada
+[INFO] 12:04:11:091 KERNEL/(3913:3914): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:04:14:097 KERNEL/(3913:3915): La CPU envio un pcb con estado finalizado
+[INFO] 12:04:14:098 KERNEL/(3913:3915): El socket que recibi es 9
+[INFO] 12:04:14:098 KERNEL/(3913:3915): El proceso 0 finalizo correctamente
+[INFO] 12:04:14:098 KERNEL/(3913:3914): Planificacion despausada
+[INFO] 12:15:18:972 KERNEL/(4030:4030): Kernel listo para recibir al cliente
+[INFO] 12:15:18:975 KERNEL/(4030:4030): conectado a memoria
+[INFO] 12:15:18:977 KERNEL/(4030:4031): Se inicio la planificacion SRT
+[INFO] 12:15:18:978 KERNEL/(4030:4031): Inicio la planificacion IO
+[INFO] 12:15:18:978 KERNEL/(4030:4031): Planificacion despausada
+[INFO] 12:15:28:260 KERNEL/(4030:4030): Conexion consola: 9
+[INFO] 12:15:28:261 KERNEL/(4030:4036): Tamaño recibido: 100
+[INFO] 12:15:28:262 KERNEL/(4030:4036): Proceso 0 asignado a la cola NEW
+[INFO] 12:15:28:262 KERNEL/(4030:4035): paso post
+[INFO] 12:15:28:263 KERNEL/(4030:4035): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 12:15:28:264 KERNEL/(4030:4035): El proceso 0 fue asignado a la cola READY
+[INFO] 12:15:28:264 KERNEL/(4030:4031): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:15:28:580 KERNEL/(4030:4030): Conexion consola: 10
+[INFO] 12:15:28:580 KERNEL/(4030:4037): Tamaño recibido: 100
+[INFO] 12:15:28:581 KERNEL/(4030:4037): Proceso 1 asignado a la cola NEW
+[INFO] 12:15:28:581 KERNEL/(4030:4035): paso post
+[INFO] 12:15:28:582 KERNEL/(4030:4035): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 12:15:28:582 KERNEL/(4030:4035):    Se solicito interrupcion
+[INFO] 12:15:28:582 KERNEL/(4030:4035): El proceso 1 fue asignado a la cola READY
+[INFO] 12:15:28:900 KERNEL/(4030:4030): Conexion consola: 11
+[INFO] 12:15:28:900 KERNEL/(4030:4038): Tamaño recibido: 100
+[INFO] 12:15:28:901 KERNEL/(4030:4038): Proceso 2 asignado a la cola NEW
+[INFO] 12:15:29:270 KERNEL/(4030:4032): Un proceso fue interrumpido
+[INFO] 12:15:29:270 KERNEL/(4030:4032): El proceso 0 fue asignado a la cola READY
+[INFO] 12:15:29:270 KERNEL/(4030:4031): Planificacion despausada
+[INFO] 12:15:29:270 KERNEL/(4030:4031): lista ordenada: 
+[INFO] 12:15:29:270 KERNEL/(4030:4031): estimacion: 20000 inicio rafaga: 1658589328
+[INFO] 12:15:29:270 KERNEL/(4030:4031): estimacion: 20000 inicio rafaga: 23
+[INFO] 12:15:29:270 KERNEL/(4030:4031): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:15:31:275 KERNEL/(4030:4032): Codigo BLOQUEO_IO recibido
+[WARNING] 12:15:31:275 KERNEL/(4030:4032): program counter: 4
+[INFO] 12:15:31:275 KERNEL/(4030:4032): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 12:15:31:275 KERNEL/(4030:4032): Tiempo de bloqueo: 13000
+[INFO] 12:15:31:275 KERNEL/(4030:4032): Inicio de bloqueo: 1658589331
+[INFO] 12:15:31:275 KERNEL/(4030:4032): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 12:15:31:275 KERNEL/(4030:4033): El proceso 0 inicio su I/0
+[INFO] 12:15:31:275 KERNEL/(4030:4031): Planificacion despausada
+[INFO] 12:15:31:276 KERNEL/(4030:4031): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:15:34:283 KERNEL/(4030:4032): Codigo BLOQUEO_IO recibido
+[WARNING] 12:15:34:283 KERNEL/(4030:4032): program counter: 4
+[INFO] 12:15:34:283 KERNEL/(4030:4032): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 12:15:34:283 KERNEL/(4030:4032): Tiempo de bloqueo: 5000
+[INFO] 12:15:34:284 KERNEL/(4030:4032): Inicio de bloqueo: 1658589334
+[INFO] 12:15:34:284 KERNEL/(4030:4032): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 12:15:34:284 KERNEL/(4030:4031): Planificacion despausada
+[INFO] 12:15:39:276 KERNEL/(4030:4035): paso post
+[INFO] 12:15:39:277 KERNEL/(4030:4035): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 12:15:39:277 KERNEL/(4030:4035): El proceso 2 fue asignado a la cola READY
+[INFO] 12:15:39:277 KERNEL/(4030:4031): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:15:44:276 KERNEL/(4030:4033): El proceso 0 finalizo su I/0
+[INFO] 12:15:44:276 KERNEL/(4030:4033): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 12:15:44:276 KERNEL/(4030:4034):    Se solicito interrupcion
+[INFO] 12:15:44:276 KERNEL/(4030:4033): El proceso 1 inicio su I/0
+[INFO] 12:15:44:276 KERNEL/(4030:4034): El proceso 0 fue asignado a la cola READY
+[INFO] 12:15:44:276 KERNEL/(4030:4034):    Se solicito interrupcion
+[INFO] 12:15:44:284 KERNEL/(4030:4032): Un proceso fue interrumpido
+[INFO] 12:15:44:284 KERNEL/(4030:4032): El proceso 2 fue asignado a la cola READY
+[INFO] 12:15:44:284 KERNEL/(4030:4031): Planificacion despausada
+[INFO] 12:15:44:284 KERNEL/(4030:4031): lista ordenada: 
+[INFO] 12:15:44:284 KERNEL/(4030:4031): estimacion: 20000 inicio rafaga: 1658589339
+[INFO] 12:15:44:284 KERNEL/(4030:4031): estimacion: 20000 inicio rafaga: 1658589329
+[INFO] 12:15:44:285 KERNEL/(4030:4031): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:15:49:276 KERNEL/(4030:4033): El proceso 1 finalizo su I/0
+[INFO] 12:15:49:276 KERNEL/(4030:4033): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 12:15:49:292 KERNEL/(4030:4032): La CPU envio un pcb con estado finalizado
+[INFO] 12:15:49:292 KERNEL/(4030:4032): El socket que recibi es 11
+[INFO] 12:15:49:292 KERNEL/(4030:4034): El proceso 1 fue asignado a la cola READY
+[INFO] 12:15:49:292 KERNEL/(4030:4032): El proceso 2 finalizo correctamente
+[INFO] 12:15:49:292 KERNEL/(4030:4031): Planificacion despausada
+[INFO] 12:15:49:292 KERNEL/(4030:4031): lista ordenada: 
+[INFO] 12:15:49:292 KERNEL/(4030:4031): estimacion: 20000 inicio rafaga: 1658589331
+[INFO] 12:15:49:292 KERNEL/(4030:4031): estimacion: 20000 inicio rafaga: 1658589329
+[INFO] 12:15:49:292 KERNEL/(4030:4031): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:15:49:292 KERNEL/(4030:4034):    Se solicito interrupcion
+[INFO] 12:15:50:299 KERNEL/(4030:4032): Un proceso fue interrumpido
+[INFO] 12:15:50:299 KERNEL/(4030:4032): El proceso 1 fue asignado a la cola READY
+[INFO] 12:15:50:299 KERNEL/(4030:4031): Planificacion despausada
+[INFO] 12:15:50:299 KERNEL/(4030:4031): lista ordenada: 
+[INFO] 12:15:50:299 KERNEL/(4030:4031): estimacion: 20000 inicio rafaga: 1658589349
+[INFO] 12:15:50:299 KERNEL/(4030:4031): estimacion: 20000 inicio rafaga: 1658589329
+[INFO] 12:15:50:300 KERNEL/(4030:4031): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:15:52:305 KERNEL/(4030:4032): La CPU envio un pcb con estado finalizado
+[INFO] 12:15:52:305 KERNEL/(4030:4032): El socket que recibi es 10
+[INFO] 12:15:52:306 KERNEL/(4030:4032): El proceso 1 finalizo correctamente
+[INFO] 12:15:52:306 KERNEL/(4030:4031): Planificacion despausada
+[INFO] 12:15:52:306 KERNEL/(4030:4031): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:15:55:313 KERNEL/(4030:4032): La CPU envio un pcb con estado finalizado
+[INFO] 12:15:55:313 KERNEL/(4030:4032): El socket que recibi es 9
+[INFO] 12:15:55:314 KERNEL/(4030:4032): El proceso 0 finalizo correctamente
+[INFO] 12:15:55:314 KERNEL/(4030:4031): Planificacion despausada
+[INFO] 12:20:48:656 KERNEL/(4050:4050): Kernel listo para recibir al cliente
+[INFO] 12:20:48:659 KERNEL/(4050:4050): conectado a memoria
+[ERROR] 12:20:48:661 KERNEL/(4050:4052): Se desconecto el cliente
+[INFO] 12:20:48:661 KERNEL/(4050:4051): Se inicio la planificacion SRT
+[INFO] 12:20:48:662 KERNEL/(4050:4051): Inicio la planificacion IO
+[INFO] 12:20:48:662 KERNEL/(4050:4051): Planificacion despausada
+[INFO] 12:21:34:600 KERNEL/(4090:4090): alfa: 0
+[INFO] 12:21:34:600 KERNEL/(4090:4090): Kernel listo para recibir al cliente
+[INFO] 12:21:34:603 KERNEL/(4090:4090): conectado a memoria
+[ERROR] 12:21:34:605 KERNEL/(4090:4092): Se desconecto el cliente
+[INFO] 12:21:34:605 KERNEL/(4090:4091): Se inicio la planificacion SRT
+[INFO] 12:21:34:606 KERNEL/(4090:4091): Inicio la planificacion IO
+[INFO] 12:21:34:606 KERNEL/(4090:4091): Planificacion despausada
+[INFO] 12:24:48:030 KERNEL/(4137:4137): alfa: 0
+[INFO] 12:24:48:030 KERNEL/(4137:4137): Kernel listo para recibir al cliente
+[INFO] 12:24:48:032 KERNEL/(4137:4137): conectado a memoria
+[ERROR] 12:24:48:034 KERNEL/(4137:4139): Se desconecto el cliente
+[INFO] 12:24:48:035 KERNEL/(4137:4138): Se inicio la planificacion SRT
+[INFO] 12:24:48:035 KERNEL/(4137:4138): Inicio la planificacion IO
+[INFO] 12:24:48:036 KERNEL/(4137:4138): Planificacion despausada
+[INFO] 12:25:43:917 KERNEL/(4175:4175): alfa: 0.500000
+[INFO] 12:25:43:918 KERNEL/(4175:4175): Kernel listo para recibir al cliente
+[INFO] 12:25:43:920 KERNEL/(4175:4175): conectado a memoria
+[ERROR] 12:25:43:922 KERNEL/(4175:4177): Se desconecto el cliente
+[INFO] 12:25:43:923 KERNEL/(4175:4176): Se inicio la planificacion SRT
+[INFO] 12:25:43:923 KERNEL/(4175:4176): Inicio la planificacion IO
+[INFO] 12:25:43:924 KERNEL/(4175:4176): Planificacion despausada
+[INFO] 12:26:16:428 KERNEL/(4181:4181): alfa: 0.500000
+[INFO] 12:26:16:429 KERNEL/(4181:4181): Kernel listo para recibir al cliente
+[INFO] 12:26:16:431 KERNEL/(4181:4181): conectado a memoria
+[INFO] 12:26:16:434 KERNEL/(4181:4182): Se inicio la planificacion SRT
+[INFO] 12:26:16:434 KERNEL/(4181:4182): Inicio la planificacion IO
+[INFO] 12:26:16:434 KERNEL/(4181:4182): Planificacion despausada
+[INFO] 12:26:19:825 KERNEL/(4181:4181): Conexion consola: 9
+[INFO] 12:26:19:826 KERNEL/(4181:4187): Tamaño recibido: 100
+[INFO] 12:26:19:826 KERNEL/(4181:4187): Proceso 0 asignado a la cola NEW
+[INFO] 12:26:19:827 KERNEL/(4181:4186): paso post
+[INFO] 12:26:19:828 KERNEL/(4181:4186): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 12:26:19:828 KERNEL/(4181:4186): El proceso 0 fue asignado a la cola READY
+[INFO] 12:26:19:828 KERNEL/(4181:4182): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:26:20:120 KERNEL/(4181:4181): Conexion consola: 10
+[INFO] 12:26:20:120 KERNEL/(4181:4188): Tamaño recibido: 100
+[INFO] 12:26:20:121 KERNEL/(4181:4188): Proceso 1 asignado a la cola NEW
+[INFO] 12:26:20:121 KERNEL/(4181:4186): paso post
+[INFO] 12:26:20:122 KERNEL/(4181:4186): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 12:26:20:122 KERNEL/(4181:4186):    Se solicito interrupcion
+[INFO] 12:26:20:122 KERNEL/(4181:4186): El proceso 1 fue asignado a la cola READY
+[INFO] 12:26:20:384 KERNEL/(4181:4181): Conexion consola: 11
+[INFO] 12:26:20:384 KERNEL/(4181:4189): Tamaño recibido: 100
+[INFO] 12:26:20:385 KERNEL/(4181:4189): Proceso 2 asignado a la cola NEW
+[INFO] 12:26:20:837 KERNEL/(4181:4183): Un proceso fue interrumpido
+[INFO] 12:26:20:838 KERNEL/(4181:4183): El proceso 0 fue asignado a la cola READY
+[INFO] 12:26:20:838 KERNEL/(4181:4182): Planificacion despausada
+[INFO] 12:26:20:838 KERNEL/(4181:4182): lista ordenada: 
+[INFO] 12:26:20:838 KERNEL/(4181:4182): estimacion: 20000 inicio rafaga: 23
+[INFO] 12:26:20:838 KERNEL/(4181:4182): estimacion: 10000 inicio rafaga: 1658589979
+[INFO] 12:26:20:838 KERNEL/(4181:4182): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:26:23:845 KERNEL/(4181:4183): Codigo BLOQUEO_IO recibido
+[WARNING] 12:26:23:845 KERNEL/(4181:4183): program counter: 4
+[INFO] 12:26:23:845 KERNEL/(4181:4183): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 12:26:23:845 KERNEL/(4181:4183): Tiempo de bloqueo: 5000
+[INFO] 12:26:23:846 KERNEL/(4181:4183): Inicio de bloqueo: 1658589983
+[INFO] 12:26:23:846 KERNEL/(4181:4183): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 12:26:23:846 KERNEL/(4181:4184): El proceso 1 inicio su I/0
+[INFO] 12:26:23:846 KERNEL/(4181:4182): Planificacion despausada
+[INFO] 12:26:23:846 KERNEL/(4181:4182): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:26:25:852 KERNEL/(4181:4183): Codigo BLOQUEO_IO recibido
+[WARNING] 12:26:25:852 KERNEL/(4181:4183): program counter: 4
+[INFO] 12:26:25:853 KERNEL/(4181:4183): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 12:26:25:853 KERNEL/(4181:4183): Tiempo de bloqueo: 13000
+[INFO] 12:26:25:853 KERNEL/(4181:4183): Inicio de bloqueo: 1658589985
+[INFO] 12:26:25:853 KERNEL/(4181:4183): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 12:26:25:853 KERNEL/(4181:4182): Planificacion despausada
+[INFO] 12:26:28:846 KERNEL/(4181:4184): El proceso 1 finalizo su I/0
+[INFO] 12:26:28:846 KERNEL/(4181:4184): El proceso 1 fue asignado a la cola READY
+[INFO] 12:26:28:847 KERNEL/(4181:4182): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:26:28:847 KERNEL/(4181:4184):    Se solicito interrupcion
+[INFO] 12:26:28:847 KERNEL/(4181:4184): Se paso el proceso 1 de bloqueado a ready
+[INFO] 12:26:28:847 KERNEL/(4181:4184): El proceso 0 inicio su I/0
+[INFO] 12:26:29:854 KERNEL/(4181:4183): Un proceso fue interrumpido
+[INFO] 12:26:29:855 KERNEL/(4181:4183): El proceso 1 fue asignado a la cola READY
+[INFO] 12:26:29:855 KERNEL/(4181:4182): Planificacion despausada
+[INFO] 12:26:29:855 KERNEL/(4181:4182): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:26:31:861 KERNEL/(4181:4183): La CPU envio un pcb con estado finalizado
+[INFO] 12:26:31:861 KERNEL/(4181:4183): El socket que recibi es 10
+[INFO] 12:26:31:861 KERNEL/(4181:4186): paso post
+[INFO] 12:26:31:861 KERNEL/(4181:4183): El proceso 1 finalizo correctamente
+[INFO] 12:26:31:862 KERNEL/(4181:4182): Planificacion despausada
+[INFO] 12:26:31:903 KERNEL/(4181:4186): Se asignó el numero de tabla: 2 al proceso de id: 2
+
+[INFO] 12:26:31:903 KERNEL/(4181:4186): El proceso 2 fue asignado a la cola READY
+[INFO] 12:26:31:903 KERNEL/(4181:4182): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:26:41:847 KERNEL/(4181:4184): El proceso 0 finalizo su I/0
+[INFO] 12:26:41:848 KERNEL/(4181:4184): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 12:26:41:848 KERNEL/(4181:4185):    Se solicito interrupcion
+[INFO] 12:26:41:848 KERNEL/(4181:4185): El proceso 0 fue asignado a la cola READY
+[INFO] 12:26:41:848 KERNEL/(4181:4185):    Se solicito interrupcion
+[INFO] 12:26:41:915 KERNEL/(4181:4183): Un proceso fue interrumpido
+[INFO] 12:26:41:915 KERNEL/(4181:4183): El proceso 2 fue asignado a la cola READY
+[INFO] 12:26:41:915 KERNEL/(4181:4182): Planificacion despausada
+[INFO] 12:26:41:915 KERNEL/(4181:4182): lista ordenada: 
+[INFO] 12:26:41:915 KERNEL/(4181:4182): estimacion: 10005 inicio rafaga: 1658589991
+[INFO] 12:26:41:915 KERNEL/(4181:4182): estimacion: 5001 inicio rafaga: 1658589983
+[INFO] 12:26:41:915 KERNEL/(4181:4182): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:26:41:916 KERNEL/(4181:4183): La CPU envio un pcb con estado finalizado
+[INFO] 12:26:41:916 KERNEL/(4181:4183): El socket que recibi es 11
+[INFO] 12:26:41:916 KERNEL/(4181:4183): El proceso 2 finalizo correctamente
+[INFO] 12:26:41:917 KERNEL/(4181:4182): Planificacion despausada
+[INFO] 12:26:41:917 KERNEL/(4181:4182): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:26:44:922 KERNEL/(4181:4183): La CPU envio un pcb con estado finalizado
+[INFO] 12:26:44:922 KERNEL/(4181:4183): El socket que recibi es 9
+[INFO] 12:26:44:922 KERNEL/(4181:4183): El proceso 0 finalizo correctamente
+[INFO] 12:26:44:923 KERNEL/(4181:4182): Planificacion despausada
+[INFO] 12:28:33:131 KERNEL/(4224:4224): alfa: 0.500000
+[INFO] 12:28:33:131 KERNEL/(4224:4224): Kernel listo para recibir al cliente
+[INFO] 12:28:33:134 KERNEL/(4224:4224): conectado a memoria
+[INFO] 12:28:33:136 KERNEL/(4224:4225): Se inicio la planificacion SRT
+[INFO] 12:28:33:137 KERNEL/(4224:4225): Inicio la planificacion IO
+[INFO] 12:28:33:137 KERNEL/(4224:4225): Planificacion despausada
+[INFO] 12:28:35:135 KERNEL/(4224:4224): Conexion consola: 9
+[INFO] 12:28:35:136 KERNEL/(4224:4230): Tamaño recibido: 100
+[INFO] 12:28:35:136 KERNEL/(4224:4230): Proceso 0 asignado a la cola NEW
+[INFO] 12:28:35:137 KERNEL/(4224:4229): paso post
+[INFO] 12:28:35:138 KERNEL/(4224:4229): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 12:28:35:138 KERNEL/(4224:4229): El proceso 0 fue asignado a la cola READY
+[INFO] 12:28:35:138 KERNEL/(4224:4225): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:28:35:551 KERNEL/(4224:4224): Conexion consola: 10
+[INFO] 12:28:35:551 KERNEL/(4224:4231): Tamaño recibido: 100
+[INFO] 12:28:35:552 KERNEL/(4224:4231): Proceso 1 asignado a la cola NEW
+[INFO] 12:28:35:552 KERNEL/(4224:4229): paso post
+[INFO] 12:28:35:553 KERNEL/(4224:4229): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 12:28:35:553 KERNEL/(4224:4229):    Se solicito interrupcion
+[INFO] 12:28:35:553 KERNEL/(4224:4229): El proceso 1 fue asignado a la cola READY
+[INFO] 12:28:35:999 KERNEL/(4224:4224): Conexion consola: 11
+[INFO] 12:28:35:999 KERNEL/(4224:4232): Tamaño recibido: 100
+[INFO] 12:28:36:000 KERNEL/(4224:4232): Proceso 2 asignado a la cola NEW
+[INFO] 12:28:36:144 KERNEL/(4224:4226): Un proceso fue interrumpido
+[INFO] 12:28:36:144 KERNEL/(4224:4226): El proceso 0 fue asignado a la cola READY
+[INFO] 12:28:36:144 KERNEL/(4224:4225): Planificacion despausada
+[INFO] 12:28:36:144 KERNEL/(4224:4225): lista ordenada: 
+[INFO] 12:28:36:144 KERNEL/(4224:4225): estimacion: 10000 inicio rafaga: 1658590115
+[INFO] 12:28:36:144 KERNEL/(4224:4225): estimacion: 20000 inicio rafaga: 23
+[INFO] 12:28:36:145 KERNEL/(4224:4225): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:28:38:151 KERNEL/(4224:4226): Codigo BLOQUEO_IO recibido
+[WARNING] 12:28:38:152 KERNEL/(4224:4226): program counter: 4
+[INFO] 12:28:38:152 KERNEL/(4224:4226): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 12:28:38:152 KERNEL/(4224:4226): Tiempo de bloqueo: 13000
+[INFO] 12:28:38:152 KERNEL/(4224:4226): Inicio de bloqueo: 1658590118
+[INFO] 12:28:38:152 KERNEL/(4224:4226): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 12:28:38:152 KERNEL/(4224:4227): El proceso 0 inicio su I/0
+[INFO] 12:28:38:152 KERNEL/(4224:4225): Planificacion despausada
+[INFO] 12:28:38:152 KERNEL/(4224:4225): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:28:41:158 KERNEL/(4224:4226): Codigo BLOQUEO_IO recibido
+[WARNING] 12:28:41:158 KERNEL/(4224:4226): program counter: 4
+[INFO] 12:28:41:158 KERNEL/(4224:4226): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 12:28:41:159 KERNEL/(4224:4226): Tiempo de bloqueo: 5000
+[INFO] 12:28:41:159 KERNEL/(4224:4226): Inicio de bloqueo: 1658590121
+[INFO] 12:28:41:159 KERNEL/(4224:4226): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 12:28:41:159 KERNEL/(4224:4225): Planificacion despausada
+[INFO] 12:28:46:152 KERNEL/(4224:4229): paso post
+[INFO] 12:28:46:155 KERNEL/(4224:4229): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 12:28:46:155 KERNEL/(4224:4229): El proceso 2 fue asignado a la cola READY
+[INFO] 12:28:46:155 KERNEL/(4224:4225): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:28:51:152 KERNEL/(4224:4227): El proceso 0 finalizo su I/0
+[INFO] 12:28:51:152 KERNEL/(4224:4227): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 12:28:51:153 KERNEL/(4224:4228):    Se solicito interrupcion
+[INFO] 12:28:51:153 KERNEL/(4224:4227): El proceso 1 inicio su I/0
+[INFO] 12:28:51:153 KERNEL/(4224:4228): El proceso 0 fue asignado a la cola READY
+[INFO] 12:28:51:153 KERNEL/(4224:4228):    Se solicito interrupcion
+[INFO] 12:28:51:166 KERNEL/(4224:4226): Un proceso fue interrumpido
+[INFO] 12:28:51:166 KERNEL/(4224:4226): El proceso 2 fue asignado a la cola READY
+[INFO] 12:28:51:166 KERNEL/(4224:4225): Planificacion despausada
+[INFO] 12:28:51:166 KERNEL/(4224:4225): lista ordenada: 
+[INFO] 12:28:51:166 KERNEL/(4224:4225): estimacion: 5001 inicio rafaga: 1658590116
+[INFO] 12:28:51:166 KERNEL/(4224:4225): estimacion: 10002 inicio rafaga: 1658590126
+[INFO] 12:28:51:166 KERNEL/(4224:4225): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:28:54:173 KERNEL/(4224:4226): La CPU envio un pcb con estado finalizado
+[INFO] 12:28:54:173 KERNEL/(4224:4226): El socket que recibi es 9
+[INFO] 12:28:54:173 KERNEL/(4224:4226): El proceso 0 finalizo correctamente
+[INFO] 12:28:54:173 KERNEL/(4224:4225): Planificacion despausada
+[INFO] 12:28:54:174 KERNEL/(4224:4225): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:28:56:153 KERNEL/(4224:4227): El proceso 1 finalizo su I/0
+[INFO] 12:28:56:153 KERNEL/(4224:4227): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 12:28:56:153 KERNEL/(4224:4228):    Se solicito interrupcion
+[INFO] 12:28:56:154 KERNEL/(4224:4228): El proceso 1 fue asignado a la cola READY
+[INFO] 12:28:56:154 KERNEL/(4224:4228):    Se solicito interrupcion
+[INFO] 12:28:56:179 KERNEL/(4224:4226): Un proceso fue interrumpido
+[INFO] 12:28:56:179 KERNEL/(4224:4226): El proceso 2 fue asignado a la cola READY
+[INFO] 12:28:56:179 KERNEL/(4224:4225): Planificacion despausada
+[INFO] 12:28:56:179 KERNEL/(4224:4225): lista ordenada: 
+[INFO] 12:28:56:179 KERNEL/(4224:4225): estimacion: 5002 inicio rafaga: 1658590134
+[INFO] 12:28:56:179 KERNEL/(4224:4225): estimacion: 10001 inicio rafaga: 1658590118
+[INFO] 12:28:56:180 KERNEL/(4224:4225): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:28:59:184 KERNEL/(4224:4226): La CPU envio un pcb con estado finalizado
+[INFO] 12:28:59:184 KERNEL/(4224:4226): El socket que recibi es 11
+[INFO] 12:28:59:184 KERNEL/(4224:4226): El proceso 2 finalizo correctamente
+[INFO] 12:28:59:184 KERNEL/(4224:4225): Planificacion despausada
+[INFO] 12:28:59:184 KERNEL/(4224:4225): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:29:02:192 KERNEL/(4224:4226): La CPU envio un pcb con estado finalizado
+[INFO] 12:29:02:192 KERNEL/(4224:4226): El socket que recibi es 10
+[INFO] 12:29:02:193 KERNEL/(4224:4226): El proceso 1 finalizo correctamente
+[INFO] 12:29:02:193 KERNEL/(4224:4225): Planificacion despausada
+[INFO] 12:30:24:697 KERNEL/(4267:4267): alfa: 0.500000
+[INFO] 12:30:24:698 KERNEL/(4267:4267): Kernel listo para recibir al cliente
+[INFO] 12:30:24:701 KERNEL/(4267:4267): conectado a memoria
+[INFO] 12:30:24:703 KERNEL/(4267:4268): Se inicio la planificacion SRT
+[INFO] 12:30:24:703 KERNEL/(4267:4268): Inicio la planificacion IO
+[INFO] 12:30:24:704 KERNEL/(4267:4268): Planificacion despausada
+[INFO] 12:30:25:934 KERNEL/(4267:4267): Conexion consola: 9
+[INFO] 12:30:25:935 KERNEL/(4267:4273): Tamaño recibido: 100
+[INFO] 12:30:25:935 KERNEL/(4267:4273): Proceso 0 asignado a la cola NEW
+[INFO] 12:30:25:936 KERNEL/(4267:4272): paso post
+[INFO] 12:30:25:938 KERNEL/(4267:4272): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 12:30:25:938 KERNEL/(4267:4272): El proceso 0 fue asignado a la cola READY
+[INFO] 12:30:25:938 KERNEL/(4267:4268): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:30:26:343 KERNEL/(4267:4267): Conexion consola: 10
+[INFO] 12:30:26:344 KERNEL/(4267:4274): Tamaño recibido: 100
+[INFO] 12:30:26:344 KERNEL/(4267:4274): Proceso 1 asignado a la cola NEW
+[INFO] 12:30:26:344 KERNEL/(4267:4272): paso post
+[INFO] 12:30:26:346 KERNEL/(4267:4272): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 12:30:26:346 KERNEL/(4267:4272):    Se solicito interrupcion
+[INFO] 12:30:26:346 KERNEL/(4267:4272): El proceso 1 fue asignado a la cola READY
+[INFO] 12:30:26:638 KERNEL/(4267:4267): Conexion consola: 11
+[INFO] 12:30:26:639 KERNEL/(4267:4275): Tamaño recibido: 100
+[INFO] 12:30:26:639 KERNEL/(4267:4275): Proceso 2 asignado a la cola NEW
+[INFO] 12:30:26:945 KERNEL/(4267:4269): Un proceso fue interrumpido
+[INFO] 12:30:26:945 KERNEL/(4267:4269): El proceso 0 fue asignado a la cola READY
+[INFO] 12:30:26:945 KERNEL/(4267:4268): Planificacion despausada
+[INFO] 12:30:26:945 KERNEL/(4267:4268): lista ordenada: 
+[INFO] 12:30:26:945 KERNEL/(4267:4268): estimacion: 10000 inicio rafaga: 1658590225
+[INFO] 12:30:26:945 KERNEL/(4267:4268): estimacion: 20000 inicio rafaga: 23
+[INFO] 12:30:26:945 KERNEL/(4267:4268): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:30:28:952 KERNEL/(4267:4269): Codigo BLOQUEO_IO recibido
+[WARNING] 12:30:28:952 KERNEL/(4267:4269): program counter: 4
+[INFO] 12:30:28:952 KERNEL/(4267:4269): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 12:30:28:952 KERNEL/(4267:4269): Tiempo de bloqueo: 13000
+[INFO] 12:30:28:952 KERNEL/(4267:4269): Inicio de bloqueo: 1658590228
+[INFO] 12:30:28:952 KERNEL/(4267:4269): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 12:30:28:952 KERNEL/(4267:4270): El proceso 0 inicio su I/0
+[INFO] 12:30:28:952 KERNEL/(4267:4268): Planificacion despausada
+[INFO] 12:30:28:953 KERNEL/(4267:4268): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:30:31:959 KERNEL/(4267:4269): Codigo BLOQUEO_IO recibido
+[WARNING] 12:30:31:959 KERNEL/(4267:4269): program counter: 4
+[INFO] 12:30:31:959 KERNEL/(4267:4269): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 12:30:31:959 KERNEL/(4267:4269): Tiempo de bloqueo: 5000
+[INFO] 12:30:31:959 KERNEL/(4267:4269): Inicio de bloqueo: 1658590231
+[INFO] 12:30:31:959 KERNEL/(4267:4269): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 12:30:31:959 KERNEL/(4267:4268): Planificacion despausada
+[INFO] 12:30:36:953 KERNEL/(4267:4272): paso post
+[INFO] 12:30:36:955 KERNEL/(4267:4272): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 12:30:36:955 KERNEL/(4267:4272): El proceso 2 fue asignado a la cola READY
+[INFO] 12:30:36:956 KERNEL/(4267:4268): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:30:41:953 KERNEL/(4267:4270): El proceso 0 finalizo su I/0
+[INFO] 12:30:41:953 KERNEL/(4267:4270): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 12:30:41:953 KERNEL/(4267:4271):    Se solicito interrupcion
+[INFO] 12:30:41:953 KERNEL/(4267:4270): El proceso 1 inicio su I/0
+[INFO] 12:30:41:953 KERNEL/(4267:4271): El proceso 0 fue asignado a la cola READY
+[INFO] 12:30:41:953 KERNEL/(4267:4271):    Se solicito interrupcion
+[INFO] 12:30:41:962 KERNEL/(4267:4269): Un proceso fue interrumpido
+[INFO] 12:30:41:962 KERNEL/(4267:4269): El proceso 2 fue asignado a la cola READY
+[INFO] 12:30:41:962 KERNEL/(4267:4268): Planificacion despausada
+[INFO] 12:30:41:962 KERNEL/(4267:4268): lista ordenada: 
+[INFO] 12:30:41:962 KERNEL/(4267:4268): estimacion: 5001 inicio rafaga: 1658590226
+[INFO] 12:30:41:962 KERNEL/(4267:4268): estimacion: 10002 inicio rafaga: 1658590236
+[INFO] 12:30:41:963 KERNEL/(4267:4268): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:30:44:968 KERNEL/(4267:4269): La CPU envio un pcb con estado finalizado
+[INFO] 12:30:44:968 KERNEL/(4267:4269): El socket que recibi es 9
+[INFO] 12:30:44:969 KERNEL/(4267:4269): El proceso 0 finalizo correctamente
+[INFO] 12:30:44:969 KERNEL/(4267:4268): Planificacion despausada
+[INFO] 12:30:44:969 KERNEL/(4267:4268): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:30:46:953 KERNEL/(4267:4270): El proceso 1 finalizo su I/0
+[INFO] 12:30:46:953 KERNEL/(4267:4270): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 12:30:46:953 KERNEL/(4267:4271):    Se solicito interrupcion
+[INFO] 12:30:46:953 KERNEL/(4267:4271): El proceso 1 fue asignado a la cola READY
+[INFO] 12:30:46:954 KERNEL/(4267:4271):    Se solicito interrupcion
+[INFO] 12:30:46:974 KERNEL/(4267:4269): Un proceso fue interrumpido
+[INFO] 12:30:46:974 KERNEL/(4267:4269): El proceso 2 fue asignado a la cola READY
+[INFO] 12:30:46:974 KERNEL/(4267:4268): Planificacion despausada
+[INFO] 12:30:46:974 KERNEL/(4267:4268): lista ordenada: 
+[INFO] 12:30:46:974 KERNEL/(4267:4268): estimacion: 5002 inicio rafaga: 1658590244
+[INFO] 12:30:46:974 KERNEL/(4267:4268): estimacion: 10001 inicio rafaga: 1658590228
+[INFO] 12:30:46:974 KERNEL/(4267:4268): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:30:49:979 KERNEL/(4267:4269): La CPU envio un pcb con estado finalizado
+[INFO] 12:30:49:980 KERNEL/(4267:4269): El socket que recibi es 11
+[INFO] 12:30:49:980 KERNEL/(4267:4269): El proceso 2 finalizo correctamente
+[INFO] 12:30:49:980 KERNEL/(4267:4268): Planificacion despausada
+[INFO] 12:30:49:981 KERNEL/(4267:4268): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:30:52:988 KERNEL/(4267:4269): La CPU envio un pcb con estado finalizado
+[INFO] 12:30:52:989 KERNEL/(4267:4269): El socket que recibi es 10
+[INFO] 12:30:52:989 KERNEL/(4267:4269): El proceso 1 finalizo correctamente
+[INFO] 12:30:52:989 KERNEL/(4267:4268): Planificacion despausada
+[INFO] 12:35:27:966 KERNEL/(4311:4311): alfa: 0.500000
+[INFO] 12:35:27:966 KERNEL/(4311:4311): Kernel listo para recibir al cliente
+[INFO] 12:35:27:968 KERNEL/(4311:4311): conectado a memoria
+[INFO] 12:35:27:970 KERNEL/(4311:4312): Se inicio la planificacion SRT
+[INFO] 12:35:27:971 KERNEL/(4311:4312): Inicio la planificacion IO
+[INFO] 12:35:27:971 KERNEL/(4311:4312): Planificacion despausada
+[INFO] 12:35:31:680 KERNEL/(4311:4311): Conexion consola: 9
+[INFO] 12:35:31:680 KERNEL/(4311:4317): Tamaño recibido: 100
+[INFO] 12:35:31:681 KERNEL/(4311:4317): Proceso 0 asignado a la cola NEW
+[INFO] 12:35:31:681 KERNEL/(4311:4316): paso post
+[INFO] 12:35:31:683 KERNEL/(4311:4316): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 12:35:31:683 KERNEL/(4311:4316): El proceso 0 fue asignado a la cola READY
+[INFO] 12:35:31:683 KERNEL/(4311:4312): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:35:31:932 KERNEL/(4311:4311): Conexion consola: 10
+[INFO] 12:35:31:933 KERNEL/(4311:4318): Tamaño recibido: 100
+[INFO] 12:35:31:933 KERNEL/(4311:4318): Proceso 1 asignado a la cola NEW
+[INFO] 12:35:31:934 KERNEL/(4311:4316): paso post
+[INFO] 12:35:31:935 KERNEL/(4311:4316): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 12:35:31:935 KERNEL/(4311:4316):    Se solicito interrupcion
+[INFO] 12:35:31:935 KERNEL/(4311:4316): El proceso 1 fue asignado a la cola READY
+[INFO] 12:35:32:213 KERNEL/(4311:4311): Conexion consola: 11
+[INFO] 12:35:32:213 KERNEL/(4311:4319): Tamaño recibido: 100
+[INFO] 12:35:32:213 KERNEL/(4311:4319): Proceso 2 asignado a la cola NEW
+[INFO] 12:35:32:690 KERNEL/(4311:4313): Un proceso fue interrumpido
+[INFO] 12:35:32:690 KERNEL/(4311:4313): El proceso 0 fue asignado a la cola READY
+[INFO] 12:35:32:690 KERNEL/(4311:4312): Planificacion despausada
+[INFO] 12:35:32:690 KERNEL/(4311:4312): lista ordenada: 
+[INFO] 12:35:32:690 KERNEL/(4311:4312): estimacion: 10000 inicio rafaga: 1658590531
+[INFO] 12:35:32:691 KERNEL/(4311:4312): estimacion: 20000 inicio rafaga: 23
+[INFO] 12:35:32:691 KERNEL/(4311:4312): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:35:34:699 KERNEL/(4311:4313): Codigo BLOQUEO_IO recibido
+[WARNING] 12:35:34:699 KERNEL/(4311:4313): program counter: 4
+[INFO] 12:35:34:699 KERNEL/(4311:4313): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 12:35:34:699 KERNEL/(4311:4313): Tiempo de bloqueo: 13000
+[INFO] 12:35:34:699 KERNEL/(4311:4313): Inicio de bloqueo: 1658590534
+[INFO] 12:35:34:699 KERNEL/(4311:4313): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 12:35:34:699 KERNEL/(4311:4314): El proceso 0 inicio su I/0
+[INFO] 12:35:34:699 KERNEL/(4311:4312): Planificacion despausada
+[INFO] 12:35:34:699 KERNEL/(4311:4312): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:35:37:707 KERNEL/(4311:4313): Codigo BLOQUEO_IO recibido
+[WARNING] 12:35:37:707 KERNEL/(4311:4313): program counter: 4
+[INFO] 12:35:37:707 KERNEL/(4311:4313): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 12:35:37:707 KERNEL/(4311:4313): Tiempo de bloqueo: 5000
+[INFO] 12:35:37:707 KERNEL/(4311:4313): Inicio de bloqueo: 1658590537
+[INFO] 12:35:37:707 KERNEL/(4311:4313): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 12:35:37:707 KERNEL/(4311:4312): Planificacion despausada
+[INFO] 12:35:42:700 KERNEL/(4311:4316): paso post
+[INFO] 12:35:42:702 KERNEL/(4311:4316): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 12:35:42:702 KERNEL/(4311:4316): El proceso 2 fue asignado a la cola READY
+[INFO] 12:35:42:702 KERNEL/(4311:4312): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:35:47:699 KERNEL/(4311:4314): El proceso 0 finalizo su I/0
+[INFO] 12:35:47:700 KERNEL/(4311:4314): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 12:35:47:700 KERNEL/(4311:4315):    Se solicito interrupcion
+[INFO] 12:35:47:700 KERNEL/(4311:4314): El proceso 1 inicio su I/0
+[INFO] 12:35:47:701 KERNEL/(4311:4315): El proceso 0 fue asignado a la cola READY
+[INFO] 12:35:47:701 KERNEL/(4311:4315):    Se solicito interrupcion
+[INFO] 12:35:47:713 KERNEL/(4311:4313): Un proceso fue interrumpido
+[INFO] 12:35:47:713 KERNEL/(4311:4313): El proceso 2 fue asignado a la cola READY
+[INFO] 12:35:47:713 KERNEL/(4311:4312): Planificacion despausada
+[INFO] 12:35:47:713 KERNEL/(4311:4312): lista ordenada: 
+[INFO] 12:35:47:713 KERNEL/(4311:4312): estimacion: 10000 inicio rafaga: 1658590532
+[INFO] 12:35:47:713 KERNEL/(4311:4312): estimacion: 10002 inicio rafaga: 1658590542
+[INFO] 12:35:47:713 KERNEL/(4311:4312): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:35:50:719 KERNEL/(4311:4313): La CPU envio un pcb con estado finalizado
+[INFO] 12:35:50:720 KERNEL/(4311:4313): El socket que recibi es 9
+[INFO] 12:35:50:720 KERNEL/(4311:4313): El proceso 0 finalizo correctamente
+[INFO] 12:35:50:720 KERNEL/(4311:4312): Planificacion despausada
+[INFO] 12:35:50:720 KERNEL/(4311:4312): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:35:52:701 KERNEL/(4311:4314): El proceso 1 finalizo su I/0
+[INFO] 12:35:52:701 KERNEL/(4311:4314): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 12:35:52:701 KERNEL/(4311:4315):    Se solicito interrupcion
+[INFO] 12:35:52:701 KERNEL/(4311:4315): El proceso 1 fue asignado a la cola READY
+[INFO] 12:35:52:701 KERNEL/(4311:4315):    Se solicito interrupcion
+[INFO] 12:35:52:726 KERNEL/(4311:4313): Un proceso fue interrumpido
+[INFO] 12:35:52:726 KERNEL/(4311:4313): El proceso 2 fue asignado a la cola READY
+[INFO] 12:35:52:726 KERNEL/(4311:4312): Planificacion despausada
+[INFO] 12:35:52:726 KERNEL/(4311:4312): lista ordenada: 
+[INFO] 12:35:52:726 KERNEL/(4311:4312): estimacion: 5002 inicio rafaga: 1658590550
+[INFO] 12:35:52:726 KERNEL/(4311:4312): estimacion: 20000 inicio rafaga: 1658590534
+[INFO] 12:35:52:727 KERNEL/(4311:4312): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:35:55:730 KERNEL/(4311:4313): La CPU envio un pcb con estado finalizado
+[INFO] 12:35:55:730 KERNEL/(4311:4313): El socket que recibi es 11
+[INFO] 12:35:55:731 KERNEL/(4311:4313): El proceso 2 finalizo correctamente
+[INFO] 12:35:55:731 KERNEL/(4311:4312): Planificacion despausada
+[INFO] 12:35:55:731 KERNEL/(4311:4312): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:35:58:737 KERNEL/(4311:4313): La CPU envio un pcb con estado finalizado
+[INFO] 12:35:58:738 KERNEL/(4311:4313): El socket que recibi es 10
+[INFO] 12:35:58:738 KERNEL/(4311:4313): El proceso 1 finalizo correctamente
+[INFO] 12:35:58:738 KERNEL/(4311:4312): Planificacion despausada
+[INFO] 12:43:20:561 KERNEL/(4358:4358): alfa: 0.500000
+[INFO] 12:43:20:561 KERNEL/(4358:4358): Kernel listo para recibir al cliente
+[INFO] 12:43:20:563 KERNEL/(4358:4358): conectado a memoria
+[INFO] 12:43:20:565 KERNEL/(4358:4359): Se inicio la planificacion SRT
+[INFO] 12:43:20:566 KERNEL/(4358:4359): Inicio la planificacion IO
+[INFO] 12:43:20:566 KERNEL/(4358:4359): Planificacion despausada
+[INFO] 12:43:25:353 KERNEL/(4358:4358): Conexion consola: 9
+[INFO] 12:43:25:354 KERNEL/(4358:4364): Tamaño recibido: 100
+[INFO] 12:43:25:354 KERNEL/(4358:4364): Proceso 0 asignado a la cola NEW
+[INFO] 12:43:25:354 KERNEL/(4358:4363): paso post
+[INFO] 12:43:25:355 KERNEL/(4358:4363): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 12:43:25:355 KERNEL/(4358:4363): El proceso 0 fue asignado a la cola READY
+[INFO] 12:43:25:355 KERNEL/(4358:4359): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:43:25:689 KERNEL/(4358:4358): Conexion consola: 10
+[INFO] 12:43:25:689 KERNEL/(4358:4365): Tamaño recibido: 100
+[INFO] 12:43:25:689 KERNEL/(4358:4365): Proceso 1 asignado a la cola NEW
+[INFO] 12:43:25:689 KERNEL/(4358:4363): paso post
+[INFO] 12:43:25:690 KERNEL/(4358:4363): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 12:43:25:691 KERNEL/(4358:4363):    Se solicito interrupcion
+[INFO] 12:43:25:691 KERNEL/(4358:4363): El proceso 1 fue asignado a la cola READY
+[INFO] 12:43:25:977 KERNEL/(4358:4358): Conexion consola: 11
+[INFO] 12:43:25:978 KERNEL/(4358:4366): Tamaño recibido: 100
+[INFO] 12:43:25:978 KERNEL/(4358:4366): Proceso 2 asignado a la cola NEW
+[INFO] 12:43:26:362 KERNEL/(4358:4360): Un proceso fue interrumpido
+[INFO] 12:43:26:362 KERNEL/(4358:4360): El proceso 0 fue asignado a la cola READY
+[INFO] 12:43:26:362 KERNEL/(4358:4359): Planificacion despausada
+[INFO] 12:43:26:362 KERNEL/(4358:4359): lista ordenada: 
+[INFO] 12:43:26:362 KERNEL/(4358:4359): estimacion: 10000 inicio rafaga: 1658591005
+[INFO] 12:43:26:362 KERNEL/(4358:4359): estimacion: 20000 inicio rafaga: 23
+[INFO] 12:43:26:362 KERNEL/(4358:4359): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:43:28:369 KERNEL/(4358:4360): Codigo BLOQUEO_IO recibido
+[WARNING] 12:43:28:369 KERNEL/(4358:4360): program counter: 4
+[INFO] 12:43:28:370 KERNEL/(4358:4360): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 12:43:28:370 KERNEL/(4358:4360): Tiempo de bloqueo: 13000
+[INFO] 12:43:28:370 KERNEL/(4358:4360): Inicio de bloqueo: 1658591008
+[INFO] 12:43:28:370 KERNEL/(4358:4360): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 12:43:28:370 KERNEL/(4358:4361): El proceso 0 inicio su I/0
+[INFO] 12:43:28:370 KERNEL/(4358:4359): Planificacion despausada
+[INFO] 12:43:28:370 KERNEL/(4358:4359): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:43:31:377 KERNEL/(4358:4360): Codigo BLOQUEO_IO recibido
+[WARNING] 12:43:31:377 KERNEL/(4358:4360): program counter: 4
+[INFO] 12:43:31:378 KERNEL/(4358:4360): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 12:43:31:378 KERNEL/(4358:4360): Tiempo de bloqueo: 5000
+[INFO] 12:43:31:378 KERNEL/(4358:4360): Inicio de bloqueo: 1658591011
+[INFO] 12:43:31:378 KERNEL/(4358:4360): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 12:43:31:378 KERNEL/(4358:4359): Planificacion despausada
+[INFO] 12:43:36:371 KERNEL/(4358:4363): paso post
+[INFO] 12:43:36:372 KERNEL/(4358:4363): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 12:43:36:373 KERNEL/(4358:4363): El proceso 2 fue asignado a la cola READY
+[INFO] 12:43:36:373 KERNEL/(4358:4359): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:43:41:370 KERNEL/(4358:4361): El proceso 0 finalizo su I/0
+[INFO] 12:43:41:370 KERNEL/(4358:4361): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 12:43:41:370 KERNEL/(4358:4362):    Se solicito interrupcion
+[INFO] 12:43:41:370 KERNEL/(4358:4361): El proceso 1 inicio su I/0
+[INFO] 12:43:41:370 KERNEL/(4358:4362): El proceso 0 fue asignado a la cola READY
+[INFO] 12:43:41:370 KERNEL/(4358:4362):    Se solicito interrupcion
+[INFO] 12:43:41:383 KERNEL/(4358:4360): Un proceso fue interrumpido
+[INFO] 12:43:41:383 KERNEL/(4358:4360): El proceso 2 fue asignado a la cola READY
+[INFO] 12:43:41:383 KERNEL/(4358:4359): Planificacion despausada
+[INFO] 12:43:41:383 KERNEL/(4358:4359): lista ordenada: 
+[INFO] 12:43:41:383 KERNEL/(4358:4359): estimacion: 10000 inicio rafaga: 1658591006
+[INFO] 12:43:41:383 KERNEL/(4358:4359): estimacion: 10002 inicio rafaga: 1658591016
+[INFO] 12:43:41:383 KERNEL/(4358:4359): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 12:43:44:390 KERNEL/(4358:4360): La CPU envio un pcb con estado finalizado
+[INFO] 12:43:44:390 KERNEL/(4358:4360): El socket que recibi es 9
+[INFO] 12:43:44:390 KERNEL/(4358:4360): El proceso 0 finalizo correctamente
+[INFO] 12:43:44:391 KERNEL/(4358:4359): Planificacion despausada
+[INFO] 12:43:44:391 KERNEL/(4358:4359): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:43:46:371 KERNEL/(4358:4361): El proceso 1 finalizo su I/0
+[INFO] 12:43:46:371 KERNEL/(4358:4361): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 12:43:46:371 KERNEL/(4358:4362):    Se solicito interrupcion
+[INFO] 12:43:46:372 KERNEL/(4358:4362): El proceso 1 fue asignado a la cola READY
+[INFO] 12:43:46:372 KERNEL/(4358:4362):    Se solicito interrupcion
+[INFO] 12:43:46:396 KERNEL/(4358:4360): Un proceso fue interrumpido
+[INFO] 12:43:46:397 KERNEL/(4358:4360): El proceso 2 fue asignado a la cola READY
+[INFO] 12:43:46:397 KERNEL/(4358:4359): Planificacion despausada
+[INFO] 12:43:46:397 KERNEL/(4358:4359): lista ordenada: 
+[INFO] 12:43:46:397 KERNEL/(4358:4359): estimacion: 5002 inicio rafaga: 1658591024
+[INFO] 12:43:46:397 KERNEL/(4358:4359): estimacion: 20000 inicio rafaga: 1658591008
+[INFO] 12:43:46:397 KERNEL/(4358:4359): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 12:43:49:404 KERNEL/(4358:4360): La CPU envio un pcb con estado finalizado
+[INFO] 12:43:49:404 KERNEL/(4358:4360): El socket que recibi es 11
+[INFO] 12:43:49:404 KERNEL/(4358:4360): El proceso 2 finalizo correctamente
+[INFO] 12:43:49:405 KERNEL/(4358:4359): Planificacion despausada
+[INFO] 12:43:49:405 KERNEL/(4358:4359): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 12:43:52:412 KERNEL/(4358:4360): La CPU envio un pcb con estado finalizado
+[INFO] 12:43:52:412 KERNEL/(4358:4360): El socket que recibi es 10
+[INFO] 12:43:52:412 KERNEL/(4358:4360): El proceso 1 finalizo correctamente
+[INFO] 12:43:52:413 KERNEL/(4358:4359): Planificacion despausada
+[INFO] 12:44:48:753 KERNEL/(4358:4358): Conexion consola: 12
+[INFO] 12:44:48:754 KERNEL/(4358:4369): Tamaño recibido: 100
+[INFO] 12:44:48:754 KERNEL/(4358:4369): Proceso 3 asignado a la cola NEW
+[INFO] 12:44:48:754 KERNEL/(4358:4363): paso post
+[INFO] 12:44:48:755 KERNEL/(4358:4363): Se asignó el numero de tabla: 2 al proceso de id: 3
+
+[INFO] 12:44:48:755 KERNEL/(4358:4363): El proceso 3 fue asignado a la cola READY
+[INFO] 12:44:48:755 KERNEL/(4358:4359): Se paso el proceso 3 de Ready a Ejecutando
+[INFO] 12:44:49:034 KERNEL/(4358:4358): Conexion consola: 13
+[INFO] 12:44:49:034 KERNEL/(4358:4370): Tamaño recibido: 100
+[INFO] 12:44:49:035 KERNEL/(4358:4370): Proceso 4 asignado a la cola NEW
+[INFO] 12:44:49:035 KERNEL/(4358:4363): paso post
+[INFO] 12:44:49:035 KERNEL/(4358:4363): Se asignó el numero de tabla: 0 al proceso de id: 4
+
+[INFO] 12:44:49:035 KERNEL/(4358:4363):    Se solicito interrupcion
+[INFO] 12:44:49:036 KERNEL/(4358:4363): El proceso 4 fue asignado a la cola READY
+[INFO] 12:44:49:329 KERNEL/(4358:4358): Conexion consola: 14
+[INFO] 12:44:49:329 KERNEL/(4358:4371): Tamaño recibido: 100
+[INFO] 12:44:49:329 KERNEL/(4358:4371): Proceso 5 asignado a la cola NEW
+[INFO] 12:44:49:760 KERNEL/(4358:4360): Un proceso fue interrumpido
+[INFO] 12:44:49:760 KERNEL/(4358:4360): El proceso 3 fue asignado a la cola READY
+[INFO] 12:44:49:760 KERNEL/(4358:4359): Planificacion despausada
+[INFO] 12:44:49:760 KERNEL/(4358:4359): lista ordenada: 
+[INFO] 12:44:49:760 KERNEL/(4358:4359): estimacion: 10000 inicio rafaga: 1658591088
+[INFO] 12:44:49:760 KERNEL/(4358:4359): estimacion: 20000 inicio rafaga: 1464159776
+[INFO] 12:44:49:761 KERNEL/(4358:4359): Se paso el proceso 3 de Ready a Ejecutando
+[INFO] 12:44:51:766 KERNEL/(4358:4360): Codigo BLOQUEO_IO recibido
+[WARNING] 12:44:51:766 KERNEL/(4358:4360): program counter: 4
+[INFO] 12:44:51:766 KERNEL/(4358:4360): La cpu envio el proceso 3 con estado Bloqueado por IO
+[INFO] 12:44:51:766 KERNEL/(4358:4360): Tiempo de bloqueo: 13000
+[INFO] 12:44:51:766 KERNEL/(4358:4360): Inicio de bloqueo: 1658591091
+[INFO] 12:44:51:766 KERNEL/(4358:4360): Se agrego el proceso 3 a la cola de bloqueados por I/O
+[INFO] 12:44:51:766 KERNEL/(4358:4361): El proceso 3 inicio su I/0
+[INFO] 12:44:51:766 KERNEL/(4358:4359): Planificacion despausada
+[INFO] 12:44:51:766 KERNEL/(4358:4359): Se paso el proceso 4 de Ready a Ejecutando
+[INFO] 12:44:54:775 KERNEL/(4358:4360): Codigo BLOQUEO_IO recibido
+[WARNING] 12:44:54:775 KERNEL/(4358:4360): program counter: 4
+[INFO] 12:44:54:775 KERNEL/(4358:4360): La cpu envio el proceso 4 con estado Bloqueado por IO
+[INFO] 12:44:54:775 KERNEL/(4358:4360): Tiempo de bloqueo: 5000
+[INFO] 12:44:54:775 KERNEL/(4358:4360): Inicio de bloqueo: 1658591094
+[INFO] 12:44:54:775 KERNEL/(4358:4360): Se agrego el proceso 4 a la cola de bloqueados por I/O
+[INFO] 12:44:54:775 KERNEL/(4358:4359): Planificacion despausada
+[INFO] 12:44:59:767 KERNEL/(4358:4363): paso post
+[INFO] 12:44:59:767 KERNEL/(4358:4363): Se asignó el numero de tabla: 3 al proceso de id: 5
+
+[INFO] 12:44:59:767 KERNEL/(4358:4363): El proceso 5 fue asignado a la cola READY
+[INFO] 12:44:59:767 KERNEL/(4358:4359): Se paso el proceso 5 de Ready a Ejecutando
+[INFO] 12:45:04:766 KERNEL/(4358:4361): El proceso 3 finalizo su I/0
+[INFO] 12:45:04:766 KERNEL/(4358:4361): Se paso el proceso 3 de bloqueado a suspendido-ready
+[INFO] 12:45:04:766 KERNEL/(4358:4362):    Se solicito interrupcion
+[INFO] 12:45:04:766 KERNEL/(4358:4361): El proceso 4 inicio su I/0
+[INFO] 12:45:04:766 KERNEL/(4358:4362): El proceso 3 fue asignado a la cola READY
+[INFO] 12:45:04:767 KERNEL/(4358:4362):    Se solicito interrupcion
+[INFO] 12:45:04:778 KERNEL/(4358:4360): Un proceso fue interrumpido
+[INFO] 12:45:04:778 KERNEL/(4358:4360): El proceso 5 fue asignado a la cola READY
+[INFO] 12:45:04:778 KERNEL/(4358:4359): Planificacion despausada
+[INFO] 12:45:04:778 KERNEL/(4358:4359): lista ordenada: 
+[INFO] 12:45:04:778 KERNEL/(4358:4359): estimacion: 10000 inicio rafaga: 1658591089
+[INFO] 12:45:04:778 KERNEL/(4358:4359): estimacion: 10002 inicio rafaga: 1658591099
+[INFO] 12:45:04:778 KERNEL/(4358:4359): Se paso el proceso 3 de Ready a Ejecutando
+[INFO] 12:45:07:784 KERNEL/(4358:4360): La CPU envio un pcb con estado finalizado
+[INFO] 12:45:07:784 KERNEL/(4358:4360): El socket que recibi es 12
+[INFO] 12:45:07:785 KERNEL/(4358:4360): El proceso 3 finalizo correctamente
+[INFO] 12:45:07:785 KERNEL/(4358:4359): Planificacion despausada
+[INFO] 12:45:07:785 KERNEL/(4358:4359): Se paso el proceso 5 de Ready a Ejecutando
+[INFO] 12:45:09:767 KERNEL/(4358:4361): El proceso 4 finalizo su I/0
+[INFO] 12:45:09:768 KERNEL/(4358:4361): Se paso el proceso 4 de bloqueado a suspendido-ready
+[INFO] 12:45:09:768 KERNEL/(4358:4362):    Se solicito interrupcion
+[INFO] 12:45:09:768 KERNEL/(4358:4362): El proceso 4 fue asignado a la cola READY
+[INFO] 12:45:09:768 KERNEL/(4358:4362):    Se solicito interrupcion
+[INFO] 12:45:09:790 KERNEL/(4358:4360): Un proceso fue interrumpido
+[INFO] 12:45:09:790 KERNEL/(4358:4360): El proceso 5 fue asignado a la cola READY
+[INFO] 12:45:09:790 KERNEL/(4358:4359): Planificacion despausada
+[INFO] 12:45:09:790 KERNEL/(4358:4359): lista ordenada: 
+[INFO] 12:45:09:790 KERNEL/(4358:4359): estimacion: 5002 inicio rafaga: 1658591107
+[INFO] 12:45:09:790 KERNEL/(4358:4359): estimacion: 20000 inicio rafaga: 1658591091
+[INFO] 12:45:09:790 KERNEL/(4358:4359): Se paso el proceso 5 de Ready a Ejecutando
+[INFO] 12:45:12:798 KERNEL/(4358:4360): La CPU envio un pcb con estado finalizado
+[INFO] 12:45:12:799 KERNEL/(4358:4360): El socket que recibi es 14
+[INFO] 12:45:12:799 KERNEL/(4358:4360): El proceso 5 finalizo correctamente
+[INFO] 12:45:12:799 KERNEL/(4358:4359): Planificacion despausada
+[INFO] 12:45:12:799 KERNEL/(4358:4359): Se paso el proceso 4 de Ready a Ejecutando
+[INFO] 12:45:15:807 KERNEL/(4358:4360): La CPU envio un pcb con estado finalizado
+[INFO] 12:45:15:807 KERNEL/(4358:4360): El socket que recibi es 13
+[INFO] 12:45:15:807 KERNEL/(4358:4360): El proceso 4 finalizo correctamente
+[INFO] 12:45:15:808 KERNEL/(4358:4359): Planificacion despausada
+[INFO] 13:24:47:268 KERNEL/(4429:4429): alfa: 0.500000
+[INFO] 13:24:47:268 KERNEL/(4429:4429): Kernel listo para recibir al cliente
+[INFO] 13:24:47:271 KERNEL/(4429:4429): conectado a memoria
+[INFO] 13:24:47:273 KERNEL/(4429:4430): Se inicio la planificacion SRT
+[INFO] 13:24:47:273 KERNEL/(4429:4430): Inicio la planificacion IO
+[INFO] 13:24:47:274 KERNEL/(4429:4430): Planificacion despausada
+[INFO] 13:24:51:026 KERNEL/(4429:4429): Conexion consola: 9
+[INFO] 13:24:51:027 KERNEL/(4429:4435): Tamaño recibido: 100
+[INFO] 13:24:51:027 KERNEL/(4429:4435): Proceso 0 asignado a la cola NEW
+[INFO] 13:24:51:028 KERNEL/(4429:4434): paso post
+[INFO] 13:24:51:029 KERNEL/(4429:4434): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 13:24:51:029 KERNEL/(4429:4434): El proceso 0 fue asignado a la cola READY
+[INFO] 13:24:51:029 KERNEL/(4429:4430): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 13:24:51:370 KERNEL/(4429:4429): Conexion consola: 10
+[INFO] 13:24:51:370 KERNEL/(4429:4436): Tamaño recibido: 100
+[INFO] 13:24:51:371 KERNEL/(4429:4436): Proceso 1 asignado a la cola NEW
+[INFO] 13:24:51:371 KERNEL/(4429:4434): paso post
+[INFO] 13:24:51:372 KERNEL/(4429:4434): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 13:24:51:372 KERNEL/(4429:4434):    Se solicito interrupcion
+[INFO] 13:24:51:373 KERNEL/(4429:4434): El proceso 1 fue asignado a la cola READY
+[INFO] 13:24:51:665 KERNEL/(4429:4429): Conexion consola: 11
+[INFO] 13:24:51:666 KERNEL/(4429:4437): Tamaño recibido: 100
+[INFO] 13:24:51:666 KERNEL/(4429:4437): Proceso 2 asignado a la cola NEW
+[INFO] 13:24:52:032 KERNEL/(4429:4431): Un proceso fue interrumpido
+[INFO] 13:24:52:032 KERNEL/(4429:4431): El proceso 0 fue asignado a la cola READY
+[INFO] 13:24:52:032 KERNEL/(4429:4430): Planificacion despausada
+[INFO] 13:24:52:032 KERNEL/(4429:4430): lista ordenada: 
+[INFO] 13:24:52:032 KERNEL/(4429:4430): estimacion: 10000 inicio rafaga: 1658593491
+[INFO] 13:24:52:032 KERNEL/(4429:4430): estimacion: 20000 inicio rafaga: 23
+[INFO] 13:24:52:032 KERNEL/(4429:4430): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 13:24:54:038 KERNEL/(4429:4431): Codigo BLOQUEO_IO recibido
+[WARNING] 13:24:54:038 KERNEL/(4429:4431): program counter: 4
+[INFO] 13:24:54:038 KERNEL/(4429:4431): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 13:24:54:039 KERNEL/(4429:4431): Tiempo de bloqueo: 13000
+[INFO] 13:24:54:039 KERNEL/(4429:4431): Inicio de bloqueo: 1658593494
+[INFO] 13:24:54:039 KERNEL/(4429:4431): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 13:24:54:039 KERNEL/(4429:4432): El proceso 0 inicio su I/0
+[INFO] 13:24:54:039 KERNEL/(4429:4430): Planificacion despausada
+[INFO] 13:24:54:039 KERNEL/(4429:4430): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 13:24:57:046 KERNEL/(4429:4431): Codigo BLOQUEO_IO recibido
+[WARNING] 13:24:57:046 KERNEL/(4429:4431): program counter: 4
+[INFO] 13:24:57:046 KERNEL/(4429:4431): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 13:24:57:046 KERNEL/(4429:4431): Tiempo de bloqueo: 5000
+[INFO] 13:24:57:046 KERNEL/(4429:4431): Inicio de bloqueo: 1658593497
+[INFO] 13:24:57:046 KERNEL/(4429:4431): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 13:24:57:047 KERNEL/(4429:4430): Planificacion despausada
+[WARNING] 13:25:02:039 KERNEL/(4429:4438): EL PROCESO 0 SE SUSPENDIO POR MAX TIEMPO BLOQUEO
+[INFO] 13:25:02:040 KERNEL/(4429:4434): paso post
+[INFO] 13:25:02:041 KERNEL/(4429:4434): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 13:25:02:041 KERNEL/(4429:4434): El proceso 2 fue asignado a la cola READY
+[INFO] 13:25:02:042 KERNEL/(4429:4430): Se paso el proceso 2 de Ready a Ejecutando
+[WARNING] 13:25:05:047 KERNEL/(4429:4439): EL PROCESO 1 SE SUSPENDIO POR MAX TIEMPO BLOQUEO
+[INFO] 13:25:07:039 KERNEL/(4429:4432): El proceso 0 finalizo su I/0
+[INFO] 13:25:07:039 KERNEL/(4429:4432): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 13:25:07:039 KERNEL/(4429:4433):    Se solicito interrupcion
+[INFO] 13:25:07:039 KERNEL/(4429:4432): El proceso 1 inicio su I/0
+[INFO] 13:25:07:040 KERNEL/(4429:4433): El proceso 0 fue asignado a la cola READY
+[INFO] 13:25:07:040 KERNEL/(4429:4433):    Se solicito interrupcion
+[INFO] 13:25:07:052 KERNEL/(4429:4431): Un proceso fue interrumpido
+[INFO] 13:25:07:052 KERNEL/(4429:4431): El proceso 2 fue asignado a la cola READY
+[INFO] 13:25:07:052 KERNEL/(4429:4430): Planificacion despausada
+[INFO] 13:25:07:052 KERNEL/(4429:4430): lista ordenada: 
+[INFO] 13:25:07:052 KERNEL/(4429:4430): estimacion: 10000 inicio rafaga: 1658593492
+[INFO] 13:25:07:052 KERNEL/(4429:4430): estimacion: 10002 inicio rafaga: 1658593502
+[INFO] 13:25:07:052 KERNEL/(4429:4430): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 13:25:10:056 KERNEL/(4429:4431): La CPU envio un pcb con estado finalizado
+[INFO] 13:25:10:057 KERNEL/(4429:4431): El socket que recibi es 9
+[INFO] 13:25:10:057 KERNEL/(4429:4431): El proceso 0 finalizo correctamente
+[INFO] 13:25:10:058 KERNEL/(4429:4430): Planificacion despausada
+[INFO] 13:25:10:058 KERNEL/(4429:4430): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 13:25:12:040 KERNEL/(4429:4432): El proceso 1 finalizo su I/0
+[INFO] 13:25:12:040 KERNEL/(4429:4432): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 13:25:12:040 KERNEL/(4429:4433):    Se solicito interrupcion
+[INFO] 13:25:12:040 KERNEL/(4429:4433): El proceso 1 fue asignado a la cola READY
+[INFO] 13:25:12:041 KERNEL/(4429:4433):    Se solicito interrupcion
+[INFO] 13:25:12:065 KERNEL/(4429:4431): Un proceso fue interrumpido
+[INFO] 13:25:12:065 KERNEL/(4429:4431): El proceso 2 fue asignado a la cola READY
+[INFO] 13:25:12:065 KERNEL/(4429:4430): Planificacion despausada
+[INFO] 13:25:12:065 KERNEL/(4429:4430): lista ordenada: 
+[INFO] 13:25:12:065 KERNEL/(4429:4430): estimacion: 5002 inicio rafaga: 1658593510
+[INFO] 13:25:12:065 KERNEL/(4429:4430): estimacion: 20000 inicio rafaga: 1658593494
+[INFO] 13:25:12:065 KERNEL/(4429:4430): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 13:25:15:072 KERNEL/(4429:4431): La CPU envio un pcb con estado finalizado
+[INFO] 13:25:15:072 KERNEL/(4429:4431): El socket que recibi es 11
+[INFO] 13:25:15:072 KERNEL/(4429:4431): El proceso 2 finalizo correctamente
+[INFO] 13:25:15:072 KERNEL/(4429:4430): Planificacion despausada
+[INFO] 13:25:15:073 KERNEL/(4429:4430): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 13:25:18:080 KERNEL/(4429:4431): La CPU envio un pcb con estado finalizado
+[INFO] 13:25:18:080 KERNEL/(4429:4431): El socket que recibi es 10
+[INFO] 13:25:18:081 KERNEL/(4429:4431): El proceso 1 finalizo correctamente
+[INFO] 13:25:18:081 KERNEL/(4429:4430): Planificacion despausada
+[INFO] 14:02:38:505 KERNEL/(4474:4474): alfa: 0.500000
+[INFO] 14:02:38:505 KERNEL/(4474:4474): Kernel listo para recibir al cliente
+[INFO] 14:02:38:508 KERNEL/(4474:4474): conectado a memoria
+[INFO] 14:02:38:510 KERNEL/(4474:4475): Se inicio la planificacion SRT
+[INFO] 14:02:38:510 KERNEL/(4474:4475): Inicio la planificacion IO
+[INFO] 14:02:38:511 KERNEL/(4474:4475): Planificacion despausada
+[INFO] 14:02:46:051 KERNEL/(4474:4474): Conexion consola: 9
+[INFO] 14:02:46:052 KERNEL/(4474:4480): Tamaño recibido: 100
+[INFO] 14:02:46:052 KERNEL/(4474:4480): Proceso 0 asignado a la cola NEW
+[INFO] 14:02:46:053 KERNEL/(4474:4479): paso post
+[INFO] 14:02:46:054 KERNEL/(4474:4479): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 14:02:46:054 KERNEL/(4474:4479): El proceso 0 fue asignado a la cola READY
+[INFO] 14:02:46:054 KERNEL/(4474:4475): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 14:02:46:332 KERNEL/(4474:4474): Conexion consola: 10
+[INFO] 14:02:46:333 KERNEL/(4474:4481): Tamaño recibido: 100
+[INFO] 14:02:46:333 KERNEL/(4474:4481): Proceso 1 asignado a la cola NEW
+[INFO] 14:02:46:334 KERNEL/(4474:4479): paso post
+[INFO] 14:02:46:335 KERNEL/(4474:4479): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 14:02:46:335 KERNEL/(4474:4479):    Se solicito interrupcion
+[INFO] 14:02:46:335 KERNEL/(4474:4479): El proceso 1 fue asignado a la cola READY
+[INFO] 14:02:46:619 KERNEL/(4474:4474): Conexion consola: 11
+[INFO] 14:02:46:619 KERNEL/(4474:4482): Tamaño recibido: 100
+[INFO] 14:02:46:620 KERNEL/(4474:4482): Proceso 2 asignado a la cola NEW
+[INFO] 14:02:47:061 KERNEL/(4474:4476): Un proceso fue interrumpido
+[INFO] 14:02:47:062 KERNEL/(4474:4476): El proceso 0 fue asignado a la cola READY
+[INFO] 14:02:47:062 KERNEL/(4474:4475): Planificacion despausada
+[INFO] 14:02:47:062 KERNEL/(4474:4475): lista ordenada: 
+[INFO] 14:02:47:062 KERNEL/(4474:4475): id: 0 estimacion: 10000 inicio rafaga: 1658595766
+[INFO] 14:02:47:062 KERNEL/(4474:4475): id: 1 estimacion: 20000 inicio rafaga: 23
+[INFO] 14:02:47:062 KERNEL/(4474:4475): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 14:02:49:068 KERNEL/(4474:4476): Codigo BLOQUEO_IO recibido
+[WARNING] 14:02:49:068 KERNEL/(4474:4476): program counter: 4
+[INFO] 14:02:49:068 KERNEL/(4474:4476): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 14:02:49:068 KERNEL/(4474:4476): Tiempo de bloqueo: 13000
+[INFO] 14:02:49:068 KERNEL/(4474:4476): Inicio de bloqueo: 1658595769
+[INFO] 14:02:49:068 KERNEL/(4474:4476): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 14:02:49:068 KERNEL/(4474:4477): El proceso 0 inicio su I/0
+[INFO] 14:02:49:068 KERNEL/(4474:4475): Planificacion despausada
+[INFO] 14:02:49:068 KERNEL/(4474:4475): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 14:02:52:075 KERNEL/(4474:4476): Codigo BLOQUEO_IO recibido
+[WARNING] 14:02:52:076 KERNEL/(4474:4476): program counter: 4
+[INFO] 14:02:52:076 KERNEL/(4474:4476): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 14:02:52:076 KERNEL/(4474:4476): Tiempo de bloqueo: 5000
+[INFO] 14:02:52:076 KERNEL/(4474:4476): Inicio de bloqueo: 1658595772
+[INFO] 14:02:52:076 KERNEL/(4474:4476): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 14:02:52:076 KERNEL/(4474:4475): Planificacion despausada
+[WARNING] 14:02:57:069 KERNEL/(4474:4483): EL PROCESO 0 SE SUSPENDIO POR MAX TIEMPO BLOQUEO
+[INFO] 14:02:57:069 KERNEL/(4474:4479): paso post
+[INFO] 14:02:57:071 KERNEL/(4474:4479): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 14:02:57:071 KERNEL/(4474:4479): El proceso 2 fue asignado a la cola READY
+[INFO] 14:02:57:071 KERNEL/(4474:4475): Se paso el proceso 2 de Ready a Ejecutando
+[WARNING] 14:03:00:077 KERNEL/(4474:4484): EL PROCESO 1 SE SUSPENDIO POR MAX TIEMPO BLOQUEO
+[INFO] 14:03:02:068 KERNEL/(4474:4477): El proceso 0 finalizo su I/0
+[INFO] 14:03:02:068 KERNEL/(4474:4477): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 14:03:02:068 KERNEL/(4474:4478):    Se solicito interrupcion
+[INFO] 14:03:02:068 KERNEL/(4474:4477): El proceso 1 inicio su I/0
+[INFO] 14:03:02:069 KERNEL/(4474:4478): El proceso 0 fue asignado a la cola READY
+[INFO] 14:03:02:069 KERNEL/(4474:4478):    Se solicito interrupcion
+[INFO] 14:03:02:082 KERNEL/(4474:4476): Un proceso fue interrumpido
+[INFO] 14:03:02:082 KERNEL/(4474:4476): El proceso 2 fue asignado a la cola READY
+[INFO] 14:03:02:082 KERNEL/(4474:4475): Planificacion despausada
+[INFO] 14:03:02:082 KERNEL/(4474:4475): lista ordenada: 
+[INFO] 14:03:02:082 KERNEL/(4474:4475): id: 0 estimacion: 10000 inicio rafaga: 1658595767
+[INFO] 14:03:02:082 KERNEL/(4474:4475): id: 2 estimacion: 10002 inicio rafaga: 1658595777
+[INFO] 14:03:02:082 KERNEL/(4474:4475): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 14:03:05:088 KERNEL/(4474:4476): La CPU envio un pcb con estado finalizado
+[INFO] 14:03:05:089 KERNEL/(4474:4476): El socket que recibi es 9
+[INFO] 14:03:05:089 KERNEL/(4474:4476): El proceso 0 finalizo correctamente
+[INFO] 14:03:05:089 KERNEL/(4474:4475): Planificacion despausada
+[INFO] 14:03:05:090 KERNEL/(4474:4475): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 14:03:07:069 KERNEL/(4474:4477): El proceso 1 finalizo su I/0
+[INFO] 14:03:07:069 KERNEL/(4474:4477): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 14:03:07:069 KERNEL/(4474:4478):    Se solicito interrupcion
+[INFO] 14:03:07:069 KERNEL/(4474:4478): El proceso 1 fue asignado a la cola READY
+[INFO] 14:03:07:069 KERNEL/(4474:4478):    Se solicito interrupcion
+[INFO] 14:03:07:095 KERNEL/(4474:4476): Un proceso fue interrumpido
+[INFO] 14:03:07:095 KERNEL/(4474:4476): El proceso 2 fue asignado a la cola READY
+[INFO] 14:03:07:095 KERNEL/(4474:4475): Planificacion despausada
+[INFO] 14:03:07:095 KERNEL/(4474:4475): lista ordenada: 
+[INFO] 14:03:07:095 KERNEL/(4474:4475): id: 2 estimacion: 5002 inicio rafaga: 1658595785
+[INFO] 14:03:07:095 KERNEL/(4474:4475): id: 1 estimacion: 20000 inicio rafaga: 1658595769
+[INFO] 14:03:07:095 KERNEL/(4474:4475): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 14:03:10:099 KERNEL/(4474:4476): La CPU envio un pcb con estado finalizado
+[INFO] 14:03:10:100 KERNEL/(4474:4476): El socket que recibi es 11
+[INFO] 14:03:10:101 KERNEL/(4474:4476): El proceso 2 finalizo correctamente
+[INFO] 14:03:10:101 KERNEL/(4474:4475): Planificacion despausada
+[INFO] 14:03:10:101 KERNEL/(4474:4475): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 14:03:13:107 KERNEL/(4474:4476): La CPU envio un pcb con estado finalizado
+[INFO] 14:03:13:107 KERNEL/(4474:4476): El socket que recibi es 10
+[INFO] 14:03:13:108 KERNEL/(4474:4476): El proceso 1 finalizo correctamente
+[INFO] 14:03:13:108 KERNEL/(4474:4475): Planificacion despausada
+[INFO] 14:09:50:723 KERNEL/(4524:4524): alfa: 0.500000
+[INFO] 14:09:50:724 KERNEL/(4524:4524): Kernel listo para recibir al cliente
+[INFO] 14:09:50:727 KERNEL/(4524:4524): conectado a memoria
+[INFO] 14:09:50:729 KERNEL/(4524:4525): Se inicio la planificacion SRT
+[INFO] 14:09:50:730 KERNEL/(4524:4525): Inicio la planificacion IO
+[INFO] 14:09:50:730 KERNEL/(4524:4525): Planificacion despausada
+[INFO] 14:09:56:257 KERNEL/(4524:4524): Conexion consola: 9
+[INFO] 14:09:56:257 KERNEL/(4524:4530): Tamaño recibido: 100
+[INFO] 14:09:56:258 KERNEL/(4524:4530): Proceso 0 asignado a la cola NEW
+[INFO] 14:09:56:258 KERNEL/(4524:4529): paso post
+[INFO] 14:09:56:260 KERNEL/(4524:4529): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 14:09:56:260 KERNEL/(4524:4529): El proceso 0 fue asignado a la cola READY
+[INFO] 14:09:56:260 KERNEL/(4524:4525): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 14:09:56:536 KERNEL/(4524:4524): Conexion consola: 10
+[INFO] 14:09:56:537 KERNEL/(4524:4531): Tamaño recibido: 100
+[INFO] 14:09:56:537 KERNEL/(4524:4531): Proceso 1 asignado a la cola NEW
+[INFO] 14:09:56:537 KERNEL/(4524:4529): paso post
+[INFO] 14:09:56:538 KERNEL/(4524:4529): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 14:09:56:538 KERNEL/(4524:4529):    Se solicito interrupcion
+[INFO] 14:09:56:539 KERNEL/(4524:4529): El proceso 1 fue asignado a la cola READY
+[INFO] 14:09:56:800 KERNEL/(4524:4524): Conexion consola: 11
+[INFO] 14:09:56:801 KERNEL/(4524:4532): Tamaño recibido: 100
+[INFO] 14:09:56:801 KERNEL/(4524:4532): Proceso 2 asignado a la cola NEW
+[INFO] 14:09:57:266 KERNEL/(4524:4526): Un proceso fue interrumpido
+[INFO] 14:09:57:266 KERNEL/(4524:4526): El proceso 0 fue asignado a la cola READY
+[INFO] 14:09:57:266 KERNEL/(4524:4525): Planificacion despausada
+[INFO] 14:09:57:266 KERNEL/(4524:4525): lista ordenada: 
+[INFO] 14:09:57:266 KERNEL/(4524:4525): id: 0 estimacion: 10000 inicio rafaga: 1658596196
+[INFO] 14:09:57:266 KERNEL/(4524:4525): id: 1 estimacion: 20000 inicio rafaga: 23
+[INFO] 14:09:57:266 KERNEL/(4524:4525): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 14:09:59:273 KERNEL/(4524:4526): Codigo BLOQUEO_IO recibido
+[WARNING] 14:09:59:273 KERNEL/(4524:4526): program counter: 4
+[INFO] 14:09:59:273 KERNEL/(4524:4526): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 14:09:59:273 KERNEL/(4524:4526): Tiempo de bloqueo: 13000
+[INFO] 14:09:59:273 KERNEL/(4524:4526): Inicio de bloqueo: 1658596199
+[INFO] 14:09:59:273 KERNEL/(4524:4526): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 14:09:59:273 KERNEL/(4524:4527): El proceso 0 inicio su I/0
+[INFO] 14:09:59:273 KERNEL/(4524:4525): Planificacion despausada
+[INFO] 14:09:59:273 KERNEL/(4524:4525): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 14:10:02:282 KERNEL/(4524:4526): Codigo BLOQUEO_IO recibido
+[WARNING] 14:10:02:282 KERNEL/(4524:4526): program counter: 4
+[INFO] 14:10:02:282 KERNEL/(4524:4526): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 14:10:02:282 KERNEL/(4524:4526): Tiempo de bloqueo: 5000
+[INFO] 14:10:02:282 KERNEL/(4524:4526): Inicio de bloqueo: 1658596202
+[INFO] 14:10:02:282 KERNEL/(4524:4526): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 14:10:02:282 KERNEL/(4524:4525): Planificacion despausada
+[WARNING] 14:10:07:273 KERNEL/(4524:4533): EL PROCESO 0 SE SUSPENDIO POR MAX TIEMPO BLOQUEO
+[INFO] 14:10:07:274 KERNEL/(4524:4529): paso post
+[INFO] 14:10:07:276 KERNEL/(4524:4529): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 14:10:07:276 KERNEL/(4524:4529): El proceso 2 fue asignado a la cola READY
+[INFO] 14:10:07:276 KERNEL/(4524:4525): Se paso el proceso 2 de Ready a Ejecutando
+[WARNING] 14:10:10:283 KERNEL/(4524:4534): EL PROCESO 1 SE SUSPENDIO POR MAX TIEMPO BLOQUEO
+[INFO] 14:10:12:273 KERNEL/(4524:4527): El proceso 0 finalizo su I/0
+[INFO] 14:10:12:273 KERNEL/(4524:4527): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 14:10:12:273 KERNEL/(4524:4528):    Se solicito interrupcion
+[INFO] 14:10:12:273 KERNEL/(4524:4527): El proceso 1 inicio su I/0
+[INFO] 14:10:12:273 KERNEL/(4524:4528): El proceso 0 fue asignado a la cola READY
+[INFO] 14:10:12:274 KERNEL/(4524:4528):    Se solicito interrupcion
+[INFO] 14:10:12:285 KERNEL/(4524:4526): Un proceso fue interrumpido
+[INFO] 14:10:12:285 KERNEL/(4524:4526): El proceso 2 fue asignado a la cola READY
+[INFO] 14:10:12:285 KERNEL/(4524:4525): Planificacion despausada
+[INFO] 14:10:12:285 KERNEL/(4524:4525): lista ordenada: 
+[INFO] 14:10:12:285 KERNEL/(4524:4525): id: 0 estimacion: 5001 inicio rafaga: 1658596197
+[INFO] 14:10:12:285 KERNEL/(4524:4525): id: 2 estimacion: 10002 inicio rafaga: 1658596207
+[INFO] 14:10:12:285 KERNEL/(4524:4525): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 14:10:15:291 KERNEL/(4524:4526): La CPU envio un pcb con estado finalizado
+[INFO] 14:10:15:292 KERNEL/(4524:4526): El socket que recibi es 9
+[INFO] 14:10:15:292 KERNEL/(4524:4526): El proceso 0 finalizo correctamente
+[INFO] 14:10:15:292 KERNEL/(4524:4525): Planificacion despausada
+[INFO] 14:10:15:293 KERNEL/(4524:4525): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 14:10:17:273 KERNEL/(4524:4527): El proceso 1 finalizo su I/0
+[INFO] 14:10:17:274 KERNEL/(4524:4527): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 14:10:17:274 KERNEL/(4524:4528):    Se solicito interrupcion
+[INFO] 14:10:17:274 KERNEL/(4524:4528): El proceso 1 fue asignado a la cola READY
+[INFO] 14:10:17:274 KERNEL/(4524:4528):    Se solicito interrupcion
+[INFO] 14:10:17:300 KERNEL/(4524:4526): Un proceso fue interrumpido
+[INFO] 14:10:17:300 KERNEL/(4524:4526): El proceso 2 fue asignado a la cola READY
+[INFO] 14:10:17:300 KERNEL/(4524:4525): Planificacion despausada
+[INFO] 14:10:17:300 KERNEL/(4524:4525): lista ordenada: 
+[INFO] 14:10:17:300 KERNEL/(4524:4525): id: 2 estimacion: 5002 inicio rafaga: 1658596215
+[INFO] 14:10:17:301 KERNEL/(4524:4525): id: 1 estimacion: 10001 inicio rafaga: 1658596199
+[INFO] 14:10:17:301 KERNEL/(4524:4525): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 14:10:20:306 KERNEL/(4524:4526): La CPU envio un pcb con estado finalizado
+[INFO] 14:10:20:307 KERNEL/(4524:4526): El socket que recibi es 11
+[INFO] 14:10:20:307 KERNEL/(4524:4526): El proceso 2 finalizo correctamente
+[INFO] 14:10:20:308 KERNEL/(4524:4525): Planificacion despausada
+[INFO] 14:10:20:308 KERNEL/(4524:4525): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 14:10:23:314 KERNEL/(4524:4526): La CPU envio un pcb con estado finalizado
+[INFO] 14:10:23:314 KERNEL/(4524:4526): El socket que recibi es 10
+[INFO] 14:10:23:314 KERNEL/(4524:4526): El proceso 1 finalizo correctamente
+[INFO] 14:10:23:315 KERNEL/(4524:4525): Planificacion despausada
+[INFO] 14:28:25:462 KERNEL/(4572:4572): alfa: 0.500000
+[INFO] 14:28:25:463 KERNEL/(4572:4572): Kernel listo para recibir al cliente
+[INFO] 14:28:25:465 KERNEL/(4572:4572): conectado a memoria
+[INFO] 14:28:25:467 KERNEL/(4572:4573): Se inicio la planificacion SRT
+[INFO] 14:28:25:468 KERNEL/(4572:4573): Inicio la planificacion IO
+[INFO] 14:28:25:469 KERNEL/(4572:4573): Planificacion despausada
+[INFO] 14:28:27:481 KERNEL/(4572:4572): Conexion consola: 9
+[INFO] 14:28:27:482 KERNEL/(4572:4578): Tamaño recibido: 100
+[INFO] 14:28:27:483 KERNEL/(4572:4578): Proceso 0 asignado a la cola NEW
+[INFO] 14:28:27:484 KERNEL/(4572:4577): paso post
+[INFO] 14:28:27:485 KERNEL/(4572:4577): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 14:28:27:485 KERNEL/(4572:4577): El proceso 0 fue asignado a la cola READY
+[INFO] 14:28:27:485 KERNEL/(4572:4573): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 14:28:27:761 KERNEL/(4572:4572): Conexion consola: 10
+[INFO] 14:28:27:762 KERNEL/(4572:4579): Tamaño recibido: 100
+[INFO] 14:28:27:762 KERNEL/(4572:4579): Proceso 1 asignado a la cola NEW
+[INFO] 14:28:27:763 KERNEL/(4572:4577): paso post
+[INFO] 14:28:27:764 KERNEL/(4572:4577): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 14:28:27:764 KERNEL/(4572:4577):    Se solicito interrupcion
+[INFO] 14:28:27:764 KERNEL/(4572:4577): El proceso 1 fue asignado a la cola READY
+[INFO] 14:28:28:041 KERNEL/(4572:4572): Conexion consola: 11
+[INFO] 14:28:28:041 KERNEL/(4572:4580): Tamaño recibido: 100
+[INFO] 14:28:28:042 KERNEL/(4572:4580): Proceso 2 asignado a la cola NEW
+[INFO] 14:28:28:492 KERNEL/(4572:4574): Un proceso fue interrumpido
+[INFO] 14:28:28:492 KERNEL/(4572:4574): El proceso 0 fue asignado a la cola READY
+[INFO] 14:28:28:492 KERNEL/(4572:4573): Planificacion despausada
+[INFO] 14:28:28:492 KERNEL/(4572:4573): lista ordenada: 
+[INFO] 14:28:28:492 KERNEL/(4572:4573): id: 0 estimacion: 10000 inicio rafaga: 1658597307
+[INFO] 14:28:28:492 KERNEL/(4572:4573): id: 1 estimacion: 20000 inicio rafaga: 23
+[INFO] 14:28:28:492 KERNEL/(4572:4573): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 14:28:30:499 KERNEL/(4572:4574): Codigo BLOQUEO_IO recibido
+[WARNING] 14:28:30:500 KERNEL/(4572:4574): program counter: 4
+[INFO] 14:28:30:500 KERNEL/(4572:4574): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 14:28:30:500 KERNEL/(4572:4574): Tiempo de bloqueo: 13000
+[INFO] 14:28:30:500 KERNEL/(4572:4574): Inicio de bloqueo: 1658597310
+[INFO] 14:28:30:500 KERNEL/(4572:4574): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 14:28:30:500 KERNEL/(4572:4575): El proceso 0 inicio su I/0
+[INFO] 14:28:30:500 KERNEL/(4572:4573): Planificacion despausada
+[INFO] 14:28:30:501 KERNEL/(4572:4573): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 14:28:33:507 KERNEL/(4572:4574): Codigo BLOQUEO_IO recibido
+[WARNING] 14:28:33:507 KERNEL/(4572:4574): program counter: 4
+[INFO] 14:28:33:507 KERNEL/(4572:4574): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 14:28:33:507 KERNEL/(4572:4574): Tiempo de bloqueo: 5000
+[INFO] 14:28:33:507 KERNEL/(4572:4574): Inicio de bloqueo: 1658597313
+[INFO] 14:28:33:507 KERNEL/(4572:4574): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 14:28:33:507 KERNEL/(4572:4573): Planificacion despausada
+[WARNING] 14:28:38:502 KERNEL/(4572:4581): EL PROCESO 0 SE SUSPENDIO POR MAX TIEMPO BLOQUEO
+[INFO] 14:28:38:502 KERNEL/(4572:4577): paso post
+[INFO] 14:28:38:504 KERNEL/(4572:4577): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 14:28:38:504 KERNEL/(4572:4577): El proceso 2 fue asignado a la cola READY
+[INFO] 14:28:38:504 KERNEL/(4572:4573): Se paso el proceso 2 de Ready a Ejecutando
+[WARNING] 14:28:41:508 KERNEL/(4572:4582): EL PROCESO 1 SE SUSPENDIO POR MAX TIEMPO BLOQUEO
+[INFO] 14:28:43:501 KERNEL/(4572:4575): El proceso 0 finalizo su I/0
+[INFO] 14:28:43:501 KERNEL/(4572:4575): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 14:28:43:501 KERNEL/(4572:4576):    Se solicito interrupcion
+[INFO] 14:28:43:501 KERNEL/(4572:4575): El proceso 1 inicio su I/0
+[INFO] 14:28:43:501 KERNEL/(4572:4576): El proceso 0 fue asignado a la cola READY
+[INFO] 14:28:43:501 KERNEL/(4572:4576):    Se solicito interrupcion
+[INFO] 14:28:43:513 KERNEL/(4572:4574): Un proceso fue interrumpido
+[INFO] 14:28:43:513 KERNEL/(4572:4574): El proceso 2 fue asignado a la cola READY
+[INFO] 14:28:43:513 KERNEL/(4572:4573): Planificacion despausada
+[INFO] 14:28:43:513 KERNEL/(4572:4573): lista ordenada: 
+[INFO] 14:28:43:513 KERNEL/(4572:4573): id: 0 estimacion: 5001 inicio rafaga: 1658597308
+[INFO] 14:28:43:513 KERNEL/(4572:4573): id: 2 estimacion: 10002 inicio rafaga: 1658597318
+[INFO] 14:28:43:513 KERNEL/(4572:4573): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 14:28:46:520 KERNEL/(4572:4574): La CPU envio un pcb con estado finalizado
+[INFO] 14:28:46:520 KERNEL/(4572:4574): El socket que recibi es 9
+[INFO] 14:28:46:520 KERNEL/(4572:4574): El proceso 0 finalizo correctamente
+[INFO] 14:28:46:521 KERNEL/(4572:4573): Planificacion despausada
+[INFO] 14:28:46:521 KERNEL/(4572:4573): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 14:28:48:502 KERNEL/(4572:4575): El proceso 1 finalizo su I/0
+[INFO] 14:28:48:502 KERNEL/(4572:4575): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 14:28:48:502 KERNEL/(4572:4576):    Se solicito interrupcion
+[INFO] 14:28:48:502 KERNEL/(4572:4576): El proceso 1 fue asignado a la cola READY
+[INFO] 14:28:48:503 KERNEL/(4572:4576):    Se solicito interrupcion
+[INFO] 14:28:48:526 KERNEL/(4572:4574): Un proceso fue interrumpido
+[INFO] 14:28:48:526 KERNEL/(4572:4574): El proceso 2 fue asignado a la cola READY
+[INFO] 14:28:48:526 KERNEL/(4572:4573): Planificacion despausada
+[INFO] 14:28:48:526 KERNEL/(4572:4573): lista ordenada: 
+[INFO] 14:28:48:526 KERNEL/(4572:4573): id: 2 estimacion: 5002 inicio rafaga: 1658597326
+[INFO] 14:28:48:526 KERNEL/(4572:4573): id: 1 estimacion: 10001 inicio rafaga: 1658597310
+[INFO] 14:28:48:526 KERNEL/(4572:4573): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 14:28:51:535 KERNEL/(4572:4574): La CPU envio un pcb con estado finalizado
+[INFO] 14:28:51:535 KERNEL/(4572:4574): El socket que recibi es 11
+[INFO] 14:28:51:536 KERNEL/(4572:4574): El proceso 2 finalizo correctamente
+[INFO] 14:28:51:536 KERNEL/(4572:4573): Planificacion despausada
+[INFO] 14:28:51:536 KERNEL/(4572:4573): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 14:28:54:544 KERNEL/(4572:4574): La CPU envio un pcb con estado finalizado
+[INFO] 14:28:54:544 KERNEL/(4572:4574): El socket que recibi es 10
+[INFO] 14:28:54:544 KERNEL/(4572:4574): El proceso 1 finalizo correctamente
+[INFO] 14:28:54:545 KERNEL/(4572:4573): Planificacion despausada
+[INFO] 14:31:14:373 KERNEL/(4625:4625): alfa: 0.500000
+[INFO] 14:31:14:373 KERNEL/(4625:4625): Kernel listo para recibir al cliente
+[INFO] 14:31:14:376 KERNEL/(4625:4625): conectado a memoria
+[INFO] 14:31:14:378 KERNEL/(4625:4626): Se inicio la planificacion SRT
+[INFO] 14:31:14:379 KERNEL/(4625:4626): Inicio la planificacion IO
+[INFO] 14:31:14:379 KERNEL/(4625:4626): Planificacion despausada
+[INFO] 14:31:23:904 KERNEL/(4625:4625): Conexion consola: 9
+[INFO] 14:31:23:905 KERNEL/(4625:4631): Tamaño recibido: 100
+[INFO] 14:31:23:906 KERNEL/(4625:4631): Proceso 0 asignado a la cola NEW
+[INFO] 14:31:23:906 KERNEL/(4625:4630): paso post
+[INFO] 14:31:23:907 KERNEL/(4625:4630): Se asignó el numero de tabla: 0 al proceso de id: 0
+
+[INFO] 14:31:23:907 KERNEL/(4625:4630): El proceso 0 fue asignado a la cola READY
+[INFO] 14:31:23:907 KERNEL/(4625:4626): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 14:31:24:193 KERNEL/(4625:4625): Conexion consola: 10
+[INFO] 14:31:24:193 KERNEL/(4625:4632): Tamaño recibido: 100
+[INFO] 14:31:24:194 KERNEL/(4625:4632): Proceso 1 asignado a la cola NEW
+[INFO] 14:31:24:194 KERNEL/(4625:4630): paso post
+[INFO] 14:31:24:195 KERNEL/(4625:4630): Se asignó el numero de tabla: 1 al proceso de id: 1
+
+[INFO] 14:31:24:195 KERNEL/(4625:4630):    Se solicito interrupcion
+[INFO] 14:31:24:195 KERNEL/(4625:4630): El proceso 1 fue asignado a la cola READY
+[INFO] 14:31:24:512 KERNEL/(4625:4625): Conexion consola: 11
+[INFO] 14:31:24:512 KERNEL/(4625:4633): Tamaño recibido: 100
+[INFO] 14:31:24:513 KERNEL/(4625:4633): Proceso 2 asignado a la cola NEW
+[INFO] 14:31:24:914 KERNEL/(4625:4627): Un proceso fue interrumpido
+[INFO] 14:31:24:914 KERNEL/(4625:4627): El proceso 0 fue asignado a la cola READY
+[INFO] 14:31:24:914 KERNEL/(4625:4626): Planificacion despausada
+[INFO] 14:31:24:914 KERNEL/(4625:4626): lista ordenada: 
+[INFO] 14:31:24:914 KERNEL/(4625:4626): id: 0 estimacion: 10000 inicio rafaga: 1658597483
+[INFO] 14:31:24:914 KERNEL/(4625:4626): id: 1 estimacion: 20000 inicio rafaga: 1658597483
+[INFO] 14:31:24:915 KERNEL/(4625:4626): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 14:31:26:921 KERNEL/(4625:4627): Codigo BLOQUEO_IO recibido
+[WARNING] 14:31:26:921 KERNEL/(4625:4627): program counter: 4
+[INFO] 14:31:26:921 KERNEL/(4625:4627): La cpu envio el proceso 0 con estado Bloqueado por IO
+[INFO] 14:31:26:921 KERNEL/(4625:4627): Tiempo de bloqueo: 13000
+[INFO] 14:31:26:921 KERNEL/(4625:4627): Inicio de bloqueo: 1658597486
+[INFO] 14:31:26:921 KERNEL/(4625:4627): Se agrego el proceso 0 a la cola de bloqueados por I/O
+[INFO] 14:31:26:921 KERNEL/(4625:4628): El proceso 0 inicio su I/0
+[INFO] 14:31:26:921 KERNEL/(4625:4626): Planificacion despausada
+[INFO] 14:31:26:921 KERNEL/(4625:4626): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 14:31:29:929 KERNEL/(4625:4627): Codigo BLOQUEO_IO recibido
+[WARNING] 14:31:29:929 KERNEL/(4625:4627): program counter: 4
+[INFO] 14:31:29:929 KERNEL/(4625:4627): La cpu envio el proceso 1 con estado Bloqueado por IO
+[INFO] 14:31:29:929 KERNEL/(4625:4627): Tiempo de bloqueo: 5000
+[INFO] 14:31:29:929 KERNEL/(4625:4627): Inicio de bloqueo: 1658597489
+[INFO] 14:31:29:930 KERNEL/(4625:4627): Se agrego el proceso 1 a la cola de bloqueados por I/O
+[INFO] 14:31:29:930 KERNEL/(4625:4626): Planificacion despausada
+[WARNING] 14:31:34:922 KERNEL/(4625:4634): EL PROCESO 0 SE SUSPENDIO POR MAX TIEMPO BLOQUEO
+[INFO] 14:31:34:922 KERNEL/(4625:4630): paso post
+[INFO] 14:31:34:924 KERNEL/(4625:4630): Se asignó el numero de tabla: 0 al proceso de id: 2
+
+[INFO] 14:31:34:924 KERNEL/(4625:4630): El proceso 2 fue asignado a la cola READY
+[INFO] 14:31:34:924 KERNEL/(4625:4626): Se paso el proceso 2 de Ready a Ejecutando
+[WARNING] 14:31:37:930 KERNEL/(4625:4635): EL PROCESO 1 SE SUSPENDIO POR MAX TIEMPO BLOQUEO
+[INFO] 14:31:39:921 KERNEL/(4625:4628): El proceso 0 finalizo su I/0
+[INFO] 14:31:39:922 KERNEL/(4625:4628): Se paso el proceso 0 de bloqueado a suspendido-ready
+[INFO] 14:31:39:922 KERNEL/(4625:4629):    Se solicito interrupcion
+[INFO] 14:31:39:922 KERNEL/(4625:4628): El proceso 1 inicio su I/0
+[INFO] 14:31:39:922 KERNEL/(4625:4629): El proceso 0 fue asignado a la cola READY
+[INFO] 14:31:39:922 KERNEL/(4625:4629):    Se solicito interrupcion
+[INFO] 14:31:39:934 KERNEL/(4625:4627): Un proceso fue interrumpido
+[INFO] 14:31:39:934 KERNEL/(4625:4627): El proceso 2 fue asignado a la cola READY
+[INFO] 14:31:39:934 KERNEL/(4625:4626): Planificacion despausada
+[INFO] 14:31:39:934 KERNEL/(4625:4626): lista ordenada: 
+[INFO] 14:31:39:934 KERNEL/(4625:4626): id: 0 estimacion: 5001 inicio rafaga: 1658597494
+[INFO] 14:31:39:934 KERNEL/(4625:4626): id: 2 estimacion: 10002 inicio rafaga: 1658597494
+[INFO] 14:31:39:934 KERNEL/(4625:4626): Se paso el proceso 0 de Ready a Ejecutando
+[INFO] 14:31:42:937 KERNEL/(4625:4627): La CPU envio un pcb con estado finalizado
+[INFO] 14:31:42:938 KERNEL/(4625:4627): El socket que recibi es 9
+[INFO] 14:31:42:938 KERNEL/(4625:4627): El proceso 0 finalizo correctamente
+[INFO] 14:31:42:938 KERNEL/(4625:4626): Planificacion despausada
+[INFO] 14:31:42:938 KERNEL/(4625:4626): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 14:31:44:922 KERNEL/(4625:4628): El proceso 1 finalizo su I/0
+[INFO] 14:31:44:922 KERNEL/(4625:4628): Se paso el proceso 1 de bloqueado a suspendido-ready
+[INFO] 14:31:44:922 KERNEL/(4625:4629):    Se solicito interrupcion
+[INFO] 14:31:44:922 KERNEL/(4625:4629): El proceso 1 fue asignado a la cola READY
+[INFO] 14:31:44:922 KERNEL/(4625:4629):    Se solicito interrupcion
+[INFO] 14:31:44:943 KERNEL/(4625:4627): Un proceso fue interrumpido
+[INFO] 14:31:44:943 KERNEL/(4625:4627): El proceso 2 fue asignado a la cola READY
+[INFO] 14:31:44:943 KERNEL/(4625:4626): Planificacion despausada
+[INFO] 14:31:44:943 KERNEL/(4625:4626): lista ordenada: 
+[INFO] 14:31:44:943 KERNEL/(4625:4626): id: 2 estimacion: 5002 inicio rafaga: 1658597502
+[INFO] 14:31:44:943 KERNEL/(4625:4626): id: 1 estimacion: 10001 inicio rafaga: 1658597502
+[INFO] 14:31:44:943 KERNEL/(4625:4626): Se paso el proceso 2 de Ready a Ejecutando
+[INFO] 14:31:47:950 KERNEL/(4625:4627): La CPU envio un pcb con estado finalizado
+[INFO] 14:31:47:951 KERNEL/(4625:4627): El socket que recibi es 11
+[INFO] 14:31:47:951 KERNEL/(4625:4627): El proceso 2 finalizo correctamente
+[INFO] 14:31:47:951 KERNEL/(4625:4626): Planificacion despausada
+[INFO] 14:31:47:951 KERNEL/(4625:4626): Se paso el proceso 1 de Ready a Ejecutando
+[INFO] 14:31:50:957 KERNEL/(4625:4627): La CPU envio un pcb con estado finalizado
+[INFO] 14:31:50:958 KERNEL/(4625:4627): El socket que recibi es 10
+[INFO] 14:31:50:958 KERNEL/(4625:4627): El proceso 1 finalizo correctamente
+[INFO] 14:31:50:958 KERNEL/(4625:4626): Planificacion despausada
