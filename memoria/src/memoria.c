@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
 
 	logger = log_create(PATH_LOG, "MEMORIA", true, LOG_LEVEL_DEBUG);
 
-	leer_config("configs/memoria.config"   /*argv[1]*/);
+	leer_config(argv[1]);
 
 	cantidad_paginas = tamanio_memoria / tamanio_pagina;
 	inicializar_bitarray();
