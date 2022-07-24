@@ -82,7 +82,7 @@ void inicializar_tabla_paginas();
 int crear_tabla_paginas();
 t_tabla_paginas_segundo_nivel* inicializar_tabla_segundo_nivel();
 t_pagina* inicializar_pagina(int numero, int tabla);
-t_bitarray* inicializar_bitarray();
+void inicializar_bitarray();
 int proximo_marco_libre();
 
 
@@ -139,7 +139,7 @@ bool igual_numero(t_tabla_paginas_segundo_nivel*, int);
 void leer_config();
 uint32_t leer_contenido_marco(int, int);
 int escribir_en_marco(int, int, uint32_t);
-t_pagina* mayor_tiempo_espera(t_pagina* p1, t_pagina* p2);
+bool mayor_tiempo_espera(t_pagina* p1, t_pagina* p2);
 
 void algoritmo_clock(t_pagina* pagina);
 void modificar_bit_uso(t_pagina* pagina);

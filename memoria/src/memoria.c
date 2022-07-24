@@ -32,10 +32,10 @@ int main(int argc, char** argv) {
 
 	logger = log_create(PATH_LOG, "MEMORIA", true, LOG_LEVEL_DEBUG);
 
-	leer_config(argv[1]);
+	leer_config("configs/memoria.config"   /*argv[1]*/);
 
 	cantidad_paginas = tamanio_memoria / tamanio_pagina;
-	marcos_memoria = inicializar_bitarray();
+	inicializar_bitarray();
 	log_info(logger, "Cantidad de marcos: %d", bitarray_get_max_bit(marcos_memoria));
 
 	tablas_primer_nivel = list_create();
@@ -118,17 +118,29 @@ t_pagina* inicializar_pagina(int numero, int tabla) {
 	return pagina;
 }
 
-t_bitarray* inicializar_bitarray() {
+void inicializar_bitarray() {
 	int cant_bits = (int) ceil(cantidad_paginas / 8);
 	void* puntero_a_bits = malloc(cant_bits);
-	t_bitarray* bitarray = bitarray_create_with_mode(puntero_a_bits, cant_bits, MSB_FIRST);
+	marcos_memoria = bitarray_create_with_mode(puntero_a_bits, cant_bits, MSB_FIRST);
+
+	for(int i = 0; i < bitarray_get_max_bit(marcos_memoria); i++) {
+		bitarray_clean_bit(marcos_memoria, i);
+	}
+
+//	for(int i = 0; i < bitarray_get_max_bit(marcos_memoria); i++) {
+//		log_info(logger, "VALOR MARCO AL INICIAR %d: %d", i, bitarray_test_bit(marcos_memoria, i));
+//	}
 
 	free(puntero_a_bits);
-	return bitarray;
 }
 
 int proximo_marco_libre() {
-	for(off_t i = 0; i < bitarray_get_max_bit(marcos_memoria); i++) {
+//	for(int i = 0; i < bitarray_get_max_bit(marcos_memoria); i++) {
+//		log_info(logger, "VALOR MARCO %d: %d", i, bitarray_test_bit(marcos_memoria, i));
+//	}
+
+
+	for(int i = 0; i < bitarray_get_max_bit(marcos_memoria); i++) {
 		if(!bitarray_test_bit(marcos_memoria, i)) {
 			bitarray_set_bit(marcos_memoria, i);
 			return i;
@@ -244,7 +256,7 @@ t_tabla_paginas_segundo_nivel* buscar_tabla_segundo_nivel(int tabla_primer_nivel
 }
 
 t_pagina* buscar_pagina(int numero_tabla_segundo_nivel, int entrada) {
-	int tabla_primer_nivel = floor(numero_tabla_segundo_nivel / entradas_por_tabla);
+	//int tabla_primer_nivel = floor(numero_tabla_segundo_nivel / entradas_por_tabla);
 	t_list* tablas_segundo_nivel = list_get(tablas_primer_nivel, numero_de_tabla_primer_nivel);
 	bool mismo_numero_tabla(t_tabla_paginas_segundo_nivel* tabla) {
 		return tabla->numero == numero_tabla_segundo_nivel;
@@ -285,7 +297,7 @@ void reemplazar_pagina(t_pagina* pagina){
 	} else {
 		algoritmo_clock_modificado(pagina);
 	}
-	log_warning(logger, "Se reemplazó la pagina %d", pagina->numero);
+	//log_warning(logger, "Se reemplazó la pagina %d", pagina->numero);
 }
 
 void algoritmo_clock(t_pagina* pagina){
@@ -316,6 +328,9 @@ void algoritmo_clock(t_pagina* pagina){
 
 			escribir_marco_completo(pagina_en_memoria->marco, contenido_archivo);
 
+			log_warning(logger, "Ocurrio un reemplazo de página");
+			log_warning(logger, "Se gaurdo la página %d en swap", pagina_en_memoria->numero);
+			log_warning(logger, "Se cargó la página %d en el marco %d", pagina->numero, pagina_en_memoria->marco);
 
 			pagina->marco = pagina_en_memoria->marco;
 			pagina->usada = true;
@@ -389,6 +404,10 @@ void clock_m_paso_1(t_list* paginas,t_pagina* pagina, int *indice_puntero, bool 
 
 				escribir_marco_completo(pagina_en_memoria->marco, contenido_archivo);
 
+				log_warning(logger, "Ocurrio un reemplazo de página");
+				log_warning(logger, "Se gaurdo la página %d en swap", pagina_en_memoria->numero);
+				log_warning(logger, "Se cargó la página %d en el marco %d", pagina->numero, pagina_en_memoria->marco);
+
 				pagina->marco = pagina_en_memoria->marco;
 				pagina->usada = true;
 				pagina->presencia = true;
@@ -427,6 +446,10 @@ void clock_m_paso_2(t_list* paginas,t_pagina* pagina, int *indice_puntero, bool 
 			//log_info(logger, "Se reemplazó la página %d", pagina->numero);
 
 			free(contenido_archivo);
+
+			log_warning(logger, "Ocurrio un reemplazo de página");
+			log_warning(logger, "Se gaurdo la página %d en swap", pagina_en_memoria->numero);
+			log_warning(logger, "Se cargó la página %d en el marco %d", pagina->numero, pagina_en_memoria->marco);
 
 			pagina->marco = pagina_en_memoria->marco;
 			pagina->usada = true;
@@ -506,38 +529,32 @@ t_puntero* encontrar_puntero_proceso(){
 	bool encontrada = false;
 	t_puntero* puntero_encontrado;
 
-	while( i < list_size(punteros_procesos) && !encontrada){
-			t_puntero* puntero_proceso = list_get(punteros_procesos, i);
+	while(i < list_size(punteros_procesos) && !encontrada){
+		t_puntero* puntero_proceso = list_get(punteros_procesos, i);
 
-			if(puntero_proceso->numero_tabla_primer_nivel == numero_de_tabla_primer_nivel){
-				puntero_encontrado = puntero_proceso;
-				encontrada = true;
-			}
+		if(puntero_proceso->numero_tabla_primer_nivel == numero_de_tabla_primer_nivel){
+			puntero_encontrado = puntero_proceso;
+			encontrada = true;
+		}
 
-			i++;
+		i++;
 	}
-
 	return puntero_encontrado;
 }
 
-int encontrar_indice_puntero_segun_marco(t_list* paginas,int marco){
+int encontrar_indice_puntero_segun_marco(t_list* paginas, int marco){
 	for(int i = 0; i < list_size(paginas); i++){
 		t_pagina* pagina = list_get(paginas, i);
 		if(pagina->marco == marco){
 			return i;
 		}
 	}
-
 	return -1;
 }
 
 
-t_pagina* mayor_tiempo_espera(t_pagina* p1, t_pagina* p2) {
-	if(difftime(p1->tiempo_carga, p2->tiempo_carga) > 0) {
-		return p2;
-	} else {
-		return p1;
-	}
+bool mayor_tiempo_espera(t_pagina* p1, t_pagina* p2) {
+	return difftime(p2->tiempo_carga, p1->tiempo_carga) > 0;
 }
 
 t_list* encontrar_paginas_en_memoria(){
@@ -564,6 +581,7 @@ void asignar_marco(t_pagina* pagina){
 	pagina->marco = proximo_marco_libre();
 	pagina->presencia = true;
 	pagina->usada = true;
+	pagina->tiempo_carga = time(NULL);
 	void* contenido = leer_contenido_pagina_archivo(pagina);
 
 	escribir_marco_completo(pagina->marco, contenido);
@@ -797,9 +815,9 @@ void atender_kernel() {
 
 				break;
 			case SUSPENCION_PROCESO:
-				log_info(logger, "Kernel solicita SUSPENCION PROCESO");
+
 				id_a_suspender = recibir_entero(conexion_kernel);
-				log_info(logger, "id: %d", id_a_suspender);
+				log_info(logger, "Kernel solicita la suspencion del proceso: %d", id_a_suspender);
 
 				swapear_paginas_modificadas(id_a_suspender);
 
