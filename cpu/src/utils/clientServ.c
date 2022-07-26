@@ -127,6 +127,16 @@ int recibir_entero(int socket_cliente) {
 	}
 }
 
+double recibir_double(int socket_cliente) {
+	double valor;
+	if(recv(socket_cliente, &valor, sizeof(double), MSG_WAITALL) > 0) {
+		return valor;
+	} else {
+		close(socket_cliente);
+		return -1;
+	}
+}
+
 uint32_t recibir_uint32_t(int socket_cliente) {
 	int cod_op;
 	if(recv(socket_cliente, &cod_op, sizeof(uint32_t), MSG_WAITALL) > 0) {
@@ -145,9 +155,11 @@ t_pcb* recibir_pcb(int conexion) {
 	pcb->socket_cliente = recibir_entero(conexion);
 	pcb->tamanio_proceso = recibir_entero(conexion);
 	pcb->program_counter = recibir_entero(conexion);
-	pcb->estimacion_rafaga = recibir_entero(conexion);
+	pcb->estimacion_rafaga = recibir_double(conexion);
 	pcb->tablas_paginas = recibir_entero(conexion);
-	pcb->inicio_rafaga = recibir_entero(conexion);
+	pcb->inicio_rafaga = recibir_double(conexion);
+	pcb->estimacion_rafaga_restante = recibir_double(conexion);
+	pcb->tiempo_ejecucion = recibir_double(conexion);
 	pcb->instrucciones = recibir_instrucciones(conexion);
 	return pcb;
 }
@@ -176,7 +188,7 @@ t_list* recibir_instrucciones(int socket_cliente) {
 void enviar_pcb(t_pcb* pcb, int conexion, operacion op) {
 
 	t_buffer* buffer = cargar_buffer(pcb->instrucciones);
-	int bytes =  8 * sizeof(int) + sizeof(time_t) + buffer->size;
+	int bytes =  7 * sizeof(int) + 4 * sizeof(double) + buffer->size;
 
 	void* pcb_serializado = serializar_pcb(pcb, buffer, bytes,op);
 	send(conexion, pcb_serializado, bytes, 0);
@@ -298,12 +310,12 @@ void enviar_tercer_acceso_memoria_escritura(int conexion,uint32_t nro_marco,uint
 }
 
 
-void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes,operacion op) {
+void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes, int operacion) {
 	void* a_enviar = malloc(bytes);
 	int desplazamiento = 0;
 
-	memcpy(a_enviar + desplazamiento, &op, sizeof(operacion));
-	desplazamiento += sizeof(operacion);
+	memcpy(a_enviar + desplazamiento, &operacion, sizeof(int));
+	desplazamiento += sizeof(int);
 
 	memcpy(a_enviar + desplazamiento, &(pcb->id), sizeof(int));
 	desplazamiento += sizeof(int);
@@ -317,14 +329,20 @@ void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes,operacion op) {
 	memcpy(a_enviar + desplazamiento, &(pcb->program_counter), sizeof(int));
 	desplazamiento += sizeof(int);
 
-	memcpy(a_enviar + desplazamiento, &(pcb->estimacion_rafaga), sizeof(int));
-	desplazamiento += sizeof(int);
+	memcpy(a_enviar + desplazamiento, &(pcb->estimacion_rafaga), sizeof(double));
+	desplazamiento += sizeof(double);
 
 	memcpy(a_enviar + desplazamiento, &(pcb->tablas_paginas), sizeof(int));
 	desplazamiento += sizeof(int);
 
-	memcpy(a_enviar + desplazamiento, &(pcb->inicio_rafaga), sizeof(time_t));
-	desplazamiento += sizeof(time_t);
+	memcpy(a_enviar + desplazamiento, &(pcb->inicio_rafaga), sizeof(double));
+	desplazamiento += sizeof(double);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->estimacion_rafaga_restante), sizeof(double));
+	desplazamiento += sizeof(double);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->tiempo_ejecucion), sizeof(double));
+	desplazamiento += sizeof(double);
 
 	memcpy(a_enviar + desplazamiento, &(buffer->size), sizeof(int));
 	desplazamiento += sizeof(int);
@@ -334,13 +352,12 @@ void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes,operacion op) {
 	return a_enviar;
 }
 
-
 void enviar_pcb_bloqueado(int socketKernel,t_pcb_bloqueado* pcb_bloqueado){
 	t_pcb* pcb = pcb_bloqueado->pcb;
 
 	t_buffer* buffer = cargar_buffer(pcb->instrucciones);
 
-	int bytes = 9 * sizeof(int) + sizeof(time_t) + buffer->size;
+	int bytes = 8 * sizeof(int) + 4 * sizeof(double) + buffer->size;
 
 	operacion op = BLOQUEO_IO;
 
@@ -365,14 +382,20 @@ void enviar_pcb_bloqueado(int socketKernel,t_pcb_bloqueado* pcb_bloqueado){
 	memcpy(a_enviar + desplazamiento, &(pcb->program_counter), sizeof(int));
 	desplazamiento += sizeof(int);
 
-	memcpy(a_enviar + desplazamiento, &(pcb->estimacion_rafaga), sizeof(int));
-	desplazamiento += sizeof(int);
+	memcpy(a_enviar + desplazamiento, &(pcb->estimacion_rafaga), sizeof(double));
+	desplazamiento += sizeof(double);
 
 	memcpy(a_enviar + desplazamiento, &(pcb->tablas_paginas), sizeof(int));
 	desplazamiento += sizeof(int);
 
-	memcpy(a_enviar + desplazamiento, &(pcb->inicio_rafaga), sizeof(time_t));
-	desplazamiento += sizeof(time_t);
+	memcpy(a_enviar + desplazamiento, &(pcb->inicio_rafaga), sizeof(double));
+	desplazamiento += sizeof(double);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->estimacion_rafaga_restante), sizeof(double));
+	desplazamiento += sizeof(double);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->tiempo_ejecucion), sizeof(double));
+	desplazamiento += sizeof(double);
 
 	memcpy(a_enviar + desplazamiento, &(buffer->size), sizeof(int));
 	desplazamiento += sizeof(int);

@@ -48,9 +48,11 @@ typedef struct {
 	unsigned int tamanio_proceso;
 	unsigned int program_counter;
 	unsigned int tablas_paginas;
-	unsigned int estimacion_rafaga;
+	double estimacion_rafaga;
 	int socket_cliente;
-	time_t inicio_rafaga;
+	double inicio_rafaga;
+	double estimacion_rafaga_restante;
+	double tiempo_ejecucion;
 	t_list* instrucciones;
 } t_pcb;
 

@@ -122,7 +122,10 @@ pid_t atender_consola() {
 		// de ahora en mas puedo agregar lo que quiera al proceso
 		proceso->instrucciones = parsear_instrucciones(proceso->instrucciones);
 		proceso->socket = conexion_consola;
-		proceso->estimacion_rafaga = config_get_int_value(config, ESTIMACION_INICIAL);
+		proceso->estimacion_rafaga = config_get_double_value(config, ESTIMACION_INICIAL);;
+		proceso->estimacion_rafaga_restante = config_get_double_value(config, ESTIMACION_INICIAL);
+		log_warning(logger, "LA ESTIMACION DEL CONFIG ES: %f", proceso->estimacion_rafaga);
+		proceso->tiempo_ejecucion = 0;
 		proceso->id = numero_proceso;
 		proceso->tablas_paginas = -1;
 		proceso->program_counter = 0;
@@ -224,12 +227,11 @@ void planificar_fifo(){
 
 		while(1){
 			sem_wait(&sem_planificacion);
-			log_info(logger, "Planificacion despausada");
 			sem_wait(&elementos_en_cola_ready);
 			pthread_mutex_lock(&mutex_ready_list);
 			t_pcb* primer_proceso = list_pop(ready);
 			pthread_mutex_unlock(&mutex_ready_list);
-			list_iterate(primer_proceso->instrucciones, (void *) iterator);
+
 			enviar_pcb(primer_proceso, conexion_con_cpu_dispatch);
 
 			log_info(logger,"Se paso el proceso %d de Ready a Ejecutando", primer_proceso->id);
@@ -249,12 +251,14 @@ void comunicacion_con_cpu() {
 					ejecutando = false;
 					log_info(logger, "Codigo BLOQUEO_IO recibido");
 					t_pcb_bloqueado* proceso_bloqueado = recibir_pcb_bloqueado(conexion_con_cpu_dispatch);
-					double tiempo_real_b = difftime(time(NULL), proceso_bloqueado->proceso->inicio_rafaga);
-					proceso_bloqueado->proceso->estimacion_rafaga = alfa *  tiempo_real_b + (1 - alfa) * proceso_bloqueado->proceso->estimacion_rafaga;
+					double tiempo_real_b = difftime((double) time(NULL), proceso_bloqueado->proceso->inicio_rafaga) * 1000;
+					proceso_bloqueado->proceso->tiempo_ejecucion += tiempo_real_b;
+					proceso_bloqueado->proceso->estimacion_rafaga = alfa *  proceso_bloqueado->proceso->tiempo_ejecucion + (1 - alfa) * proceso_bloqueado->proceso->estimacion_rafaga;
+					proceso_bloqueado->proceso->estimacion_rafaga_restante = proceso_bloqueado->proceso->estimacion_rafaga;
+
 					log_warning(logger, "program counter: %d", proceso_bloqueado->proceso->program_counter);
 					log_info(logger, "La cpu envio el proceso %d con estado Bloqueado por IO", proceso_bloqueado->proceso->id);
 					log_info(logger, "Tiempo de bloqueo: %d", proceso_bloqueado->tiempo_de_bloqueo);
-					log_info(logger, "Inicio de bloqueo: %li", proceso_bloqueado->inicio_bloqueo);
 					proceso_bloqueado->inicio_bloqueo = time(NULL);
 					proceso_bloqueado->suspendido = 0;
 					proceso_bloqueado->id_block = contador_bloqueo;
@@ -279,8 +283,9 @@ void comunicacion_con_cpu() {
 					t_pcb* pcb_interrumpido = recibir_pcb(conexion_con_cpu_dispatch);
 
 					// prox_rafaga = alfa * tiempo_ultima_rafaga + (1 - alfa) * pcb.estimacion_rafaga
-					double tiempo_real = difftime(time(NULL), pcb_interrumpido->inicio_rafaga);
-					pcb_interrumpido->estimacion_rafaga -= tiempo_real; //= alfa *  tiempo_real + (1 - alfa) * pcb_interrumpido->estimacion_rafaga;
+					double tiempo_real = difftime(time(NULL), pcb_interrumpido->inicio_rafaga) * 1000;
+					pcb_interrumpido->tiempo_ejecucion += tiempo_real;
+					pcb_interrumpido->estimacion_rafaga_restante = pcb_interrumpido->estimacion_rafaga_restante - tiempo_real; //= alfa *  tiempo_real + (1 - alfa) * pcb_interrumpido->estimacion_rafaga;
 					pasar_a_ready(pcb_interrumpido);
 					sem_post(&sem_planificacion);
 
@@ -376,9 +381,14 @@ void esperar_y_suspender(t_pcb_bloqueado_con_id* proceso){
 	 usleep(tiempo_max_bloqueo*1000);
 	 if(esta_en_lista_bloqueados(proceso)){
 		 notificar_suspencion_proceso(proceso->pcb_bloqueado->proceso->id, conexion_con_memoria);
-		 proceso->pcb_bloqueado->suspendido = 1;
-		log_warning(logger, "EL PROCESO %d SE SUSPENDIO POR MAX TIEMPO BLOQUEO", proceso->pcb_bloqueado->proceso->id); 
-		 sem_post(&multiprogramacion);
+		 int respuesta = recibir_entero(conexion_con_memoria);
+		 if(respuesta == 0){
+			 proceso->pcb_bloqueado->suspendido = 1;
+			 log_warning(logger, "EL PROCESO %d SE SUSPENDIO POR MAX TIEMPO BLOQUEO", proceso->pcb_bloqueado->proceso->id);
+			 sem_post(&multiprogramacion);
+		 } else {
+			 log_error(logger, "No se pudo suspender el proceso");
+		 }
 	 }
 
 }
@@ -465,7 +475,6 @@ void planificar_srt() {
 	iniciar_planificacion_io();
 	while(1) {
 		sem_wait(&sem_planificacion);
-		log_info(logger, "Planificacion despausada");
 		sem_wait(&elementos_en_cola_ready);
 		pthread_mutex_lock(&mutex_ready_list);
 		if(list_size(ready) > 1) {
@@ -473,12 +482,13 @@ void planificar_srt() {
 			log_info(logger, "lista ordenada: ");
 			void iterador(t_pcb* pcb) {
 
-				log_info(logger, "id: %d estimacion: %d inicio rafaga: %d",pcb->id, pcb->estimacion_rafaga, pcb->inicio_rafaga);
+				log_info(logger, "id: %d estimacion: %f",pcb->id, pcb->estimacion_rafaga_restante);
 			}
 			list_iterate(ready, (void*) iterador);
 		}
 		t_pcb* proceso_mas_corto = list_pop(ready);
 		pthread_mutex_unlock(&mutex_ready_list);
+		proceso_mas_corto->inicio_rafaga = (double) time(NULL);
 		enviar_pcb(proceso_mas_corto, conexion_con_cpu_dispatch);
 		ejecutando = true;
 		log_info(logger,"Se paso el proceso %i de Ready a Ejecutando", proceso_mas_corto->id);
@@ -501,7 +511,7 @@ void pasar_a_ready(t_pcb* proceso) {
 		}
 
 		proceso->tablas_paginas = numero_de_tabla;
-		log_info(logger, "Se asignó el numero de tabla: %d al proceso de id: %d\n", proceso->tablas_paginas, proceso->id);
+		log_info(logger, "Se asignó el numero de tabla: %d al proceso de id: %d\n", numero_de_tabla, proceso->id);
 	}
 
 	if((strcmp(planificador, "SRT") == 0) && ejecutando) {
@@ -523,7 +533,7 @@ void list_push(t_list* lista, void* elemento){
 }
 
 bool menor_tiempo_restante(t_pcb* p1, t_pcb* p2) {
-	return p1->estimacion_rafaga < p2->estimacion_rafaga;
+	return p1->estimacion_rafaga_restante < p2->estimacion_rafaga_restante;
 }
 
 void pasar_de_new_a_ready(){
@@ -534,7 +544,6 @@ void pasar_de_new_a_ready(){
 
 		sem_wait(&elementos_en_cola_new);
 		sem_wait(&multiprogramacion);
-		log_info(logger, "paso post");
 		pthread_mutex_lock(&mutex_susp_ready_queue);
 		tamanio_cola_susp_ready = queue_size(susp_ready);
 		pthread_mutex_unlock(&mutex_susp_ready_queue);

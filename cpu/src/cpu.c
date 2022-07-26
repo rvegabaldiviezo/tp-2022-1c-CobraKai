@@ -122,7 +122,6 @@ int recibir_operacion_dispatch(){
 			case PCB:
 				log_info(logger, " DISPATCH, RECIBIO UN PCB");
 				pcb = recibir_pcb(cpu->kernel_dispatch);
-				pcb->inicio_rafaga = time(NULL);
 
 				mostrarPCB();
 
@@ -415,7 +414,9 @@ void tercer_acceso_memoria_escritura(int direccion_logica, int numero_pagina, in
 void mostrarPCB(){
 	log_info(logger, "-----PCB ------");
 	log_info(logger, "id: %d", pcb->id);
-	log_info(logger, "estimacion: %d", pcb->estimacion_rafaga);
+	log_info(logger, "estimacion: %f", pcb->estimacion_rafaga);
+	log_info(logger, "estimacion restante: %f", pcb->estimacion_rafaga_restante);
+	log_info(logger, "tiempo ejecutando: %f", pcb->tiempo_ejecucion);
 	log_info(logger, "program counter: %d", pcb->program_counter);
 	log_info(logger, "socket: %d", pcb->socket_cliente);
 	log_info(logger, "numero de tabla: %d", pcb->tablas_paginas);

@@ -32,6 +32,7 @@ t_list* parsear_instrucciones(t_list* instrucciones);
 void enviar_interrupcion(int);
 void notificar_a_memoria(int, int*);
 int recibir_tiempo_bloqueado(int);
+double recibir_double(int);
 
 void liberar_conexion(int socket_cliente);
 

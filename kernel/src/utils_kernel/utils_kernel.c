@@ -137,7 +137,7 @@ t_list* parsear_instrucciones(t_list* instrucciones) {
 
 void enviar_pcb(t_pcb* pcb, int conexion) {
 	t_buffer* buffer = cargar_buffer(pcb->instrucciones);
-	int bytes = 8 * sizeof(int) + sizeof(time_t) + buffer->size;
+	int bytes = 7 * sizeof(int) + 4 * sizeof(double) + buffer->size;
 
 	void* pcb_serializado = serializar_pcb(pcb, buffer, bytes);
 	send(conexion, pcb_serializado, bytes, 0);
@@ -164,14 +164,20 @@ void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes) {
 	memcpy(a_enviar + desplazamiento, &(pcb->program_counter), sizeof(int));
 	desplazamiento += sizeof(int);
 
-	memcpy(a_enviar + desplazamiento, &(pcb->estimacion_rafaga), sizeof(int));
-	desplazamiento += sizeof(int);
+	memcpy(a_enviar + desplazamiento, &(pcb->estimacion_rafaga), sizeof(double));
+	desplazamiento += sizeof(double);
 
 	memcpy(a_enviar + desplazamiento, &(pcb->tablas_paginas), sizeof(int));
 	desplazamiento += sizeof(int);
 
-	memcpy(a_enviar + desplazamiento, &(pcb->inicio_rafaga), sizeof(time_t));
-	desplazamiento += sizeof(time_t);
+	memcpy(a_enviar + desplazamiento, &(pcb->inicio_rafaga), sizeof(double));
+	desplazamiento += sizeof(double);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->estimacion_rafaga_restante), sizeof(double));
+	desplazamiento += sizeof(double);
+
+	memcpy(a_enviar + desplazamiento, &(pcb->tiempo_ejecucion), sizeof(double));
+	desplazamiento += sizeof(double);
 
 	memcpy(a_enviar + desplazamiento, &(buffer->size), sizeof(int));
 	desplazamiento += sizeof(int);
@@ -221,9 +227,11 @@ t_pcb* recibir_pcb(int conexion) {
 	pcb->socket = recibir_entero(conexion);
 	pcb->tamanio_proceso = recibir_entero(conexion);
 	pcb->program_counter = recibir_entero(conexion);
-	pcb->estimacion_rafaga = recibir_entero(conexion);
+	pcb->estimacion_rafaga = recibir_double(conexion);
 	pcb->tablas_paginas = recibir_entero(conexion);
-	pcb->inicio_rafaga = recibir_entero(conexion);
+	pcb->inicio_rafaga = recibir_double(conexion);
+	pcb->estimacion_rafaga_restante = recibir_double(conexion);
+	pcb->tiempo_ejecucion = recibir_double(conexion);
 	pcb->instrucciones = recibir_instrucciones(conexion);
 	return pcb;
 }
@@ -236,9 +244,11 @@ t_pcb_bloqueado* recibir_pcb_bloqueado(int conexion) {
 	proceso->socket = recibir_entero(conexion);
 	proceso->tamanio_proceso = recibir_entero(conexion);
 	proceso->program_counter = recibir_entero(conexion);
-	proceso->estimacion_rafaga = recibir_entero(conexion);
+	proceso->estimacion_rafaga = recibir_double(conexion);
 	proceso->tablas_paginas = recibir_entero(conexion);
-	proceso->inicio_rafaga = recibir_entero(conexion);
+	proceso->inicio_rafaga = recibir_double(conexion);
+	proceso->estimacion_rafaga_restante = recibir_double(conexion);
+	proceso->tiempo_ejecucion = recibir_double(conexion);
 	proceso->instrucciones = recibir_instrucciones(conexion);
 	bloqueado->inicio_bloqueo = time(NULL);
 
@@ -247,6 +257,15 @@ t_pcb_bloqueado* recibir_pcb_bloqueado(int conexion) {
 	return bloqueado;
 }
 
+double recibir_double(int socket_cliente) {
+	double valor;
+	if(recv(socket_cliente, &valor, sizeof(double), MSG_WAITALL) > 0) {
+		return valor;
+	} else {
+		close(socket_cliente);
+		return -1;
+	}
+}
 
 
 /***********************************************************************************/
@@ -311,13 +330,9 @@ void enviar_respuesta_exitosa(int conexion) {
 
 int recibir_numero_de_tabla(t_pcb* pcb, int conexion_memoria) {
 	solicitar_numero_de_tabla(pcb, conexion_memoria);
-	int numero_de_tabla;
-	int bytes_recibidos = recv(conexion_memoria, &numero_de_tabla, sizeof(int), MSG_WAITALL);
-	if (bytes_recibidos <= 0) {
-		return -1;
-	} else {
-		return numero_de_tabla;
-	}
+
+	return recibir_entero(conexion_memoria);
+
 }
 
 void enviar_interrupcion(int conexion_con_cpu_interrupt) {
