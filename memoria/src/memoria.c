@@ -98,6 +98,7 @@ t_tabla_paginas_segundo_nivel* inicializar_tabla_segundo_nivel() {
 	t_tabla_paginas_segundo_nivel* tabla = malloc(sizeof(t_tabla_paginas_segundo_nivel));
 	tabla->paginas = list_create();
 	for(int i = 0; i < entradas_por_tabla; i++) {
+		tabla->numero = i;
 		t_pagina* pagina = inicializar_pagina(i, tabla->numero);
 		list_add(tabla->paginas, pagina);
 	}
@@ -131,7 +132,7 @@ void inicializar_bitarray() {
 //		log_info(logger, "VALOR MARCO AL INICIAR %d: %d", i, bitarray_test_bit(marcos_memoria, i));
 //	}
 
-	free(puntero_a_bits);
+	//free(puntero_a_bits);
 }
 
 int proximo_marco_libre() {
