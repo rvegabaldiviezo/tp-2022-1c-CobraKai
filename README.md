@@ -13,7 +13,7 @@ sudo su
 ```
 cd /home/utnso&&REPO='alumnoso'&&git clone https://github.com/rvegabaldiviezo/${REPO}.git&&cd ${REPO}&&sh deploy.sh
 ```
-El repo publico con los scripts que se ejecutan: **https://github.com/rvegabaldiviezo/alumnoso**
+El repo publico con los scripts que se ejecutan: **https://github.com/rvegabaldiviezo/alumnoso/tree/v0.0.1**
 
 
 - 3) Para poder clonarse el repo de tp-2022-1c-CobraKai, pide la password, usar:
