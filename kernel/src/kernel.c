@@ -255,8 +255,8 @@ void comunicacion_con_cpu() {
 					proceso_bloqueado->proceso->tiempo_ejecucion += tiempo_real_b;
 					proceso_bloqueado->proceso->estimacion_rafaga = alfa *  proceso_bloqueado->proceso->tiempo_ejecucion + (1 - alfa) * proceso_bloqueado->proceso->estimacion_rafaga;
 					proceso_bloqueado->proceso->estimacion_rafaga_restante = proceso_bloqueado->proceso->estimacion_rafaga;
-
-					log_warning(logger, "program counter: %d", proceso_bloqueado->proceso->program_counter);
+					proceso_bloqueado->proceso->tiempo_ejecucion = 0;
+					//log_warning(logger, "program counter: %d", proceso_bloqueado->proceso->program_counter);
 					log_info(logger, "La cpu envio el proceso %d con estado Bloqueado por IO", proceso_bloqueado->proceso->id);
 					log_info(logger, "Tiempo de bloqueo: %d", proceso_bloqueado->tiempo_de_bloqueo);
 					proceso_bloqueado->inicio_bloqueo = time(NULL);
@@ -336,10 +336,10 @@ void planificacion_io(){
 		t_pcb_bloqueado_con_id* pcb_bllll = list_get(blocked, 0);;
 		t_pcb_bloqueado* primer_proceso = pcb_bllll->pcb_bloqueado;
 		pthread_mutex_unlock(&mutex_blocked_list);
-		log_info(logger, "El proceso %d inicio su I/0", primer_proceso->proceso->id);
+		log_warning(logger, "El proceso %d inicio su I/O", primer_proceso->proceso->id);
 		usleep(primer_proceso->tiempo_de_bloqueo*1000);
 		list_pop(blocked);
-		log_info(logger, "El proceso %d finalizo su I/0", primer_proceso->proceso->id);
+		log_warning(logger, "El proceso %d finalizo su I/O", primer_proceso->proceso->id);
 
 		if(primer_proceso->suspendido == 0){
 
