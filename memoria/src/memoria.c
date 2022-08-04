@@ -330,7 +330,7 @@ void algoritmo_clock(t_pagina* pagina){
 			escribir_marco_completo(pagina_en_memoria->marco, contenido_archivo);
 
 			log_warning(logger, "Ocurrio un reemplazo de página");
-			log_warning(logger, "Se gaurdo la página %d en swap", pagina_en_memoria->numero);
+			log_warning(logger, "Se guardó la página %d en swap", pagina_en_memoria->numero);
 			log_warning(logger, "Se cargó la página %d en el marco %d", pagina->numero, pagina_en_memoria->marco);
 
 			pagina->marco = pagina_en_memoria->marco;
