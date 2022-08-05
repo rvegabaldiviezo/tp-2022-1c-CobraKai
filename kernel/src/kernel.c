@@ -479,11 +479,11 @@ void planificar_srt() {
 		pthread_mutex_lock(&mutex_ready_list);
 		if(list_size(ready) > 1) {
 			list_sort(ready, (void *) menor_tiempo_restante);
-			log_info(logger, "lista ordenada: ");
 			void iterador(t_pcb* pcb) {
-
 				log_info(logger, "id: %d estimacion: %f",pcb->id, pcb->estimacion_rafaga_restante);
 			}
+			log_info(logger, "lista ordenada: ");
+
 			list_iterate(ready, (void*) iterador);
 		}
 		t_pcb* proceso_mas_corto = list_pop(ready);
@@ -533,7 +533,7 @@ void list_push(t_list* lista, void* elemento){
 }
 
 bool menor_tiempo_restante(t_pcb* p1, t_pcb* p2) {
-	return p1->estimacion_rafaga_restante < p2->estimacion_rafaga_restante;
+	return p1->estimacion_rafaga_restante <= p2->estimacion_rafaga_restante;
 }
 
 void pasar_de_new_a_ready(){
