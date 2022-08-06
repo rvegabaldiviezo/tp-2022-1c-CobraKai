@@ -150,7 +150,7 @@ int recibir_operacion_dispatch(void);
 t_pcb* recibir_pcb(int);
 t_list* recibir_instrucciones(int);
 int recibir_entero(int);
-void iterator(char* value);
+void iterator(t_tlb* value);
 void agregar_instruccion(t_buffer* buffer, char* valor, int tamanio);
 t_buffer* cargar_buffer(t_list* lista);
 void* serializar_pcb(t_pcb* pcb, t_buffer* buffer, int bytes,operacion op);

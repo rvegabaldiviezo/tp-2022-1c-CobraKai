@@ -364,9 +364,13 @@ uint32_t tercer_acceso_memoria_lectura(int direccion_logica, int numero_pagina, 
 }
 
 void guardar_en_TLB(uint32_t numero_pagina,uint32_t nro_marco){
+	t_tlb* element_tlb = malloc(sizeof(t_tlb));
+	element_tlb->nro_pagina = numero_pagina;
+	element_tlb->nro_marco = nro_marco;
+	element_tlb->timestamps = time(NULL);//lo usamos principalmente para LRU
 
     if(esta_completa_cola_TLB()){//APLICAR ALGORITMOS DE REEMPLAZO DE TLB
-
+    	log_warning(logger, "TLB completa");
         if(strcmp(reemplazo_tlb,"LRU") == 0){//ALGORITMO FIFO
             //Ordenamos de menor tiempo a mayor (Asi queda primero. El de menor uso tiene menor tiempo, los de mayor uso tienen un tiempo mayor, mas actual)
             bool _tlb_menor(t_tlb* tlb1, t_tlb* tlb2) {
@@ -375,22 +379,15 @@ void guardar_en_TLB(uint32_t numero_pagina,uint32_t nro_marco){
              list_sort(cola_tlb->elements, (void*)_tlb_menor);
         }
 
-         t_tlb* primer_tlb = queue_peek(cola_tlb);
-         primer_tlb->nro_pagina = numero_pagina;
-         primer_tlb->nro_marco = nro_marco;
-         primer_tlb->timestamps = time(NULL);//lo usamos principalmente para LRU
-
-    }else{//La cola esta incompleta, agregamos un elemnto
-
-        //Instanciamos el elemento de la TLB a guardar
-        t_tlb* element_tlb = malloc(sizeof(t_tlb));
-        element_tlb->nro_pagina = numero_pagina;
-        element_tlb->nro_marco = nro_marco;
-        element_tlb->timestamps = time(NULL);//lo usamos principalmente para LRU
-
-        //Agregamos un nuevo elemento a la TLB, al final de cola
-        queue_push(cola_tlb,element_tlb);
+         t_tlb* primer_tlb = queue_pop(cola_tlb);
+         log_warning(logger, "Se saca de la TLB la pagina %d con marco %d", primer_tlb->nro_pagina, primer_tlb->nro_marco);
+         free(primer_tlb);
     }
+
+    queue_push(cola_tlb,element_tlb);
+    log_warning(logger, "Se agrega a la TLB la pagina %d con marco %d", element_tlb->nro_pagina, element_tlb->nro_marco);
+    log_warning(logger, "Estado TLB");
+    list_iterate(cola_tlb->elements, (void *) iterator);
 }
 
 bool esta_completa_cola_TLB(){
@@ -413,20 +410,20 @@ void tercer_acceso_memoria_escritura(int direccion_logica, int numero_pagina, in
 
 void mostrarPCB(){
 	log_info(logger, "-----PCB ------");
-	log_info(logger, "id: %d", pcb->id);
-	log_info(logger, "estimacion: %f", pcb->estimacion_rafaga);
-	log_info(logger, "estimacion restante: %f", pcb->estimacion_rafaga_restante);
-	log_info(logger, "tiempo ejecutando: %f", pcb->tiempo_ejecucion);
-	log_info(logger, "program counter: %d", pcb->program_counter);
-	log_info(logger, "socket: %d", pcb->socket_cliente);
-	log_info(logger, "numero de tabla: %d", pcb->tablas_paginas);
-	log_info(logger, "tamanio de consola: %d", pcb->tamanio_proceso);
-	log_info(logger, "lista Instrucciones:");
-	list_iterate(pcb->instrucciones, (void*) iterator);
-	log_info(logger, "--------------");
+	log_info(logger, "ID: %d", pcb->id);
+//	log_info(logger, "estimacion: %f", pcb->estimacion_rafaga);
+//	log_info(logger, "estimacion restante: %f", pcb->estimacion_rafaga_restante);
+//	log_info(logger, "tiempo ejecutando: %f", pcb->tiempo_ejecucion);
+	log_info(logger, "PROGRAM COUNTER: %d", pcb->program_counter);
+//	log_info(logger, "socket: %d", pcb->socket_cliente);
+//	log_info(logger, "numero de tabla: %d", pcb->tablas_paginas);
+//	log_info(logger, "tamanio de consola: %d", pcb->tamanio_proceso);
+//	log_info(logger, "lista Instrucciones:");
+//	list_iterate(pcb->instrucciones, (void*) iterator);
+//	log_info(logger, "--------------");
 }
-void iterator(char* value) {
-	log_info(logger,"%s", value);
+void iterator(t_tlb* element_tlb) {
+	log_warning(logger, "PAGINA: %d MARCO: %d ULTIMA REFERENCIA: %lu", element_tlb->nro_pagina, element_tlb->nro_marco, element_tlb->timestamps);
 }
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++
