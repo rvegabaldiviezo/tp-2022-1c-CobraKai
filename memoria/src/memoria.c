@@ -34,6 +34,8 @@ int main(int argc, char** argv) {
 
 	leer_config(argv[1]);
 
+	log_info(logger, "ALGORITMO REEMPLAZO: %s", algoritmo_reemplazo);
+
 	cantidad_paginas = tamanio_memoria / tamanio_pagina;
 	inicializar_bitarray();
 	log_info(logger, "Cantidad de marcos: %d", bitarray_get_max_bit(marcos_memoria));
@@ -822,11 +824,12 @@ void atender_kernel() {
 
 				swapear_paginas_modificadas(id_a_suspender);
 
+				liberar_marcos_proceso(id_a_suspender);
+
 				if(numero_de_tabla_primer_nivel == id_a_suspender) {
 					sem_post(&swap);
 				}
 
-				liberar_marcos_proceso(id_a_suspender);
 				id_a_suspender = -1;
 
 				enviar_confirmacion(conexion_kernel);
